@@ -304,6 +304,9 @@ defaults:
       share: false
       related: true
       popular: false
+      toc: true
+      toc_sticky: true
+      toc_label: 목차
   
   # _pages
   - scope:

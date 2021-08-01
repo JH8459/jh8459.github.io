@@ -1,0 +1,161 @@
+I"�)<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="오늘-한-일">오늘 한 일</h2>
+<h3 id="1-변수">1. 변수</h3>
+<ul>
+  <li>변수를 이용하면 데이터를 편리하게 저장하고 꺼내 쓸 수 있게 한다.</li>
+  <li>변수의 선언과 값의 할당에 대해서 학습하였다.
+    <ul>
+      <li>선언(declaration)을 통하여 변수를 선언할 수 있다.</li>
+      <li>할당(assignment)을 통하여 변수에 값을 저장하게 된다. 이때 사용되는 ‘=’은 같다라는 뜻이 아닌 ‘할당 연산자(Assignment operator)’이다.</li>
+      <li>var, let, const 선언방식의 차이점을 학습하였다.
+        <blockquote>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center"> </th>
+                <th style="text-align: center">var</th>
+                <th style="text-align: center">let</th>
+                <th style="text-align: center">const</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">중복선언</td>
+                <td style="text-align: center">O</td>
+                <td style="text-align: center">X</td>
+                <td style="text-align: center">X</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">재할당</td>
+                <td style="text-align: center">O</td>
+                <td style="text-align: center">O</td>
+                <td style="text-align: center">X</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>변수명은 다음의 규칙에 따라 명명된다. <a href="https://eslint.org/docs/rules/camelcase" target="_blank">reference. Camel Case  </a></li>
+  <li>할당이 없는 변수의 경우 <code class="language-plaintext highlighter-rouge">undefined</code> 값을 가진다. (값이 없는게 아닌 해당 <code class="language-plaintext highlighter-rouge">undefined</code>값을 가진다)</li>
+</ul>
+
+<h3 id="2-타입">2. 타입</h3>
+<ul>
+  <li>원시 자료형, 참조 자료형 in JS 를 학습하였다.</li>
+  <li>typeof 연산자를 통하여 특정 갑의 타입을 확인할 수 있다.</li>
+</ul>
+
+<h3 id="3-함수">3. 함수</h3>
+<ul>
+  <li>
+    <p>함수는 “작은 기능의 단위”이며 키워드(keyword), 이름(name), 매개변수(parameter), 몸통(body)로 구분된다</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">muntiPle</span><span class="p">(</span><span class="nx">num</span><span class="p">){</span> <span class="c1">// function(키워드), multiPle(이름), num(매개변수)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">1</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">2</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">3</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">4</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">5</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">6</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">7</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">8</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">9</span><span class="p">);</span> <span class="c1">// body 부분</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>구체적인 입력과 출력을 가지고있으며, 호출 후에는 반드시 return 된다.</p>
+  </li>
+</ul>
+
+<h3 id="4-조건문">4. 조건문</h3>
+<ul>
+  <li>
+    <p>조건문은 어떠한 조건을 판별한다. 그렇기에 <strong>비교 연산자</strong>(comparison operator)가 필요하다.</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>		<span class="c1">// false</span>
+  <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span>		<span class="c1">// true</span>
+  <span class="dl">'</span><span class="s1">hi</span><span class="dl">'</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span>	<span class="c1">// false</span>
+  <span class="dl">'</span><span class="s1">hi</span><span class="dl">'</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span>	<span class="c1">// true</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>비교 연산자의 결과는 늘 Boolean, 즉 true 혹은 false 이다.</li>
+      <li>주의 해야 할 비교 연산자 ( == , != ) : 값 만을 비교 (data type은 논외) 하기 때문에 엄격한 비교가 불가능하다. 예외가 많기 떄문에 === 와 비교하면 오류가 많다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>두가지 조건이 한번에 적용되는 경우가 필요 할 땐, 논리 연산자(logical operator)를 사용하여 조건문을 작성한다.</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">isStudent</span> <span class="o">&amp;&amp;</span> <span class="nx">isFemale</span><span class="p">;</span>	<span class="c1">// 학생이면서 여성일때 통과</span>
+  <span class="nx">isStudent</span> <span class="o">||</span> <span class="nx">isFemale</span><span class="p">;</span>	<span class="c1">// 학생이거나 여성이면 통과</span>
+  <span class="o">!</span><span class="nx">isStudent</span> <span class="o">&amp;&amp;</span> <span class="nx">isFemale</span><span class="p">;</span>	<span class="c1">// 학생이 아니면서 여성일때 통과</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">truthy</code>와 <code class="language-plaintext highlighter-rouge">falsy</code>가 조건문에서 작동하는 방식을 이해할 수 있다.</p>
+    <ul>
+      <li>기억해야 할 6가지 falsy 값, 해당 값들은 false로 반환되므로 if문이 실행되지 않는다.
+        <blockquote>
+          <p><code class="language-plaintext highlighter-rouge">false</code>,  <code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">undefined</code>, <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">NaN</code>, <code class="language-plaintext highlighter-rouge">''</code></p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-html">5. HTML</h3>
+<ul>
+  <li>하이퍼텍스트를 (링크) 가장 중요한 특징으로 하는 마크업이라는 형식을 가진 컴퓨터 프로그래밍 언어.
+    <ul>
+      <li>Markup이란? 그 파일이 프린터로 출력되거나 화면에서 어떻게 보여야할 것인지를 나타내기 위해 또는 그 문서의 논리적인 구조를 묘사하기 위해서, 텍스트나 워드프로세싱 파일의 특정위치에 삽입되는 일련의 문자들이나 기호들을 말한다. 마크업에 사용되는 표지를 흔히 ‘태그’라고 부른다.</li>
+    </ul>
+  </li>
+  <li>태그 설명은 <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/a" target="_blank">reference. HTML tag</a></li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<ul>
+  <li>
+    <p>코드스테이츠 2일차.. 잠을 엄청 설쳤다… 부담감 때문인가? 스트레스 컨트롤도 중요해보인다…</p>
+  </li>
+  <li>
+    <p>블로그에 학습내용 포스팅은 계속 진행할 예정.</p>
+  </li>
+  <li>구글은 신이다.
+    <ul>
+      <li>mdn 키워드 <del>mdn 자체가 읽기가 어려워….. 익숙해지자</del></li>
+      <li>키워드를 통한 검색 생활화 하기. 영어로 검색하자</li>
+      <li>Stack Overflow 애용하기 <del>아직은 봐도 잘 모르겠다…</del></li>
+    </ul>
+  </li>
+  <li>
+    <p>처음으로 둘 이상의 인원이 모여 ZOOM을 통한 협업으로 코드 풀이를 해보았다. 생각보다 ZOOM 을 통한 협업은 불편하지 않았다, 화면쉐어링 등 기본 제공하는 툴들만으로도 의견 전달에는 문제가 없었다. pair 훈련 자체가 오늘 첫 시행이라 난이도가 낮았기에 시간은 제공된 시간 보다는 빠르게 소화할 수 있었다. 앞으로는 거부감 없이 할 수 있을 듯 하다.</p>
+  </li>
+  <li>생활코딩 수업 html, css, javascript 다시 듣기. 웹애플리케이션만들기 수업정도만 겉핣기식 따라하기 수업은 머릿속에 개념만 넣는 정도였다. 조금더 심화내용 수업을 들으며 개념확장 필요하다 생각된다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+
+<ul>
+  <li>
+    <p>문자열</p>
+  </li>
+  <li>
+    <p>생활코딩 <del>html</del> css</p>
+    <ul>
+      <li>html은 너무 기본적인 문법 및 코드스테이츠 커리큘럼과는 맞지 않는 방향이라 개념만 정립 후 css 수업으로 진행 예쩡.</li>
+    </ul>
+  </li>
+</ul>
+:ET
