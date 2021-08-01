@@ -34,7 +34,7 @@ words_per_minute         : 200 # 해당 포스트 읽는데 걸리는 시간을 
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : JH8459 # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : JH8459 #https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -114,13 +114,13 @@ analytics:
 author:
   name             : "JH8459"
   avatar           : # 프로필 이미지
-  bio              : "꾸준히 공부하는 개발자입니다."
+  bio              : "Success is no accident."
   location         : "Republic of Korea"
   email            : "kk_ong2233@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      #url: mailto:7271kim@naver.com
+      url: mailto:kk_ong2233@naver.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "http://JH8459.github.io"
