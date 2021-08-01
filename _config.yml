@@ -20,7 +20,7 @@ title                    : "JH8459" # Meta 태그에 들어가는 영역 , masth
 title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 들어갑니다.
 subtitle                 : "programming study log" # 타이틀 아래에 나올 작은 글씨 
 name                     : "JH8459" # 맨 하단 이름 찍히는 영역
-description              : "~ing" # Meta 태그에 들어가는 영역 
+description              : # Meta 태그에 들어가는 영역 
 url                      : # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "JH8459/JH8459.github.com" # GitHub username/repo-name  
@@ -260,12 +260,12 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
-all_archive:
-  type: liquid
-  path: /all/
 category_archive:
   type: liquid
   path: /category/
+year_archive:
+  type: liquid
+  path: /year/
 about_archive:
   type: liquid
   path: /about/
