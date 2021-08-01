@@ -1,4 +1,4 @@
-I"�
+I"�
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -12,9 +12,9 @@
           <span class="site-subtitle">programming study log</span>
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/all/">글</a>
+              <a href="/category/">카테고리</a>
             </li><li class="masthead__menu-item">
-              <a href="/category/">시리즈</a>
+              <a href="/year/">연도별 포스트</a>
             </li><li class="masthead__menu-item">
               <a href="/about/">소개</a>
             </li></ul>

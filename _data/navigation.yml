@@ -1,8 +1,10 @@
 # main links
 main:
-  - title: "글"
-    url: /all/
-  - title: "시리즈"
+  - title: "카테고리"
     url: /category/
+
+  - title: "연도별 포스트"
+    url: /year/
+  
   - title: "소개"
     url: /about/
