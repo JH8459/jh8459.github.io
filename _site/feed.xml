@@ -1,1 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-01T22:54:23+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><subtitle>~ing</subtitle><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">첫글</title><link href="/til/first-post/" rel="alternate" type="text/html" title="첫글" /><published>2021-08-01T00:00:00+09:00</published><updated>2021-08-01T00:00:00+09:00</updated><id>/til/first-post</id><content type="html" xml:base="/til/first-post/">&lt;p&gt;첫글 오늘의 깃블로그&lt;/p&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">첫글 오늘의 깃블로그</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-01T23:17:19+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><subtitle>~ing</subtitle><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.07.20 TIL</title><link href="/til/TIL/" rel="alternate" type="text/html" title="21.07.20 TIL" /><published>2021-07-20T00:00:00+09:00</published><updated>2021-07-20T00:00:00+09:00</updated><id>/til/TIL</id><content type="html" xml:base="/til/TIL/">&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/img/TIL.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h1&gt;
+&lt;h3 id=&quot;1-변수&quot;&gt;1. 변수&lt;/h3&gt;
+&lt;h3 id=&quot;2-타입&quot;&gt;2. 타입&lt;/h3&gt;
+&lt;h3 id=&quot;3-함수&quot;&gt;3. 함수&lt;/h3&gt;
+&lt;h3 id=&quot;4-조건문&quot;&gt;4. 조건문&lt;/h3&gt;
+&lt;h3 id=&quot;5-html&quot;&gt;5. HTML&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;코드스테이츠 2일차.. 잠을 엄청 설쳤다… 부담감 때문인가? 스트레스 컨트롤도 중요해보인다…&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;어제 처음 작성한 TIL의 내용이 너무 난잡했다. 아무리 웹 공부지만 개념 긁어오기(?) 정도일 뿐이다. 학습하며 느껴졌던 어려움이나 느낀점 만 간략히 TIL에 서술식으로 서술 하고 학습한 개념은 따로 포스팅하는게 알맞다 생각된다. (포스팅을 하며 스스로 학습도 되며, 간략한 코드를 붙혀넣기가 아닌 마크다운 형식으로 직쩝 짜보는것으로 충분히 도움은 되는듯 하니 학습내용 포스팅은 계속 진행할 예정.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;구글은 신이다.
+    &lt;ul&gt;
+      &lt;li&gt;mdn 키워드 &lt;del&gt;mdn 자체가 읽기가 어려워….. 익숙해지자&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;How to 키워드 생활하 하기 자바스크립트 경우 + in Javascript 키워드 포함.&lt;/li&gt;
+      &lt;li&gt;Stack Overflow 애용하기 &lt;del&gt;아직은 봐도 잘 모르겠다…&lt;/del&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;처음으로 둘 이상의 인원이 모여 ZOOM을 통한 협업으로 코드 풀이를 해보았다. 생각보다 ZOOM 을 통한 협업은 불편하지 않았다, 화면쉐어링 등 기본 제공하는 툴들만으로도 의견 전달에는 문제가 없었다. pair 훈련 자체가 오늘 첫 시행이라 code 난이도가 낮았기에 회의 시간은 제공된 시간 보다는 빠르게 소화할 수 있었다. 앞으로는 거부감 없이 할 수 있을 듯 하다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;생활코딩 수업 html, css, javascript 다시 듣기. 웹애플리케이션만들기 수업정도만 겉핣기식 따라하기 수업은 머릿속에 개념만 넣는 정도였다. 조금더 심화내용 수업을 들으며 개념확장 필요하다 생각된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;변수&lt;/li&gt;
+  &lt;li&gt;자료형&lt;/li&gt;
+  &lt;li&gt;조건문&lt;/li&gt;
+  &lt;li&gt;문자열&lt;/li&gt;
+  &lt;li&gt;생활코딩 &lt;del&gt;html&lt;/del&gt; css
+    &lt;ul&gt;
+      &lt;li&gt;html은 너무 기본적인 문법 및 코드스테이츠 커리큘럼과는 맞지 않는 방향이라 개념만 정립 후 css 수업으로 진행 예쩡.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">오늘 한 일 1. 변수 2. 타입 3. 함수 4. 조건문 5. HTML</summary></entry></feed>
