@@ -1,0 +1,61 @@
+I"{<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="오늘-한-일">오늘 한 일</h2>
+<h3 id="1-객체-코플릿">1. 객체 코플릿</h3>
+<ul>
+  <li>객체는 배열과 다르게 순서성을 가지지 않으며, 묶음으로 된 데이터에 이름을 붙혀, 의미를 부여할 수 있다. 배열또한 각 값이 하나의 변수로 묶인 데이터이지만, 각 index가 어떤 정보를 갖고 있는지 알아야지 해당 값에 접근이 용이하다.
+    <ul>
+      <li>객체는 키쌍값(key-value pair)으로 이루어져 있다.
+<img src="https://user-images.githubusercontent.com/83164003/127880037-885d3350-4f00-4c36-8f49-2acfd0da353b.png" alt="스크린샷, 2021-08-02 23-44-58" /></li>
+    </ul>
+  </li>
+  <li>객체의 값을 사용하거나 추가할 땐 <em>Dot notation</em>, <em>Bracket notation</em> 방식을 사용한다</li>
+  <li>할당된 키와 값을 지울 땐 <em>delete</em> 키워드를 이용해 삭제가 가능하다.</li>
+  <li>
+    <p>객체 안에 특정한 키가 있는지 확인이 필요할 땐, <em>in</em> 연산자를 이용하여 확인한다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">for ... in</code> : 상속된 열거 가능한 속성들을 포함하여 객체에서 문자열로 키가 지정된 모든 열거 가능한 속성에 대해 반복합니다.</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">for</span> <span class="p">(</span><span class="nx">variable</span> <span class="k">in</span> <span class="nx">object</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">variable</code> : 매번 반복마다 다른 속성이름(Value name)이 변수(variable)로 지정됩니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">object</code> :  반복작업을 수행할 객체로 열거형 속성을 가지고 있는 객체.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>Note</strong>: for…in은 인덱스의 순서가 중요한 Array에서 반복을 위해 사용할 수 없습니다.</p>
+</blockquote>
+
+<h3 id="2-github-블로그-이사">2. Github 블로그 이사</h3>
+<ul>
+  <li>블로그를 velog에서 git에서 jekyll 환경으로 세팅하는 블로그로 변경해보았다.</li>
+  <li><a href="https://honbabzone.com/jekyll/start-gitHubBlog/" target="_blank">https://honbabzone.com/</a> 해당 블로그를 통해서 <code class="language-plaintext highlighter-rouge">minimal-mistakes</code> 테마를 이용하여 세팅을 해보았다. 우선 불필요한 포스팅을 줄이고 오늘 배운 내용 및 시간을 어떻게 보냈는지, 어떤점을 느끼고 발전했는지에 대한 부분만 짚고 넘어갈 예정이다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<ul>
+  <li><del>어렵다… git blog ..</del> 8.1 ~ 8.2, 이틀동안 지금 챕터진행 말고 블로그 셋팅 씨름한 덕에 포스트 commit 하고 푸쉬할 수 있게되었다. 물론 지금 테마 및 셋팅이 맘에 드는건 아니지만, 일단 나중으로 미루고 포스팅이 우선인듯하여 우선 급하게 셋팅을 마무리 지었다.</li>
+  <li>추후 상단 nav에 위치한 메뉴버튼들을 좌측 사이드바로 옮기고 싶다.  스크롤에 반응하는 author_ profile 목록은 그렇게 유용하진 않는듯하다..</li>
+  <li>사소한거지만.. html 구조파악에 시간이 너무 오래걸렸다. 셋팅 위한 한글 포스팅도 많이 없는 상황이다 (상단에 올려둔</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+
+<ul>
+  <li>CSS 실습 필요. 학습보다는 다양한 id, class를 선언해가며 속성값을 주는 실습이 필요로해보인다.</li>
+  <li>구글의 기술트렌드 리포트를 보니 과거에는 jQuery 가 주요 기술 트렌드였다면 16~18년도 이후  부터는 그 자리를 React에게 내주었다는 리포트를 오늘 학습도중 알게되었다. 
+그렇기에 React는 꾸준히 학습이 필요로 보인다… 아직 찍먹 수준이라 본수업이 다가오기전 매주 주말 통하여 충분한 학습이 필요로 할 듯 하다.</li>
+</ul>
+:ET

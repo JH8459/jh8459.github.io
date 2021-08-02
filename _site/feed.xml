@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-02T16:59:23+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.07.23 TIL</title><link href="/til/21.07.23-TIL/" rel="alternate" type="text/html" title="21.07.23 TIL" /><published>2021-07-23T00:00:00+09:00</published><updated>2021-07-23T00:00:00+09:00</updated><id>/til/21.07.23%20TIL</id><content type="html" xml:base="/til/21.07.23-TIL/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-03T00:06:27+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.02 TIL</title><link href="/til/21.08.02-TIL/" rel="alternate" type="text/html" title="21.08.02 TIL" /><published>2021-08-02T00:00:00+09:00</published><updated>2021-08-02T00:00:00+09:00</updated><id>/til/21.08.02%20TIL</id><content type="html" xml:base="/til/21.08.02-TIL/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
+&lt;h3 id=&quot;1-객체-코플릿&quot;&gt;1. 객체 코플릿&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;객체는 배열과 다르게 순서성을 가지지 않으며, 묶음으로 된 데이터에 이름을 붙혀, 의미를 부여할 수 있다. 배열또한 각 값이 하나의 변수로 묶인 데이터이지만, 각 index가 어떤 정보를 갖고 있는지 알아야지 해당 값에 접근이 용이하다.
+    &lt;ul&gt;
+      &lt;li&gt;객체는 키쌍값(key-value pair)으로 이루어져 있다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127880037-885d3350-4f00-4c36-8f49-2acfd0da353b.png&quot; alt=&quot;스크린샷, 2021-08-02 23-44-58&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;객체의 값을 사용하거나 추가할 땐 &lt;em&gt;Dot notation&lt;/em&gt;, &lt;em&gt;Bracket notation&lt;/em&gt; 방식을 사용한다&lt;/li&gt;
+  &lt;li&gt;할당된 키와 값을 지울 땐 &lt;em&gt;delete&lt;/em&gt; 키워드를 이용해 삭제가 가능하다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;객체 안에 특정한 키가 있는지 확인이 필요할 땐, &lt;em&gt;in&lt;/em&gt; 연산자를 이용하여 확인한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for ... in&lt;/code&gt; : 상속된 열거 가능한 속성들을 포함하여 객체에서 문자열로 키가 지정된 모든 열거 가능한 속성에 대해 반복합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variable&lt;/code&gt; : 매번 반복마다 다른 속성이름(Value name)이 변수(variable)로 지정됩니다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;object&lt;/code&gt; :  반복작업을 수행할 객체로 열거형 속성을 가지고 있는 객체.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: for…in은 인덱스의 순서가 중요한 Array에서 반복을 위해 사용할 수 없습니다.&lt;/p&gt;
+  &lt;h3 id=&quot;2-github-블로그-이사&quot;&gt;2. Github 블로그 이사&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;블로그를 velog에서 git에서 jekyll 환경으로 세팅하는 블로그로 변경해보았다.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://honbabzone.com/jekyll/start-gitHubBlog/&quot; target=&quot;_blank&quot;&gt;https://honbabzone.com/&lt;/a&gt; 해당 블로그를 통해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes&lt;/code&gt; 테마를 이용하여 세팅을 해보았다. 우선 불필요한 포스팅을 줄이고 오늘 배운 내용 및 시간을 어떻게 보냈는지, 어떤점을 느끼고 발전했는지에 대한 부분만 짚고 넘어갈 예정이다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;어렵다… git blog ..&lt;/del&gt; 8.1 ~ 8.2, 이틀동안 지금 챕터진행 말고 블로그 셋팅 씨름한 덕에 포스트 commit 하고 푸쉬할 수 있게되었다. 물론 지금 테마 및 셋팅이 맘에 드는건 아니지만, 일단 나중으로 미루고 포스팅이 우선인듯하여 우선 급하게 셋팅을 마무리 지었다.&lt;/li&gt;
+  &lt;li&gt;추후 상단 nav에 위치한 메뉴버튼들을 좌측 사이드바로 옮기고 싶다.  스크롤에 반응하는 author_ profile 목록은 그렇게 유용하진 않는듯하다..&lt;/li&gt;
+  &lt;li&gt;사소한거지만.. html 구조파악에 시간이 너무 오래걸렸다. 셋팅 위한 한글 포스팅도 많이 없는 상황이다 (상단에 올려둔 &lt;em&gt;7271kim&lt;/em&gt; 님의 블로그 세팅이 거의 대중화(?)되었다고 보면 될 듯하다. 우선은 천천히 코드및 구조를 뜯어보며 변경해보는거로 미뤄둬야겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;CSS 챕터 학습&lt;/li&gt;
+  &lt;li&gt;남은 기존 posts 이동하기 &amp;amp;&amp;amp; 7월 19일 부터 달려온, 보름정도의 기간 self-check 회고 posting 하기 (blog setting 은 현재 상태로 만족하고 학습에 몰두해야겠다.)&lt;/li&gt;
+  &lt;li&gt;DOM 개념 잡기&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 객체 2. Github 블로그 세팅</summary></entry><entry><title type="html">21.07.23 TIL</title><link href="/til/21.07.23-TIL/" rel="alternate" type="text/html" title="21.07.23 TIL" /><published>2021-07-23T00:00:00+09:00</published><updated>2021-07-23T00:00:00+09:00</updated><id>/til/21.07.23%20TIL</id><content type="html" xml:base="/til/21.07.23-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
@@ -105,7 +162,7 @@
   &lt;li&gt;CSS 실습 필요. 학습보다는 다양한 id, class를 선언해가며 속성값을 주는 실습이 필요로해보인다.&lt;/li&gt;
   &lt;li&gt;구글의 기술트렌드 리포트를 보니 과거에는 jQuery 가 주요 기술 트렌드였다면 16~18년도 이후  부터는 그 자리를 React에게 내주었다는 리포트를 오늘 학습도중 알게되었다. 
 그렇기에 React는 꾸준히 학습이 필요로 보인다… 아직 찍먹 수준이라 본수업이 다가오기전 매주 주말 통하여 충분한 학습이 필요로 할 듯 하다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html"></summary></entry><entry><title type="html">21.07.22 TIL</title><link href="/til/21.07.22-TIL/" rel="alternate" type="text/html" title="21.07.22 TIL" /><published>2021-07-22T00:00:00+09:00</published><updated>2021-07-22T00:00:00+09:00</updated><id>/til/21.07.22%20TIL</id><content type="html" xml:base="/til/21.07.22-TIL/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 소비자들과 맞닿는 영역에서의 CSS</summary></entry><entry><title type="html">21.07.22 TIL</title><link href="/til/21.07.22-TIL/" rel="alternate" type="text/html" title="21.07.22 TIL" /><published>2021-07-22T00:00:00+09:00</published><updated>2021-07-22T00:00:00+09:00</updated><id>/til/21.07.22%20TIL</id><content type="html" xml:base="/til/21.07.22-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
@@ -160,7 +217,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;다음주 수업은 새로운 pair 와 계산기, 짝수 생성기(?) 간단한 프로그래밍 코딩을 할 예정인듯 보인다. 이번주 수업 내용 복습 및 부족한 부분 check 는 내일 필수적으로 이뤄져야 할 듯 하다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html"></summary></entry><entry><title type="html">21.07.21 TIL</title><link href="/til/21.07.21-TIL/" rel="alternate" type="text/html" title="21.07.21 TIL" /><published>2021-07-21T00:00:00+09:00</published><updated>2021-07-21T00:00:00+09:00</updated><id>/til/21.07.21%20TIL</id><content type="html" xml:base="/til/21.07.21-TIL/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 반복문 코플릿</summary></entry><entry><title type="html">21.07.21 TIL</title><link href="/til/21.07.21-TIL/" rel="alternate" type="text/html" title="21.07.21 TIL" /><published>2021-07-21T00:00:00+09:00</published><updated>2021-07-21T00:00:00+09:00</updated><id>/til/21.07.21%20TIL</id><content type="html" xml:base="/til/21.07.21-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
@@ -254,7 +311,7 @@ not &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&
   &lt;li&gt;
     &lt;p&gt;생활코딩 &lt;del&gt;html&lt;/del&gt; css&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html"></summary></entry><entry><title type="html">21.07.20 TIL</title><link href="/til/21.07.20-TIL/" rel="alternate" type="text/html" title="21.07.20 TIL" /><published>2021-07-20T23:00:00+09:00</published><updated>2021-07-20T23:00:00+09:00</updated><id>/til/21.07.20%20TIL</id><content type="html" xml:base="/til/21.07.20-TIL/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL 1. 문자열, 2. 반복문, 3. 호이스팅, 4. React</summary></entry><entry><title type="html">21.07.20 TIL</title><link href="/til/21.07.20-TIL/" rel="alternate" type="text/html" title="21.07.20 TIL" /><published>2021-07-20T00:00:00+09:00</published><updated>2021-07-20T00:00:00+09:00</updated><id>/til/21.07.20%20TIL</id><content type="html" xml:base="/til/21.07.20-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
@@ -413,7 +470,7 @@ not &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&
       &lt;li&gt;html은 너무 기본적인 문법 및 코드스테이츠 커리큘럼과는 맞지 않는 방향이라 개념만 정립 후 css 수업으로 진행 예정.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html"></summary></entry><entry><title type="html">21.07.19 TIL</title><link href="/til/21.07.19-TIL/" rel="alternate" type="text/html" title="21.07.19 TIL" /><published>2021-07-19T00:00:00+09:00</published><updated>2021-07-19T00:00:00+09:00</updated><id>/til/21.07.19%20TIL</id><content type="html" xml:base="/til/21.07.19-TIL/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 변수, 2. 타입, 3. 함수, 4. 조건문</summary></entry><entry><title type="html">21.07.19 TIL</title><link href="/til/21.07.19-TIL/" rel="alternate" type="text/html" title="21.07.19 TIL" /><published>2021-07-19T00:00:00+09:00</published><updated>2021-07-19T00:00:00+09:00</updated><id>/til/21.07.19%20TIL</id><content type="html" xml:base="/til/21.07.19-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
@@ -443,4 +500,4 @@ not &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&
 
 &lt;ul&gt;
   &lt;li&gt;변수, 타입, 함수, 조건문&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html"></summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">코드스테이츠 1일차. TIL / 1.학습 환경 조성</summary></entry></feed>
