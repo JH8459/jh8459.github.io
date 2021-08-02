@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>21.07.22 TIL | JH8459</title>
+<!-- begin _includes/seo.html --><title>21.07.23 TIL | JH8459</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="JH8459">
-<meta property="og:title" content="21.07.22 TIL">
-<meta property="og:url" content="/til/21.07.22-TIL/">
+<meta property="og:title" content="21.07.23 TIL">
+<meta property="og:url" content="/til/21.07.23-TIL/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-07-22T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-07-23T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="/til/21.07.22-TIL/">
+<link rel="canonical" href="/til/21.07.23-TIL/">
 
 
 
@@ -179,7 +179,7 @@
     
       
       
-        <li class="current">21.07.22 TIL</li>
+        <li class="current">21.07.23 TIL</li>
       
     
   </ol>
@@ -314,16 +314,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="21.07.22 TIL">
+    <meta itemprop="headline" content="21.07.23 TIL">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2021-07-22T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-07-23T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="/til/21.07.22-TIL/" class="u-url" itemprop="url">21.07.22 TIL
+            <a href="/til/21.07.23-TIL/" class="u-url" itemprop="url">21.07.23 TIL
 </a>
           </h1>
           
@@ -337,7 +337,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#오늘-한-일">오늘 한 일</a><ul><li><a href="#1-반복문-코플릿">1. 반복문 코플릿</a></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
+              <ul class="toc__menu"><li><a href="#오늘-한-일">오늘 한 일</a><ul><li><a href="#1-css">1. CSS</a></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
 
             </nav>
           </aside>
@@ -346,33 +346,66 @@
 
 <p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="오늘-한-일">오늘 한 일</h2>
-<h3 id="1-반복문-코플릿">1. 반복문 코플릿</h3>
+<h3 id="1-css">1. CSS</h3>
 <ul>
   <li>
-    <p>오늘 학습한 내용 중 가장 인상 깊었던 코드 풀이를 다시 한번 복습해보겠다. 수를 입력받아 홀수인지 여부를 리턴해야 한다. 반복문(while)문을 사용해야 합니다. 나눗셈(/), 나머지(%) 연산자 사용은 금지됩니다. 0은 짝수로 간주합니다.</p>
+    <p>CSS 문법
+<img src="https://user-images.githubusercontent.com/83164003/127822567-a436423c-8884-48ff-8ccf-16009f5f2071.png" alt="css문법" /></p>
+  </li>
+  <li><strong>선택자(selector)</strong> 에는 태그이름이나 id 또는 클래스 등이 올수있다. 선택자로 특정 요소를 선택할수 있으며, 선택 후 중괄호 안의 선언 블럭에서 이 선택자에 적용 할 내용들을 작성한다.
+    <ul>
+      <li><strong>id</strong>는 한 문서에 단 하나의 id 값을 가질수 있으며 <code class="language-plaintext highlighter-rouge">#</code> 기호를 이용하여 선택한다.</li>
+      <li><strong>class</strong>는 동일한 기능을 하는 css를 여러 요소에 적용하기 위해 선택되며 <code class="language-plaintext highlighter-rouge">.</code> 기호를 이용하여 선택한다.</li>
+    </ul>
+  </li>
+  <li>속성은 선택자 안에 요소로써 적용할 수 있는 내용이다. 속성과 값의 끝에는 세미콜론 <code class="language-plaintext highlighter-rouge">;</code>을 붙여 속성끼리 구분한다.
+    <ul>
+      <li>다양한 속성 값은 해당링크에서 참조하자 <a href="https://developer.mozilla.org/ko/docs/Web/CSS/Reference" target="_blank">CSS 참고서 -MDN</a>.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>박스모델</strong>은 레이아웃 설계시 가장 주의하여 구성해야 한다. (줄바꿈이 되는 박스(block), 옆으로 붙는 박스(inline, inline-block)가 있기에 설계시 미리 계획 후 설계해야한다.)</p>
 
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="cm">/*---입출력 예시---*/</span>
-<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">isOdd</span><span class="p">(</span><span class="mi">17</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; true</span>
-<span class="nx">output</span> <span class="o">=</span> <span class="nx">isOdd</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; false</span>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: right">block</th>
+          <th style="text-align: center">inline-block</th>
+          <th style="text-align: center">inline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">줄바꿈 여부</td>
+          <td style="text-align: right">O</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">X</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">기본적으로 갖는 너비(width)</td>
+          <td style="text-align: right">100%</td>
+          <td style="text-align: center">글자가 차지하는 만큼</td>
+          <td style="text-align: center">글자가 차지하는 만큼</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">width, height 사용 가능여부</td>
+          <td style="text-align: right">O</td>
+          <td style="text-align: center">O</td>
+          <td style="text-align: center">X</td>
+        </tr>
+      </tbody>
+    </table>
 
-<span class="cm">/*---함수 작성---*/</span>
-<span class="kd">function</span> <span class="nx">isOdd</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// while 문의 조건식을 검색할 인자. 변수 i 선언 및 초기값 0 할당.</span>
-  <span class="kd">let</span> <span class="nx">evenOdd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>	<span class="c1">// 짝수와 홀수를 evenOdd에 담긴 양수(홀수)와 음수(짝수)의 값으로 판단 할 예정이므로 evenOdd 변수 선언 (초기 값은 1을 주어서, 0을 짝수로 간주한다. ex)num = 0일 경우 단 한번의 while문 만 실행되므로, evenOdd = -1(음수=짝수) 로 반복문을 나가게 된다. )</span>
+    <ul>
+      <li>줄바꿈이 되는 태그 : <code class="language-plaintext highlighter-rouge">&lt;h1&gt; &lt;p&gt;</code>, … 그 외 태그 알아보기 : <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements" target="_blank">Block-level elements MDN</a></li>
+      <li>줄바꿈이 되지 않는 태그 : <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code>, … 그 외 태그 알아보기 : <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank">Inline elements MDN</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>박스를 구성하는 요소는 다음 그림안의 요소들을 기억하자.</p>
 
-  <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">&lt;=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">num</span><span class="p">)){</span>	<span class="c1">// num값이 음수로 들어 올경우 Math.abs 메소드를 이용하여 절대값으로 연산한다.</span>
-    <span class="nx">evenOdd</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>		<span class="c1">// evenOdd 값에 -1을 곱하여 재 할당한다.</span>
-    <span class="nx">i</span><span class="o">++</span><span class="p">;</span>			<span class="c1">// i를 1만큼 증가시킨다.</span>
-  <span class="p">}</span>				<span class="c1">// Math.abs(num)까지 i 가 while문 안을 수행 후 } 를 빠져나오면 evenOdd는 -1 또는 1의 값 두가지 값중 한가지 값을 내포한다.</span>
-
-  <span class="k">if</span><span class="p">(</span><span class="nx">evenOdd</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>		<span class="c1">// evenOdd의 값이 양수일 경우 true 값을 return 하여 홀수임을 나타낸다</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-  <span class="k">else</span> 				<span class="c1">// evenOdd의 값이 그 외에 경우 false 값을 return 하여 짝수임을 나타낸다</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
+    <p><img src="https://user-images.githubusercontent.com/83164003/127825165-68c259bf-b219-4117-84d1-09b0196a8f6f.png" alt="boxmodel" /></p>
   </li>
 </ul>
 
@@ -383,10 +416,27 @@
 
 <ul>
   <li>
-    <p>읭?.. 반복문 개념학습은 1시간 코드풀이는 5시간.., 이중반복문 좀<del>(좀 많이)</del> 애먹었지만 확실히 문제를 풀어가며 pair분과 머리를 맞대며 도출해내는 과정은 희열감이 느껴지기도 했다. 확실히 개념 수업이라 일컫는 TEXT 읽는 것 보단 직접 짜본 내 코드들이 내 학습에는 더욱 도움이 되는 듯 하였다, 실제로 몇시간은 금방금방 지나가는 기적을 겪였다…</p>
+    <p>질문의 중요성, 이제껏 모르는 점들을 구글링만으로 검색을 해보았다. 하지만 구글은 너무 다양한 질문들이 존재하였다. <a href="https://github.com/codestates/agora-states/discussions" target="_blank"> 아고라스테이츠 </a> 를 보니 나와 비슷한 수준, 비슷한 경험을 가진 사람들이 올린 질문들이 많으니 활용하는게 좋아보인다.</p>
   </li>
   <li>
-    <p>기본 수업 외에 오늘은 내 학습을 못한듯하다… <del>어젠 분명 리액트 수업이 재밌었는데.. 개발환경 구축하고 오늘은 터미널 켜보지도 않았다.</del> 스트레스 컨트롤도 중요하다. 장기전이라 생각하고 임하자.</p>
+    <p>이제껏 CSS는 디자이너(?) 의 영역이라 생각하며 소홀히 해왔는데, 잘못생각했다… 반응형 웹이라던지 소비자들과 맞닿는 영역에서 이뤄지는 CSS도 굉장히 중요하다 생각된다.</p>
+    <ul>
+      <li>예를 들면, <strong>오늘의 집</strong>과 <strong>집꾸미기</strong> 사이트를 보면 CSS의 중요성을 한 눈에 볼 수 있다 생각한다. <del>(오늘의집과 집꾸미기는 필자와는 상관없습니다…)</del> (21.07.23 기준 작성)</li>
+    </ul>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/127821688-a0de6822-3bf4-4da2-9078-671229da40ba.png" alt="오늘의집-1" /></p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/127821760-64cf79cb-d6ee-42e9-9cd4-953404fc476b.png" alt="오늘의집-2" /></p>
+
+    <ul>
+      <li>스크롤을 내려도 구매옵션과 구매란이 따라오는 CSS 디자인은 상품상세설명을 쉽게 보면서 구매까지 소비자가 불편함없이 프로세스가 이어진다.</li>
+    </ul>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/127821976-21435a42-7298-464f-acae-d2780f065456.png" alt="집꾸미기" /></p>
+
+    <ul>
+      <li>반면 스크롤을 내리면 구매옵션과 구매란이 따라 오지 않는 고정적인 CSS 디자인은 소비자에게 옵션암기(!?) 라는 불편함을  강요를 한다. <em>(구매색상이 마음에 들어 구매하려고 상단으로 올려서 모든 옵션을 다 고른뒤 구매버튼을 누르면 “아 색상이 뭐였지..?” 라는 생각이 다시 떠올라 웹페이지를 다시 내려본다는 등의 불편함이 야기될수 있음)</em></li>
+    </ul>
   </li>
 </ul>
 
@@ -396,7 +446,9 @@
 <h2 id="내일-할-일">내일 할 일</h2>
 
 <ul>
-  <li>다음주 수업은 새로운 pair 와 계산기, 짝수 생성기(?) 간단한 프로그래밍 코딩을 할 예정인듯 보인다. 이번주 수업 내용 복습 및 부족한 부분 check 는 내일 필수적으로 이뤄져야 할 듯 하다.</li>
+  <li>CSS 실습 필요. 학습보다는 다양한 id, class를 선언해가며 속성값을 주는 실습이 필요로해보인다.</li>
+  <li>구글의 기술트렌드 리포트를 보니 과거에는 jQuery 가 주요 기술 트렌드였다면 16~18년도 이후  부터는 그 자리를 React에게 내주었다는 리포트를 오늘 학습도중 알게되었다. 
+그렇기에 React는 꾸준히 학습이 필요로 보인다… 아직 찍먹 수준이라 본수업이 다가오기전 매주 주말 통하여 충분한 학습이 필요로 할 듯 하다.</li>
 </ul>
 
         
@@ -424,7 +476,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-07-22T00:00:00+09:00">July 22, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-07-23T00:00:00+09:00">July 23, 2021</time></p>
 
       </footer>
 
@@ -433,12 +485,11 @@
       
   <nav class="pagination">
     
-      <a href="/til/21.07.21-TIL/" class="pagination--pager" title="21.07.21 TIL
+      <a href="/til/21.07.22-TIL/" class="pagination--pager" title="21.07.22 TIL
 ">이전</a>
     
     
-      <a href="/til/21.07.23-TIL/" class="pagination--pager" title="21.07.23 TIL
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -519,8 +570,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "/til/21.07.22-TIL/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/til/21.07.22 TIL"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "/til/21.07.23-TIL/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/21.07.23 TIL"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
