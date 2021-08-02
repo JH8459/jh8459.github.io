@@ -302,7 +302,6 @@ defaults:
       read_time: false
       comments: true
       share: false
-      related: true
       popular: false
       toc: true
       toc_sticky: true
