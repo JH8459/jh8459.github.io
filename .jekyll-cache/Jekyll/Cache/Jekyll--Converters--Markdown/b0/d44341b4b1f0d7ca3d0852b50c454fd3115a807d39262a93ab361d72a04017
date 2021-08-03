@@ -1,0 +1,157 @@
+I"t9<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="오늘-한-일">오늘 한 일</h2>
+<h3 id="1-다양한-css-셀렉터">1. 다양한 CSS 셀렉터</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">h1</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// 셀렉터</span>
+<span class="nx">div</span> <span class="p">{</span>  <span class="p">}</span>  
+
+<span class="o">*</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// 전체 셀렉터</span>
+
+<span class="nx">section</span><span class="p">,</span> <span class="nx">h1</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// 태그 셀렉터</span>
+
+<span class="err">#</span><span class="nx">only</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// ID 셀렉터</span>
+
+<span class="p">.</span><span class="nx">center</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// class 셀렉터</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="nx">href</span><span class="p">]</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// attribute 셀렉터</span>
+<span class="nx">p</span><span class="p">[</span><span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">only</span><span class="dl">"</span><span class="p">]</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">header</span> <span class="nx">h1</span> <span class="p">{}</span>  <span class="c1">// 후손 셀렉터</span>
+
+<span class="nx">header</span> <span class="o">&gt;</span> <span class="nx">p</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 자식 셀렉터</span>
+
+<span class="nx">section</span> <span class="o">+</span> <span class="nx">p</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 인접 형제 셀렉터</span>
+
+<span class="nx">section</span> <span class="o">~</span> <span class="nx">p</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 형제 셀렉터</span>
+
+<span class="nl">a</span><span class="p">:</span><span class="nx">hover</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 가상 셀렉터</span>
+<span class="nl">a</span><span class="p">:</span><span class="nx">active</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nl">input</span><span class="p">:</span><span class="nx">checked</span> <span class="o">+</span> <span class="nx">span</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 요소 상태 셀렉터</span>
+<span class="nl">input</span><span class="p">:</span><span class="nx">enabled</span> <span class="o">+</span> <span class="nx">span</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nl">p</span><span class="p">:</span><span class="nx">first</span><span class="o">-</span><span class="nx">child</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 구조 가상 클래스 셀렉터</span>
+<span class="nx">ul</span> <span class="o">&gt;</span> <span class="nx">li</span><span class="p">:</span><span class="nx">last</span><span class="o">-</span><span class="nx">child</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nl">input</span><span class="p">:</span><span class="nx">not</span><span class="p">([</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">])</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// 부정 셀렉터</span>
+<span class="nl">div</span><span class="p">:</span><span class="nx">not</span><span class="p">(:</span><span class="nx">nth</span><span class="o">-</span><span class="k">of</span><span class="o">-</span><span class="nx">type</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="nx">input</span><span class="p">[</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">]:</span><span class="nx">valid</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// 정합성 확인 셀렉터</span>
+<span class="nx">input</span><span class="p">[</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">]:</span><span class="nx">invalid</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>새로 학습한 셀렉터</p>
+  <blockquote>
+    <p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors" target="_blank"> attribute 셀렉터 </a> , <a href="https://developer.mozilla.org/ko/docs/Web/CSS/:not" target="_blank"> 부정 셀렉터 </a></p>
+  </blockquote>
+</blockquote>
+
+<hr />
+<h3 id="2-1--css-layout-atomic-css">2-1 . CSS layout (Atomic CSS)</h3>
+<p><img src="https://user-images.githubusercontent.com/83164003/127945320-113288ab-1eee-41b8-b76e-52b3528d1b7d.png" alt="스크린샷, 2021-08-03 10-54-00" /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col w10"</span><span class="nt">&gt;</span> 
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon"</span><span class="nt">&gt;</span>아이콘 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon"</span><span class="nt">&gt;</span>아이콘 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon"</span><span class="nt">&gt;</span>아이콘 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col w20"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row h40"</span><span class="nt">&gt;</span>영역1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row h40"</span><span class="nt">&gt;</span>영역2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row h20"</span><span class="nt">&gt;</span>영역3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col w70"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row h80"</span><span class="nt">&gt;</span>영역4<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row h20"</span><span class="nt">&gt;</span>영역5<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.w70</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">70%</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.h40</span> <span class="p">{</span> <span class="nl">height</span><span class="p">:</span> <span class="m">40%</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="o">*</span> <span class="p">{</span>  <span class="err">//</span> <span class="err">기본</span> <span class="err">스타일</span> <span class="err">제거</span> <span class="err">(box-sizing)</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>  <span class="err">//</span> <span class="err">기본</span> <span class="err">스타일</span> <span class="err">제거</span> <span class="err">(여백</span> <span class="err">제거)</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>박스의 시작을 정확히 (0,0)의 위치에서 시작하고 싶은데, <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> 태그가 가진 기본 스타일에 약간의 여백을 포함하지 않아 계산에 어려움이 있다. 위에 언급한 문제를 해결할 몇 줄의 코드를 적용시키면, 기본 스타일링을 제거하여 디자인한 대로 레이아웃을 구현할 수 있습니다.</li>
+  <li>이렇게 클래스 이름과 구현을 1:1로 일치시켜 아주 작은 단위로 CSS를 작성 기법을 Atomic CSS 방법론이라고 한다.</li>
+</ul>
+
+<hr />
+
+<h3 id="2-1--css-layout-flexbox">2-1 . CSS layout (flexbox)</h3>
+<ul>
+  <li>flexbox로 레이아웃을 구성한다는 것은, 박스를 유연하게 늘리거나 줄여 레이아웃을 잡는 방법이다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"outer"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>box1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>box2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>box3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#outer</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">dotted</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">green</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127948605-5b677868-0775-4312-846c-2c310b39c343.png" alt="스크린샷, 2021-08-03 11-34-39" /></p>
+
+<ul>
+  <li>
+    <p>부모 박스요소에 display: flex를 적용해, 자식 박스의 방향과 크기를 결정한다. 기본값으로, display: flex가 적용된 부모 박스의 자식 요소는 왼쪽부터 차례대로 이어 배치된다.</p>
+  </li>
+  <li>반드시 알아두기: grow(팽창 지수), shrink(수축 지수), basis(기본 크기)
+    <ul>
+      <li>자식 박스에 어떠한 속성도 주지 않으면, <code class="language-plaintext highlighter-rouge">flex: 0 1 auto;</code> 기본값이 적용됩니다.</li>
+    </ul>
+  </li>
+  <li>grow, shrink 속성은 단위가 없고, 비율에 따라 결과가 달라진다. 부모 박스 안에 n개의 자식 박스가 있다고 가정하고 각 자식 박스가 갖는 grow값의 총 합이 n이라면,  grow 속성의 값을 1로 설정하는 것은 1/n 가로 또는 세로길이를 적용한다는 의미이다.</li>
+</ul>
+
+<hr />
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"outer"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box target"</span><span class="nt">&gt;</span>.box.target<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>.box<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>.box<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.target</span> <span class="p">{</span>
+  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span> <span class="m">1</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><img src="https://user-images.githubusercontent.com/83164003/127949162-69b3778e-7417-46e9-9fd4-f69cefdfed57.png" alt="스크린샷, 2021-08-03 11-41-43" /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">flex-grow  : 1</code> 이다. <code class="language-plaintext highlighter-rouge">box.target</code>은 부모 박스의 가로 길이 중에서 남은 빈 영역만큼 늘어나게 된다. 위 설명대로라면 전체 자식요소가 가진 grow 값의 합은 1+0+0 = 1이므로, <code class="language-plaintext highlighter-rouge">box.target</code>의 가로 크기는 1/1 = 100% 이다. 그러나 다른 자식 박스 안에 이미 콘텐츠가 존재하므로, 다른 자식 박스안의 콘텐츠가 담긴 길이를 제외한 나머지 가로 길이가 <code class="language-plaintext highlighter-rouge">box.target</code>의 가로 길이입니다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+:ET

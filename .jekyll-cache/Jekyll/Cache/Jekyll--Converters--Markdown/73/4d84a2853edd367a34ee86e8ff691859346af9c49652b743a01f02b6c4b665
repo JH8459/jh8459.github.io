@@ -1,0 +1,35 @@
+I"�<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="오늘-한-일">오늘 한 일</h2>
+<h3 id="1-다양한-css-셀렉터">1. 다양한 CSS 셀렉터</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">h1</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// 셀렉터</span>
+<span class="nx">div</span> <span class="p">{</span>  <span class="p">}</span>  
+
+<span class="o">*</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// 전체 셀렉터</span>
+
+<span class="nx">section</span><span class="p">,</span> <span class="nx">h1</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// 태그 셀렉터</span>
+
+<span class="err">#</span><span class="nx">only</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// ID 셀렉터</span>
+
+<span class="p">.</span><span class="nx">center</span> <span class="p">{</span>  <span class="p">}</span>  <span class="c1">// class 셀렉터</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="nx">href</span><span class="p">]</span> <span class="p">{</span> <span class="p">}</span>  <span class="c1">// attribute 셀렉터</span>
+<span class="nx">p</span><span class="p">[</span><span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">only</span><span class="dl">"</span><span class="p">]</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors" target="_blank"> attribute 셀렉터 </a></p>
+  <h3 id="2-css-layout">2. CSS layout</h3>
+</blockquote>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+:ET
