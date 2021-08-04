@@ -1,0 +1,46 @@
+I"�<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-git">1. Git</h3>
+<ul>
+  <li>Git이란 분산형 버전 관리 시스템(Version Control System) 의 한 종류이며, 빠른 수행 속도에 중점을 둔다.
+    <ul>
+      <li><em>“버전 관리 시스템”</em> 이란 파일 변화를 시간에 따라 기록했다가 이후에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템이다. 동일한 정보에 대한 여러 버전을 관리하게 되며, 버전을 통해 시간적으로 변경 사항과 변경 사항을 작성한 작업자를 추적할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="1-1-github">1-1. GitHub</h4>
+<ul>
+  <li>Git을 통하여 버전관리를 한다 이미 언급을하였다. 그렇다면 Github는 무엇일까? Github는 Git Repository를 관리할 수 있는 클라우드 기반 서비스이다.
+즉 Git으로 버전을 관리하는 폴더에 대해서 Github을 통해 여러 사람들이 공유하고 접근할 수 있게되기때문에 Git이 분산형 버전 관리 시스템으로 불리울 수 있게된다.</li>
+</ul>
+
+<h4 id="1-2-git-repository">1-2. Git Repository</h4>
+<ul>
+  <li>내가 작업하는 소스 코드 폴더가 버전 관리를 받게 하기 위해서는 내 폴더를 Git의 관리 아래에 두어야 한다. 이때 Git으로 관리되는 폴더를 Git repository 라고 부른다.
+Git repository 는 Remote Repository와 Local Repository 두 종류의 저장소를 제공한다.
+    <ul>
+      <li>Remote Repository : 원격 온라인 서버 상의 저장소이다. 여러 사람이 함께 공유가 가능하다.</li>
+      <li>Local Repository : 내 컴퓨터의 저장소이다. 개인 전용 저장소이며 내 컴퓨터 안의 저장소이기 때문에 오프라인 작업또한 가능하다.</li>
+    </ul>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/128201330-25d70b76-a2f6-42e8-a6ee-ced5dea3b517.png" alt="git repository" /></p>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li></li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<p>-</p>
+:ET
