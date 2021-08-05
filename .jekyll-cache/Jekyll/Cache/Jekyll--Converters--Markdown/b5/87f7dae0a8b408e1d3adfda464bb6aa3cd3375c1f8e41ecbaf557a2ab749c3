@@ -1,0 +1,30 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/128357082-c2307e8c-b553-4983-a044-5754d7e0be79.jpeg" alt="problem" /></p>
+
+<h1 id="걸림돌--javascript-깊은-복사-얕은-복사">걸림돌 : [JavaScript] 깊은 복사, 얕은 복사</h1>
+<h2 id="구체적인-문제">구체적인 문제</h2>
+<ul>
+  <li>객체를 함수의 전달인자로 넘겨줄 경우, 레퍼런스가 전달되는 예제 코드 실습중. 이해가 안간 부분을 우선 포스팅두었다.</li>
+  <li>참조 자료형은 원시자료형과 다르게 변수명에는 주소값이 할당되며, 변수 내부의 값들은 <code class="language-plaintext highlighter-rouge">heap</code> 공간에 저장된다 학습하였다.  아래 코드가 문제가 발생된 요인이다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mastermind</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Joker</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">henchwoman</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Harley</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">relations</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Anarky</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Duela Dent</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Lucy</span><span class="dl">'</span><span class="p">],</span>
+	<span class="na">twins</span><span class="p">:</span> <span class="p">{</span>
+	 <span class="dl">'</span><span class="s1">Jared Leto</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Suicide Squad</span><span class="dl">'</span><span class="p">,</span>
+	 <span class="dl">'</span><span class="s1">Joaquin Phoenix</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Joker</span><span class="dl">'</span><span class="p">,</span>
+	 <span class="dl">'</span><span class="s1">Heath Ledger</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">The Dark Knight</span><span class="dl">'</span><span class="p">,</span>
+	 <span class="dl">'</span><span class="s1">Jack Nicholson</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Tim Burton Batman</span><span class="dl">'</span><span class="p">,</span>
+	<span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>해당 내용으로 정의된 객체에</li>
+</ul>
+
+<p>```javascript
+const copiedObj = Object.assign({}, obj);
+delete obj.twins[‘Jared Leto’];</p>
+:ET
