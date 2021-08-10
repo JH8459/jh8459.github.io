@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-06T20:47:11+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.06 TIL / 1. DOM 2. 유효성 검사 실습</title><link href="/til/21.08.06-TIL/" rel="alternate" type="text/html" title="21.08.06 TIL / 1. DOM 2. 유효성 검사 실습" /><published>2021-08-06T00:00:00+09:00</published><updated>2021-08-06T00:00:00+09:00</updated><id>/til/21.08.06%20TIL</id><content type="html" xml:base="/til/21.08.06-TIL/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-10T09:53:12+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.10 TIL / 1. 고차함수</title><link href="/til/21.08.10-TIL/" rel="alternate" type="text/html" title="21.08.10 TIL / 1. 고차함수" /><published>2021-08-10T00:00:00+09:00</published><updated>2021-08-10T00:00:00+09:00</updated><id>/til/21.08.10%20TIL</id><content type="html" xml:base="/til/21.08.10-TIL/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1-고차함수&quot;&gt;1. 고차함수&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;p&gt;-&lt;/p&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 고차함수</summary></entry><entry><title type="html">21.08.06 TIL / 1. DOM 2. 유효성 검사 실습</title><link href="/til/21.08.06-TIL/" rel="alternate" type="text/html" title="21.08.06 TIL / 1. DOM 2. 유효성 검사 실습" /><published>2021-08-06T00:00:00+09:00</published><updated>2021-08-06T00:00:00+09:00</updated><id>/til/21.08.06%20TIL</id><content type="html" xml:base="/til/21.08.06-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
@@ -102,7 +123,7 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;주말중 리액트 클론 코딩 완료하기. 이번주 부족했던 &lt;em&gt;클로저, 얕은복사/깊은복사&lt;/em&gt; 추가 학습.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. DOM 2. 유효성 검사 실습</summary></entry><entry><title type="html">21.08.05 TIL / 1.Spread&amp;amp;Rest 문법, 2. 구조분해 3. JavaScript 핵심문법(스코프, 클로저..) 문제풀이</title><link href="/til/21.08.05-TIL/" rel="alternate" type="text/html" title="21.08.05 TIL / 1.Spread&amp;amp;Rest 문법, 2. 구조분해 3. JavaScript 핵심문법(스코프, 클로저..) 문제풀이" /><published>2021-08-05T00:00:00+09:00</published><updated>2021-08-05T00:00:00+09:00</updated><id>/til/21.08.05%20TIL</id><content type="html" xml:base="/til/21.08.05-TIL/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. DOM 2. 유효성 검사 실습</summary></entry><entry><title type="html">21.08.05 TIL / 1. Spread&amp;amp;Rest 문법, 2. 구조분해 3. JavaScript 핵심문법(스코프, 클로저..) 문제풀이</title><link href="/til/21.08.05-TIL/" rel="alternate" type="text/html" title="21.08.05 TIL / 1. Spread&amp;amp;Rest 문법, 2. 구조분해 3. JavaScript 핵심문법(스코프, 클로저..) 문제풀이" /><published>2021-08-05T00:00:00+09:00</published><updated>2021-08-05T00:00:00+09:00</updated><id>/til/21.08.05%20TIL</id><content type="html" xml:base="/til/21.08.05-TIL/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
@@ -265,7 +286,7 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;내일의 정규일정은 DOM이다.. 많은 선행학습을 하지 못하여 걱정이다. 우선 한주의 마지막 정규 학습일정이기에, 부족한 부분은 주말통해서 보완할 수 있게끔 노력해야겠다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1.Spread&amp;Rest 문법, 2. 구조분해 3. JavaScript 핵심문법(스코프, 클로저..) 문제풀이</summary></entry><entry><title type="html">[걸림돌] JavaScript 깊은 복사, 얕은 복사</title><link href="/problem/copy/" rel="alternate" type="text/html" title="[걸림돌] JavaScript 깊은 복사, 얕은 복사" /><published>2021-08-05T00:00:00+09:00</published><updated>2021-08-05T00:00:00+09:00</updated><id>/problem/copy</id><content type="html" xml:base="/problem/copy/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128357082-c2307e8c-b553-4983-a044-5754d7e0be79.jpeg&quot; alt=&quot;problem&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Spread&amp;Rest 문법, 2. 구조분해 3. JavaScript 핵심문법(스코프, 클로저..) 문제풀이</summary></entry><entry><title type="html">[걸림돌] JavaScript 깊은 복사, 얕은 복사</title><link href="/problem/copy/" rel="alternate" type="text/html" title="[걸림돌] JavaScript 깊은 복사, 얕은 복사" /><published>2021-08-05T00:00:00+09:00</published><updated>2021-08-05T00:00:00+09:00</updated><id>/problem/copy</id><content type="html" xml:base="/problem/copy/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128357082-c2307e8c-b553-4983-a044-5754d7e0be79.jpeg&quot; alt=&quot;problem&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;걸림돌-javascript-깊은-복사-얕은-복사&quot;&gt;[걸림돌] JavaScript 깊은 복사, 얕은 복사&lt;/h1&gt;
 &lt;h2 id=&quot;1-구체적인-문제&quot;&gt;1. 구체적인 문제&lt;/h2&gt;
@@ -1294,28 +1315,4 @@ Git repository 는 Remote Repository와 Local Repository 두 종류의 저장소
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;React 와 DOM 은 필히 선행학습이 수반되어야 할듯하다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Linux CLI, 2. 패키지와 패키지 매니저, 3. Node.js, 4. React</summary></entry><entry><title type="html">21.07.27 TIL / 1. 계산기 실습(nightmare)</title><link href="/til/21.07.27-TIL/" rel="alternate" type="text/html" title="21.07.27 TIL / 1. 계산기 실습(nightmare)" /><published>2021-07-27T00:00:00+09:00</published><updated>2021-07-27T00:00:00+09:00</updated><id>/til/21.07.27%20TIL</id><content type="html" xml:base="/til/21.07.27-TIL/">&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-계산기-실습--github-참조&quot;&gt;1. 계산기 실습 : &lt;a href=&quot;https://github.com/JH8459/im-sprint-calculator&quot; target=&quot;_blank&quot;&gt;Github 참조.&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128197509-0d4eb176-88a6-4b30-bc89-5c1e6fe2ee54.png&quot; alt=&quot;스크린샷, 2021-08-04 23-13-16&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;점점.. 수업에 내가 밀려나간다. 장기전이다, 멘탈 관리. 모르는 부분이있다면 붙잡고 끙끙 앓기보다는 조금더 학습 후 주말중 부족한 부분을 다시 학습하여 멘탈 관리 및 부족한 부분을 메꿔나가야 할 듯 하다.&lt;/li&gt;
-  &lt;li&gt;CSS .. 만만히 볼 분야가 절대 아니다. JS를 통하여 CSS를 조작하거나 제어하는 분야 말고도 특정한 상태나 규칙에 따라 CSS 스스로 동작하는 선택자들 또한 존재하였다. 단순 코드 몇줄 만으로도 코드가 다이나믹해지는 효과를 볼 수 있다.&lt;/li&gt;
-  &lt;li&gt;선택자에는 태그, id, class만 선택되는줄 알았다..복합선택자, 부모/자식 개념 만만하지않다…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;내일 일정은 리눅스 기초 수업이다. React를 맛만 보았을때 node.js 개발 환경은 이미 내 PC에 셋팅을 해두었다. 수업방향에 맞춰서 다시 세팅해보고 React 또한 다시 학습해보는 기회를 가져봐야겠다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">1. 계산기 실습(nightmare)</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Linux CLI, 2. 패키지와 패키지 매니저, 3. Node.js, 4. React</summary></entry></feed>
