@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-11T01:12:28+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.10 TIL / 1. 고차함수</title><link href="/til/21.08.10-TIL/" rel="alternate" type="text/html" title="21.08.10 TIL / 1. 고차함수" /><published>2021-08-10T00:00:00+09:00</published><updated>2021-08-10T00:00:00+09:00</updated><id>/til/21.08.10%20TIL</id><content type="html" xml:base="/til/21.08.10-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-12T00:26:17+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.11 TIL / 1. React</title><link href="/til/21.08.11TIL/" rel="alternate" type="text/html" title="21.08.11 TIL / 1. React" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>/til/21.08.11TIL</id><content type="html" xml:base="/til/21.08.11TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1-react&quot;&gt;1. React&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;프론트앤드 개발을 위한 JavaScript 오픈소스 라이브러리.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-1-리액트의-3가지-특징&quot;&gt;1-1. 리액트의 3가지 특징&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;선언형 (Declarative)
+    &lt;ul&gt;
+      &lt;li&gt;코드를 면밀히 뜯어보지 않아도, 코드를 유추할 수 있게 된다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;한 페이지를 보여주기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSS&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JS&lt;/code&gt;로 나눠서 적기보다는, 하나의 파일에 명시적으로 작성할 수 있게 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JSX&lt;/code&gt;&lt;/strong&gt; 를 활용한 선언형 프로그래밍을 지향한다.&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128956477-bcdf1138-721b-4bf9-83eb-ba6de1d2d51f.png&quot; alt=&quot;스크린샷, 2021-08-11 10-36-42&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;컴포넌트 기반 (Component-Based)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;컴포넌트(Component)&lt;/em&gt; 란 독립적인 단위모듈이다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;리액트는 하나의 기능 구현을 위해 여러 종류의 코드를 묶어둔 컴포넌트를 기반으로 개발한다. 컴포넌트로 분리하면 서로 독립적이고 재사용에 용이하기 때문에, 기능 자체에 집중하여 개발이 가능하게 된다.&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128957120-9e7a2b60-cca4-457f-a240-a907bb29505b.png&quot; alt=&quot;스크린샷, 2021-08-11 10-41-55&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;범용성
+    &lt;ul&gt;
+      &lt;li&gt;리액트는 JavaScript 프로젝트 어디든 유연하게 적용될 수 있다.&lt;/li&gt;
+      &lt;li&gt;Facebook 에서 관리되어 안정적이고, 가장 유명하며 리액트의 형제격인 &lt;em&gt;리액트 네이티브&lt;/em&gt; 로 모바일 플랫폼까지 지원 가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;1-2-jsx&quot;&gt;1-2. JSX&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSX는 JS와는 유사하며 JS를 확장한 문법이지만, 브라우저가 바로 실행할 수 있는 JavaScript 코드는 아니다. &lt;strong&gt;“Babel”&lt;/strong&gt; 을 이용하여 JSX를 브라우저가 이해할 수 있는 JS로 컴파일하게 되며, 컴파일 된 JS를 통하여 브라우저가 읽고 화면에 렌더링 할 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;React 에서는 DOM 과 다르게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSS&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jsx&lt;/code&gt; 문법만 가지고 웹 애플리케이션을 개발할 수 있게된다. 즉, 컴포넌트 하나를 구현하기 위해서 필요한 파일이 줄어들었고, 한눈에 컴포넌트를 확인하기에 더욱 용이하다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128957709-6ed1788f-6a97-4a2c-be31-94ceb4d88297.png&quot; alt=&quot;스크린샷, 2021-08-11 10-54-31&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-react-기본-문법-실습--github-참조&quot;&gt;2. React 기본 문법 실습 : &lt;a href=&quot;https://github.com/JH8459/im-sprint-react-twittler-intro&quot; target=&quot;_blank&quot;&gt;Github 참조&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/129056832-1bd66fa4-4693-4363-98ce-5cbf39f31c60.png&quot; alt=&quot;스크린샷, 2021-08-12 00-19-37&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;우선 컴포넌트로 구성된 모듈이 모여져서 만들어진 React 의 기본 문법만 학습하였다. 아직 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 의 개념까지 확장이 안되어서 웹사이트라 말하긴 아쉽다. 조금 더 다듬어서 이번주 내로는 리액트에 대한 학습내용을 채워갈 예정이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;~08.17 까진 리액트, 돔, 고차함수 집중&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">21.08.11 TIL / 1. React</summary></entry><entry><title type="html">21.08.10 TIL / 1. 고차함수</title><link href="/til/21.08.10-TIL/" rel="alternate" type="text/html" title="21.08.10 TIL / 1. 고차함수" /><published>2021-08-10T00:00:00+09:00</published><updated>2021-08-10T00:00:00+09:00</updated><id>/til/21.08.10%20TIL</id><content type="html" xml:base="/til/21.08.10-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-고차함수&quot;&gt;1. 고차함수&lt;/h3&gt;
 &lt;h4 id=&quot;1-1-일급-객체&quot;&gt;1-1. 일급 객체&lt;/h4&gt;
@@ -1459,88 +1525,4 @@ Git repository 는 Remote Repository와 Local Repository 두 종류의 저장소
 &lt;ul&gt;
   &lt;li&gt;이번주 마무리. 배열,객체 수업 후 배열은 코플릿 페어 진행이 예정되어있다. 저번주 반복문 코플릿이후 오랫만의 코플릿이기때문에 걱정된다. 배열은 오늘 자기 전 개념정도만 한번 훑고 자야겠다. 아직도 소수 찾는 이중반복문이 머릿속에 그려진다.&lt;/li&gt;
   &lt;li&gt;리액트 선행학습 위한 코딩애플…유료다. &lt;a href=&quot;https://www.youtube.com/channel/UCxft4RZ8lrK_BdPNz8NOP7Q&quot; target=&quot;_blank&quot;&gt;유튜브 코딩앙마&lt;/a&gt; 님의 수업이 유익해보이며 무료로 시청이 가능해보인다. 이번주~다음주 중 리액트 클론 코딩 및 따라하기는 우선 코딩앙마님의 해당 수업으로 진행해볼 예정이다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Git</summary></entry><entry><title type="html">21.07.28 TIL / 1. Linux CLI, 2. 패키지와 패키지 매니저, 3. Node.js, 4. React</title><link href="/til/21.07.28-TIL/" rel="alternate" type="text/html" title="21.07.28 TIL / 1. Linux CLI, 2. 패키지와 패키지 매니저, 3. Node.js, 4. React" /><published>2021-07-28T00:00:00+09:00</published><updated>2021-07-28T00:00:00+09:00</updated><id>/til/21.07.28%20TIL</id><content type="html" xml:base="/til/21.07.28-TIL/">&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-linux-cli&quot;&gt;1. Linux CLI&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;명령 줄 인터페이스(CLI, Command line interface) 또는 명령어 인터페이스는 텍스트 터미널을 통해 사용자와 컴퓨터가 상호 작용하는 방식을 뜻한다. 즉, 작업 명령은 사용자가 컴퓨터 키보드 등을 통해 문자열의 형태로 입력하며, 컴퓨터로부터의 출력 역시 문자열의 형태로 주어진다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-패키지와-패키지-매니저&quot;&gt;2. 패키지와 패키지 매니저&lt;/h3&gt;
-&lt;h4 id=&quot;2-1-패키지&quot;&gt;2-1. 패키지&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;리눅스에서 빈번하게 사용하는 ‘패키지’란 커널 및 라이브러리 버전의 배포판 환경에 맞추어 빌드한 실행파일을 압축한 것이다.&lt;/li&gt;
-  &lt;li&gt;우분투 환경에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데미안 스타일의 패키지 방식&lt;/code&gt;을 이용하기에 해당 방식을 학습하였으며, 해당 환경으로 환경을 구성하였다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-2-패키지-매니저&quot;&gt;2-2. 패키지 매니저&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;APT(Advanced Packaging Tool)는 데비안과 우분투를 포함하여 데비안 계열 리눅스 배포판들의 주 패키지 관리 도구이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-nodejs&quot;&gt;3. Node.js&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;쉽게 말하면 JavaScript 런타임(Runtime)이다., 여기서 런타임이란 프로그래밍 언어가 구동되는 환경을 뜻한다. Node.js 는 Chrome V8 JavaScript 엔진으로 빌드된 JavaScript 런타임이다. &lt;em&gt;Node.js의 패키지 생태계인 npm&lt;/em&gt;은 세계에서 가장 큰 오픈 소스 라이브러리 생태계이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3-1-nodejs를-왜-사용하나&quot;&gt;3-1. Node.js를 왜 사용하나?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Node.js 라이브러리 내의 API는 모두 비동기식이다. None-Blocking 즉, 멈추지 않는다는 의미이다. API를 실행 하고 완료되기까지 기다리지 않고 바로 다음 API를 실행한다. 그리고 예전에 실행한 API가 값을 반환하면 이벤트 루프가 이를 확인하고 값을 받아온다. 단일 쓰레드 모델을 사용하며, 이벤트 메커니즘을 통하여 서버가 멈추지 않고 반응할 수 있기에 확장성이 좋다.&lt;/p&gt;
-
-    &lt;p&gt;위와같은 특징때문에 데이터를 실시간을 다루는 애플리케이션이나 싱글페이지 애플리케이션(SPA), 입출력이 잦은 애플리케이션을 개발할 때 뛰어난 효율성을 발휘할 수 있다. 다만, 싱글 쓰레드 모델이기 때문에 하나의 작업 자체가 시간이 많이 걸리면 전체 시스템의 성능이 아주 급격하게 나빠지므로 CPU 사용률이 높은 애플리케이션에선 권장되지 않는다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3-2-nvm-&quot;&gt;3-2. nvm ?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;NVM(Node Version Manager)은 Node.js의 버전을 관리하기 위한 도구이다. 개발툴들이 다양해 질수록 경우에 따라서 Node.js의 버전을 달리 사용해야 할 필요성이 생기게되었다.&lt;/p&gt;
-
-    &lt;p&gt;사용목적은 협업 혹은 다양한 프로젝트를 동시에 진행 할 때 다양한 라이브러리 / 프레임워크 / 개발 툴들의 버전 호환 문제를 피할수있는 가장 편리한 방법중 하나이기 때문이다. 또한 nvm을 통하면 다양한 버전의 Node.js를 설치를 간편하게 할 수 있으며, use 커맨드를 이용하여 필요한 Node.js의 버전으로 스위칭 할수 있게된다. 디폴트 버전 설정, 설치한 버전들의 리스트 확인, 필요 없는 버전 삭제 등 소위 버전 관리가 매우 간편해 진다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3-3-npm-&quot;&gt;3-3. npm ?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;하나의 프로그램은 다양한 모듈이 합쳐져서 만들어진다. 이때 개발자는 이 모듈을 모두 개발할 이유가 없다. 이미 만들어진 검증된 코드(모듈)을 잘 가져와서 효율적인 방법으로 쓰게끔 도와주는게 npm(Node Package Manager)이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3-4-packagejson&quot;&gt;3-4. package.json&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로젝트 전반에 관한 정보를 정의하고 의존하는 패키지 버전 정보를 명시해주는 파일이다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일과 함께 프로젝트 배포시 이점은 상당하다. 해당 프로젝트가 포함하고 있는 모든 모듈을 모두 전달하지 않아도, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 에 필요 모듈이 모두 명시되어 있기 때문에 사용자가 배포자가 모든 모듈을 배포하지 않아도 필요한 모듈은 npm을 통하여 직접 다운받아서 쓰면 되기때문이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;4--코딩애플-react-기초-3강&quot;&gt;4. ~ 코딩애플 React 기초 3강&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;아직 CLI환경에서의 작업은 익숙하지 않다. 진짜 컴퓨터와 대화하는 느낌이랄까…GUI가 확실히 편리하지만, 개발자는 컴퓨터와 가까운 직업이라 생각하므로 필히 학습하고 넘어가자.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Node.js 에서 npm 을 통하여 사용하는 패키지들은 프로젝트의 배포와 설치의 유연함이 강력했다. package.json 에 명시된 정보만으로 빠르게 프로젝트에 필요한 모듈들을 파악할 수 있었으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install&lt;/code&gt; 명령어 한줄로 필요한 모듈들의 모음인 패키지를 받을수 있었다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;React 에서의 변수는 일반적인 변수 선언보다는 state를 쓰는게 웹앱 사이트 제작에 도움이 된다. &lt;del&gt;갓 state&lt;/del&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;생활코딩 리액트 강의는 구 버전임을 깨닫고 유튜브 채널 중 코딩애플 님 클론 코딩을 우선 따라하기 방식으로 학습하기로 결정.
-    &lt;ul&gt;
-      &lt;li&gt;4강 수업전, 블로그 글 리스트 UI 3개 완성하기 (제목 내용은 state 이용)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;React 와 DOM 은 필히 선행학습이 수반되어야 할듯하다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Linux CLI, 2. 패키지와 패키지 매니저, 3. Node.js, 4. React</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Git</summary></entry></feed>
