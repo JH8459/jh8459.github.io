@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-12T00:26:17+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.11 TIL / 1. React</title><link href="/til/21.08.11TIL/" rel="alternate" type="text/html" title="21.08.11 TIL / 1. React" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>/til/21.08.11TIL</id><content type="html" xml:base="/til/21.08.11TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-13T02:20:53+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.12 TIL / 1. React SPA 2. React Router</title><link href="/til/21.08.12-TIL/" rel="alternate" type="text/html" title="21.08.12 TIL / 1. React SPA 2. React Router" /><published>2021-08-12T00:00:00+09:00</published><updated>2021-08-12T00:00:00+09:00</updated><id>/til/21.08.12%20TIL</id><content type="html" xml:base="/til/21.08.12-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1-react-spa-single-page-application&quot;&gt;1. React SPA (Single Page Application)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;과거의 브라우저는 웹사이트 페이지 전체를 로딩하였기 때문에 발생하는 리소스 손실이 컸다 . 하지만 SPA는 페이지 전환 전후에 중복되는 부분은 새로 불러오지 않으며 필요한 부분만 갱신하여 웹페이지를 새로 로딩한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;SPA&lt;/strong&gt; 란 즉, 서버로부터 완전한 새로운 페이지를 불러오지 않고 페이지 갱신에 필요한 데이터만 받아 그 정보를 기준으로 현재의 페이지를 업데이트함으로써 사용자와 소통하는 웹 어플리케이션이나 웹 사이트를 일컫는다&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/129123147-be55270e-249a-48c7-b784-20ac02cbd625.png&quot; alt=&quot;스크린샷, 2021-08-12 10-11-45&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-1-spa-의-장단점&quot;&gt;1-1. SPA 의 장단점&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;1. 장점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;전체 페이지가 아닌 필요한 부분의 데이터만 받아서 화면을 업데이트 하면 되기 때문에 사용자와의 Interaction에 빠르게 반응한다.&lt;/li&gt;
+  &lt;li&gt;서버에서는 요청 받은 데이터만 넘겨주면 되기 때문에 과부화가 적다.&lt;/li&gt;
+  &lt;li&gt;전체 페이지를 렌더링 할 필요가 없기 때문에 더 나은 유저경험을 제공한다.&lt;/li&gt;
+  &lt;li&gt;대표적인 서비스로는 &lt;em&gt;Youtube, facebook, airbnb, Netflix&lt;/em&gt; 등이 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SPA 경우 JavaScript 파일의 크기가 크다(HTML 파일은 거의 비어있고 대부분의 코드는 JavaScript 내부에서 작동한다.), 때문에 첫 화면 로딩 시간이 길어질수 밖에 없다.&lt;/li&gt;
+  &lt;li&gt;검색 엔진 최적화(SEO)가 좋지 않다. 구글이나 네이버 같은 검색 엔진들은 HTML 파일에 있는 자료를 분석하는 방식으로 검색 기능이 구동된다. 하지만 SPA 같은 경우 앞서 말했듯이 HTML 파일은 별다른 자료가 없기 때문에 검색 엔진이 적절히 동작하지 못한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-2-react-spa-실습--참조--github-&quot;&gt;1-2. React SPA 실습. &lt;a href=&quot;https://github.com/JH8459/im-sprint-react-twittler-spa&quot; target=&quot;_blank&quot;&gt; 참조 : Github &lt;/a&gt;&lt;/h4&gt;
+
+&lt;h3 id=&quot;2-react-router&quot;&gt;2. React Router&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;SPA는 하나의 페이지를 가지고 있지만, 한 종류의 화면만 사용하지는 않는다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/129127515-374f088f-a9f8-470c-bb2d-ec0d7c1311a8.png&quot; alt=&quot;스크린샷, 2021-08-12 11-07-15&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;위 사진과 같이 하나의 페이지 이지만 화면전환은 계속 이루어진다. 또한 이 화면에 따라 &lt;em&gt;주소&lt;/em&gt; 도 달라지게된다.  이렇게 다른 주소에 따라 다른 뷰를 보여주는 과장을 “경로에 따라 변경한다” 라는 의미로 &lt;strong&gt;라우팅(Routing)&lt;/strong&gt;  이라고 한다. React 자체에는 이 기능이 내장되어 있지 않기떄문에 외부 라이브러리를 이용한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-react-router-1&quot;&gt;2. React Router.&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;React Router의 주요 컴포넌트는 크게 3가지 이다.
+    &lt;ol&gt;
+      &lt;li&gt;router : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;BrowserRouter&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;route matchers : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Switch&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Route&amp;gt;&lt;/code&gt; 경로를 매칭해준다.&lt;/li&gt;
+      &lt;li&gt;route changers : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt; 경로를 변경해준다.&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/129127899-e5f5a7c1-6fef-4b4a-a856-1b131ac62e5d.png&quot; alt=&quot;스크린샷, 2021-08-12 11-12-19&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-1-react-router-실습--참조--github-&quot;&gt;2-1. React Router 실습. &lt;a href=&quot;https://github.com/JH8459/CodeStates/tree/master/React/react-router&quot; target=&quot;_blank&quot;&gt; 참조 : Github &lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;라우터를 이용한 부분 페이지 전환 그로인한 SPA 설계 가능화.&lt;/li&gt;
+  &lt;li&gt;내일 리액트의 꽃인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state, props&lt;/code&gt; 학습이다.  내일까지 리액트 주요 문법 학습 후 주말중 리액트는 다시 한번 정리해야겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;~08.17 까진 리액트, 돔, 고차함수 집중&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">21.08.12 TIL / 1. React SPA 2. React Router</summary></entry><entry><title type="html">21.08.11 TIL / 1. React</title><link href="/til/21.08.11TIL/" rel="alternate" type="text/html" title="21.08.11 TIL / 1. React" /><published>2021-08-11T00:00:00+09:00</published><updated>2021-08-11T00:00:00+09:00</updated><id>/til/21.08.11TIL</id><content type="html" xml:base="/til/21.08.11TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-react&quot;&gt;1. React&lt;/h3&gt;
 &lt;ul&gt;
@@ -1463,66 +1534,4 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;주말이며 다음주 부터는 8월이다. 이번달 7월간의 회고 기록도 포스팅으로 남겨봐야겠다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 배열, 2. 객체</summary></entry><entry><title type="html">21.07.29 TIL / 1. Git</title><link href="/til/21.07.29-TIL/" rel="alternate" type="text/html" title="21.07.29 TIL / 1. Git" /><published>2021-07-29T00:00:00+09:00</published><updated>2021-07-29T00:00:00+09:00</updated><id>/til/21.07.29%20TIL</id><content type="html" xml:base="/til/21.07.29-TIL/">&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-git&quot;&gt;1. Git&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Git이란 분산형 버전 관리 시스템(Version Control System) 의 한 종류이며, 빠른 수행 속도에 중점을 둔다.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;“버전 관리 시스템”&lt;/em&gt; 이란 파일 변화를 시간에 따라 기록했다가 이후에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템이다. 동일한 정보에 대한 여러 버전을 관리하게 되며, 버전을 통해 시간적으로 변경 사항과 변경 사항을 작성한 작업자를 추적할 수 있다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-1-github&quot;&gt;1-1. GitHub&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Git을 통하여 버전관리를 한다 이미 언급을하였다. 그렇다면 Github는 무엇일까? Github는 Git Repository를 관리할 수 있는 클라우드 기반 서비스이다.
-즉 Git으로 버전을 관리하는 폴더에 대해서 Github을 통해 여러 사람들이 공유하고 접근할 수 있게되기때문에 Git이 분산형 버전 관리 시스템으로 불리울 수 있게된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-2-git-repository&quot;&gt;1-2. Git Repository&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;내가 작업하는 소스 코드 폴더가 버전 관리를 받게 하기 위해서는 내 폴더를 Git의 관리 아래에 두어야 한다. 이때 Git으로 관리되는 폴더를 Git repository 라고 부른다.
-Git repository 는 Remote Repository와 Local Repository 두 종류의 저장소를 제공한다.
-    &lt;ul&gt;
-      &lt;li&gt;Remote Repository : 원격 온라인 서버 상의 저장소이다. 여러 사람이 함께 공유가 가능하다.&lt;/li&gt;
-      &lt;li&gt;Local Repository : 내 컴퓨터의 저장소이다. 개인 전용 저장소이며 내 컴퓨터 안의 저장소이기 때문에 오프라인 작업또한 가능하다.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128201330-25d70b76-a2f6-42e8-a6ee-ced5dea3b517.png&quot; alt=&quot;git repository&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-3-git을-통한-작업시-workflow&quot;&gt;1-3. Git을 통한 작업시 WorkFlow&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128201584-6a5413c7-0150-4356-9cba-7c2b71827daf.png&quot; alt=&quot;gitflow&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Remote에 있는 다른 Repository에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fork&lt;/code&gt;를 해서 Remote에 있는 내 Repository에 가지고 온다.&lt;/li&gt;
-  &lt;li&gt;이 코드를 수정하기 위해서는 내 컴퓨터로 가져오는 작업이 또 필요하다. 내 컴퓨터에서 작업을 하기 위해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone&lt;/code&gt;을 한다.&lt;/li&gt;
-  &lt;li&gt;이제 내 컴퓨터의 작업 공간 (work space) 에서 작업에 들어간 파일들을 git의 관리 하에 있는 상태로 변경할 수 있다. 이 영역을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staging area&lt;/code&gt;라고 말한다. 즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staging area&lt;/code&gt;에 들어오지 않은 파일은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;unstaged&lt;/code&gt; 혹은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;untracked file&lt;/code&gt;이라고 말하며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staging area&lt;/code&gt;에 있는 파일들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staged&lt;/code&gt; 된 파일이라고 말할 수 있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt; 을 하기 위해서 현재 Local Repository에 변경된 파일들이 어떤것인지 확인하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git status&lt;/code&gt;를 통하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staging area&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;untracked files&lt;/code&gt; 목록에 어떤 것들이 있는지 확인할 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staging area&lt;/code&gt;에 들어온 파일들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;이 가능하다. commit을 하고 나면 내 remote repository에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt; 해서 commit 기록을 remote 에도 남겨줄 수 있다.
-남긴 commit들이 잘 기록되어있는지 확인하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt;를 통하여 로그들을 터미널 창에서 확인할 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;를 완료한 후 이제 remote의 원래 레파지토리에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pull request&lt;/code&gt;를 보내면 Remote Repository로 내가 수정한 코드를 업로드할 수 있다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;2-코딩애플-react&quot;&gt;&lt;del&gt;2. 코딩애플 React&lt;/del&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;깃깃깃깃깃. 말로만 들었지 왜 협업에 유리하며, 분산관리에 유리하며.. 버전관리에 유리하며.. 많은 기업들이 해당 툴을 모두 사용하는지 짧은 시간이지만 크게 와닿았다.
-협업 과정 중 commit을 들여다보면 누가..언제..몇분전에.. 무슨작업을..무슨코드를 뻘짓(?)거리 하였는지 적나라하게 나오는걸 보니 정말 투명하고 실시간으로 코드유지가 된다는 느낌을 받았다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;이번주 마무리. 배열,객체 수업 후 배열은 코플릿 페어 진행이 예정되어있다. 저번주 반복문 코플릿이후 오랫만의 코플릿이기때문에 걱정된다. 배열은 오늘 자기 전 개념정도만 한번 훑고 자야겠다. 아직도 소수 찾는 이중반복문이 머릿속에 그려진다.&lt;/li&gt;
-  &lt;li&gt;리액트 선행학습 위한 코딩애플…유료다. &lt;a href=&quot;https://www.youtube.com/channel/UCxft4RZ8lrK_BdPNz8NOP7Q&quot; target=&quot;_blank&quot;&gt;유튜브 코딩앙마&lt;/a&gt; 님의 수업이 유익해보이며 무료로 시청이 가능해보인다. 이번주~다음주 중 리액트 클론 코딩 및 따라하기는 우선 코딩앙마님의 해당 수업으로 진행해볼 예정이다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. Git</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 배열, 2. 객체</summary></entry></feed>
