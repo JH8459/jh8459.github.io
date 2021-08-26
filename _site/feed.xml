@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-23T16:38:37+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.23 TIL / 1. 클래스를 이용한 모듈화 2. Prototype</title><link href="/til/21.08.23-TIL/" rel="alternate" type="text/html" title="21.08.23 TIL / 1. 클래스를 이용한 모듈화 2. Prototype" /><published>2021-08-23T00:00:00+09:00</published><updated>2021-08-23T00:00:00+09:00</updated><id>/til/21.08.23%20TIL</id><content type="html" xml:base="/til/21.08.23-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-27T02:04:10+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">21.08.26 TIL / 1. 자료구조 2. 자료구조의 종류</title><link href="/til/21.08.26-TIL/" rel="alternate" type="text/html" title="21.08.26 TIL / 1. 자료구조 2. 자료구조의 종류" /><published>2021-08-26T00:00:00+09:00</published><updated>2021-08-26T00:00:00+09:00</updated><id>/til/21.08.26%20TIL</id><content type="html" xml:base="/til/21.08.26-TIL/">&lt;ol&gt;
+  &lt;li&gt;깊이(depth)&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;
+    &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+    &lt;h3 id=&quot;1-자료구조란&quot;&gt;1. 자료구조란?&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;자료구조란 여러 데이터들의 묶음을 저장하고, 사용하는 방법을 정의한 것.  데이터에 편리하게 접근하고 변경하기 위해 데이터를 저장하거나 조직을 효율적으로 해야한다. 그러한 행위로 분류된 데이터를 자료구조라 한다. &lt;del&gt;( + 알고리즘은 그 저장된 데이터를 처리하는 과정이다.)&lt;/del&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;2-자료구조의-종류&quot;&gt;2. 자료구조의 종류&lt;/h3&gt;
+&lt;h4 id=&quot;2-1-stack&quot;&gt;2-1. Stack&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;스택(Stack)은 쌓다, 쌓이다, 포개지다란 뜻을 내포한다. 직역 그대로 &lt;strong&gt;데이터(data)를 순차적으로 쌓는 구조&lt;/strong&gt;이다.&lt;/li&gt;
+  &lt;li&gt;순차적으로 쌓다보니, 가장 먼저 들어간 자료는 가장 나중에 나올 수 있다. 입력과 출력이 하나의 방향으로 이루어지는 제한적 접근에 있다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이러한 자료구조의 정책을 &lt;strong&gt;LIFO(Last In First Out) 혹은 FILO(First In Last Out)&lt;/strong&gt; 이라 일컫는다&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/130885861-3ad5f731-7487-42c4-a027-ef7b4219e0e4.png&quot; alt=&quot;stack&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;위 사진 처럼 push(), pop()을 쓰는 배열이 대표적인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt; 자료구조이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;대표적으로 활용되는 예시는 브라우저의 뒤로 가기, 앞으로 가기 기능 &amp;amp; 엑셀 등 문서작업에서 되돌리기 등의 기능을 구현 할 때 자료구조 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt;의 활용이 필요하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-2-queue&quot;&gt;2-2. Queue&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;큐(Queue)는 줄을 서서 기다리다, 대기 행렬 이라는 뜻을 내포한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt;과는 반대되는 개념으로, 먼저 들어간 데이터가 먼저 처리되는 &lt;strong&gt;FIFO(First In First Out) 혹은 LILO(Last In Last Out)&lt;/strong&gt; 을 특징으로 가지고 있는다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/130886677-ceb7346b-9da1-4dae-854b-58bdf80624f4.png&quot; alt=&quot;queue&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;위 사진 처럼 자료구조 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Queue&lt;/code&gt;는 데이터가 입력된 순서대로 처리할 때 주로 사용한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;대표적으로 활용되는 예시는 프린터가 출력되는 인쇄작업 Queue에 사용된다. 자료구조 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Queue&lt;/code&gt;를 활용함으로써 프린터는 인쇄작업 Queue에 들어온 문서를 순서대로 인쇄할수있다.&lt;/p&gt;
+
+    &lt;p&gt;혹은 컴퓨터 장치들 사이에서 데이터를 주고 받을 때, 각 장치 사이에 존재하는 &lt;strong&gt;속도의 차이&lt;/strong&gt;나 &lt;strong&gt;시간 차이&lt;/strong&gt;를 극복하기 위해 임시 기억 장치의 자료구조로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Queue&lt;/code&gt;를 사용한다. 이를 &lt;strong&gt;버퍼(buffer)&lt;/strong&gt; 라 일컫는다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-3-graph&quot;&gt;2-3. Graph&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;그래프는 여러개의 점들이 서로 복잡하게 연결되어 있는 관계를 표현한 자료구조이다. 직접적인 관계가 있는 경우 두 점 사이를 이어주는 선이 있겠으며, 간접적인 관계라면 몇 개의 점과 선에 걸쳐 이어진다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그래프에서 하나의 점을 정점(vertex)이라고 표현하고, 하나의 선은 간선(edge) 이라고 한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img width=&quot;650&quot; alt=&quot;graph&quot; src=&quot;https://user-images.githubusercontent.com/83164003/130889135-35c41544-836e-412b-bdbf-83aca057d872.png&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;정점과 정점사이에 간선이 존재하는데, 이 간선은 정점 사이의 관계를 나타낸다. 정점 사이에 직접적, 간적적으로 간선이 없는 경우를 그래프에선 “관계가 없다” 라고 표현한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;일상생활에선 매일같이 자료구조 그래프를 사용하고 있다. 포털 사이트의 검색 엔진, SNS,  네비게이션(길찾기) 등 에서 사용되는 자료구조이다.&lt;/p&gt;
+
+    &lt;p&gt;간단한 예를 들자면,&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;서울에 사는 A는 부산에 사는 B와 오랜 친구 사이입니다. 이번 주말에 부산에서 열리는 B의 결혼식에 참석하기 위해 A는 차를 몰고 부산으로 가려고 합니다. 대전에 살고 있는 친구 C도 B의 결혼식에 참석을 한다고 하여, A는 서울에서 출발하여 대전에서 C를 태워 부산으로 이동을 하려고 합니다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;위 예시에서는 3개의 정점이 존재한다(A,B,C). 각각 서울,부산,대전을 그래프의 정점으로 삼는다면, 이 3개의 정점은 서로 이어지는 간선(관계)를 가지고 있다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;정점 : 서울(A), 대전(B), 부산(C)&lt;/p&gt;
+
+      &lt;p&gt;간선 : 서울-대전, 대전-부산, 부산-서울&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;이를 간단한 JS 객체를 이용하여 비유한다면 아래와 같다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isConnected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;seoul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;busan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;daejeon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;daejeon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;seoul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;busan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;busan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;seoul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;daejeon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isConnected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;seoul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;busan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;현재는 특정 도시가 이어져 있다는 무향그래프라는 노드3개와 간선 3개라는 사실만 알려줄 뿐, 그 외의 정보를 포함하고 있진 않다. 이러한 그래프를 &lt;strong&gt;비가중치 그래프&lt;/strong&gt;라 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그래프를 학습하기에있어, 알아둬야 할 용어들이 있다. 간단하게 살펴보면,
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;무(방)향그래프(underected graph)&lt;/strong&gt; : 네비게이션(길찾기)에서 보이는 그래프들은 무향 그래프이다. 서울에서 부산을 갈 수 있듯, 반대로 부산에서 서울로 올 수도 있다. 반대 개념인 &lt;strong&gt;단방향 그래프(directed graph)&lt;/strong&gt; 로 구현 된다면,  한쪽 방향으로만 가능할 것이다. 예를 들면 도로의 일방통행은 단방향 그래프로 길찾기를 구현 할 수 있다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;진입차수(in-degree) / 진출차수(out-degree)&lt;/strong&gt;: 한 정점에 진입(들어오는 간선)하고 진출(나가는 간선)하는 간선이 몇 개인지 나타내는 용어이다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;인접(adjacency)&lt;/strong&gt;: 두 정점간에 간선이 직접 이어져 있다면 이 두 정점은 인접한 정점이다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;자기 루프(self loop)&lt;/strong&gt;: 정점에서 진출하는 간선이 곧바로 자기 자신에게 진입하는 경우 자기 루프를 가졌다 라고 표현하며, 다른 정점을 거치지 않는다는 것이 특징이다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;사이클(cycle)&lt;/strong&gt;: 한 정점에서 출발하여 다시 해당 정점으로 돌아갈 수 있다면 사이클이 있다고 표현한다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;인접&lt;/strong&gt;은 위에서 말했듯이 직접 이어져 있는 정점의 관계를 나타낸다. 표현 방식을 수식화 할 땐 아래와 같은 방법으로 표현한다.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;인접 행렬 (adjacency matrix) : 그래프에서 정점(vertext)들이 어떻게 연결되었는지 나타내는 행렬이다.
+        &lt;ul&gt;
+          &lt;li&gt;2차원 배열로 작성하게 되며, 정점들 사이에 간선이 존재하는지 여부를 나타내거나, 가중치가 있는 그래프인 경우에는 정점관의 관계에서 의미 있는 값을 저장한다.&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/130991111-43c899d0-f7df-498d-9156-188680d98df5.png&quot; alt=&quot;인접행렬&quot; /&gt;
+     &lt;a href=&quot;http://stoimen.com/2012/08/31/computer-algorithms-graphs-and-their-representation/&quot; target=&quot;_blank&quot;&gt;참조 : http://stoimen.com &lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;인접 리스트 (adjacency list) : 각 정점이 어떤 정점과 인접한지를 리스트의 형태로 표현한다. 각 정점마다 하나의 리스트를 가지고 있으며, 이 리스트는 자신과 인접한 다른 정점을 담는다.
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;인접 행렬은 연결 가능한 모든 경우의 수를 저장하기 때문에 상대적으로 메모리를 많이 차지하므로 메모리의 효율성을 위한 작업이 필요할땐 인접리스트가 효율적이다.&lt;/p&gt;
+
+            &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/130992153-24b024de-ab1a-4825-ac85-2edb4827ea9d.png&quot; alt=&quot;인접리스트&quot; /&gt;&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-4-tree&quot;&gt;2-4. Tree&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자료구조 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tree&lt;/code&gt;는 이름 그대로 나무의 형태를 가지고 있다. 엄밀히 말하면 그래프의 여러 구조중 무방향 그래프의 한 구조라 말할수있다.&lt;/p&gt;
+
+    &lt;p&gt;또한, 데이터를 순차적으로 나열시킨 선형 구조가 아니라, 하나의 데이터 뒤에 여러 개의 데이터가 존재할 수 있는 비선형 구조이다. 그리고 루트 노드를 기준으로 아래로만 층층이 뻗어나가기 때문에  &lt;strong&gt;계층&lt;/strong&gt;적으로 표현이 되며 그래프와 달리 사이클은 존재하지 않는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;트리를 학습하기에있어, 알아둬야 할 용어들이 있다. 간단하게 살펴보면,&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;노드(Node)&lt;/strong&gt; : 트리 구조를 이루는 모든 개별 데이터&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;루트(Root)&lt;/strong&gt; : 트리 구조의 시작점이 되는 노드&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;부모 노드(Parent node)&lt;/strong&gt; : 두 노드가 상하관계로 연결되어 있을 때 상대적으로 루트에서 가까운 노드&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;자식 노드(Child node)&lt;/strong&gt; : 두 노드가 상하관계로 연결되어 있을 때 상대적으로 루트에서 먼 노드&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;리프(Leaf)&lt;/strong&gt; : 트리 구조의 끝지점이고, 자식 노드가 없는 노드&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/130994663-d4c060c6-b6b0-4fbc-9568-a6ad0ae51ad7.png&quot; alt=&quot;tree&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;트리 구조는 루트(Root) 라는 하나의 꼭짓점 데이터를 시작으로 여러 개의 데이터를 간선(edge)으로 연결한다. 각 데이터를 정점이 아닌 노드(Node)라고 하며, 두 개의 노드가 상하계층으로 연결되면 부모/자식 관계를 가지게 된다. 위 그림에서 A는 B,C,D의 부모 노드(Parent Node)이면서 루트(Root)이며, E와 F는 B의 자식 노드(Child Node)이다. 자식이 없는 C,D,E,F 노드는 나무의 잎과 같다고 하여 리프 노드(leaf Node)라고 부른다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;자료구조 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tree&lt;/code&gt;는 계층으로 구현되기 때문에 깊이와 높이, 레벨 등을 측정할 수 있다.
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;깊이(depth)&lt;/strong&gt; : 트리 구조에서는 루트로부터 하위 계층의 특정 노드까지의 깊이(depth)를 표현할 수 있다. 쉽게 생각하면 루트에서 현재노드 사이까지의 간선의 갯수라 생각하면 간단하다. 위 그림에서 루트 A의 depth는 0이고, B,C,D의 깊이는 1이다. 그리고 E와 F의 깊이는 2가 된다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;레벨(level)&lt;/strong&gt; : 트리 구조에서 같은 깊이를 가지고 있는 노드를 묶어서 레벨(level)로 표현한다다. depth가 0인 루트 A의 level은 1이며, depth가 1인 B,C,D의 level은 2이다. 그리고 E와 F의 레벨은 3이 된다. 또한 같은 레벨에 나란히 있는 노드를 &lt;strong&gt;형제 노드(sibling Node)&lt;/strong&gt; 라 부른다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;높이(height)&lt;/strong&gt; :  루트부터 가장 경로가 긴 노드까지의 간선의 갯수가 높이가 된다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;마지막으로 트리는 큰 트리 내부에 &lt;strong&gt;트리 구조를 갖춘 작은 트리를 내포한다.&lt;/strong&gt; 이는 &lt;strong&gt;서브 트리&lt;/strong&gt; 라 부르며,  해당 서브 트리는 잘게 쪼개어 하나의 노드를 가지기 전까지는 모두 또 다시 서브 트리를 갖게된다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131003247-8e07d192-6792-4fa8-b53d-3b4e4afdc753.jpg&quot; alt=&quot;서브 트리&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;즉, 한개 이상의 노드를 가진 트리는 재귀적인 구조를 지닌다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자료구조.. 개념은 어렵진 않다. 효율적인 데이터 구조는 효율적인 코드를 완성시키는 첫 걸음이라 생각된다. 지금이야 솔직히 말하면 별로 필요 없는듯 보인다..&lt;/p&gt;
+
+    &lt;p&gt;&lt;del&gt;지금은 코린이 수준의 코드이기 때문에.. ,장난감 집은 쉽게 짓고 대충 만들어도 완성되지만 고층 아파트는 구조 설계가 필수적이다!&lt;/del&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기초학문 느낌이 물씬 난다. 구조적인 개념이 많이 등장되기 때문에, 들으면 생소한 느낌은 없다.  다만, 이를 어떻게 실제 코딩에 접목을 하느냐가 굉장히 난감하다.. 객체로 선입선출되는 자료구조를 어떻게..? 이런 느낌이다.&lt;/p&gt;
+
+    &lt;p&gt;아직 생소하다보니 겪는 문제라 생각든다. 덩치가 큰 개발이 필요한 경우. 개발진행 전 자료구조를 꼭 생각하고 개발에 진행해야 되겠다는 생각은 든다.&lt;/p&gt;
+
+    &lt;p&gt;ex ) 탐색기 같은 프로그래밍 설계가 필요하다면 트리구조를 먼저 떠올린다. 등등..&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자료구조 활용 실제 그래프, 트리 등 코딩 구현 실습&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;금요일~주말중, 밀린 알고리즘 문제 해결 필요.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;경우의 수 완전탐색 순열 알고리즘&lt;/li&gt;
+      &lt;li&gt;배열의 부분집합 여부 검사 알고리즘 (구현은 했지만 시간복잡도를 따지면 저효율 코딩…  실제로 경우의수가 커지면 stack overflow가 발생한다.)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 자료구조 2. 자료구조의 종류</summary></entry><entry><title type="html">21.08.23 TIL / 1. 클래스를 이용한 모듈화 2. Prototype</title><link href="/til/21.08.23-TIL/" rel="alternate" type="text/html" title="21.08.23 TIL / 1. 클래스를 이용한 모듈화 2. Prototype" /><published>2021-08-23T00:00:00+09:00</published><updated>2021-08-23T00:00:00+09:00</updated><id>/til/21.08.23%20TIL</id><content type="html" xml:base="/til/21.08.23-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-클래스를-이용한-모듈화&quot;&gt;1. 클래스를 이용한 모듈화&lt;/h3&gt;
 
@@ -1428,279 +1626,4 @@
   &lt;li&gt;
     &lt;p&gt;DOM에 대한 유튜브 강의는 적은듯하다.. 생활코딩님 게시글도 8년전 흠… 드림코딩님은 우선 DOM키워드 글은 없는듯 하고.. 개념에 대한 글들을 우선 정독해보는정도로 마무리하고 React 클론 코딩등은 게시글들이 많으니 그쪽을 먼저 학습하도록 해야겠다.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 원시 자료형&amp;참조 자료형, 2. 스코프, 3. 클로저</summary></entry><entry><title type="html">21.08.03 TIL / 1. 다양한 CSS 셀렉터, 2 . CSS layout, 3. HTML/CSS 목업 와이어프레임 실습</title><link href="/til/21.08.03-TIL/" rel="alternate" type="text/html" title="21.08.03 TIL / 1. 다양한 CSS 셀렉터, 2 . CSS layout, 3. HTML/CSS 목업 와이어프레임 실습" /><published>2021-08-03T00:00:00+09:00</published><updated>2021-08-03T00:00:00+09:00</updated><id>/til/21.08.03%20TIL</id><content type="html" xml:base="/til/21.08.03-TIL/">&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-다양한-css-셀렉터&quot;&gt;1. 다양한 CSS 셀렉터&lt;/h3&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 전체 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 태그 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ID 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// class 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// attribute 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 후손 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 자식 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 인접 형제 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 형제 셀렉터&lt;/span&gt;
-
-&lt;span class=&quot;nl&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hover&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 가상 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;active&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nl&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 요소 상태 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enabled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nl&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 구조 가상 클래스 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nl&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 부정 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valid&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 정합성 확인 셀렉터&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;새로 학습한 셀렉터&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors&quot; target=&quot;_blank&quot;&gt; attribute 셀렉터 &lt;/a&gt; , &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/CSS/:not&quot; target=&quot;_blank&quot;&gt; 부정 셀렉터 &lt;/a&gt;&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;2-1--css-layout&quot;&gt;2-1 . CSS layout&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127945320-113288ab-1eee-41b8-b76e-52b3528d1b7d.png&quot; alt=&quot;스크린샷, 2021-08-03 10-54-00&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col w10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;아이콘 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;아이콘 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;아이콘 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col w20&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row h40&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;영역1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row h40&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;영역2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row h20&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;영역3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col w70&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row h80&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;영역4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row h20&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;영역5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.w70&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;70%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.h40&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;기본&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;스타일&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;제거&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(box-sizing)&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;border-box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;기본&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;스타일&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;제거&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(여백&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;제거)&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;박스의 시작을 정확히 (0,0)의 위치에서 시작하고 싶은데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 태그가 가진 기본 스타일에 약간의 여백을 포함하지 않아 계산에 어려움이 있다. 위에 언급한 문제를 해결할 몇 줄의 코드를 적용시키면, 기본 스타일링을 제거하여 디자인한 대로 레이아웃을 구현할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;이렇게 클래스 이름과 구현을 1:1로 일치시켜 아주 작은 단위로 CSS를 작성 기법을 Atomic CSS 방법론이라고 한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;2-2-css-layout-flexbox&quot;&gt;2-2. CSS layout (flexbox)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;flexbox로 레이아웃을 구성한다는 것은, 박스를 유연하게 늘리거나 줄여 레이아웃을 잡는 방법이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;outer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;box1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;box2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;box3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#outer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dotted&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127948605-5b677868-0775-4312-846c-2c310b39c343.png&quot; alt=&quot;스크린샷, 2021-08-03 11-34-39&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;부모 박스요소에 display: flex를 적용해, 자식 박스의 방향과 크기를 결정한다. 기본값으로, display: flex가 적용된 부모 박스의 자식 요소는 왼쪽부터 차례대로 이어 배치된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;반드시 알아두기: grow(팽창 지수), shrink(수축 지수), basis(기본 크기)
-    &lt;ul&gt;
-      &lt;li&gt;자식 박스에 어떠한 속성도 주지 않으면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flex: 0 1 auto;&lt;/code&gt; 기본값이 적용됩니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;grow, shrink 속성은 단위가 없고, 비율에 따라 결과가 달라진다. 부모 박스 안에 n개의 자식 박스가 있다고 가정하고 각 자식 박스가 갖는 grow값의 총 합이 n이라면,  grow 속성의 값을 1로 설정하는 것은 1/n 가로 또는 세로길이를 적용한다는 의미이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;outer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box target&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;.box.target&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;.box&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;.box&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127949162-69b3778e-7417-46e9-9fd4-f69cefdfed57.png&quot; alt=&quot;스크린샷, 2021-08-03 11-41-43&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flex-grow  : 1&lt;/code&gt; 이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;box.target&lt;/code&gt;은 부모 박스의 가로 길이 중에서 남은 빈 영역만큼 늘어나게 된다. 위 설명대로라면 전체 자식요소가 가진 grow 값의 합은 1+0+0 = 1이므로, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;box.target&lt;/code&gt;의 가로 크기는 1/1 = 100% 이다. 그러나 다른 자식 박스 안에 이미 콘텐츠가 존재하므로, 다른 자식 박스안의 콘텐츠가 담긴 길이를 제외한 나머지 가로 길이가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;box.target&lt;/code&gt;의 가로 길이가 된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
- &lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.box&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flex-grow : 1&lt;/code&gt;로 설정하면, 모든 박스가 늘어나려고(grow) 합니다. 결과적으로 모든 박스가 동일한 비율로 가로 길이가 늘어납니다. (총 grow 값 1+1+1, 각 박스는 1/3씩 크기를 가짐)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127949798-edc91622-22c2-4fdf-8032-4b45af947f10.png&quot; alt=&quot;스크린샷, 2021-08-03 11-49-27&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;shrink&lt;/strong&gt;는 grow와 반대로, 설정한 비율만큼 박스 크기가 작아진다. 그러나 flex-grow 속성과 flex-shrink 속성을 함께 사용시 flex-shrink 속성은 width나 이후 설명할 flex-basis 속성에 따른 비율이므로 실제 크기를 예측하기가 어렵게 된다. &lt;em&gt;flex-grow 속성으로 비율을 변경하는 경우, flex-shrink 속성은 기본값인 1로 두어도 무방&lt;/em&gt;하다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;basis&lt;/strong&gt;는 자식박스가 flex-grow나 flex-shrink에 의해 늘어나거나 줄어들기 전에 가지는 &lt;em&gt;기본 크기&lt;/em&gt;이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-3-css-layout-flexbox-콘텐츠-정렬-방법&quot;&gt;2-3. CSS layout (flexbox 콘텐츠 정렬 방법)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Flexbox를 원하는대로 제어하기 위해서는 axis(축)의 개념에 대한 이해가 필요하다.  axis는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main axis&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cross axis&lt;/code&gt;로 구분된다.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main axis&lt;/code&gt;는 flex-direction 속성에 의해서 결정된다. flex-direction의 기본 값인 row 인 상태일 때 main axis 는 가로축(가로축이 default)이 된다.&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cross axis&lt;/code&gt;는 여러 개의 main axis와 수직을 이루는 방향입니다. main axis가 가로일 때 cross axis는 세로가 됩니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127945320-113288ab-1eee-41b8-b76e-52b3528d1b7d.png&quot; alt=&quot;스크린샷, 2021-08-03 10-54-00&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;그렇다면 위의 layout을 flexbox 방식으로 CSS를 구성해보자&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;border-box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;min-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100vh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.col&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.icon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dashed&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;orange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.row&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dashed&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;purple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.w10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.w20&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.w70&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.h20&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.h40&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.h80&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3-htmlcss-목업-와이어프레임-실습&quot;&gt;3. HTML/CSS 목업 와이어프레임 실습&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;실습결과 코드는 &lt;a href=&quot;https://github.com/JH8459/im-sprint-twittler&quot; target=&quot;_blank&quot;&gt;GitHub 참조.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;` CSS 진짜로 개어렵다.` 우선 오늘  실습을 해보며 HTML을 이용하여 프레임을짜고, 그 각각의 프레임을 선택자로 구분하여 CSS를 입혀보았다. 우선 답이 없는 영역이다.  HTML로 해당 구성의 프레임을 짜는거까지는 어렵지않았지만 &lt;em&gt;각 선택자에 들어가는 CSS 요소들을 우선 너무 모른다.. 몰라도 너무 몰라서 검색조차 못하는 단계랄까..??&lt;/em&gt; 나아지겠지.. 우선 틀을 짜고 선택자로 해당 요소를 컨택한다는 점에서 만족하고 나중에 다시 CSS는 꾸준히..손에 익혀봐야겠다. &lt;del&gt;(나중엔 라이브러리 쓰겠지…)&lt;/del&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git repository와 내 local directory 를 오늘 동기화(?) 시켜보았다. 수업을 들으며 진행하는 예제가 늘어나면서 잡다한(?) repository 및.. 불필요한 fork 된 repository 가 너무 늘었다.  git repository를 뜯어고쳐서 내 작업공간과 유사하게 셋팅을 해놓았다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128046858-3294606b-4d1a-4467-8c5f-290bb263654c.png&quot; alt=&quot;스크린샷, 2021-08-04 00-52-18&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;내 작업환경과 유사한 git repository 유지가 필요할 듯 하다. 앞으로 점차 늘어갈 프로젝트 및 실습 데이터들을 관리 유지하는것도 자기관리라 생각해야겠다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;오늘은 생각보다 HTML/CSS 실습에 쫓기고, gitHub 환경셋팅에 쫓겨서 개별학습은 못하였다. &lt;del&gt;핑계는..&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;내일 커리큘럼에는 스코프/클로저 개념학습뿐이다. 어려운 개념이라 생각되지만, 오전~오후 시간 중에는 집중해서 빠르게 습득하고, 저녁에는 부족할거라 예상되는 React/DOM 및 blog 이전글 이사도 모두 마쳐볼 예정이다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 다양한 CSS 셀렉터, 2 . CSS layout, 3. HTML/CSS 목업 와이어프레임 실습</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">TIL / 1. 원시 자료형&amp;참조 자료형, 2. 스코프, 3. 클로저</summary></entry></feed>
