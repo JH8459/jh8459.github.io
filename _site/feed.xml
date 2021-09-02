@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-03T01:30:57+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 8. largestProductOfThree</title><link href="/algorithm/21.09.02/" rel="alternate" type="text/html" title="[Algorithm] TOY 8. largestProductOfThree" /><published>2021-09-02T00:00:00+09:00</published><updated>2021-09-02T00:00:00+09:00</updated><id>/algorithm/21.09.02</id><content type="html" xml:base="/algorithm/21.09.02/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-03T01:38:45+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 8. largestProductOfThree</title><link href="/algorithm/21.09.02/" rel="alternate" type="text/html" title="[Algorithm] TOY 8. largestProductOfThree" /><published>2021-09-02T00:00:00+09:00</published><updated>2021-09-02T00:00:00+09:00</updated><id>/algorithm/21.09.02</id><content type="html" xml:base="/algorithm/21.09.02/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-8-largestproductofthree&quot;&gt;TOY 8. largestProductOfThree&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -41,7 +41,7 @@
   &lt;li&gt;길이가 3 이상인 배열을 내림차순으로 정렬하여 arr[0] 인덱스엔 가장 큰값 ~ arr[2]인덱스엔 3번째로 큰 값을 배치한다.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[0]&lt;/code&gt;이 가장 큰 양수값이고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[last-1]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[last]&lt;/code&gt; 값이 가장 작은 음수값 2개라면 가장 큰 곱의 경우의 수가 될 수 있다.&lt;/li&gt;
   &lt;li&gt;내림차순으로 정렬된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[0~2]&lt;/code&gt;번 인덱스 요소의 순차적인 곱의 합은 가장 큰 곱의 경우의 수가 될 수 있다.&lt;/li&gt;
-  &lt;li&gt;2-1번과 2-2번의 경우의 수로 나온 결과 값을 비교하여 더 큰 경우의 값을 리턴한다&lt;/li&gt;
+  &lt;li&gt;2번과 3번의 경우의 수로 나온 결과 값을 비교하여 더 큰 경우의 값을 리턴한다&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;

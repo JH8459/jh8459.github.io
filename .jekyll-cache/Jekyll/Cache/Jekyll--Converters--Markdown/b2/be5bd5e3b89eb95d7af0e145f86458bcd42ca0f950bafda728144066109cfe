@@ -1,4 +1,4 @@
-I"g!<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+I"�"<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
 <h2 id="toy-8-largestproductofthree">TOY 8. largestProductOfThree</h2>
 <h3 id="문제">문제</h3>
 <hr />
@@ -39,9 +39,9 @@
 <hr />
 <ol>
   <li>길이가 3 이상인 배열을 내림차순으로 정렬하여 arr[0] 인덱스엔 가장 큰값 ~ arr[2]인덱스엔 3번째로 큰 값을 배치한다.</li>
-  <li>arr[0]이 가장 큰 양수값이고, arr[last-1] arr[last]값이 가장 작은 음수값 2개라면 가장 큰 경우의 수가 될 수 있다.</li>
-  <li>내림차순으로 정렬된 arr[0~2]번 인덱스 요소의 순차적인 곱의 합</li>
-  <li>2-1번과 2-2번의 결과 값을 비교하여 더 큰 경우의 값을 리턴한다</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[0]</code>이 가장 큰 양수값이고, <code class="language-plaintext highlighter-rouge">arr[last-1]</code> <code class="language-plaintext highlighter-rouge">arr[last]</code> 값이 가장 작은 음수값 2개라면 가장 큰 곱의 경우의 수가 될 수 있다.</li>
+  <li>내림차순으로 정렬된 <code class="language-plaintext highlighter-rouge">arr[0~2]</code>번 인덱스 요소의 순차적인 곱의 합은 가장 큰 곱의 경우의 수가 될 수 있다.</li>
+  <li>3번과 4번의 경우의 수로 나온 결과 값을 비교하여 더 큰 경우의 값을 리턴한다</li>
 </ol>
 
 <h3 id="문제풀이">문제풀이</h3>
