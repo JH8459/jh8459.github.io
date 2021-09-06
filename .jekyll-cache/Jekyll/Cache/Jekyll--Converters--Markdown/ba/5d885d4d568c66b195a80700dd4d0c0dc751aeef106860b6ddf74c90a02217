@@ -1,0 +1,118 @@
+I"%/<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-10-binarysearch">TOY 10. binarySearch</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>오름차순 정렬된 정수의 배열(<code class="language-plaintext highlighter-rouge">arr</code>)과 정수(<code class="language-plaintext highlighter-rouge">target</code>)를 입력받아 <code class="language-plaintext highlighter-rouge">target</code>의 인덱스를 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 임의의 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code> 는 정수</li>
+</ul>
+
+<h4 id="인자-2--target">인자 2 : target</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><strong>이진탐색 알고리즘</strong>(<code class="language-plaintext highlighter-rouge">O(logN)</code>)을 사용해야 합니다.</li>
+  <li>단순한 배열 순회(<code class="language-plaintext highlighter-rouge">O(N)</code>)로는 통과할 수 없는 테스트 케이스가 존재합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">target</code>이 없는 경우, <code class="language-plaintext highlighter-rouge">-1</code>을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">binarySearch</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 2</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">binarySearch</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; -1</span>
+</code></pre></div></div>
+
+<h2 id="toy-10-solution">TOY 10. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<ul>
+  <li>
+    <p>이진탐색트리 특성상 정렬된 값들을 중위순회로 탐색한다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">target</code>과 <code class="language-plaintext highlighter-rouge">node</code>의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.</p>
+  </li>
+</ul>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">target</code>이 없는 경우 (includes.., indexOf 등으로 target 값이 배열에 존재하는지 탐색). <code class="language-plaintext highlighter-rouge">-1</code>을 리턴해주는 조건분기 설정</li>
+  <li>최초 탐색할 <code class="language-plaintext highlighter-rouge">중간</code> idx 설정. 해당 idx 기준으로 탐색 시작.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>비교 하여 같은 경우 탐색종료 해당 idx 값 반환</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>비교 하여 클 경우 <code class="language-plaintext highlighter-rouge">중간</code> idx 우측 남은값(<code class="language-plaintext highlighter-rouge">arr[중간+1] ~ arr[length-1]</code>)을 바탕으로 재귀 실행,</li>
+  <li>작을 경우 <code class="language-plaintext highlighter-rouge">중간</code> idx 좌측 남은값 바탕으로 재귀 실행</li>
+  <li>이진탐색트리의 시간복잡도에 알맞는 계산방식으로 구현</li>
+</ol>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">binarySearch</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 이진탐색 (binary search)은 탐색범위의 절반을 기준으로 </span>
+  <span class="c1">// target과 확인한 후 그 절반값보다 큰 곳 또는 작은 곳을 다음 탐색범위로 잡아가는 탐색방법</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">arr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">target</span><span class="p">))</span> <span class="p">{</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// target이 arr배열에 없다면 -1 리턴</span>
+  
+  <span class="kd">const</span> <span class="nx">idxCenter</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// 중간 인덱스 설정</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idxCenter</span><span class="p">]</span><span class="o">===</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">idxCenter</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// arr[중간인덱스] === target과 같다면, rootNode 가 타겟인 경우이다.</span>
+
+  <span class="kd">const</span> <span class="nx">recArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idxCenter</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">target</span> <span class="p">?</span> <span class="c1">// arr[중간인덱스] &gt; target이 크다면 root의 좌측으로 탐색이 진행되야함</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nx">idxCenter</span><span class="p">)</span> <span class="p">:</span> <span class="c1">// recArr = 중간인덱스 기준, 좌측 slice</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">idxCenter</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// recArr = 중간인덱스 기준, 우측 slice</span>
+  
+  <span class="k">return</span> <span class="nx">binarySearch</span><span class="p">(</span><span class="nx">recArr</span><span class="p">,</span><span class="nx">target</span><span class="p">);</span>  <span class="c1">// 재귀 호출</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">binarySearch</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">right</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">middle</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">right</span> <span class="o">+</span> <span class="nx">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">middle</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">middle</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">middle</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">right</span> <span class="o">=</span> <span class="nx">middle</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">left</span> <span class="o">=</span> <span class="nx">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>일단 틀렸다. 시간복잡도에 대한 내용에서 에러가 잡힌다.</li>
+  <li>
+    <p>우선 <code class="language-plaintext highlighter-rouge">빅-오 표기법</code> 중 <code class="language-plaintext highlighter-rouge">O(logN)</code> 의 시간복잡도는 연산과정이 절반씩 줄어들 경우인건 확실히 인지하였다.</p>
+
+    <p>자세한 내용은 해당 블로그 내용참조 : <a href="https://jwoop.tistory.com/9" target="_blank">https://jwoop.tistory.com/9</a></p>
+
+    <p>재귀를 통하여 전달하는 <code class="language-plaintext highlighter-rouge">arr</code>의 길이를 절반씩 줄였기 때문에 <code class="language-plaintext highlighter-rouge">O(logN)</code>을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다. 우선 해당내용의 질의를 아고라스테이츠에 문의를 넣어둔 상황이니 지켜본 뒤 내일 다시 포스팅을 이어나갈 예정이다.</p>
+  </li>
+  <li><del>(작성중)</del></li>
+</ul>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 6. sudoku</li>
+  <li>TOY 11. powerSet</li>
+</ul>
+:ET
