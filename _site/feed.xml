@@ -1,4 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-03T02:17:21+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 8. largestProductOfThree</title><link href="/algorithm/21.09.02/" rel="alternate" type="text/html" title="[Algorithm] TOY 8. largestProductOfThree" /><published>2021-09-02T00:00:00+09:00</published><updated>2021-09-02T00:00:00+09:00</updated><id>/algorithm/21.09.02</id><content type="html" xml:base="/algorithm/21.09.02/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-06T23:50:38+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 10. binarySearch</title><link href="/algorithm/21.09.06.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 10. binarySearch" /><published>2021-09-06T00:00:00+09:00</published><updated>2021-09-06T00:00:00+09:00</updated><id>/algorithm/21.09.06.algorithm</id><content type="html" xml:base="/algorithm/21.09.06.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;toy-10-binarysearch&quot;&gt;TOY 10. binarySearch&lt;/h2&gt;
+&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;오름차순 정렬된 정수의 배열(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&lt;/code&gt;)과 정수(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;)를 입력받아 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;의 인덱스를 리턴해야 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;인자-1--arr&quot;&gt;인자 1 : arr&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입을 요소로 갖는 임의의 배열&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt; 는 정수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;인자-2--target&quot;&gt;인자 2 : target&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입의 정수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입을 리턴해야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;이진탐색 알고리즘&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt;)을 사용해야 합니다.&lt;/li&gt;
+  &lt;li&gt;단순한 배열 순회(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(N)&lt;/code&gt;)로는 통과할 수 없는 테스트 케이스가 존재합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;이 없는 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;을 리턴해야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 2&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; -1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;toy-8-solution&quot;&gt;TOY 8. Solution&lt;/h2&gt;
+&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이진탐색트리 특성상 정렬된 값들을 중위순회로 탐색한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt;의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;이 없는 경우 (includes.., indexOf 등으로 target 값이 배열에 존재하는지 탐색). &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;을 리턴해주는 조건분기 설정&lt;/li&gt;
+  &lt;li&gt;최초 탐색할 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간&lt;/code&gt; idx 설정. 해당 idx 기준으로 탐색 시작.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;비교 하여 같은 경우 탐색종료 해당 idx 값 반환&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;비교 하여 클 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간&lt;/code&gt; idx 우측 남은값(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간+1] ~ arr[length-1]&lt;/code&gt;)을 바탕으로 재귀 실행,&lt;/li&gt;
+  &lt;li&gt;작을 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간&lt;/code&gt; idx 좌측 남은값 바탕으로 재귀 실행&lt;/li&gt;
+  &lt;li&gt;이진탐색트리의 시간복잡도에 알맞는 계산방식으로 구현&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 이진탐색 (binary search)은 탐색범위의 절반을 기준으로 &lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// target과 확인한 후 그 절반값보다 큰 곳 또는 작은 곳을 다음 탐색범위로 잡아가는 탐색방법&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// target이 arr배열에 없다면 -1 리턴&lt;/span&gt;
+  
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 중간 인덱스 설정&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// arr[중간인덱스] === target과 같다면, rootNode 가 타겟인 경우이다.&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;recArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// arr[중간인덱스] &amp;gt; target이 크다면 root의 좌측으로 탐색이 진행되야함&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// recArr = 중간인덱스 기준, 좌측 slice&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// recArr = 중간인덱스 기준, 우측 slice&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;recArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 재귀 호출&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;reference-code&quot;&gt;Reference Code&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;일단 틀렸다. 시간복잡도에 대한 내용에서 에러가 잡힌다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빅-오 표기법&lt;/code&gt; 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt; 의 시간복잡도는 연산과정이 절반씩 줄어들 경우인건 확실히 인지하였다.&lt;/p&gt;
+
+    &lt;p&gt;자세한 내용은 해당 블로그 내용참조 : &lt;a href=&quot;https://jwoop.tistory.com/9&quot; target=&quot;_blank&quot;&gt;https://jwoop.tistory.com/9&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;재귀를 통하여 전달하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&lt;/code&gt;의 길이를 절반씩 줄였기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt;을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다. 우선 해당내용의 질의를 아고라스테이츠에 문의를 넣어둔 상황이니 지켜본 뒤 내일 다시 포스팅을 이어나갈 예정이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;(작성중)&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;TOY 6. sudoku&lt;/li&gt;
+  &lt;li&gt;TOY 11. powerSet&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 10. binarySearch</summary></entry><entry><title type="html">[Algorithm] TOY 8. largestProductOfThree</title><link href="/algorithm/21.09.02.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 8. largestProductOfThree" /><published>2021-09-02T00:00:00+09:00</published><updated>2021-09-02T00:00:00+09:00</updated><id>/algorithm/21.09.02.algorithm</id><content type="html" xml:base="/algorithm/21.09.02.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-8-largestproductofthree&quot;&gt;TOY 8. largestProductOfThree&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -74,7 +190,7 @@
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;TOY 9. power&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;(주말)&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 8. largestProductOfThree</summary></entry><entry><title type="html">[TIL] 21.09.02 / 1. HTTP/네트워크 2. SSR과 CSR</title><link href="/til/til-210902-1-2-3-http/" rel="alternate" type="text/html" title="[TIL] 21.09.02 / 1. HTTP/네트워크 2. SSR과 CSR" /><published>2021-09-02T00:00:00+09:00</published><updated>2021-09-02T00:00:00+09:00</updated><id>/til/til-210902-1-2-3-http</id><content type="html" xml:base="/til/til-210902-1-2-3-http/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-http네트워크&quot;&gt;1. HTTP/네트워크&lt;/h3&gt;
@@ -1504,108 +1620,4 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;React 실습이다.. 하 클론코딩 등 준비를 못했다. 부딫혀봐야겠다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. 고차함수</summary></entry><entry><title type="html">[TIL] 21.08.06 / 1. DOM 2. 유효성 검사 실습</title><link href="/til/21.08.06-TIL/" rel="alternate" type="text/html" title="[TIL] 21.08.06 / 1. DOM 2. 유효성 검사 실습" /><published>2021-08-06T00:00:00+09:00</published><updated>2021-08-06T00:00:00+09:00</updated><id>/til/21.08.06%20TIL</id><content type="html" xml:base="/til/21.08.06-TIL/">&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-dom&quot;&gt;1. DOM&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;DOM( Document Object Model)&lt;/strong&gt; 은 HTML 요소를 Object(JavaScript Object)처럼 조작(Manipulation)할 수 있는 Model이다. 즉, 자바스크립트를 사용할 수 있으면, DOM으로 HTML을 조작할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-1-html에-javascript-적용하기&quot;&gt;1-1. HTML에 JavaScript 적용하기&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTML에 JavaScript를 적용하기 위해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 태그를 이용한다. 웹 브라우저가 작성된 코드를 해석하는 과정에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 요소를 만나면, 웹 브라우저는 HTML 해석을 잠시 추고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 요소를 &lt;strong&gt;먼저&lt;/strong&gt; 실행한다. 즉, &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 요소는 등장과 함께 실행된다&lt;/strong&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt;요소는 발견즉시 해석되므로 HTML 구문이 모두 해석되기 전 실행될 수도 있다.  정의되지 않은 값이 호출되는 경우 null 이 발생되므로 되도록 HTML 구문이 모두 해석되는 시점인&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; 앞에 쓰는걸 습관하 하자.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-2-부모자식-엘리먼트-찾기&quot;&gt;1-2. 부모&amp;amp;자식 엘리먼트 찾기&lt;/h4&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;logo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu-wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;profile-photo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;news-contents&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;news-content-wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;news-picture&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;news-title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;news-description&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;위의 HTML 코드를 보고 부모 자식간의 관계를 눈으로 찾는건 그리 어렵지 않은 일이다. 그렇다면 컴퓨터에게 이 사실을 어떻게 전달할까? 자바스크립트에서 DOM은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document&lt;/code&gt; 객체에 구현되어 있으므로 브라우저에서 작동되는 자바스크립트 코드에서는, 어디에서나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document&lt;/code&gt; 객체를 조회할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DOM 구조를 조회할 때에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir&lt;/code&gt; 이 유용하다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128442805-9865b83d-6360-490e-811d-a964f7ef9380.png&quot; alt=&quot;스크린샷, 2021-08-06 10-37-31&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir&lt;/code&gt; 은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.log&lt;/code&gt; 와 달리 DOM을 객체의 모습으로 출력합니다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128443078-3de98c0d-901f-49ec-aa96-c3b70a8834d8.png&quot; alt=&quot;스크린샷, 2021-08-06 10-40-58&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;객체의 키값쌍 형태로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document.body&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;children&lt;/code&gt; 키를 확인 가능하다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir(document.body.child)&lt;/code&gt;를 이용하여 바로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;children&lt;/code&gt; 키로 접근 또한 가능하다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;매번 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document.body&lt;/code&gt;를 통하여 찾아가는 일은 번거로운 일이다. 따로 변수를 선언해서 이 정보를 저장해두는게 편리하다.&lt;/p&gt;
-
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newsContents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// div#news=contents&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;부모 엘리먼트 또한 변수에 담을수 있다.&lt;/p&gt;
-
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newscontentsParent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newsContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parentElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// body&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이렇듯 DOM은 회사의 조직도와 같은 유사한 구조로 구성된다. 이런 자료 구조를 &lt;strong&gt;트리구조&lt;/strong&gt; 라고 하며, 가장 큰 특징은 부모가 자식을 여러개 가질수 있으며, 부모는 하나인 구조가 반복되는 점이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-유효성-검사-실습--github-참조-&quot;&gt;2. 유효성 검사 실습. &lt;a href=&quot;https://github.com/JH8459/im-sprint-validation-check&quot; target=&quot;_blank&quot;&gt; Github 참조 &lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128504541-67ae5947-c43d-4e7d-9ac0-91c9a678e9c5.png&quot; alt=&quot;스크린샷, 2021-08-06 20-32-56&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;변수에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;querySelector&lt;/code&gt; 로 담아온 선택자의 요소를 변경 및 제어하여 동적인 HTML 작성&lt;/li&gt;
-  &lt;li&gt;DOM 구조를 이해하며 javascript로 제어하는 실습. &lt;del&gt;CSS에 시간을 더 할애하였다..&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DOM 을 우선 찍먹정도 하였다. JavaScript &amp;amp; CSS &amp;amp; HTML 이 유기적으로 상호간에 기능/디자인/뼈대 를 담당하여 웹앱(?)을 구성해보았다. 음.. 일단 생각보다 재미있다. 눈으로 보이기때문인가?&lt;/p&gt;
-
-    &lt;p&gt;아직 부족한 문법(특히 이벤트 핸들러..)은 점차 학습 해나가야겠다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;주말중 리액트 클론 코딩 완료하기. 이번주 부족했던 &lt;em&gt;클로저, 얕은복사/깊은복사&lt;/em&gt; 추가 학습.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. DOM 2. 유효성 검사 실습</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. 고차함수</summary></entry></feed>
