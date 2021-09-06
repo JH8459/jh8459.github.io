@@ -1,15 +1,15 @@
-I"!0<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
-<h2 id="toy-6-sudoku">TOY 6. sudoku</h2>
+I"�.<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-10-binarysearch">TOY 10. binarySearch</h2>
 <h3 id="문제">문제</h3>
 <hr />
-<p>스도쿠는 숫자 퍼즐로, 가로 9칸, 세로 9칸으로 이루어져 있는 표에 1부터 9까지의 숫자를 채워 넣는 퍼즐입니다. 퍼즐을 푸는 방법은 아홉 가로줄, 세로줄, 3X3 칸에 1에서 9까지의 숫자를 중복되지 않게 한 번씩만 넣으면 됩니다. 일부 칸이 비어있는 상태인 스도쿠 보드를 입력받아 스도쿠 퍼즐이 완성된 보드를 리턴해야 합니다.</p>
+<p>오름차순 정렬된 정수의 배열(<code class="language-plaintext highlighter-rouge">arr</code>)과 정수(<code class="language-plaintext highlighter-rouge">target</code>)를 입력받아 <code class="language-plaintext highlighter-rouge">target</code>의 인덱스를 리턴해야 합니다.</p>
 
 <h3 id="입력">입력</h3>
 <hr />
-<h4 id="인자-1--board">인자 1 : board</h4>
+<h4 id="인자-1--arr">인자 1 : arr</h4>
 <ul>
-  <li>가로 길이(<code class="language-plaintext highlighter-rouge">board[i].length</code>)와 세로 길이(<code class="language-plaintext highlighter-rouge">board.length</code>)가 모두 9인 2차원 배열</li>
-  <li><code class="language-plaintext highlighter-rouge">matrix[i][j]</code>는 1 이상 9 이하의 자연수</li>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 임의의 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code> 는 정수</li>
 </ul>
 
 <h4 id="인자-2--target">인자 2 : target</h4>
@@ -43,20 +43,14 @@
 <h2 id="toy-10-solution">TOY 10. Solution</h2>
 <h3 id="수도코드">수도코드</h3>
 <hr />
-<ul>
-  <li>
-    <p>이진탐색트리 특성상 정렬된 값들을 중위순회로 탐색한다.</p>
-
-    <p><code class="language-plaintext highlighter-rouge">target</code>과 <code class="language-plaintext highlighter-rouge">node</code>의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.</p>
-  </li>
-</ul>
+<p><code class="language-plaintext highlighter-rouge">target</code>과 <code class="language-plaintext highlighter-rouge">node</code>의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.</p>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">target</code>이 없는 경우 (includes.., indexOf 등으로 target 값이 배열에 존재하는지 탐색). <code class="language-plaintext highlighter-rouge">-1</code>을 리턴해주는 조건분기 설정</li>
-  <li>최초 탐색할 <code class="language-plaintext highlighter-rouge">중간</code> idx 설정. 해당 idx 기준으로 탐색 시작.</li>
-  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>비교 하여 같은 경우 탐색종료 해당 idx 값 반환</li>
-  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>비교 하여 클 경우 <code class="language-plaintext highlighter-rouge">중간</code> idx 우측 남은값(<code class="language-plaintext highlighter-rouge">arr[중간+1] ~ arr[length-1]</code>)을 바탕으로 재귀 실행,</li>
-  <li>작을 경우 <code class="language-plaintext highlighter-rouge">중간</code> idx 좌측 남은값 바탕으로 재귀 실행</li>
+  <li>최초 탐색할 <code class="language-plaintext highlighter-rouge">중간 idx</code> 설정. 해당 idx 기준으로 탐색 시작.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>을 비교 하여 같은 경우 탐색종료 해당 idx 값 반환</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>을 비교 하여 클 경우 <code class="language-plaintext highlighter-rouge">중간 idx</code> 우측 남은값(<code class="language-plaintext highlighter-rouge">arr[중간+1] ~ arr[length-1]</code>)을 바탕으로 재귀 실행,</li>
+  <li>작을 경우 <code class="language-plaintext highlighter-rouge">중간 idx</code> 좌측 남은값 바탕으로 재귀 실행</li>
   <li>이진탐색트리의 시간복잡도에 알맞는 계산방식으로 구현</li>
 </ol>
 

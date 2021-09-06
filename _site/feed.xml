@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-07T00:21:17+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 6. sudoku</title><link href="/algorithm/21.09.07.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 6. sudoku" /><published>2021-09-07T00:00:00+09:00</published><updated>2021-09-07T00:00:00+09:00</updated><id>/algorithm/21.09.07.algorithm</id><content type="html" xml:base="/algorithm/21.09.07.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-07T00:23:39+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 6. sudoku</title><link href="/algorithm/21.09.07.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 6. sudoku" /><published>2021-09-07T00:00:00+09:00</published><updated>2021-09-07T00:00:00+09:00</updated><id>/algorithm/21.09.07.algorithm</id><content type="html" xml:base="/algorithm/21.09.07.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-6-sudoku&quot;&gt;TOY 6. sudoku&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -200,20 +200,14 @@
 &lt;h2 id=&quot;toy-10-solution&quot;&gt;TOY 10. Solution&lt;/h2&gt;
 &lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이진탐색트리 특성상 정렬된 값들을 중위순회로 탐색한다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt;의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt;의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;이 없는 경우 (includes.., indexOf 등으로 target 값이 배열에 존재하는지 탐색). &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;을 리턴해주는 조건분기 설정&lt;/li&gt;
-  &lt;li&gt;최초 탐색할 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간&lt;/code&gt; idx 설정. 해당 idx 기준으로 탐색 시작.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;비교 하여 같은 경우 탐색종료 해당 idx 값 반환&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;비교 하여 클 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간&lt;/code&gt; idx 우측 남은값(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간+1] ~ arr[length-1]&lt;/code&gt;)을 바탕으로 재귀 실행,&lt;/li&gt;
-  &lt;li&gt;작을 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간&lt;/code&gt; idx 좌측 남은값 바탕으로 재귀 실행&lt;/li&gt;
+  &lt;li&gt;최초 탐색할 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 idx&lt;/code&gt; 설정. 해당 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;idx&lt;/code&gt; 기준으로 탐색 시작.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;을 비교 하여 같은 경우 탐색종료 해당 idx 값 반환&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;을 비교 하여 클 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 idx&lt;/code&gt; 우측 남은값(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간+1] ~ arr[length-1]&lt;/code&gt;)을 바탕으로 재귀 실행,&lt;/li&gt;
+  &lt;li&gt;작을 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 idx&lt;/code&gt; 좌측 남은값 바탕으로 재귀 실행&lt;/li&gt;
   &lt;li&gt;이진탐색트리의 시간복잡도에 알맞는 계산방식으로 구현&lt;/li&gt;
 &lt;/ol&gt;
 

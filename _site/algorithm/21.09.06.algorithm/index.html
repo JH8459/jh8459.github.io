@@ -402,20 +402,14 @@
 <h2 id="toy-10-solution">TOY 10. Solution</h2>
 <h3 id="수도코드">수도코드</h3>
 <hr />
-<ul>
-  <li>
-    <p>이진탐색트리 특성상 정렬된 값들을 중위순회로 탐색한다.</p>
-
-    <p><code class="language-plaintext highlighter-rouge">target</code>과 <code class="language-plaintext highlighter-rouge">node</code>의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.</p>
-  </li>
-</ul>
+<p><code class="language-plaintext highlighter-rouge">target</code>과 <code class="language-plaintext highlighter-rouge">node</code>의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.</p>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">target</code>이 없는 경우 (includes.., indexOf 등으로 target 값이 배열에 존재하는지 탐색). <code class="language-plaintext highlighter-rouge">-1</code>을 리턴해주는 조건분기 설정</li>
-  <li>최초 탐색할 <code class="language-plaintext highlighter-rouge">중간</code> idx 설정. 해당 idx 기준으로 탐색 시작.</li>
-  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>비교 하여 같은 경우 탐색종료 해당 idx 값 반환</li>
-  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>비교 하여 클 경우 <code class="language-plaintext highlighter-rouge">중간</code> idx 우측 남은값(<code class="language-plaintext highlighter-rouge">arr[중간+1] ~ arr[length-1]</code>)을 바탕으로 재귀 실행,</li>
-  <li>작을 경우 <code class="language-plaintext highlighter-rouge">중간</code> idx 좌측 남은값 바탕으로 재귀 실행</li>
+  <li>최초 탐색할 <code class="language-plaintext highlighter-rouge">중간 idx</code> 설정. 해당 <code class="language-plaintext highlighter-rouge">idx</code> 기준으로 탐색 시작.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>을 비교 하여 같은 경우 탐색종료 해당 idx 값 반환</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[중간]</code> 값과 <code class="language-plaintext highlighter-rouge">target</code>을 비교 하여 클 경우 <code class="language-plaintext highlighter-rouge">중간 idx</code> 우측 남은값(<code class="language-plaintext highlighter-rouge">arr[중간+1] ~ arr[length-1]</code>)을 바탕으로 재귀 실행,</li>
+  <li>작을 경우 <code class="language-plaintext highlighter-rouge">중간 idx</code> 좌측 남은값 바탕으로 재귀 실행</li>
   <li>이진탐색트리의 시간복잡도에 알맞는 계산방식으로 구현</li>
 </ol>
 
