@@ -458,9 +458,14 @@
 
     <p>자세한 내용은 해당 블로그 내용참조 : <a href="https://jwoop.tistory.com/9" target="_blank">https://jwoop.tistory.com/9</a></p>
 
-    <p>재귀를 통하여 전달하는 <code class="language-plaintext highlighter-rouge">arr</code>의 길이를 절반씩 줄였기 때문에 <code class="language-plaintext highlighter-rouge">O(logN)</code>을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다. 우선 해당내용의 질의를 아고라스테이츠에 문의를 넣어둔 상황이니 지켜본 뒤 내일 다시 포스팅을 이어나갈 예정이다.</p>
+    <p>재귀를 통하여 전달하는 <code class="language-plaintext highlighter-rouge">arr</code>의 길이를 절반씩 줄였기 때문에 <code class="language-plaintext highlighter-rouge">O(logN)</code>을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다.</p>
   </li>
-  <li><del>(작성중)</del></li>
+  <li>
+    <p>배열을 통한 메서드로 연산 처리시 발생하는 시간복잡도는 숙지해둬야할 듯 하다. (참조 : <a href="https://dev.to/lukocastillo/time-complexity-big-0-for-javascript-array-methods-and-examples-mlg" target="_blank">https://dev.to/lukocastillo/<a>)</a></a></p>
+
+    <p>배열을 모든 요소를 순회하며, 처리하는 메소드들 (ex. <code class="language-plaintext highlighter-rouge">slice()</code>, <code class="language-plaintext highlighter-rouge">includes()</code>, <code class="language-plaintext highlighter-rouge">indexOf()</code>..등등) 시간복잡도 <code class="language-plaintext highlighter-rouge">O(logN)</code> 을 만족할 수 없는 결과를 야기시킨다.</p>
+  </li>
+  <li>알고리즘은 간단하였다, 애초에 배열을 절반씩 자르면서 접근하려던 의도도 <code class="language-plaintext highlighter-rouge">O(logN)</code>을 충족시키려 시도해보았던 과정인데 메소드 자체가 이미 배열을 모두 순회한뒤 -&gt; 해당 인덱스까지 얕은 복사가 이뤄지는 과정이다. 그러므로 접근 시도는 좋았지만 사용된 도구(메소드)가 잘못되었다.</li>
 </ul>
 
 <h2 id="내일-할-일">내일 할 일</h2>
@@ -522,6 +527,48 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.09.07.algorithm2/" rel="permalink">[Algorithm] TOY 11. powerSet
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-07T00:00:00+09:00">September 7, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] TOY 11. powerSet
+</p>
+    
+    
+  </article>
+</div>
+
         
           
 
@@ -642,48 +689,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">[Algorithm] TOY 8. largestProductOfThree
-</p>
-    
-    
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/21.09.01-TIL/" rel="permalink">[TIL] 21.09.01 / 1. 비동기 처리 2. Node.js
-</a>
-      
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-09-01T00:00:00+09:00">September 1, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-
-    <p class="archive__item-excerpt" itemprop="description">[TIL] 1. 비동기 처리 2. Node.js
 </p>
     
     

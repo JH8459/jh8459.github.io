@@ -1,4 +1,4 @@
-I"�.<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+I"�0<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
 <h2 id="toy-10-binarysearch">TOY 10. binarySearch</h2>
 <h3 id="문제">문제</h3>
 <hr />
@@ -99,9 +99,13 @@
 
     <p>자세한 내용은 해당 블로그 내용참조 : <a href="https://jwoop.tistory.com/9" target="_blank">https://jwoop.tistory.com/9</a></p>
 
-    <p>재귀를 통하여 전달하는 <code class="language-plaintext highlighter-rouge">arr</code>의 길이를 절반씩 줄였기 때문에 <code class="language-plaintext highlighter-rouge">O(logN)</code>을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다. 우선 해당내용의 질의를 아고라스테이츠에 문의를 넣어둔 상황이니 지켜본 뒤 내일 다시 포스팅을 이어나갈 예정이다.</p>
+    <p>재귀를 통하여 전달하는 <code class="language-plaintext highlighter-rouge">arr</code>의 길이를 절반씩 줄였기 때문에 <code class="language-plaintext highlighter-rouge">O(logN)</code>을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다.</p>
   </li>
-  <li><del>(작성중)</del></li>
+  <li>
+    <p>배열을 통한 메서드로 연산 처리시 발생하는 시간복잡도는 숙지해둬야할 듯 하다. (참조 : <a href="https://dev.to/lukocastillo/time-complexity-big-0-for-javascript-array-methods-and-examples-mlg" target="_blank">https://dev.to/lukocastillo/<a>)</a></a></p>
+
+    <p>배열을 모든 요소를 순회하며, 처리하는 메소드들 (ex. <code class="language-plaintext highlighter-rouge">slice()</code>, <code class="language-plaintext highlighter-rouge">includes()</code>, <code class="language-plaintext highlighter-rouge">indexOf()</code>) 등은 <code class="language-plaintext highlighter-rouge">O(logN)</code></p>
+  </li>
 </ul>
 
 <h2 id="내일-할-일">내일 할 일</h2>
