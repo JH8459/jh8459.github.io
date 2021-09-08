@@ -1,0 +1,152 @@
+I"�><p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-12-treebfs">TOY 12. treeBFS</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>임의의 tree를 구성하는 노드 중 하나의 <code class="language-plaintext highlighter-rouge">Node</code> 객체를 입력받아, 해당 노드를 시작으로 너비 우선 탐색(BFS, Breadth First Search)을 합니다. 이 때, 탐색되는 순서대로 노드의 값이 저장된 배열을 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--node">인자 1 : node</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">'value'</code>, <code class="language-plaintext highlighter-rouge">'children'</code> 속성을 갖는 객체 (Node)</li>
+  <li><code class="language-plaintext highlighter-rouge">'node.value'</code>는 <code class="language-plaintext highlighter-rouge">number</code> 타입</li>
+  <li><code class="language-plaintext highlighter-rouge">'node.children'</code>은 Node를 요소로 갖는 배열</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li>배열(<code class="language-plaintext highlighter-rouge">arr</code>)을 리턴해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 각 부분집합의 원소로 구성된 문자열</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 각 부분집합을 구성하는 원소를 연결한 문자열입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 알파벳 순서로 정렬되어야 합니다.</li>
+  <li>집합은 중복된 원소를 허용하지 않습니다.</li>
+  <li>부분집합은 빈 문자열을 포함합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr</code>은 사전식 순서(lexical order)로 정렬되어야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output1</span> <span class="o">=</span> <span class="nx">powerSet</span><span class="p">(</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output1</span><span class="p">);</span> <span class="c1">// ['', 'a', 'ab', 'abc', 'ac', 'b', 'bc', 'c']</span>
+
+<span class="kd">let</span> <span class="nx">output2</span> <span class="o">=</span> <span class="nx">powerSet</span><span class="p">(</span><span class="dl">'</span><span class="s1">jjump</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output2</span><span class="p">);</span> <span class="c1">// ['', 'j', 'jm', 'jmp', 'jmpu', 'jmu', 'jp', 'jpu', 'ju', 'm', 'mp', 'mpu', 'mu', 'p', 'pu', 'u']</span>
+</code></pre></div></div>
+
+<h2 id="toy-11-solution">TOY 11. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<ul>
+  <li>입력 받은 배열을 배열로 변환, 정렬</li>
+  <li>집합은 중복된 원소를 허용하지 않으므로, 정렬된 배열을 중복값을 제거해줌 (flilter…등 메소드 활용 필요)</li>
+  <li>DFS 깊이 알고리즘을 통해 멱집합 알고리즘 구현. (flag 배열을 생성하여 중복값 여부 check)</li>
+</ul>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">powerSet</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="kd">const</span> <span class="nx">sortArr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">sort</span><span class="p">();</span> <span class="c1">// sortArr = str-&gt;arr 변환 후 정렬한다.</span>
+  <span class="kd">const</span> <span class="nx">uniqueArr</span> <span class="o">=</span> <span class="nx">sortArr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">el</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">sortArr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="o">===</span> <span class="nx">index</span><span class="p">)</span> 
+  <span class="c1">// 중복값 제거, filter 메소드를 이용하여 sortArr.indexOf(el)값이 index와 같은 조건의 uniqe한 값들로 채운 배열을 선언.</span>
+  <span class="kd">let</span> <span class="nx">flag</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">uniqueArr</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// 플래그 생성.</span>
+
+  <span class="kd">const</span> <span class="nx">subSets</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="kd">const</span> <span class="nx">subSet</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">DFS</span> <span class="p">(</span><span class="nx">depth</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 부분 집합 구하는 재귀 함수, DFS 알고리즘</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">uniqueArr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 트리의 끝에 다다른 것 ==&gt; 재귀 종료 조건</span>
+      <span class="kd">const</span> <span class="nx">subSet</span> <span class="o">=</span> <span class="nx">uniqueArr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">flag</span><span class="p">[</span><span class="nx">index</span><span class="p">]).</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span> 
+      <span class="c1">// subset = [ flag[index] === true 이면, uniqueArr[index]을 반환하는 배열이 생성된다]</span>
+      <span class="nx">subSets</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">subSet</span><span class="p">);</span> <span class="c1">// 부분집합들을 담는 배열에 push</span>
+
+      <span class="k">return</span><span class="p">;</span> <span class="c1">// 이전 depth로 회귀</span>
+    <span class="p">}</span>
+
+    <span class="nx">flag</span><span class="p">[</span><span class="nx">depth</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 해당 depth의 flag true = 트리의 왼쪽</span>
+    <span class="nx">subSet</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 트리의 왼쪽에 대해 재귀호출</span>
+
+    <span class="nx">flag</span><span class="p">[</span><span class="nx">depth</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 해당 depth의 flag false = 트리의 오른쪽</span>
+    <span class="nx">subSet</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 트리의 오른쪽에 대해 재귀 호출</span>
+  <span class="p">}</span>
+  
+  <span class="nx">subSet</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// depth 0 부터 시작</span>
+  <span class="k">return</span> <span class="nx">subSets</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">powerSet</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 정렬</span>
+  <span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">sort</span><span class="p">();</span>
+
+  <span class="c1">// 중복 제거</span>
+  <span class="kd">const</span> <span class="nx">deduplicated</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">acc</span><span class="p">[</span><span class="nx">acc</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">acc</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="kd">let</span> <span class="nx">subSets</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">const</span> <span class="nx">pickOrNot</span> <span class="o">=</span> <span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">subset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// base case</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">idx</span> <span class="o">===</span> <span class="nx">deduplicated</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 마지막 문자까지 검토한 경우</span>
+      <span class="nx">subSets</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">subset</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// recursive case</span>
+    <span class="c1">// idx번째 문자가 포함되지 않는 경우</span>
+    <span class="nx">pickOrNot</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">subset</span><span class="p">);</span>
+
+    <span class="c1">// idx번째 문자가 포함되는 경우</span>
+    <span class="nx">pickOrNot</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">subset</span> <span class="o">+</span> <span class="nx">deduplicated</span><span class="p">[</span><span class="nx">idx</span><span class="p">]);</span>
+  <span class="p">};</span>
+
+  <span class="nx">pickOrNot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">subSets</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>
+    <p>멱집합 알고리즘을 참조 하였다. 참조 : <a href="https://jun-choi-4928.medium.com/javascript%EB%A1%9C-%EB%A9%B1%EC%A7%91%ED%95%A9-powerset-%EB%A6%AC%ED%84%B4%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-f1cce8cc3268" target="_blank">https://jun-choi-4928.medium.com</a> 블로그</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/132379995-ab48baeb-7ac0-476d-bd0c-39ca5ca1b140.png" alt="dfs 부분배열 " /></p>
+
+    <p>참고한 사이트 자료가 너무 보기 좋게 정리되어있어서 이해는 어렵지 않았다. <del>(물론 손으로 당연히 쓰면서…)</del></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">return ;</code>이 의미하는 바가 무엇인지 정확히 이해하였다. 재귀를 구현하다보면 재귀의 스택이 쌓이기 마련이다. 이럴때 이전 단계로 회귀(?)하는 느낌을 받았다. DFS 알고리즘 경우 트리의 한 줄기의 깊이를 모두 탐색 후, 다른 줄기로 뻗어야 한다. Leaf 노드로 이르렀을때, 이전 노드로 돌아가기 위해 <code class="language-plaintext highlighter-rouge">return ;</code>을 사용해야한다는 개념을 확실히 익힌 알고리즘이었다.</p>
+  </li>
+  <li>
+    <p>외람되지만, 알고리즘 해결 위해 구글링 중 <code class="language-plaintext highlighter-rouge">set</code>이라는 자료구조를 접하였다.</p>
+    <blockquote>
+      <p>Set는 데이터를 비순차적(unordered)으로 저장할 수 있는 순열 자료구조 (collection)입니다. … Array,List와 마찬가지로 Set는 수정이 가능합니다. 중복을 허용하지 않아서 같은값을 삽입하면 되면, 마지막에 삽입한 값 하나만 저장 됩니다.</p>
+    </blockquote>
+
+    <p>중복을 허용하지 않은 자료구조 솔깃하다..</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sortArr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">sort</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">uniqueArr</span> <span class="o">=</span> <span class="nx">sortArr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">el</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">sortArr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="o">===</span> <span class="nx">index</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>위 행위를 뭔가 한코드로 줄일수 있을 듯한 느낌이 온다.</p>
+  </li>
+</ul>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 12. treeBFS</li>
+</ul>
+:ET
