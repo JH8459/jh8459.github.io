@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-08T20:00:49+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 6. sudoku</title><link href="/algorithm/21.09.08.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 6. sudoku" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T00:00:00+09:00</updated><id>/algorithm/21.09.08.algorithm</id><content type="html" xml:base="/algorithm/21.09.08.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-09T02:06:26+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 6. sudoku</title><link href="/algorithm/21.09.08.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 6. sudoku" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T00:00:00+09:00</updated><id>/algorithm/21.09.08.algorithm</id><content type="html" xml:base="/algorithm/21.09.08.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-6-sudoku&quot;&gt;TOY 6. sudoku&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -434,7 +434,119 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 12. treeBFS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 11. powerSet</summary></entry><entry><title type="html">[Algorithm] TOY 10. binarySearch</title><link href="/algorithm/21.09.06.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 10. binarySearch" /><published>2021-09-06T00:00:00+09:00</published><updated>2021-09-06T00:00:00+09:00</updated><id>/algorithm/21.09.06.algorithm</id><content type="html" xml:base="/algorithm/21.09.06.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 11. powerSet</summary></entry><entry><title type="html">[TIL] 21.09.07 / 1. React 데이터 흐름 2. Effect Hook</title><link href="/til/21.09.07.til/" rel="alternate" type="text/html" title="[TIL] 21.09.07 / 1. React 데이터 흐름 2. Effect Hook" /><published>2021-09-07T00:00:00+09:00</published><updated>2021-09-07T00:00:00+09:00</updated><id>/til/21.09.07.til</id><content type="html" xml:base="/til/21.09.07.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1-react-데이터-흐름&quot;&gt;1. React 데이터 흐름&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132542812-b2131f36-bbaa-436a-a174-d3e4a3e15945.png&quot; alt=&quot;react&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;1-1-상향식bottom-up-개발&quot;&gt;1-1. 상향식(bottom-up) 개발&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;React의 개발 방식의 가장 큰 특징은 페이지 단위가 아닌, 컴포넌트 단위로 시작한다는 점이다.&lt;/p&gt;
+
+    &lt;p&gt;앱을 만들거나 웹페이지를 만들때 페이지를 만들기 이전에 컴포넌트를 만들고 조립을한다. 즉, 상향식(bottom-up)으로 앱을 만드는 것이다. 이러한 구조의 가장 큰 장점은 테스트가 쉽고 확장성이 좋다. 이때 중요한점은 하나의 컴포넌트는 한가지 일만 하는 단일 책임 원칙을 따르는 것이다. 그래야 이후 오류 발생시 오류 컴포넌트를 쉽게 찾고 수정할 수 있습니다.&lt;/p&gt;
+
+    &lt;p&gt;이러한 흐름을 이해하였다면, 웹페이지나 앱 디자인을 전달 받았을때 React 개발자는 이를 컴포넌트 계층 구조로 나누는 것이 가장 먼저 해야 할 일이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-2-하향식top-down-데이터-흐름&quot;&gt;1-2. 하향식(top-down) 데이터 흐름&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단방향 데이터 흐름(one-way data flow)&lt;/strong&gt; 이라는 키워드는 React를 대표하는 키워드이다.&lt;/p&gt;
+
+    &lt;p&gt;컴포넌트는 컴포넌트 바깥에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 이용해 데이터를 마치 인자(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arguments&lt;/code&gt;) 혹은 속성(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;attributes&lt;/code&gt;)처럼 전달받을 수 있다. 즉, 데이터를 전달하는 주체는 부모 컴포넌트가 되며, 이는 데이터 흐름이 하향식(top-down)임을 의미한다. 또한 컴포넌트는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 통해 전달받은 데이터가 어디서 왔는지 전혀 알지 못한다는 특징들이 단방향 데이터 흐름(one-way data flow)이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-3-데이터-흐름을-고려한-state-배치&quot;&gt;1-3. 데이터 흐름을 고려한 State 배치&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;앞서 state에 관하여 학습했지만 데이터 흐름에 포커스를 맞춰 다시 언급하자면, App 에서 필요한 데이터는 ‘변하는 값’과 ‘변하지 않는 값’ 두 가지로 나누어볼 수 있다. 예를들어 user 가 입력하는 값은 이벤트에 따라 얼마든 변할 수 있는 값이며, 이 것을 state (상태) 라고 한다.&lt;/p&gt;
+
+    &lt;p&gt;React 로 개발을 할 때에 모든 데이터를 state 로 둘 필요는 없다. 사실 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 가 많아질 수록 앱이 복잡해지기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 는 최소화 될 수록 좋다. 어떤 데이터를 state 로 두어야 하는지 여부는 다음 세 가지의 질문을 통해 판단해볼 수 있습니다.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;부모 컴포넌트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 를 통해 전달되는가?&lt;/li&gt;
+      &lt;li&gt;시간이 지나도 변하지 않는가?&lt;/li&gt;
+      &lt;li&gt;컴포넌트 안의 다른 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 를 가지고 계산이 가능한가?&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;‘아니오’ 라는 답변이 나온다면 해당 데이터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 로 두어야 할 필요가 있다.&lt;/p&gt;
+
+    &lt;p&gt;그렇다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 어디에 위치시켜야 데이터 흐름에 알맞은가? 만일 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 가 특정 컴포넌트 안에서만 유의미하다면 그 컴포넌트 에 위치시키면 되지만, 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 기반으로 두 컴포넌트가 영향을 받는다면, 공통 소유 컴포넌트를 찾아 해당 위치에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 위치시켜야 한다.&lt;/p&gt;
+
+    &lt;p&gt;즉, 두 개의 자식 컴포넌트가 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 에 접근하고자 할 때에는 하향식(top-down), 단방향 데이터 흐름을 고려하여 두 자식 컴포넌트의 공통된 부모 컴포넌트에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 위치시켜야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-4-state-끌어올리기-lifting-state-up&quot;&gt;1-4. State 끌어올리기 (Lifting State Up)&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132545689-04b84053-1cd5-40e7-9e10-021cb6934c21.png&quot; alt=&quot;State 끌어올리기 (Lifting State Up)&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;지금까지 단방향 데이터 흐름(one-way data flow)이라는 원칙에 따라, 하위 컴포넌트는 상위 컴포넌트로부터 전달만 받을 수 있었다. 또한 전달 받은 값의 형태 혹은 타입이 무엇인지만 알 수 있었다.&lt;/p&gt;
+
+    &lt;p&gt;그러므로 &lt;strong&gt;State 끌어올리기 (Lifting State Up)&lt;/strong&gt; 가 발생되어 하위 컴포넌트에서의 어떤 이벤트로 인해 상위 컴포넌트의 상태가 바뀌는 것은 마치 “역방향 데이터 흐름”과 같이 조금 이상하게 들릴 수 있다. React가 제시하는 해결책은 다음과 같다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;상위 컴포넌트의 “상태를 변경하는 함수” 그 자체를 하위 컴포넌트로 전달하고, 이 함수를 하위 컴포넌트가 실행한다&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;함수의 작성은 부모 컴포넌트에서 이뤄지며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;로 사용은 자녀 컴포넌트에서 이루어진다. 여전히 단방향 데이터 흐름에 원칙에 부합하지만, 하위 컴포넌트에서 상위 컴포넌트의 상태를 변경할 수 있게 된다. 바로 이것이 State 끌어올리기 (Lifting State Up)이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-effect-hook&quot;&gt;2. Effect Hook&lt;/h3&gt;
+&lt;h4 id=&quot;2-1-useeffect&quot;&gt;2-1. useEffect()&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect&lt;/code&gt;는 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 Hook 이다.&lt;/p&gt;
+
+    &lt;p&gt;렌더링은 컴포넌트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mount&lt;/code&gt;되었을 때,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update&lt;/code&gt;되었을 때 나타난다. 해당 시점에 특정 작업을 처리 할 수 있는 함수이다.&lt;/p&gt;
+
+    &lt;p&gt;즉, 클래스형 컴포넌트에서 사용할 수 있었던 생명주기 메소드를 함수형 컴포넌트에서 사용할 수 있게 된다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132549740-85dfee45-06d3-407c-80b4-55cb11b56542.png&quot; alt=&quot;생명주기&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect&lt;/code&gt;의 기본형은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect( function, deps )&lt;/code&gt;이다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function&lt;/code&gt;은 수행하고자 하는 작업이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;는 배열형태를 전달받는다. 해당 배열안에는 검사하고자 하는 특정 값 혹은 빈 배열이 들어간다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;의 값에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect()&lt;/code&gt; 함수의 실행 횟수가 결정된다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[]&lt;/code&gt;을 넣는 경우 한번만 실행이되며, 특정 값이 업데이트( 특정 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;가 바뀔 때) 될 때 실행하고 싶을 때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt; 위치의 배열 안에 검사하고 싶은 값을 넣어준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;이러한 특성 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;에 들어간 배열은 종속 배열, 의존성 배열(dependency Arr) 등으로 부르기도 한다.&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;파라미터를 생략한다면, 컴포넌트가 리렌더링 될 때마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect()&lt;/code&gt; 함수가 호출되므로 주의해야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-실습&quot;&gt;3. 실습&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;참조 : &lt;a href=&quot;https://github.com/JH8459/im-sprint-statesairline-client&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-1-state-끌어올리기-lifting-state-up-다이어그램&quot;&gt;3-1. State 끌어올리기 (Lifting State Up) 다이어그램&lt;/h4&gt;
+&lt;p&gt;&lt;img width=&quot;915&quot; alt=&quot;상태끌어올리기&quot; src=&quot;https://user-images.githubusercontent.com/83164003/132552557-613a23c6-a1ba-4ada-b683-d3ca29a8857a.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;useEffect().. 아직 감이 안잡힌다. 컴포넌트가 렌더링 될때마다 특정 함수가 작동되는 경우 사용이 되어야 한다 일단 학습하였다.&lt;/p&gt;
+
+    &lt;p&gt;실습에서도 AJAX로 가져온 데이터 값을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;condition.destination&lt;/code&gt; 즉, 도착지를 입력하며 새로 렌더링 하였다.&lt;/p&gt;
+
+    &lt;p&gt;우선 사용목적은 감은 오지만 실제 코드에 적용하기까진 시간이 필요할 듯하다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[Web Server] 기초&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. React 데이터 흐름 2. Effect Hook</summary></entry><entry><title type="html">[Algorithm] TOY 10. binarySearch</title><link href="/algorithm/21.09.06.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 10. binarySearch" /><published>2021-09-06T00:00:00+09:00</published><updated>2021-09-06T00:00:00+09:00</updated><id>/algorithm/21.09.06.algorithm</id><content type="html" xml:base="/algorithm/21.09.06.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-10-binarysearch&quot;&gt;TOY 10. binarySearch&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -837,9 +949,7 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[HTTP/네트워크] 실습&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. HTTP/네트워크 2. SSR과 CSR</summary></entry><entry><title type="html">[TIL] 21.09.01 / 1. 비동기 처리 2. Node.js</title><link href="/til/21.09.01-TIL/" rel="alternate" type="text/html" title="[TIL] 21.09.01 / 1. 비동기 처리 2. Node.js" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T00:00:00+09:00</updated><id>/til/21.09.01%20TIL</id><content type="html" xml:base="/til/21.09.01-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;-[React] 데이터 흐름의 이해와 비동기 요청 처리&lt;/p&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. HTTP/네트워크 2. SSR과 CSR</summary></entry><entry><title type="html">[TIL] 21.09.01 / 1. 비동기 처리 2. Node.js</title><link href="/til/21.09.01-TIL/" rel="alternate" type="text/html" title="[TIL] 21.09.01 / 1. 비동기 처리 2. Node.js" /><published>2021-09-01T00:00:00+09:00</published><updated>2021-09-01T00:00:00+09:00</updated><id>/til/21.09.01%20TIL</id><content type="html" xml:base="/til/21.09.01-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-비동기-처리-asynchronous-processing&quot;&gt;1. 비동기 처리 (Asynchronous processing)&lt;/h3&gt;
 &lt;ul&gt;
@@ -1097,7 +1207,7 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;[HTTP/네트워크] 학습&lt;/li&gt;
+  &lt;li&gt;[HTTP/네트워크]&lt;/li&gt;
   &lt;li&gt;알고리즘 카테고리 추가, TIL은 매일 작성하기 보다는 학습 한 단락이 마무리지어졌을때 공부한 내용 정리하기 위한 목적 정도로만 유지하고 알고리즘 코드 풀이에 조금더 시간을 할애 해볼 예정이다.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. 비동기 처리 2. Node.js</summary></entry><entry><title type="html">[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류</title><link href="/til/21.08.26-TIL/" rel="alternate" type="text/html" title="[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류" /><published>2021-08-26T00:00:00+09:00</published><updated>2021-08-26T00:00:00+09:00</updated><id>/til/21.08.26%20TIL</id><content type="html" xml:base="/til/21.08.26-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
@@ -1283,16 +1393,7 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;자료구조 활용 실제 그래프, 트리 등 코딩 구현 실습&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;금요일~주말중, 밀린 알고리즘 문제 해결 필요.&lt;/p&gt;
-    &lt;ol&gt;
-      &lt;li&gt;경우의 수 완전탐색 순열 알고리즘&lt;/li&gt;
-      &lt;li&gt;배열의 부분집합 여부 검사 알고리즘 (구현은 했지만 시간복잡도를 따지면 저효율 코딩…  실제로 경우의수가 커지면 stack overflow가 발생한다.)&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
+  &lt;li&gt;[JS/Node] 비동기&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. 자료구조 2. 자료구조의 종류</summary></entry><entry><title type="html">[TIL] 21.08.23 / 1. 클래스를 이용한 모듈화 2. Prototype</title><link href="/til/21.08.23-TIL/" rel="alternate" type="text/html" title="[TIL] 21.08.23 / 1. 클래스를 이용한 모듈화 2. Prototype" /><published>2021-08-23T00:00:00+09:00</published><updated>2021-08-23T00:00:00+09:00</updated><id>/til/21.08.23%20TIL</id><content type="html" xml:base="/til/21.08.23-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-클래스를-이용한-모듈화&quot;&gt;1. 클래스를 이용한 모듈화&lt;/h3&gt;
@@ -1515,157 +1616,5 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;자료구조와 알고리즘에 대한 학습예정&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. 클래스를 이용한 모듈화 2. Prototype</summary></entry><entry><title type="html">[TIL] 21.08.13 / 1. React Props &amp;amp; State</title><link href="/til/21.08.13-TIL/" rel="alternate" type="text/html" title="[TIL] 21.08.13 / 1. React Props &amp;amp; State" /><published>2021-08-13T00:00:00+09:00</published><updated>2021-08-13T00:00:00+09:00</updated><id>/til/21.08.13%20TIL</id><content type="html" xml:base="/til/21.08.13-TIL/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-react-props--state&quot;&gt;1. React Props &amp;amp; State&lt;/h3&gt;
-&lt;h4 id=&quot;1-1-props-vs-state&quot;&gt;1-1. Props vs State&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;간단하게 언급하고 가자면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;는 외부로 부터 전달받은 값이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;는 컴포넌트 내부에서 변화하는 값이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-2-props&quot;&gt;1-2. Props&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;컴포넌트의 속성(property)을 뜻한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;는 변하지 않는 &lt;strong&gt;외부로부터 전달받은 값&lt;/strong&gt;으로, 웹 어플리케이션에서 해당 컴포넌트가 가진 속성에 해당된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이 해당 컴포넌트의 속성은 부모 컴포넌트(상위 컴포넌트)로부터 전달받은 값이다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;React 컴포넌트는 JavaScript 함수와 클래스로, props를 함수의 전달인자(arguments)처럼 전달받아 이를 기반으로 화면에 어떻게 표시되는지를 기술하는 React 엘리먼트를 반환한다. 따라서, 컴포넌트가 최초 렌더링될 때에 화면에 출력하고자 하는 데이터를 담은 초기값으로 사용할 수 있다.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;의 자료형은 객체 형태이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;로 어떤 타입의 값도 넣어 전달할 수 있도록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;는 객체의 형태를 가진다.&lt;/p&gt;
-
-    &lt;p&gt;또한, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;는 외부로부터 전달받아 변하지 않는 값입니다. 그래서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;는 함부로 변경될 수 없는 &lt;strong&gt;읽기 전용(read-only) 객체&lt;/strong&gt;이다. 함부로 변경되지 않아야 하기 때문이다.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;읽기 전용 객체가 아니라면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 전달받은 하위 컴포넌트 내에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 를 직접 수정 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 전달한 상위 컴포넌트의 값에 영향을 미칠 수 있게 된다. 즉, 개발자가 의도하지 않은 &lt;em&gt;side effect&lt;/em&gt; 가 생기게 되고 이는 React의 단방향, &lt;em&gt;하향식 데이터 흐름 원칙(React is all about one-way data flow down the component hierarchy)&lt;/em&gt; 에 위배된다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 사용하는 방법은 아래와 같이 3단계로 구분할 수 있다.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;하위 컴포넌트에 전달하고자 하는 값(data)과 속성을 정의한다.&lt;/li&gt;
-      &lt;li&gt;props를 이용하여 정의된 값과 속성을 전달한다.&lt;/li&gt;
-      &lt;li&gt;전달받은 props를 렌더링한다.&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 부모 컴퍼넌트 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;I'm the parent&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Child&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;I'm the child&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt; 
-      &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 1-1. text라는 속성을 선언하고, 이 속성에 문자열 값을 할당하여 Child 하위 컴포넌트에 전달 */&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;I'm the child&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; 
-      &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 1-2. 태그사이에 value 를 넣어 전달할 수도 있다. */&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 2. 함수에 인자를 전달하듯 props를 자식 컴퍼넌트에게 전달 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 3-1. 전달 받은 props를 렌더링. (props는 객체므로 key값 &quot;text&quot;를 닷노테이션(dot notation) 방식으로 접근하여 렌더링해준다.) */&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;childeren&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 3-2. 전달 받은 props를 렌더링. (props.children을 이용하면 해당 value에 접근하여 사용할 수 있다.) */&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-3-state&quot;&gt;1-3. State&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;컴포넌트 내부에서 변할 수 있는 값, 즉 상태는 React State로 다뤄야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;React에서는 state 를 다루는 방법 중 하나로 React에서 제공하는 &lt;strong&gt;useState&lt;/strong&gt; 라는 특별한 함수를 불러와서 사용해야 한다.&lt;/p&gt;
-
-    &lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;체크박스로 컴포넌트 내부에서 상태의 변화를 담아보자.&lt;/p&gt;
-
-    &lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* import useState */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CheckboxExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isChecked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setIsChecked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 새로운 state 변수(isChecked)를 선언 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 문법적으로 보면 useState의 리턴값(배열)을 구조 분해 할당한 [isChecked, setIsChecked] 변수 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleChecked&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setIsChecked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* 핸들러 함수 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;App&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isChecked&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleChecked&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isChecked&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Checked!!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Unchecked&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* isChecked 가 boolean 값을 반환하는 함수기 때문에 삼항연산자를 사용하여 true/false 값을 매칭해준다 */&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CheckboxExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;위 코드중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState&lt;/code&gt; 함수는 호출시 리턴값은 배열이다. 반환되는 배열의 요소를 살펴보자면, &lt;strong&gt;배열의 0번째 요소는 현재 state 변수이고, 1번째 요소는 이 변수를 갱신할 수 있는 함수&lt;/strong&gt;이다.&lt;/p&gt;
-
-        &lt;div class=&quot;language-react highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;저장&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;변수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;갱신&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;함수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;상태&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;초기&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;위 코드의 예시대로 React 컴포넌트는 state가 변경되면 새롭게 호출되고, 리렌더링 된다.&lt;/p&gt;
-
-    &lt;p&gt;이때 React state는 상태 변경 함수(위 예시는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useState&lt;/code&gt;함수) 호출로 변경해야 한다. 강제로 변경을 시도하면 , 리렌더링이 되지 않는다거나, state가 제대로 변경되지 않는 side effect 가 발생할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-react-데이터-흐름&quot;&gt;2. React 데이터 흐름&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;React의 개발 방식의 가장 큰 특징은 페이지 단위가 아닌, &lt;strong&gt;컴포넌트 단위&lt;/strong&gt;로 시작한다는 점이 가장 큰 특징이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터의 흐름을 파악할 때에는 부모 컴포넌트에서 props를 이용하여 데이터를 함수의 인자(arguments) 혹은 속성(attributes)처럼 전달 받는 구조로 설계해야한다. 전달하는 주체는 부모이기 때문에 데이터 흐름 방식은 하향식 (top-down)임을 의미한다.&lt;/p&gt;
-
-    &lt;p&gt;이러한 &lt;strong&gt;단방향 데이터 흐름 (One-way data flow)&lt;/strong&gt; 이라는 키워드가 React를 대표하는 설명 중 하나일 정도이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;React 에서 데이터를 다룰 때는 컴포넌트들간의 상호 관계와 데이터의 역할, 데이터의 흐름을 고려하여 위치를 설정해야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-react-props--states-실습-참조--github&quot;&gt;3. React Props &amp;amp; States 실습. &lt;a href=&quot;https://github.com/JH8459/im-sprint-react-twittler-state-props&quot; target=&quot;_blank&quot;&gt;참조 : Github&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;React props 전달시 부모에서 자식으로 객체로 전달됨.. 조금더 다양한 실습을 해봐야 할듯하다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;~08.17 까진 리액트, 돔, 고차함수 집중&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;HA 이후 포스팅 예정, 부족한 학습에 집중&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. React Props &amp; State</summary></entry></feed>
+  &lt;li&gt;[자료구조/알고리즘] 기초 - 자료구조&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. 클래스를 이용한 모듈화 2. Prototype</summary></entry></feed>
