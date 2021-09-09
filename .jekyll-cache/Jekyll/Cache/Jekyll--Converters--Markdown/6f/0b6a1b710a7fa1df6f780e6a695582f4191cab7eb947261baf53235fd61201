@@ -1,0 +1,100 @@
+I"l&<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-13-insertionsort">TOY 13. insertionSort</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>정수를 요소로 갖는 배열을 입력받아 오름차순으로 정렬하여 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 1,000 이하</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열을 리턴해야 합니다.</li>
+  <li>배열의 요소는 오름차순으로 정렬되어야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i] &lt;= arr[j]</code> (<code class="language-plaintext highlighter-rouge">i &lt; j</code>)</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><strong>삽입 정렬</strong>을 구현해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.sort</code> 사용은 금지됩니다.</li>
+  <li>입력으로 주어진 배열은 중첩되지 않은 1차원 배열입니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">insertionSort</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [1, 3, 21]</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+
+<ul>
+  <li>insertionSort 함수의 두 번째 인자로 callback 함수를 받아서, 그 함수의 리턴값을 기준으로 요소들을 정렬해 보세요.</li>
+</ul>
+
+<h2 id="toy-13-solution">TOY 13. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p><img src="https://user-images.githubusercontent.com/83164003/132718182-d4134d7b-c117-4e4a-af8b-0b4cf3fdb908.png" alt="Insertion_sort_001" /></p>
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">insertionSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span> 
+      <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="c1">// 비교할 대상</span>
+      <span class="kd">let</span> <span class="nx">prev</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 비교할 대상 좌측 마지막 index</span>
+
+      <span class="k">while</span><span class="p">(</span> <span class="p">(</span><span class="nx">prev</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">temp</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>   
+        <span class="c1">// 좌측 index 값이 0보다 클때, 그리고 비교 대상보다 이전 인덱스 배열 값이 클때 반복문 수행</span>
+         <span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span><span class="p">];</span> <span class="c1">// 현재 temp 자리에 arr[prev]를 넣는다.</span>
+         <span class="nx">prev</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 증감식</span>
+      <span class="p">}</span>
+
+      <span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span> <span class="c1">// prev자리에 temp를 넣는다.</span>
+   <span class="p">}</span>
+   
+   <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">insertionSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">transform</span> <span class="o">=</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">transform</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">transform</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">sorted</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
+          <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+          <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">j</span><span class="p">);</span>
+          <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">right</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">sorted</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li></li>
+</ul>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 14. rotatedArraySearch</li>
+</ul>
+:ET

@@ -1,0 +1,114 @@
+I"}-<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-14-rotatedarraysearch">TOY 14. rotatedArraySearch</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">부분적으로 오름차순 정렬</code>*된 정수의 배열(<code class="language-plaintext highlighter-rouge">rotated</code>)과 정수(<code class="language-plaintext highlighter-rouge">target</code>)를 입력받아 target의 인덱스를 리턴해야 합니다.</p>
+<ul>
+  <li>부분적으로 정렬된 배열: 배열을 왼쪽 혹은 오른쪽으로 0칸 이상 순환 이동할 경우 완전히 정렬되는 배열</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 1,000 이하</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열을 리턴해야 합니다.</li>
+  <li>배열의 요소는 오름차순으로 정렬되어야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i] &lt;= arr[j]</code> (<code class="language-plaintext highlighter-rouge">i &lt; j</code>)</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><strong>삽입 정렬</strong>을 구현해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.sort</code> 사용은 금지됩니다.</li>
+  <li>입력으로 주어진 배열은 중첩되지 않은 1차원 배열입니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">insertionSort</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [1, 3, 21]</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+
+<ul>
+  <li>insertionSort 함수의 두 번째 인자로 callback 함수를 받아서, 그 함수의 리턴값을 기준으로 요소들을 정렬해 보세요.</li>
+</ul>
+
+<h2 id="toy-14-solution">TOY 14. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p><img src="https://user-images.githubusercontent.com/83164003/132718182-d4134d7b-c117-4e4a-af8b-0b4cf3fdb908.png" alt="Insertion_sort_001" /></p>
+
+<ol>
+  <li>반복문을 수행하며 <code class="language-plaintext highlighter-rouge">arr[1]</code> 부터 정렬 시작</li>
+  <li>정렬 할 값 기준으로 좌측은 이중 반복문을 순회 하며 자기 자신의 위치를 찾는다</li>
+  <li>Advance… 문제 이해가 안간다. 콜백?</li>
+</ol>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">insertionSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span> 
+      <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="c1">// 비교할 대상</span>
+      <span class="kd">let</span> <span class="nx">prev</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 비교할 대상 좌측 마지막 index</span>
+
+      <span class="k">while</span><span class="p">(</span> <span class="p">(</span><span class="nx">prev</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">temp</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>   
+        <span class="c1">// 좌측 index 값이 0보다 클때, 그리고 비교 대상보다 이전 인덱스 배열 값이 클때 반복문 수행</span>
+         <span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span><span class="p">];</span> <span class="c1">// 현재 temp 자리에 arr[prev]를 넣는다.</span>
+         <span class="nx">prev</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 증감식</span>
+      <span class="p">}</span>
+
+      <span class="nx">arr</span><span class="p">[</span><span class="nx">prev</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span> <span class="c1">// prev자리에 temp를 넣는다.</span>
+   <span class="p">}</span>
+   
+   <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">insertionSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">transform</span> <span class="o">=</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">transform</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">transform</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">sorted</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
+          <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+          <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">j</span><span class="p">);</span>
+          <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">right</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">sorted</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>
+    <p>Reference Code 를 보니 배열의 기존 값을 해치지 않았다. <code class="language-plaintext highlighter-rouge">sorted</code> 변수를 선언하여, <code class="language-plaintext highlighter-rouge">slice</code>로 배열 값을 복사하여 썼다.  나는 원 배열을 수정하는 mutable 한 방식을 썼기에 나중에 코드 이식성등을 고려하면 알맞는 코드는 아니다. 다시 풀어봐야 할 듯 하다.</p>
+  </li>
+  <li><del>콜백 함수는 아직도 왜 쓴건진 모르겠다…</del> 아직 콜백 함수의 개념을 내가 잘 모르는건가? 주말중 을 이용하여 다시 풀어봐야할 문제중 하나이다.</li>
+  <li>그다지 .. 많이 쓰일 정렬 알고리즘은 아닌거 같다. 최악의 경우 시간복잡도는 <code class="language-plaintext highlighter-rouge">O(n^2)</code> 이며, 배열의 길이가 길수록 최악의 시간복잡도에 가까워 질 수 밖에 없는 구조이다. 배열의 길이가 짧은 경우, 코드의 길이가 길진 않고 쉽게 구현되는 만큼 짧은 길이의 배열에 적합해 보인다.</li>
+</ul>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 14. rotatedArraySearch</li>
+</ul>
+:ET
