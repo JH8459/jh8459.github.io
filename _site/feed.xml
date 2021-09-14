@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-15T01:12:39+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 16. quickSort</title><link href="/algorithm/21.09.14.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 16. quickSort" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/algorithm/21.09.14.algorithm</id><content type="html" xml:base="/algorithm/21.09.14.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-15T01:14:35+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 16. quickSort</title><link href="/algorithm/21.09.14.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 16. quickSort" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/algorithm/21.09.14.algorithm</id><content type="html" xml:base="/algorithm/21.09.14.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-16-primepassword&quot;&gt;TOY 16. primePassword&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -290,15 +290,11 @@
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;전혀 감을 못잡았다.. Reference Code를 보고 해석하는 정도도 겨우 소화해낸듯 싶다.&lt;/p&gt;
+&lt;p&gt;전혀 감을 못잡았다.. Reference Code를 보고 해석하는 정도도 겨우 소화해낸듯 싶다.&lt;/p&gt;
 
-    &lt;p&gt;모든 경우의 수 탐색후 조건에 맞는 후보(1000 이상, 소수)들을 숫자를 바꾼 횟수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;step&lt;/code&gt;과 조건에 부합하는 숫자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;num&lt;/code&gt;을 큐 자료구조에 enqueue 하여 관리하며, 최종 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newPwd&lt;/code&gt; 까지 몇회의 숫자바꿈으로 처리되는지 탐색하는 알고리즘이다.  현재보다 작은 패스워드들도 모두 check 하기 때문에 예외 경우도 모두 부합하는 결과를 얻을 수 있었다.&lt;/p&gt;
+&lt;p&gt;모든 경우의 수 탐색후 조건에 맞는 후보(1000 이상, 소수)들을 숫자를 바꾼 횟수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;step&lt;/code&gt;과 조건에 부합하는 숫자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;num&lt;/code&gt;을 큐 자료구조에 enqueue 하여 관리하며, 최종 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newPwd&lt;/code&gt; 까지 몇회의 숫자바꿈으로 처리되는지 탐색하는 알고리즘이다.  현재보다 작은 패스워드들도 모두 check 하기 때문에 예외 경우도 모두 부합하는 결과를 얻을 수 있었다.&lt;/p&gt;
 
-    &lt;p&gt;알고리즘도 어려웠기에 인상깊었지만, 함수를 작은 기능별로 쪼개는 모듈화도 인상깊히 학습하였다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;알고리즘도 어려웠기에 인상깊었지만, 함수를 작은 기능별로 쪼개는 모듈화도 인상깊히 학습하였다.&lt;/p&gt;
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
