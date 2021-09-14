@@ -1,0 +1,123 @@
+I"�,<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-16-primepassword">TOY 16. primePassword</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>정수를 요소로 갖는 배열을 입력받아 오름차순으로 정렬하여 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 100,000 이하
+    <h3 id="출력">출력</h3>
+    <hr />
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열을 리턴해야 합니다.</li>
+  <li>배열의 요소는 오름차순으로 정렬되어야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code> &lt;= <code class="language-plaintext highlighter-rouge">arr[j]</code> (<code class="language-plaintext highlighter-rouge">i &lt; j</code>)</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><strong>퀵 정렬</strong>을 구현해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.sort</code> 사용은 금지됩니다.</li>
+  <li>입력으로 주어진 배열은 중첩되지 않은 1차원 배열입니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">quickSort</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [1, 3, 21]</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<ul>
+  <li>quickSort 함수의 두 번째 인자로 callback 함수를 받아서, 그 함수의 리턴값을 기준으로 요소들을 정렬해 보세요.</li>
+</ul>
+
+<h2 id="toy-16-solution">TOY 16. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p><img src="https://user-images.githubusercontent.com/83164003/133280873-516a69e5-dafd-48f4-83ac-e1c3d39e4a3d.png" alt="퀵정렬" /></p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">arr[0]</code> 을 최초 기준점으로 <code class="language-plaintext highlighter-rouge">left</code>, <code class="language-plaintext highlighter-rouge">right</code> 두 배열에 대소 비교하여 arr 요소 push</li>
+  <li>arr을 순회하며 완성된 <code class="language-plaintext highlighter-rouge">left</code> 와 <code class="language-plaintext highlighter-rouge">right</code> 배열 기준으로 다시 재귀 호출</li>
+  <li>arr 이 더이상 정렬할게 없을때 (길이가 2 미만으로 내려갔다면) 재귀 호출 종료</li>
+  <li>정렬이 완료된 배열을 <code class="language-plaintext highlighter-rouge">...</code> 스프레드 연산자 혹은 <code class="language-plaintext highlighter-rouge">concat</code>으로 풀어서 한 배열로 붙여서 리턴하여 함수 종료</li>
+</ol>
+
+<p>메모리 관리가 효율적인 Advanced 알고리즘은 레퍼런스 코드를 참조하여 풀었다.</p>
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">quickSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span> <span class="c1">// 재귀함수의 탈출 조건, 길이가 2보다 작다면 더이상 정렬할게 없다.</span>
+  
+  <span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// pivot</span>
+  <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// pivot 보다 작은 수가 담길 배열</span>
+  <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// pivot 보다 큰 수가 담길 배열</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">//pivot 제외한 arr 요소 조회</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">pivot</span><span class="p">){</span> <span class="c1">// pivot과 비교하여 left, right로 분류</span>
+      <span class="nx">left</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">pivot</span><span class="p">){</span>
+      <span class="nx">right</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 재귀를 통해서 정렬 -&gt; 한 배열로 붙여서 return</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nx">quickSort</span><span class="p">(</span><span class="nx">left</span><span class="p">),</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">quickSort</span><span class="p">(</span><span class="nx">right</span><span class="p">)]</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution</span>
+<span class="c1">// const quickSort = function (arr) {</span>
+<span class="c1">//   if (arr.length &lt;= 1) return arr;</span>
+
+<span class="c1">//   const pivot = arr[0];</span>
+<span class="c1">//   const left = [];</span>
+<span class="c1">//   const right = [];</span>
+
+<span class="c1">//   for (let i = 1; i &lt; arr.length; i++) {</span>
+<span class="c1">//     if (arr[i] &lt;= pivot) left.push(arr[i]);</span>
+<span class="c1">//     else right.push(arr[i]);</span>
+<span class="c1">//   }</span>
+
+<span class="c1">//   const lSorted = quickSort(left);</span>
+<span class="c1">//   const rSorted = quickSort(right);</span>
+<span class="c1">//   return [...lSorted, pivot, ...rSorted];</span>
+<span class="c1">// };</span>
+
+<span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">transform</span> <span class="o">=</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">transform</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">pivot</span><span class="p">))</span> <span class="nx">left</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="k">else</span> <span class="nx">right</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">lSorted</span> <span class="o">=</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">transform</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">rSorted</span> <span class="o">=</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">right</span><span class="p">,</span> <span class="nx">transform</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nx">lSorted</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">rSorted</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li></li>
+</ul>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 17. balancedBrackets</li>
+</ul>
+:ET

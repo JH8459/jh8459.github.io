@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-14T23:50:55+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 16. quickSort</title><link href="/algorithm/21.09.14.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 16. quickSort" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/algorithm/21.09.14.algorithm</id><content type="html" xml:base="/algorithm/21.09.14.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-15T01:12:39+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 16. quickSort</title><link href="/algorithm/21.09.14.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 16. quickSort" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/algorithm/21.09.14.algorithm</id><content type="html" xml:base="/algorithm/21.09.14.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-16-primepassword&quot;&gt;TOY 16. primePassword&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -42,24 +42,99 @@
 &lt;h2 id=&quot;toy-16-solution&quot;&gt;TOY 16. Solution&lt;/h2&gt;
 &lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
 &lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/133280873-516a69e5-dafd-48f4-83ac-e1c3d39e4a3d.png&quot; alt=&quot;퀵정렬&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;퀵정렬의 개념은 구글링을 통해 잡았다. &lt;del&gt;뭔놈의 정렬 알고리즘이 이리 다양한지…&lt;/del&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[0]&lt;/code&gt; 을 최초 기준점으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;left&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;right&lt;/code&gt; 두 배열에 대소 비교하여 arr 요소 push&lt;/li&gt;
+  &lt;li&gt;arr을 순회하며 완성된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;left&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;right&lt;/code&gt; 배열 기준으로 다시 재귀 호출&lt;/li&gt;
+  &lt;li&gt;arr 이 더이상 정렬할게 없을때 (길이가 2 미만으로 내려갔다면) 재귀 호출 종료&lt;/li&gt;
+  &lt;li&gt;정렬이 완료된 배열을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;...&lt;/code&gt; 스프레드 연산자 혹은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;concat&lt;/code&gt;으로 풀어서 한 배열로 붙여서 리턴하여 함수 종료&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;메모리 관리가 효율적인 Advanced 알고리즘은 Reference Code 를 참조하였다.&lt;/p&gt;
 &lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 수도코드와 Reference Code 주석 참조&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// TODO: 여기에 코드를 작성합니다.&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 재귀함수의 탈출 조건, 길이가 2보다 작다면 더이상 정렬할게 없다.&lt;/span&gt;
+  
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// pivot&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// pivot 보다 작은 수가 담길 배열&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// pivot 보다 큰 수가 담길 배열&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//pivot 제외한 arr 요소 조회&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// pivot과 비교하여 left, right로 분류&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 재귀를 통해서 정렬 -&amp;gt; 한 배열로 붙여서 return&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;reference-code&quot;&gt;Reference Code&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// naive solution&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// const quickSort = function (arr) {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   if (arr.length &amp;lt;= 1) return arr;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//   const pivot = arr[0];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   const left = [];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   const right = [];&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//   for (let i = 1; i &amp;lt; arr.length; i++) {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     if (arr[i] &amp;lt;= pivot) left.push(arr[i]);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     else right.push(arr[i]);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   }&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//   const lSorted = quickSort(left);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   const rSorted = quickSort(right);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   return [...lSorted, pivot, ...rSorted];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// };&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lSorted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rSorted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lSorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rSorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;효율적인 메모리를 위한 알고리즘에서는 더이상 진전이 없었다… 레퍼런스 코드가 왜 저렇게 구현되는지 잘 와닿지 않는다.&lt;/p&gt;
+
+&lt;p&gt;TOY13번에서 개념을 잡지않고 우선 넘어갔는데 같은 유형의 문제가 다시 나왔다… 우선 무조건 공부하고 짚고넘어가야 할 듯해서 찾아본 결과, &lt;strong&gt;꼬리재귀&lt;/strong&gt;를 공부해야 해당 부분을 깊게 이해 할 수 있다는 점 정도만 감을 잡았다. 재귀 스택이 쌓이는 과정에서의 오버헤드… 를 해결하는 알고리즘인듯하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;함수를 재귀적으로 호출하여 문제를 해결하는 방식은 코드를 간결하고 의도를 파악하기 쉽게 작성할 수 있는 장점이 있다. 하지만 재귀함수의 콜스택이 깊어 질수록 메모리 오버헤드가 발생하는 단점도 있다. 이 문제를 해결하기 위한 재귀 호출 방식을 &lt;strong&gt;꼬리 재귀&lt;/strong&gt;라고 부른다. 간단하게 정의하자면 재귀함수의 실행 결과가 연산에 사용되지 않고 바로 반환되게 함으로써 이전 함수의 상태를 유지할 필요가 없도록 재귀 함수를 작성하는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;시간이 늦어 오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sort()&lt;/code&gt; 내장 메서드를 사용하지 않는 기본 알고리즘만 해결하고, 주말 추석 연휴중으로 &lt;strong&gt;꼬리재귀&lt;/strong&gt; 에 대해서 학습해 볼 예정이다.&lt;/p&gt;
 
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;TOY 17. balancedBrackets&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 16. quickSort</summary></entry><entry><title type="html">[Algorithm] TOY 15. primePassword</title><link href="/algorithm/21.09.13.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 15. primePassword" /><published>2021-09-13T00:00:00+09:00</published><updated>2021-09-13T00:00:00+09:00</updated><id>/algorithm/21.09.13.algorithm</id><content type="html" xml:base="/algorithm/21.09.13.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+  &lt;li&gt;TOY 17. balancedBracket&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 16. quickSort</summary></entry><entry><title type="html">[Problem] 꼬리재귀 (작성중)</title><link href="/problem/21.09.14.problem/" rel="alternate" type="text/html" title="[Problem] 꼬리재귀 (작성중)" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/problem/21.09.14.problem</id><content type="html" xml:base="/problem/21.09.14.problem/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/128357082-c2307e8c-b553-4983-a044-5754d7e0be79.jpeg&quot; alt=&quot;problem&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;걸림돌-꼬리재귀&quot;&gt;[걸림돌] 꼬리재귀&lt;/h1&gt;
+&lt;h2 id=&quot;1-구체적인-문제&quot;&gt;1. 구체적인 문제&lt;/h2&gt;
+
+&lt;h2 id=&quot;2-해결방안&quot;&gt;2. 해결방안&lt;/h2&gt;
+
+&lt;h2 id=&quot;3-solution&quot;&gt;3. Solution&lt;/h2&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Problem" /><summary type="html">[Problem] 꼬리재귀</summary></entry><entry><title type="html">[Algorithm] TOY 15. primePassword</title><link href="/algorithm/21.09.13.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 15. primePassword" /><published>2021-09-13T00:00:00+09:00</published><updated>2021-09-13T00:00:00+09:00</updated><id>/algorithm/21.09.13.algorithm</id><content type="html" xml:base="/algorithm/21.09.13.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-15-primepassword&quot;&gt;TOY 15. primePassword&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -1000,216 +1075,4 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;del&gt;(주말)&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 8. largestProductOfThree</summary></entry><entry><title type="html">[TIL] 21.09.02 / 1. HTTP/네트워크 2. SSR과 CSR</title><link href="/til/til-210902-1-2-3-http/" rel="alternate" type="text/html" title="[TIL] 21.09.02 / 1. HTTP/네트워크 2. SSR과 CSR" /><published>2021-09-02T00:00:00+09:00</published><updated>2021-09-02T00:00:00+09:00</updated><id>/til/til-210902-1-2-3-http</id><content type="html" xml:base="/til/til-210902-1-2-3-http/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-http네트워크&quot;&gt;1. HTTP/네트워크&lt;/h3&gt;
-&lt;h4 id=&quot;1-1-클라이언트-서버-아키텍처&quot;&gt;1-1. 클라이언트-서버 아키텍처&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;클라이언트-서버 아키텍처는 리소스가 존재하는 곳과, 리소스를 사용하는 앱을 분리시킨 네트워크 모델이다. 리소스를 사용하는 앱이 바로 &lt;strong&gt;“클라이언트”&lt;/strong&gt;, 리소스가 제공(serve)하는 곳은 &lt;strong&gt;“서버”&lt;/strong&gt; 라고 부른다. 클라이언트와 서버로만 이루어진 모델을 2-Tier 아키텍처라고 부르기도 한다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131768527-fd46d641-6172-48e5-a547-1625cc3a6537.png&quot; alt=&quot;클라이언트-서버 아키텍처&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;일반적으로 서버는 리소스를 전달해주는 역할만 담당한다. 리소스를 저장하는 공간을 별도로 마련해 두는데, 이 공간을 &lt;strong&gt;“데이터베이스”&lt;/strong&gt; 라고 부르며, 이처럼 기존 2티어 아키텍처에 데이터베이스가 추가된 형태를 3티어 아키텍처라고 일컫는다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;1-2-http-프로토콜이란&quot;&gt;1-2. HTTP 프로토콜이란?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;HTTP(Hypertext Transfer Protocol)는 웹을 개발하는 사람이라면 누구나 다 알아야 하는 통신 프로토콜이다. &lt;strong&gt;프로토콜&lt;/strong&gt;이란 상호 간에 정의한 규칙을 의미하며 특정 기기 간에 데이터를 주고받기 위해 정의되어 있다.&lt;/p&gt;
-
-    &lt;p&gt;웹에서는 브라우저와 서버 간에 데이터를 주고받기 위한 방식으로 HTTP 프로토콜을 사용하고 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;HTTP 프로토콜의 특징은 상태가 없는(stateless) 프로토콜이다. 여기서 “상태가 없다”라는 말은 데이터를 주고 받기 위한 각각의 데이터 요청이 서로 독립적으로 관리가 된다는 말이다. 즉, 이전 데이터 요청과 다음 데이터 요청이 서로 관련이 없이 독립적이다.&lt;/p&gt;
-
-    &lt;p&gt;이러한 특징 덕택에 서버는 세션과 같은 별도의 추가 정보를 관리하지 않아도 되고, 다수의 요청 처리 및 서버의 부하를 줄일 수 있는 성능 상의 이점이 생긴다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-3-url와-uri&quot;&gt;1-3. URL와 URI&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;URL은 Uniform Resource Locator의 줄임말로, 네트워크 상에서 웹 페이지, 이미지, 동영상 등의 파일이 위치한 정보를 나타낸다.&lt;/p&gt;
-
-    &lt;p&gt;URI는 Uniform Resource Identifier의 줄임말로, 일반적으로 URL의 기본 요소인 scheme, hosts, url-path에 더해 query, bookmark를 포함합니다.  브라우저의 검색창을 클릭하면 나타나는 주소가 URI이다. URI는 URL을 포함하는 상위개념이므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'URL은 URI다.'&lt;/code&gt; 는 참이고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'URI는 URL이다.'&lt;/code&gt; 는 거짓이다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://www.google.com:80/search?q=JavaScript&lt;/code&gt; 를 브라우저의 검색창에 입력하면, 구글에서 JavaScript를 검색한 결과가 나타난다. 이를 자세히 살펴 보면 다음과 같은 특징을 갖는다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131773354-a25d92e9-1d99-4226-aab3-af8589ebc612.png&quot; alt=&quot;스크린샷, 2021-09-02 11-46-06&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-4-http-request--http-response&quot;&gt;1-4. HTTP Request &amp;amp; HTTP Response&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;HTTP로 데이터를 주고받기 위해서는 아래와 같이 요청(Request)을 보내고 응답(Response)을 받아야 합니다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131771279-0f128cc4-9b64-491a-8e92-ccab232618a7.png&quot; alt=&quot;request-response&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;이때 서버는 요청을 받은 클라이언트에게 리소스를 잘 활용할 수 있도록 인터페이스(interface)를 제공해줘야 한다. 이것을 &lt;strong&gt;API, 애플리케이션 프로그래밍 인터페이스(Application Programming Interface)&lt;/strong&gt; 라고 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;앞에서 살펴본 URL을 이용하면 서버에 특정 데이터를 요청할 수 있다. 여기서 요청하는 데이터에 특정 동작을 수행하고 싶으면 HTTP 요청 메서드(Http Request Methods)를 이용한다. 일반적으로 HTTP 요청 메서드는 HTTP Verbs라고도 불리우며 아래와 같이 주요 메서드를 갖고 있다.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;&lt;strong&gt;GET&lt;/strong&gt; : 존재하는 자원에 대한 요청&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;POST&lt;/strong&gt; : 새로운 자원을 생성&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;PUT(PATCH)&lt;/strong&gt; : 존재하는 자원에 대한 변경&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;DELETE&lt;/strong&gt; : 존재하는 자원에 대한 삭제&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다양한 요청 메서드는 해당 문서에서 참조하자. &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Methods&quot; target=&quot;_blank&quot;&gt;참조 : MDN&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-5-http-메세지-포맷&quot;&gt;1-5. HTTP 메세지 포맷&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;앞서서 말한 내용을 요약하면, HTTP는 특정 상태를 유지하지 않으며 웹 브라우저와 웹 서버의 소통을 위해 디자인되었으며 (1-2. HTTP 프로토콜이란?) 클라이언트-서버 모델에서 클라이언트가 HTTP messages 양식에 맞춰 요청을 보내면, 서버도 HTTP messages 양식에 맞춰 응답한다 배웠다. (1-4. HTTP Request &amp;amp; HTTP Response).&lt;/p&gt;
-
-    &lt;p&gt;HTTP messages는 요청(Requests)과 응답(Responses)에서 다음과 같은 구조를 지닌다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131782679-b80595d6-76eb-491c-a776-e07345a72fa8.png&quot; alt=&quot;IMVji3YEl-1620275072422&quot; /&gt;&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;&lt;strong&gt;start line&lt;/strong&gt; : start line에는 요청이나 응답의 상태를 나타내며, 항상 첫 번째 줄에 위치한다. 응답에서는 status line이라고 부른다.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;HTTP headers&lt;/strong&gt; : 요청을 지정하거나, 메시지에 포함된 본문을 설명하는 헤더의 집합.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;empty line&lt;/strong&gt; : 요청에 대한 모든 메타 정보가 전송되었음을 알리는 빈 줄&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;body&lt;/strong&gt; : 요청과 관련된 데이터나 응답과 관련된 데이터 또는 문서를 포함한다. 요청과 응답의 유형에 따라 선택적으로 사용된다.&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;이 중 start line과 HTTP headers를 묶어 요청이나 응답의 헤드(head)라고 하고, &lt;strong&gt;payload&lt;/strong&gt;는 body라고 이야기합니다.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;페이로드(영어: payload)는 사용에 있어서 전송되는 데이터를 뜻한다. 페이로드는 전송의 근본적인 목적이 되는 데이터의 일부분으로 그 데이터와 함께 전송되는 헤더와 메타데이터와 같은 데이터는 제외한다. &lt;a href=&quot;https://ko.wikipedia.org/wiki/%ED%8E%98%EC%9D%B4%EB%A1%9C%EB%93%9C_(%EC%BB%B4%ED%93%A8%ED%8C%85)&quot; target=&quot;_blank&quot;&gt;참조 : MDN&lt;/a&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-6-http-요청-request&quot;&gt;1-6. HTTP 요청 (Request)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;HTTP 요청은 서버가 특정 동작을 취하게끔 만들기 위해 클라이언트에서 전송하는 메시지라는걸  위에서 학습하였다. 이 메세지의 내용은 다음과 같이 이루어져 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시작줄&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;수행할 작업(GET, PUT, POST 등)이나 방식(HEAD or OPTIONS)을 설명하는 HTTP method를 나타낸다. 예를 들어 GET method는 리소스를 받아야 하고, POST method는 데이터를 서버로 전송한다.&lt;/li&gt;
-      &lt;li&gt;요청 대상(일반적으로 URL이나 URI) 또는 프로토콜, 포트, 도메인의 절대 경로는 요청 컨텍스트에 작성된다. 이 요청 형식은 HTTP method 마다 다르다.&lt;/li&gt;
-      &lt;li&gt;HTTP 버전마다 메시지의 구조가 다르다. 이를 위해 HTTP 버전을 함께 입력한다.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;헤더&lt;/strong&gt; : 요청의 Headers는 기본 구조를 따른다. 대소문자 구분 없는 문자열과 콜론(:), 값을 입력합니다. 값은 헤더에 따라 다르다. 여러 종류의 헤더가 있으며 참조를 통해 확인하자. &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Headers&quot; target=&quot;_blank&quot;&gt;참조 : MDN &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;바디&lt;/strong&gt; : 요청의 본문은 HTTP messages 구조의 마지막에 위치한다. 하지만, 모든 요청에 body가 필요하지는 않는다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GET&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HEAD&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DELETE&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OPTIONS&lt;/code&gt;처럼 서버에 리소스를 요청하는 경우에는 본문이 필요하지 않는다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;POST&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PUT&lt;/code&gt;과 같은 일부 요청은 존재하는 자원에 대한 변경 및 업데이트가 필요하므로 사용된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-7-http-응답responses&quot;&gt;1-7. HTTP 응답(Responses)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;전반적인 내용은 요청과 비슷하지만 다른점만 서술해보았다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시작줄&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;현재 프로토콜의 버전(HTTP/1.1)&lt;/li&gt;
-      &lt;li&gt;상태 코드 : 요청의 결과를 코드번호로 나타낸다 (200, 302, 404 ETC…)&lt;/li&gt;
-      &lt;li&gt;상태 텍스트 : 상태 코드에 대한 설명&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;특히 이 &lt;strong&gt;상태 코드&lt;/strong&gt;를 통하여 에러처리를 할 수 있기 때문에 프론트엔드 클라이언트 개발자에겐 가장 중요한 정보이다.&lt;/p&gt;
-
-    &lt;p&gt;주요 상태 코드는 200번대부터 500번대까지 다양하게 있지만 주요한 상태 코드만 몇 개 살펴보자면,&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;2xx : 200번대의 상태 코드는 대부분 요청에 대한 응답 성공을 의미한다.&lt;/li&gt;
-      &lt;li&gt;3xx : 300번대의 상태 코드는 대부분 클라이언트가 이전 주소로 데이터를 요청하여 서버에서 새 URL로 리다이렉트를 유도하는 경우이다.&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;4xx : 400번대 상태 코드는 대부분 클라이언트의 코드가 잘못된 경우이다. 유효하지 않은 자원을 요청했거나 요청이나 권한이 잘못된 경우 발생한다. 가장 익숙한 상태 코드는 404 코드이다. 요청한 자원이 서버에 없다는 의미이다.&lt;/p&gt;
-
-        &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131798212-b4c3f98e-17a0-4ea8-9414-5e0857881efa.jpg&quot; alt=&quot;404오류&quot; /&gt;&lt;/p&gt;
-
-        &lt;p&gt;&lt;del&gt;웹페이지에서 종종 겪는 404 에러 출력 메세지&lt;/del&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;5xx : 500번대 상태 코드는 서버 쪽에서 오류가 난 경우이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-ssr과-csr&quot;&gt;2. SSR과 CSR&lt;/h3&gt;
-&lt;h4 id=&quot;2-1-ssrserver-side-rendering&quot;&gt;2-1. SSR(Server Side Rendering)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;웹 페이지를 브라우저에서 렌더링하는 대신에, 서버에서 렌더링하는 경우를 일컫는다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131885519-a5955b8e-b07b-405d-977b-24f1bb2bc8e2.png&quot; alt=&quot;ssr&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;브라우저가 서버의 URI로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GET&lt;/code&gt; 요청을 보내면, 서버는 정해진 웹 페이지 파일을 브라우저로 전송한다. 그리고 서버의 웹 페이지가 브라우저에 도착하면 완전히 렌더링하게 된다.&lt;/p&gt;
-
-    &lt;p&gt;서버에서 웹 페이지를 브라우저로 보내기 전에, 서버에서 완전히 렌더링했기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Server Side Rendering&lt;/code&gt; 이라고 한다.&lt;/p&gt;
-
-    &lt;p&gt;웹 페이지의 내용에 데이터베이스의 데이터가 필요한 경우, 서버는 데이터베이스의 데이터를 불러온 다음 웹 페이지를 완전히 렌더링 된 페이지로 변환한 후에 브라우저에 응답으로 보낸다. 웹 페이지를 살펴보던 사용자가, 브라우저의 다른 경로로 이동하면 브라우저가 다른 경로로 이동할 때마다 서버는 이 작업을 다시 수행한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-1-csrclient-side-rendering&quot;&gt;2-1. CSR(Client Side Rendering)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;SSR이 서버 측에서 페이지를 렌더링한다면, CSR은 클라이언트에서 페이지를 렌더링한다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131885634-9f8422f1-7124-4df9-80a4-052dee53c0d5.png&quot; alt=&quot;csr&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;브라우저의 요청을 서버로 보내면 서버는 웹 페이지를 렌더링하는 대신, 웹 페이지의 골격이 될 단일 페이지를 클라이언트에 보낸다. 이때 서버는 웹 페이지와 함께 JavaScript 파일을 보내어서 클라이언트가 웹 페이지를 받으면, 웹 페이지와 함께 전달된 JavaScript 파일은 브라우저에서 웹 페이지를 완전히 렌더링 된 페이지로 바꾸게된다.&lt;/p&gt;
-
-    &lt;p&gt;웹 페이지에 필요한 내용이 데이터베이스에 저장된 데이터인 경우에는 브라우저는 데이터베이스에 저장된 데이터를 가져와서 웹 페이지에 렌더링을 해야 한다. 이를 위해 API가 사용된다. 웹 페이지를 렌더링하는 데에 필요한 데이터를 클라이언트는 서버에 API 요청으로 해결할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;마지막으로, 브라우저가 다른 경로로 이동하면 SSR과 다르게 서버가 웹 페이지를 다시 보내지 않는다. 브라우저는 브라우저가 요청한 경로에 따라 페이지를 다시 렌더링하며, 이때 보이는 웹 페이지의 파일은 맨 처음 서버로부터 전달받은 웹 페이지 파일과 동일한 파일이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-2-ssr과-csr의-차이점&quot;&gt;2-2. SSR과 CSR의 차이점&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 속도적인 측면을 보면, 웹 페이지 로딩의 종류는 두 가지로 나눌 수 있다. 하나는 웹 사이트의 가장 첫 페이지를 로딩하는 것 그리고, 다른 하나는 나머지를 로딩하는 것을 꼽을 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;첫 페이지 로딩시간&lt;/strong&gt;은
-CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. 반면 SSR은 필요한 부분의 HTML과 스크립트만 불러오게 된다. 따라서 평균적으로 SSR이 더 빠르다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;나머지 로딩 시간&lt;/strong&gt;은
-첫 페이지를 로딩한 후, 사이트의 다른 곳으로 이동하는 식의 동작을 가정하자. CSR은 이미 첫 페이지 로딩할 때 나머지 부분을 구성하는 코드를 받아왔기 때문에 빠르다.
-반면, SSR은 첫 페이지를 로딩한 과정을 정확하게 다시 실행한다. 그래서 더 느리다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;검색 엔진은 자동화된 프로그램 ‘크롤러’로 웹 사이트들을 읽는다.&lt;/p&gt;
-
-    &lt;p&gt;CSR은 웹 페이지와 함께 전달 된 자바스크립트를 실행시켜 동적으로 컨텐츠가 생성되기 때문에 자바스크립트가 실행 되어야 올바른 리소스가 바뀌게 된다. 하지만 SSR은 애초에 서버 사이드에서 컴파일되어 클라이언트로 넘어오기 때문에 크롤러에 대응하기 용이하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;HTTP 란, 서버-클라이언트간의 상호간에 협의 된 규칙으로 자원을 주고받는 일련의 과정들을 학습하였다. 약간… 구조적인 내용의 학습이었다. 문법이나 코드기술등이 아닌 원초적이고 근본적인 내용이랄까??&lt;/p&gt;
-
-    &lt;p&gt;우선 오늘 학습내용을 최대한 요약하자면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클라이언트는 특정된 &quot;요청 메서드&quot;로 서버에 자원을 요구하고, 서버는 해당 요청을 &quot;응답 코드&quot;가 포함된 응답으로 답변을 한다. 이때 상호간에 대화(?)는 프로토콜이라는 상호간에 규정된 규칙으로 이뤄진다.&lt;/code&gt; 정도로 말할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131799035-50dbb592-e5a4-4f1d-aeb0-45f29ce6f41e.png&quot; alt=&quot;http-full-structure&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;해당 사진의 흐름으로 “서버-클라이언트 간에 Request &amp;amp; Responses가 이뤄진다.” 라는 내용은 머릿속에 집어넣었다 생각한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SSR 과 CSR이 언제 필요하며, 각각의 장단점은 짚고 넘어갔다. SSR이 다시 각광을 받는 듯한 분위기던데.. 조금 더 공부가 필요할 듯 하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;p&gt;-[React] 데이터 흐름의 이해와 비동기 요청 처리&lt;/p&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. HTTP/네트워크 2. SSR과 CSR</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 8. largestProductOfThree</summary></entry></feed>
