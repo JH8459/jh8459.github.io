@@ -1,0 +1,176 @@
+I"$G<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-17-balancedbrackets">TOY 17. balancedBrackets</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>문자열을 입력받아 문자열 내의 모든 괄호의 짝이 맞는지 여부를 리턴해야 합니다.</p>
+
+<ul>
+  <li>다음 단계에 맞춰 함수를 작성해 보세요
+    <ol>
+      <li>괄호의 종류를 단 한가지로 한정합니다.</li>
+      <li>괄호의 종류를 늘려 모든 종류의 괄호에도 작동하도록 합니다.</li>
+      <li>괄호를 제외한 문자열이 포함된 경우에도 작동하도록 합니다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--str">인자 1 : str</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">string</code> 타입의 괄호가 포함된 문자열</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">boolean</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>괄호의 종류는 <code class="language-plaintext highlighter-rouge">(, )</code>만 고려합니다.</li>
+  <li>괄호는 먼저 열리고(<code class="language-plaintext highlighter-rouge">(</code>), 열린만큼만 닫혀야(<code class="language-plaintext highlighter-rouge">)</code>) 합니다.</li>
+  <li>빈 문자열을 입력받은 경우, <code class="language-plaintext highlighter-rouge">true</code>를 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">balancedBrackets</span><span class="p">(</span><span class="dl">'</span><span class="s1">(</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// // -&gt; false</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">balancedBrackets</span><span class="p">(</span><span class="dl">'</span><span class="s1">()</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; true</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<ul>
+  <li>모든 종류의 괄호(<code class="language-plaintext highlighter-rouge">(, ), {, }, [, ]</code>)가 포함된 문자열을 입력빋아 모든 괄호의 짝이 맞는지 여부를 리턴해 보세요.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">balancedBrackets</span><span class="p">(</span><span class="dl">'</span><span class="s1">[](){}</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; true</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">balancedBrackets</span><span class="p">(</span><span class="dl">'</span><span class="s1">[({})]</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; true</span>
+
+<span class="kd">let</span> <span class="nx">output3</span> <span class="o">=</span> <span class="nx">balancedBrackets</span><span class="p">(</span><span class="dl">'</span><span class="s1">[(]{)}</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; false</span>
+</code></pre></div></div>
+
+<h2 id="toy-17-solution">TOY 17. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p><img src="https://user-images.githubusercontent.com/83164003/133451554-bb0d995a-0513-4d13-ab11-10cac4d2a416.png" alt="괄호검사" /></p>
+
+<p>스택 자료구조를 이용하여 괄호를 쌓아가며, 쌍이 맞는 괄호가 나오면 위에서 부터 꺼내는 알고리즘을 구현해보았다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<h4 id="1-bare-minimum">1. bare minimum</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">balancedBrackets</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="kd">const</span> <span class="nx">strArr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>  
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">el</span> <span class="k">of</span> <span class="nx">strArr</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">(</span><span class="dl">'</span><span class="p">){</span>  <span class="c1">// 여는 괄호가 나온다면 stack 배열에 값을 넣는다</span>
+      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  <span class="c1">// 닫는 괄호가 나온다면,</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>  <span class="c1">// 닫는 괄호 + stack 의 길이가 0. 즉, 첫 시작부터 닫는 괄호가 나온다면 false 리턴</span>
+      
+			<span class="k">if</span><span class="p">(</span><span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">(</span><span class="dl">'</span><span class="p">){</span>  <span class="c1">// 닫는 괄호 + stack의 마지막 인덱스가 여는 괄호라면 stack의 값을 뺀다.</span>
+        <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span>  <span class="c1">// stack 배열이 비어있다면, 괄호 쌍이 일치하므로 true 리턴.</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="2-advanced">2. advanced</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">balancedBrackets</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">el</span> <span class="k">of</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">{</span><span class="dl">'</span> <span class="o">||</span> <span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">[</span><span class="dl">'</span> <span class="o">||</span> <span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">(</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 여는 괄호가 나온다면 stack 배열에 값을 넣는다</span>
+      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  <span class="c1">// 닫는 괄호가 나온다면,</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>  <span class="c1">// 닫는 괄호 + stack 의 길이가 0. 즉, 첫 시작부터 닫는 괄호가 나온다면 false 리턴</span>
+
+      <span class="c1">// 닫는 괄호 + stack의 마지막 인덱스가 쌍이 맞는 여는 괄호라면 stack의 값을 뺀다.  </span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">}</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">{</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>  
+        <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">]</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">[</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">el</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">(</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// stack 배열이 비어있다면, 괄호 쌍이 일치하므로 true 리턴.</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution</span>
+<span class="c1">// const balancedBrackets = function (str) {</span>
+<span class="c1">//   const stack = [];</span>
+<span class="c1">//   const opener = '(';</span>
+<span class="c1">//   const closer = ')';</span>
+
+<span class="c1">//   for (let i = 0; i &lt; str.length; i++) {</span>
+<span class="c1">//     if (str[i] === opener) {</span>
+<span class="c1">//       stack.push(str[i]);</span>
+<span class="c1">//     } else if (str[i] === closer) {</span>
+<span class="c1">//       const top = stack.pop();</span>
+<span class="c1">//       if (top !== opener) {</span>
+<span class="c1">//         return false;</span>
+<span class="c1">//       }</span>
+<span class="c1">//     }</span>
+<span class="c1">//   }</span>
+
+<span class="c1">//   return stack.length === 0;</span>
+<span class="c1">// };</span>
+
+<span class="kd">const</span> <span class="nx">balancedBrackets</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">const</span> <span class="nx">opener</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">{</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">}</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">[</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">]</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">(</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">closer</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">}])</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="k">in</span> <span class="nx">opener</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">closer</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">top</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="kd">const</span> <span class="nx">pair</span> <span class="o">=</span> <span class="nx">opener</span><span class="p">[</span><span class="nx">top</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">pair</span> <span class="o">!==</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>오늘 TOY 문제는 어렵지않았다. <del>다만 Reference Code 처럼 간결하진 않지만…</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 18. getItemFromTwoSortedArrays</li>
+</ul>
+:ET
