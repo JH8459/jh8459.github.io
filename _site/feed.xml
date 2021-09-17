@@ -1,4 +1,374 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-15T23:46:16+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 17. balancedBrackets</title><link href="/algorithm/21.09.15.algorith/" rel="alternate" type="text/html" title="[Algorithm] TOY 17. balancedBrackets" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>/algorithm/21.09.15.algorith</id><content type="html" xml:base="/algorithm/21.09.15.algorith/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-17T22:07:06+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 18. getItemFromTwoSortedArrays (작성중)</title><link href="/algorithm/21.09.17.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 18. getItemFromTwoSortedArrays (작성중)" /><published>2021-09-17T00:00:00+09:00</published><updated>2021-09-17T00:00:00+09:00</updated><id>/algorithm/21.09.17.algorithm</id><content type="html" xml:base="/algorithm/21.09.17.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;toy-18-getitemfromtwosortedarrays&quot;&gt;TOY 18. getItemFromTwoSortedArrays&lt;/h2&gt;
+&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;길이가 m, n이고 오름차순으로 정렬되어 있는 자연수 배열들을 입력받아 전체 요소 중 k번째 요소를 리턴해야 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;인자-1--arr1&quot;&gt;인자 1 : arr1&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;자연수를 요소로 갖는 배열&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr1.length&lt;/code&gt;는 m
+    &lt;h4 id=&quot;인자-2--arr2&quot;&gt;인자 2 : arr2&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;자연수를 요소로 갖는 배열&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr2.length&lt;/code&gt;는 n
+    &lt;h4 id=&quot;인자-3--k&quot;&gt;인자 3 : k&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입의 0 이상의 정수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입을 리턴해야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;두 배열의 길이의 합은 1,000,000 이하입니다.&lt;/li&gt;
+  &lt;li&gt;어떤 배열 arr의 k번째 요소는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[k-1]&lt;/code&gt;을 의미합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getItemFromTwoSortedArrays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 8&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getItemFromTwoSortedArrays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;advanced&quot;&gt;Advanced&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;단순히 처음부터 끝까지 찾아보는 방법(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(K)&lt;/code&gt;) 대신 다른 방법(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logK)&lt;/code&gt;)을 탐구해 보세요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;힌트&quot;&gt;힌트&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;이진 탐색(binary search)을 응용하여 해결합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;toy-18-solution&quot;&gt;TOY 18. Solution&lt;/h2&gt;
+&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;만약 시간복잡도를 고려하지 않는 문제라면 난이도 0.1 … &lt;del&gt;이런 걸 의도하진 않겠지…&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 Advanced 조건인 시간복잡도가 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logK)&lt;/code&gt;) 되기 위해서는 1번의 검색 수행마다 경우의 수가 절반으로 줄어야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-bare-minimum&quot;&gt;1. bare minimum&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getItemFromTwoSortedArrays&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// TODO: 여기에 코드를 작성합니다.&lt;/span&gt;
+  
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;시간복잡도를 전혀 고려하지 않았다…&lt;/p&gt;
+&lt;h4 id=&quot;2-advanced&quot;&gt;2. advanced&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;reference-code&quot;&gt;Reference Code&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// naive solution&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// const getItemFromTwoSortedArrays = function (arr1, arr2, k) {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   let cnt = 0,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     left = 0,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     right = 0;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   let target;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   while (cnt &amp;lt; k) {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     if (arr1[left] &amp;lt; arr2[right]) {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//       target = arr1[left];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//       left++;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     } else {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//       target = arr2[right];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//       right++;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     }&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//     cnt++;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   }&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   return target;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// };&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// O(logK) solution&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getItemFromTwoSortedArrays&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 이진 탐색을 위해 각 배열에서 k를 절반으로 쪼개서 카운트 한다.&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;rightStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 엣지 케이스&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 카운트가 남았음에도 배열의 끝에 도달하면 k를 나머지 배열쪽으로 넘긴다.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 엣지 케이스&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 현재 카운트가 남아있는 후보 요소들보다 많을 경우, leftStep(현재 할당량)을 남아있는 요소들의 개수로 바꾼다.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 두 배열의 현재 검사 요소 위치를 비교해서, 그 값이 작은 배열은 비교한 위치 앞에 있는 요소들을 모두 후보군에서 제외시킨다.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 처리가 끝나면 k값을 절반으로 떨어뜨린다.&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leftStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;leftMax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;leftIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;rightMax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rightIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;leftMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rightMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;TOY 19. LPS&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 18. getItemFromTwoSortedArrays</summary></entry><entry><title type="html">[Algorithm] TOY 19. LPS (작성중)</title><link href="/algorithm/21.09.17.algorithm2/" rel="alternate" type="text/html" title="[Algorithm] TOY 19. LPS (작성중)" /><published>2021-09-17T00:00:00+09:00</published><updated>2021-09-17T00:00:00+09:00</updated><id>/algorithm/21.09.17.algorithm2</id><content type="html" xml:base="/algorithm/21.09.17.algorithm2/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;toy-19-lps&quot;&gt;TOY 19. LPS&lt;/h2&gt;
+&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;문자열을 입력받아 다음의 조건을 만족하는 LPS&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;를 찾아 그 길이를 리턴해야 합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LPS&lt;/code&gt;: 주어진 문자열의 가장 긴 접두어이자 접미어(Longest Prefix which is also Suffix)&lt;/li&gt;
+  &lt;li&gt;non-overlapping: 접두어와 접미어는 서로 겹치는 부분이 없어야 합니다. 다시 말해, prefix와 suffix는 문자열의 동일한 인덱스에 위치한 문자를 요소로 가지면 안 됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;인자-1--str&quot;&gt;인자 1 : str&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;string 타입의 임의의 알파벳 소문자 문자열&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str.length&lt;/code&gt;는 60,000 이하&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입을 리턴해야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;prefix(접두어)는 문자열의 첫 인덱스부터 시작하는 모든 부분 문자열을 의미합니다.&lt;/li&gt;
+  &lt;li&gt;suffix(접미어)는 문자열의 마지막 인덱스부터 시작하는 모든 부분 문자열을 의미합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LPS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;abbbcc&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 0&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LPS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;aaaa&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prefix: str.slice(0, 2)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// suffix: str.slice(2)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// non-overlapping 조건이 없는 경우 정답은 4 입니다.&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LPS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;aaaaa&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prefix: str.slice(0, 2)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// suffix: str.slice(3)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// non-overlapping 조건이 없는 경우 정답은 5 입니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;advanced&quot;&gt;Advanced&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;LPS를 계산하는 효율적인 알고리즘(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(N)&lt;/code&gt;)이 존재합니다. 쉽지 않기 때문에 바로 레퍼런스 코드를 보고 이해하는 데 집중하시기 바랍니다.&lt;/li&gt;
+  &lt;li&gt;정규식(regular expression)을 활용하면 아래처럼 간단하게 구현할 수 있습니다. 정규식에 대해서 학습하시기 바랍니다. &lt;a href=&quot;https://regexr.com/&quot; target=&quot;_blank&quot;&gt;(참고사이트)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\w&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\1&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;toy-19-solution&quot;&gt;TOY 19. Solution&lt;/h2&gt;
+&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;사실 문제가 이해가 잘 안가서 몇번 다시 쳐다보았다. 
+손으로 써가며 이해한 바로는&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/133775557-73296f0c-37e8-43b6-ae64-0aba0d96ac2e.jpg&quot; alt=&quot;손코딩&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;문자열을 절반(짝수 경우 5:5로 쪼갤수있고, 홀수인 경우엔 알아서… 비는 문자열 없이 나눠준다.)으로 나눠준다.&lt;/li&gt;
+  &lt;li&gt;쪼개진 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sufix&lt;/code&gt; 안의 내부 문자를 반복문을 통해 순회한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix&lt;/code&gt;는 0번 인덱스는 고정,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix[prefix.length]&lt;/code&gt; 인덱스를 줄여가며 만들어진 새로운 문자열은 LPS 후보가 된다&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sufix&lt;/code&gt;는 0번 인덱스부터 늘려가며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sufix[sufix.length]&lt;/code&gt;인덱스는 고정한 상태에서 만들어진 새로운 문자열은 LPS 후보가 된다.&lt;/li&gt;
+  &lt;li&gt;반복문을 순회하며 새로 만들어진 두 문자열이 같아지면 반복문을 종료하고 현재 중복된 문자열의 길이를 반환한다.
+    &lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
+    &lt;hr /&gt;
+    &lt;p&gt;```javascript 
+const LPS = function (str) {
+  // TODO: 여기에 코드를 작성합니다.
+  let result = ‘’;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;for (let i=0; i&amp;lt;= str.length/2; i++) {
+    let prefix = str.slice(0, i);
+    let suffix = str.slice(str.length-i);&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (prefix===suffix) {
+  result=prefix;
+}   };
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;return result.length;
+};&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### Reference Code
+---
+```javascript
+// naive solution
+// const LPS3 = function (str) {
+//   if (str.length &amp;lt; 2) return 0;
+
+//   // 문자열을 두 부분으로 나누고
+//   // 부분 문자열을 쉽게 구하기 위해
+//   // 왼쪽 부분의 마지막 인덱스와 오른쪽 부분의 첫 인덱스를 저장
+
+//   let halfSize = Math.floor(str.length / 2);
+//   // 문자열의 길이가 홀수일 수 있으므로, 올림한다.
+//   let rightStart = Math.ceil(str.length / 2);
+
+//   // 가장 긴 LPS 후보부터 차례대로 검사한다
+//   for (let offset = 0; offset &amp;lt; halfSize; offset++) {
+//     let matched = true;
+//     for (let i = 0; i &amp;lt; halfSize - offset; i++) {
+//       if (str[i] !== str[rightStart + offset + i]) {
+//         matched = false;
+//         break;
+//       }
+//     }
+//     if (matched) return halfSize - offset;
+//   }
+
+//   // LPS가 없는 경우
+//   return 0;
+// };
+
+// naive solution2
+// const LPS = function (str) {
+//   if (str.length &amp;lt; 2) return 0;
+
+//   // 문자열을 두 부분으로 나누고
+//   // 각 부분의 첫 인덱스를 저장
+//   let leftIdx = 0;
+//   // 문자열의 길이가 홀수일 수 있으므로, 올림한다.
+//   let rightIdx = Math.ceil(str.length / 2);
+
+//   while (rightIdx &amp;lt; str.length) {
+//     if (str[leftIdx] == str[rightIdx]) {
+//       // LPS 검사를 시작한 위치부터 지금까지 계속 같은 경우
+//       // 다음 문자도 같은지 확인하기 위해 인덱스를 이동한다.
+//       leftIdx++;
+//       rightIdx++;
+//     } else {
+//       // leftIdx가 0인 경우, 단순히 rightIdx를 1 증가 (suffix의 시작점을 뒤로 한 칸 이동)
+//       // prefix, suffix가 계속 일치하다가 중간에서 일치하지 않는 경우에도,
+//       // 현재 suffix의 시작점을 뒤로 한 칸 이동한다.
+//       rightIdx = rightIdx - leftIdx + 1;
+//       leftIdx = 0;
+//     }
+//   }
+
+//   // LPS가 없는 경우
+//   return leftIdx;
+// };
+
+// dynamic solution: O(N)
+// non-overlapping 조건을 제거하고 lps를 구한다.
+// lps는 주어진 문자열에서 아래 조건을 만족하는 가장 긴 접두어(prefix)의 길이를 의미한다.
+//  - 해당 접두어는 주어진 문자열의 접미어(suffix)이기도 하다.
+// 이때, 문자열 자기 자신은 그 자체로 prefix이자 suffix인데, 이는 고려 대상에서 제외한다.
+const LPS = function (str) {
+  // lps[i]는 0부터 i까지의 부분 문자열, 즉 str.slice(0, i + 1)에서 lps의 길이를 저장한다.
+  const lps = Array(str.length);
+  // lps[0]은 길이가 1인 문자열의 lps의 길이이므로 항상 0이다. (자기 자신 포함 금지)
+  lps[0] = 0;
+  let leftIdx = 0;
+  let rightIdx = 1;
+  // lps[i]를 1부터, 즉 문자열의 길이가 2일때부터 차례대로 구한다.
+  while (rightIdx &amp;lt; str.length) {
+    if (str[leftIdx] === str[rightIdx] &amp;amp;&amp;amp; rightIdx &amp;gt;= str.length / 2) {
+      // 가장 단순한 경우를 생각해보면, 쉽게 이해할 수 있다.
+      // 1) 길이가 2 경우
+      // 2) 길이가 3 이상인데 전부 같은 문자인 경우
+      // 0부터 leftIdx까지 매칭이 되었으므로 매칭된 길이는 leftIdx + 1이다.
+      leftIdx++;
+      lps[rightIdx] = leftIdx;
+      rightIdx++;
+    } else {
+      // 중간에 매칭이 되지 않은 경우, leftIdx를 조정한다.
+      // 현재 lps[0]부터 lps[rightIdx - 1]까지 계산이 완료된 상태이다.
+      // 처음부터 다시 prefix, suffix 매칭을 하는 것이 원칙이지만
+      // 앞서 계산한 결과인 lps 배열을 통해 처음으로 되돌아갈 필요는 없다.
+
+      // 예. aaabaaaa
+      // 현재 leftIdx는 2, rigthIdx는 3, lps는 [0, 1, 2]인 상태라고 가정해보자.
+      // leftIdx가 1일 때까지, 즉 현재 leftIdx 직전(leftIdx - 1)까지는 매칭이 되었다.
+      if (leftIdx !== 0) {
+        leftIdx = lps[leftIdx - 1];
+        // Also, note that we do
+        // not increment i here
+      } else {
+        // rightIdx가 1인 경우, 즉 첫 iteration일 경우
+        // lps[rightIdx]가 0인 것은 명백하다. (예. ab)
+        // leftIdx가 0이라는 것은 처음부터 prefix, suffix 매칭을 하는 경우이다.
+        //
+        // lps가 존재하지 않는 경우이다.
+        lps[rightIdx] = 0;
+        rightIdx++;
+      }
+    }
+  }
+  const res = lps[lps.length - 1];
+  return res &amp;gt; str.length / 2 ? Math.floor(str.length / 2) : res;
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;TOY 19. LPS&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 19. LPS</summary></entry><entry><title type="html">[Algorithm] TOY 17. balancedBrackets</title><link href="/algorithm/21.09.15.algorith/" rel="alternate" type="text/html" title="[Algorithm] TOY 17. balancedBrackets" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>/algorithm/21.09.15.algorith</id><content type="html" xml:base="/algorithm/21.09.15.algorith/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-17-balancedbrackets&quot;&gt;TOY 17. balancedBrackets&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -581,7 +951,25 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 15. primePassword&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 14. rotatedArraySearch</summary></entry><entry><title type="html">[Algorithm] TOY 13. insertionSort</title><link href="/algorithm/21.09.09.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 13. insertionSort" /><published>2021-09-09T00:00:00+09:00</published><updated>2021-09-09T00:00:00+09:00</updated><id>/algorithm/21.09.09.algorithm</id><content type="html" xml:base="/algorithm/21.09.09.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 14. rotatedArraySearch</summary></entry><entry><title type="html">[TIL] 21.09.10 / 1. HTTP 트랜잭션 해부 2. Express를 활용한 API 요청 처리(작성중)</title><link href="/til/21.09.10.til/" rel="alternate" type="text/html" title="[TIL] 21.09.10 / 1. HTTP 트랜잭션 해부 2. Express를 활용한 API 요청 처리(작성중)" /><published>2021-09-10T00:00:00+09:00</published><updated>2021-09-10T00:00:00+09:00</updated><id>/til/21.09.10.til</id><content type="html" xml:base="/til/21.09.10.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1&quot;&gt;1.&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[React] 컴포넌트 디자인&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 21.09.10 / 1. HTTP 트랜잭션 해부 2. Express를 활용한 API 요청 처리</summary></entry><entry><title type="html">[Algorithm] TOY 13. insertionSort</title><link href="/algorithm/21.09.09.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 13. insertionSort" /><published>2021-09-09T00:00:00+09:00</published><updated>2021-09-09T00:00:00+09:00</updated><id>/algorithm/21.09.09.algorithm</id><content type="html" xml:base="/algorithm/21.09.09.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-13-insertionsort&quot;&gt;TOY 13. insertionSort&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -823,378 +1211,4 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 13. insertionSort&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 12. treeBFS</summary></entry><entry><title type="html">[Algorithm] TOY 11. powerSet</title><link href="/algorithm/21.09.07.algorithm2/" rel="alternate" type="text/html" title="[Algorithm] TOY 11. powerSet" /><published>2021-09-07T00:00:00+09:00</published><updated>2021-09-07T00:00:00+09:00</updated><id>/algorithm/21.09.07.algorithm2</id><content type="html" xml:base="/algorithm/21.09.07.algorithm2/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;toy-11-powerset&quot;&gt;TOY 11. powerSet&lt;/h2&gt;
-&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;하나의 집합을 의미하는 문자열을 입력받아 각 문자를 가지고 만들 수 있는 모든 부분집합을 리턴해야 합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&quot;인자-1--str&quot;&gt;인자 1 : str&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt; 타입의 공백이 없는 알파벳 소문자 문자열&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;배열(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&lt;/code&gt;)을 리턴해야 합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;는 각 부분집합의 원소로 구성된 문자열&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;는 각 부분집합을 구성하는 원소를 연결한 문자열입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;는 알파벳 순서로 정렬되어야 합니다.&lt;/li&gt;
-  &lt;li&gt;집합은 중복된 원소를 허용하지 않습니다.&lt;/li&gt;
-  &lt;li&gt;부분집합은 빈 문자열을 포함합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&lt;/code&gt;은 사전식 순서(lexical order)로 정렬되어야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;powerSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ['', 'a', 'ab', 'abc', 'ac', 'b', 'bc', 'c']&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;powerSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;jjump&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ['', 'j', 'jm', 'jmp', 'jmpu', 'jmu', 'jp', 'jpu', 'ju', 'm', 'mp', 'mpu', 'mu', 'p', 'pu', 'u']&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;toy-11-solution&quot;&gt;TOY 11. Solution&lt;/h2&gt;
-&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;입력 받은 배열을 배열로 변환, 정렬&lt;/li&gt;
-  &lt;li&gt;집합은 중복된 원소를 허용하지 않으므로, 정렬된 배열을 중복값을 제거해줌 (flilter…등 메소드 활용 필요)&lt;/li&gt;
-  &lt;li&gt;DFS 깊이 알고리즘을 통해 멱집합 알고리즘 구현. (flag 배열을 생성하여 중복값 여부 check)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;powerSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// TODO: 여기에 코드를 작성합니다.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// sortArr = str-&amp;gt;arr 변환 후 정렬한다.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uniqueArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-  &lt;span class=&quot;c1&quot;&gt;// 중복값 제거, filter 메소드를 이용하여 sortArr.indexOf(el)값이 index와 같은 조건의 uniqe한 값들로 채운 배열을 선언.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uniqueArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 플래그 생성.&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subSets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DFS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 부분 집합 구하는 재귀 함수, DFS 알고리즘&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uniqueArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 트리의 끝에 다다른 것 ==&amp;gt; 재귀 종료 조건&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uniqueArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
-      &lt;span class=&quot;c1&quot;&gt;// subset = [ flag[index] === true 이면, uniqueArr[index]을 반환하는 배열이 생성된다]&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;subSets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 부분집합들을 담는 배열에 push&lt;/span&gt;
-
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 이전 depth로 회귀&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 해당 depth의 flag true = 트리의 왼쪽&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;subSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 트리의 왼쪽에 대해 재귀호출&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 해당 depth의 flag false = 트리의 오른쪽&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;subSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 트리의 오른쪽에 대해 재귀 호출&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  
-  &lt;span class=&quot;nx&quot;&gt;subSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// depth 0 부터 시작&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subSets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;reference-code&quot;&gt;Reference Code&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;powerSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 정렬&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sorted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 중복 제거&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deduplicated&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;acc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subSets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pickOrNot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// base case&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deduplicated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// 마지막 문자까지 검토한 경우&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;subSets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// recursive case&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// idx번째 문자가 포함되지 않는 경우&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;pickOrNot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// idx번째 문자가 포함되는 경우&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;pickOrNot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deduplicated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;pickOrNot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subSets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;멱집합 알고리즘을 참조 하였다. 참조 : &lt;a href=&quot;https://jun-choi-4928.medium.com/javascript%EB%A1%9C-%EB%A9%B1%EC%A7%91%ED%95%A9-powerset-%EB%A6%AC%ED%84%B4%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-f1cce8cc3268&quot; target=&quot;_blank&quot;&gt;https://jun-choi-4928.medium.com&lt;/a&gt; 블로그&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132379995-ab48baeb-7ac0-476d-bd0c-39ca5ca1b140.png&quot; alt=&quot;dfs 부분배열 &quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;참고한 사이트 자료가 너무 보기 좋게 정리되어있어서 이해는 어렵지 않았다. &lt;del&gt;(물론 손으로 당연히 쓰면서…)&lt;/del&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return ;&lt;/code&gt;이 의미하는 바가 무엇인지 정확히 이해하였다. 재귀를 구현하다보면 재귀의 스택이 쌓이기 마련이다. 이럴때 이전 단계로 회귀(?)하는 느낌을 받았다. DFS 알고리즘 경우 트리의 한 줄기의 깊이를 모두 탐색 후, 다른 줄기로 뻗어야 한다. Leaf 노드로 이르렀을때, 이전 노드로 돌아가기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return ;&lt;/code&gt;을 사용해야한다는 개념을 확실히 익힌 알고리즘이었다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;외람되지만, 알고리즘 해결 위해 구글링 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set&lt;/code&gt;이라는 자료구조를 접하였다.&lt;/p&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;Set는 데이터를 비순차적(unordered)으로 저장할 수 있는 순열 자료구조 (collection)입니다. … Array,List와 마찬가지로 Set는 수정이 가능합니다. 중복을 허용하지 않아서 같은값을 삽입하면 되면, 마지막에 삽입한 값 하나만 저장 됩니다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;중복을 허용하지 않은 자료구조 솔깃하다..&lt;/p&gt;
-
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uniqueArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;위 행위를 뭔가 한코드로 줄일수 있을 듯한 느낌이 온다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;TOY 12. treeBFS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 11. powerSet</summary></entry><entry><title type="html">[TIL] 21.09.07 / 1. React 데이터 흐름 2. Effect Hook</title><link href="/til/21.09.07.til/" rel="alternate" type="text/html" title="[TIL] 21.09.07 / 1. React 데이터 흐름 2. Effect Hook" /><published>2021-09-07T00:00:00+09:00</published><updated>2021-09-07T00:00:00+09:00</updated><id>/til/21.09.07.til</id><content type="html" xml:base="/til/21.09.07.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-react-데이터-흐름&quot;&gt;1. React 데이터 흐름&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132542812-b2131f36-bbaa-436a-a174-d3e4a3e15945.png&quot; alt=&quot;react&quot; /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;1-1-상향식bottom-up-개발&quot;&gt;1-1. 상향식(bottom-up) 개발&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;React의 개발 방식의 가장 큰 특징은 페이지 단위가 아닌, 컴포넌트 단위로 시작한다는 점이다.&lt;/p&gt;
-
-    &lt;p&gt;앱을 만들거나 웹페이지를 만들때 페이지를 만들기 이전에 컴포넌트를 만들고 조립을한다. 즉, 상향식(bottom-up)으로 앱을 만드는 것이다. 이러한 구조의 가장 큰 장점은 테스트가 쉽고 확장성이 좋다. 이때 중요한점은 하나의 컴포넌트는 한가지 일만 하는 단일 책임 원칙을 따르는 것이다. 그래야 이후 오류 발생시 오류 컴포넌트를 쉽게 찾고 수정할 수 있습니다.&lt;/p&gt;
-
-    &lt;p&gt;이러한 흐름을 이해하였다면, 웹페이지나 앱 디자인을 전달 받았을때 React 개발자는 이를 컴포넌트 계층 구조로 나누는 것이 가장 먼저 해야 할 일이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-2-하향식top-down-데이터-흐름&quot;&gt;1-2. 하향식(top-down) 데이터 흐름&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단방향 데이터 흐름(one-way data flow)&lt;/strong&gt; 이라는 키워드는 React를 대표하는 키워드이다.&lt;/p&gt;
-
-    &lt;p&gt;컴포넌트는 컴포넌트 바깥에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 이용해 데이터를 마치 인자(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arguments&lt;/code&gt;) 혹은 속성(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;attributes&lt;/code&gt;)처럼 전달받을 수 있다. 즉, 데이터를 전달하는 주체는 부모 컴포넌트가 되며, 이는 데이터 흐름이 하향식(top-down)임을 의미한다. 또한 컴포넌트는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 통해 전달받은 데이터가 어디서 왔는지 전혀 알지 못한다는 특징들이 단방향 데이터 흐름(one-way data flow)이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-3-데이터-흐름을-고려한-state-배치&quot;&gt;1-3. 데이터 흐름을 고려한 State 배치&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;앞서 state에 관하여 학습했지만 데이터 흐름에 포커스를 맞춰 다시 언급하자면, App 에서 필요한 데이터는 ‘변하는 값’과 ‘변하지 않는 값’ 두 가지로 나누어볼 수 있다. 예를들어 user 가 입력하는 값은 이벤트에 따라 얼마든 변할 수 있는 값이며, 이 것을 state (상태) 라고 한다.&lt;/p&gt;
-
-    &lt;p&gt;React 로 개발을 할 때에 모든 데이터를 state 로 둘 필요는 없다. 사실 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 가 많아질 수록 앱이 복잡해지기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 는 최소화 될 수록 좋다. 어떤 데이터를 state 로 두어야 하는지 여부는 다음 세 가지의 질문을 통해 판단해볼 수 있습니다.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;부모 컴포넌트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 를 통해 전달되는가?&lt;/li&gt;
-      &lt;li&gt;시간이 지나도 변하지 않는가?&lt;/li&gt;
-      &lt;li&gt;컴포넌트 안의 다른 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt; 를 가지고 계산이 가능한가?&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;‘아니오’ 라는 답변이 나온다면 해당 데이터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 로 두어야 할 필요가 있다.&lt;/p&gt;
-
-    &lt;p&gt;그렇다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 어디에 위치시켜야 데이터 흐름에 알맞은가? 만일 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 가 특정 컴포넌트 안에서만 유의미하다면 그 컴포넌트 에 위치시키면 되지만, 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 기반으로 두 컴포넌트가 영향을 받는다면, 공통 소유 컴포넌트를 찾아 해당 위치에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 위치시켜야 한다.&lt;/p&gt;
-
-    &lt;p&gt;즉, 두 개의 자식 컴포넌트가 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 에 접근하고자 할 때에는 하향식(top-down), 단방향 데이터 흐름을 고려하여 두 자식 컴포넌트의 공통된 부모 컴포넌트에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 를 위치시켜야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-4-state-끌어올리기-lifting-state-up&quot;&gt;1-4. State 끌어올리기 (Lifting State Up)&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132545689-04b84053-1cd5-40e7-9e10-021cb6934c21.png&quot; alt=&quot;State 끌어올리기 (Lifting State Up)&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;지금까지 단방향 데이터 흐름(one-way data flow)이라는 원칙에 따라, 하위 컴포넌트는 상위 컴포넌트로부터 전달만 받을 수 있었다. 또한 전달 받은 값의 형태 혹은 타입이 무엇인지만 알 수 있었다.&lt;/p&gt;
-
-    &lt;p&gt;그러므로 &lt;strong&gt;State 끌어올리기 (Lifting State Up)&lt;/strong&gt; 가 발생되어 하위 컴포넌트에서의 어떤 이벤트로 인해 상위 컴포넌트의 상태가 바뀌는 것은 마치 “역방향 데이터 흐름”과 같이 조금 이상하게 들릴 수 있다. React가 제시하는 해결책은 다음과 같다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;상위 컴포넌트의 “상태를 변경하는 함수” 그 자체를 하위 컴포넌트로 전달하고, 이 함수를 하위 컴포넌트가 실행한다&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;함수의 작성은 부모 컴포넌트에서 이뤄지며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;로 사용은 자녀 컴포넌트에서 이루어진다. 여전히 단방향 데이터 흐름에 원칙에 부합하지만, 하위 컴포넌트에서 상위 컴포넌트의 상태를 변경할 수 있게 된다. 바로 이것이 State 끌어올리기 (Lifting State Up)이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-effect-hook&quot;&gt;2. Effect Hook&lt;/h3&gt;
-&lt;h4 id=&quot;2-1-useeffect&quot;&gt;2-1. useEffect()&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect&lt;/code&gt;는 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 Hook 이다.&lt;/p&gt;
-
-    &lt;p&gt;렌더링은 컴포넌트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mount&lt;/code&gt;되었을 때,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update&lt;/code&gt;되었을 때 나타난다. 해당 시점에 특정 작업을 처리 할 수 있는 함수이다.&lt;/p&gt;
-
-    &lt;p&gt;즉, 클래스형 컴포넌트에서 사용할 수 있었던 생명주기 메소드를 함수형 컴포넌트에서 사용할 수 있게 된다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132549740-85dfee45-06d3-407c-80b4-55cb11b56542.png&quot; alt=&quot;생명주기&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect&lt;/code&gt;의 기본형은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect( function, deps )&lt;/code&gt;이다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function&lt;/code&gt;은 수행하고자 하는 작업이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;는 배열형태를 전달받는다. 해당 배열안에는 검사하고자 하는 특정 값 혹은 빈 배열이 들어간다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;의 값에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect()&lt;/code&gt; 함수의 실행 횟수가 결정된다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[]&lt;/code&gt;을 넣는 경우 한번만 실행이되며, 특정 값이 업데이트( 특정 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;가 바뀔 때) 될 때 실행하고 싶을 때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt; 위치의 배열 안에 검사하고 싶은 값을 넣어준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;이러한 특성 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;에 들어간 배열은 종속 배열, 의존성 배열(dependency Arr) 등으로 부르기도 한다.&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deps&lt;/code&gt;파라미터를 생략한다면, 컴포넌트가 리렌더링 될 때마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect()&lt;/code&gt; 함수가 호출되므로 주의해야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-실습&quot;&gt;3. 실습&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;참조 : &lt;a href=&quot;https://github.com/JH8459/im-sprint-statesairline-client&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3-1-state-끌어올리기-lifting-state-up-다이어그램&quot;&gt;3-1. State 끌어올리기 (Lifting State Up) 다이어그램&lt;/h4&gt;
-&lt;p&gt;&lt;img width=&quot;915&quot; alt=&quot;상태끌어올리기&quot; src=&quot;https://user-images.githubusercontent.com/83164003/132552557-613a23c6-a1ba-4ada-b683-d3ca29a8857a.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;useEffect().. 아직 감이 안잡힌다. 컴포넌트가 렌더링 될때마다 특정 함수가 작동되는 경우 사용이 되어야 한다 일단 학습하였다.&lt;/p&gt;
-
-    &lt;p&gt;실습에서도 AJAX로 가져온 데이터 값을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;condition.destination&lt;/code&gt; 즉, 도착지를 입력하며 새로 렌더링 하였다.&lt;/p&gt;
-
-    &lt;p&gt;우선 사용목적은 감은 오지만 실제 코드에 적용하기까진 시간이 필요할 듯하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[Web Server] 기초&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. React 데이터 흐름 2. Effect Hook</summary></entry><entry><title type="html">[Algorithm] TOY 10. binarySearch</title><link href="/algorithm/21.09.06.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 10. binarySearch" /><published>2021-09-06T00:00:00+09:00</published><updated>2021-09-06T00:00:00+09:00</updated><id>/algorithm/21.09.06.algorithm</id><content type="html" xml:base="/algorithm/21.09.06.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;toy-10-binarysearch&quot;&gt;TOY 10. binarySearch&lt;/h2&gt;
-&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;오름차순 정렬된 정수의 배열(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&lt;/code&gt;)과 정수(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;)를 입력받아 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;의 인덱스를 리턴해야 합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&quot;인자-1--arr&quot;&gt;인자 1 : arr&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입을 요소로 갖는 임의의 배열&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt; 는 정수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;인자-2--target&quot;&gt;인자 2 : target&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입의 정수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입을 리턴해야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;이진탐색 알고리즘&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt;)을 사용해야 합니다.&lt;/li&gt;
-  &lt;li&gt;단순한 배열 순회(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(N)&lt;/code&gt;)로는 통과할 수 없는 테스트 케이스가 존재합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;이 없는 경우, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;을 리턴해야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; 2&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; -1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;toy-10-solution&quot;&gt;TOY 10. Solution&lt;/h2&gt;
-&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt;의 값이 작거나,같거나,클 경우의 경우를 조건분기로 나누어 이진탐색트리와 같은 탐색방법을 알고리즘으로 구현한다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;이 없는 경우 (includes.., indexOf 등으로 target 값이 배열에 존재하는지 탐색). &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;을 리턴해주는 조건분기 설정&lt;/li&gt;
-  &lt;li&gt;최초 탐색할 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 idx&lt;/code&gt; 설정. 해당 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;idx&lt;/code&gt; 기준으로 탐색 시작.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;을 비교 하여 같은 경우 탐색종료 해당 idx 값 반환&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간]&lt;/code&gt; 값과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt;을 비교 하여 클 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 idx&lt;/code&gt; 우측 남은값(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[중간+1] ~ arr[length-1]&lt;/code&gt;)을 바탕으로 재귀 실행,&lt;/li&gt;
-  &lt;li&gt;작을 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 idx&lt;/code&gt; 좌측 남은값 바탕으로 재귀 실행&lt;/li&gt;
-  &lt;li&gt;이진탐색트리의 시간복잡도에 알맞는 계산방식으로 구현&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 이진탐색 (binary search)은 탐색범위의 절반을 기준으로 &lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// target과 확인한 후 그 절반값보다 큰 곳 또는 작은 곳을 다음 탐색범위로 잡아가는 탐색방법&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// target이 arr배열에 없다면 -1 리턴&lt;/span&gt;
-  
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 중간 인덱스 설정&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// arr[중간인덱스] === target과 같다면, rootNode 가 타겟인 경우이다.&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;recArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// arr[중간인덱스] &amp;gt; target이 크다면 root의 좌측으로 탐색이 진행되야함&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// recArr = 중간인덱스 기준, 좌측 slice&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idxCenter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// recArr = 중간인덱스 기준, 우측 slice&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;recArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 재귀 호출&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;reference-code&quot;&gt;Reference Code&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binarySearch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;일단 틀렸다. 시간복잡도에 대한 내용에서 에러가 잡힌다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빅-오 표기법&lt;/code&gt; 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt; 의 시간복잡도는 연산과정이 절반씩 줄어들 경우인건 확실히 인지하였다.&lt;/p&gt;
-
-    &lt;p&gt;자세한 내용은 해당 블로그 내용참조 : &lt;a href=&quot;https://jwoop.tistory.com/9&quot; target=&quot;_blank&quot;&gt;https://jwoop.tistory.com/9&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;재귀를 통하여 전달하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&lt;/code&gt;의 길이를 절반씩 줄였기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt;을 만족한다 생각하였는데 시간복잡도를 만족못한다는 에러가 발생한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;배열을 통한 메서드로 연산 처리시 발생하는 시간복잡도는 숙지해둬야할 듯 하다. (참조 : &lt;a href=&quot;https://dev.to/lukocastillo/time-complexity-big-0-for-javascript-array-methods-and-examples-mlg&quot; target=&quot;_blank&quot;&gt;https://dev.to/lukocastillo/&lt;a&gt;)&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;배열을 모든 요소를 순회하며, 처리하는 메소드들 (ex. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;slice()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;includes()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;indexOf()&lt;/code&gt;..등등) 시간복잡도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt; 을 만족할 수 없는 결과를 야기시킨다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;알고리즘은 간단하였다, 애초에 배열을 절반씩 자르면서 접근하려던 의도도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(logN)&lt;/code&gt;을 충족시키려 시도해보았던 과정인데 메소드 자체가 이미 배열을 모두 순회한뒤 -&amp;gt; 해당 인덱스까지 얕은 복사가 이뤄지는 과정이다. 그러므로 접근 시도는 좋았지만 사용된 도구(메소드)가 잘못되었다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;TOY 11. powerSet&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 10. binarySearch</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 12. treeBFS</summary></entry></feed>
