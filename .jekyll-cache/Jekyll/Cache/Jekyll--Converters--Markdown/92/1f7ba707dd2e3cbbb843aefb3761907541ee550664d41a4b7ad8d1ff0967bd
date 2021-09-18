@@ -1,0 +1,59 @@
+I"D<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-cors">1. CORS</h3>
+
+<h3 id="2-effect-hook">2. Effect Hook</h3>
+<h4 id="2-1-useeffect">2-1. useEffect()</h4>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">useEffect</code>는 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 Hook 이다.</p>
+
+    <p>렌더링은 컴포넌트가 <code class="language-plaintext highlighter-rouge">mount</code>되었을 때,  <code class="language-plaintext highlighter-rouge">update</code>되었을 때 나타난다. 해당 시점에 특정 작업을 처리 할 수 있는 함수이다.</p>
+
+    <p>즉, 클래스형 컴포넌트에서 사용할 수 있었던 생명주기 메소드를 함수형 컴포넌트에서 사용할 수 있게 된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/132549740-85dfee45-06d3-407c-80b4-55cb11b56542.png" alt="생명주기" /></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">useEffect</code>의 기본형은 <code class="language-plaintext highlighter-rouge">useEffect( function, deps )</code>이다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">function</code>은 수행하고자 하는 작업이며, <code class="language-plaintext highlighter-rouge">deps</code>는 배열형태를 전달받는다. 해당 배열안에는 검사하고자 하는 특정 값 혹은 빈 배열이 들어간다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">deps</code>의 값에 따라 <code class="language-plaintext highlighter-rouge">useEffect()</code> 함수의 실행 횟수가 결정된다. <code class="language-plaintext highlighter-rouge">[]</code>을 넣는 경우 한번만 실행이되며, 특정 값이 업데이트( 특정 <code class="language-plaintext highlighter-rouge">props</code>, <code class="language-plaintext highlighter-rouge">state</code>가 바뀔 때) 될 때 실행하고 싶을 때는 <code class="language-plaintext highlighter-rouge">deps</code> 위치의 배열 안에 검사하고 싶은 값을 넣어준다.</p>
+
+    <p><em>이러한 특성 때문에 <code class="language-plaintext highlighter-rouge">deps</code>에 들어간 배열은 종속 배열, 의존성 배열(dependency Arr) 등으로 부르기도 한다.</em></p>
+
+    <p>또한 <code class="language-plaintext highlighter-rouge">deps</code>파라미터를 생략한다면, 컴포넌트가 리렌더링 될 때마다 <code class="language-plaintext highlighter-rouge">useEffect()</code> 함수가 호출되므로 주의해야 한다.</p>
+  </li>
+</ul>
+
+<h3 id="3-실습">3. 실습</h3>
+<ul>
+  <li>참조 : <a href="https://github.com/JH8459/im-sprint-statesairline-client" target="_blank">GitHub</a></li>
+</ul>
+
+<h4 id="3-1-state-끌어올리기-lifting-state-up-다이어그램">3-1. State 끌어올리기 (Lifting State Up) 다이어그램</h4>
+<p><img width="915" alt="상태끌어올리기" src="https://user-images.githubusercontent.com/83164003/132552557-613a23c6-a1ba-4ada-b683-d3ca29a8857a.png" /></p>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>
+    <p>useEffect().. 아직 감이 안잡힌다. 컴포넌트가 렌더링 될때마다 특정 함수가 작동되는 경우 사용이 되어야 한다 일단 학습하였다.</p>
+
+    <p>실습에서도 AJAX로 가져온 데이터 값을 <code class="language-plaintext highlighter-rouge">condition.destination</code> 즉, 도착지를 입력하며 새로 렌더링 하였다.</p>
+
+    <p>우선 사용목적은 감은 오지만 실제 코드에 적용하기까진 시간이 필요할 듯하다.</p>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[Web Server] 기초</li>
+</ul>
+:ET
