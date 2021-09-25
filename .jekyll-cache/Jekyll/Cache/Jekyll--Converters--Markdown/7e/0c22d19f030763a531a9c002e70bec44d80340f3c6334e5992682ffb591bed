@@ -1,0 +1,28 @@
+I"f<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-component-driven-development-cdd">1. Component Driven Development (CDD)</h3>
+<ul>
+  <li>
+    <p>부품 단위로 UI 컴포넌트를 만들어 나가는 개발이다.  페이지 단위로 UI 개발이 이루어지는 것과는 반대로 UI 컴포넌트들부터 만들고 이를 기반으로 페이지를 구성하는걸 말한다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/134765002-85187ace-81db-4807-837e-d171c8a4efe3.png" alt="스크린샷, 2021-09-25 17-28-15" /></p>
+
+    <p><a href="https://storybook.js.org/" target="_blank">Storybook</a> 같은 UI 컴포넌트 익스플러어 툴을 통해 체계적으로 관리, 개발자들간 쉽게 소통할 수 있는 장점이 있다.</p>
+  </li>
+</ul>
+
+<h3 id="2">2.</h3>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[React] 상태 관리</li>
+</ul>
+:ET

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-18T12:26:49+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 18. getItemFromTwoSortedArrays (작성중)</title><link href="/algorithm/21.09.17.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 18. getItemFromTwoSortedArrays (작성중)" /><published>2021-09-17T00:00:00+09:00</published><updated>2021-09-17T00:00:00+09:00</updated><id>/algorithm/21.09.17.algorithm</id><content type="html" xml:base="/algorithm/21.09.17.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-25T17:57:12+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 18. getItemFromTwoSortedArrays (작성중)</title><link href="/algorithm/21.09.17.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 18. getItemFromTwoSortedArrays (작성중)" /><published>2021-09-17T00:00:00+09:00</published><updated>2021-09-17T00:00:00+09:00</updated><id>/algorithm/21.09.17.algorithm</id><content type="html" xml:base="/algorithm/21.09.17.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-18-getitemfromtwosortedarrays&quot;&gt;TOY 18. getItemFromTwoSortedArrays&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -571,7 +571,33 @@ const LPS = function (str) {
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 18. getItemFromTwoSortedArrays&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 17. balancedBrackets</summary></entry><entry><title type="html">[Algorithm] TOY 16. quickSort</title><link href="/algorithm/21.09.14.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 16. quickSort" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/algorithm/21.09.14.algorithm</id><content type="html" xml:base="/algorithm/21.09.14.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 17. balancedBrackets</summary></entry><entry><title type="html">[TIL] 21.09.15 / 1. CDD 2. CSS in JS 방법론 3. React Custom Component (작성중)</title><link href="/til/21.09.15/" rel="alternate" type="text/html" title="[TIL] 21.09.15 / 1. CDD 2. CSS in JS 방법론 3. React Custom Component (작성중)" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>/til/21.09.15</id><content type="html" xml:base="/til/21.09.15/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1-component-driven-development-cdd&quot;&gt;1. Component Driven Development (CDD)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;부품 단위로 UI 컴포넌트를 만들어 나가는 개발이다.  페이지 단위로 UI 개발이 이루어지는 것과는 반대로 UI 컴포넌트들부터 만들고 이를 기반으로 페이지를 구성하는걸 말한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/134765002-85187ace-81db-4807-837e-d171c8a4efe3.png&quot; alt=&quot;스크린샷, 2021-09-25 17-28-15&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://storybook.js.org/&quot; target=&quot;_blank&quot;&gt;Storybook&lt;/a&gt; 같은 UI 컴포넌트 익스플러어 툴을 통해 체계적으로 관리, 개발자들간 쉽게 소통할 수 있는 장점이 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-css-in-js-방법론&quot;&gt;2. CSS in JS 방법론&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[React] 상태 관리&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 21.09.15 / 1. CDD 2. CSS in JS 방법론 3. React Custom Component</summary></entry><entry><title type="html">[Algorithm] TOY 16. quickSort</title><link href="/algorithm/21.09.14.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 16. quickSort" /><published>2021-09-14T00:00:00+09:00</published><updated>2021-09-14T00:00:00+09:00</updated><id>/algorithm/21.09.14.algorithm</id><content type="html" xml:base="/algorithm/21.09.14.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;toy-16-primepassword&quot;&gt;TOY 16. primePassword&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -951,16 +977,220 @@ const LPS = function (str) {
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 15. primePassword&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 14. rotatedArraySearch</summary></entry><entry><title type="html">[TIL] 21.09.10 / 1. HTTP 트랜잭션 해부 2. Express를 활용한 API 요청 처리(작성중)</title><link href="/til/21.09.10.til/" rel="alternate" type="text/html" title="[TIL] 21.09.10 / 1. HTTP 트랜잭션 해부 2. Express를 활용한 API 요청 처리(작성중)" /><published>2021-09-10T00:00:00+09:00</published><updated>2021-09-10T00:00:00+09:00</updated><id>/til/21.09.10.til</id><content type="html" xml:base="/til/21.09.10.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 14. rotatedArraySearch</summary></entry><entry><title type="html">[TIL] 21.09.10 / 1. CORS 2. Mini Node Server</title><link href="/til/21.09.10.til/" rel="alternate" type="text/html" title="[TIL] 21.09.10 / 1. CORS 2. Mini Node Server" /><published>2021-09-10T00:00:00+09:00</published><updated>2021-09-10T00:00:00+09:00</updated><id>/til/21.09.10.til</id><content type="html" xml:base="/til/21.09.10.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1&quot;&gt;1.&lt;/h3&gt;
+&lt;h3 id=&quot;1-corscross-origin-resource-sharing&quot;&gt;1. CORS(Cross-Origin Resource Sharing)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;교차 출처 리소스 공유&lt;/strong&gt;라 불리는 CORS는 브라우저에서 다른 출처의 리소스를 공유하는 방법이다. 출처에 대해서 설명하기 전, URL의 구조에 대해서 짚고 넘어가야한다. 앞서 URL에 대하여 학습한적이 있다. 다시 들여다 보면,&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/133872573-c75e02df-5654-4674-91a9-96c1c3a06d78.jpg&quot; alt=&quot;Notes_210918_133331&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;이중 출처(Origin)는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Protocol&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Host&lt;/code&gt;,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Port&lt;/code&gt;(생략가능)를 합친 것을 말한다. Origin은 모든 웹페이지 개발자도구에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;location.origin&lt;/code&gt;을 통하여 확인 할 수 있다. 따라서 Protocal, Host, Port 동일한 경우는 출처가 동일하다고 볼 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-1-cors가-왜-필요한가&quot;&gt;1-1. CORS가 왜 필요한가?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;보안상의 이유로 자바스크립트 엔진 표준 스펙에는 동일 출처 정책(Same-Origin Policy)이 포함되어있다. (만약 다른 서버의 내용까지 읽을 수 있게된다면, 사용자의 키보드 입력을 가로채는 스크립트를 다른 페이지에 심을 수도 있으므로 보안 이슈가 발생할 수 있다.)&lt;/p&gt;
+
+    &lt;p&gt;하지만 우리는 양질의 웹페이지 개발을 하기 위해서는 타 오리진의 리소스가 필요하다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/133873430-cd41a962-f640-42f7-b2fe-eb547234a63a.png&quot; alt=&quot;스크린샷, 2021-09-18 14-02-06&quot; /&gt;
+(Ex. 기상청, 아큐웨더, 웨더채널의 API를 가져오는 &lt;a hre=&quot;https://weather.naver.com/&quot; target=&quot;_target&quot;&gt;네이버날씨&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이러한 이유들로 타 오리진의 리소스를 필요로 하는 경우가 생겨났으며, 특정 규약을 통해서 보안에 위배되지 않게 리소스를 공유하는 방법이 &lt;strong&gt;CORS&lt;/strong&gt;이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-2-cors-동작-원리&quot;&gt;1-2. CORS 동작 원리&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;CORS의 동작 원리는 세종류가 있다. 두가지 내용만 우선 언급하자면 서버에게 바로 본 요청을 직접 보내는 방법인 &lt;strong&gt;Simple request&lt;/strong&gt;,&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/133878562-1427f8bf-944b-4e63-a3bb-1f91c79da4a4.png&quot; alt=&quot;simple-req-updated&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;그리고 서버에 예비 요청을 보내서 안전한지 판단한 후 본 요청을 보내는 방법인 &lt;strong&gt;Preflight request&lt;/strong&gt;이 있다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/133878564-e5b4ea24-3b08-430f-9b4e-160e0ee6cbbc.png&quot; alt=&quot;preflight_correct&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자세한 내용은 MDN CORS 접근 제어 시나리오 예제를 참조하자. &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/CORS#%EC%A0%91%EA%B7%BC_%EC%A0%9C%EC%96%B4_%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4_%EC%98%88%EC%A0%9C&quot; target=&quot;_blank&quot;&gt;참조 : MDN&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-mini-node-server-http모듈&quot;&gt;2. Mini Node Server (http모듈)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node.js&lt;/code&gt;의 http모듈 혹은 Express를 이용하여 웹 서버를 만드는 &lt;a href=&quot;https://github.com/JH8459/im-sprint-mini-node-server&quot; target=&quot;_blank&quot;&gt;예제&lt;/a&gt;이다.&lt;/p&gt;
+
+    &lt;p&gt;우선 http모듈은 HTTP 요청, 응답을 다룬다. HTTP 지식이 선행되어야 했기 때문에 먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP 트랜잭션 해부&lt;/code&gt;공식 문서를 언급하고 넘어가야했다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-1-http-트랜잭션-해부&quot;&gt;2-1. HTTP 트랜잭션 해부&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node.js&lt;/code&gt; HTTP 처리 과정을 &lt;a href=&quot;https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/&quot; target=&quot;_blank&quot;&gt;공식문서&lt;/a&gt;를 참고로 학습하였다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;서버 생성&lt;/strong&gt;  : 모든 node 웹 서버 애플리케이션은 웹 서버 객체를 만들어야 한다. 이 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createServer&lt;/code&gt;를 이용한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	  
+   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// 여기서 작업이 진행됩니다!&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;이 서버로 오는 HTTP 요청마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createServer&lt;/code&gt;에 전달된 함수가 한 번씩 호출된다. HTTP 요청이 서버에 오면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt;가 트랜잭션을 다루려고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;request&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;response&lt;/code&gt; 객체를 전달하며 요청 핸들러 함수를 호출한다. 요청을 실제로 처리하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listen&lt;/code&gt; 메서드가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server&lt;/code&gt; 객체에서 호출되어야 한다.&lt;/p&gt;
+
+    &lt;p&gt;대부분은 서버가 사용하고자 하는 포트 번호를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listen&lt;/code&gt;에 전달하기만 하면 된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메서드, URL, 헤더&lt;/strong&gt; : 요청을 처리할 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메서드&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URL&lt;/code&gt;을 확인한 후 이와 관련된 적절한 작업을 실행해야 한다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt;가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;request&lt;/code&gt; 객체에 유용한 프로퍼티를 넣어두었으므로 구조분해 할당으로 해당 값들을 쉽게 가져올 수 있다.
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;method&lt;/code&gt;는 항상 일반적인 HTTP 메서드/동사이며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url&lt;/code&gt;은 전체 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URL&lt;/code&gt;에서 서버, 프로토콜, 포트를 제외한 나머지이다.&lt;/p&gt;
+
+    &lt;p&gt;헤더도 많이 다르지 않다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;request&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;headers&lt;/code&gt;라는 전용 객체가 있으므로, 해당 프로퍼티를 사용한다.&lt;/p&gt;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;user-agent&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;request&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;headers&lt;/code&gt;라는 전용 객체가 있고, 클라이언트가 어떻게 헤더를 설정했는지에 관계없이 모든 헤더는 소문자로만 표현된다는 것을 기억하자. 이는 어떤 목적이든 헤더를 파싱하는 작업을 간편하게 해준다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;요청 바디&lt;/strong&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;POST&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PUT&lt;/code&gt; 요청을 받을 때 애플리케이션에 요청 바디는 중요할 것이다. 핸들러에 전달된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;request&lt;/code&gt; 객체는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadableStream&lt;/code&gt; 인터페이스를 구현하고 있는데, 이 스트림의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'data'&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'end'&lt;/code&gt; 이벤트에 이벤트 리스너를 등록해서 데이터를 받을 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'data'&lt;/code&gt; 이벤트에서 발생시킨 청크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Buffer&lt;/code&gt;이다. 이 청크는 문자열 데이터이므로 이 데이터를 배열에 담고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'end'&lt;/code&gt; 이벤트에서 이어 붙인 다음 문자열로 만드는 것이 가장 좋다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// 여기서 `body`에 전체 요청 바디가 문자열로 담겨있습니다.&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;2-2-mini-node-server-구현&quot;&gt;2-2. Mini Node Server 구현&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;위 공식 문서를 토대로 작성하였다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;localhost&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;OPTIONS&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// CORS preflight request에 대한 응답&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeHead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;defaultCorsHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 요청바디. body 배열에 chunk를 push&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// end 이벤트에서 이어 붙힌 뒤 문자열로 변환한다.&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeHead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;201&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;defaultCorsHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/lower&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// POST 메소드 Endpoint /lower에 따른 조건분기 &lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/upper&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toUpperCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 서버를 활성화하고 포트번호는 PORT(5000)로 아이피는 ip(localhost)로 받는다.&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`http server listen on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;defaultCorsHeader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// CORS 응답헤더&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Access-Control-Allow-Origin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Access-Control-Allow-Methods&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;GET, POST, PUT, DELETE, OPTIONS&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Access-Control-Allow-Headers&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Content-Type, Accept&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Access-Control-Max-Age&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-mini-node-server-프레임워크-express&quot;&gt;3. Mini Node Server (프레임워크 Express)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Express.js는 Node.js 환경에서 웹 서버, 또는 API 서버를 제작하기 위해 사용되는 인기 있는 프레임워크이다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위에서 Mini Node Server에서 http 모듈로 작성했던 서버를, 프레임워크 Express를 이용하는 방식으로 리팩토링하면 다음과 같다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// express 모듈을 불러온다.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// cors 미들웨어를 불러온다.&lt;/span&gt;
+  
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 서버&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// OPTIONS, 모든 요청에 대해 CORS 허용&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;strict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 기본형은 true로 원시 자료형을 취급하지 않는다. false값을 줘서 원시자료형도 parsing 해주게끔 설정&lt;/span&gt;
+  
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;localhost&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/upper&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toUpperCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/lower&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`http server listen on &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-1-express로-구현한-서버와-http-모듈로-작성돤-서버의-다른-점&quot;&gt;3-1. Express로 구현한 서버와 http 모듈로 작성돤 서버의 다른 점&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;미들웨어 추가가 편리하다&lt;/strong&gt; :  위 예제는  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install cors&lt;/code&gt; 로 미들웨어 설치 후 사용만 해주면 되기에 편리하게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cors&lt;/code&gt;옵션을 설정할 수 있다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    
+ &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;위 내용만으로 모든 cross-origin 요청에 대해 응답한다. 만약 특정 도메인 요청만 받거나, 특정 요청에만 응답하는 경우 그에 따른 옵션을 설정해야한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;origin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 접근 권한을 부여하는 도메인&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 응답 헤더에 Access-Control-Allow-Credentials 추가&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET, POST, OPTIONS&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 메소드 접근 권한 부여&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;자체 라우터를 제공한다&lt;/strong&gt; :  자세한 설명은 &lt;a href=&quot;https://expressjs.com/en/guide/routing.html&quot; target=&quot;_blank&quot;&gt;참조링크&lt;/a&gt;로 대체.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;CORS(교차 출처 리소스 공유)는 아직 공부할 영역이 많이 남은 느낌이다…&lt;/li&gt;
+  &lt;li&gt;http 모듈을 이용한 서버 구현과 express.js를 이용한 서버에 대해서는 구조는 감을 잡았다. 조금더 많은 경우를 접해봐야 확실히 쓸 수 있을 듯하다. (아직 express에서의 cors 옵션 부분은 낯설다.)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -1078,137 +1308,4 @@ const LPS = function (str) {
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 14. rotatedArraySearch&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 13. insertionSort</summary></entry><entry><title type="html">[Algorithm] TOY 12. treeBFS</title><link href="/algorithm/21.09.08.algorithm2/" rel="alternate" type="text/html" title="[Algorithm] TOY 12. treeBFS" /><published>2021-09-08T00:00:00+09:00</published><updated>2021-09-08T00:00:00+09:00</updated><id>/algorithm/21.09.08.algorithm2</id><content type="html" xml:base="/algorithm/21.09.08.algorithm2/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;toy-12-treebfs&quot;&gt;TOY 12. treeBFS&lt;/h2&gt;
-&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;임의의 tree를 구성하는 노드 중 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt; 객체를 입력받아, 해당 노드를 시작으로 너비 우선 탐색(BFS, Breadth First Search)을 합니다. 이 때, 탐색되는 순서대로 노드의 값이 저장된 배열을 리턴해야 합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&quot;인자-1--node&quot;&gt;인자 1 : node&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'value'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'children'&lt;/code&gt; 속성을 갖는 객체 (Node)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'node.value'&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt; 타입&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'node.children'&lt;/code&gt;은 Node를 요소로 갖는 배열&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;배열을 리턴해야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;생성자 함수(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt;)와 메소드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addChild&lt;/code&gt;)는 변경하지 않아야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rootChild1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rootChild2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leaf1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rootChild1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;leaf2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rootChild1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; [1, 2, 3, 4, 5]&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;leaf1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;rootChild2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// --&amp;gt; [1, 2, 3, 4, 5, 7, 6]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;toy-12-solution&quot;&gt;TOY 12. Solution&lt;/h2&gt;
-&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/132495634-dedf3161-f8d5-4263-a180-894f4f384dc5.png&quot; alt=&quot;BFS&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Queue를 사용, 선입 선출이다.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;인큐 : 루트 노드 (초기값 할당)&lt;/li&gt;
-      &lt;li&gt;디큐 값을 결과값 배열에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;인큐 : 루트 노드의 자식 배열들을 반복문을 수행하며 인큐&lt;/li&gt;
-      &lt;li&gt;디큐 값을 결과값 배열에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;큐가 비워질때 까지 ….반복&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bfs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// TODO: 여기에 코드를 작성합니다.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 초기 root 노드 할당&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 결과값 배열&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 큐가 비워질때까지 반복&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// head는 values로 비워지기전 queue의 정보를 담고있는 변수이다.&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// = slice(1) 선입선출, shift로 queue[0] 삭제&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 결과값 배열에 head의 값 push&lt;/span&gt;
-    
-    &lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// queue에 head의 children 배열을 넣어준다&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 이 아래 코드는 변경하지 않아도 됩니다. 자유롭게 참고하세요.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 위 Node 객체로 구성되는 트리는 매우 단순한 형태의 트리입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// membership check(중복 확인)를 따로 하지 않습니다.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;reference-code&quot;&gt;Reference Code&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bfs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// TODO: 여기에 코드를 작성합니다.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 이 아래 코드는 변경하지 않아도 됩니다. 자유롭게 참고하세요.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 위 Node 객체로 구성되는 트리는 매우 단순한 형태의 트리입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// membership check(중복 확인)를 따로 하지 않습니다.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;큐의 자료구조를 이용하리라는 생각은 안해보아서, 레퍼런스 코드를 참조하였다.&lt;/li&gt;
-  &lt;li&gt;BFS 가 어떻게 순회되는지 개념은 확실히 알 수 있었던 알고리즘이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;TOY 13. insertionSort&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 12. treeBFS</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 13. insertionSort</summary></entry></feed>
