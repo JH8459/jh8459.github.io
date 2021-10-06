@@ -1,4 +1,4 @@
-I"!\<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+I"�[<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
 <h2 id="toy-25-robotpath">TOY 25. robotPath</h2>
 <h3 id="문제">문제</h3>
 <hr />
@@ -149,9 +149,9 @@
 <h2 id="오늘-느낀-점">오늘 느낀 점</h2>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">visit</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">room</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">fill</span><span class="p">().</span><span class="nx">map</span><span class="p">(()</span><span class="o">=&gt;</span><span class="nb">Array</span><span class="p">(</span><span class="nx">room</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 </code></pre></div></div>
-<p>2차원 배열로 지도(방문여부 플래그)를 그리는 코드이다. <code class="language-plaintext highlighter-rouge">map</code> 메서드를 이용해서 <code class="language-plaintext highlighter-rouge">room.length</code> * <code class="language-plaintext highlighter-rouge">room[0].length</code> 사이즈의 2차원 배열을 생성한다. 생소하지만 앞으로 유용할 듯 하다. 아직 BFS 탐색 알고리즘… 완전탐색 알고리즘이 익숙하지 않다. <del>(언제쯤 혼자 풀어볼까…)</del></p>
+<p>2차원 배열로 지도(방문여부 플래그)를 그리는 코드이다. <code class="language-plaintext highlighter-rouge">map</code> 메서드를 이용해서 <code class="language-plaintext highlighter-rouge">room.length</code> * <code class="language-plaintext highlighter-rouge">room[0].length</code> 사이즈의 2차원 배열을 생성한다. 생소하지만 앞으로 유용할 듯 하다.</p>
 
-<p>꾸준히 알고리즘 풀어봐야 할 듯 하다.</p>
+<p>아직 BFS 탐색 알고리즘… 완전탐색 알고리즘이 익숙하지 않다. <del>(언제쯤 혼자 풀어볼까…)</del></p>
 <h2 id="내일-할-일">내일 할 일</h2>
 <ul>
   <li>TOY 26. LSCS</li>
