@@ -1,4 +1,4 @@
-I"^<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="today-i-learnd">Today I Learnd</h2>
 <h3 id="1-react-상태관리">1. React 상태관리</h3>
 <hr />
@@ -45,11 +45,18 @@
 </ul>
 
 <h4 id="1-3-redux">1-3. Redux</h4>
-
-<h4 id="1-4-cmarket-hooks-버전">1-4. Cmarket (Hooks 버전)</h4>
-<p><img src="https://user-images.githubusercontent.com/83164003/135710533-10497531-2270-4c8a-a2d5-7dd8b72b4caf.jpg" alt="컴포넌트 구조" /></p>
-
 <ul>
+  <li>
+    <p>React에서는 상태와 속성(props)을 이용한 컴포넌트 단위 개발 아키텍처를 배웠다면, Redux에서는 컴포넌트와 상태를 분리하여 관리한다. 상태 변경 로직을 컴포넌트로부터 분리하면, 표현에 집중한 보다 단순한 함수 컴포넌트를 만들 수 있게 된다.</p>
+
+    <p>단순히 말하자면 React에서는 상태를 <code class="language-plaintext highlighter-rouge">Store</code>라는 별도의 오직하나뿐인 장소에서 관리하게되며, 해당 장소에서 <strong>상태</strong>를 관리하게 된다. 그렇다면 해당 <strong>상태</strong>들은 어떻게 변경해야할까? 간단히 말하자면 <code class="language-plaintext highlighter-rouge">Action</code>을 통해서 변화를 감지하며, <code class="language-plaintext highlighter-rouge">Dispatch</code>메서드를 통하여 <code class="language-plaintext highlighter-rouge">Action</code>을 전달한다. <code class="language-plaintext highlighter-rouge">Store</code>에 들어가기전 <code class="language-plaintext highlighter-rouge">Reducer</code>를 거쳐서 현재의 상태(State)와 전달된 액션이 결합되어 새로운 상태로 변경되게 된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/135987274-e15321a0-4b43-4ed0-a4f8-07fcdda3f4f4.gif" alt="redux-data-flow" /></p>
+
+    <p>잘 정리된 <a href="https://kyun2da.dev/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Redux-%EC%A0%95%EB%A6%AC/#%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-redux-%EC%82%AC%EC%9A%A9%EB%B2%95" target="_blank">블로그</a>가 있어서 해당 링크 참조로 Redux 설명은 대체하겠다.</p>
+    <h4 id="1-4-cmarket-hooks-버전">1-4. Cmarket (Hooks 버전)</h4>
+    <p><img src="https://user-images.githubusercontent.com/83164003/135710533-10497531-2270-4c8a-a2d5-7dd8b72b4caf.jpg" alt="컴포넌트 구조" /></p>
+  </li>
   <li>컴포넌트 구조를 감안하여 상태의 위치를 고려하여 코딩하였다.
     <ul>
       <li>전역상태(<code class="language-plaintext highlighter-rouge">items</code>, <code class="language-plaintext highlighter-rouge">cartItems</code>)는 최상단 컴포넌트 App 컴포넌트에서 관리.</li>
@@ -66,6 +73,11 @@
 
 <p><br />
 <br /></p>
+
+<h3 id="2-클라이언트-빌드배포">2. 클라이언트 빌드&amp;배포</h3>
+<ul>
+  <li></li>
+</ul>
 
 <h2 id="오늘-느낀-점">오늘 느낀 점</h2>
 <ul>
