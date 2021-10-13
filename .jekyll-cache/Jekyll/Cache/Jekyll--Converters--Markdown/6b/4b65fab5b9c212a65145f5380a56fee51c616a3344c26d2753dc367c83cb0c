@@ -1,0 +1,69 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-29-binaryheap">TOY 29. binaryHeap</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>정수를 요소로 갖는 배열을 입력받아 이진 힙(binary heap)* 을 리턴해야 합니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">이진 힙(binary heap)</code>은 노드의 값이 특정한 순서를 가지고 있는 완전 이진 트리(Complete Binary Tree)입니다.</li>
+  <li>완전 이진 트리는 이진 트리의 (마지막 레벨 또는 마지막 깊이를 제외하고) 모든 레벨이 노드로 가득 채워져 있어야 합니다. 마지막 레벨은 왼쪽부터 차례대로 채워져 있습니다.</li>
+  <li>이진 힙에서 부모 노드의 값이 (이진 트리이므로 2개의) 자식 노드의 값보다 큰 경우를 최대 힙(max heap), 반대의 경우를 최소 힙(min heap)이라고 합니다.</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 -100,000 이상 100,000 이하의 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 100,000 이하
+    <h3 id="출력">출력</h3>
+    <hr />
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><strong>최대 힙(max heap)</strong> 을 구현해야 합니다.</li>
+  <li>입력으로 주어진 배열은 중첩되지 않은 1차원 배열입니다.</li>
+  <li>최대 힙 구현을 위해 선언된 함수들(<code class="language-plaintext highlighter-rouge">getParentIdx</code>, <code class="language-plaintext highlighter-rouge">insert</code>)을 전부 완성해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">swap</code>, <code class="language-plaintext highlighter-rouge">getParentIdx</code>, <code class="language-plaintext highlighter-rouge">insert</code>를 전부 사용해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">swap</code>, <code class="language-plaintext highlighter-rouge">binaryHeap</code>을 수정하지 않아야 합니다.</li>
+  <li>테스트 케이스에서 힙 함수들을 정확히 구현했는지 함께 테스트합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">insert</code>의 시간 복잡도는 <code class="language-plaintext highlighter-rouge">O(logN)</code>입니다.</li>
+  <li>주어진 배열을 내림차순으로 정렬<code class="language-plaintext highlighter-rouge">(O(logN))</code>해도 최대 힙의 조건을 만족합니다. 하지만 이는 <code class="language-plaintext highlighter-rouge">insert</code>를 구현하는 것과는 거리가 먼 방법이며, 테스트를 통과할 수도 없습니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">binaryHeap</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [5, 4, 3, 2, 1]</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">binaryHeap</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [21, 1, 3]</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">binaryHeap</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [10, 5, 3, 4, 1]</span>
+</code></pre></div></div>
+
+<h2 id="toy-27-solution">TOY 27. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 28. robotPath2</li>
+</ul>
+:ET
