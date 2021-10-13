@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-14T02:42:24+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 29. binaryHeap</title><link href="/algorithm/21.10.15.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 29. binaryHeap" /><published>2021-10-15T00:00:00+09:00</published><updated>2021-10-15T00:00:00+09:00</updated><id>/algorithm/21.10.15.algorithm</id><content type="html" xml:base="/algorithm/21.10.15.algorithm/">&lt;ul&gt;
-  &lt;li&gt;이진 검색 트리에서 오른쪽 자식 노드의 값은 부모 노드의 값보다 크지만, 최대 힙에서는 부모 노드의 값이 두 자식 노드의 값보다 크다.&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;
-    &lt;h2 id=&quot;toy-29-binaryheap&quot;&gt;TOY 29. binaryHeap&lt;/h2&gt;
-    &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
-    &lt;hr /&gt;
-    &lt;p&gt;정수를 요소로 갖는 배열을 입력받아 이진 힙(binary heap)* 을 리턴해야 합니다.&lt;/p&gt;
-  &lt;/li&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-14T02:48:13+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[Algorithm] TOY 29. binaryHeap</title><link href="/algorithm/21.10.15.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 29. binaryHeap" /><published>2021-10-15T00:00:00+09:00</published><updated>2021-10-15T00:00:00+09:00</updated><id>/algorithm/21.10.15.algorithm</id><content type="html" xml:base="/algorithm/21.10.15.algorithm/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;algorithm&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;toy-29-binaryheap&quot;&gt;TOY 29. binaryHeap&lt;/h2&gt;
+&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;정수를 요소로 갖는 배열을 입력받아 이진 힙(binary heap)* 을 리턴해야 합니다.&lt;/p&gt;
+&lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이진 힙(binary heap)&lt;/code&gt;은 노드의 값이 특정한 순서를 가지고 있는 완전 이진 트리(Complete Binary Tree)입니다.&lt;/li&gt;
   &lt;li&gt;완전 이진 트리는 이진 트리의 (마지막 레벨 또는 마지막 깊이를 제외하고) 모든 레벨이 노드로 가득 채워져 있어야 합니다. 마지막 레벨은 왼쪽부터 차례대로 채워져 있습니다.&lt;/li&gt;
   &lt;li&gt;이진 힙에서 부모 노드의 값이 (이진 트리이므로 2개의) 자식 노드의 값보다 큰 경우를 최대 힙(max heap), 반대의 경우를 최소 힙(min heap)이라고 합니다.&lt;/li&gt;
