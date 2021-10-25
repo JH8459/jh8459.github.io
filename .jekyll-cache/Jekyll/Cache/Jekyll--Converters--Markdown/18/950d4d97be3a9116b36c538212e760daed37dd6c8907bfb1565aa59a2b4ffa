@@ -1,0 +1,224 @@
+I"�:<p>가비지 컬렉션은 프로그램에서 더 이상 사용하지 않는 메모리를 자동으로 정리하는 것<img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-컴퓨터-공학-기초">1. 컴퓨터 공학 기초</h3>
+<hr />
+
+<h4 id="1-1-문자열">1-1. 문자열</h4>
+<hr />
+<h5 id="유니코드">유니코드</h5>
+<ul>
+  <li>
+    <p>2010년도 이후, 유니코드라고 불리우는 인코딩 방식이 통일된 시대를 살아가고 있다. <strong>유니코드(Unicode)</strong> 란 유니코드 협회(Unicode Consortium)가 제정하는 전 세계의 모든 문자를 컴퓨터에서 일관되게 표현하고 다룰 수 있도록 설계된 산업 표준이다. 이 표준에는 ISO 10646 문자 집합, 문자 인코딩, 문자 정보 데이터베이스, 문자를 다루기 위한 알고리즘 등을 포함하고 있다.</p>
+
+    <p>유니코드가 탄생하기 이전에는 같은 한글이 적힌 텍스트 파일이라도 표현하는 방법이 제각각이었기에, 어떤 파일이 지원하지 않는 다른 <em>인코딩</em> 형식으로 저장되어 있는 경우에는 파일을 제대로 불러올 수 없는 문제가 발생했었다. 기본적으로 유니코드의 목적은 현존하는 문자 인코딩 방법을 모두 유니코드로 교체하는 것이다.</p>
+
+    <blockquote>
+      <p><strong>인코딩(부호화)란?</strong></p>
+
+      <p>인코딩이란 어떤 문자나 기호를 컴퓨터가 이용할 수 있는 신호로 만드는 것이다. 이 신호를 입력하는 인코딩과 문자를 해독하는 디코딩을 하기 위해서는 미리 정해진 기준을 바탕으로 입력과 해독이 처리되어야 한다. 이렇게 인코딩과 디코딩의 기준을 문자열 세트 또는 문자셋(charset)이라고 하며, 이 문자셋의 국제 표준이 <strong>유니코드</strong>이다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+<h5 id="ascii-문자">ASCII 문자</h5>
+<ul>
+  <li>
+    <p>American Standard Code for Information Interchange 의 약자이며, 영문 알파벳을 사용하는 대표적인 문자 인코딩으로 7 비트로 모든 영어 알파벳을 표현할 수 있다. 52개의 영문 알파벳 대소문자와, 10개의 숫자, 32개의 특수 문자, 그리고 하나의 공백 문자를 포함한다.</p>
+
+    <p>그런데 쓰다보니 7비트 128개만으로는 표현하기에 부족하였다. 그렇게 탄생한 문자가 2^8개의 문자를 표현하는 8비트 아스키코드가 나왔다. 이 녀석을 <strong>ANSI</strong> 코드라고 한다. 이렇게 1 바이트만으로 표현되는 방식을 SBCS(Single Byte Character Set) 라고 한다.</p>
+
+    <p>반면, 유니코드는 ASCII, ANSI 외에 한자, 한글 등 모든 언어를 취급하는 16비트 2바이트의 크기로 확장한 형태이다.</p>
+  </li>
+</ul>
+
+<hr />
+<h5 id="utf-8">UTF-8</h5>
+<ul>
+  <li>UTF-8과 UTF-16은 인코딩 방식의 차이를 의미한다. UTF-8은 Universal Coded Character Set + Transformation Format – 8-bit의 약자로, UTF- 뒤에 등장하는 숫자는 비트(bit)이다.</li>
+  <li>UTF-8 은 유니코드 한 문자를 나타내기 위해 1 byte(= 8 bits) 에서 4 bytes까지 가변 길이 인코딩을 사용한다.</li>
+  <li>
+    <p>예를 들어, <code class="language-plaintext highlighter-rouge">코</code> 라는 문자의 유니코드는 <code class="language-plaintext highlighter-rouge">U+CF54</code> (16진수, HEX)로 표현되며, 이 문자를 이진법(binary number)으로 표시하면, <code class="language-plaintext highlighter-rouge">1100-1111-0101-0100</code> 이 된다. 이 문자를 UTF-8로 표현하면, 다음과 같이 3byte 의 결과로 표현된다.</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1110</span><span class="nx">xxxx</span> <span class="mi">10</span><span class="nx">xxxxxx</span> <span class="mi">10</span><span class="nx">xxxxxx</span> <span class="err">#</span> <span class="nx">x</span> <span class="nx">안에</span> <span class="nx">순서대로</span> <span class="nx">값을</span> <span class="nx">채워넣습니다</span><span class="p">.</span>
+<span class="mi">11101100</span> <span class="mi">10111101</span> <span class="mi">10010100</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>다른 예로 <code class="language-plaintext highlighter-rouge">b</code>라는 ASCII 코드는 7비트로 표현되고, UTF-8 에서는 다음과 같이 1 byte의 결과로 만들 수 있다</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span><span class="nx">xxxxxxx</span>
+<span class="mi">01100010</span> 
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>이처럼, UTF-8은 1 byte에서 4 bytes까지의 가변 길이를 가지는 인코딩 방식이다. 네트워크를 통해 전송되는 텍스트는 주로 UTF-8로 인코딩되며 그 이유는 사용된 문자에 따라 더 작은 크기의 문자열을 표현할 수 있기 때문이다. ASCII 문자는 1 바이트만으로 표현 가능한 것처럼 효율적이다.</p>
+
+    <p>UTF-8은 ASCII 코드의 경우 1 byte, 영어 외 글자는 2byte, 3byte, 보조 글자및 특수문자는 4byte를 차지합니다. ex) 이모지는 보조 글자에 해당하기 때문에 4byte가 필요하다.</p>
+  </li>
+</ul>
+
+<hr />
+<h5 id="utf-16">UTF-16</h5>
+<ul>
+  <li>UTF-16은 유니코드 코드 대부분(U+0000부터 U+FFFF; BMP) 을 16 bits로 표현한다.
+    <ul>
+      <li>대부분에 속하지 않는 기타문자는 32 bit(4 bytes)로 표현하므로 UTF-16도 가변 길이라고 할 수 있으나, 대부분은 2 바이트로 표현한다</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">U+ABCD</code>라는 16진수를 있는 그대로 이진법으로 변환하면 <code class="language-plaintext highlighter-rouge">1010-1011-1100-1101</code> 이다. 이 이진법으로 표현된 문자를 16 bits(2 bytes)로 그대로 사용하며, 바이트 순서(엔디언)에 따라 UTF-16의 종류도 달라진다.</li>
+  <li>UTF-8에서는 한글은 3 바이트, UTF-16에서는 2 바이트를 차지한다.</li>
+</ul>
+
+<hr />
+
+<h4 id="1-2-그래픽">1-2. 그래픽</h4>
+<hr />
+<h5 id="비트맵래스터과-벡터-이미지의-차이점">비트맵(래스터)과 벡터 이미지의 차이점</h5>
+<p><img src="https://user-images.githubusercontent.com/83164003/138730955-558bf4ae-d521-488a-8dca-267af2182f0b.png" alt="Orc_-_Raster_vs_Vector_comparison" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>비트맵(래스터)</th>
+      <th>벡터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기반 기술</td>
+      <td>픽셀 기반</td>
+      <td>수학적으로 계산된 Shape 기반</td>
+    </tr>
+    <tr>
+      <td>특징</td>
+      <td>사진과 같이 색상의 조합이 다양한 이미지에 적합</td>
+      <td>로고, 일러스트와 같이 제품에 적용되는 이미지에 적합</td>
+    </tr>
+    <tr>
+      <td>확대</td>
+      <td>확대에 적합하지 않음, 보다 큰 사이즈의 이미지가 필요할 때 사용하려는 크기 이상으로 생성하거나 스캔해야 함</td>
+      <td>품질 저하없이 모든 크기로 확대 가능하며, 해상도의 영향을 받지 않음</td>
+    </tr>
+    <tr>
+      <td>크기(dimension)에 따른 파일 용량(file size)</td>
+      <td>큰 크기의 이미지는, 큰 파일 사이즈를 가짐</td>
+      <td>큰 크기의 벡터 그래픽은 작은 파일 사이즈를 유지할 수 있음</td>
+    </tr>
+    <tr>
+      <td>상호 변환</td>
+      <td>이미지의 복잡도에 따라 벡터로 변환하는 것에 오랜 시간이 걸림</td>
+      <td>쉽게 래스터 이미지로 변환 가능</td>
+    </tr>
+    <tr>
+      <td>대표적인 파일 포맷</td>
+      <td>jpg, gif, png, bmp, psd</td>
+      <td>svg, ai</td>
+    </tr>
+    <tr>
+      <td>웹에서의 사용성</td>
+      <td>jpg, gif, png 등이 널리 쓰임</td>
+      <td>svg 포맷은 현대의 브라우저에서 대부분 지원</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h3 id="2-운영체제">2. 운영체제</h3>
+<hr />
+<h4 id="2-1-운영체제-개요">2-1. 운영체제 개요</h4>
+<hr />
+<p>컴퓨터나 스마트폰의 기기 그 자체(하드웨어)는 스스로 할 수 있는 일이 없다. 하드웨어의 설계를 바탕으로 하드웨어에게 일을 시켜야만 그 의미가 있으며 하드웨어에게 일을 시키는 주체가 바로 운영체제이다.</p>
+
+<hr />
+<h5 id="시스템-자원-관리">시스템 자원 관리</h5>
+<ul>
+  <li>운영체제가 없다면, 응용 프로그램이 실행될 수 없다. 응용 프로그램은 컴퓨터를 이용해 다양한 작업을 하는 것이 목적이고, 운영체제는 응용 프로그램이 하드웨어에게 일을 시킬 수 있도록 도와준다. 하드웨어를 구성하는 일을 하는 CPU, 자료를 저장하는 RAM, 디스크 등의 시스템 자원을 관리하는 주체가 바로 운영체제이다.
+    <ul>
+      <li>프로세스 관리(CPU)</li>
+      <li>메모리 관리</li>
+      <li>I/O(입출력) 관리 (디스크, 네트워크 등)</li>
+    </ul>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/138732583-0aab03fe-3452-442a-af90-49ae4354e9ed.png" alt="운영체제" /></p>
+  </li>
+</ul>
+
+<hr />
+<h5 id="응용-프로그램-관리">응용 프로그램 관리</h5>
+<ul>
+  <li>
+    <p>모든 응용 프로그램이 시스템의 자원을 마음대로 사용한다면, 해커에 의한 응용프로그램 공격에 무방비한 상태가 된다. 악의적인 목적을 가진 프로그램이 디스크의 모든 민감한 정보에 접근하거나, 내 스마트폰의 특정 앱이 카메라를 아무때나 실행해서 촬영한다고 생각하면 어떨까?</p>
+
+    <p>따라서, 응용 프로그램은 권한에 대한 관리가 필요합니다. 또한 여러 사람이 하나의 기기를 사용하는 경우에는 사용자를 관리하는 일도 매우 중요하다. 이를 운영체제가 관리한다.</p>
+  </li>
+  <li>
+    <p>응용 프로그램이 운영체제와 소통하기 위해서는, 운영체제가 응용 프로그램을 위해 인터페이스(API)를 제공해야 한다. 응용 프로그램이 시스템 자원을 사용할 수 있도록, 운영체제 차원에서 다양한 함수를 제공하는 것을 시스템 콜(System call)이라고 부른다.  <code class="language-plaintext highlighter-rouge">ex) 스마트폰에서 사용자에게 어떤 디바이스(카메라 등)의 사용권한 묻는 창</code></p>
+  </li>
+</ul>
+
+<hr />
+<h4 id="2-2-프로세스-스레드-멀티-스레드">2-2. 프로세스, 스레드, 멀티 스레드</h4>
+<hr />
+
+<h5 id="프로세스process">프로세스(Process)</h5>
+<ul>
+  <li>운영체제에서는 실행 중인 하나의 애플리케이션을 프로세스라고 부른다.</li>
+  <li>
+    <p>사용자가 애플리케이션을 실행하면, 운영체제로부터 실행에 필요한 메모리를 할당 받아 애플리케이션의 코드를 실행한다. 이때 실행되는 애플리케이션을 프로세스라고 부른다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">ex) Chrome 브라우저를 두 개 실행하면, 두 개의 프로세스가 생성된다.</code></p>
+
+    <p>이렇게 하나의 애플리케이션은 여러 프로세스(다중 프로세스)를 만들기도 한다.</p>
+  </li>
+</ul>
+
+<hr />
+<h5 id="스레드thread">스레드(Thread)</h5>
+<ul>
+  <li>프로세스 내에서 실행되는 흐름의 단위이다.</li>
+  <li>일반적으로 한 프로그램은 하나의 스레드를 가지고 있지만, 프로그램 환경에 따라 둘 이상의 스레드(멀티 스레드)를 동시에 실행할 수 있으며 각각의 스레드는 다른 스레드와 독립적으로 동작한다.</li>
+</ul>
+
+<hr />
+<h5 id="멀티-스레드multi-thread">멀티 스레드(Multi-Thread)</h5>
+<ul>
+  <li>멀티 태스킹은 두 가지 이상의 작업을 동시에 처리하는 것을 의미한다. 운영체제는 멀티 태스킹을 할 수 있도록, 프로세스마다 CPU 및 메모리 자원을 적절히 할당하고 병렬로 실행한다. 예를 들어 워드로 문서작업을 하면서, 동시에 Chrome 브라우저에서 음악을 들을 수 있다.</li>
+  <li>하나의 프로세스 내에서 멀티 태스킹을 할 수 있도록 만들어진 애플리케이션도 있기에 멀티 태스킹은 꼭 멀티 프로세스를 의미하는 것은 아니다. 하나의 프로세스가 두 가지 이상의 작업을 처리하는 경우는 멀티 스레드가 가능한 프로세스인 경우이기 때문이다.</li>
+  <li>
+    <p>멀티 프로세스가 애플리케이션 단위의 멀티 태스킹이라면, 멀티 스레드는 애플리케이션 내부에서의 멀티 태스킹이라고 할 수 있다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/138734996-7b445182-c1b0-4d07-8006-847d7665c5ff.png" alt="멀티스레드" /></p>
+  </li>
+  <li>프로세스를 이용하여 동시에 처리하던 일을 스레드로 구현할 경우, 메모리 공간과 시스템 자원의 소모가 줄어든다(각각의 프로세스는 위에서 설명하였듯 필요한 메모리를 할당 받는다). 그러므로 자연스럽게 프로그램의 응답 시간이 단축된다.</li>
+  <li>멀티 프로세스 기반으로 프로그래밍할 때에는 프로세스 간 공유하는 자원이 없기에 동일한 자원에 동시에 접근하는 일이 없었지만, 멀티 스레딩을 기반으로 프로그래밍할 때에는 공유하는 자원에 대하여  서로 다른 스레드가 같은 데이터에 접근하고, 힙 영역을 공유하기 때문에 서로 다른 스레드가 서로 사용중인 변수나 자료구조에 접근하여 엉뚱한 값을 읽어오거나 수정하는 일이 발생할 수 있다.</li>
+</ul>
+
+<hr />
+<h3 id="3-가비지-컬렉션garbage-collection-gc">3. 가비지 컬렉션(Garbage Collection, GC)</h3>
+<hr />
+
+<ul>
+  <li>가비지 컬렉션은 메모리 관리 기법 중의 하나로, 프로그램이 동적으로 할당했던 메모리 영역 중에서 필요없게 된 영역을 해제하는 기능이다.</li>
+  <li>대표적인 가비지 컬렉션의 방법
+    <ul>
+      <li><strong>트레이싱</strong> : 한 객체에 flag를 두고, 가비지 컬렉션 사이클마다 flag에 표시 후 삭제하는 mark and sweep 방법이다.</li>
+      <li><strong>레퍼런스 카운팅</strong> : 한 객체를 참조하는 변수의 수를 추적하는 방법</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[네트워크] 심화</li>
+</ul>
+:ET
