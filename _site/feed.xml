@@ -1,14 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-27T03:16:12+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow</title><link href="/til/21.10.27.til/" rel="alternate" type="text/html" title="[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-27T00:00:00+09:00</updated><id>/til/21.10.27.til</id><content type="html" xml:base="/til/21.10.27.til/">&lt;ul&gt;
-  &lt;li&gt;브랜치 삭제&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;
-    &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-    &lt;h3 id=&quot;1-git-branch&quot;&gt;1. Git Branch&lt;/h3&gt;
-    &lt;hr /&gt;
-    &lt;h4 id=&quot;1-1-브랜치branch란&quot;&gt;1-1. 브랜치(Branch)란?&lt;/h4&gt;
-    &lt;hr /&gt;
-    &lt;p&gt;브랜치란 독립적으로 어떤 작업을 진행하기 위한 개념이다.&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-27T03:19:15+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow</title><link href="/til/21.10.27.til/" rel="alternate" type="text/html" title="[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-27T00:00:00+09:00</updated><id>/til/21.10.27.til</id><content type="html" xml:base="/til/21.10.27.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;h3 id=&quot;1-git-branch&quot;&gt;1. Git Branch&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;1-1-브랜치branch란&quot;&gt;1-1. 브랜치(Branch)란?&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;브랜치란 독립적으로 어떤 작업을 진행하기 위한 개념이다.&lt;br /&gt;
 개발을 하다 보면 한 페이지 안의 여러 기능을 따로 구현하기 위해, 코드를 여러 개로 복사해야 하는 일이 필연적으로 생긴다. 브랜치 기능을 활용하면, 코드를 통째로 복사한 후 원래 코드가 변경될 우려 없이 독립적으로 개발할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;다시 말해, 각각의 브랜치는 다른 브랜치의 영향을 받지 않기 때문에, 여러 작업을 동시에 진행할 수 있다.&lt;/p&gt;
 
