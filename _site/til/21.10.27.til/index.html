@@ -352,7 +352,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-git-branch">1. Git Branch</a><ul><li><a href="#1-1-브랜치branch란">1-1. 브랜치(Branch)란?</a><ul><li><a href="#브랜치-종류">브랜치 종류</a></li></ul></li><li><a href="#1-2-브렌치-주요-명령어">1-2. 브렌치 주요 명령어</a></li></ul></li><li><a href="#2-프로젝트-workflow">2. 프로젝트 workflow</a><ul><li><a href="#전체-흐름-workflow">전체 흐름 workflow</a></li></ul></li></ul></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-git-branch">1. Git Branch</a><ul><li><a href="#1-1-브랜치branch란">1-1. 브랜치(Branch)란?</a><ul><li><a href="#브랜치-종류">브랜치 종류</a></li></ul></li><li><a href="#1-2-브렌치-주요-명령어">1-2. 브렌치 주요 명령어</a></li></ul></li><li><a href="#2-프로젝트-workflow">2. 프로젝트 workflow</a><ul><li><a href="#2-1-전체-흐름-workflow">2-1. 전체 흐름 workflow</a></li></ul></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
 
             </nav>
           </aside>
@@ -542,19 +542,33 @@
 </ul>
 
 <hr />
-<h5 id="전체-흐름-workflow">전체 흐름 workflow</h5>
-<hr />
-
+<h4 id="2-1-전체-흐름-workflow">2-1. 전체 흐름 workflow</h4>
 <p><img src="https://user-images.githubusercontent.com/83164003/138935596-451d30ac-b5f8-4ad2-8d63-e06792ac944b.png" alt="스크린샷, 2021-10-27 03-03-39" /></p>
 
+<p>프로젝트를 진행하는 전체 흐름은 다음과 같다.</p>
+
+<ol>
+  <li>Local에서 새로운 브랜치를 생성한다.</li>
+  <li>Local 영역에서 작업이 끝나면 Remote Repository 로 Push 한다.</li>
+  <li>그리고 Project Upstream Repository에 반영(merge)될 수 있도록 Pull Request 한다.</li>
+</ol>
+
+<blockquote>
+  <p>만약 작업하던 중간에 Remote upstream 에 업데이트가 생긴다면 Local 로 pull 받아주어야 한다.</p>
+</blockquote>
+
 <p><br />
 <br /></p>
-
 <h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>깃을 아직 2%도 쓰지 못했던거 같다. <del>개인 Repository만 활용한 수준….</del><br />
+이러한 협업을 할 때 진짜 깃의 실용성이 나타나는 듯 하다.</p>
+
+<p>프로젝트 플로우는 더미 프로젝트로 직접 스터디 팀원들과 함께 실습하는 시간을 꼭 가져야겠다. <del>뭔가 협업이 실시간으로 이뤄지는거 같아서 신기하다.</del></p>
 
 <p><br />
 <br /></p>
 
+<hr />
 <h2 id="내일-할-일">내일 할 일</h2>
 <ul>
   <li>[배포] Amazon Web Service</li>

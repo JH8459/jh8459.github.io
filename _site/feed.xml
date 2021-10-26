@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-27T03:05:20+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow</title><link href="/til/21.10.27.til/" rel="alternate" type="text/html" title="[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-27T00:00:00+09:00</updated><id>/til/21.10.27.til</id><content type="html" xml:base="/til/21.10.27.til/">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-27T03:16:12+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow</title><link href="/til/21.10.27.til/" rel="alternate" type="text/html" title="[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-27T00:00:00+09:00</updated><id>/til/21.10.27.til</id><content type="html" xml:base="/til/21.10.27.til/">&lt;ul&gt;
   &lt;li&gt;브랜치 삭제&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;
     &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
     &lt;h3 id=&quot;1-git-branch&quot;&gt;1. Git Branch&lt;/h3&gt;
@@ -183,19 +183,33 @@
 &lt;/ul&gt;
 
 &lt;hr /&gt;
-&lt;h5 id=&quot;전체-흐름-workflow&quot;&gt;전체 흐름 workflow&lt;/h5&gt;
-&lt;hr /&gt;
-
+&lt;h4 id=&quot;2-1-전체-흐름-workflow&quot;&gt;2-1. 전체 흐름 workflow&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138935596-451d30ac-b5f8-4ad2-8d63-e06792ac944b.png&quot; alt=&quot;스크린샷, 2021-10-27 03-03-39&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;프로젝트를 진행하는 전체 흐름은 다음과 같다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Local에서 새로운 브랜치를 생성한다.&lt;/li&gt;
+  &lt;li&gt;Local 영역에서 작업이 끝나면 Remote Repository 로 Push 한다.&lt;/li&gt;
+  &lt;li&gt;그리고 Project Upstream Repository에 반영(merge)될 수 있도록 Pull Request 한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;만약 작업하던 중간에 Remote upstream 에 업데이트가 생긴다면 Local 로 pull 받아주어야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;p&gt;깃을 아직 2%도 쓰지 못했던거 같다. &lt;del&gt;개인 Repository만 활용한 수준….&lt;/del&gt;&lt;br /&gt;
+이러한 협업을 할 때 진짜 깃의 실용성이 나타나는 듯 하다.&lt;/p&gt;
+
+&lt;p&gt;프로젝트 플로우는 더미 프로젝트로 직접 스터디 팀원들과 함께 실습하는 시간을 꼭 가져야겠다. &lt;del&gt;뭔가 협업이 실시간으로 이뤄지는거 같아서 신기하다.&lt;/del&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[배포] Amazon Web Service&lt;/li&gt;
