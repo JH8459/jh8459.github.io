@@ -1,4 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-27T01:57:14+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[TIL] 21.10.26 / 1. 인터넷 프로토콜 2. HTTP 헤더 3. 웹 캐시</title><link href="/til/21.10.26.til/" rel="alternate" type="text/html" title="[TIL] 21.10.26 / 1. 인터넷 프로토콜 2. HTTP 헤더 3. 웹 캐시" /><published>2021-10-26T00:00:00+09:00</published><updated>2021-10-26T00:00:00+09:00</updated><id>/til/21.10.26.til</id><content type="html" xml:base="/til/21.10.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-27T03:05:20+09:00</updated><id>/feed.xml</id><title type="html">JH8459</title><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><entry><title type="html">[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow</title><link href="/til/21.10.27.til/" rel="alternate" type="text/html" title="[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-27T00:00:00+09:00</updated><id>/til/21.10.27.til</id><content type="html" xml:base="/til/21.10.27.til/">&lt;ul&gt;
+  &lt;li&gt;브랜치 삭제&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;
+    &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+    &lt;h3 id=&quot;1-git-branch&quot;&gt;1. Git Branch&lt;/h3&gt;
+    &lt;hr /&gt;
+    &lt;h4 id=&quot;1-1-브랜치branch란&quot;&gt;1-1. 브랜치(Branch)란?&lt;/h4&gt;
+    &lt;hr /&gt;
+    &lt;p&gt;브랜치란 독립적으로 어떤 작업을 진행하기 위한 개념이다.&lt;br /&gt;
+개발을 하다 보면 한 페이지 안의 여러 기능을 따로 구현하기 위해, 코드를 여러 개로 복사해야 하는 일이 필연적으로 생긴다. 브랜치 기능을 활용하면, 코드를 통째로 복사한 후 원래 코드가 변경될 우려 없이 독립적으로 개발할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다시 말해, 각각의 브랜치는 다른 브랜치의 영향을 받지 않기 때문에, 여러 작업을 동시에 진행할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그러므로 브랜치가 갖는 기능의 장점은 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한 소스코드에서 동시에 다양한 작업을 할 수 있게 해준다.&lt;/li&gt;
+  &lt;li&gt;소스코드의 한 시점과 동일한 상태를 만들고, 브랜치를 넘나들며 작업을 수행할 수 있다.&lt;/li&gt;
+  &lt;li&gt;각각의 브랜치에서 생긴 변화가 다른 브랜치에 영향을 주지 않고 독립적으로 코딩을 진행할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hotfix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feature&lt;/code&gt; 등 다양한 개발과정 브랜치를 만들고 작업을 하다 보면, 다음 이미지와 비슷한 &lt;strong&gt;Git graph&lt;/strong&gt;가 형성된다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138927512-26f67564-e342-4fe3-8706-4f0c0f0addb4.png&quot; alt=&quot;git graph&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;이렇게 나누어진 브랜치에서는 각자 독립적인 작업 영역(저장소) 안에서 마음대로 소스코드를 변경할 수 있다. 분리된 작업 영역(브랜치)에서 변경된 내용들은 다른 브랜치와 병합(Merge)함으로써 다시 새로운 하나의 브랜치로 병합 또한 가능하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;독립적인 저장소에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;navigation bar&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer&lt;/code&gt; 소스코드 구현 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; 브랜치와 병합하는 과정&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138927916-cc08ed8a-578c-40f1-8e30-08f87c51dfcc.png&quot; alt=&quot;merge&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;여러 명이서 동시에 작업을 할 때에 다른 사람의 작업에 영향을 주거나 받지 않도록, 먼저 통합 브랜치에서 자신의 작업 전용 브랜치를 만든 후 각자의 브랜치에서 맡은 영역에 대한 작업을 진행한다.&lt;br /&gt; 
+작업이 끝난 브랜치는 통합 브랜치에 병합해서 변경 사항을 적용하는 과정을 반복하여 이를 통해 다른 브랜치의 작업에 영향을 받지 않고 독립적으로 특정 작업을 수행하고 그 결과를 하나로 모아 나가게 된다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 작업을 진행하게 되면 &lt;strong&gt;‘작업 단위’&lt;/strong&gt;, 즉 브랜치로 그 작업의 내용들이 모두 기록되기 때문에 문제가 발생했을 때 원인이 되는 작업을 찾아내거나 그에 따른 대책을 세우기 쉬워진다.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h5 id=&quot;브랜치-종류&quot;&gt;브랜치 종류&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;통합 브랜치 (Integration Branch)&lt;/strong&gt; : 배포될 소스 코드가 기록되는 브랜치.
+    &lt;ul&gt;
+      &lt;li&gt;Github Repository를 생성하게 되면 기본적으로 main 브랜치가 생성되어 있다. (기존 Repository의 경우 master로 되어 있는 경우도 있다.)&lt;/li&gt;
+      &lt;li&gt;해당 프로젝트의 모든 기능이 정상적으로 작동하는 상태의 소스코드가 담겨 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;피처 브랜치 (Feature Branch)&lt;/strong&gt; : 기능 추가, 버그 수정과 같이 단위 작업을 위한 브랜치.
+    &lt;ul&gt;
+      &lt;li&gt;통합 브랜치로부터 만들어내며, 피처 브랜치에서 하나의 작업이 완료가 되면 다시 통합 브랜치에 병합하는 방식으로 진행된다. 토픽 브랜치라고도 부르기도 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-2-브렌치-주요-명령어&quot;&gt;1-2. 브렌치 주요 명령어&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;새로운 브랜치 생성&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git branch 새로운 브랜치 이름&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;새로운 브랜치 생성 후 해당 브랜치로 전환&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git switch -c 새로운 브랜치 이름&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git checkout -b 새로운 브랜치 이름&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브랜치 목록 확인&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git branch&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브랜치 목록과 각 브랜치의 최근 커밋 확인&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git branch -v&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브랜치 삭제&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git branch -d 삭제할 브랜치 이름&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git branch -D&lt;/code&gt; : 해당 명령어는 병합하지 않은 브랜치를 강제 삭제하는 방법.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브랜치 전환&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git switch 브랜치 이름&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git checkout 브랜치 이름&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브랜치 병합 (master 브랜치로 dev 브랜치를 병합할 때 (master ← dev))&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git checkout master&lt;/code&gt; ➡ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git merge dev&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;로그에 모든 브랜치를 그래프로 표현&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git log --branches --graph --decorate&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;아직 commit 하지 않은 작업을 스택에 임시로 저장&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ git stash&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;2-프로젝트-workflow&quot;&gt;2. 프로젝트 workflow&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138929431-23d510ef-0ba4-4a3c-9f1d-bd6459503885.png&quot; alt=&quot;스크린샷, 2021-10-27 02-22-23&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Remote에 생성한 프로젝트 Repository를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fork&lt;/code&gt;를 하여 각자의 Repository로 가져온다.&lt;/li&gt;
+  &lt;li&gt;Local 영역에서 작업하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clone&lt;/code&gt;을 하여 Repository를 Local에 가져와 세팅한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138931675-74480d5b-5cd8-4b2a-9770-e311804d439e.png&quot; alt=&quot;스크린샷, 2021-10-27 02-25-17&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Local 영역에서의 개발 진행은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; 브랜치가 아닌 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dev&lt;/code&gt; 브랜치를 만들어서 해당 브랜치로 이동한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138931935-0190d198-b999-43cf-bcd4-0cc93616b5da.png&quot; alt=&quot;스크린샷, 2021-10-27 02-40-15&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b dev&lt;/code&gt; 명령어를 통해서 dev 브랜치를 생성&amp;amp;이동. (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git switch -c dev&lt;/code&gt; 명령어도 가능하다.)&lt;/li&gt;
+  &lt;li&gt;나의 Origin Repository 에도 생성한 브랜치를 반영하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin dev&lt;/code&gt; 명령어를 입력해 준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138932307-29e2a19c-967e-4860-a48b-d21f60504837.png&quot; alt=&quot;스크린샷, 2021-10-27 02-42-54&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;작업을 진행하기전 하나의 기능을 구현할 때는 &lt;strong&gt;‘feature/기능이름’&lt;/strong&gt; 이라는 브랜치를 만들어서 작업하기로 정했다면, 로그인 기능을 구현하기 위해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feature/login&lt;/code&gt; 이라는 브랜치를 생성 후 해당 브랜치에서 로그인 기능을 구현한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b feature/login&lt;/code&gt; 명령어를 통해서 feature/login 브랜치를 생성&amp;amp;이동. (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git switch -c feature/login&lt;/code&gt; 명령어도 가능하다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138932826-32fe9ec4-1a22-4ff9-82be-fa599cd8764e.png&quot; alt=&quot;스크린샷, 2021-10-27 02-46-23&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;feature/login 브랜치에서 로그인 기능이 완성 후, 소셜 로그인(oauth) 기능을 추가해 보고 싶다면 이미 완성된 로그인 코드에서 작업하기보다는, 새로운 브랜치를 하나 더 만들어서 기존 완성된 기능은 보존하며 작업하는게 코드를 유지보수하기 용이하다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b feature/login-ouath&lt;/code&gt; 명령어를 통해서 feature/login-ouath 브랜치를 생성&amp;amp;이동한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138933447-c5cd9882-ad51-43b5-a21f-a12f154faf75.png&quot; alt=&quot;스크린샷, 2021-10-27 02-50-04&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소셜 로그인 기능까지 구현이 완료되었다면, 이 feature/login-oauth 브랜치에 있는 코드를 feature/login 브랜치로 병합(merge) 해준다.&lt;/li&gt;
+  &lt;li&gt;먼저 병합의 주체가 될 브랜치(feature/login)로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b feature/login&lt;/code&gt; 명령어로 이동을 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138933968-e12ddca5-020b-4f63-a72a-c52a83edefbe.png&quot; alt=&quot;스크린샷, 2021-10-27 02-53-32&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge feature/login-oauth&lt;/code&gt; 명령어로 feature/login-oauth 브랜치를 병합해준다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;브랜치가 병합되기 전 feature/login 브랜치에 추가적인 커밋이 없으므로, 브랜치가 분기될 필요가 없다. 그러므로 자동적으로 &lt;strong&gt;fast-forward&lt;/strong&gt; 방식으로 병합이 이뤄진다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;fast-forward 방식이란 별도의 커밋을 생성하지 않고 feature/login 브랜치가 가리키는 커밋을 feature/login-oauth 가 생성한 커밋으로 바꾸는 작업을 말한다.&lt;/p&gt;
+
+      &lt;p&gt;만약, feature/login 브랜치에 별도의 커밋이 있었다면, fast-forward가 아닌 &lt;strong&gt;merge commit&lt;/strong&gt; 방식으로 병합되었을 것이다. 이는 각 브랜치가 줄기처럼 분기한 후, 병합의 모양새를 가진다.&lt;/p&gt;
+
+      &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138934399-f62e2ed8-db9a-4138-8abe-7905d9f39d70.png&quot; alt=&quot;스크린샷, 2021-10-27 02-56-28&quot; /&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138934837-0054b893-2da4-4f97-90f4-351c0232c38a.png&quot; alt=&quot;스크린샷, 2021-10-27 02-59-32&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로컬의 작업한 내용(Login기능)을 Remote Repository 에 업로드하기 위해서는 push를 해야 한다.&lt;/li&gt;
+  &lt;li&gt;` git push origin feature/login` 명령어로 Remote Repository로 업로드 한다.&lt;/li&gt;
+  &lt;li&gt;feature/login 브랜치의 변경 사항을 다른 팀원들과 함께 코드 리뷰를 하고 dev 브랜치에 적용하고 싶다면, Github의 Pull Request 기능을 활용해 dev 브랜치로의 반영을 요청할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h5 id=&quot;전체-흐름-workflow&quot;&gt;전체 흐름 workflow&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/138935596-451d30ac-b5f8-4ad2-8d63-e06792ac944b.png&quot; alt=&quot;스크린샷, 2021-10-27 03-03-39&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[배포] Amazon Web Service&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. Git Branch 2. 프로젝트 workflow</summary></entry><entry><title type="html">[TIL] 21.10.26 / 1. 인터넷 프로토콜 2. HTTP 헤더 3. 웹 캐시</title><link href="/til/21.10.26.til/" rel="alternate" type="text/html" title="[TIL] 21.10.26 / 1. 인터넷 프로토콜 2. HTTP 헤더 3. 웹 캐시" /><published>2021-10-26T00:00:00+09:00</published><updated>2021-10-26T00:00:00+09:00</updated><id>/til/21.10.26.til</id><content type="html" xml:base="/til/21.10.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 &lt;h3 id=&quot;1-인터넷-프로토콜&quot;&gt;1. 인터넷 프로토콜&lt;/h3&gt;
 &lt;hr /&gt;
@@ -1780,200 +1981,4 @@
 &lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;TOY 26. LSCS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 25. robotPath</summary></entry><entry><title type="html">[Algorithm] TOY 24. radixSort (작성중)</title><link href="/algorithm/21.10.06.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 24. radixSort (작성중)" /><published>2021-10-06T00:00:00+09:00</published><updated>2021-10-06T00:00:00+09:00</updated><id>/algorithm/21.10.06.algorithm</id><content type="html" xml:base="/algorithm/21.10.06.algorithm/"></content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 24. radixSort</summary></entry><entry><title type="html">[TIL] 21.10.05 / 1. Linux 사용권한 2. Linux 환경변수</title><link href="/til/21.10.05.til/" rel="alternate" type="text/html" title="[TIL] 21.10.05 / 1. Linux 사용권한 2. Linux 환경변수" /><published>2021-10-05T00:00:00+09:00</published><updated>2021-10-05T00:00:00+09:00</updated><id>/til/21.10.05.til</id><content type="html" xml:base="/til/21.10.05.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-linux-사용권한&quot;&gt;1. Linux 사용권한&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&quot;1-1-터미널-파일-및-폴더-생성-명령어&quot;&gt;1-1. 터미널 파일 및 폴더 생성 명령어&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkdir&lt;/code&gt;명령어로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux&lt;/code&gt;이름의 폴더를 생성하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nano&lt;/code&gt; (리눅스 기반 오픈소스 편집 프로그램)를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;helloworld.js&lt;/code&gt; 파일을 생성 한 후 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls -l&lt;/code&gt; 을 프롬프트에 입력하고 Enter(엔터 키)를 누르면 다음과 같은 출력 결과를 얻을 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/135951898-0d2e1da8-ee9e-459e-8674-446e85a38400.png&quot; alt=&quot;스크린샷, 2021-10-05 11-41-11&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;터미널에 출력된 결과 중에서, 가장 왼쪽의 표현을 살펴보면, 파일 helloworld.js는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-rw-r--r--&lt;/code&gt; 이라고 출력되었고, 폴더 linux는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;drwxr-xr-x&lt;/code&gt; 라고 출력되었다.&lt;/p&gt;
-
-    &lt;p&gt;이 표현의 첫 시작인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d&lt;/code&gt; 는 각각 not directory와 directory를 나타낸다. 폴더이면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d&lt;/code&gt;로, 파일이면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; 로 표현한다. 이어지는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt;는 각각 read permission, write permission, execute permission으로 읽기 권한, 쓰기 권한, 실행 권한을 나타낸다. 3번에 걸쳐 나타나는 이유는 사용자와 그룹, 나머지에 대한 권한을 표시하기 때문이다.&lt;/p&gt;
-
-    &lt;p&gt;파일 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;helloworld.js&lt;/code&gt;의 권한은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rw- rw- r--&lt;/code&gt; 으로, 소유자는 읽기와 쓰기가 가능하고, 다른 사용자 그룹은 읽기만 가능하다는 의미이며, 폴더 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux&lt;/code&gt;의 권한은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rwx rwx r-x&lt;/code&gt; 으로, 소유자는 읽기와 쓰기, 실행이 가능하고, 다른 사용자 그룹은 읽기와 실행만 가능함을 뜻한다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/135961418-475647af-07e6-41b1-8b20-0deb8541b209.jpg&quot; alt=&quot;211005_121241_1&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;1-2-user-group-and-other&quot;&gt;1-2. User, Group, and Other&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;User&lt;/strong&gt; : user는 파일의 소유자이다. 기본적으로 파일을 만든 사람이 소유자가 된다. 소유자(Owner)라 부르기도 한다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Group&lt;/strong&gt; : group에는 여러 user가 포함될 수 있다. 그룹에 속한 모든 user는 파일에 대한 동일한 group 액세스 권한을 갖는다. 많은 사람이 파일에 액세스해야 하는 프로젝트가 있다고 가정하면, 각 user에게 일일이 권한을 할당하는 대신에 모든 user를 group에 추가하고, 파일에 group 권한을 할당할 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Other&lt;/strong&gt; : 파일에 대한 액세스 권한이 있는 다른 user이다. 파일을 만들지 않은 다른 모든 user를 의미한다. 따라서 other 권한을 설정하면, 해당 권한을 global 권한 설정이라고 볼 수도 있다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;1-3-chmod&quot;&gt;1-3. chmod&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod&lt;/code&gt;는 폴더나 파일의 읽기, 쓰기, 실행 권한을 변경할 수 있다. OS에 로그인한 사용자와, 폴더나 파일의 소유자(Owner)가 같을 경우에 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod&lt;/code&gt; 로 폴더나 파일의 권한을 변경할 수 있다. 만약 OS에 로그인한 사용자와, 폴더나 파일의 소유자가 다를 경우(Other)에는 관리자 권한을 획득하는 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; 를 이용해 폴더나 파일의 권한을 변경할 수 있다.&lt;/li&gt;
-  &lt;li&gt;명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod&lt;/code&gt;로 권한을 변경하는 방식은 두 가지가 있다.
-    &lt;ul&gt;
-      &lt;li&gt;첫 번째는 더하기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;), 빼기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;), 할당(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;)과 액세서 유형을 표기해서 변경하는 &lt;strong&gt;Symbolic method&lt;/strong&gt;,&lt;/li&gt;
-      &lt;li&gt;두 번째는 rwx를 3 bit로 해석하여, 숫자 3자리로 권한을 표기해서 변경하는 &lt;strong&gt;Absolute form&lt;/strong&gt;이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Symbolic method&lt;/strong&gt;는 액세스 클래스, 연산자, 액세스 타입으로 구분한다.&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th&gt;Access class&lt;/th&gt;
-          &lt;th&gt;Operator&lt;/th&gt;
-          &lt;th&gt;Access Type&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;u (user)&lt;/td&gt;
-          &lt;td&gt;+ (add access)&lt;/td&gt;
-          &lt;td&gt;r (read)&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;g (group)&lt;/td&gt;
-          &lt;td&gt;- (remove access)&lt;/td&gt;
-          &lt;td&gt;w (write)&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;o (other)&lt;/td&gt;
-          &lt;td&gt;= (set exact access)&lt;/td&gt;
-          &lt;td&gt;x (execute)&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;a (all: u, g, and o)&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod g-r filename # removes read permission from group
-chmod g+r filename # adds read permission to group
-chmod g-w filename # removes write permission from group
-chmod g+w filename # adds write permission to group
-chmod g-x filename # removes execute permission from group
-chmod g+x filename # adds execute permission to group
-chmod o-r filename # removes read permission from other
-chmod o+r filename # adds read permission to other
-chmod o-w filename # removes write permission from other
-chmod o+w filename # adds write permission to other
-chmod o-x filename # removes execute permission from other
-chmod o+x filename # adds execute permission to other
-chmod u+x filename # adds execute permission to user
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod a=rw helloworld.js # -rw-rw-rw-
-chmod u= helloworld.js # ----rw-rw-
-chmod a+rx helloworld.js # -r-xrwxrwx
-chmod go-wx helloworld.js # -r-xr--r--
-chmod a= helloworld.js # ----------
-chmod u+rwx helloworld.js # -rwx------
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Absolute form&lt;/strong&gt;은 숫자 7까지 나타내는 3 bits의 합으로 표기한다. 사용자, 그룹, 또는 다른 사용자나 그룹마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rwx&lt;/code&gt; 가 나타나고, 각 영역의 boolean 값으로 표기할 수 있다.&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th&gt;Permission&lt;/th&gt;
-          &lt;th&gt;Number&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Read (r)&lt;/td&gt;
-          &lt;td&gt;4&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Write (w)&lt;/td&gt;
-          &lt;td&gt;2&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Execute (x)&lt;/td&gt;
-          &lt;td&gt;1&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # u=rwx (4 + 2 + 1 = 7), go=r (4 + 0 + 0 = 4)
-  chmod 744 helloworld.js # -rwxr--r-- 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-linux-환경변수&quot;&gt;2. Linux 환경변수&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Linux 기반의 운영체제의 PC에는 시스템 자체에 전역변수를 설정할 수 있다. 그리고 시스템에 설정한 전역변수를 환경변수라고 한다. 명령어를 이용해 환경변수를 설정및 활용할 수 있다.&lt;/li&gt;
-  &lt;li&gt;프로그래밍 도중 API key와 같이 공개할 수 없는 정보가 코드에 포함될 경우, 네트워크를 통해 API key가 공개될 수 있다. 이런 일을 방지하기 위해서 API key를 PC에 저장해두고 사용해야 보안에 취약하지 않게 프로그램을 설계할수 있다. JavaScript에서 변수에 문자열을 할당하는 것처럼, API key를 PC에서 사용하는 변수에 할당하고 Javascript 코드에서 해당 환경변수를 호출하여 사용하는게 보안을 지키며 프로그래밍을 할 수 있는 방법이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-1-export-환경변수-확인하기--환경변수-임시-적용&quot;&gt;2-1. export: 환경변수 확인하기 &amp;amp;&amp;amp; 환경변수 임시 적용&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Linux 운영체제에는 이미 많은 환경변수가 설정되어 있다. 터미널에 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export&lt;/code&gt; 를 입력해, 기록된 환경변수를 확인할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/135967010-c4676d69-c2dd-4245-b710-f57836e15ede.png&quot; alt=&quot;스크린샷, 2021-10-05 14-43-43&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export&lt;/code&gt; 를 이용하면, 새로운 환경변수를 추가할 수 있다. 이 때 등호 표시(Equal sign, =) 앞뒤에는 반드시 공백이 없어야 하며, 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo&lt;/code&gt; 와 함께 환경변수를 입력하면, 환경변수의 값을 확인할 수 있다. 이때 환경변수의 앞에는 달러사인($)을 입력하여, 변수라는 뜻을 터미널에 전달해야 확인이 가능하다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/135967694-1d3b1a32-b7b2-4a1a-b87d-15c75e783902.png&quot; alt=&quot;스크린샷, 2021-10-05 14-50-27&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;위와 같은 방법으로 할당한 환경변수들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;unset [환경변수명]&lt;/code&gt; 명령어를 통해 비활성화 할 수 있다. 또한 해당 환경변수들은 재시작시 자동으로 비활성화가 되는 &lt;strong&gt;임시적용&lt;/strong&gt; 상태이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-2-dotenv-자바스크립트에서-환경변수-사용하기&quot;&gt;2-2. dotenv: 자바스크립트에서 환경변수 사용하기&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;npm 모듈 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotenv&lt;/code&gt;를 사용하면, 자바스크립트에서 환경변수를 사용할 수 있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm init&lt;/code&gt; 을 입력후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i dotenv&lt;/code&gt; 를 입력해 모듈을 설치한다.&lt;/p&gt;
-
-    &lt;p&gt;설치한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotenv&lt;/code&gt; 모듈을 이용해 환경변수에 접근할 수 있다. Node.js의 내장 객체 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;process.env&lt;/code&gt;를 이용하면 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export&lt;/code&gt; 로 확인한 내용과 동일한 내용을 객체로 출력한다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/135971634-ea8cc9fe-f98b-423b-8bc8-ae7c7a5c56a1.png&quot; alt=&quot;스크린샷, 2021-10-05 15-28-09&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-3-env-nodejs에서-환경변수-영구-적용&quot;&gt;2-3. .env: Node.js에서 환경변수 영구 적용&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;2-1&lt;/strong&gt;에서 언급하였지만 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export&lt;/code&gt; 로 적용한 환경변수는 현재 사용 중인 터미널에서만 임시로 사용이 가능하며 재시작시 초기화된다. 환경변수를 Linux 운영체제에 영구적으로 저장하는 방법은 여러 가지가 있지만, Node.js에서는 파일 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt;를 만들어 저장하는 방법이 보편적이다.&lt;/p&gt;
-
-    &lt;p&gt;다시 정리하자면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotenv&lt;/code&gt; 모듈을 통하여 자바스크립트로 Node.js의 내장 객체 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;process.env&lt;/code&gt;를 이용하여 Linux PC 환경변수에 접근할 수 있다. (이때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;process.env&lt;/code&gt;를 콘솔창을 통해 확인해보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export&lt;/code&gt;명령어와 같은 환경변수를 객체 형태로 확인 가능하다.) 그리고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt;파일에 원하는 환경변수를 입력 한 뒤 저장 후 모듈 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotenv&lt;/code&gt;를 이용하면, 파일 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt;에 저장한 환경변수를 조회할 수 있게된다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/135974561-eb916cef-1743-4d7a-a0ea-729f182bdfd4.png&quot; alt=&quot;스크린샷, 2021-10-05 15-54-18&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;이와 같은 과정들을 토대로 환경변수를 이용해 API key, DB password와 같이 민감한 정보를 저장하고 관리할 수 있으며, 그뿐만 아니라 서로 다른 PC 또는 여러 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; 파일에서, 같은 변수 이름에 다른 값을 할당할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Linux 환경에서의 환경변수를 사용하는 목적은 로컬PC에서만 사용되어야 하는 정보(ex. API Key, DB password…)를 프로그램 코드에 심지 않고 환경변수에 심은 뒤 해당 환경변수를 JS 환경에서 사용할 수 있게되는게 주된 목적이라 생각된다.&lt;/p&gt;
-
-    &lt;p&gt;프로그램 코드에 해당 데이터값을 심고 배포한다면, 해당 데이터들이 노출될 우려가 있으므로 보안에 취약해진다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;아직 실사용 경험이 없어서 정확히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; 파일에 어떤식으로 해당 데이터값들을 심어서 사용하는지 감을 잡기가 어렵다. 우선 사용목적과 프로세스는 확실히 학습하였다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;내일-할-일&quot;&gt;내일 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[자료구조/알고리즘]&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="TIL" /><summary type="html">[TIL] 1. Linux 사용권한 2. Linux 환경변수</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 25. robotPath</summary></entry><entry><title type="html">[Algorithm] TOY 24. radixSort (작성중)</title><link href="/algorithm/21.10.06.algorithm/" rel="alternate" type="text/html" title="[Algorithm] TOY 24. radixSort (작성중)" /><published>2021-10-06T00:00:00+09:00</published><updated>2021-10-06T00:00:00+09:00</updated><id>/algorithm/21.10.06.algorithm</id><content type="html" xml:base="/algorithm/21.10.06.algorithm/"></content><author><name>JH8459</name><email>kk_ong2233@naver.com</email></author><category term="Algorithm" /><summary type="html">[Algorithm] TOY 24. radixSort</summary></entry></feed>
