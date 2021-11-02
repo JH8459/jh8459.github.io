@@ -1,0 +1,155 @@
+I"�3<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-38-decompression">TOY 38. decompression</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>한 변의 길이가 2의 제곱수인 정사각형의 흑백 이미지가 2차원 배열로 주어집니다. 각 좌표에는 0(백) 또는 1(흑)이 저장되어 있습니다. 이미지에 포함된 데이터가 모두 1이면 ‘1’, 모두 0이면 ‘0’ 한 글자로 압축할 수 있습니다. 그렇지 않은 경우, 이를 대문자 X로 표시하고 전체를 4등분하여 재귀적으로 압축합니다. 4등분한 영역의 순서는 좌측 상단, 우측 상단, 좌측 하단, 우측 하단입니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--total">인자 1 : total</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입의 이하의 자연수</li>
+</ul>
+
+<h4 id="인자-2--coins">인자 2 : coins</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">coins.length</code>는 10,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">coins[i]</code>는 20 이하의 양의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>동전의 금액은 다양하게 주어집니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">coins</code>는 오름차순으로 정렬되어 있습니다.</li>
+  <li>각 동전의 개수는 무수히 많다고 가정합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">coins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">coinChange</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">coins</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 3</span>
+
+<span class="nx">total</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="nx">coins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">coinChange</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">coins</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 4 ([1, 1, 1, 1], [1, 1, 2], [2, 2], [1, 3])</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<ul>
+  <li>coinChange를 계산하는 효율적인 알고리즘(<code class="language-plaintext highlighter-rouge">O(M * N)</code>)이 존재합니다(<code class="language-plaintext highlighter-rouge">total</code>과 <code class="language-plaintext highlighter-rouge">coins.length</code>가 N, M일 경우). 쉽지 않기 때문에 바로 레퍼런스 코드를 보고 이해하는 데 집중하시기 바랍니다.</li>
+</ul>
+
+<h2 id="toy-37-solution">TOY 37. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution: O(2^M * N))</span>
+<span class="c1">// 6을 만드는 방법 중 [1, 5]와 [5, 1]을 중복해서 세면 안 되기 때문에.</span>
+<span class="c1">// 동전을 순서대로 사용한다.</span>
+<span class="c1">// const coinChange = function (total, coins) {</span>
+<span class="c1">//   const makeChageFrom = (left, idx) =&gt; {</span>
+<span class="c1">//     if (left === 0) return 1;</span>
+
+<span class="c1">//     let cnt = 0;</span>
+<span class="c1">//     // 지금 사용하고 있는 동전부터만 고려한다.</span>
+<span class="c1">//     for (let i = idx; i &lt; coins.length; i++) {</span>
+<span class="c1">//       if (left - coins[i] &gt;= 0) {</span>
+<span class="c1">//         cnt = cnt + makeChageFrom(left - coins[i], i);</span>
+<span class="c1">//       }</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     return cnt;</span>
+<span class="c1">//   };</span>
+<span class="c1">//   // 0번째 동전부터 사용한다.</span>
+<span class="c1">//   return makeChageFrom(total, 0);</span>
+<span class="c1">// };</span>
+<span class="cm">/* 동전을 하나씩 빼는 메커니즘(재귀로 구현), 횟수가 진행될수록 거듭제곱으로 시간복잡도가 증가한다. */</span>
+
+<span class="c1">// simpler recursion</span>
+<span class="c1">// and dynamic programming with memoization: O(M * N)</span>
+<span class="kd">const</span> <span class="nx">coinChange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">coins</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// memo[i][j]는 i만큼의 금액을 coins[j]부터 ~ coins[coins.length - 1]까지 사용하여 만들 수 있는 경우의 수를 저장</span>
+  <span class="kd">const</span> <span class="nx">memo</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">total</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">memo</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="nx">coins</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">makeChageFrom</span> <span class="o">=</span> <span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 0을 만드는 방법은 1가지이다. 아니면 목표 금액을 만들었다고 생각해도 된다.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// 금액이 마이너스가 되는 경우는 불가능하므로 0을 리턴</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// 동전을 전부 검토해서, 남아있는 새로운 동전은 없는데 목표 금액을 만들지 못한 경우 (실패)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">idx</span> <span class="o">&gt;=</span> <span class="nx">coins</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// 이미 해결한 적이 있는 문제는 다시 풀지 않는다.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">memo</span><span class="p">[</span><span class="nx">left</span><span class="p">][</span><span class="nx">idx</span><span class="p">]</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">left</span><span class="p">][</span><span class="nx">idx</span><span class="p">];</span>
+
+    <span class="c1">// left만큼의 금액을 coins[idx]부터 사용하여 만들 수 있는 경우의 수는</span>
+    <span class="c1">//  1) coins[idx]는 그만 사용하고, 다음 동전으로 넘어가거나 (목표 금액은 그대로이고, idx가 증가한다.)</span>
+    <span class="c1">//  2)) coins[idx]를 한번 더 사용한다. coins[idx]를 또 사용할 수 있으므로, idx는 그대로이고, 목표 금액은 coins[i]만큼 줄어든다.</span>
+    <span class="nx">memo</span><span class="p">[</span><span class="nx">left</span><span class="p">][</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span>
+      <span class="nx">makeChageFrom</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">makeChageFrom</span><span class="p">(</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">coins</span><span class="p">[</span><span class="nx">idx</span><span class="p">],</span> <span class="nx">idx</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">left</span><span class="p">][</span><span class="nx">idx</span><span class="p">];</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="nx">makeChageFrom</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// dynamic programming with tabulation: O(M * N)</span>
+<span class="c1">// const coinChange = function (total, coins) {</span>
+<span class="c1">//   // table[i][j]는 coins[j]까지 사용해서 i만큼의 금액을 만들 수 있는 경우의 수를 저장</span>
+<span class="c1">//   const table = [];</span>
+<span class="c1">//   for (let i = 0; i &lt; total + 1; i++) table.push(Array(coins.length).fill(0));</span>
+<span class="c1">//   // 모든 경우에 0을 만들 수 있는 경우는 1 (base case)</span>
+<span class="c1">//   for (let i = 0; i &lt; coins.length; i++) table[0][i] = 1;</span>
+
+<span class="c1">//   for (let amount = 1; amount &lt;= total; amount++) {</span>
+<span class="c1">//     // 작은 금액부터 차례대로 경우의 수를 구한다. (bottom-up)</span>
+<span class="c1">//     for (let idx = 0; idx &lt; coins.length; idx++) {</span>
+<span class="c1">//       let coinIncluded = 0;</span>
+<span class="c1">//       if (amount - coins[idx] &gt;= 0) {</span>
+<span class="c1">//         coinIncluded = table[amount - coins[idx]][idx];</span>
+<span class="c1">//       }</span>
+
+<span class="c1">//       let coinExcluded = 0;</span>
+<span class="c1">//       if (idx &gt;= 1) {</span>
+<span class="c1">//         // 동전을 순서대로 검사하고 있기 때문에, 바로 직전의 경우만 고려하면 된다.</span>
+<span class="c1">//         // 단, 0번째 동전은 직전이 없으므로 제외한다.</span>
+<span class="c1">//         coinExcluded = table[amount][idx - 1];</span>
+<span class="c1">//       }</span>
+
+<span class="c1">//       table[amount][idx] = coinIncluded + coinExcluded;</span>
+<span class="c1">//     }</span>
+<span class="c1">//   }</span>
+
+<span class="c1">//   return table[total][coins.length - 1];</span>
+<span class="c1">// };</span>
+<span class="cm">/* 값이 나올때마다 저장하여 배열에 저장하여 꺼내쓰는 방식 */</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 38. decompression</li>
+</ul>
+:ET

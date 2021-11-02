@@ -1,0 +1,231 @@
+I"�h<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-42-gossipprotocol2">TOY 42. gossipProtocol2</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>좌표평면 위에 존재하는 수많은 직사각형에 대한 정보가 2차원 배열로 주어집니다. 이 직사각형들은 서로 겹처 있을(overlapping) 수 있습니다. 이 직사각형들이 이루는 면적을 리턴해야 합니다.</p>
+
+<p>문제를 다르게 표현하면 아래와 같습니다.</p>
+
+<blockquote>
+  <p>밑이 투명한 좌표평면 위에 직사각형 모양의 종이을 여러 개 올려놓고 위에서 빛을 비출 때 생기는 그림자의 넓이를 구해야 합니다.</p>
+</blockquote>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--papers">인자 1 : papers</h4>
+<ul>
+  <li>배열을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">papers.length</code>는 30 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i]</code>는 <code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i]</code>는 차례대로 직사각형의 좌측 하단 모서리의 x좌표, y좌표, 너비(width), 높이(height)</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i][j]</code>는 10,000 이하의 양의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">shadowOfPapers</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 16</span>
+
+<span class="cm">/*
+4 | x x x x
+3 | x x x x 
+2 | x x x x 
+1 | x x x x 
+0 |   
+--------------
+    0 1 2 3 4 
+*/</span>
+
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">shadowOfPapers</span><span class="p">([</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 36</span>
+<span class="cm">/*
+7 |   x x x x x
+6 |   x x x x x
+5 |   x x x x x
+4 |     x x x
+3 | x x x x x
+2 | x x x x x
+1 | x x x x
+0 | x x x x
+------------------
+    0 1 2 3 4 5 6 7
+*/</span>
+</code></pre></div></div>
+<h3 id="힌트">힌트</h3>
+<hr />
+
+<ul>
+  <li>인접 행렬로 좌표 평면을 생성하면 10,000 x 10,000의 2차원 행렬, 즉 1억개의 데이터를 생성해야 합니다. 대부분의 코딩 테스트에서 이는 공간 복잡도 요구 조건을 만족하지 못 합니다. 보통 코딩 테스트에서 메모리 사용량을 128MB ~ 512MB로 제한합니다. 64비트 정수(자바스크립트 <code class="language-plaintext highlighter-rouge">number</code> 타입)는 8바이트이므로, 전체 크기가 1천만개인 데이터들의 크기는 약 80MB 입니다. 메모리 사용량이 128MB라면 데이터가 2천만개만 넘어가도 테스트를 통과하지 못 합니다. 따라서 이 문제는 단순히 인접 행렬로 푸는 문제가 아니라는 것을 문제의 크기를 통해 추측할 수 있어야 합니다.</li>
+  <li>코딩 테스트의 입력 크기에 따른 시간 복잡도와 공간 복잡도 요구 사항에 대해서 학습하시기 바랍니다.</li>
+  <li>스위핑(sweeping) 알고리즘에 대해서 학습하시기 바랍니다.</li>
+</ul>
+
+<h2 id="toy-43-solution">TOY 43. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<ul>
+  <li>최대 컬럼의 길이를 구한다.</li>
+  <li>papers 배열을 탐색 시작.
+    <ul>
+      <li>최대컬럼만큼의 배열을만들고 0을 넣는다. col</li>
+      <li>papers의 길이만큼만 탐색 시작.
+        <ul>
+          <li>구조분해할당으로 x, y, 너비, 높이를 할당한다.</li>
+          <li>row값이 0부터 세로로 넓이를 구할것이므로 rIdx와 x가 같다면</li>
+          <li>높이만큼 1을 찍어준다. 이후 x의 너비가 남았으면 다음 탐색에도 해당하는 높이를 찍어줘야하기 때문에 x + 1, 너비는 - 1을 해준다.</li>
+          <li>만일 해당 요소의 너비만큼 사용이 됐다면 버려주고, 그렇지 않으면 다시 2-2-3의 값을 papers에 넣어둔다.</li>
+          <li>papers의 길이만큼 탐색이 끝났다면 1의 개수를 sum에 더해주고 다음 row를 탐색해야 하기때문에 rIdx를 + 1 해준다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>최종 값이된 sum을 리턴.</li>
+</ul>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createMatrix</span> <span class="o">=</span> <span class="p">(</span><span class="nx">village</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">matrix</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">village</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">line</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">row</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">line</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">row</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">line</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="nx">matrix</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">matrix</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">getAgents</span> <span class="o">=</span> <span class="p">(</span><span class="nx">village</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">agents</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">village</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">village</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">village</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">)</span> <span class="nx">agents</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">]);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">agents</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">gossipProtocol2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">village</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// bfs 구현을 위해 큐를 선언한다.</span>
+  <span class="kd">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">village</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">MOVES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">// UP</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">// DOWN</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1">// RIGHT</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="c1">// LEFT</span>
+  <span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">MAX_SIZE</span> <span class="o">=</span> <span class="nx">N</span> <span class="o">*</span> <span class="nx">N</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">row</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">N</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">front</span><span class="p">,</span> <span class="nx">rear</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">isEmpty</span> <span class="o">=</span> <span class="p">(</span><span class="nx">queue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">front</span> <span class="o">===</span> <span class="nx">rear</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">enQueue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">queue</span><span class="p">,</span> <span class="nx">pos</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 실행 중에 큐가 가득차지는 않기 때문에 별도의 조건문을 작성할 필요가 없다.</span>
+    <span class="nx">queue</span><span class="p">[</span><span class="nx">rear</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">deQueue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">queue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">pos</span> <span class="o">=</span> <span class="nx">queue</span><span class="p">[</span><span class="nx">front</span><span class="o">++</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nx">pos</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="c1">// num개의 시작점이 주어졌을 때, bfs 탐색을 하는 함수</span>
+  <span class="kd">const</span> <span class="nx">bfs</span> <span class="o">=</span> <span class="p">(</span><span class="nx">sources</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">matrix</span> <span class="o">=</span> <span class="nx">createMatrix</span><span class="p">(</span><span class="nx">village</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">MAX_SIZE</span><span class="p">);</span>
+    <span class="nx">front</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">rear</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="nx">sources</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">src</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="p">[</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+      <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">enQueue</span><span class="p">(</span><span class="nx">queue</span><span class="p">,</span> <span class="nx">src</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="kd">let</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">queue</span><span class="p">)</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="p">[</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="nx">deQueue</span><span class="p">(</span><span class="nx">queue</span><span class="p">);</span>
+      <span class="nx">cnt</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">];</span>
+
+      <span class="nx">MOVES</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">move</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="p">[</span><span class="nx">rDiff</span><span class="p">,</span> <span class="nx">cDiff</span><span class="p">]</span> <span class="o">=</span> <span class="nx">move</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">nextRow</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">+</span> <span class="nx">rDiff</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">nextCol</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">+</span> <span class="nx">cDiff</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">nextRow</span><span class="p">,</span> <span class="nx">nextCol</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">nextRow</span><span class="p">][</span><span class="nx">nextCol</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">enQueue</span><span class="p">(</span><span class="nx">queue</span><span class="p">,</span> <span class="p">[</span><span class="nx">nextRow</span><span class="p">,</span> <span class="nx">nextCol</span><span class="p">]);</span>
+          <span class="nx">matrix</span><span class="p">[</span><span class="nx">nextRow</span><span class="p">][</span><span class="nx">nextCol</span><span class="p">]</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 정보가 다 전달되지 않을 수 있다.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">)</span> <span class="k">return</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">cnt</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="c1">// 정보를 알고 있는 주민들을 따로 저장한다.</span>
+  <span class="kd">const</span> <span class="nx">agents</span> <span class="o">=</span> <span class="nx">getAgents</span><span class="p">(</span><span class="nx">village</span><span class="p">);</span>
+  <span class="c1">// 최대 num명의 요원을 선정하고, 각각에 대해서 bfs를 수행한다.</span>
+  <span class="c1">// 가장 작은 값을 리턴한다.</span>
+
+  <span class="c1">// size개 중에서 num개를 선택하는 모든 조합을 리턴하는 함수</span>
+  <span class="c1">// 인덱스를 리턴한다.</span>
+  <span class="kd">const</span> <span class="nx">getCombinations</span> <span class="o">=</span> <span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">num</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// base case1: 선택해야 개수가 남아있는 개수 이상일 경우</span>
+    <span class="c1">// =&gt; 남아있는 모든 걸 선택한다.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">size</span> <span class="o">-</span> <span class="nx">idx</span> <span class="o">&lt;=</span> <span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">idx</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">size</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+      <span class="k">return</span> <span class="p">[</span><span class="nx">result</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// base case2: 선택이 완료되었을 경우</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">[</span><span class="nx">result</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 현재 idx부터 num개를 뽑는 방법은</span>
+    <span class="c1">// 1) 현재 요소를 선택하고 num-1개를 뽑는 방법</span>
+    <span class="kd">const</span> <span class="nx">picked</span> <span class="o">=</span> <span class="nx">getCombinations</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">idx</span><span class="p">));</span>
+    <span class="c1">// 2) 현재 요소를 선택하지 않고 num개를 뽑는 방법</span>
+    <span class="kd">const</span> <span class="nx">notPicked</span> <span class="o">=</span> <span class="nx">getCombinations</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">num</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">picked</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">notPicked</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">combs</span> <span class="o">=</span> <span class="nx">getCombinations</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">agents</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">num</span><span class="p">,</span> <span class="p">[]);</span>
+  <span class="kd">let</span> <span class="nx">min</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="p">;</span>
+  <span class="nx">combs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">sources</span> <span class="o">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">agents</span><span class="p">[</span><span class="nx">idx</span><span class="p">]);</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">bfs</span><span class="p">(</span><span class="nx">sources</span><span class="p">);</span>
+    <span class="nx">min</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">min</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 43. shadowOfPapers</li>
+</ul>
+:ET
