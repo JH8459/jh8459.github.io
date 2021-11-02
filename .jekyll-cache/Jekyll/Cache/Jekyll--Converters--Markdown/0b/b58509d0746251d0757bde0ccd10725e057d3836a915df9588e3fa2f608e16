@@ -1,0 +1,150 @@
+I"2<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-36-closestpairofpoints">TOY 36. closestPairOfPoints</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>좌표평면 상의 다양한 점들을 입력받아 가장 가까운 두 점 사이의 거리를 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--n">인자 1 : n</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입의 자연수 (<code class="language-plaintext highlighter-rouge">n</code> &gt;= 1)</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>ugly numbers를 배열에 저장했을 때, n번째 ugly number의 위치는 인덱스 n-1 입니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 1</span>
+
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 3</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<p>단순히 처음부터 끝까지 모든 수에 대해서 나눗셈 연산을 하는 대신 다른 방법(<code class="language-plaintext highlighter-rouge">O(N)</code>)을 탐구해 보세요.</p>
+
+<h2 id="toy-35-solution">TOY 35. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p>어떤 수를 소인수분해를 했을때, 2,3,5 만 남는 숫자를 찾는 알고리즘이다.</p>
+
+<ol>
+  <li>어떤 수(Ugly Numbers)에 Ugly Numbers 를 이루는 소인수인 2 (3, 5 도 마찬가지로) 를 곱해서 그 결과가 추가되었다면, 그 다음 숫자(Ugly Numbers)에 소인수 2 (3, 5) 를 곱해야 한다.</li>
+  <li>이미 다음 숫자로 넘어가서 소인수를 곱한 수와, 기존에 아직 곱하지 못한 소인수가 남아있는 경우를 대조해서, 더 작은 것을 먼저 배열에 추가해주어야 한다.</li>
+</ol>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<p><strong>(구글링 <a href="https://velog.io/@eensungkim/Ugly-Numbers-TIL-87%EC%9D%BC%EC%B0%A8" target="_blank">참조</a>)</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">uglyNumbers</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">uglyNumbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  
+  <span class="kd">let</span> <span class="nx">idx2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">idx3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">idx5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">mulBy2</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">idx2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">mulBy3</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">idx3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">mulBy5</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">idx5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+    
+    <span class="kd">let</span> <span class="nx">nextUglyNum</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">mulBy2</span><span class="p">,</span> <span class="nx">mulBy3</span><span class="p">,</span> <span class="nx">mulBy5</span><span class="p">);</span>
+    
+    <span class="nx">uglyNumbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">nextUglyNum</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextUglyNum</span> <span class="o">===</span> <span class="nx">mulBy2</span><span class="p">)</span> <span class="nx">idx2</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextUglyNum</span> <span class="o">===</span> <span class="nx">mulBy3</span><span class="p">)</span> <span class="nx">idx3</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextUglyNum</span> <span class="o">===</span> <span class="nx">mulBy5</span><span class="p">)</span> <span class="nx">idx5</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution</span>
+<span class="c1">// const uglyNumbers = function (n) {</span>
+<span class="c1">//   const isUgly = (num) =&gt; {</span>
+<span class="c1">//     num = decompose(num, 2);</span>
+<span class="c1">//     num = decompose(num, 3);</span>
+<span class="c1">//     num = decompose(num, 5);</span>
+<span class="c1">//     return num === 1;</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   const decompose = (num, factor) =&gt; {</span>
+<span class="c1">//     while (num % factor === 0) num = num / factor;</span>
+<span class="c1">//     return num;</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   let num = 0;</span>
+<span class="c1">//   let cnt = 0;</span>
+<span class="c1">//   while (n &gt; cnt) {</span>
+<span class="c1">//     num++;</span>
+<span class="c1">//     if (isUgly(num)) cnt++;</span>
+<span class="c1">//   }</span>
+<span class="c1">//   return num;</span>
+<span class="c1">// };</span>
+
+<span class="c1">// O(N)</span>
+<span class="kd">const</span> <span class="nx">uglyNumbers</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 매번 나눗셈 연산을 하는 것이 비효율적이므로</span>
+  <span class="c1">// 이미 구한 수에서부터 구한다.</span>
+
+  <span class="kd">const</span> <span class="nx">uglyNumbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">idx2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">idx3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">idx5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 1. 가장 작은 수인 1에 2, 3, 5를 곱한 수 중에 가장 작은 수를 구한다.</span>
+    <span class="c1">// 2. 2가 선택됨.</span>
+    <span class="c1">// 3. 2는 가장 작은 수 1에 곱해졌으므로</span>
+    <span class="c1">//   3.1 이제 2는 그 다음 작은 수인 2에 곱해지고</span>
+    <span class="c1">//   3.2 3, 5는 여전히 가장 작은 수에 곱해진다.</span>
+    <span class="c1">// 4. 3에서 가장 작은 수는 3. 3은 이제 다음으로 작은 수인 2에 곱혀진다.</span>
+    <span class="c1">// 5. 반복</span>
+    <span class="kd">const</span> <span class="nx">nextMultipleOf2</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">idx2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">nextMultipleOf3</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">idx3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">nextMultipleOf5</span> <span class="o">=</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">idx5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">nextUglyNum</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span>
+      <span class="nx">nextMultipleOf2</span><span class="p">,</span>
+      <span class="nx">nextMultipleOf3</span><span class="p">,</span>
+      <span class="nx">nextMultipleOf5</span>
+    <span class="p">);</span>
+    <span class="nx">uglyNumbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">nextUglyNum</span><span class="p">);</span>
+
+    <span class="c1">// 같은 수를 중복해서 저장할 수 있으므로,</span>
+    <span class="c1">// 각각 별도의 조건문으로 작성해야 한다.</span>
+    <span class="c1">//  2 * 3 = 6</span>
+    <span class="c1">//  3 * 2 = 6</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextUglyNum</span> <span class="o">===</span> <span class="nx">nextMultipleOf2</span><span class="p">)</span> <span class="nx">idx2</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextUglyNum</span> <span class="o">===</span> <span class="nx">nextMultipleOf3</span><span class="p">)</span> <span class="nx">idx3</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextUglyNum</span> <span class="o">===</span> <span class="nx">nextMultipleOf5</span><span class="p">)</span> <span class="nx">idx5</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">uglyNumbers</span><span class="p">[</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>해당 문제도 이미 유명한 문제였다. 참조할 만 한 좋은 링크가 있어서 코드를 보며 이해하고, 출처를 남겨두었다  <del>다시 풀어 볼 예정</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 36. closestPairOfPoints</li>
+</ul>
+:ET

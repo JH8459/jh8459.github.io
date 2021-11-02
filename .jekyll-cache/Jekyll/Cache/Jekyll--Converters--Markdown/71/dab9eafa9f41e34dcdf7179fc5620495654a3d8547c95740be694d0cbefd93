@@ -1,0 +1,236 @@
+I"0h<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-22-rotatematrix">TOY 22. rotateMatrix</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>2차원 N x N 배열을 시계 방향으로 90도 회전시킨 배열을 리턴해야 합니다.</p>
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--matrix">인자 1 : matrix</h4>
+<ul>
+  <li>가로 길이(<code class="language-plaintext highlighter-rouge">matrix[i].length</code>)와 세로 길이(<code class="language-plaintext highlighter-rouge">matrix.length</code>)가 모두 N인 2차원 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">matrix[i][j]</code>는 <code class="language-plaintext highlighter-rouge">number</code> 타입</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li>2차원 배열을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">matrix</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// --&gt; 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">matrix</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span> <span class="c1">// --&gt; 15</span>
+
+<span class="kd">const</span> <span class="nx">rotatedMatrix</span> <span class="o">=</span> <span class="nx">rotateMatrix</span><span class="p">(</span><span class="nx">matrix</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rotatedMatrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// --&gt; 13</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rotatedMatrix</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span> <span class="c1">// --&gt; 8</span>
+</code></pre></div></div>
+
+<h3 id="힌트">힌트</h3>
+<hr />
+<ul>
+  <li>컴퓨터 과학에서 행렬은 ‘행’의 길이인 m과 ‘열’의 길이인 n의 곱으로 표현됩니다. m X n 행렬은 아래와 같이 2차원 배열로 구현할 수 있습니다. (행렬의 요소를 전부 <code class="language-plaintext highlighter-rouge">initVal</code>로 초기화)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">matrix</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">m</span><span class="p">;</span> <span class="nx">row</span><span class="o">++&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">matrix</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">initVal</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">matrix[i][j]</code>는 ‘행(세로축)을 기준으로 i만큼 아래에 있고 열(가로축)을 기준으로 j만큼 옆에 있다.’ 를 뜻합니다. 이 방식은 기하학에서 좌표 평면 위의 한 점을 나타낼 때 (x, y), 즉 가로축을 먼저 표기하고 세로축을 다음에 표기하는 방식과는 다릅니다. 그래프를 인접행렬로 구현할 때, 이 점을 주의하셔야 합니다.</p>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+
+<ul>
+  <li>세로와 가로의 길이가 각각 M, N인 2차원 M X N 배열을 시계방향으로 90도씩 K번 회전시킨 배열을 리턴해 보세요. 회전수가 두 번째 입력으로 주어집니다.</li>
+</ul>
+
+<h2 id="toy-30-solution">TOY 30. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p><a href="https://ko.wikipedia.org/wiki/%ED%9E%99_%EC%A0%95%EB%A0%AC" target="_blank">heap 정렬</a>을 구현하는 알고리즘이다. max heap을 구현하는 알고리즘을 요구하며, 문제의 틀은 아래와 같이 이미 구현이 되어있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 아래 코드는 수정하지 마세요.</span>
+<span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">idx1</span><span class="p">,</span> <span class="nx">idx2</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 두 변수를 바꾸는 방법</span>
+
+  <span class="c1">// 1) 임시 변수를 활용한 방법</span>
+  <span class="c1">// let temp = arr[idx1];</span>
+  <span class="c1">// arr[idx1] = arr[idx2];</span>
+  <span class="c1">// arr[idx2] = temp;</span>
+
+  <span class="c1">// 2) Destructuring assignment를 활용한 방법</span>
+  <span class="c1">// arr이 reference type이라 가능</span>
+  <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idx1</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idx2</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idx2</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idx1</span><span class="p">]];</span>
+
+  <span class="c1">// 3) XOR 연산을 활용한 방법</span>
+  <span class="c1">// arr이 reference type이라 가능</span>
+  <span class="c1">// arr[idx1] ^= arr[idx2];</span>
+  <span class="c1">// arr[idx2] ^= arr[idx1];</span>
+  <span class="c1">// arr[idx1] ^= arr[idx2];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+<span class="p">}</span>
+
+<span class="c1">// 아래 코드는 수정하지 마세요.</span>
+<span class="kd">const</span> <span class="nx">binaryHeap</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>트리구조로 정렬된 구조를 배열로 max heap을 구현해야 하므로, <code class="language-plaintext highlighter-rouge">INDEX</code>를 철처히 관리해주어야 하는게 핵심이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">getParentIdx</code> 함수는 현재의 <code class="language-plaintext highlighter-rouge">idx</code>를 받아 부모 노드의 배열 <code class="language-plaintext highlighter-rouge">idx</code>를 반환 해주어야 한다. 인덱스값이 0부터 싲가하는 배열에 담는 <strong>이진탐색트리</strong> 구조이므로, 부모 노드는 자식 노드 <code class="language-plaintext highlighter-rouge">(idx-1)/2</code> 값의 소숫점을 버린 값이 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/137182632-34cbbcfd-cf1e-4100-a4ea-f11ace9bc334.jpg" alt="이진트리idx" /></p>
+
+<p>위 그림을 보면 쉽게 이해 할 수 있다. 따라서 <code class="language-plaintext highlighter-rouge">getParentIdx</code> 함수는 <code class="language-plaintext highlighter-rouge">parseInt</code>혹은 <code class="language-plaintext highlighter-rouge">Math.floor</code> 메소드를 써서 쉽게 부모 노드의 <code class="language-plaintext highlighter-rouge">idx</code>값을 구할 수 있다.</p>
+
+<p>다음으로 <code class="language-plaintext highlighter-rouge">insert</code>함수는 빈 heap에 새로 들어갈 요소의 인덱스를 기준으로 해당 부모 요소와 크기 비교 후 <code class="language-plaintext highlighter-rouge">swap</code>함수를 통해 두 요소의 위치를 바꿔주는 행위를 새 요소가 현재 인덱스 기준으로 부모 요소보다 큰 경우 반복해주면 된다.</p>
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 아래 코드는 수정하지 마세요.</span>
+<span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">idx1</span><span class="p">,</span> <span class="nx">idx2</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idx1</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idx2</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idx2</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idx1</span><span class="p">]];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">heap</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">curIdx</span> <span class="o">=</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 현재 노드의 위차</span>
+  <span class="kd">let</span> <span class="nx">pIdx</span> <span class="o">=</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">);</span>  <span class="c1">// 부모 노드의 위치</span>
+  
+  <span class="c1">// 부모 노드의 값이 유효하며, 현재 노드에 들어간 값이 부모 노드의 값보다 크면 while 구문 실행</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">pIdx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">curIdx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">pIdx</span><span class="p">])</span> <span class="p">{</span> <span class="c1">// max heap 반대</span>
+    <span class="c1">// 현재 노드와 부모 노드 배열자리 swap</span>
+    <span class="nx">swap</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">,</span> <span class="nx">pIdx</span><span class="p">,</span> <span class="nx">heap</span><span class="p">);</span>
+    <span class="c1">// swap 후 idx 교체 작업</span>
+    <span class="nx">curIdx</span> <span class="o">=</span> <span class="nx">pIdx</span><span class="p">;</span>
+    <span class="c1">// 부모 idx는 swap후 curIdx의 부모 idx로 값을 다시 할당</span>
+    <span class="nx">pIdx</span> <span class="o">=</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">heap</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">removeRoot</span><span class="p">(</span><span class="nx">heap</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="nx">swap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">heap</span><span class="p">);</span> <span class="c1">// 배열의 첫번째(최솟값)과 배열의 마지막 값을 바꾼다.</span>
+  <span class="nx">heap</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span> <span class="c1">// 배열의 최솟값 제거</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">heap</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="p">[];</span>
+
+  <span class="c1">// 다시 최소힙을 유지</span>
+  <span class="kd">let</span> <span class="nx">curIdx</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">minIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">curIdx</span> <span class="o">!==</span> <span class="nx">minIdx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">curIdx</span> <span class="o">=</span> <span class="nx">minIdx</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">curIdx</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">curIdx</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">minIdx</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">minIdx</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">right</span> <span class="o">&lt;</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">minIdx</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">minIdx</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">swap</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">,</span> <span class="nx">minIdx</span><span class="p">,</span> <span class="nx">heap</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">heap</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 아래 코드는 수정하지 마세요.</span>
+<span class="kd">const</span> <span class="nx">binaryHeap</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">heapSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">minHeap</span> <span class="o">=</span> <span class="nx">binaryHeap</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">minHeap</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">minHeap</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nx">minHeap</span> <span class="o">=</span> <span class="nx">removeRoot</span><span class="p">(</span><span class="nx">minHeap</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">sorted</span><span class="p">;</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+<hr />
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 아래 코드는 수정하지 마세요.</span>
+<span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">idx1</span><span class="p">,</span> <span class="nx">idx2</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 두 변수를 바꾸는 방법</span>
+
+  <span class="c1">// 1) 임시 변수를 활용한 방법</span>
+  <span class="c1">// let temp = arr[idx1];</span>
+  <span class="c1">// arr[idx1] = arr[idx2];</span>
+  <span class="c1">// arr[idx2] = temp;</span>
+
+  <span class="c1">// 2) Destructuring assignment를 활용한 방법</span>
+  <span class="c1">// arr이 reference type이라 가능</span>
+  <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idx1</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idx2</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">idx2</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">idx1</span><span class="p">]];</span>
+
+  <span class="c1">// 3) XOR 연산을 활용한 방법</span>
+  <span class="c1">// arr이 reference type이라 가능</span>
+  <span class="c1">// arr[idx1] ^= arr[idx2];</span>
+  <span class="c1">// arr[idx2] ^= arr[idx1];</span>
+  <span class="c1">// arr[idx1] ^= arr[idx2];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO: 여기에 코드를 작성합니다.</span>
+  <span class="nx">heap</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">curIdx</span> <span class="o">=</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">pIdx</span> <span class="o">=</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">pIdx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">curIdx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">heap</span><span class="p">[</span><span class="nx">pIdx</span><span class="p">])</span> <span class="p">{</span>
+    <span class="nx">swap</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">,</span> <span class="nx">pIdx</span><span class="p">,</span> <span class="nx">heap</span><span class="p">);</span>
+    <span class="nx">curIdx</span> <span class="o">=</span> <span class="nx">pIdx</span><span class="p">;</span>
+    <span class="nx">pIdx</span> <span class="o">=</span> <span class="nx">getParentIdx</span><span class="p">(</span><span class="nx">curIdx</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">heap</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 아래 코드는 수정하지 마세요.</span>
+<span class="kd">const</span> <span class="nx">binaryHeap</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">heap</span><span class="p">,</span> <span class="nx">item</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>정렬..참 종류도 많다. 힙 정렬 같은 경우 이진탐색 트리의 특성을 잘 활용한 정렬이라 느껴졌다.</p>
+
+<p>이진트리를 배열로 표현할 경우 인덱스를 구하는 방식의 규칙을 깨닫고나니 어려운 문제는 아니라 느껴졌다. <del>(물론 레퍼런스 코드를 보고 풀었지만..)</del></p>
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 30. heapSort</li>
+</ul>
+:ET

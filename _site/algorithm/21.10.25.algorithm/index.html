@@ -1,0 +1,915 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Algorithm] TOY 36. closestPairOfPoints | JH8459</title>
+<meta name="description" content="[Algorithm] TOY 36. closestPairOfPoints">
+
+
+  <meta name="author" content="JH8459">
+  
+  <meta property="article:author" content="JH8459">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JH8459">
+<meta property="og:title" content="[Algorithm] TOY 36. closestPairOfPoints">
+<meta property="og:url" content="/algorithm/21.10.25.algorithm/">
+
+
+  <meta property="og:description" content="[Algorithm] TOY 36. closestPairOfPoints">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/algorithm/21.10.25.algorithm/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH8459",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JH8459 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://user-images.githubusercontent.com/83164003/127884969-165f0b3b-051d-4a26-8aca-ff0090ca3f77.png" alt="Dev JH"></a>
+        
+        <a class="site-title" href="/">
+          Dev JH
+          <span class="site-subtitle">programming study log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/">카테고리</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/">연도별 포스트</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">소개</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#algorithm" itemprop="item"><span itemprop="name">Algorithm</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Algorithm] TOY 36. closestPairOfPoints</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">JH8459</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><em>Success is no accident.</em></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:kk_ong2233@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="http://JH8459.github.io" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.facebook.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:kk_ong2233@naver.com" rel="me" class="u-email">
+            <meta itemprop="email" content="kk_ong2233@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Algorithm] TOY 36. closestPairOfPoints">
+    <meta itemprop="description" content="[Algorithm] TOY 36. closestPairOfPoints">
+    <meta itemprop="datePublished" content="2021-10-25T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/algorithm/21.10.25.algorithm/" class="u-url" itemprop="url">[Algorithm] TOY 36. closestPairOfPoints
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-25T00:00:00+09:00">October 25, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#toy-36-closestpairofpoints">TOY 36. closestPairOfPoints</a><ul><li><a href="#문제">문제</a></li><li><a href="#입력">입력</a><ul><li><a href="#인자-1-points">인자 1: points</a></li></ul></li><li><a href="#출력">출력</a></li><li><a href="#주의사항">주의사항</a></li><li><a href="#입출력-예시">입출력 예시</a></li><li><a href="#advanced">Advanced</a></li><li><a href="#힌트">힌트</a></li></ul></li><li><a href="#toy-36-solution">TOY 36. Solution</a><ul><li><a href="#수도코드">수도코드</a></li><li><a href="#문제풀이">문제풀이</a></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-36-closestpairofpoints">TOY 36. closestPairOfPoints</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>좌표평면 상의 다양한 점들을 입력받아 가장 가까운 두 점 사이의 거리를 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1-points">인자 1: points</h4>
+<ul>
+  <li>배열을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">points.length</code>는 20,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">points[i]</code>는 <code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">points[i].length</code>는 2</li>
+  <li><code class="language-plaintext highlighter-rouge">points[i]</code>의 요소는 차례대로 좌표평면 위의 y좌표, x좌표</li>
+  <li><code class="language-plaintext highlighter-rouge">points[i][j]</code>는 0 이상 10,000 이하의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">points</code>는 y좌표나 x좌표 등으로 정렬되어 있지 않습니다.</li>
+  <li>두 점 사이의 거리를 계산하는 함수 <code class="language-plaintext highlighter-rouge">calculateDistance</code>가 주어집니다. 두 점 간 거리는 <strong>반드시</strong> 이 함수를 이용해서 계산해야 합니다.</li>
+  <li>함수 <code class="language-plaintext highlighter-rouge">calculateDistance</code>는 소수점 계산을 피하기 위해 두 점 사이의 거리에 100을 곱한 후 정수 부분만 취합니다. 최단 거리도 이 기준으로 판단합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">points</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">closestPairOfPoints</span><span class="p">(</span><span class="nx">points</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 141 ([1, 3], [2, 2])</span>
+<span class="cm">/*
+3 | 
+2 |     x
+1 |       x
+0 | x 
+------------
+    0 1 2 3 
+*/</span>
+
+<span class="nx">points</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">closestPairOfPoints</span><span class="p">(</span><span class="nx">points</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 100 ([0, 0], [0, 1])</span>
+<span class="cm">/*
+5 | x
+4 | 
+3 | x
+2 |     
+1 | x     
+0 | x 
+------------
+    0 1 2 3 
+*/</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<ul>
+  <li>가장 가까운 두 점 사이의 거리를 구하는 효율적인 알고리즘(<code class="language-plaintext highlighter-rouge">O(N * logN)</code>)이 존재합니다.</li>
+</ul>
+
+<h3 id="힌트">힌트</h3>
+<hr />
+<ul>
+  <li>효율적인 알고리즘은 병합 정렬(merge sort)과 비슷하게 분할 정복(divide and conquer) 알고리즘을 사용해야 합니다. 어떻게 나눠야 할 지, 나누었을 때 놓치는 부분은 없는 지 유의하면서 고민해 보시기 바랍니다.</li>
+</ul>
+
+<h2 id="toy-36-solution">TOY 36. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 좌표평면 위의 두 점 사이의 거리를 계산하는 함수입니다.</span>
+<span class="kd">function</span> <span class="nx">calculateDistance</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">yDiffSquared</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">xDiffSquared</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">dist</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">yDiffSquared</span> <span class="o">+</span> <span class="nx">xDiffSquared</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">dist</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// naive solution: O(N^2)</span>
+<span class="c1">// 모든 쌍을 비교하는 방법</span>
+<span class="c1">// const closestPairOfPoints = function (points) {</span>
+<span class="c1">//   let min = Number.MAX_SAFE_INTEGER;</span>
+<span class="c1">//   for (let src = 0; src &lt; points.length; src++) {</span>
+<span class="c1">//     for (let dst = src + 1; dst &lt; points.length; dst++) {</span>
+<span class="c1">//       const dist = calculateDistance(points[src], points[dst]);</span>
+<span class="c1">//       min = Math.min(min, dist);</span>
+<span class="c1">//     }</span>
+<span class="c1">//   }</span>
+<span class="c1">//   return min;</span>
+<span class="c1">// };</span>
+
+<span class="kd">const</span> <span class="nx">merge</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">,</span> <span class="nx">comparator</span> <span class="o">=</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">merged</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">leftIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">rightIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">size</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">leftIdx</span> <span class="o">&gt;=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">merged</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">rightIdx</span><span class="p">]);</span>
+      <span class="nx">rightIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span>
+      <span class="nx">rightIdx</span> <span class="o">&gt;=</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">||</span>
+      <span class="nx">comparator</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">leftIdx</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="nx">comparator</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">rightIdx</span><span class="p">])</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">merged</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">leftIdx</span><span class="p">]);</span>
+      <span class="nx">leftIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">merged</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">rightIdx</span><span class="p">]);</span>
+      <span class="nx">rightIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">merged</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">mergeSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">comparator</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">aux</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&gt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">start</span><span class="p">]];</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">aux</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">mid</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">aux</span><span class="p">(</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">end</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">,</span> <span class="nx">comparator</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">return</span> <span class="nx">aux</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// divide and conquer: O(N * logN)</span>
+<span class="kd">const</span> <span class="nx">closestPairOfPoints</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">points</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">bruteForce</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// naive solution과 동일한 로직</span>
+    <span class="c1">// 모든 쌍을 비교한다. 3개 이하에 대해서만 호출되므로 크게 비효율적이지 않다.</span>
+    <span class="kd">let</span> <span class="nx">min</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">src</span> <span class="o">=</span> <span class="nx">start</span><span class="p">;</span> <span class="nx">src</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">;</span> <span class="nx">src</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">dst</span> <span class="o">=</span> <span class="nx">src</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">dst</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">;</span> <span class="nx">dst</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">dist</span> <span class="o">=</span> <span class="nx">calculateDistance</span><span class="p">(</span><span class="nx">sorted</span><span class="p">[</span><span class="nx">src</span><span class="p">],</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">dst</span><span class="p">]);</span>
+        <span class="nx">min</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">dist</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">min</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">closestCrossing</span> <span class="o">=</span> <span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">,</span> <span class="nx">min</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 가운데(mid)를 기준으로</span>
+    <span class="kd">const</span> <span class="nx">strip</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">const</span> <span class="nx">midX</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">mid</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kd">let</span> <span class="nx">lIdx</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">rIdx</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// 왼쪽과 오른쪽 부분에서 가장 가까운 두 점 사이의 거리가 min으로 주어진다.</span>
+    <span class="c1">// 가운데를 기준으로 오직 x좌표만을 기준으로 min보다 가까운 좌표만 고려한다.</span>
+    <span class="c1">// y좌표가 같다고 가정하면, 최소한 이 조건(x좌표 기준 min 이하)을 만족해야하기 때문이다.</span>
+    <span class="c1">// y좌표가 같을 경우 두 점 사이의 거리는 x축 좌표 간의 거리다.</span>
+    <span class="c1">// 단, 소수점 계산을 피하기 위해 두 점 사이의 거리에 100을 곱하고 있으므로 동일한 기준을 적용해야 한다.</span>
+
+    <span class="c1">// sorted는 x축을 기준으로 정렬되어 있기 때문에,</span>
+    <span class="c1">// mid를 기준으로 가까운 거리부터 최소 기준(min보다는 가까워야 함)을 만족할 때까지만 탐색을 하면 된다.</span>
+    <span class="k">while</span> <span class="p">(</span>
+      <span class="nx">rIdx</span> <span class="o">&lt;</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span>
+      <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">midX</span> <span class="o">-</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">rIdx</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="nx">min</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">rIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">lIdx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">midX</span> <span class="o">-</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">lIdx</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="nx">min</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">lIdx</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// while 탈출하기 위한 조건을 보면,</span>
+    <span class="c1">// lIdx는 1을 더해야 하고, rIdx는 1을 줄여야 한다.</span>
+    <span class="c1">// 아래 구간에 대해서 brute force를 적용한다.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">lIdx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rIdx</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">rIdx</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">min</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">calculateDistance</span><span class="p">(</span><span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">j</span><span class="p">]));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">min</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">closestFrom</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">size</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 최소 두 개 이상의 점이 있어야 거리를 계산할 수 있다.</span>
+      <span class="c1">//  1) 모든 점의 개수가 4개일 경우, 각각 2개로 나눌 수 있다.</span>
+      <span class="c1">//  2) 모든 점의 개수가 5개일 경우, 각각 2, 3개로 나눌 수 있다. 3개인 경우 더 나눌 수 없다.</span>
+      <span class="k">return</span> <span class="nx">bruteForce</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// 가운데를 기준으로 분할한 뒤 재귀적으로 문제를 해결한다.</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="c1">// 왼쪽, 오른쪽으로 나뉜 부분에서 각각 가장 가까운 두 점 사이의 거리를 구한다.</span>
+    <span class="kd">const</span> <span class="nx">minLeft</span> <span class="o">=</span> <span class="nx">closestFrom</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">mid</span><span class="p">,</span> <span class="nx">mid</span> <span class="o">-</span> <span class="nx">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">minRight</span> <span class="o">=</span> <span class="nx">closestFrom</span><span class="p">(</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">end</span> <span class="o">-</span> <span class="nx">mid</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">);</span>
+
+    <span class="c1">// 전체 영역에서 가장 가까운 두 점 사이의 거리는 아래 중 하나다.</span>
+    <span class="c1">//  1) 위에서 구한 두 거리(minLeft, minRight)</span>
+    <span class="c1">//  2) 가운데를 가로지르는 두 점 사이의 거리</span>
+    <span class="c1">// 먼저 1)중에서 더 짧은 거리를 구한다. 최종 정답은 이보다 작거나 같아야 한다.</span>
+    <span class="kd">let</span> <span class="nx">min</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">minLeft</span><span class="p">,</span> <span class="nx">minRight</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">closestCrossing</span><span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">,</span> <span class="nx">min</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="c1">// x좌표를 기준으로 정렬한다.</span>
+  <span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">points</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="nx">closestFrom</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">sorted</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+
+<p>점점 코드를 짜기보다는 보고 이해하는 수준에서 진전이 안되고있다. 정규 과정이 끝나면 다시 풀어봐야겠다.</p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 37. coinChange</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-10-25T00:00:00+09:00">October 25, 2021</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/21.10.22.algorithm/" class="pagination--pager" title="[Algorithm] TOY 35. uglyNumbers
+">이전</a>
+    
+    
+      <a href="/til/21.10.25.til/" class="pagination--pager" title="[TIL] 21.10.25 / 1. 컴퓨터 공학 기초 2. 운영체제 3. 가비지 컬렉션 4. 캐시
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/21.11.02.til/" rel="permalink">[TIL] 21.11.02 / 1. Docker 2. 컨테이너와 VM의 비교
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-02T00:00:00+09:00">November 2, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 1. Docker 2. 컨테이너와 VM의 비교
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/21.10.27.til/" rel="permalink">[TIL] 21.10.27 / 1. Git Branch 2. 프로젝트 workflow
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-27T00:00:00+09:00">October 27, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL]  1. Git Branch 2. 프로젝트 workflow
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/21.10.26.til/" rel="permalink">[TIL] 21.10.26 / 1. 인터넷 프로토콜 2. HTTP 헤더 3. 웹 캐시
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-26T00:00:00+09:00">October 26, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 1. 인터넷 프로토콜 2. HTTP 헤더 3. 웹 캐시
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.10.26.algorithm/" rel="permalink">[Algorithm] TOY 37. coinChange (작성중)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-26T00:00:00+09:00">October 26, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] TOY 37. coinChange
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:kk_ong2233@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://www.facebook.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 JH8459. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/algorithm/21.10.25.algorithm/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/algorithm/21.10.25.algorithm"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jh8459.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

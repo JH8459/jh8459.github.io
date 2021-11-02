@@ -1,0 +1,156 @@
+I"�G<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-24-radixsort">TOY 24. radixSort</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>정수를 요소로 갖는 배열을 입력받아 오름차순으로 정렬하여 리턴해야 합니다.</p>
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 0 이상의 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code> 100,000 이하</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열을 리턴해야 합니다.</li>
+  <li>배열의 요소는 오름차순으로 정렬되어야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i] &lt;= arr[j]</code> (<code class="language-plaintext highlighter-rouge">i &lt; j</code>)</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><strong>기수 정렬</strong>을 구현해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.sort</code> 사용은 금지됩니다.</li>
+  <li>입력으로 주어진 배열은 중첩되지 않은 1차원 배열입니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">radixSort</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; [1, 3, 21]</span>
+</code></pre></div></div>
+
+<h3 id="힌트">힌트</h3>
+<hr />
+
+<h2 id="toy-24-solution">TOY 24. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p>상단, 우측, 하단, 좌측 돌려가며 <code class="language-plaintext highlighter-rouge">matrix</code>를 깎으(?)면서 배열에 담긴 값을 <code class="language-plaintext highlighter-rouge">result</code>에 넣어주면 언젠가는 <code class="language-plaintext highlighter-rouge">matix</code>가 빈 배열로 남게된다.  해당 네가지 과정을 담은 함수들을 작성해준다.</p>
+
+<p>spiralTraversal 메인 함수에서는 <code class="language-plaintext highlighter-rouge">matrix</code>가 모두 깎인(?) 빈 배열의 상태가 될때까지 반복으로 해당 과정들을 수행해준다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 매트릭스 상단 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertTop</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">el</span> <span class="k">of</span> <span class="nx">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]){</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">el</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">matrix</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>  <span class="c1">// 상단(윗변) 삭제</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 매트릭스 우측 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertRight</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">char</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">pop</span><span class="p">();</span>  <span class="c1">// 우측 한글자씩 삭제 후 변수에 담아 리턴한다</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 매트릭스 하단 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertBottom</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">matrix</span><span class="p">[</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">// 하단(아랫변)은 상단과 다르게 역순으로 담긴다.</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">el</span> <span class="k">of</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]){</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">el</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">matrix</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>  <span class="c1">// 하단(아랫변) 삭제</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 매트릭스 좌측 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertLeft</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">char</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">shift</span><span class="p">();</span>  <span class="c1">// 좌측 한글자씩 삭제 후 변수에 담아 리턴한다</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">spiralTraversal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertTop</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>  <span class="c1">// 반복문이 끝나는 조건은 상단 혹은 하단 삭제 후 matrix가 모두 비어버리는 경우이다.</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertRight</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertBottom</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertLeft</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">spiralTraversal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 각 방향마다 row와 col의 변화를 저장</span>
+  <span class="kd">const</span> <span class="nx">RIGHT</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">DOWN</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">LEFT</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">UP</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="c1">// 각 방향을 위한 lookup table</span>
+  <span class="kd">const</span> <span class="nx">MOVES</span> <span class="o">=</span> <span class="p">[</span><span class="nx">RIGHT</span><span class="p">,</span> <span class="nx">DOWN</span><span class="p">,</span> <span class="nx">LEFT</span><span class="p">,</span> <span class="nx">UP</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">M</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">row</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">M</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">col</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">direction</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">cnt</span> <span class="o">&lt;</span> <span class="nx">M</span> <span class="o">*</span> <span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">move</span> <span class="o">=</span> <span class="nx">MOVES</span><span class="p">[</span><span class="nx">direction</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">rd</span><span class="p">,</span> <span class="nx">cd</span><span class="p">]</span> <span class="o">=</span> <span class="nx">move</span><span class="p">;</span>
+
+    <span class="nx">row</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">+</span> <span class="nx">rd</span><span class="p">;</span>
+    <span class="nx">col</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">+</span> <span class="nx">cd</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">];</span>
+      <span class="c1">// 한 요소를 두 번 접근하지 않게 하기 위해서, 접근된 요소를 false로 변경한다.</span>
+      <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="nx">row</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">+</span> <span class="nx">rd</span><span class="p">;</span>
+      <span class="nx">col</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">+</span> <span class="nx">cd</span><span class="p">;</span>
+      <span class="nx">cnt</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// row, col 이 행렬의 범위를 벗어났기 때문에,</span>
+    <span class="c1">// 진행된 방향의 반대로 한 칸 이동한다.</span>
+    <span class="nx">row</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">-</span> <span class="nx">rd</span><span class="p">;</span>
+    <span class="nx">col</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">-</span> <span class="nx">cd</span><span class="p">;</span>
+
+    <span class="c1">// 각 방향이 순환되기 때문에 모듈러 연산을 사용한다.</span>
+    <span class="nx">direction</span> <span class="o">=</span> <span class="p">(</span><span class="nx">direction</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>레퍼런스 코드는 길찾기 알고리즘과 비슷한 메커니즘으로 문제를 해결하였다. 여러가지 함수를 만들지 않고 방향성을 갖고 <code class="language-plaintext highlighter-rouge">[0,0]</code> 인덱스부터 나선형으로 돌며 모든 배열의 인덱스를 순회하는 알고리즘으로 깔끔히 구현하였다.</p>
+
+<p>해당 길찾기(?) 알고리즘은 눈에 익혀두어야 겠다.</p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 24. radixSort</li>
+</ul>
+:ET

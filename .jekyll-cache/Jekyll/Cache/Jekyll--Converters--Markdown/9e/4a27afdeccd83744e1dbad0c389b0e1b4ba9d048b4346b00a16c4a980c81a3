@@ -1,0 +1,233 @@
+I"�Z<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-33-lis">TOY 33. LIS</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>정수를 요소로 갖는 문자열을 입력받아 다음의 조건을 만족하는 <em>LIS</em> 의 길이를 리턴해야 합니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LIS</code>: 배열의 연속되지 않는 부분 배열 중 모든 요소가 <strong>엄격하게 오름차순</strong>으로 정렬된 가장 긴 부분 배열(Longest Increasing Subsequence)</li>
+  <li>배열 <code class="language-plaintext highlighter-rouge">[1, 2, 3]</code>의 subseqeunce는 <code class="language-plaintext highlighter-rouge">[1]</code>, <code class="language-plaintext highlighter-rouge">[2]</code>, <code class="language-plaintext highlighter-rouge">[3]</code>, <code class="language-plaintext highlighter-rouge">[1, 2]</code>, <code class="language-plaintext highlighter-rouge">[1, 3]</code>, <code class="language-plaintext highlighter-rouge">[2, 3]</code>, <code class="language-plaintext highlighter-rouge">[1, 2, 3]</code> 입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">엄격한 오름차순</code>: 배열이 동일한 값을 가진 요소없이 오름차순으로 정렬되어 있는 경우를 말합니다.</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 60,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 100,000 이하의 양의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">histogram</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">largestRectangularArea</span><span class="p">(</span><span class="nx">histogram</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 8</span>
+
+<span class="kd">let</span> <span class="nx">histogram</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">largestRectangularArea</span><span class="p">(</span><span class="nx">histogram</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 12</span>
+<span class="cm">/*
+6 | x           x
+5 | x   x   x   x
+4 | x   O O O   x
+3 | x   O O O   x
+2 | x x O O O   x
+1 | x x O O O x x
+------------------
+*/</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<ul>
+  <li>임의의 히스토그램에서 가장 큰 직사각형의 넓이를 계산하는 효율적인 알고리즘(<code class="language-plaintext highlighter-rouge">O(N * logN)</code>)이 존재합니다. 쉽지 않기 때문에 바로 레퍼런스 코드를 보고 이해하는 데 집중하시기 바랍니다.</li>
+</ul>
+
+<h3 id="힌트">힌트</h3>
+<hr />
+<ul>
+  <li>문제를 어렵게 만드는 것은 높이를 포기하고 너비를 선택할지, 너비를 포기하고 높이를 선택할지 따져봐야 한다는 것입니다.</li>
+  <li>문제를 직접 풀어보고 유심히 관찰하는 것은 문제 해결의 첫 걸음입니다.</li>
+  <li>길이 <code class="language-plaintext highlighter-rouge">n</code>인 <code class="language-plaintext highlighter-rouge">histogram</code>에서 가장 큰 직사각형이 <code class="language-plaintext highlighter-rouge">histogram[i]</code>부터 막대 <code class="language-plaintext highlighter-rouge">histogram[j]</code>까지라고 가정해봅시다. <code class="language-plaintext highlighter-rouge">i</code>와 <code class="language-plaintext highlighter-rouge">j</code>는 <code class="language-plaintext highlighter-rouge">0 ~ n-1</code> 사이에 놓여 있습니다. (<code class="language-plaintext highlighter-rouge">0 &lt;= i &lt;= j &lt;= n-1</code>)</li>
+  <li>이 사각형의 높이는 이 구간의 막대 중 가장 낮은 높이를 가진 막대(<code class="language-plaintext highlighter-rouge">histogram[k]</code>)의 높이와 같습니다.</li>
+  <li>이 사각형은 전체 구간(<code class="language-plaintext highlighter-rouge">0 ~ n-1</code>) 중 가장 낮은 막대를 포함하고 있거나 그렇지 않은 경우로 나뉩니다.</li>
+  <li>전자는 <code class="language-plaintext highlighter-rouge">i === 0</code>이고 <code class="language-plaintext highlighter-rouge">j === n-1</code>인 경우 뿐입니다.</li>
+  <li>후자는 이 직사각형이 차지하는 구간 바깥에 존재합니다. (<code class="language-plaintext highlighter-rouge">k &lt; i</code>이거나 <code class="language-plaintext highlighter-rouge">j &lt; k</code>)</li>
+  <li>이 이후부터는 스스로 생각해보시기 바랍니다.</li>
+  <li>구간 트리(segment tree)를 약간 변형하여 해결합니다.</li>
+</ul>
+
+<h2 id="toy-32-solution">TOY 32. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p>그려진 히스토그램 내에서 가장 큰 직사각형을 찾는 문제이다. <strong>Reference Code</strong> 를 보았다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<p><strong>(스택을 활용한 풀이)</strong></p>
+
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">largestRectangularArea</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">histogram</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">histogram</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">maxArea</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Check if the current bar is lower than the previous bar in the stack</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">histogram</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">histogram</span><span class="p">[</span><span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span> <span class="p">{</span>
+      <span class="c1">// Calculate the area</span>
+      <span class="nx">maxArea</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">maxArea</span><span class="p">,</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">histogram</span><span class="p">,</span> <span class="nx">stack</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Calcualte the remaining bar in the stack</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">maxArea</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">maxArea</span><span class="p">,</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">histogram</span><span class="p">,</span> <span class="nx">stack</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">maxArea</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">getArea</span> <span class="o">=</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">histogram</span><span class="p">,</span> <span class="nx">stack</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">histogram</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()];</span>
+  <span class="kd">const</span> <span class="nx">w</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">i</span> <span class="o">-</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="nx">i</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">h</span> <span class="o">*</span> <span class="nx">w</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution: O(N) (search only)</span>
+<span class="c1">// const rangeMinimum = function (arr, ranges) {</span>
+<span class="c1">//   return ranges.map((range) =&gt; {</span>
+<span class="c1">//     const [start, end] = range;</span>
+<span class="c1">//     let min = Number.MAX_SAFE_INTEGER;</span>
+<span class="c1">//     for (let i = start; i &lt;= end; i++) {</span>
+<span class="c1">//       if (arr[i] &lt; min) min = arr[i];</span>
+<span class="c1">//     }</span>
+<span class="c1">//     return min;</span>
+<span class="c1">//   });</span>
+<span class="c1">// };</span>
+<span class="cm">/* 단순하게 밑변의 모든 경우랑 윗변의 모든 경우를 구해보고 그 중 최댓값을 구하는 코드이기에 시간 복잡도를 많이 소모한다. */</span>
+
+<span class="c1">// solution with segment tree: O(logN) (search only)</span>
+<span class="c1">// object implementaion</span>
+<span class="kd">const</span> <span class="nx">rangeMinimum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ranges</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ts: tree start. te: tree end</span>
+  <span class="c1">// arr의 ts부터 te까지를 tree로 만든다.</span>
+  <span class="kd">const</span> <span class="nx">createMinTree</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ts</span><span class="p">,</span> <span class="nx">te</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// base case</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">ts</span> <span class="o">===</span> <span class="nx">te</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">ts</span><span class="p">]</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="c1">// recursive case</span>
+    <span class="c1">// 현재 범위를 절반을 기준으로 왼쪽과 오른쪽으로 나눈다</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">ts</span> <span class="o">+</span> <span class="nx">te</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">createMinTree</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ts</span><span class="p">,</span> <span class="nx">mid</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">createMinTree</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">te</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">value</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">right</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span>
+      <span class="nx">left</span><span class="p">,</span>
+      <span class="nx">right</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">createMinTree</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="c1">// rs: range start, re: reange end</span>
+  <span class="kd">const</span> <span class="nx">findMin</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ts</span><span class="p">,</span> <span class="nx">te</span><span class="p">,</span> <span class="nx">rs</span><span class="p">,</span> <span class="nx">re</span><span class="p">,</span> <span class="nx">tree</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 현재 tree와 구간이 정확히 일치하거나</span>
+    <span class="c1">// 구간이 tree를 포함할 경우</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">rs</span> <span class="o">&lt;=</span> <span class="nx">ts</span> <span class="o">&amp;&amp;</span> <span class="nx">te</span> <span class="o">&lt;=</span> <span class="nx">re</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 현재 tree에 주어진 구간이 겹치지 않는 경우</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">te</span> <span class="o">&lt;</span> <span class="nx">rs</span> <span class="o">||</span> <span class="nx">re</span> <span class="o">&lt;</span> <span class="nx">ts</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 겹치는 부분이 존재하는 경우</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">ts</span> <span class="o">+</span> <span class="nx">te</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span>
+      <span class="nx">findMin</span><span class="p">(</span><span class="nx">ts</span><span class="p">,</span> <span class="nx">mid</span><span class="p">,</span> <span class="nx">rs</span><span class="p">,</span> <span class="nx">re</span><span class="p">,</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span> <span class="c1">//</span>
+      <span class="nx">findMin</span><span class="p">(</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">te</span><span class="p">,</span> <span class="nx">rs</span><span class="p">,</span> <span class="nx">re</span><span class="p">,</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
+    <span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">mins</span> <span class="o">=</span> <span class="nx">ranges</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">range</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">]</span> <span class="o">=</span> <span class="nx">range</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">findMin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">tree</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">mins</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// solution with segment tree: O(logN) (search only)</span>
+<span class="c1">// array implementaion</span>
+<span class="c1">// const rangeMinimum = function (arr, ranges) {</span>
+<span class="c1">//   const createMinTree = (arr, ts, te, tree, idx) =&gt; {</span>
+<span class="c1">//     if (ts === te) {</span>
+<span class="c1">//       tree[idx] = arr[ts];</span>
+<span class="c1">//       return arr[ts];</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     const mid = Math.floor((ts + te) / 2);</span>
+<span class="c1">//     tree[idx] = Math.min(</span>
+<span class="c1">//       createMinTree(arr, ts, mid, tree, idx * 2 + 1), //</span>
+<span class="c1">//       createMinTree(arr, mid + 1, te, tree, idx * 2 + 2)</span>
+<span class="c1">//     );</span>
+
+<span class="c1">//     return tree[idx];</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   // 트리 전체의 높이(루트 노트에서 가장 깊은 리프 노드까지의 거리)를 구하고</span>
+<span class="c1">//   // 전체 배열의 크기를 구한다.</span>
+<span class="c1">//   const height = Math.ceil(Math.log2(arr.length));</span>
+<span class="c1">//   const size = Math.pow(2, height + 1) - 1;</span>
+<span class="c1">//   const tree = Array(size).fill(null);</span>
+<span class="c1">//   createMinTree(arr, 0, arr.length - 1, tree, 0);</span>
+
+<span class="c1">//   const findMin = (ts, te, rs, re, idx) =&gt; {</span>
+<span class="c1">//     if (rs &lt;= ts &amp;&amp; te &lt;= re) {</span>
+<span class="c1">//       return tree[idx];</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     if (te &lt; rs || re &lt; ts) {</span>
+<span class="c1">//       return Number.MAX_SAFE_INTEGER;</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     const mid = parseInt((ts + te) / 2);</span>
+<span class="c1">//     return Math.min(</span>
+<span class="c1">//       findMin(ts, mid, rs, re, 2 * idx + 1), //</span>
+<span class="c1">//       findMin(mid + 1, te, rs, re, 2 * idx + 2)</span>
+<span class="c1">//     );</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   const mins = ranges.map((range) =&gt; {</span>
+<span class="c1">//     const [start, end] = range;</span>
+<span class="c1">//     return findMin(0, arr.length - 1, start, end, 0);</span>
+<span class="c1">//   });</span>
+<span class="c1">//   return mins;</span>
+<span class="c1">// };</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>이미 너무 유명한 문제였다. 문제가 어려워 힌트를 얻고자 구글링을 해보니 백준, leetcode등 사이트에서 다양한 코드리뷰들이 많이 나왔다. <del>HARD문제다…</del></p>
+
+<p>지금은 이해가 안가지만 깔끔히 정리된 코드가 보여 풀이과정에 우선 올려두었다.</p>
+
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 33. LIS</li>
+</ul>
+:ET
