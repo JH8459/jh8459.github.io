@@ -345,13 +345,13 @@
 <h3 id="1-react-props--state">1. React Props &amp; State</h3>
 <h4 id="1-1-props-vs-state">1-1. Props vs State</h4>
 <ul>
-  <li>간단하게 언급하고 가자면, <code class="highlighter-rouge">props</code>는 외부로 부터 전달받은 값이며, <code class="highlighter-rouge">state</code>는 컴포넌트 내부에서 변화하는 값이다.</li>
+  <li>간단하게 언급하고 가자면, <code class="language-plaintext highlighter-rouge">props</code>는 외부로 부터 전달받은 값이며, <code class="language-plaintext highlighter-rouge">state</code>는 컴포넌트 내부에서 변화하는 값이다.</li>
 </ul>
 
 <h4 id="1-2-props">1-2. Props</h4>
 <ul>
   <li>
-    <p>컴포넌트의 속성(property)을 뜻한다. <code class="highlighter-rouge">props</code>는 변하지 않는 <strong>외부로부터 전달받은 값</strong>으로, 웹 어플리케이션에서 해당 컴포넌트가 가진 속성에 해당된다.</p>
+    <p>컴포넌트의 속성(property)을 뜻한다. <code class="language-plaintext highlighter-rouge">props</code>는 변하지 않는 <strong>외부로부터 전달받은 값</strong>으로, 웹 어플리케이션에서 해당 컴포넌트가 가진 속성에 해당된다.</p>
   </li>
   <li>
     <p>이 해당 컴포넌트의 속성은 부모 컴포넌트(상위 컴포넌트)로부터 전달받은 값이다.</p>
@@ -359,16 +359,16 @@
     <p><em>React 컴포넌트는 JavaScript 함수와 클래스로, props를 함수의 전달인자(arguments)처럼 전달받아 이를 기반으로 화면에 어떻게 표시되는지를 기술하는 React 엘리먼트를 반환한다. 따라서, 컴포넌트가 최초 렌더링될 때에 화면에 출력하고자 하는 데이터를 담은 초기값으로 사용할 수 있다.</em></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">props</code>의 자료형은 객체 형태이다. <code class="highlighter-rouge">props</code>로 어떤 타입의 값도 넣어 전달할 수 있도록 <code class="highlighter-rouge">props</code>는 객체의 형태를 가진다.</p>
+    <p><code class="language-plaintext highlighter-rouge">props</code>의 자료형은 객체 형태이다. <code class="language-plaintext highlighter-rouge">props</code>로 어떤 타입의 값도 넣어 전달할 수 있도록 <code class="language-plaintext highlighter-rouge">props</code>는 객체의 형태를 가진다.</p>
 
-    <p>또한, <code class="highlighter-rouge">props</code>는 외부로부터 전달받아 변하지 않는 값입니다. 그래서 <code class="highlighter-rouge">props</code>는 함부로 변경될 수 없는 <strong>읽기 전용(read-only) 객체</strong>이다. 함부로 변경되지 않아야 하기 때문이다.</p>
+    <p>또한, <code class="language-plaintext highlighter-rouge">props</code>는 외부로부터 전달받아 변하지 않는 값입니다. 그래서 <code class="language-plaintext highlighter-rouge">props</code>는 함부로 변경될 수 없는 <strong>읽기 전용(read-only) 객체</strong>이다. 함부로 변경되지 않아야 하기 때문이다.</p>
 
     <blockquote>
-      <p>읽기 전용 객체가 아니라면 <code class="highlighter-rouge">props</code>를 전달받은 하위 컴포넌트 내에서 <code class="highlighter-rouge">props</code> 를 직접 수정 시 <code class="highlighter-rouge">props</code>를 전달한 상위 컴포넌트의 값에 영향을 미칠 수 있게 된다. 즉, 개발자가 의도하지 않은 <em>side effect</em> 가 생기게 되고 이는 React의 단방향, <em>하향식 데이터 흐름 원칙(React is all about one-way data flow down the component hierarchy)</em> 에 위배된다.</p>
+      <p>읽기 전용 객체가 아니라면 <code class="language-plaintext highlighter-rouge">props</code>를 전달받은 하위 컴포넌트 내에서 <code class="language-plaintext highlighter-rouge">props</code> 를 직접 수정 시 <code class="language-plaintext highlighter-rouge">props</code>를 전달한 상위 컴포넌트의 값에 영향을 미칠 수 있게 된다. 즉, 개발자가 의도하지 않은 <em>side effect</em> 가 생기게 되고 이는 React의 단방향, <em>하향식 데이터 흐름 원칙(React is all about one-way data flow down the component hierarchy)</em> 에 위배된다.</p>
     </blockquote>
   </li>
   <li>
-    <p><code class="highlighter-rouge">props</code>를 사용하는 방법은 아래와 같이 3단계로 구분할 수 있다.</p>
+    <p><code class="language-plaintext highlighter-rouge">props</code>를 사용하는 방법은 아래와 같이 3단계로 구분할 수 있다.</p>
 
     <ol>
       <li>하위 컴포넌트에 전달하고자 하는 값(data)과 속성을 정의한다.</li>
@@ -442,7 +442,7 @@
 
     <ul>
       <li>
-        <p>위 코드중 <code class="highlighter-rouge">useState</code> 함수는 호출시 리턴값은 배열이다. 반환되는 배열의 요소를 살펴보자면, <strong>배열의 0번째 요소는 현재 state 변수이고, 1번째 요소는 이 변수를 갱신할 수 있는 함수</strong>이다.</p>
+        <p>위 코드중 <code class="language-plaintext highlighter-rouge">useState</code> 함수는 호출시 리턴값은 배열이다. 반환되는 배열의 요소를 살펴보자면, <strong>배열의 0번째 요소는 현재 state 변수이고, 1번째 요소는 이 변수를 갱신할 수 있는 함수</strong>이다.</p>
 
         <div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="p">[</span><span class="nx">state</span> <span class="nx">저장</span> <span class="nx">변수</span><span class="p">,</span> <span class="nx">state</span> <span class="nx">갱신</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
 </code></pre></div>        </div>
@@ -452,7 +452,7 @@
   <li>
     <p>위 코드의 예시대로 React 컴포넌트는 state가 변경되면 새롭게 호출되고, 리렌더링 된다.</p>
 
-    <p>이때 React state는 상태 변경 함수(위 예시는 <code class="highlighter-rouge">useState</code>함수) 호출로 변경해야 한다. 강제로 변경을 시도하면 , 리렌더링이 되지 않는다거나, state가 제대로 변경되지 않는 side effect 가 발생할 수 있다.</p>
+    <p>이때 React state는 상태 변경 함수(위 예시는 <code class="language-plaintext highlighter-rouge">useState</code>함수) 호출로 변경해야 한다. 강제로 변경을 시도하면 , 리렌더링이 되지 않는다거나, state가 제대로 변경되지 않는 side effect 가 발생할 수 있다.</p>
   </li>
 </ul>
 

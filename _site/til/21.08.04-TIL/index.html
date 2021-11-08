@@ -429,7 +429,7 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">);</span> <span class="c1">// Reference Error</span>
 </code></pre></div>    </div>
     <ul>
-      <li><code class="highlighter-rouge">greeting</code> 변수는 바깥 스코프에 정의되어 있으므로, 함수 안쪽에서 사용할 수 있다. 반면에, <code class="highlighter-rouge">firstName</code> 변수는 함수의 안쪽 스코프에 정의되어 있으므로 함수의 바깥쪽에서는 접근이 불가능하다. 따라서 ReferenceError가 출력된다.</li>
+      <li><code class="language-plaintext highlighter-rouge">greeting</code> 변수는 바깥 스코프에 정의되어 있으므로, 함수 안쪽에서 사용할 수 있다. 반면에, <code class="language-plaintext highlighter-rouge">firstName</code> 변수는 함수의 안쪽 스코프에 정의되어 있으므로 함수의 바깥쪽에서는 접근이 불가능하다. 따라서 ReferenceError가 출력된다.</li>
     </ul>
   </li>
   <li>
@@ -474,11 +474,11 @@
 <hr />
 <h4 id="2-3-let-const-var-변수-선언에서-주의할-점">2-3. let, const, var 변수 선언에서 주의할 점</h4>
 <ul>
-  <li><code class="highlighter-rouge">var</code> 키워드로 정의한 변수는 블록 스코프를 무시하고, 함수 스코프만 따른다.
+  <li><code class="language-plaintext highlighter-rouge">var</code> 키워드로 정의한 변수는 블록 스코프를 무시하고, 함수 스코프만 따른다.
     <ul>
       <li>그러나, 모든 블록 스코프를 무시하는 건 아니며, <strong>화살표 함수의 블록 스코프</strong>는 무시하지 않는다.</li>
       <li>
-        <p><code class="highlighter-rouge">var</code> 키워드로 선언된 전역 변수 및 전역 함수는 <code class="highlighter-rouge">window</code> 객체에 속하게 된다.</p>
+        <p><code class="language-plaintext highlighter-rouge">var</code> 키워드로 선언된 전역 변수 및 전역 함수는 <code class="language-plaintext highlighter-rouge">window</code> 객체에 속하게 된다.</p>
 
         <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">myName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">KJH</span><span class="dl">'</span><span class="p">;</span>
 	  
@@ -487,7 +487,7 @@
       </li>
     </ul>
   </li>
-  <li>보통 코드를 작성할 때 블록은 들여쓰기가 적용되고, 그 구분이 시각적으로 분명해서 많은 사람들은 블록 스코프를 기준으로 코드를 작성하고, 생각하기 마련이다. 그러나 <code class="highlighter-rouge">var</code>는 이 규칙을 무시하므로, 사용이 권장되지 않는다.</li>
+  <li>보통 코드를 작성할 때 블록은 들여쓰기가 적용되고, 그 구분이 시각적으로 분명해서 많은 사람들은 블록 스코프를 기준으로 코드를 작성하고, 생각하기 마련이다. 그러나 <code class="language-plaintext highlighter-rouge">var</code>는 이 규칙을 무시하므로, 사용이 권장되지 않는다.</li>
 </ul>
 
 <table>
@@ -526,7 +526,7 @@
   <li>전역 변수는 가장 바깥 스코프에 정의한 변수이다. 따라서, 어디서든 접근이 가능하므로 편리하지만, 다른 함수 혹은 로직에 의해 의도되지 않은 변경이 발생할 수 있다. 이를 <strong>부수 효과(side effect)</strong> 라 부르며 이를 최소화 하는것이 좋은 프로그래밍 설계 방법이다.
     <ul>
       <li>
-        <p>실수를 방지하기 위해 <code class="highlighter-rouge">strict mode</code>를 적용하여 사용할 수 있다 . 브라우저가 보다 엄격하게 작동하도록 만들어주도록 도와준다</p>
+        <p>실수를 방지하기 위해 <code class="language-plaintext highlighter-rouge">strict mode</code>를 적용하여 사용할 수 있다 . 브라우저가 보다 엄격하게 작동하도록 만들어주도록 도와준다</p>
 
         <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>  <span class="c1">// js 파일 상단에 선언, 문법적으로 실수할 수 있는 부분들을 에러로 판단해준다.</span>
 	  
@@ -600,7 +600,7 @@
     <p>클로저 함수 내부의 선언된 변수들은 외부에서 접근할 수 없으므로 정보의 접근이 제한이 된다. 이를 <strong>캡슐화</strong>라 한다. 해당 캡슐화를 통해서 불필요한 전역 변수 사용을 줄일수 있게되며, 스코프를 이용해서 값을 보다 안전하게 다룰 수 있는 강점이 생긴다.</p>
   </li>
   <li>
-    <p>위와 같이 재활용 또한 가능하게 된다. (<code class="highlighter-rouge">add5</code>, <code class="highlighter-rouge">add7</code> 등 <code class="highlighter-rouge">adder()</code> 함수를 재활용하여 여러개의 <code class="highlighter-rouge">add 변수</code>를 만드는것이 가능하다.) 이와 같이 함수 재사용성을 극대화하여, 함수 하나를 완전히 독립적인 부품 형태로 분리하는 것을 <strong>모듈화</strong>라고 한다.</p>
+    <p>위와 같이 재활용 또한 가능하게 된다. (<code class="language-plaintext highlighter-rouge">add5</code>, <code class="language-plaintext highlighter-rouge">add7</code> 등 <code class="language-plaintext highlighter-rouge">adder()</code> 함수를 재활용하여 여러개의 <code class="language-plaintext highlighter-rouge">add 변수</code>를 만드는것이 가능하다.) 이와 같이 함수 재사용성을 극대화하여, 함수 하나를 완전히 독립적인 부품 형태로 분리하는 것을 <strong>모듈화</strong>라고 한다.</p>
   </li>
 </ul>
 
@@ -626,7 +626,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li>클로저 함수는 <em>내부 함수의 리턴값이 외부 함수의 지역변수를 참조하여 값을 바꾸거나 활용 하는 함수이다.</em>  이렇게 사용시 전달인자로 전달된 <code class="highlighter-rouge">tag</code>값이나 <code class="highlighter-rouge">content</code>의 값이 새로운 할당이나 선언없이 전달인자로만 전달되어도 함수의 기능을 모두 활용하며 재사용에 용이한 구조로 코드를 구성할 수 있다.</li>
+  <li>클로저 함수는 <em>내부 함수의 리턴값이 외부 함수의 지역변수를 참조하여 값을 바꾸거나 활용 하는 함수이다.</em>  이렇게 사용시 전달인자로 전달된 <code class="language-plaintext highlighter-rouge">tag</code>값이나 <code class="language-plaintext highlighter-rouge">content</code>의 값이 새로운 할당이나 선언없이 전달인자로만 전달되어도 함수의 기능을 모두 활용하며 재사용에 용이한 구조로 코드를 구성할 수 있다.</li>
 </ul>
 
 <p><br />

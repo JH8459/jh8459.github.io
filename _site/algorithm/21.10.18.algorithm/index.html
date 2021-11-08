@@ -350,25 +350,25 @@
 <hr />
 <h4 id="인자-1--arr">인자 1 : arr</h4>
 <ul>
-  <li><code class="highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
-  <li><code class="highlighter-rouge">arr.length</code>는 500,000 이하</li>
-  <li><code class="highlighter-rouge">arr[i]</code>는 -100,000 이상 100,000 이하의 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 500,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 -100,000 이상 100,000 이하의 정수</li>
 </ul>
 
 <h4 id="인자-2--ranges">인자 2 : ranges</h4>
 <ul>
-  <li><code class="highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
-  <li><code class="highlighter-rouge">ranges.length</code>는 10,000 이하</li>
-  <li><code class="highlighter-rouge">ranges[i]</code>는 특정 구간을 의미</li>
-  <li><code class="highlighter-rouge">ranges[i][0]</code>은 i번째 구간의 시작 인덱스</li>
-  <li><code class="highlighter-rouge">ranges[i][1]</code>은 i번째 구간의 마지막 인덱스</li>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges.length</code>는 10,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges[i]</code>는 특정 구간을 의미</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges[i][0]</code>은 i번째 구간의 시작 인덱스</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges[i][1]</code>은 i번째 구간의 마지막 인덱스</li>
 </ul>
 
 <h3 id="출력">출력</h3>
 <hr />
 <ul>
-  <li>배열(<code class="highlighter-rouge">arr</code>)를 리턴해야 합니다. (입출력 예시 참고)</li>
-  <li><code class="highlighter-rouge">arr[i]</code>는 <code class="highlighter-rouge">i</code>번째 구간(<code class="highlighter-rouge">ranges[i]</code>)의 최소값</li>
+  <li>배열(<code class="language-plaintext highlighter-rouge">arr</code>)를 리턴해야 합니다. (입출력 예시 참고)</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 <code class="language-plaintext highlighter-rouge">i</code>번째 구간(<code class="language-plaintext highlighter-rouge">ranges[i]</code>)의 최소값</li>
 </ul>
 
 <h3 id="입출력-예시">입출력 예시</h3>
@@ -383,7 +383,7 @@
 
 <h3 id="advanced">Advanced</h3>
 <ul>
-  <li>Advanced1: 주어진 배열에서 특정 구간의 최소값을 구하는 단순한 알고리즘은 단순 순회(<code class="highlighter-rouge">O(N)</code>)입니다. 같은 배열에 대해서 다양한 구간에 대한 최소값을 구할 경우, 단순 순회는 <code class="highlighter-rouge">O(N^2)</code> 입니다(구간의 개수도 N개라 가정할 경우). 적절한 자료구조를 통해 이와 같은 구간 조회에 대한 반복 작업을 효율적(<code class="highlighter-rouge">O(N * logN)</code>)으로 수행할 수 있습니다. 구간 트리(segment tree)에 대해서 학습하시고, Advanced 테스트 케이스를 통과해 보시기 바랍니다.</li>
+  <li>Advanced1: 주어진 배열에서 특정 구간의 최소값을 구하는 단순한 알고리즘은 단순 순회(<code class="language-plaintext highlighter-rouge">O(N)</code>)입니다. 같은 배열에 대해서 다양한 구간에 대한 최소값을 구할 경우, 단순 순회는 <code class="language-plaintext highlighter-rouge">O(N^2)</code> 입니다(구간의 개수도 N개라 가정할 경우). 적절한 자료구조를 통해 이와 같은 구간 조회에 대한 반복 작업을 효율적(<code class="language-plaintext highlighter-rouge">O(N * logN)</code>)으로 수행할 수 있습니다. 구간 트리(segment tree)에 대해서 학습하시고, Advanced 테스트 케이스를 통과해 보시기 바랍니다.</li>
   <li>트리를 객체 또는 배열로 구현할 수 있습니다. 객체로 구현하는 것이 보다 직관적이기 때문에 객체로 먼저 도전하시기 바랍니다. 레퍼런스는 모두 주어집니다.</li>
   <li>구간의 최대값, 합도 동일한 로직으로 구현하면 됩니다.</li>
 </ul>
@@ -391,7 +391,7 @@
 <h2 id="toy-31-solution">TOY 31. Solution</h2>
 <h3 id="수도코드">수도코드</h3>
 <hr />
-<p>Advanced가 아니라면 한번의 반복문을 사용해서 문제를 해결할 수 있다(<code class="highlighter-rouge">O(n)</code>). 구간 하나를 가져와서 그 구간 사이의 값을 for문을 통해 최솟값을 리턴해준다.</p>
+<p>Advanced가 아니라면 한번의 반복문을 사용해서 문제를 해결할 수 있다(<code class="language-plaintext highlighter-rouge">O(n)</code>). 구간 하나를 가져와서 그 구간 사이의 값을 for문을 통해 최솟값을 리턴해준다.</p>
 
 <p>Advanced 코드는 <strong>Reference Code</strong>를 보았다.</p>
 

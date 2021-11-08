@@ -7,14 +7,11 @@ main:
     url: /year/
 
 docs:
-  - title: "Category"
+  - title: Category
     children:
       - title: "TIL"
-        url: /docs/TIL/
+        url: /category/#til
       - title: "Algorithm"
-        url: /docs/Algorithm/
+        url: /category/#algorithm
       - title: "Retrospect"
-        url: /docs/Retrospect/
-
-sidebar:
-  nav: "docs"
+        url: /category/#retrospect

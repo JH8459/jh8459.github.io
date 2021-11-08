@@ -1,4 +1,4 @@
-I"�n<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+I"o<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
 <h2 id="toy-43-shadowofpapers">TOY 43. shadowOfPapers</h2>
 <h3 id="문제">문제</h3>
 <hr />
@@ -15,16 +15,16 @@
 <h4 id="인자-1--papers">인자 1 : papers</h4>
 <ul>
   <li>배열을 요소로 갖는 배열</li>
-  <li><code class="highlighter-rouge">papers.length</code>는 30 이하</li>
-  <li><code class="highlighter-rouge">papers[i]</code>는 <code class="highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
-  <li><code class="highlighter-rouge">papers[i]</code>는 차례대로 직사각형의 좌측 하단 모서리의 x좌표, y좌표, 너비(width), 높이(height)</li>
-  <li><code class="highlighter-rouge">papers[i][j]</code>는 10,000 이하의 양의 정수</li>
+  <li><code class="language-plaintext highlighter-rouge">papers.length</code>는 30 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i]</code>는 <code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i]</code>는 차례대로 직사각형의 좌측 하단 모서리의 x좌표, y좌표, 너비(width), 높이(height)</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i][j]</code>는 10,000 이하의 양의 정수</li>
 </ul>
 
 <h3 id="출력">출력</h3>
 <hr />
 <ul>
-  <li><code class="highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
 </ul>
 
 <h3 id="입출력-예시">입출력 예시</h3>
@@ -66,7 +66,7 @@
 <hr />
 
 <ul>
-  <li>인접 행렬로 좌표 평면을 생성하면 10,000 x 10,000의 2차원 행렬, 즉 1억개의 데이터를 생성해야 합니다. 대부분의 코딩 테스트에서 이는 공간 복잡도 요구 조건을 만족하지 못 합니다. 보통 코딩 테스트에서 메모리 사용량을 128MB ~ 512MB로 제한합니다. 64비트 정수(자바스크립트 <code class="highlighter-rouge">number</code> 타입)는 8바이트이므로, 전체 크기가 1천만개인 데이터들의 크기는 약 80MB 입니다. 메모리 사용량이 128MB라면 데이터가 2천만개만 넘어가도 테스트를 통과하지 못 합니다. 따라서 이 문제는 단순히 인접 행렬로 푸는 문제가 아니라는 것을 문제의 크기를 통해 추측할 수 있어야 합니다.</li>
+  <li>인접 행렬로 좌표 평면을 생성하면 10,000 x 10,000의 2차원 행렬, 즉 1억개의 데이터를 생성해야 합니다. 대부분의 코딩 테스트에서 이는 공간 복잡도 요구 조건을 만족하지 못 합니다. 보통 코딩 테스트에서 메모리 사용량을 128MB ~ 512MB로 제한합니다. 64비트 정수(자바스크립트 <code class="language-plaintext highlighter-rouge">number</code> 타입)는 8바이트이므로, 전체 크기가 1천만개인 데이터들의 크기는 약 80MB 입니다. 메모리 사용량이 128MB라면 데이터가 2천만개만 넘어가도 테스트를 통과하지 못 합니다. 따라서 이 문제는 단순히 인접 행렬로 푸는 문제가 아니라는 것을 문제의 크기를 통해 추측할 수 있어야 합니다.</li>
   <li>코딩 테스트의 입력 크기에 따른 시간 복잡도와 공간 복잡도 요구 사항에 대해서 학습하시기 바랍니다.</li>
   <li>스위핑(sweeping) 알고리즘에 대해서 학습하시기 바랍니다.</li>
 </ul>

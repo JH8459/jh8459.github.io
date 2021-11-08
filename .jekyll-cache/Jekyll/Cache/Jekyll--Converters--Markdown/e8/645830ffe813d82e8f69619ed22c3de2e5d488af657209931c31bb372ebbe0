@@ -1,4 +1,4 @@
-I"h<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="today-i-learnd">Today I Learnd</h2>
 <h3 id="1-react-spa-single-page-application">1. React SPA (Single Page Application)</h3>
 <ul>
@@ -43,9 +43,9 @@
 <ul>
   <li>React Router의 주요 컴포넌트는 크게 3가지 이다.
     <ol>
-      <li>router : <code class="highlighter-rouge">&lt;BrowserRouter&gt;</code></li>
-      <li>route matchers : <code class="highlighter-rouge">&lt;Switch&gt;</code>, <code class="highlighter-rouge">&lt;Route&gt;</code> 경로를 매칭해준다.</li>
-      <li>route changers : <code class="highlighter-rouge">&lt;Link&gt;</code> 경로를 변경해준다.</li>
+      <li>router : <code class="language-plaintext highlighter-rouge">&lt;BrowserRouter&gt;</code></li>
+      <li>route matchers : <code class="language-plaintext highlighter-rouge">&lt;Switch&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;Route&gt;</code> 경로를 매칭해준다.</li>
+      <li>route changers : <code class="language-plaintext highlighter-rouge">&lt;Link&gt;</code> 경로를 변경해준다.</li>
     </ol>
 
     <p><img src="https://user-images.githubusercontent.com/83164003/129127899-e5f5a7c1-6fef-4b4a-a856-1b131ac62e5d.png" alt="스크린샷, 2021-08-12 11-12-19" /></p>
@@ -60,7 +60,7 @@
 <h2 id="오늘-느낀-점">오늘 느낀 점</h2>
 <ul>
   <li>라우터를 이용한 부분 페이지 전환 그로인한 SPA 설계 가능화.</li>
-  <li>내일 리액트의 꽃인 <code class="highlighter-rouge">state, props</code> 학습이다.  내일까지 리액트 주요 문법 학습 후 주말중 리액트는 다시 한번 정리해야겠다.</li>
+  <li>내일 리액트의 꽃인 <code class="language-plaintext highlighter-rouge">state, props</code> 학습이다.  내일까지 리액트 주요 문법 학습 후 주말중 리액트는 다시 한번 정리해야겠다.</li>
 </ul>
 
 <p><br />

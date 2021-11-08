@@ -377,7 +377,7 @@
 <hr />
 
 <ul>
-  <li><strong>스키마</strong>는 <code class="highlighter-rouge">im-sprint-cmarket-database/server/schema.sql</code> 파일에 명시되어 있다. 해당 파일을 들여다 보면 다음과 같다.</li>
+  <li><strong>스키마</strong>는 <code class="language-plaintext highlighter-rouge">im-sprint-cmarket-database/server/schema.sql</code> 파일에 명시되어 있다. 해당 파일을 들여다 보면 다음과 같다.</li>
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">users</span> <span class="p">(</span> <span class="cm">/* 테이블 생성 : CREATE TABLE 테이블이름 */</span>
@@ -392,7 +392,7 @@
 </code></pre></div></div>
 <ul>
   <li>
-    <p><strong>시드파일</strong>은  <code class="highlighter-rouge">im-sprint-cmarket-database/server/seed.sql</code> 파일에 명시되어 있다. 해당 파일을 들여다 보면 다음과 같다.</p>
+    <p><strong>시드파일</strong>은  <code class="language-plaintext highlighter-rouge">im-sprint-cmarket-database/server/seed.sql</code> 파일에 명시되어 있다. 해당 파일을 들여다 보면 다음과 같다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* ...생략  */</span>
 
@@ -400,7 +400,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>스프린트에서는 위 <code class="highlighter-rouge">schema.sql</code>파일과 <code class="highlighter-rouge">seed.sql</code>파일을 토대로 node.j <code class="highlighter-rouge">mysql</code> 모듈을 통해서 DB를 다룬다. <code class="highlighter-rouge">im-sprint-cmarket-database/server/db/index.js</code> 파일을 살펴보면 다음과 같다.</p>
+    <p>스프린트에서는 위 <code class="language-plaintext highlighter-rouge">schema.sql</code>파일과 <code class="language-plaintext highlighter-rouge">seed.sql</code>파일을 토대로 node.j <code class="language-plaintext highlighter-rouge">mysql</code> 모듈을 통해서 DB를 다룬다. <code class="language-plaintext highlighter-rouge">im-sprint-cmarket-database/server/db/index.js</code> 파일을 살펴보면 다음과 같다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mysql</span><span class="dl">'</span><span class="p">);</span>  <span class="c1">// mysql 모듈 사용 선언, npm install mysql 후 사용가능하다.</span>
 <span class="kd">const</span> <span class="nx">dotenv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotenv</span><span class="dl">'</span><span class="p">);</span>  <span class="c1">// DB 비밀번호등 환경변수는 .env 모듈을 통해 사용한다.</span>
@@ -415,12 +415,12 @@
 </code></pre></div>    </div>
 
     <blockquote>
-      <p><code class="highlighter-rouge">im-sprint-cmarket-database/server/.env.sample</code> 과 <code class="highlighter-rouge">im-sprint-cmarket-database/server/config/config.js</code> 파일에 환경변수들이 담겨져있다. 개발환경에 맞게 설정하자.</p>
+      <p><code class="language-plaintext highlighter-rouge">im-sprint-cmarket-database/server/.env.sample</code> 과 <code class="language-plaintext highlighter-rouge">im-sprint-cmarket-database/server/config/config.js</code> 파일에 환경변수들이 담겨져있다. 개발환경에 맞게 설정하자.</p>
     </blockquote>
   </li>
-  <li>위와 같은 설정이 모두 끝났다면, <code class="highlighter-rouge">config.js</code> 파일에 DB 이름은 cmarket 으로 설정되어 있으므로 mysql을 통해서 빈 cmarket DB를 만들어 준다</li>
-  <li><code class="highlighter-rouge">schema.sql</code> 파일을 활용하여 내부 테이블을 배치모드로 한번에 만들 수 있게 된다. <code class="highlighter-rouge">mysql -u (유저이름) -p &lt; server/schema.sql -Dcmarket</code></li>
-  <li><code class="highlighter-rouge">seed.sql</code> 파일을 활용하여 테이블 내에 준비된 시드파일을 심어준다. <code class="highlighter-rouge">mysql -u (유저이름) -p &lt; server/seed.sql -Dcmarket</code></li>
+  <li>위와 같은 설정이 모두 끝났다면, <code class="language-plaintext highlighter-rouge">config.js</code> 파일에 DB 이름은 cmarket 으로 설정되어 있으므로 mysql을 통해서 빈 cmarket DB를 만들어 준다</li>
+  <li><code class="language-plaintext highlighter-rouge">schema.sql</code> 파일을 활용하여 내부 테이블을 배치모드로 한번에 만들 수 있게 된다. <code class="language-plaintext highlighter-rouge">mysql -u (유저이름) -p &lt; server/schema.sql -Dcmarket</code></li>
+  <li><code class="language-plaintext highlighter-rouge">seed.sql</code> 파일을 활용하여 테이블 내에 준비된 시드파일을 심어준다. <code class="language-plaintext highlighter-rouge">mysql -u (유저이름) -p &lt; server/seed.sql -Dcmarket</code></li>
 </ul>
 
 <hr />

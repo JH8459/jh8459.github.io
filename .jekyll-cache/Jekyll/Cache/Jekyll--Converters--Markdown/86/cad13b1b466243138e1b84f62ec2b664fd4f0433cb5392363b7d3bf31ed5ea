@@ -1,4 +1,4 @@
-I"3<hr />
+I"�<hr />
 
 <p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="today-i-learnd">Today I Learnd</h2>
@@ -34,12 +34,12 @@ Git repository 는 Remote Repository와 Local Repository 두 종류의 저장소
 <p><img src="https://user-images.githubusercontent.com/83164003/128201584-6a5413c7-0150-4356-9cba-7c2b71827daf.png" alt="gitflow" /></p>
 
 <ol>
-  <li>Remote에 있는 다른 Repository에서 <code class="highlighter-rouge">Fork</code>를 해서 Remote에 있는 내 Repository에 가지고 온다.</li>
-  <li>이 코드를 수정하기 위해서는 내 컴퓨터로 가져오는 작업이 또 필요하다. 내 컴퓨터에서 작업을 하기 위해서 <code class="highlighter-rouge">git clone</code>을 한다.</li>
-  <li>이제 내 컴퓨터의 작업 공간 (work space) 에서 작업에 들어간 파일들을 git의 관리 하에 있는 상태로 변경할 수 있다. 이 영역을 <code class="highlighter-rouge">staging area</code>라고 말한다. 즉, <code class="highlighter-rouge">staging area</code>에 들어오지 않은 파일은 <code class="highlighter-rouge">unstaged</code> 혹은 <code class="highlighter-rouge">untracked file</code>이라고 말하며, <code class="highlighter-rouge">staging area</code>에 있는 파일들은 <code class="highlighter-rouge">staged</code> 된 파일이라고 말할 수 있다. <code class="highlighter-rouge">git commit</code> 을 하기 위해서 현재 Local Repository에 변경된 파일들이 어떤것인지 확인하려면 <code class="highlighter-rouge">git status</code>를 통하여 <code class="highlighter-rouge">staging area</code>와 <code class="highlighter-rouge">untracked files</code> 목록에 어떤 것들이 있는지 확인할 수 있다.</li>
-  <li><code class="highlighter-rouge">staging area</code>에 들어온 파일들은 <code class="highlighter-rouge">git commit</code>이 가능하다. commit을 하고 나면 내 remote repository에 <code class="highlighter-rouge">git push</code> 해서 commit 기록을 remote 에도 남겨줄 수 있다.
-남긴 commit들이 잘 기록되어있는지 확인하려면 <code class="highlighter-rouge">git log</code>를 통하여 로그들을 터미널 창에서 확인할 수 있다.</li>
-  <li><code class="highlighter-rouge">git push</code>를 완료한 후 이제 remote의 원래 레파지토리에 <code class="highlighter-rouge">pull request</code>를 보내면 Remote Repository로 내가 수정한 코드를 업로드할 수 있다.</li>
+  <li>Remote에 있는 다른 Repository에서 <code class="language-plaintext highlighter-rouge">Fork</code>를 해서 Remote에 있는 내 Repository에 가지고 온다.</li>
+  <li>이 코드를 수정하기 위해서는 내 컴퓨터로 가져오는 작업이 또 필요하다. 내 컴퓨터에서 작업을 하기 위해서 <code class="language-plaintext highlighter-rouge">git clone</code>을 한다.</li>
+  <li>이제 내 컴퓨터의 작업 공간 (work space) 에서 작업에 들어간 파일들을 git의 관리 하에 있는 상태로 변경할 수 있다. 이 영역을 <code class="language-plaintext highlighter-rouge">staging area</code>라고 말한다. 즉, <code class="language-plaintext highlighter-rouge">staging area</code>에 들어오지 않은 파일은 <code class="language-plaintext highlighter-rouge">unstaged</code> 혹은 <code class="language-plaintext highlighter-rouge">untracked file</code>이라고 말하며, <code class="language-plaintext highlighter-rouge">staging area</code>에 있는 파일들은 <code class="language-plaintext highlighter-rouge">staged</code> 된 파일이라고 말할 수 있다. <code class="language-plaintext highlighter-rouge">git commit</code> 을 하기 위해서 현재 Local Repository에 변경된 파일들이 어떤것인지 확인하려면 <code class="language-plaintext highlighter-rouge">git status</code>를 통하여 <code class="language-plaintext highlighter-rouge">staging area</code>와 <code class="language-plaintext highlighter-rouge">untracked files</code> 목록에 어떤 것들이 있는지 확인할 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">staging area</code>에 들어온 파일들은 <code class="language-plaintext highlighter-rouge">git commit</code>이 가능하다. commit을 하고 나면 내 remote repository에 <code class="language-plaintext highlighter-rouge">git push</code> 해서 commit 기록을 remote 에도 남겨줄 수 있다.
+남긴 commit들이 잘 기록되어있는지 확인하려면 <code class="language-plaintext highlighter-rouge">git log</code>를 통하여 로그들을 터미널 창에서 확인할 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">git push</code>를 완료한 후 이제 remote의 원래 레파지토리에 <code class="language-plaintext highlighter-rouge">pull request</code>를 보내면 Remote Repository로 내가 수정한 코드를 업로드할 수 있다.</li>
 </ol>
 
 <h3 id="2-코딩애플-react"><del>2. 코딩애플 React</del></h3>

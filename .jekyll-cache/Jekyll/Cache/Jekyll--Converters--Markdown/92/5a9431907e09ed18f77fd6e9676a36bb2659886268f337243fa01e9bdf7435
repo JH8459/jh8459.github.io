@@ -1,4 +1,4 @@
-I"�?<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+I"m@<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="today-i-learnd">Today I Learnd</h2>
 <h3 id="1-컴퓨터-공학-기초">1. 컴퓨터 공학 기초</h3>
 <hr />
@@ -38,14 +38,14 @@
   <li>UTF-8과 UTF-16은 인코딩 방식의 차이를 의미한다. UTF-8은 Universal Coded Character Set + Transformation Format – 8-bit의 약자로, UTF- 뒤에 등장하는 숫자는 비트(bit)이다.</li>
   <li>UTF-8 은 유니코드 한 문자를 나타내기 위해 1 byte(= 8 bits) 에서 4 bytes까지 가변 길이 인코딩을 사용한다.</li>
   <li>
-    <p>예를 들어, <code class="highlighter-rouge">코</code> 라는 문자의 유니코드는 <code class="highlighter-rouge">U+CF54</code> (16진수, HEX)로 표현되며, 이 문자를 이진법(binary number)으로 표시하면, <code class="highlighter-rouge">1100-1111-0101-0100</code> 이 된다. 이 문자를 UTF-8로 표현하면, 다음과 같이 3byte 의 결과로 표현된다.</p>
+    <p>예를 들어, <code class="language-plaintext highlighter-rouge">코</code> 라는 문자의 유니코드는 <code class="language-plaintext highlighter-rouge">U+CF54</code> (16진수, HEX)로 표현되며, 이 문자를 이진법(binary number)으로 표시하면, <code class="language-plaintext highlighter-rouge">1100-1111-0101-0100</code> 이 된다. 이 문자를 UTF-8로 표현하면, 다음과 같이 3byte 의 결과로 표현된다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1110</span><span class="nx">xxxx</span> <span class="mi">10</span><span class="nx">xxxxxx</span> <span class="mi">10</span><span class="nx">xxxxxx</span> <span class="err">#</span> <span class="nx">x</span> <span class="nx">안에</span> <span class="nx">순서대로</span> <span class="nx">값을</span> <span class="nx">채워넣습니다</span><span class="p">.</span>
 <span class="mi">11101100</span> <span class="mi">10111101</span> <span class="mi">10010100</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>다른 예로 <code class="highlighter-rouge">b</code>라는 ASCII 코드는 7비트로 표현되고, UTF-8 에서는 다음과 같이 1 byte의 결과로 만들 수 있다</p>
+    <p>다른 예로 <code class="language-plaintext highlighter-rouge">b</code>라는 ASCII 코드는 7비트로 표현되고, UTF-8 에서는 다음과 같이 1 byte의 결과로 만들 수 있다</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span><span class="nx">xxxxxxx</span>
 <span class="mi">01100010</span> 
@@ -54,7 +54,7 @@
   <li>
     <p>이처럼, UTF-8은 1 byte에서 4 bytes까지의 가변 길이를 가지는 인코딩 방식이다. 네트워크를 통해 전송되는 텍스트는 주로 UTF-8로 인코딩되며 그 이유는 사용된 문자에 따라 더 작은 크기의 문자열을 표현할 수 있기 때문이다. ASCII 문자는 1 바이트만으로 표현 가능한 것처럼 효율적이다.</p>
 
-    <p>UTF-8은 ASCII 코드의 경우 1 byte, 영어 외 글자는 2byte, 3byte, 보조 글자및 특수문자는 4byte를 차지한다. <code class="highlighter-rouge">ex) 이모지는 보조 글자에 해당하기 때문에 4byte가 필요하다.</code></p>
+    <p>UTF-8은 ASCII 코드의 경우 1 byte, 영어 외 글자는 2byte, 3byte, 보조 글자및 특수문자는 4byte를 차지한다. <code class="language-plaintext highlighter-rouge">ex) 이모지는 보조 글자에 해당하기 때문에 4byte가 필요하다.</code></p>
   </li>
 </ul>
 
@@ -66,7 +66,7 @@
       <li>대부분에 속하지 않는 기타문자는 32 bit(4 bytes)로 표현하므로 UTF-16도 가변길이라고 할 수 있으나, 대부분은 2 바이트로 표현한다</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">U+ABCD</code>라는 16진수를 있는 그대로 이진법으로 변환하면 <code class="highlighter-rouge">1010-1011-1100-1101</code> 이다. 이 이진법으로 표현된 문자를 16 bits(2 bytes)로 그대로 사용하며, 바이트 순서(엔디언)에 따라 UTF-16의 종류도 달라진다.</li>
+  <li><code class="language-plaintext highlighter-rouge">U+ABCD</code>라는 16진수를 있는 그대로 이진법으로 변환하면 <code class="language-plaintext highlighter-rouge">1010-1011-1100-1101</code> 이다. 이 이진법으로 표현된 문자를 16 bits(2 bytes)로 그대로 사용하며, 바이트 순서(엔디언)에 따라 UTF-16의 종류도 달라진다.</li>
   <li>UTF-8에서는 한글은 3 바이트, UTF-16에서는 2 바이트를 차지한다.</li>
 </ul>
 
@@ -154,7 +154,7 @@
     <p>따라서, 응용 프로그램은 권한에 대한 관리가 필요하다. 또한 여러 사람이 하나의 기기를 사용하는 경우에는 사용자를 관리하는 일도 매우 중요하다. 이를 관리하는 주체는 운영체제이다.</p>
   </li>
   <li>
-    <p>응용 프로그램이 운영체제와 소통하기 위해서는 운영체제가 응용 프로그램을 위해 인터페이스(API)를 제공해야 한다. 응용 프로그램이 시스템 자원을 사용할 수 있도록, 운영체제 차원에서 다양한 함수를 제공하는 것을 시스템 콜(System call)이라고 부른다.  <code class="highlighter-rouge">ex) 스마트폰에서 사용자에게 어떤 디바이스(카메라 등)의 사용권한 묻는 창</code></p>
+    <p>응용 프로그램이 운영체제와 소통하기 위해서는 운영체제가 응용 프로그램을 위해 인터페이스(API)를 제공해야 한다. 응용 프로그램이 시스템 자원을 사용할 수 있도록, 운영체제 차원에서 다양한 함수를 제공하는 것을 시스템 콜(System call)이라고 부른다.  <code class="language-plaintext highlighter-rouge">ex) 스마트폰에서 사용자에게 어떤 디바이스(카메라 등)의 사용권한 묻는 창</code></p>
   </li>
 </ul>
 
@@ -168,7 +168,7 @@
   <li>
     <p>사용자가 애플리케이션을 실행하면, 운영체제로부터 실행에 필요한 메모리를 할당 받아 애플리케이션의 코드를 실행한다. 이때 실행되는 애플리케이션을 프로세스라고 부른다.</p>
 
-    <p><code class="highlighter-rouge">ex) Chrome 브라우저를 두 개 실행하면, 두 개의 프로세스가 생성된다.</code></p>
+    <p><code class="language-plaintext highlighter-rouge">ex) Chrome 브라우저를 두 개 실행하면, 두 개의 프로세스가 생성된다.</code></p>
 
     <p>이렇게 하나의 애플리케이션은 여러 프로세스(다중 프로세스)를 만들기도 한다.</p>
   </li>
@@ -184,7 +184,7 @@
 <hr />
 <h5 id="멀티-스레드multi-thread">멀티 스레드(Multi-Thread)</h5>
 <ul>
-  <li>멀티 태스킹은 두 가지 이상의 작업을 동시에 처리하는 것을 의미한다. 운영체제는 멀티 태스킹을 할 수 있도록, 프로세스마다 CPU 및 메모리 자원을 적절히 할당하고 병렬로 실행한다. <code class="highlighter-rouge">ex)워드로 문서작업을 하면서, 동시에 Chrome 브라우저에서 음악을 들을 수 있다.</code></li>
+  <li>멀티 태스킹은 두 가지 이상의 작업을 동시에 처리하는 것을 의미한다. 운영체제는 멀티 태스킹을 할 수 있도록, 프로세스마다 CPU 및 메모리 자원을 적절히 할당하고 병렬로 실행한다. <code class="language-plaintext highlighter-rouge">ex)워드로 문서작업을 하면서, 동시에 Chrome 브라우저에서 음악을 들을 수 있다.</code></li>
   <li>하나의 프로세스 내에서 멀티 태스킹을 할 수 있도록 만들어진 애플리케이션도 있기에 멀티 태스킹은 꼭 멀티 프로세스를 의미하는 것은 아니다. 하나의 프로세스가 두 가지 이상의 작업을 처리하는 경우는 멀티 스레드가 가능한 프로세스인 경우이기 때문이다.</li>
   <li>
     <p>멀티 프로세스가 애플리케이션 단위의 멀티 태스킹이라면, 멀티 스레드는 애플리케이션 내부에서의 멀티 태스킹이라고 할 수 있다.</p>

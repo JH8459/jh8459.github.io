@@ -573,7 +573,7 @@
       <li>응답 헤더의 Access-Control-Allow-Origin와 관련있다.</li>
     </ul>
   </li>
-  <li><strong>Authorization</strong> : 인증 토큰(<code class="highlighter-rouge">ex) JWT</code>)을 서버로 보낼 때 사용하는 헤더.</li>
+  <li><strong>Authorization</strong> : 인증 토큰(<code class="language-plaintext highlighter-rouge">ex) JWT</code>)을 서버로 보낼 때 사용하는 헤더.</li>
 </ul>
 
 <hr />
@@ -583,12 +583,12 @@
   <li><strong>Date</strong> : 메시지가 발생한 날짜와 시간.</li>
   <li><strong>Location</strong> : 페이지 리디렉션.
     <ul>
-      <li>웹 브라우저는 3xx 응답의 결과에 <code class="highlighter-rouge">Location</code> 헤더가 있으면, <code class="highlighter-rouge">Location</code> 위치로 리다이렉트(자동 이동)</li>
-      <li>201(Created): <code class="highlighter-rouge">Location</code> 값은 요청에 의해 생성된 리소스 URI.</li>
-      <li>3xx(Redirection): <code class="highlighter-rouge">Location</code> 값은 요청을 자동으로 리디렉션하기 위한 대상 리소스를 가리킨다.</li>
+      <li>웹 브라우저는 3xx 응답의 결과에 <code class="language-plaintext highlighter-rouge">Location</code> 헤더가 있으면, <code class="language-plaintext highlighter-rouge">Location</code> 위치로 리다이렉트(자동 이동)</li>
+      <li>201(Created): <code class="language-plaintext highlighter-rouge">Location</code> 값은 요청에 의해 생성된 리소스 URI.</li>
+      <li>3xx(Redirection): <code class="language-plaintext highlighter-rouge">Location</code> 값은 요청을 자동으로 리디렉션하기 위한 대상 리소스를 가리킨다.</li>
     </ul>
   </li>
-  <li><strong>Allow</strong> : 허용 가능한 HTTP 메서드. <code class="highlighter-rouge">ex) Allow: GET, HEAD, PUT</code></li>
+  <li><strong>Allow</strong> : 허용 가능한 HTTP 메서드. <code class="language-plaintext highlighter-rouge">ex) Allow: GET, HEAD, PUT</code></li>
   <li><strong>Retry-After</strong> : 유저 에이전트가 다음 요청을 하기까지 기다려야 하는 시간.</li>
 </ul>
 
@@ -718,7 +718,7 @@
 <p><img src="https://user-images.githubusercontent.com/83164003/138880693-1f0ea555-8be9-45c0-8245-b87b5738278d.png" alt="스크린샷, 2021-10-26 21-39-44" /></p>
 
 <ul>
-  <li>헤더에 <code class="highlighter-rouge">cache-controll</code> 속성을 넣어주어 캐시가 유효한 시간을 넣어준다.</li>
+  <li>헤더에 <code class="language-plaintext highlighter-rouge">cache-controll</code> 속성을 넣어주어 캐시가 유효한 시간을 넣어준다.</li>
   <li>위에서는 60초로 설정해 60초 동안은 해당 캐시가 유효하다는 의미다.</li>
 </ul>
 
@@ -821,7 +821,7 @@
       <li>test.txt 파일의 내용을 A→B로 수정했지만, 다시 B→ A로 수정한 경우</li>
     </ul>
   </li>
-  <li>서버에서 별도의 캐시 로직을 관리하고 싶은 경우 <code class="highlighter-rouge">ex) 스페이스나 주석처럼 크게 영향이 없는 변경에서 캐시를 유지하고 싶은 경우</code></li>
+  <li>서버에서 별도의 캐시 로직을 관리하고 싶은 경우 <code class="language-plaintext highlighter-rouge">ex) 스페이스나 주석처럼 크게 영향이 없는 변경에서 캐시를 유지하고 싶은 경우</code></li>
 </ul>
 
 <hr />
@@ -834,12 +834,12 @@
   <li>ETag(Entity Tag)</li>
   <li>캐시용 데이터에 임의의 고유한 버전 이름을 달아둔다
     <ul>
-      <li><code class="highlighter-rouge">ETag: "v1.0"</code>, <code class="highlighter-rouge">ETag: "a2jiodwjekjl3"</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ETag: "v1.0"</code>, <code class="language-plaintext highlighter-rouge">ETag: "a2jiodwjekjl3"</code></li>
     </ul>
   </li>
   <li>데이터가 변경되면 이 이름을 바꾸어서 변경한다(Hash를 다시 생성).
     <ul>
-      <li><code class="highlighter-rouge">ETag:"aaaa"</code> → <code class="highlighter-rouge">ETag:"bbbb"</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ETag:"aaaa"</code> → <code class="language-plaintext highlighter-rouge">ETag:"bbbb"</code></li>
     </ul>
   </li>
   <li>단순하게 ETag만 보내서 같으면 유지하고 바르면 다시 받는다.</li>
@@ -864,14 +864,14 @@
 
 <ul>
   <li>캐시시간이 초과되서 다시 요청을 해야하는 경우이다.</li>
-  <li>이때 <code class="highlighter-rouge">If-None-Match</code>를 요청 헤더에 작성해서 보낸다.</li>
+  <li>이때 <code class="language-plaintext highlighter-rouge">If-None-Match</code>를 요청 헤더에 작성해서 보낸다.</li>
 </ul>
 
 <p><img src="https://user-images.githubusercontent.com/83164003/138887454-484b71b1-a651-4ec9-abfe-0d1acd260aae.png" alt="스크린샷, 2021-10-26 22-21-17" /></p>
 
 <ul>
-  <li>서버에서 데이터가 변경되지 않았을 경우 ETag는 동일하다. 그래서 <code class="highlighter-rouge">If-None-Match</code>는 실패다.</li>
-  <li>이 경우 서버에서는 <code class="highlighter-rouge">304 Not Modified</code>를 응답하며 이때 역시 <code class="highlighter-rouge">HTTP Body</code>는 없다.</li>
+  <li>서버에서 데이터가 변경되지 않았을 경우 ETag는 동일하다. 그래서 <code class="language-plaintext highlighter-rouge">If-None-Match</code>는 실패다.</li>
+  <li>이 경우 서버에서는 <code class="language-plaintext highlighter-rouge">304 Not Modified</code>를 응답하며 이때 역시 <code class="language-plaintext highlighter-rouge">HTTP Body</code>는 없다.</li>
   <li>브라우저 캐시에서는 응답 결과를 재사용하고 헤더 데이터를 갱신한다.</li>
 </ul>
 
@@ -879,11 +879,11 @@
 <h5 id="etag--if-none-match-정리">ETag &amp; If-None-Match 정리</h5>
 <hr />
 <ul>
-  <li><code class="highlighter-rouge">ETag</code>만 서버에 보내 동일하면 유지하고 다르면 다시 받는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">ETag</code>만 서버에 보내 동일하면 유지하고 다르면 다시 받는다.</li>
   <li>캐시 제어 로직을 서버에서 관리한다.</li>
   <li>클라이언트는 단순하게 이 값을 서버에 제공한다</li>
   <li>캐시 매커니즘을 알 필요가 없다.</li>
-  <li><code class="highlighter-rouge">ex) 서버는 베타 오픈 기간 3일간 파일이 변경되어도 ETag를 동일하게 유지</code>, <code class="highlighter-rouge">ex) 애플리케이션 배포 주기에 맞춰서 ETag를 모두 갱신</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ex) 서버는 베타 오픈 기간 3일간 파일이 변경되어도 ETag를 동일하게 유지</code>, <code class="language-plaintext highlighter-rouge">ex) 애플리케이션 배포 주기에 맞춰서 ETag를 모두 갱신</code></li>
 </ul>
 
 <hr />
@@ -926,7 +926,7 @@
 <h5 id="캐시-무효화">캐시 무효화</h5>
 <hr />
 
-<p>클라이언트가 캐시를 적용하지 않아도 임의로 브라우저가 캐시를 적용하는 경우, 특정 페이지에서 캐시가 되면 안되는 정보 <code class="highlighter-rouge">ex) 통장 잔고</code>가 있다면 캐시 무효화를 통해 이를 무효화 할 수 있다.</p>
+<p>클라이언트가 캐시를 적용하지 않아도 임의로 브라우저가 캐시를 적용하는 경우, 특정 페이지에서 캐시가 되면 안되는 정보 <code class="language-plaintext highlighter-rouge">ex) 통장 잔고</code>가 있다면 캐시 무효화를 통해 이를 무효화 할 수 있다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span><span class="p">:</span> <span class="nx">no</span><span class="o">-</span><span class="nx">cache</span><span class="p">,</span> <span class="nx">no</span><span class="o">-</span><span class="nx">store</span><span class="p">,</span> <span class="nx">must</span><span class="o">-</span><span class="nx">revalidate</span>
 <span class="nx">Pragma</span><span class="p">:</span> <span class="nx">no</span><span class="o">-</span><span class="nx">cache</span>
