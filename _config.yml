@@ -24,7 +24,7 @@ description              : # Meta 태그에 들어가는 영역
 url                      : # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "JH8459/JH8459.github.com" # GitHub username/repo-name  
-teaser                   : "https://user-images.githubusercontent.com/83164003/140748980-e7e7c092-5f16-4d82-b707-14e06072db2a.png" # 홈페이지 기본 티져 이미지
+teaser                   : # 홈페이지 기본 티져 이미지
 logo                     : # 타이틀 옆에 작게 들어갈 이미지.
 masthead_title           : "JHLog" # 홈페이지 최 상탄에 들어갈 타이틀
 breadcrumbs              : true # 브래드크럼 사용 여부 true, false (default) , _data/ui-text.yml에 다국어 지원 가능합니다.
