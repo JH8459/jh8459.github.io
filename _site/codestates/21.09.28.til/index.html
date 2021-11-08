@@ -1,0 +1,797 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[TIL] 21.09.28 / 1. React 상태관리 2. 클라이언트 빌드&amp;배포 | JHLog</title>
+<meta name="description" content="[TIL] 1. React 상태관리 2. 클라이언트 빌드&amp;배포">
+
+
+  <meta name="author" content="JH8459">
+  
+  <meta property="article:author" content="JH8459">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="[TIL] 21.09.28 / 1. React 상태관리 2. 클라이언트 빌드&amp;배포">
+<meta property="og:url" content="/codestates/21.09.28.til/">
+
+
+  <meta property="og:description" content="[TIL] 1. React 상태관리 2. 클라이언트 빌드&amp;배포">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-28T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/codestates/21.09.28.til/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH8459",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming study log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/">Year</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#codestates" itemprop="item"><span itemprop="name">Codestates</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[TIL] 21.09.28 / 1. React 상태관리 2. 클라이언트 빌드&배포</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH8459" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">JH8459</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><em>불안감 떨쳐내기, 후회없이 하루 보내기</em><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Category</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#codestates">CodeStates</a></li>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#devtool">DevTool</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c"><span class="nav__sub-title">About</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[TIL] 21.09.28 / 1. React 상태관리 2. 클라이언트 빌드&amp;배포">
+    <meta itemprop="description" content="[TIL] 1. React 상태관리 2. 클라이언트 빌드&amp;배포">
+    <meta itemprop="datePublished" content="2021-09-28T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/codestates/21.09.28.til/" class="u-url" itemprop="url">[TIL] 21.09.28 / 1. React 상태관리 2. 클라이언트 빌드&amp;배포
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-28T00:00:00+09:00">September 28, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-react-상태관리">1. React 상태관리</a><ul><li><a href="#1-1-프론트엔드-개발에서의-상태-관리">1-1. 프론트엔드 개발에서의 상태 관리</a></li><li><a href="#1-2-상태-관리를-위한-각종-툴">1-2. 상태 관리를 위한 각종 툴</a></li><li><a href="#1-3-redux">1-3. Redux</a></li><li><a href="#1-4-cmarket-hooks-버전">1-4. Cmarket (Hooks 버전)</a></li><li><a href="#1-5-cmarket-redux-버전">1-5. Cmarket (Redux 버전)</a></li></ul></li><li><a href="#2-클라이언트-빌드배포">2. 클라이언트 빌드&amp;배포</a></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-react-상태관리">1. React 상태관리</h3>
+<hr />
+<h4 id="1-1-프론트엔드-개발에서의-상태-관리">1-1. 프론트엔드 개발에서의 상태 관리</h4>
+<ul>
+  <li>우선 상태란 컴포넌트 내부에서 변화되는 값이다. 특별히 프론트엔드 영역에서는 “동적으로 표현되는 데이터”라 부를 수 있다.</li>
+  <li>
+    <p>우리는 컴포넌트 우선 개발 방식에 대해서 학습했었다 (21.09.07 TIL, React 데이터 흐름 참조) . 하향식 데이터 흐름에 따라 <code class="language-plaintext highlighter-rouge">props</code>를 이용해서 데이터를 전달하며 이는 단방향 데이터 흐름이다.</p>
+
+    <p>따라서 이 “상태”의 위치가 매우 중요하다. 우선 Javascript를 처음 배울 때 처럼 전역 변수와 지역 변수에 처럼 생각을 해보자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/135591336-c6701a05-ae1a-455a-953b-4b162ffbb445.png" alt="스크린샷, 2021-10-01 17-40-39" /></p>
+
+    <p>로컬 상태는 특정 컴포넌트 안에서만 관리되는 상태이며, 전역 상태는 프로덕트 전체 혹은 여러가지 컴포넌트가 동시에 관리하는 상태이다.</p>
+
+    <p>로컬 상태를 구분하는 것은 간단하다. 보통 컴포넌트 내에서만 영향을 끼지는 상태는 로컬 상태를 뜻한다.  그럼 전역 상태는 다른 컴포넌트와 상태를 공유하고 영향을 끼치는 상태를 의미할 것이다.</p>
+
+    <p>전역 상태라는 말은 서로 다른 컴포넌트가 동일한 상태를 다룬다는 뜻이다. 만약 이러한 상황이라면, 이 출처는 오직 한 곳이어야 한다. 만일 사본이 있을 경우, 두 데이터는 서로 동기화(sync)하는 과정이 필요한데, 이는 문제를 어렵게 만들게 된다. 리액트에서는 한 곳의 컴포넌트에서만 상태를 저장하고 접근하는게 데이터를 효과적이고 효율적으로 관리하는 방식이다.</p>
+
+    <p>이를 다르게 말하자면 “<strong>데이터 무결성</strong>을 위해, 동일한 데이터는 항상 같은 곳에서 데이터를 가지고 오도록 해야만 한다” 이다. Single source of truth(신뢰할 수 있는 단일 출처) 원칙은 프론트엔드 뿐만 아니라 다양한 곳에서 언급되는 원칙이다.</p>
+  </li>
+</ul>
+
+<hr />
+<h4 id="1-2-상태-관리를-위한-각종-툴">1-2. 상태 관리를 위한 각종 툴</h4>
+<p><img src="https://user-images.githubusercontent.com/83164003/135709190-62979f91-d525-4b9f-b02a-1a756dccf27b.png" alt="react상태관리" /></p>
+
+<ul>
+  <li>
+    <p>상태 관리에 대해 전반적으로 알아보았다. 위에서 말했듯이 상태를 전역상태로 관리하는 방식은 <strong>데이터 무결성</strong>을 위해 동일한 컴포넌트에서 관리해야한다. 다른 컴포넌트에서 이 전역상태에 접근하려면 <code class="language-plaintext highlighter-rouge">props</code>로 데이터를 전달해주어야만 하위 컴포넌트에서도 이 전역상태를 사용할 수 있다. 이 과정이 컴포넌트의 계층 단계가 많은 계층으로 이루어져있다면 매우 불편할 것이다.</p>
+
+    <p>그러한 불편함을 해소하기 위해 이를 도와주는 각종 툴들이 있다. 해당 툴들을 사용함으로써 얻는 이점은 다음과 같다.</p>
+
+    <ul>
+      <li>첫번째로는 앞서 꾸준히 언급한 전역 상태를 위한 저장소를 제공해 준다.</li>
+      <li>다음은, <code class="language-plaintext highlighter-rouge">props drilling</code> 문제를 해결 해준다. 첫번째 이점의 연장선이다. 위에서 언급한 계층 구조에서 <code class="language-plaintext highlighter-rouge">props</code>로 데이터를 전달해주는 과정을 생략할 수 있게 된다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>“상태 관리 툴이 반드시 필요할까요?” 라는 질문에는 “아닙니다” 라는 답변을 할 수 있다. 상태 관리 툴이 없어도 충분히 규모있는 애플리케이션을 만들 수는 있다. 그러므로 장단점을 분명히 인지하고 상태 관리 툴을 써야한다.</p>
+
+    <p>그리고 상태 관리의 기본기라고 볼 수 있는 “상태가 어디에 위치해야 하는지” 라는 개념을 인지하는게 우선이 되어야 한다.</p>
+  </li>
+</ul>
+
+<h4 id="1-3-redux">1-3. Redux</h4>
+<ul>
+  <li>
+    <p>React에서는 상태와 속성(props)을 이용한 컴포넌트 단위 개발 아키텍처를 배웠다면, Redux에서는 컴포넌트와 상태를 분리하여 관리한다. 상태 변경 로직을 컴포넌트로부터 분리하면, 표현에 집중한 보다 단순한 함수 컴포넌트를 만들 수 있게 된다.</p>
+
+    <p>단순히 말하자면 React에서는 상태를 <code class="language-plaintext highlighter-rouge">Store</code>라는 별도의 오직하나뿐인 장소에서 관리하게되며, 해당 장소에서 <strong>상태</strong>를 관리하게 된다. 그렇다면 해당 <strong>상태</strong>들은 어떻게 변경해야할까? 간단히 말하자면 <code class="language-plaintext highlighter-rouge">Action</code>을 통해서 변화를 감지하며, <code class="language-plaintext highlighter-rouge">Dispatch</code>메서드를 통하여 <code class="language-plaintext highlighter-rouge">Action</code>을 전달한다. <code class="language-plaintext highlighter-rouge">Store</code>에 들어가기전 <code class="language-plaintext highlighter-rouge">Reducer</code>를 거쳐서 현재의 상태(State)와 전달된 액션이 결합되어 새로운 상태로 변경되게 된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/135987274-e15321a0-4b43-4ed0-a4f8-07fcdda3f4f4.gif" alt="redux-data-flow" /></p>
+
+    <p>잘 정리된 <a href="https://kyun2da.dev/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/Redux-%EC%A0%95%EB%A6%AC/#%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-redux-%EC%82%AC%EC%9A%A9%EB%B2%95" target="_blank">블로그</a>가 있어서 해당 링크 참조로 Redux 설명은 대체하겠다.</p>
+    <h4 id="1-4-cmarket-hooks-버전">1-4. Cmarket (Hooks 버전)</h4>
+    <p><img src="https://user-images.githubusercontent.com/83164003/135710533-10497531-2270-4c8a-a2d5-7dd8b72b4caf.jpg" alt="컴포넌트 구조" /></p>
+  </li>
+  <li>컴포넌트 구조를 감안하여 상태의 위치를 고려하여 코딩하였다.
+    <ul>
+      <li>전역상태(<code class="language-plaintext highlighter-rouge">items</code>, <code class="language-plaintext highlighter-rouge">cartItems</code>)는 최상단 컴포넌트 App 컴포넌트에서 관리.</li>
+      <li>Item 컴포넌트에서 <code class="language-plaintext highlighter-rouge">items</code> 상태를 다루기 위해서는 App - ItemListContainer - Item 컴포넌트까지 상태를 내려줘야 하는 <code class="language-plaintext highlighter-rouge">props drilling</code> 현상 발생</li>
+    </ul>
+  </li>
+  <li>참조 : <a href="https://github.com/JH8459/im-sprint-cmarket-hooks" target="_blank">Github</a> 링크</li>
+</ul>
+
+<h4 id="1-5-cmarket-redux-버전">1-5. Cmarket (Redux 버전)</h4>
+<ul>
+  <li>참조 : <a href="https://github.com/JH8459/im-sprint-cmarket-redux" target="_blank">Github</a> 링크</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-클라이언트-빌드배포">2. 클라이언트 빌드&amp;배포</h3>
+<ul>
+  <li></li>
+</ul>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li></li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>HA2</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#codestates" class="page__taxonomy-item p-category" rel="tag">CodeStates</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-09-28T00:00:00+09:00">September 28, 2021</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/21.09.17.algorithm2/" class="pagination--pager" title="[Algorithm] TOY 19. LPS (작성중)
+">이전</a>
+    
+    
+      <a href="/algorithm/21.09.30.algorithm/" class="pagination--pager" title="[Algorithm] TOY 21. inequalityNumber
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/devtool/21.11.08.DevTool/" rel="permalink">[Git] Minimal mistakes Sidebar Category (작성중)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-08T00:00:00+09:00">November 8, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Git] Minimal mistakes Sidebar Category
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codestates/21.11.06/" rel="permalink">[Retrospect] 21.11.06 HA3 기수이동
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-06T00:00:00+09:00">November 6, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect] 21.11.06 HA3 기수이동
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.04.algorithm/" rel="permalink">[Algorithm] TOY 44. TSP
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-04T00:00:00+09:00">November 4, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] TOY 44. TSP (travelling salesman problem)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.03.algorithm/" rel="permalink">[Algorithm] TOY 43. shadowOfPapers
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-03T00:00:00+09:00">November 3, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] TOY 43. shadowOfPapers
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 JH8459. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/codestates/21.09.28.til/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/codestates/21.09.28.til"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jh8459.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

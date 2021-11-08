@@ -1,6 +1,9 @@
 ---
-title: "Posts by Year"
+title: Posts by Year
 layout: year
-permalink: /year/
+permalink: "/year/"
 author_profile: true
+sidebar:
+  nav: docs
 ---
+

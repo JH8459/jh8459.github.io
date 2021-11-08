@@ -266,9 +266,6 @@ category_archive:
 year_archive:
   type: liquid
   path: /year/
-about_archive:
-  type: liquid
-  path: /about/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -299,9 +296,11 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "docs"
       show_date: true
       comments: true
-      share: false
+      # share: false
       related: true
       toc: true
       toc_sticky: true
@@ -314,5 +313,15 @@ defaults:
       path: ""
       type: pages
     values:
+      sidebar:
+        nav: "docs"
       layout: single
       author_profile: true
+
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "docs"

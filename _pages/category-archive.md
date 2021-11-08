@@ -1,6 +1,9 @@
 ---
-title: "Category"
+title: Category
 layout: category
-permalink: /category/
+permalink: "/category/"
 author_profile: true
+sidebar:
+  nav: docs
 ---
+
