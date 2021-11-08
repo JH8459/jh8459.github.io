@@ -1,0 +1,81 @@
+I"%<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="TOY" /></p>
+<h2 id="toy-14-rotatedarraysearch">TOY 14. rotatedArraySearch</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">부분적으로 오름차순 정렬</code>*된 정수의 배열(<code class="language-plaintext highlighter-rouge">rotated</code>)과 정수(<code class="language-plaintext highlighter-rouge">target</code>)를 입력받아 target의 인덱스를 리턴해야 합니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">부분적으로 정렬된 배열</code>: 배열을 왼쪽 혹은 오른쪽으로 0칸 이상 순환 이동할 경우 완전히 정렬되는 배열</li>
+  <li>예시: <code class="language-plaintext highlighter-rouge">[4, 5, 6, 0, 1, 2, 3]</code>은 왼쪽으로 3칸 또는 오른쪽으로 4칸 순환 이동할 경우 완전히 정렬됩니다.</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--rotated">인자 1 : rotated</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">rotated[i]</code>는 정수</li>
+</ul>
+
+<h4 id="인자-2--target">인자 2 : target</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rotated</code>에 중복된 요소는 없습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">target</code>이 없는 경우, <code class="language-plaintext highlighter-rouge">-1</code>을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">rotatedArraySearch</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 5</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">rotatedArraySearch</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; -1</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+
+<ul>
+  <li>단순히 처음부터 끝까지 찾아보는 방법(<code class="language-plaintext highlighter-rouge">O(N)</code>) 대신 다른 방법(<code class="language-plaintext highlighter-rouge">O(logN)</code>)을 탐구해 보세요.</li>
+</ul>
+
+<h3 id="힌트">힌트</h3>
+<hr />
+
+<ul>
+  <li>이진 탐색(binary search)을 약간 변형하여 해결합니다.</li>
+</ul>
+
+<h2 id="toy-14-solution">TOY 14. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<h3 id="reference-code">Reference Code</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li></li>
+</ul>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 15. primePassword</li>
+</ul>
+:ET

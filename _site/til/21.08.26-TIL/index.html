@@ -1,0 +1,904 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류 | JHLog</title>
+<meta name="description" content="[TIL] 1. 자료구조 2. 자료구조의 종류">
+
+
+  <meta name="author" content="JH8459">
+  
+  <meta property="article:author" content="JH8459">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류">
+<meta property="og:url" content="/til/21.08.26-TIL/">
+
+
+  <meta property="og:description" content="[TIL] 1. 자료구조 2. 자료구조의 종류">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-08-26T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/til/21.08.26-TIL/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH8459",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming study log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/">Year</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH8459" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">JH8459</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><em>불안감 떨쳐내기, 후회없이 하루 보내기</em><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">CodeStates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+            <li><a href="/category/#toy">TOY</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dev Tool</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#git">Git</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c"><span class="nav__sub-title">About</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류">
+    <meta itemprop="description" content="[TIL] 1. 자료구조 2. 자료구조의 종류">
+    <meta itemprop="datePublished" content="2021-08-26T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/til/21.08.26-TIL/" class="u-url" itemprop="url">[TIL] 21.08.26 / 1. 자료구조 2. 자료구조의 종류
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-26T00:00:00+09:00">August 26, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-자료구조란">1. 자료구조란?</a></li><li><a href="#2-자료구조의-종류">2. 자료구조의 종류</a><ul><li><a href="#2-1-stack">2-1. Stack</a></li><li><a href="#2-2-queue">2-2. Queue</a></li><li><a href="#2-3-graph">2-3. Graph</a></li><li><a href="#2-4-tree">2-4. Tree</a></li></ul></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-자료구조란">1. 자료구조란?</h3>
+<ul>
+  <li>자료구조란 여러 데이터들의 묶음을 저장하고, 사용하는 방법을 정의한 것.  데이터에 편리하게 접근하고 변경하기 위해 데이터를 저장하거나 조직을 효율적으로 해야한다. 그러한 행위로 분류된 데이터를 자료구조라 한다. <del>( + 알고리즘은 그 저장된 데이터를 처리하는 과정이다.)</del></li>
+</ul>
+
+<h3 id="2-자료구조의-종류">2. 자료구조의 종류</h3>
+<h4 id="2-1-stack">2-1. Stack</h4>
+<ul>
+  <li>스택(Stack)은 쌓다, 쌓이다, 포개지다란 뜻을 내포한다. 직역 그대로 <strong>데이터(data)를 순차적으로 쌓는 구조</strong>이다.</li>
+  <li>순차적으로 쌓다보니, 가장 먼저 들어간 자료는 가장 나중에 나올 수 있다. 입력과 출력이 하나의 방향으로 이루어지는 제한적 접근에 있다.</li>
+  <li>
+    <p>이러한 자료구조의 정책을 <strong>LIFO(Last In First Out) 혹은 FILO(First In Last Out)</strong> 이라 일컫는다</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/130885861-3ad5f731-7487-42c4-a027-ef7b4219e0e4.png" alt="stack" /></p>
+
+    <p>위 사진 처럼 push(), pop()을 쓰는 배열이 대표적인 <code class="language-plaintext highlighter-rouge">Stack</code> 자료구조이다.</p>
+  </li>
+  <li>대표적으로 활용되는 예시는 브라우저의 뒤로 가기, 앞으로 가기 기능 &amp; 엑셀 등 문서작업에서 되돌리기 등의 기능을 구현 할 때 자료구조 <code class="language-plaintext highlighter-rouge">Stack</code>의 활용이 필요하다.</li>
+</ul>
+
+<h4 id="2-2-queue">2-2. Queue</h4>
+<ul>
+  <li>
+    <p>큐(Queue)는 줄을 서서 기다리다, 대기 행렬 이라는 뜻을 내포한다. <code class="language-plaintext highlighter-rouge">Stack</code>과는 반대되는 개념으로, 먼저 들어간 데이터가 먼저 처리되는 <strong>FIFO(First In First Out) 혹은 LILO(Last In Last Out)</strong> 을 특징으로 가지고 있는다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/130886677-ceb7346b-9da1-4dae-854b-58bdf80624f4.png" alt="queue" /></p>
+
+    <p>위 사진 처럼 자료구조 <code class="language-plaintext highlighter-rouge">Queue</code>는 데이터가 입력된 순서대로 처리할 때 주로 사용한다.</p>
+  </li>
+  <li>
+    <p>대표적으로 활용되는 예시는 프린터가 출력되는 인쇄작업 Queue에 사용된다. 자료구조 <code class="language-plaintext highlighter-rouge">Queue</code>를 활용함으로써 프린터는 인쇄작업 Queue에 들어온 문서를 순서대로 인쇄할수있다.</p>
+
+    <p>혹은 컴퓨터 장치들 사이에서 데이터를 주고 받을 때, 각 장치 사이에 존재하는 <strong>속도의 차이</strong>나 <strong>시간 차이</strong>를 극복하기 위해 임시 기억 장치의 자료구조로 <code class="language-plaintext highlighter-rouge">Queue</code>를 사용한다. 이를 <strong>버퍼(buffer)</strong> 라 일컫는다.</p>
+  </li>
+</ul>
+
+<h4 id="2-3-graph">2-3. Graph</h4>
+<ul>
+  <li>그래프는 여러개의 점들이 서로 복잡하게 연결되어 있는 관계를 표현한 자료구조이다. 직접적인 관계가 있는 경우 두 점 사이를 이어주는 선이 있겠으며, 간접적인 관계라면 몇 개의 점과 선에 걸쳐 이어진다.</li>
+  <li>
+    <p>그래프에서 하나의 점을 정점(vertex)이라고 표현하고, 하나의 선은 간선(edge) 이라고 한다.</p>
+
+    <p><img width="650" alt="graph" src="https://user-images.githubusercontent.com/83164003/130889135-35c41544-836e-412b-bdbf-83aca057d872.png" /></p>
+
+    <p>정점과 정점사이에 간선이 존재하는데, 이 간선은 정점 사이의 관계를 나타낸다. 정점 사이에 직접적, 간적적으로 간선이 없는 경우를 그래프에선 “관계가 없다” 라고 표현한다.</p>
+  </li>
+  <li>
+    <p>일상생활에선 매일같이 자료구조 그래프를 사용하고 있다. 포털 사이트의 검색 엔진, SNS,  네비게이션(길찾기) 등 에서 사용되는 자료구조이다.</p>
+
+    <p>간단한 예를 들자면,</p>
+    <blockquote>
+      <p>서울에 사는 A는 부산에 사는 B와 오랜 친구 사이입니다. 이번 주말에 부산에서 열리는 B의 결혼식에 참석하기 위해 A는 차를 몰고 부산으로 가려고 합니다. 대전에 살고 있는 친구 C도 B의 결혼식에 참석을 한다고 하여, A는 서울에서 출발하여 대전에서 C를 태워 부산으로 이동을 하려고 합니다.</p>
+    </blockquote>
+
+    <p>위 예시에서는 3개의 정점이 존재한다(A,B,C). 각각 서울,부산,대전을 그래프의 정점으로 삼는다면, 이 3개의 정점은 서로 이어지는 간선(관계)를 가지고 있다.</p>
+
+    <blockquote>
+      <p>정점 : 서울(A), 대전(B), 부산(C)</p>
+
+      <p>간선 : 서울-대전, 대전-부산, 부산-서울</p>
+    </blockquote>
+
+    <p>이를 간단한 JS 객체를 이용하여 비유한다면 아래와 같다.</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isConnected</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">seoul</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="na">busan</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">daejeon</span> <span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="nl">daejeon</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="na">seoul</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">busan</span> <span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="nl">busan</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="na">seoul</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">daejeon</span> <span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isConnected</span><span class="p">.</span><span class="nx">seoul</span><span class="p">.</span><span class="nx">busan</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div>    </div>
+    <p>현재는 특정 도시가 이어져 있다는 무향그래프라는 노드3개와 간선 3개라는 사실만 알려줄 뿐, 그 외의 정보를 포함하고 있진 않다. 이러한 그래프를 <strong>비가중치 그래프</strong>라 한다.</p>
+  </li>
+  <li>그래프를 학습하기에있어, 알아둬야 할 용어들이 있다. 간단하게 살펴보면,
+    <ol>
+      <li><strong>무(방)향그래프(underected graph)</strong> : 네비게이션(길찾기)에서 보이는 그래프들은 무향 그래프이다. 서울에서 부산을 갈 수 있듯, 반대로 부산에서 서울로 올 수도 있다. 반대 개념인 <strong>단방향 그래프(directed graph)</strong> 로 구현 된다면,  한쪽 방향으로만 가능할 것이다. 예를 들면 도로의 일방통행은 단방향 그래프로 길찾기를 구현 할 수 있다.</li>
+      <li><strong>진입차수(in-degree) / 진출차수(out-degree)</strong>: 한 정점에 진입(들어오는 간선)하고 진출(나가는 간선)하는 간선이 몇 개인지 나타내는 용어이다.</li>
+      <li><strong>인접(adjacency)</strong>: 두 정점간에 간선이 직접 이어져 있다면 이 두 정점은 인접한 정점이다.</li>
+      <li><strong>자기 루프(self loop)</strong>: 정점에서 진출하는 간선이 곧바로 자기 자신에게 진입하는 경우 자기 루프를 가졌다 라고 표현하며, 다른 정점을 거치지 않는다는 것이 특징이다.</li>
+      <li><strong>사이클(cycle)</strong>: 한 정점에서 출발하여 다시 해당 정점으로 돌아갈 수 있다면 사이클이 있다고 표현한다.</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>인접</strong>은 위에서 말했듯이 직접 이어져 있는 정점의 관계를 나타낸다. 표현 방식을 수식화 할 땐 아래와 같은 방법으로 표현한다.</p>
+
+    <ol>
+      <li>인접 행렬 (adjacency matrix) : 그래프에서 정점(vertext)들이 어떻게 연결되었는지 나타내는 행렬이다.
+        <ul>
+          <li>2차원 배열로 작성하게 되며, 정점들 사이에 간선이 존재하는지 여부를 나타내거나, 가중치가 있는 그래프인 경우에는 정점관의 관계에서 의미 있는 값을 저장한다.</li>
+        </ul>
+
+        <p><img src="https://user-images.githubusercontent.com/83164003/130991111-43c899d0-f7df-498d-9156-188680d98df5.png" alt="인접행렬" />
+     <a href="http://stoimen.com/2012/08/31/computer-algorithms-graphs-and-their-representation/" target="_blank">참조 : http://stoimen.com </a></p>
+      </li>
+      <li>인접 리스트 (adjacency list) : 각 정점이 어떤 정점과 인접한지를 리스트의 형태로 표현한다. 각 정점마다 하나의 리스트를 가지고 있으며, 이 리스트는 자신과 인접한 다른 정점을 담는다.
+        <ul>
+          <li>
+            <p>인접 행렬은 연결 가능한 모든 경우의 수를 저장하기 때문에 상대적으로 메모리를 많이 차지하므로 메모리의 효율성을 위한 작업이 필요할땐 인접리스트가 효율적이다.</p>
+
+            <p><img src="https://user-images.githubusercontent.com/83164003/130992153-24b024de-ab1a-4825-ac85-2edb4827ea9d.png" alt="인접리스트" /></p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="2-4-tree">2-4. Tree</h4>
+<ul>
+  <li>
+    <p>자료구조 <code class="language-plaintext highlighter-rouge">Tree</code>는 이름 그대로 나무의 형태를 가지고 있다. 엄밀히 말하면 그래프의 여러 구조중 무방향 그래프의 한 구조라 말할수있다.</p>
+
+    <p>또한, 데이터를 순차적으로 나열시킨 선형 구조가 아니라, 하나의 데이터 뒤에 여러 개의 데이터가 존재할 수 있는 비선형 구조이다. 그리고 루트 노드를 기준으로 아래로만 층층이 뻗어나가기 때문에  <strong>계층</strong>적으로 표현이 되며 그래프와 달리 사이클은 존재하지 않는다.</p>
+  </li>
+  <li>
+    <p>트리를 학습하기에있어, 알아둬야 할 용어들이 있다. 간단하게 살펴보면,</p>
+    <ol>
+      <li><strong>노드(Node)</strong> : 트리 구조를 이루는 모든 개별 데이터</li>
+      <li><strong>루트(Root)</strong> : 트리 구조의 시작점이 되는 노드</li>
+      <li><strong>부모 노드(Parent node)</strong> : 두 노드가 상하관계로 연결되어 있을 때 상대적으로 루트에서 가까운 노드</li>
+      <li><strong>자식 노드(Child node)</strong> : 두 노드가 상하관계로 연결되어 있을 때 상대적으로 루트에서 먼 노드</li>
+      <li><strong>리프(Leaf)</strong> : 트리 구조의 끝지점이고, 자식 노드가 없는 노드</li>
+    </ol>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/130994663-d4c060c6-b6b0-4fbc-9568-a6ad0ae51ad7.png" alt="tree" /></p>
+
+<ul>
+  <li>
+    <p>트리 구조는 루트(Root) 라는 하나의 꼭짓점 데이터를 시작으로 여러 개의 데이터를 간선(edge)으로 연결한다. 각 데이터를 정점이 아닌 노드(Node)라고 하며, 두 개의 노드가 상하계층으로 연결되면 부모/자식 관계를 가지게 된다. 위 그림에서 A는 B,C,D의 부모 노드(Parent Node)이면서 루트(Root)이며, E와 F는 B의 자식 노드(Child Node)이다. 자식이 없는 C,D,E,F 노드는 나무의 잎과 같다고 하여 리프 노드(leaf Node)라고 부른다.</p>
+  </li>
+  <li>자료구조 <code class="language-plaintext highlighter-rouge">Tree</code>는 계층으로 구현되기 때문에 깊이와 높이, 레벨 등을 측정할 수 있다.
+    <ol>
+      <li><strong>깊이(depth)</strong> : 트리 구조에서는 루트로부터 하위 계층의 특정 노드까지의 깊이(depth)를 표현할 수 있다. 쉽게 생각하면 루트에서 현재노드 사이까지의 간선의 갯수라 생각하면 간단하다. 위 그림에서 루트 A의 depth는 0이고, B,C,D의 깊이는 1이다. 그리고 E와 F의 깊이는 2가 된다.</li>
+      <li><strong>레벨(level)</strong> : 트리 구조에서 같은 깊이를 가지고 있는 노드를 묶어서 레벨(level)로 표현한다다. depth가 0인 루트 A의 level은 1이며, depth가 1인 B,C,D의 level은 2이다. 그리고 E와 F의 레벨은 3이 된다. 또한 같은 레벨에 나란히 있는 노드를 <strong>형제 노드(sibling Node)</strong> 라 부른다.</li>
+      <li><strong>높이(height)</strong> :  루트부터 가장 경로가 긴 노드까지의 간선의 갯수가 높이가 된다.</li>
+    </ol>
+  </li>
+  <li>
+    <p>마지막으로 트리는 큰 트리 내부에 <strong>트리 구조를 갖춘 작은 트리를 내포한다.</strong> 이는 <strong>서브 트리</strong> 라 부르며,  해당 서브 트리는 잘게 쪼개어 하나의 노드를 가지기 전까지는 모두 또 다시 서브 트리를 갖게된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/131003247-8e07d192-6792-4fa8-b53d-3b4e4afdc753.jpg" alt="서브 트리" /></p>
+
+    <p>즉, 한개 이상의 노드를 가진 트리는 재귀적인 구조를 지닌다.</p>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>
+    <p>자료구조.. 개념은 어렵진 않다. 효율적인 데이터 구조는 효율적인 코드를 완성시키는 첫 걸음이라 생각된다. 지금이야 솔직히 말하면 별로 필요 없는듯 보인다..</p>
+
+    <p><del>지금은 코린이 수준의 코드이기 때문에.. ,장난감 집은 쉽게 짓고 대충 만들어도 완성되지만 고층 아파트는 구조 설계가 필수적이다!</del></p>
+  </li>
+  <li>
+    <p>기초학문 느낌이 물씬 난다. 구조적인 개념이 많이 등장되기 때문에, 들으면 생소한 느낌은 없다.  다만, 이를 어떻게 실제 코딩에 접목을 하느냐가 굉장히 난감하다.. 객체로 선입선출되는 자료구조를 어떻게..? 이런 느낌이다.</p>
+
+    <p>아직 생소하다보니 겪는 문제라 생각든다. 덩치가 큰 개발이 필요한 경우. 개발진행 전 자료구조를 꼭 생각하고 개발에 진행해야 되겠다는 생각은 든다.</p>
+
+    <p>ex ) 탐색기 같은 프로그래밍 설계가 필요하다면 트리구조를 먼저 떠올린다. 등등..</p>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[JS/Node] 비동기</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-08-26T00:00:00+09:00">August 26, 2021</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/21.08.23-TIL/" class="pagination--pager" title="[TIL] 21.08.23 / 1. 클래스를 이용한 모듈화 2. Prototype
+">이전</a>
+    
+    
+      <a href="/til/21.09.01-TIL/" class="pagination--pager" title="[TIL] 21.09.01 / 1. 비동기 처리 2. Node.js
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/21.11.08.DevTool/" rel="permalink">[Git] Minimal mistakes Sidebar Category (작성중)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-08T00:00:00+09:00">November 8, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Git] Minimal mistakes Sidebar Category
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospect/21.11.06/" rel="permalink">[Retrospect] 21.11.06 HA3 기수이동
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-06T00:00:00+09:00">November 6, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect] 21.11.06 HA3 기수이동
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/toy/21.11.04.algorithm/" rel="permalink">[TOY] TOY 44. TSP
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-04T00:00:00+09:00">November 4, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TOY] TOY 44. TSP (travelling salesman problem)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/toy/21.11.03.algorithm/" rel="permalink">[TOY] TOY 43. shadowOfPapers
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-03T00:00:00+09:00">November 3, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TOY] TOY 43. shadowOfPapers
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 JH8459. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/til/21.08.26-TIL/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/21.08.26 TIL"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jh8459.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
