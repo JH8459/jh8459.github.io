@@ -207,17 +207,12 @@ defaults:
       path: ""
       type: posts
     values:
-      sidebar:
-          nav: "posts"
-      layout: single
-      author_profile: true
+      # layout: single
+      # author_profile: true
       # read_time: true
       comments: true
       # share: true
       # related: true
-      toc: true
-      toc_sticky: true
-      toc_label: "Contents"
   # _pages
   - scope:
       path: "_pages"
@@ -230,13 +225,13 @@ defaults:
       path: ""
       type: docs
     values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
       sidebar:
         nav: "docs"
+      # layout: single
+      # read_time: false
+      # author_profile: false
+      # share: false
+      # comments: false
   # _recipes
   - scope:
       path: ""
