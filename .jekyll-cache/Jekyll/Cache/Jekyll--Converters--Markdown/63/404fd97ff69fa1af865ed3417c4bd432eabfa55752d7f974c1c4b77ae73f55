@@ -1,0 +1,136 @@
+I"�0<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-21-inequalitynumber">TOY 21. inequalityNumber</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>아래와 같은 과정을 거쳐 부등호 수(inequalityNumber)를 만들 수 있습니다.</p>
+<ul>
+  <li>최대 9개의 부등호(<code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>)가 주어집니다.</li>
+  <li>부등호의 좌우에는 0부터 9사이의 숫자가 한 번씩만 들어가야 합니다.</li>
+  <li>부등호를 만족하는 숫자의 조합을 차례대로 이어 붙여 만든 정수를 부등호 수라고 한다.
+부등호 기호들을 입력받아 부등호를 만족하는 최대 부등호 수와 최소 부등호 수의 차이를 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1-signs">인자 1: signs</h4>
+<ul>
+  <li>배열을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">string</code> 타입의 공백을 사이에 둔 부등호 기호들</li>
+  <li><code class="language-plaintext highlighter-rouge">signs.length</code>는 17 이하 (최대 9개의 부등호 기호)</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>첫 자리가 0인 경우도 부등호 수에 포함되어야 합니다.</li>
+  <li>모든 입력에 답은 항상 존재합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">placesToVisit</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">TSP</span><span class="p">(</span><span class="nx">placesToVisit</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 423</span>
+<span class="c1">// 방문 순서: [0, 0], [1, 1], [2, 2], [1, 3]</span>
+
+<span class="nx">placesToVisit</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">TSP</span><span class="p">(</span><span class="nx">placesToVisit</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 940</span>
+<span class="c1">// 방문 순서: [-3, 3], [1, 3], [2, 3], [3, 3], [0, 0]</span>
+
+</code></pre></div></div>
+<h3 id="advanced">Advanced</h3>
+<hr />
+
+<ul>
+  <li>아래 내용에 유념하여 TSP에 대해 학습해 보세요.
+    <ul>
+      <li>TSP 처럼 모든 꼭지점을 한 번씩 지나는 경로를 해밀턴 경로(Hamiltonian path)라고 합니다.</li>
+      <li>TSP는 조합 최적화 문제의 일종으로 NP-hard라는 것이 증명되었습니다.</li>
+      <li>완전탐색(exhaustive search) 외의 방법이 존재하지 않습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="toy-44-solution">TOY 44. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 좌표평면 위의 두 점 사이의 거리를 계산하는 함수입니다.</span>
+<span class="kd">function</span> <span class="nx">calculateDistance</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">yDiffSquared</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">xDiffSquared</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">dist</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">yDiffSquared</span> <span class="o">+</span> <span class="nx">xDiffSquared</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">dist</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">TSP</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">places</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">currentMinDist</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_VALUE</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">LENGTH</span> <span class="o">=</span> <span class="nx">places</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">traverse</span><span class="p">(</span><span class="nx">lastVisited</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">totalDist</span><span class="p">,</span> <span class="nx">visitNum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">visitNum</span> <span class="o">===</span> <span class="nx">LENGTH</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">currentMinDist</span> <span class="o">&gt;</span> <span class="nx">totalDist</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">currentMinDist</span> <span class="o">=</span> <span class="nx">totalDist</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">visited</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 아직 방문하지 않은 도시와</span>
+        <span class="c1">// 마지막으로 방문한 도시와의 거리를 구한다.</span>
+        <span class="kd">const</span> <span class="nx">distToNext</span> <span class="o">=</span> <span class="nx">calculateDistance</span><span class="p">(</span><span class="nx">places</span><span class="p">[</span><span class="nx">lastVisited</span><span class="p">],</span> <span class="nx">places</span><span class="p">[</span><span class="nx">idx</span><span class="p">]);</span>
+        <span class="nx">visited</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">traverse</span><span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="nx">totalDist</span> <span class="o">+</span> <span class="nx">distToNext</span><span class="p">,</span> <span class="nx">visitNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">visited</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 각 도시의 현재 방문 여부를 관리하는 배열</span>
+  <span class="kd">const</span> <span class="nx">visited</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">LENGTH</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="nx">places</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">_</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 각 도시에서 출발하는 경우를 구분한다.</span>
+    <span class="nx">visited</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">traverse</span><span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">visited</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">visited</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">currentMinDist</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>오늘 오후부터 <strong>HA3</strong> 시작이다. 이후 프로젝트 진행 예정이므로, 당분간 TOY 알고리즘은 미뤄 둘 예정이다.</li>
+</ul>
+:ET

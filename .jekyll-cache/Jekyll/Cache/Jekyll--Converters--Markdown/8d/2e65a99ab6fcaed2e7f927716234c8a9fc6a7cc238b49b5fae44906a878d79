@@ -1,0 +1,73 @@
+I"?<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-21-inequalitynumber">TOY 21. inequalityNumber</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>아래와 같은 과정을 거쳐 부등호 수(inequalityNumber)를 만들 수 있습니다.</p>
+<ul>
+  <li>최대 9개의 부등호(<code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>)가 주어집니다.</li>
+  <li>부등호의 좌우에는 0부터 9사이의 숫자가 한 번씩만 들어가야 합니다.</li>
+  <li>부등호를 만족하는 숫자의 조합을 차례대로 이어 붙여 만든 정수를 부등호 수라고 한다.
+부등호 기호들을 입력받아 부등호를 만족하는 최대 부등호 수와 최소 부등호 수의 차이를 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1-signs">인자 1: signs</h4>
+<ul>
+  <li>배열을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">string</code> 타입의 공백을 사이에 둔 부등호 기호들</li>
+  <li><code class="language-plaintext highlighter-rouge">signs.length</code>는 17 이하 (최대 9개의 부등호 기호)</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>첫 자리가 0인 경우도 부등호 수에 포함되어야 합니다.</li>
+  <li>모든 입력에 답은 항상 존재합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">llet</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">inequalityNumber</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 88 (89 - 01)</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">inequalityNumber</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt; &gt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 876 (897 - 021)</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">inequalityNumber</span><span class="p">(</span><span class="dl">'</span><span class="s1">&gt; &lt; &gt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 8,754 (9,786 - 1,032)</span>
+</code></pre></div></div>
+
+<h2 id="toy-21-solution">TOY 21. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>기수 이동 후 TOY를 다시 풀어보았다. (11.08)</p>
+
+<p>저번 Section3는 솔직히 TOY 를 스스로 풀어보기보다는 부족한 실력에 일정을 제대로 소화하지않아서 레퍼런스코드를 보고 이해하는데 급급하였다. <br />
+이번 일정에서는 TOY 문제를 조금 열심히 풀어볼예정이다.</p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 22. rotateMatrix (재풀이)</li>
+</ul>
+:ET
