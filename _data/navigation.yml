@@ -1,11 +1,11 @@
 # main links
 main:
-  - title: "카테고리"
+  - title: "Category"
     url: /category/
-  - title: "연도별 포스트"
+  - title: "Posts"
     url: /year/
-  - title: "소개"
-    url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
+  - title: "About"
+    url: <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c" target="_blank">
 
 docs:
   - title: "Category"
