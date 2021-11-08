@@ -1,4 +1,4 @@
-I"�
+I"�
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -15,8 +15,6 @@
               <a href="/category/">카테고리</a>
             </li><li class="masthead__menu-item">
               <a href="/year/">연도별 포스트</a>
-            </li><li class="masthead__menu-item">
-              <a href="/about/">소개</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
