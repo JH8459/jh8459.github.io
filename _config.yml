@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # 태마 색 설정 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise" 
+minimal_mistakes_skin    : "dark" # 태마 색 설정 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise" 
 
 # Site Settings
 locale                   : "ko-KR"
@@ -25,8 +25,8 @@ url                      : # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "JH8459/JH8459.github.com" # GitHub username/repo-name  
 teaser                   : # 홈페이지 기본 티져 이미지
-logo                     : "https://user-images.githubusercontent.com/83164003/127884969-165f0b3b-051d-4a26-8aca-ff0090ca3f77.png"  # 타이틀 옆에 작게 들어갈 이미지.
-masthead_title           : "Dev JH" # 홈페이지 최 상탄에 들어갈 타이틀
+logo                     : "https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png"  # 타이틀 옆에 작게 들어갈 이미지.
+masthead_title           : "JHLog" # 홈페이지 최 상탄에 들어갈 타이틀
 breadcrumbs              : true # 브래드크럼 사용 여부 true, false (default) , _data/ui-text.yml에 다국어 지원 가능합니다.
 words_per_minute         : 200 # 해당 포스트 읽는데 걸리는 시간을 계산하기 위해 대락 분당 읽는 수가 몇글자가 될지 적는 공간.
 
@@ -114,19 +114,19 @@ analytics:
 author:
   name             : "JH8459"
   avatar           : # 프로필 이미지
-  bio              : "*Success is no accident.*"
+  bio              : "*불안감 떨치기*"
   location         : "Republic of Korea"
   email            : "kk_ong2233@naver.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:kk_ong2233@naver.com
-    - label: "Website"
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: mailto:kk_ong2233@naver.com
+    - label: "Blog"
       icon: "fas fa-fw fa-link"
       url: "http://JH8459.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/JH8459"
@@ -135,7 +135,7 @@ author:
       url: "https://github.com/JH8459"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/jh8459_"
 
 # Site Footer
 footer:
@@ -158,9 +158,9 @@ footer:
     # - label: "Bitbucket"
     #   icon: "fab fa-fw fa-bitbucket"
     #   # url:
-    # - label: "Instagram"
-    #   icon: "fab fa-fw fa-instagram"
-    #   # url:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/jh8459_"
 
 
 # Reading Files
