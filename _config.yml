@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # 태마 색 설정 "air", "aqua", "contras
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "**JH8459**" # Meta 태그에 들어가는 영역 , masthead_title등이 없으면 기본값으로 나온다.
+title                    : "JHLog" # Meta 태그에 들어가는 영역 , masthead_title등이 없으면 기본값으로 나온다.
 title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 들어갑니다.
 subtitle                 : "programming study log" # 타이틀 아래에 나올 작은 글씨 
 name                     : "JH8459" # 맨 하단 이름 찍히는 영역
@@ -24,7 +24,7 @@ description              : # Meta 태그에 들어가는 영역
 url                      : # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "JH8459/JH8459.github.com" # GitHub username/repo-name  
-teaser                   : # 홈페이지 기본 티져 이미지
+teaser                   : "https://user-images.githubusercontent.com/83164003/140748980-e7e7c092-5f16-4d82-b707-14e06072db2a.png" # 홈페이지 기본 티져 이미지
 logo                     : # 타이틀 옆에 작게 들어갈 이미지.
 masthead_title           : "JHLog" # 홈페이지 최 상탄에 들어갈 타이틀
 breadcrumbs              : true # 브래드크럼 사용 여부 true, false (default) , _data/ui-text.yml에 다국어 지원 가능합니다.
