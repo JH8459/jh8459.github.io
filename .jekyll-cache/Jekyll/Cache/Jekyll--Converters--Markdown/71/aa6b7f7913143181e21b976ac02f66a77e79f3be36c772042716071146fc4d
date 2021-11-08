@@ -1,4 +1,4 @@
-I"C<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+I"6B<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="today-i-learnd">Today I Learnd</h2>
 <h3 id="1-http네트워크">1. HTTP/네트워크</h3>
 <h4 id="1-1-클라이언트-서버-아키텍처">1-1. 클라이언트-서버 아키텍처</h4>
@@ -32,9 +32,9 @@
   <li>
     <p>URL은 Uniform Resource Locator의 줄임말로, 네트워크 상에서 웹 페이지, 이미지, 동영상 등의 파일이 위치한 정보를 나타낸다.</p>
 
-    <p>URI는 Uniform Resource Identifier의 줄임말로, 일반적으로 URL의 기본 요소인 scheme, hosts, url-path에 더해 query, bookmark를 포함합니다.  브라우저의 검색창을 클릭하면 나타나는 주소가 URI이다. URI는 URL을 포함하는 상위개념이므로 <code class="language-plaintext highlighter-rouge">'URL은 URI다.'</code> 는 참이고, <code class="language-plaintext highlighter-rouge">'URI는 URL이다.'</code> 는 거짓이다.</p>
+    <p>URI는 Uniform Resource Identifier의 줄임말로, 일반적으로 URL의 기본 요소인 scheme, hosts, url-path에 더해 query, bookmark를 포함합니다.  브라우저의 검색창을 클릭하면 나타나는 주소가 URI이다. URI는 URL을 포함하는 상위개념이므로 <code class="highlighter-rouge">'URL은 URI다.'</code> 는 참이고, <code class="highlighter-rouge">'URI는 URL이다.'</code> 는 거짓이다.</p>
 
-    <p><code class="language-plaintext highlighter-rouge">http://www.google.com:80/search?q=JavaScript</code> 를 브라우저의 검색창에 입력하면, 구글에서 JavaScript를 검색한 결과가 나타난다. 이를 자세히 살펴 보면 다음과 같은 특징을 갖는다.</p>
+    <p><code class="highlighter-rouge">http://www.google.com:80/search?q=JavaScript</code> 를 브라우저의 검색창에 입력하면, 구글에서 JavaScript를 검색한 결과가 나타난다. 이를 자세히 살펴 보면 다음과 같은 특징을 갖는다.</p>
 
     <p><img src="https://user-images.githubusercontent.com/83164003/131773354-a25d92e9-1d99-4226-aab3-af8589ebc612.png" alt="스크린샷, 2021-09-02 11-46-06" /></p>
   </li>
@@ -103,7 +103,7 @@
   <li>
     <p><strong>헤더</strong> : 요청의 Headers는 기본 구조를 따른다. 대소문자 구분 없는 문자열과 콜론(:), 값을 입력합니다. 값은 헤더에 따라 다르다. 여러 종류의 헤더가 있으며 참조를 통해 확인하자. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers" target="_blank">참조 : MDN </a></p>
   </li>
-  <li><strong>바디</strong> : 요청의 본문은 HTTP messages 구조의 마지막에 위치한다. 하지만, 모든 요청에 body가 필요하지는 않는다. <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">HEAD</code>, <code class="language-plaintext highlighter-rouge">DELETE</code>, <code class="language-plaintext highlighter-rouge">OPTIONS</code>처럼 서버에 리소스를 요청하는 경우에는 본문이 필요하지 않는다. <code class="language-plaintext highlighter-rouge">POST</code>나 <code class="language-plaintext highlighter-rouge">PUT</code>과 같은 일부 요청은 존재하는 자원에 대한 변경 및 업데이트가 필요하므로 사용된다.</li>
+  <li><strong>바디</strong> : 요청의 본문은 HTTP messages 구조의 마지막에 위치한다. 하지만, 모든 요청에 body가 필요하지는 않는다. <code class="highlighter-rouge">GET</code>, <code class="highlighter-rouge">HEAD</code>, <code class="highlighter-rouge">DELETE</code>, <code class="highlighter-rouge">OPTIONS</code>처럼 서버에 리소스를 요청하는 경우에는 본문이 필요하지 않는다. <code class="highlighter-rouge">POST</code>나 <code class="highlighter-rouge">PUT</code>과 같은 일부 요청은 존재하는 자원에 대한 변경 및 업데이트가 필요하므로 사용된다.</li>
 </ul>
 
 <h4 id="1-7-http-응답responses">1-7. HTTP 응답(Responses)</h4>
@@ -145,9 +145,9 @@
 
     <p><img src="https://user-images.githubusercontent.com/83164003/131885519-a5955b8e-b07b-405d-977b-24f1bb2bc8e2.png" alt="ssr" /></p>
 
-    <p>브라우저가 서버의 URI로 <code class="language-plaintext highlighter-rouge">GET</code> 요청을 보내면, 서버는 정해진 웹 페이지 파일을 브라우저로 전송한다. 그리고 서버의 웹 페이지가 브라우저에 도착하면 완전히 렌더링하게 된다.</p>
+    <p>브라우저가 서버의 URI로 <code class="highlighter-rouge">GET</code> 요청을 보내면, 서버는 정해진 웹 페이지 파일을 브라우저로 전송한다. 그리고 서버의 웹 페이지가 브라우저에 도착하면 완전히 렌더링하게 된다.</p>
 
-    <p>서버에서 웹 페이지를 브라우저로 보내기 전에, 서버에서 완전히 렌더링했기 때문에 <code class="language-plaintext highlighter-rouge">Server Side Rendering</code> 이라고 한다.</p>
+    <p>서버에서 웹 페이지를 브라우저로 보내기 전에, 서버에서 완전히 렌더링했기 때문에 <code class="highlighter-rouge">Server Side Rendering</code> 이라고 한다.</p>
 
     <p>웹 페이지의 내용에 데이터베이스의 데이터가 필요한 경우, 서버는 데이터베이스의 데이터를 불러온 다음 웹 페이지를 완전히 렌더링 된 페이지로 변환한 후에 브라우저에 응답으로 보낸다. 웹 페이지를 살펴보던 사용자가, 브라우저의 다른 경로로 이동하면 브라우저가 다른 경로로 이동할 때마다 서버는 이 작업을 다시 수행한다.</p>
   </li>
@@ -195,7 +195,7 @@ CSR의 경우 HTML, CSS와 모든 스크립트들을 한 번에 불러온다. �
   <li>
     <p>HTTP 란, 서버-클라이언트간의 상호간에 협의 된 규칙으로 자원을 주고받는 일련의 과정들을 학습하였다. 약간… 구조적인 내용의 학습이었다. 문법이나 코드기술등이 아닌 원초적이고 근본적인 내용이랄까??</p>
 
-    <p>우선 오늘 학습내용을 최대한 요약하자면, <code class="language-plaintext highlighter-rouge">클라이언트는 특정된 "요청 메서드"로 서버에 자원을 요구하고, 서버는 해당 요청을 "응답 코드"가 포함된 응답으로 답변을 한다. 이때 상호간에 대화(?)는 프로토콜이라는 상호간에 규정된 규칙으로 이뤄진다.</code> 정도로 말할 수 있다.</p>
+    <p>우선 오늘 학습내용을 최대한 요약하자면, <code class="highlighter-rouge">클라이언트는 특정된 "요청 메서드"로 서버에 자원을 요구하고, 서버는 해당 요청을 "응답 코드"가 포함된 응답으로 답변을 한다. 이때 상호간에 대화(?)는 프로토콜이라는 상호간에 규정된 규칙으로 이뤄진다.</code> 정도로 말할 수 있다.</p>
 
     <p><img src="https://user-images.githubusercontent.com/83164003/131799035-50dbb592-e5a4-4f1d-aeb0-45f29ce6f41e.png" alt="http-full-structure" /></p>
 

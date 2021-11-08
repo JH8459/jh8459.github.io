@@ -217,7 +217,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">서울, 대한민국</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
         </li>
       
 
@@ -348,7 +348,7 @@
 <ul>
   <li>우선 상태란 컴포넌트 내부에서 변화되는 값이다. 특별히 프론트엔드 영역에서는 “동적으로 표현되는 데이터”라 부를 수 있다.</li>
   <li>
-    <p>우리는 컴포넌트 우선 개발 방식에 대해서 학습했었다 (21.09.07 TIL, React 데이터 흐름 참조) . 하향식 데이터 흐름에 따라 <code class="language-plaintext highlighter-rouge">props</code>를 이용해서 데이터를 전달하며 이는 단방향 데이터 흐름이다.</p>
+    <p>우리는 컴포넌트 우선 개발 방식에 대해서 학습했었다 (21.09.07 TIL, React 데이터 흐름 참조) . 하향식 데이터 흐름에 따라 <code class="highlighter-rouge">props</code>를 이용해서 데이터를 전달하며 이는 단방향 데이터 흐름이다.</p>
 
     <p>따라서 이 “상태”의 위치가 매우 중요하다. 우선 Javascript를 처음 배울 때 처럼 전역 변수와 지역 변수에 처럼 생각을 해보자.</p>
 
@@ -370,13 +370,13 @@
 
 <ul>
   <li>
-    <p>상태 관리에 대해 전반적으로 알아보았다. 위에서 말했듯이 상태를 전역상태로 관리하는 방식은 <strong>데이터 무결성</strong>을 위해 동일한 컴포넌트에서 관리해야한다. 다른 컴포넌트에서 이 전역상태에 접근하려면 <code class="language-plaintext highlighter-rouge">props</code>로 데이터를 전달해주어야만 하위 컴포넌트에서도 이 전역상태를 사용할 수 있다. 이 과정이 컴포넌트의 계층 단계가 많은 계층으로 이루어져있다면 매우 불편할 것이다.</p>
+    <p>상태 관리에 대해 전반적으로 알아보았다. 위에서 말했듯이 상태를 전역상태로 관리하는 방식은 <strong>데이터 무결성</strong>을 위해 동일한 컴포넌트에서 관리해야한다. 다른 컴포넌트에서 이 전역상태에 접근하려면 <code class="highlighter-rouge">props</code>로 데이터를 전달해주어야만 하위 컴포넌트에서도 이 전역상태를 사용할 수 있다. 이 과정이 컴포넌트의 계층 단계가 많은 계층으로 이루어져있다면 매우 불편할 것이다.</p>
 
     <p>그러한 불편함을 해소하기 위해 이를 도와주는 각종 툴들이 있다. 해당 툴들을 사용함으로써 얻는 이점은 다음과 같다.</p>
 
     <ul>
       <li>첫번째로는 앞서 꾸준히 언급한 전역 상태를 위한 저장소를 제공해 준다.</li>
-      <li>다음은, <code class="language-plaintext highlighter-rouge">props drilling</code> 문제를 해결 해준다. 첫번째 이점의 연장선이다. 위에서 언급한 계층 구조에서 <code class="language-plaintext highlighter-rouge">props</code>로 데이터를 전달해주는 과정을 생략할 수 있게 된다.</li>
+      <li>다음은, <code class="highlighter-rouge">props drilling</code> 문제를 해결 해준다. 첫번째 이점의 연장선이다. 위에서 언급한 계층 구조에서 <code class="highlighter-rouge">props</code>로 데이터를 전달해주는 과정을 생략할 수 있게 된다.</li>
     </ul>
   </li>
   <li>
@@ -391,7 +391,7 @@
   <li>
     <p>React에서는 상태와 속성(props)을 이용한 컴포넌트 단위 개발 아키텍처를 배웠다면, Redux에서는 컴포넌트와 상태를 분리하여 관리한다. 상태 변경 로직을 컴포넌트로부터 분리하면, 표현에 집중한 보다 단순한 함수 컴포넌트를 만들 수 있게 된다.</p>
 
-    <p>단순히 말하자면 React에서는 상태를 <code class="language-plaintext highlighter-rouge">Store</code>라는 별도의 오직하나뿐인 장소에서 관리하게되며, 해당 장소에서 <strong>상태</strong>를 관리하게 된다. 그렇다면 해당 <strong>상태</strong>들은 어떻게 변경해야할까? 간단히 말하자면 <code class="language-plaintext highlighter-rouge">Action</code>을 통해서 변화를 감지하며, <code class="language-plaintext highlighter-rouge">Dispatch</code>메서드를 통하여 <code class="language-plaintext highlighter-rouge">Action</code>을 전달한다. <code class="language-plaintext highlighter-rouge">Store</code>에 들어가기전 <code class="language-plaintext highlighter-rouge">Reducer</code>를 거쳐서 현재의 상태(State)와 전달된 액션이 결합되어 새로운 상태로 변경되게 된다.</p>
+    <p>단순히 말하자면 React에서는 상태를 <code class="highlighter-rouge">Store</code>라는 별도의 오직하나뿐인 장소에서 관리하게되며, 해당 장소에서 <strong>상태</strong>를 관리하게 된다. 그렇다면 해당 <strong>상태</strong>들은 어떻게 변경해야할까? 간단히 말하자면 <code class="highlighter-rouge">Action</code>을 통해서 변화를 감지하며, <code class="highlighter-rouge">Dispatch</code>메서드를 통하여 <code class="highlighter-rouge">Action</code>을 전달한다. <code class="highlighter-rouge">Store</code>에 들어가기전 <code class="highlighter-rouge">Reducer</code>를 거쳐서 현재의 상태(State)와 전달된 액션이 결합되어 새로운 상태로 변경되게 된다.</p>
 
     <p><img src="https://user-images.githubusercontent.com/83164003/135987274-e15321a0-4b43-4ed0-a4f8-07fcdda3f4f4.gif" alt="redux-data-flow" /></p>
 
@@ -401,8 +401,8 @@
   </li>
   <li>컴포넌트 구조를 감안하여 상태의 위치를 고려하여 코딩하였다.
     <ul>
-      <li>전역상태(<code class="language-plaintext highlighter-rouge">items</code>, <code class="language-plaintext highlighter-rouge">cartItems</code>)는 최상단 컴포넌트 App 컴포넌트에서 관리.</li>
-      <li>Item 컴포넌트에서 <code class="language-plaintext highlighter-rouge">items</code> 상태를 다루기 위해서는 App - ItemListContainer - Item 컴포넌트까지 상태를 내려줘야 하는 <code class="language-plaintext highlighter-rouge">props drilling</code> 현상 발생</li>
+      <li>전역상태(<code class="highlighter-rouge">items</code>, <code class="highlighter-rouge">cartItems</code>)는 최상단 컴포넌트 App 컴포넌트에서 관리.</li>
+      <li>Item 컴포넌트에서 <code class="highlighter-rouge">items</code> 상태를 다루기 위해서는 App - ItemListContainer - Item 컴포넌트까지 상태를 내려줘야 하는 <code class="highlighter-rouge">props drilling</code> 현상 발생</li>
     </ul>
   </li>
   <li>참조 : <a href="https://github.com/JH8459/im-sprint-cmarket-hooks" target="_blank">Github</a> 링크</li>

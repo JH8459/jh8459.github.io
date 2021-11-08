@@ -292,6 +292,14 @@ compress_html:
 
 # Defaults Post들에 적용될 기본 설정들
 defaults:
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "docs"
+
   # _posts
   - scope:
       path: ""

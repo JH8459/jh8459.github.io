@@ -217,7 +217,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">서울, 대한민국</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
         </li>
       
 
@@ -346,7 +346,7 @@
 
 <h4 id="1-1-객체-돌아보기">1-1. 객체 돌아보기</h4>
 <ul>
-  <li>객체는 자바스크립트의 8가지 자료형중 하나이다, 객체는 원시형(primitive) 자료형과 달리 다양한 데이터를 담을 수 있다. <code class="language-plaintext highlighter-rouge">{}</code> 중괄호를 이용하여 객체는 선언되며, 중괄호 안에는 <code class="language-plaintext highlighter-rouge">'키(key): 값(value)'</code> 쌍으로 구성된 <code class="language-plaintext highlighter-rouge">프로퍼티(property)</code>들이 속해있다.</li>
+  <li>객체는 자바스크립트의 8가지 자료형중 하나이다, 객체는 원시형(primitive) 자료형과 달리 다양한 데이터를 담을 수 있다. <code class="highlighter-rouge">{}</code> 중괄호를 이용하여 객체는 선언되며, 중괄호 안에는 <code class="highlighter-rouge">'키(key): 값(value)'</code> 쌍으로 구성된 <code class="highlighter-rouge">프로퍼티(property)</code>들이 속해있다.</li>
 </ul>
 
 <h4 id="1-2-메서드와-this">1-2. 메서드와 this</h4>
@@ -366,14 +366,14 @@
   <span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span>  <span class="c1">// "안녕하세요!"</span>
 </code></pre></div>    </div>
 
-    <p>이처럼 객체 프로퍼티에 할당된 함수를 메서드(method)라고 부른다. 위 예시에선 객체 <code class="language-plaintext highlighter-rouge">user</code>에 할당된 메서드는 <code class="language-plaintext highlighter-rouge">sayHi</code>이다.</p>
+    <p>이처럼 객체 프로퍼티에 할당된 함수를 메서드(method)라고 부른다. 위 예시에선 객체 <code class="highlighter-rouge">user</code>에 할당된 메서드는 <code class="highlighter-rouge">sayHi</code>이다.</p>
 
     <blockquote>
       <p>객체를 사용하여 개체를 표한하는 방식을  <strong>객체 지향 프로그래밍(object-oriented programming, OOP)</strong> 이라 부른다.</p>
     </blockquote>
   </li>
   <li>
-    <p>대부분의 메서드는 객체에 저장된 정보에 접근할 수 있어야 제 역할을 하게된다. 메서드 내부에서 <code class="language-plaintext highlighter-rouge">this</code> 키워드를 사용하면 <strong>메서드를 호출할 때 사용된 객체</strong>에 접근할 수 있게된다.</p>
+    <p>대부분의 메서드는 객체에 저장된 정보에 접근할 수 있어야 제 역할을 하게된다. 메서드 내부에서 <code class="highlighter-rouge">this</code> 키워드를 사용하면 <strong>메서드를 호출할 때 사용된 객체</strong>에 접근할 수 있게된다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">,</span>
@@ -386,17 +386,17 @@
   <span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span>  <span class="c1">// "안녕하세요! 30살 John 입니다."</span>
 </code></pre></div>    </div>
 
-    <p>위 처럼 <code class="language-plaintext highlighter-rouge">this</code>키워드를 통해 객체의 값에 접근할 수 있으며, 메서드를 보다 유효하게 사용할 수 있게된다.</p>
+    <p>위 처럼 <code class="highlighter-rouge">this</code>키워드를 통해 객체의 값에 접근할 수 있으며, 메서드를 보다 유효하게 사용할 수 있게된다.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">this</code>의 값은 런타임에 결정된다. 함수를 선언할 때 this를 사용할 수 있지만, 함수가 호출되기 전까지 this (undefined) 엔 값이 할당되지 않는다.</p>
+    <p><code class="highlighter-rouge">this</code>의 값은 런타임에 결정된다. 함수를 선언할 때 this를 사용할 수 있지만, 함수가 호출되기 전까지 this (undefined) 엔 값이 할당되지 않는다.</p>
 
     <blockquote>
       <p>메소드 호출 방식을 이용할 때에는 <strong>화살표 함수</strong>를 쓰지 않는다.  화살표 함수는 단순히 표현식을 짧게쓸수 있는 함수의 문법적 구조가 아닌 여러 특성을 갖는다.</p>
 
-      <p>그중 대표적인 특성중 하나는 “화살표 함수는 일반 함수와 달리 고유한 <code class="language-plaintext highlighter-rouge">this</code>를 가지지 않는다.”</p>
+      <p>그중 대표적인 특성중 하나는 “화살표 함수는 일반 함수와 달리 고유한 <code class="highlighter-rouge">this</code>를 가지지 않는다.”</p>
 
-      <p>그러므로 외부 함수에서 <code class="language-plaintext highlighter-rouge">this</code>값을 가져오게 되므로 외부 컨텍스트를 참조하게 되므로 얘기치 않는 상황이 발생될 가능성이 크다.</p>
+      <p>그러므로 외부 함수에서 <code class="highlighter-rouge">this</code>값을 가져오게 되므로 외부 컨텍스트를 참조하게 되므로 얘기치 않는 상황이 발생될 가능성이 크다.</p>
     </blockquote>
   </li>
 </ul>
@@ -433,7 +433,7 @@
     <p>여기서 보이는 함수는, 인스턴트를 만들때 실행되는 코드이며 객체지향 프로그래밍에서 <strong>생성자(constructor)</strong> 라고 부른다.  (참고로 생성자 함수는 return 값을 만들지 않으며 대문자로 시작하며 일반명사로 만들게 된다.)</p>
   </li>
   <li>
-    <p><em>인스턴스</em> 를 만들 때에는 <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용하게 된다.  즉시 생성자 함수가 실행되며 클래스의 설계를 꼭 닮은 새로운 객체, 즉 인스턴스가 할당된다.</p>
+    <p><em>인스턴스</em> 를 만들 때에는 <code class="highlighter-rouge">new</code> 키워드를 사용하게 된다.  즉시 생성자 함수가 실행되며 클래스의 설계를 꼭 닮은 새로운 객체, 즉 인스턴스가 할당된다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">let</span> <span class="nx">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="dl">'</span><span class="s1">huyndai</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">avante</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">black</span><span class="dl">'</span><span class="p">);</span>
   <span class="kd">let</span> <span class="nx">mini</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="dl">'</span><span class="s1">bmw</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mini</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">);</span>
@@ -441,7 +441,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>클래스 내부의 속성값들은 위와 같이 정의하며 클래스 내부에 메소드를 정의할 때에는 <code class="language-plaintext highlighter-rouge">prototype</code>이라는 키워드를 사용해야 정의할 수 있다.</p>
+    <p>클래스 내부의 속성값들은 위와 같이 정의하며 클래스 내부에 메소드를 정의할 때에는 <code class="highlighter-rouge">prototype</code>이라는 키워드를 사용해야 정의할 수 있다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ES5 문법</span>
 <span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* 속성정의 생략 */</span> <span class="p">}</span>
@@ -460,7 +460,7 @@
 <span class="p">}</span> 
 </code></pre></div>    </div>
 
-    <p>ES5 문법에서는 <code class="language-plaintext highlighter-rouge">prototype</code> 키워드를 사용해야 메소드를 정의할 수 있다. ES6에서는 생성자 함수와 함께 <code class="language-plaintext highlighter-rouge">class</code>키워드 안쪽에 묶어서 정의한다.</p>
+    <p>ES5 문법에서는 <code class="highlighter-rouge">prototype</code> 키워드를 사용해야 메소드를 정의할 수 있다. ES6에서는 생성자 함수와 함께 <code class="highlighter-rouge">class</code>키워드 안쪽에 묶어서 정의한다.</p>
 
     <p>정리하자면,</p>
 
@@ -533,7 +533,7 @@
     <p>위에서 언급한 내용이지만 다시 말하자면, 객체간 메소드와 속성을 주고받는 “상속”을 JS에서 구현하자면 프로토타입 체인을 사용하여야한다.</p>
 
     <ul>
-      <li>JS에서는 <code class="language-plaintext highlighter-rouge">extends</code>와 <code class="language-plaintext highlighter-rouge">super</code> 키워드를 이용해서 상속을 구현 하고 있다.</li>
+      <li>JS에서는 <code class="highlighter-rouge">extends</code>와 <code class="highlighter-rouge">super</code> 키워드를 이용해서 상속을 구현 하고 있다.</li>
     </ul>
 
     <p>프로토타입 체인을 JS에서 구현하기 위한 자세한 내용은 아래의 참고문서에서 확인.</p>

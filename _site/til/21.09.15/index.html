@@ -217,7 +217,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">서울, 대한민국</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
         </li>
       
 
@@ -372,7 +372,7 @@
 
     <p><img src="https://user-images.githubusercontent.com/83164003/134814581-960d8e3e-57c0-488b-8dd4-9294278560c1.png" alt="스크린샷, 2021-09-27 00-37-20" /></p>
 
-    <p>자바스크립트처럼 특정 속성(ex. <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">margin</code>, <code class="language-plaintext highlighter-rouge">width</code> 등)의 값(ex. <code class="language-plaintext highlighter-rouge">#ffffff</code>, <code class="language-plaintext highlighter-rouge">25rem</code>, <code class="language-plaintext highlighter-rouge">100px</code> 등)을 변수로 선언하여 필요한 곳에 선언된 변수를 적용할 수도 있고, 반복되는 코드를 한번의 선언으로 여러 곳에서 재사용할 수 있도록 해 주는 등의 기능을 가졌다.</p>
+    <p>자바스크립트처럼 특정 속성(ex. <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">margin</code>, <code class="highlighter-rouge">width</code> 등)의 값(ex. <code class="highlighter-rouge">#ffffff</code>, <code class="highlighter-rouge">25rem</code>, <code class="highlighter-rouge">100px</code> 등)을 변수로 선언하여 필요한 곳에 선언된 변수를 적용할 수도 있고, 반복되는 코드를 한번의 선언으로 여러 곳에서 재사용할 수 있도록 해 주는 등의 기능을 가졌다.</p>
   </li>
   <li>하지만 얼마 지나지 않아서 SASS가 ‘CSS의 구조화’를 해결해 주는 것의 장점보다 다른 단점들이 부각되며, BEM(Block, Element, Modifier로 구분하여 클래스명을 작성하는 방법론), OOCSS(Object Oriented CSS 중복을 최소화 하고 캡슐화를 원칙으로 하는 방법론), SMACSS(Scalable Modular Architecture CSS 범주화(categorization)로 패턴화 하고자 하는 방법론) 같은 새로운 CSS 방법론이 대두되었다. 각각의 장단점이 있으나 결국 세 방법론 모두 같은 지향점을 가지고 있다.
     <ul>
@@ -397,9 +397,9 @@
   <li>CSS-in-JS 관련 React 라이브러리 중에서 가장 인기 있는 Styled Component는 React 의 컴포넌트 기반 개발 환경에서 스타일링을 위한 CSS의 성능 향상을 위해 탄생하였다. 특징은 아래와 같다.
     <ul>
       <li><strong>Automatic critical CSS</strong> : Styled Component 는 화면에 어떤 컴포넌트가 렌더링 되었는지 추적해서 해당하는 컴포넌트에 대한 스타일을 자동으로 삽입한다. 따라서 코드를 적절히 분배해 놓으면 사용자가 어플리케이션을 사용할 때 최소한의 코드만으로 화면이 띄워지도록 할 수 있다.</li>
-      <li><strong>No class name bugs</strong> : Styled Component 는 스스로 유니크한 <code class="language-plaintext highlighter-rouge">className</code> 을 생성한다. 이는 <code class="language-plaintext highlighter-rouge">className</code> 의 중복이나 오타로 인한 버그를 줄여준다.</li>
+      <li><strong>No class name bugs</strong> : Styled Component 는 스스로 유니크한 <code class="highlighter-rouge">className</code> 을 생성한다. 이는 <code class="highlighter-rouge">className</code> 의 중복이나 오타로 인한 버그를 줄여준다.</li>
       <li><strong>Easier deletion of CSS</strong> : 기존에는 더 이상 사용하지 않거나 삭제한 컴포넌트에 해당하는 스타일 속성을 제거하기위해 CSS 파일 안의 className을 이리저리 찾아야 했었다. 하지만 Styled Component 는 모든 스타일 속성이 특정 컴포넌트와 연결되어 있기 때문에 만약 컴포넌트를 더 이상 사용하지 않아 삭제할 경우 이에 대한 스타일 속성도 함께 삭제된다.</li>
-      <li><strong>Simple dynamic styling</strong> : <code class="language-plaintext highlighter-rouge">className</code>을 일일이 수동으로 관리할 필요 없이 React 의 props 나 전역 속성을 기반으로 컴포넌트에 스타일 속성을 부여하기 때문에 간단하고 직관적이다.</li>
+      <li><strong>Simple dynamic styling</strong> : <code class="highlighter-rouge">className</code>을 일일이 수동으로 관리할 필요 없이 React 의 props 나 전역 속성을 기반으로 컴포넌트에 스타일 속성을 부여하기 때문에 간단하고 직관적이다.</li>
       <li><strong>Painless maintenance</strong> : 컴포넌트에 스타일을 상속하는 속성을 찾아 다른 CSS 파일들을 검색하지 않아도 되기 때문에 코드의 크기가 커지더라도 유지보수가 어렵지 않다.</li>
       <li><strong>Automatic vendor prefixing</strong> : 개별 컴포넌트마다 기존의 CSS 를 이용하여 스타일 속성을 정의하면 될 뿐이다. 이외의 것들은 Styled Component 가 알아서 처리한다.</li>
     </ul>

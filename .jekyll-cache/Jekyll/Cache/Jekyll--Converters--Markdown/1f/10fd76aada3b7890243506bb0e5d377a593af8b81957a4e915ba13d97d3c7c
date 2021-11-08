@@ -1,4 +1,4 @@
-I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+I"}<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
 <h2 id="today-i-learnd">Today I Learnd</h2>
 <h3 id="1-docker">1. Docker</h3>
 <hr />
@@ -57,7 +57,7 @@
     <p><a href="https://docs.docker.com/engine/reference/commandline/container_run/" target="_blank">공식문서</a>를 통해 Docker Image 및 Container를 다루는 방법을 학습하였다.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">danielkraic</code>이 올린 이미지 <code class="language-plaintext highlighter-rouge">asciiquarium</code> 예시.</p>
+    <p><code class="highlighter-rouge">danielkraic</code>이 올린 이미지 <code class="highlighter-rouge">asciiquarium</code> 예시.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">docker</span> <span class="nx">container</span> <span class="nx">run</span> <span class="o">-</span><span class="nx">it</span> <span class="o">--</span><span class="nx">rm</span> <span class="nx">danielkraic</span><span class="o">/</span><span class="nx">asciiquarium</span><span class="p">:</span><span class="nx">latest</span>
 </code></pre></div>    </div>
@@ -75,7 +75,7 @@
   <li>
     <p>컨테이너 기술과 가상 머신(VM)은 둘 다 프로세스, 네트워크, 파일 시스템을 격리할 수 있다는 장점을 공유하지만, 이 둘의 작동원리는 많이 다르다.</p>
 
-    <p>VM(가상머신 <code class="language-plaintext highlighter-rouge">ex.에뮬레이터</code>)을 만들고 실행하는 과정이 많은 컴퓨팅 자원을 필요로 하지만, 도커는 한 호스트 컴퓨터에 여러 개의 컨테이너를 띄워도 크게 컴퓨터에 무리가 가지 않는 장점이 있다.</p>
+    <p>VM(가상머신 <code class="highlighter-rouge">ex.에뮬레이터</code>)을 만들고 실행하는 과정이 많은 컴퓨팅 자원을 필요로 하지만, 도커는 한 호스트 컴퓨터에 여러 개의 컨테이너를 띄워도 크게 컴퓨터에 무리가 가지 않는 장점이 있다.</p>
 
     <p><img src="https://user-images.githubusercontent.com/83164003/139812480-0a9ca1b1-8071-4816-8a0b-d252a12d7eb1.png" alt="스크린샷, 2021-11-02 17-34-22" /></p>
 

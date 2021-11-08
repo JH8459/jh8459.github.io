@@ -5,3 +5,16 @@ main:
 
   - title: "연도별 포스트"
     url: /year/
+
+docs:
+  - title: "Category"
+    children:
+      - title: "TIL"
+        url: /docs/TIL/
+      - title: "Algorithm"
+        url: /docs/Algorithm/
+      - title: "Retrospect"
+        url: /docs/Retrospect/
+
+sidebar:
+  nav: "docs"

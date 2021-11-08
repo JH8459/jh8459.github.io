@@ -1,0 +1,252 @@
+I"+O<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-고차함수">1. 고차함수</h3>
+<h4 id="1-1-일급-객체">1-1. 일급 객체</h4>
+<ul>
+  <li>
+    <p>자바스크립트에는 특별한 대우를 받는 일급 객체가 있다. 대표적인 일급 객체 중 하나가 함수이다.</p>
+
+    <blockquote>
+      <ul>
+        <li>변수에 할당(assignment) 할 수 있다.</li>
+        <li>다른 함수의 인자(argument)로 전달될 수 있다.</li>
+        <li>다른 함수의 결과로서 리턴될 수 있다.</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>함수를 변수에 할당할 수 있기 때문에, 함수를 배열의 요소나 객체의 속성값으로 저장할 수 있다. 이는 함수를 데이터(<code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">number</code>, <code class="highlighter-rouge">boolean</code>, <code class="highlighter-rouge">array</code>, <code class="highlighter-rouge">object</code>)를 다루듯이 다룰 수 있다는 걸 의미한다.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>변수에 할당(assignment) 할 수 있다.</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>
+    <p>이미 함수를 변수에 저장하는 방법(함수 표현식)은 학습하였다.</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cm">/*
+  * 자바스크립트에서 함수는 일급 객체이기 때문에 변수에 저장할 수 있다.
+  * 함수 표현식은 할당 전에 사용할 수 없다.
+  */</span>
+	
+  <span class="kd">const</span> <span class="nx">square</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+  <span class="p">};</span>
+  
+  <span class="c1">// square에는 함수가 저장되어 있으므로 (일급 객체), 함수 호출 연산자 '()'를 사용할 수 있다.</span>
+  <span class="nx">output</span> <span class="o">=</span> <span class="nx">square</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 49</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>위의 함수 표현식(function expression)은 함수 선언식(function declaration)과 다르게 호이스팅(Hoisting)이 적용되지 않습니다.</p>
+  </li>
+  <li>
+    <p>함수 선언식의 호이스팅에 지나치게 의존하면, 코드의 유지 보수가 쉽지 않다. 코드 리뷰나 디버깅을 할 때, 코드를 위아래로 왔다 갔다 하게 될 수 있게되기 때문이다.</p>
+
+    <p>반면에 함수 표현식은 함수의 할당과 실행의 위치에 따라 결과가 달라지기 때문에, 코드의 위치를 어느 정도 예측할 수 있기때문에 직관적이다. 호이스팅을 제외하면, 함수 선언식과 함수 표현식은 크게 차이가 없지만, 함수 표현식의 경우는 함수가 변수에 저장될 수 있다는 사실을 보다 분명하게 보여 준다.</p>
+  </li>
+</ul>
+
+<h4 id="1-2-고차-함수란">1-2. 고차 함수란?</h4>
+<ul>
+  <li>
+    <p>고차 함수(higher order function)는 함수를 인자(argument)로 받을 수 있고, 함수의 형태로 리턴할 수 있는 함수이다</p>
+
+    <p>위에서 보았듯이 함수는 변수에 담길 수 있으며 함수는, 함수를 담은 변수를 인자로 또한 전달받을 수 있다. 마찬가지로, 함수 내부에서 변수에 함수를 할당할 수 있으며 이 변수를 리턴함으로써 함수는 함수 자체를 리턴할수 있게 된다.</p>
+
+    <p>이때 다른 함수(caller)의 인자(argument)로 전달되는 함수를 <strong>콜백 함수(callback function)</strong> 라고 한다.</p>
+
+    <blockquote>
+      <p>다른 함수를 인자로 받는 경우</p>
+    </blockquote>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">double</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+	
+  <span class="kd">function</span> <span class="nx">doubleNum</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">num</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">func</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+  <span class="p">}</span>
+	
+  <span class="cm">/*
+  * 함수 doubleNum은 다른 함수를 인자로 받는 고차 함수이다.
+  * 위 함수 func는 함수 doubleNum의 콜백 함수이다.
+  * 아래와 같은 경우, 함수 double은 함수 doubleNum의 콜백 함수이다.
+  */</span>
+
+  <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">doubleNum</span><span class="p">(</span><span class="nx">double</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// 8</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>함수를 리턴하는 경우</p>
+    </blockquote>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">adder</span><span class="p">(</span><span class="nx">added</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">added</span><span class="p">;</span>
+      <span class="p">};</span>
+  <span class="p">}</span>
+	
+  <span class="cm">/*
+  * 함수 dder는 다른 함수를 리턴하는 고차 함수이다.
+  * adder는 인자 한 개를 입력받아서 함수(익명 함수)를 리턴한다.
+  * 리턴되는 익명 함수는 인자 한 개를 받아서 added와 더한 값을 리턴한다.
+  */</span>
+
+  <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">adder</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="mi">3</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// 8</span>
+	
+  <span class="c1">// adder가 리턴하는 함수를 변수에 저장할 수 있습니다.</span>
+  <span class="kd">const</span> <span class="nx">add3</span> <span class="o">=</span> <span class="nx">adder</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+  <span class="nx">output</span> <span class="o">=</span> <span class="nx">add3</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// -&gt; 5</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>함수를 인자로 받고, 함수를 리턴하는 경우</p>
+    </blockquote>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">double</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+	
+  <span class="kd">function</span> <span class="nx">doubleAdder</span><span class="p">(</span><span class="nx">added</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">doubled</span> <span class="o">=</span> <span class="nx">func</span><span class="p">(</span><span class="nx">added</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">doubled</span><span class="p">;</span>
+      <span class="p">};</span>
+  <span class="p">}</span>
+	
+  <span class="cm">/*
+  * 함수 doubleAdder의 인자 func는 함수 doubleAdder의 콜백 함수이다.
+  * 함수 double은 함수 doubleAdder의 콜백으로 전달되었다.
+  */</span>
+	
+  <span class="nx">doubleAdder</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nx">double</span><span class="p">)(</span><span class="mi">3</span><span class="p">);</span>
+	
+  <span class="c1">// doubleAdder가 리턴하는 함수를 변수에 저장할 수 있습니다. (일급 객체)</span>
+  <span class="kd">const</span> <span class="nx">addTwice3</span> <span class="o">=</span> <span class="nx">doubleAdder</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">double</span><span class="p">);</span>
+  <span class="nx">addTwice3</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// 8</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="1-3-내장-고차함수">1-3. 내장 고차함수</h4>
+<blockquote>
+  <p><strong>filter</strong> : 배열의 filter 메소드는, 모든 배열의 요소 중에서 특정 조건을 만족하는 요소를 걸러내는 메소드이다. 예를 들어 <code class="highlighter-rouge">number</code> 타입을 요소로 갖는 배열에서 짝수만을 걸러내거나, 18 보다 작은 수만을 걸러낼 수 있다. <code class="highlighter-rouge">string</code> 타입을 요소로 갖는 배열에서, 길이가 10 이하인 문자열만 걸러내거나, ‘korea’만 걸러낼 수도 있다.</p>
+</blockquote>
+
+<ul>
+  <li>여기서 걸러내는 기준이 되는 특정 조건은 filter 메소드의 인자로 전달된다. 이때 전달되는 조건은 <em>함수의 형태</em> 이므로, filter 메소드는, <strong>걸러내기 위한 조건을 명시한 함수를 인자</strong> 로 받기 때문에 고차함수이다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>map</strong> : 맵은 배열의 각 요소가 특정 논리(함수)에 의해 다른 요소로 지정(map) 되는 내장 함수이다.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+ <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ele</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">ele</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">result</span><span class="p">;</span> <span class="c1">// [2,4,6]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>하나의 데이터를 다른 데이터로 <strong>맵핑(mapping)</strong> 할 때 사용된다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>reduce</strong> : 배열의 각 요소를 특정 방법(함수)에 따라 원하는 형태로 응축하는 메소드이다.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">joinName</span><span class="p">(</span><span class="nx">resultStr</span><span class="p">,</span> <span class="nx">user</span><span class="p">){</span>
+  <span class="nx">resultStr</span> <span class="o">=</span> <span class="nx">resultStr</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, </span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">resultStr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Tim</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span> <span class="p">:</span> <span class="mi">40</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Satya</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span> <span class="p">:</span> <span class="mi">30</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Sundar</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span> <span class="p">:</span> <span class="mi">50</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">users</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">joinName</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="2-고차함수-코플릿">2. 고차함수 코플릿</h3>
+<blockquote>
+  <p>함수들을 입력받아 함수들이 입력된 차례대로 결합된 새로운 함수를 리턴해야 한다.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">add5</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">mul3</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">pipe</span><span class="p">(</span><span class="nx">square</span><span class="p">,</span> <span class="nx">add5</span><span class="p">,</span> <span class="nx">mul3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span> <span class="c1">// --&gt; 63</span>
+</code></pre></div></div>
+
+<hr />
+
+<ul>
+  <li>수도코드</li>
+</ul>
+
+<ol>
+  <li>num을 매개변수로 가지는 함수로 return 해야 한다.</li>
+  <li>전달 받는 인자(함수)는 <code class="highlighter-rouge">...spread</code> 문법을 통하여 배열 형태로 전달받는다.</li>
+  <li>각 함수에는 같은 최초 전달된 <code class="highlighter-rouge">num</code>값이 필요하다.  (But, 내부 함수에서 <code class="highlighter-rouge">num</code>을 그대로 return 한다면 <code class="highlighter-rouge">num</code>값이 변질될 수 있다)</li>
+  <li>그러므로 내부 함수에 <code class="highlighter-rouge">let</code> 키워드로 변수를 선언하여, 함수 스코프 내에서 <code class="highlighter-rouge">num</code>을 할당 후 값을 보존한다.</li>
+  <li>for문으로 <code class="highlighter-rouge">...spread</code> 문법을 통하여 전달받은 배열 안의 함수 인자들을 해석하여 return 해준다.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">pipe</span><span class="p">(...</span><span class="nx">funcs</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// spread로 인자(함수)들을 배열 형태로 전달받는다.</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">){</span> <span class="c1">// 함수를 리턴한다.</span>
+    <span class="kd">let</span> <span class="nx">innerNum</span> <span class="o">=</span> <span class="nx">num</span><span class="p">;</span>  <span class="c1">// 최초 num 값으로 첫 함수계산을 시작한다.</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">funcs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>  <span class="c1">// 외부함수의 매개변수(함수 인자) 탐색</span>
+      <span class="nx">innerNum</span> <span class="o">=</span> <span class="nx">funcs</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">innerNum</span><span class="p">)</span> <span class="c1">// 내부 함수의 계산 결과 값을 innerNum에 쌓아 나아감</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">innerNum</span><span class="p">;</span>
+    
+    <span class="cm">/* i 인덱스마다 innerNum 값 변화
+      * i = 0 =&gt; innerNum = 16
+      * i = 1 =&gt; innerNum = 21
+      * i = 2 =&gt; innerNum = 63
+    */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>고차함수 ㅎㅎ;;;;  개념은 알겠다. 우선 오늘 풀어본 문제들로 감은 잡았다..  그게 전부이다. 활용할 수 있을까? 란 생각이 든다. 어서 내꺼로 만드는 노력을 해야겠다.</li>
+  <li>아침에 풀다 막힌 코플릿을 저녁에도 풀어보았는데 또 막힌다(?). 다시 한번 포스팅까지 해서 복기를 하였다. 머리로 수도코드 등 바로바로 그려지는 단계까지 가질 않는다. 광복절 연휴까지 있어서 주말이 길기때문에, 주말까지 반복 학습이 필요할 듯 하다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>React 실습이다.. 하 클론코딩 등 준비를 못했다. 부딫혀봐야겠다.</li>
+</ul>
+:ET

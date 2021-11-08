@@ -217,7 +217,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">서울, 대한민국</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
         </li>
       
 
@@ -425,7 +425,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 <ul>
-  <li>박스의 시작을 정확히 (0,0)의 위치에서 시작하고 싶은데, <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> 태그가 가진 기본 스타일에 약간의 여백을 포함하지 않아 계산에 어려움이 있다. 위에 언급한 문제를 해결할 몇 줄의 코드를 적용시키면, 기본 스타일링을 제거하여 디자인한 대로 레이아웃을 구현할 수 있습니다.</li>
+  <li>박스의 시작을 정확히 (0,0)의 위치에서 시작하고 싶은데, <code class="highlighter-rouge">&lt;body&gt;</code> 태그가 가진 기본 스타일에 약간의 여백을 포함하지 않아 계산에 어려움이 있다. 위에 언급한 문제를 해결할 몇 줄의 코드를 적용시키면, 기본 스타일링을 제거하여 디자인한 대로 레이아웃을 구현할 수 있습니다.</li>
   <li>이렇게 클래스 이름과 구현을 1:1로 일치시켜 아주 작은 단위로 CSS를 작성 기법을 Atomic CSS 방법론이라고 한다.</li>
 </ul>
 
@@ -463,7 +463,7 @@
   </li>
   <li>반드시 알아두기: grow(팽창 지수), shrink(수축 지수), basis(기본 크기)
     <ul>
-      <li>자식 박스에 어떠한 속성도 주지 않으면, <code class="language-plaintext highlighter-rouge">flex: 0 1 auto;</code> 기본값이 적용됩니다.</li>
+      <li>자식 박스에 어떠한 속성도 주지 않으면, <code class="highlighter-rouge">flex: 0 1 auto;</code> 기본값이 적용됩니다.</li>
     </ul>
   </li>
   <li>grow, shrink 속성은 단위가 없고, 비율에 따라 결과가 달라진다. 부모 박스 안에 n개의 자식 박스가 있다고 가정하고 각 자식 박스가 갖는 grow값의 총 합이 n이라면,  grow 속성의 값을 1로 설정하는 것은 1/n 가로 또는 세로길이를 적용한다는 의미이다.</li>
@@ -484,7 +484,7 @@
 <p><img src="https://user-images.githubusercontent.com/83164003/127949162-69b3778e-7417-46e9-9fd4-f69cefdfed57.png" alt="스크린샷, 2021-08-03 11-41-43" /></p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">flex-grow  : 1</code> 이다. <code class="language-plaintext highlighter-rouge">box.target</code>은 부모 박스의 가로 길이 중에서 남은 빈 영역만큼 늘어나게 된다. 위 설명대로라면 전체 자식요소가 가진 grow 값의 합은 1+0+0 = 1이므로, <code class="language-plaintext highlighter-rouge">box.target</code>의 가로 크기는 1/1 = 100% 이다. 그러나 다른 자식 박스 안에 이미 콘텐츠가 존재하므로, 다른 자식 박스안의 콘텐츠가 담긴 길이를 제외한 나머지 가로 길이가 <code class="language-plaintext highlighter-rouge">box.target</code>의 가로 길이가 된다.</li>
+  <li><code class="highlighter-rouge">flex-grow  : 1</code> 이다. <code class="highlighter-rouge">box.target</code>은 부모 박스의 가로 길이 중에서 남은 빈 영역만큼 늘어나게 된다. 위 설명대로라면 전체 자식요소가 가진 grow 값의 합은 1+0+0 = 1이므로, <code class="highlighter-rouge">box.target</code>의 가로 크기는 1/1 = 100% 이다. 그러나 다른 자식 박스 안에 이미 콘텐츠가 존재하므로, 다른 자식 박스안의 콘텐츠가 담긴 길이를 제외한 나머지 가로 길이가 <code class="highlighter-rouge">box.target</code>의 가로 길이가 된다.</li>
 </ul>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.target</span> <span class="p">{</span>
@@ -496,7 +496,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 <ul>
-  <li>만약 <code class="language-plaintext highlighter-rouge">.box</code>의 <code class="language-plaintext highlighter-rouge">flex-grow : 1</code>로 설정하면, 모든 박스가 늘어나려고(grow) 합니다. 결과적으로 모든 박스가 동일한 비율로 가로 길이가 늘어납니다. (총 grow 값 1+1+1, 각 박스는 1/3씩 크기를 가짐)</li>
+  <li>만약 <code class="highlighter-rouge">.box</code>의 <code class="highlighter-rouge">flex-grow : 1</code>로 설정하면, 모든 박스가 늘어나려고(grow) 합니다. 결과적으로 모든 박스가 동일한 비율로 가로 길이가 늘어납니다. (총 grow 값 1+1+1, 각 박스는 1/3씩 크기를 가짐)</li>
 </ul>
 
 <p><img src="https://user-images.githubusercontent.com/83164003/127949798-edc91622-22c2-4fdf-8032-4b45af947f10.png" alt="스크린샷, 2021-08-03 11-49-27" /></p>
@@ -512,10 +512,10 @@
 
 <h3 id="2-3-css-layout-flexbox-콘텐츠-정렬-방법">2-3. CSS layout (flexbox 콘텐츠 정렬 방법)</h3>
 <ul>
-  <li>Flexbox를 원하는대로 제어하기 위해서는 axis(축)의 개념에 대한 이해가 필요하다.  axis는 <code class="language-plaintext highlighter-rouge">main axis</code> 와 <code class="language-plaintext highlighter-rouge">cross axis</code>로 구분된다.
+  <li>Flexbox를 원하는대로 제어하기 위해서는 axis(축)의 개념에 대한 이해가 필요하다.  axis는 <code class="highlighter-rouge">main axis</code> 와 <code class="highlighter-rouge">cross axis</code>로 구분된다.
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">main axis</code>는 flex-direction 속성에 의해서 결정된다. flex-direction의 기본 값인 row 인 상태일 때 main axis 는 가로축(가로축이 default)이 된다.</li>
-      <li><code class="language-plaintext highlighter-rouge">cross axis</code>는 여러 개의 main axis와 수직을 이루는 방향입니다. main axis가 가로일 때 cross axis는 세로가 됩니다.</li>
+      <li><code class="highlighter-rouge">main axis</code>는 flex-direction 속성에 의해서 결정된다. flex-direction의 기본 값인 row 인 상태일 때 main axis 는 가로축(가로축이 default)이 된다.</li>
+      <li><code class="highlighter-rouge">cross axis</code>는 여러 개의 main axis와 수직을 이루는 방향입니다. main axis가 가로일 때 cross axis는 세로가 됩니다.</li>
     </ul>
   </li>
 </ul>

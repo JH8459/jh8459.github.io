@@ -217,7 +217,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">서울, 대한민국</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
         </li>
       
 
@@ -349,7 +349,7 @@
 
     <p><img src="https://user-images.githubusercontent.com/83164003/133872573-c75e02df-5654-4674-91a9-96c1c3a06d78.jpg" alt="Notes_210918_133331" /></p>
 
-    <p>이중 출처(Origin)는 <code class="language-plaintext highlighter-rouge">Protocol</code>, <code class="language-plaintext highlighter-rouge">Host</code>,  <code class="language-plaintext highlighter-rouge">Port</code>(생략가능)를 합친 것을 말한다. Origin은 모든 웹페이지 개발자도구에서 <code class="language-plaintext highlighter-rouge">location.origin</code>을 통하여 확인 할 수 있다. 따라서 Protocal, Host, Port 동일한 경우는 출처가 동일하다고 볼 수 있다.</p>
+    <p>이중 출처(Origin)는 <code class="highlighter-rouge">Protocol</code>, <code class="highlighter-rouge">Host</code>,  <code class="highlighter-rouge">Port</code>(생략가능)를 합친 것을 말한다. Origin은 모든 웹페이지 개발자도구에서 <code class="highlighter-rouge">location.origin</code>을 통하여 확인 할 수 있다. 따라서 Protocal, Host, Port 동일한 경우는 출처가 동일하다고 볼 수 있다.</p>
   </li>
 </ul>
 
@@ -387,20 +387,20 @@
 <h3 id="2-mini-node-server-http모듈">2. Mini Node Server (http모듈)</h3>
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">node.js</code>의 http모듈 혹은 Express를 이용하여 웹 서버를 만드는 <a href="https://github.com/JH8459/im-sprint-mini-node-server" target="_blank">예제</a>이다.</p>
+    <p><code class="highlighter-rouge">node.js</code>의 http모듈 혹은 Express를 이용하여 웹 서버를 만드는 <a href="https://github.com/JH8459/im-sprint-mini-node-server" target="_blank">예제</a>이다.</p>
 
-    <p>우선 http모듈은 HTTP 요청, 응답을 다룬다. HTTP 지식이 선행되어야 했기 때문에 먼저 <code class="language-plaintext highlighter-rouge">HTTP 트랜잭션 해부</code>공식 문서를 언급하고 넘어가야했다.</p>
+    <p>우선 http모듈은 HTTP 요청, 응답을 다룬다. HTTP 지식이 선행되어야 했기 때문에 먼저 <code class="highlighter-rouge">HTTP 트랜잭션 해부</code>공식 문서를 언급하고 넘어가야했다.</p>
   </li>
 </ul>
 
 <h4 id="2-1-http-트랜잭션-해부">2-1. HTTP 트랜잭션 해부</h4>
 <ul>
-  <li>우선 <code class="language-plaintext highlighter-rouge">node.js</code> HTTP 처리 과정을 <a href="https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/" target="_blank">공식문서</a>를 참고로 학습하였다.</li>
+  <li>우선 <code class="highlighter-rouge">node.js</code> HTTP 처리 과정을 <a href="https://nodejs.org/ko/docs/guides/anatomy-of-an-http-transaction/" target="_blank">공식문서</a>를 참고로 학습하였다.</li>
 </ul>
 
 <ol>
   <li>
-    <p><strong>서버 생성</strong>  : 모든 node 웹 서버 애플리케이션은 웹 서버 객체를 만들어야 한다. 이 때 <code class="language-plaintext highlighter-rouge">createServer</code>를 이용한다.</p>
+    <p><strong>서버 생성</strong>  : 모든 node 웹 서버 애플리케이션은 웹 서버 객체를 만들어야 한다. 이 때 <code class="highlighter-rouge">createServer</code>를 이용한다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">);</span>
 	  
@@ -409,26 +409,26 @@
    <span class="p">});</span>
 </code></pre></div>    </div>
 
-    <p>이 서버로 오는 HTTP 요청마다 <code class="language-plaintext highlighter-rouge">createServer</code>에 전달된 함수가 한 번씩 호출된다. HTTP 요청이 서버에 오면 <code class="language-plaintext highlighter-rouge">node</code>가 트랜잭션을 다루려고 <code class="language-plaintext highlighter-rouge">request</code>와 <code class="language-plaintext highlighter-rouge">response</code> 객체를 전달하며 요청 핸들러 함수를 호출한다. 요청을 실제로 처리하려면 <code class="language-plaintext highlighter-rouge">listen</code> 메서드가 <code class="language-plaintext highlighter-rouge">server</code> 객체에서 호출되어야 한다.</p>
+    <p>이 서버로 오는 HTTP 요청마다 <code class="highlighter-rouge">createServer</code>에 전달된 함수가 한 번씩 호출된다. HTTP 요청이 서버에 오면 <code class="highlighter-rouge">node</code>가 트랜잭션을 다루려고 <code class="highlighter-rouge">request</code>와 <code class="highlighter-rouge">response</code> 객체를 전달하며 요청 핸들러 함수를 호출한다. 요청을 실제로 처리하려면 <code class="highlighter-rouge">listen</code> 메서드가 <code class="highlighter-rouge">server</code> 객체에서 호출되어야 한다.</p>
 
-    <p>대부분은 서버가 사용하고자 하는 포트 번호를 <code class="language-plaintext highlighter-rouge">listen</code>에 전달하기만 하면 된다.</p>
+    <p>대부분은 서버가 사용하고자 하는 포트 번호를 <code class="highlighter-rouge">listen</code>에 전달하기만 하면 된다.</p>
   </li>
-  <li><strong>메서드, URL, 헤더</strong> : 요청을 처리할 때, <code class="language-plaintext highlighter-rouge">메서드</code>와 <code class="language-plaintext highlighter-rouge">URL</code>을 확인한 후 이와 관련된 적절한 작업을 실행해야 한다. <code class="language-plaintext highlighter-rouge">Node</code>가 <code class="language-plaintext highlighter-rouge">request</code> 객체에 유용한 프로퍼티를 넣어두었으므로 구조분해 할당으로 해당 값들을 쉽게 가져올 수 있다.
+  <li><strong>메서드, URL, 헤더</strong> : 요청을 처리할 때, <code class="highlighter-rouge">메서드</code>와 <code class="highlighter-rouge">URL</code>을 확인한 후 이와 관련된 적절한 작업을 실행해야 한다. <code class="highlighter-rouge">Node</code>가 <code class="highlighter-rouge">request</code> 객체에 유용한 프로퍼티를 넣어두었으므로 구조분해 할당으로 해당 값들을 쉽게 가져올 수 있다.
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="p">{</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">url</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">request</span><span class="p">;</span>
 </code></pre></div>    </div>
-    <p>여기서 <code class="language-plaintext highlighter-rouge">method</code>는 항상 일반적인 HTTP 메서드/동사이며 <code class="language-plaintext highlighter-rouge">url</code>은 전체 <code class="language-plaintext highlighter-rouge">URL</code>에서 서버, 프로토콜, 포트를 제외한 나머지이다.</p>
+    <p>여기서 <code class="highlighter-rouge">method</code>는 항상 일반적인 HTTP 메서드/동사이며 <code class="highlighter-rouge">url</code>은 전체 <code class="highlighter-rouge">URL</code>에서 서버, 프로토콜, 포트를 제외한 나머지이다.</p>
 
-    <p>헤더도 많이 다르지 않다. <code class="language-plaintext highlighter-rouge">request</code>에 <code class="language-plaintext highlighter-rouge">headers</code>라는 전용 객체가 있으므로, 해당 프로퍼티를 사용한다.</p>
+    <p>헤더도 많이 다르지 않다. <code class="highlighter-rouge">request</code>에 <code class="highlighter-rouge">headers</code>라는 전용 객체가 있으므로, 해당 프로퍼티를 사용한다.</p>
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="p">{</span> <span class="nx">headers</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">request</span><span class="p">;</span>
  <span class="kd">const</span> <span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">headers</span><span class="p">[</span><span class="dl">'</span><span class="s1">user-agent</span><span class="dl">'</span><span class="p">];</span>
 </code></pre></div>    </div>
 
-    <p><code class="language-plaintext highlighter-rouge">request</code>에 <code class="language-plaintext highlighter-rouge">headers</code>라는 전용 객체가 있고, 클라이언트가 어떻게 헤더를 설정했는지에 관계없이 모든 헤더는 소문자로만 표현된다는 것을 기억하자. 이는 어떤 목적이든 헤더를 파싱하는 작업을 간편하게 해준다.</p>
+    <p><code class="highlighter-rouge">request</code>에 <code class="highlighter-rouge">headers</code>라는 전용 객체가 있고, 클라이언트가 어떻게 헤더를 설정했는지에 관계없이 모든 헤더는 소문자로만 표현된다는 것을 기억하자. 이는 어떤 목적이든 헤더를 파싱하는 작업을 간편하게 해준다.</p>
   </li>
   <li>
-    <p><strong>요청 바디</strong> : <code class="language-plaintext highlighter-rouge">POST</code>나 <code class="language-plaintext highlighter-rouge">PUT</code> 요청을 받을 때 애플리케이션에 요청 바디는 중요할 것이다. 핸들러에 전달된 <code class="language-plaintext highlighter-rouge">request</code> 객체는 <code class="language-plaintext highlighter-rouge">ReadableStream</code> 인터페이스를 구현하고 있는데, 이 스트림의 <code class="language-plaintext highlighter-rouge">'data'</code>와 <code class="language-plaintext highlighter-rouge">'end'</code> 이벤트에 이벤트 리스너를 등록해서 데이터를 받을 수 있다.</p>
+    <p><strong>요청 바디</strong> : <code class="highlighter-rouge">POST</code>나 <code class="highlighter-rouge">PUT</code> 요청을 받을 때 애플리케이션에 요청 바디는 중요할 것이다. 핸들러에 전달된 <code class="highlighter-rouge">request</code> 객체는 <code class="highlighter-rouge">ReadableStream</code> 인터페이스를 구현하고 있는데, 이 스트림의 <code class="highlighter-rouge">'data'</code>와 <code class="highlighter-rouge">'end'</code> 이벤트에 이벤트 리스너를 등록해서 데이터를 받을 수 있다.</p>
 
-    <p>각 <code class="language-plaintext highlighter-rouge">'data'</code> 이벤트에서 발생시킨 청크는 <code class="language-plaintext highlighter-rouge">Buffer</code>이다. 이 청크는 문자열 데이터이므로 이 데이터를 배열에 담고, <code class="language-plaintext highlighter-rouge">'end'</code> 이벤트에서 이어 붙인 다음 문자열로 만드는 것이 가장 좋다.</p>
+    <p>각 <code class="highlighter-rouge">'data'</code> 이벤트에서 발생시킨 청크는 <code class="highlighter-rouge">Buffer</code>이다. 이 청크는 문자열 데이터이므로 이 데이터를 배열에 담고, <code class="highlighter-rouge">'end'</code> 이벤트에서 이어 붙인 다음 문자열로 만드는 것이 가장 좋다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">[];</span>
  <span class="nx">request</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">data</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -523,7 +523,7 @@
 <h4 id="3-1-express로-구현한-서버와-http-모듈로-작성돤-서버의-다른-점">3-1. Express로 구현한 서버와 http 모듈로 작성돤 서버의 다른 점</h4>
 <ol>
   <li>
-    <p><strong>미들웨어 추가가 편리하다</strong> :  위 예제는  <code class="language-plaintext highlighter-rouge">npm install cors</code> 로 미들웨어 설치 후 사용만 해주면 되기에 편리하게 <code class="language-plaintext highlighter-rouge">cors</code>옵션을 설정할 수 있다.</p>
+    <p><strong>미들웨어 추가가 편리하다</strong> :  위 예제는  <code class="highlighter-rouge">npm install cors</code> 로 미들웨어 설치 후 사용만 해주면 되기에 편리하게 <code class="highlighter-rouge">cors</code>옵션을 설정할 수 있다.</p>
 
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
  <span class="kd">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">);</span>

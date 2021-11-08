@@ -1,0 +1,142 @@
+I"�,<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="algorithm" /></p>
+<h2 id="toy-40-longestpalindrome">TOY 40. longestPalindrome</h2>
+<h3 id="문제">문제</h3>
+<hr />
+
+<p>문자열을 입력받아 부분 문자열 중 가장 긴 <em>(palindrome)</em> 의 길이를 리턴해야 합니다.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">palindrome</code>: 데이터를 앞에서 뒤로 또는 뒤에서 앞으로 조회한 결과가 동일한 경우</li>
+</ul>
+
+<h3 id="입력">입력</h3>
+<hr />
+
+<h4 id="인자-1--str">인자 1 : str</h4>
+<ul>
+  <li><code class="highlighter-rouge">string</code> 타입의 공백이 있는 알파벳 소문자 문자열</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+
+<ul>
+  <li><code class="highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+
+<ul>
+  <li>문자열 <code class="highlighter-rouge">str</code>의 부분 문자열은 자기 자신을 포함합니다.</li>
+  <li>공백도 회문에 포함될 수 있습니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">My dad is a racecar athlete</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">longestPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 11 ('a racecar a')</span>
+
+<span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> dad </span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">longestPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 5 (' dad ')</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+
+<ul>
+  <li>부분 문자열 중 가장 긴 회문을 계산하는 효율적인 알고리즘(<code class="highlighter-rouge">O(N^2)</code>)이 존재합니다. 쉽지 않기 때문에 바로 레퍼런스 코드를 보고 이해하는 데 집중하시기 바랍니다.</li>
+</ul>
+
+<h2 id="toy-40-solution">TOY 40. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution: O(N^3)</span>
+<span class="c1">// function longestPalindrome(str) {</span>
+<span class="c1">//   if (str.length &lt;= 1) return str.length;</span>
+
+<span class="c1">//   const checkPalindrome = function (str) {</span>
+<span class="c1">//     const half = parseInt(str.length / 2);</span>
+<span class="c1">//     for (let i = 0; i &lt; half; i++) {</span>
+<span class="c1">//       if (str[i] !== str[str.length - 1 - i]) return false;</span>
+<span class="c1">//     }</span>
+<span class="c1">//     return true;</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   // 길이가 긴 순서대로 부분 문자열을 만들어 검사한다.</span>
+<span class="c1">//   for (let len = str.length; len &gt;= 1; len--) {</span>
+<span class="c1">//     // 길이 len인 부분 문자열들의 시작 인덱스를 구한다.</span>
+<span class="c1">//     // 예. 전체 길이가 100이고, 부분 문자열의 길이가 10인 경우,</span>
+<span class="c1">//     // 부분 문자열 (시작인덱스 ~ 마지막 인덱스)</span>
+<span class="c1">//     //  90 ~ 99, 89 ~ 98, 88 ~ 97, ..., 1 ~ 10, 0 ~ 9</span>
+<span class="c1">//     for (let startIdx = str.length - len; startIdx &gt;= 0; startIdx--) {</span>
+<span class="c1">//       // slice의 특성을 고려한 마지막 인덱스 + 1 을 저장</span>
+<span class="c1">//       const endIdx = startIdx + len;</span>
+<span class="c1">//       const subStr = str.substring(startIdx, endIdx);</span>
+<span class="c1">//       const result = checkPalindrome(subStr);</span>
+<span class="c1">//       if (result === true) return len;</span>
+<span class="c1">//     }</span>
+<span class="c1">//   }</span>
+<span class="c1">// }</span>
+
+<span class="kd">function</span> <span class="nx">longestPalindrome</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">LENGTH</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">isPalindrome</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">LENGTH</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">_</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">LENGTH</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+  <span class="c1">// 언더바는 잘못된 코드가 아닙니다.</span>
+  <span class="c1">// 언더바는 어떤 매개변수는 전달되어도 무시하겠다는 의미로 사용됩니다.</span>
+
+  <span class="kd">let</span> <span class="nx">maxLen</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="c1">// 길이가 1인 회문</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">LENGTH</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">isPalindrome</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+  <span class="c1">// 길이가 2인 회문</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">isPalindrome</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="nx">maxLen</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 길이가 3 이상인 회문</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">len</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">len</span> <span class="o">&lt;=</span> <span class="nx">LENGTH</span><span class="p">;</span> <span class="nx">len</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">startIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">startIdx</span> <span class="o">&lt;=</span> <span class="nx">LENGTH</span> <span class="o">-</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">startIdx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">endIdx</span> <span class="o">=</span> <span class="nx">startIdx</span> <span class="o">+</span> <span class="nx">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span>
+        <span class="nx">isPalindrome</span><span class="p">[</span><span class="nx">startIdx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="nx">endIdx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span>
+        <span class="nx">str</span><span class="p">[</span><span class="nx">startIdx</span><span class="p">]</span> <span class="o">===</span> <span class="nx">str</span><span class="p">[</span><span class="nx">endIdx</span><span class="p">]</span>
+      <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">isPalindrome</span><span class="p">[</span><span class="nx">startIdx</span><span class="p">][</span><span class="nx">endIdx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">maxLen</span> <span class="o">=</span> <span class="nx">len</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">maxLen</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 41. countIslands</li>
+</ul>
+:ET
