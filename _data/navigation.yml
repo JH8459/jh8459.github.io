@@ -2,12 +2,13 @@
 main:
   - title: "카테고리"
     url: /category/
-
   - title: "연도별 포스트"
     url: /year/
+  - title: "소개"
+    url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
 
 docs:
-  - title: Category
+  - title: "Category"
     children:
       - title: "TIL"
         url: /category/#til
