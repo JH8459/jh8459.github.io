@@ -6,7 +6,7 @@ main:
   - title: "연도별 포스트"
     url: /year/
 
-docs:
+posts:
   - title: Category
     children:
       - title: "TIL"
