@@ -115,8 +115,8 @@ author:
   name             : "JH8459"
   avatar           : "https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png"
   bio              : "*불안감 떨쳐내기, 후회없이 하루 보내기*<br><br>"
-  location         : "Republic of Korea"
-  email            : "kk_ong2233@naver.com"
+  location         : "서울, 대한민국"
+#   email            : "kk_ong2233@naver.com"
   links:
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope-square"
