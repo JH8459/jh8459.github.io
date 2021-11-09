@@ -1,0 +1,51 @@
+I"L<p><img src="https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg" alt="tool" /></p>
+
+<h2 id="git-jekyll-블로그-환경설정">Git Jekyll 블로그 환경설정</h2>
+
+<h3 id="minimal-mistakes-sidebar-category">Minimal mistakes Sidebar Category</h3>
+<hr />
+
+<p><em>글쓰기 앞서서 나와 같은 삽질을 하지않길 바라며 기록으로 남긴다.</em></p>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Minimal mistakes</code> jekyll theme 의 기본 레이아웃은 다음과 같다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/140887629-62a53fc8-a2e1-42c7-93a9-251cca254f5a.png" alt="스크린샷, 2021-11-09 17-19-16" /></p>
+
+    <p>메뉴들이 최상단 부분에 고정되어 있기 때문에, 스크롤에 반응하는 왼쪽 <code class="language-plaintext highlighter-rouge">SideBar</code> 영역에 <code class="language-plaintext highlighter-rouge">Category</code>를 추가하고 싶었다.</p>
+  </li>
+  <li>
+    <p>Minimal mistake에서 제공하는 <code class="language-plaintext highlighter-rouge">Quick-Start Guide</code>에서 <a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu" target="_blank">Custom sidebar navigation menu</a> 를 참고하면 작성법을 알 수 있다.</p>
+  </li>
+</ul>
+
+<hr />
+<h3 id="jekyll-변경점">Jekyll 변경점</h3>
+
+<ul>
+  <li>
+    <p>우선 <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> 에서 다음과 같이 수정하였다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">docs</span><span class="p">:</span>
+<span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CodeStates</span><span class="dl">"</span>
+  <span class="nx">children</span><span class="p">:</span>
+    <span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TIL</span><span class="dl">"</span>
+      <span class="nx">url</span><span class="p">:</span> <span class="o">/</span><span class="nx">category</span><span class="o">/</span><span class="err">#</span><span class="nx">til</span>
+    <span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TOY</span><span class="dl">"</span>
+      <span class="nx">url</span><span class="p">:</span> <span class="o">/</span><span class="nx">category</span><span class="o">/</span><span class="err">#</span><span class="nx">toy</span>
+    <span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Retrospect</span><span class="dl">"</span>
+      <span class="nx">url</span><span class="p">:</span> <span class="o">/</span><span class="nx">category</span><span class="o">/</span><span class="err">#</span><span class="nx">retrospect</span>
+
+<span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Dev Tool</span><span class="dl">"</span>
+  <span class="nx">children</span><span class="p">:</span>
+    <span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Git</span><span class="dl">"</span>
+      <span class="nx">url</span><span class="p">:</span> <span class="o">/</span><span class="nx">category</span><span class="o">/</span><span class="err">#</span><span class="nx">git</span>
+<span class="o">-</span> <span class="nx">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">About</span><span class="dl">"</span>
+  <span class="nx">url</span><span class="p">:</span> <span class="cm">/* Notion 경로 */</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+:ET

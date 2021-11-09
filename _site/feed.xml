@@ -1,10 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-09T04:01:30+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Git] Minimal mistakes Sidebar Category (작성중)</title><link href="/git/21.11.08.DevTool/" rel="alternate" type="text/html" title="[Git] Minimal mistakes Sidebar Category (작성중)" /><published>2021-11-08T00:00:00+09:00</published><updated>2021-11-08T00:00:00+09:00</updated><id>/git/21.11.08.DevTool</id><content type="html" xml:base="/git/21.11.08.DevTool/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-09T17:50:51+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Jekyll] Minimal mistakes Sidebar Category</title><link href="/jekyll/21.11.08.Jekyll/" rel="alternate" type="text/html" title="[Jekyll] Minimal mistakes Sidebar Category" /><published>2021-11-08T00:00:00+09:00</published><updated>2021-11-08T00:00:00+09:00</updated><id>/jekyll/21.11.08.Jekyll</id><content type="html" xml:base="/jekyll/21.11.08.Jekyll/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;devtool&quot;&gt;DevTool&lt;/h2&gt;
-&lt;h3 id=&quot;git-jekyll-블로그-환경설정&quot;&gt;Git Jekyll 블로그 환경설정&lt;/h3&gt;
+&lt;h2 id=&quot;jekyll-블로그-환경설정&quot;&gt;Jekyll 블로그 환경설정&lt;/h2&gt;
+
+&lt;h3 id=&quot;minimal-mistakes-sidebar-category&quot;&gt;Minimal mistakes Sidebar Category&lt;/h3&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;글쓰기 앞서서 나와 같은 삽질을 하지않길 바라며 기록으로 남긴다.&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Git" /><summary type="html">[Git] Minimal mistakes Sidebar Category</summary></entry><entry><title type="html">[Retrospect] 21.11.06 HA3 기수이동</title><link href="/retrospect/21.11.06/" rel="alternate" type="text/html" title="[Retrospect] 21.11.06 HA3 기수이동" /><published>2021-11-06T00:00:00+09:00</published><updated>2021-11-06T00:00:00+09:00</updated><id>/retrospect/21.11.06</id><content type="html" xml:base="/retrospect/21.11.06/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;글쓰기 앞서서 나와 같은 삽질을 하지않길 바라며 기록으로 남긴다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Minimal mistakes&lt;/code&gt; jekyll theme 의 기본 레이아웃은 다음과 같다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140887629-62a53fc8-a2e1-42c7-93a9-251cca254f5a.png&quot; alt=&quot;스크린샷, 2021-11-09 17-19-16&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;메뉴들이 최상단 부분에 고정되어 있기 때문에, 스크롤에 반응하는 왼쪽 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SideBar&lt;/code&gt; 영역에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Category&lt;/code&gt;를 추가하고 싶었다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minimal mistake에서 제공하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Quick-Start Guide&lt;/code&gt;에서 &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu&quot; target=&quot;_blank&quot;&gt;Custom sidebar navigation menu&lt;/a&gt; 를 참고하면 작성법을 알 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;jekyll-변경점&quot;&gt;Jekyll 변경점&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_data/navigation.yml&lt;/code&gt; 에서 다음과 같이 수정하였다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;docs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;CodeStates&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;TIL&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;til&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;TOY&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toy&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Retrospect&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;retrospect&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Dev Tool&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Git&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;About&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* Notion 경로 */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 이 수정한 내용을 모든 페이지 경로, 모든 포스트에서 보이게끔 설정해주면 된다. 우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_config.yml&lt;/code&gt;에서 Defaults 영역을 수정해서 앞으로 생성할 모든 포스트와, 페이지가 위에서 만든 사이드바를 포함시킬 수 있게끔 환경설정만 해주면 된다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_docs&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;docs&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;docs&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여기까지 해준다면 우선 기본적인 환경설정은 모두 마쳤기에 앞으로 생성하는 글이나 페이지에서는 저 사이드바가 잘 보일테지만 기존 블로그에 이미 쓰여진 포스트와, 페이지들은 적용안될것이다. &lt;del&gt;뭐지???…싶었다&lt;/del&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기존 글과 페이지들이 소급 적용이 안되기때문에 아래와 같이 기존 페이지와 포스트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; 파일들을 모두 수정해주면 적용되는 걸 볼 수 있다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+&lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+&lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+&lt;span class=&quot;na&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;docs&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name></author><category term="Jekyll" /><summary type="html">[Jekyll] Minimal mistakes Sidebar Category</summary></entry><entry><title type="html">[Retrospect] 21.11.06 HA3 기수이동</title><link href="/retrospect/21.11.06/" rel="alternate" type="text/html" title="[Retrospect] 21.11.06 HA3 기수이동" /><published>2021-11-06T00:00:00+09:00</published><updated>2021-11-06T00:00:00+09:00</updated><id>/retrospect/21.11.06</id><content type="html" xml:base="/retrospect/21.11.06/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
 

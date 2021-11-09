@@ -1,0 +1,59 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg" alt="tool" /></p>
+
+<h2 id="git-jekyll-블로그-환경설정add-minimal-mistakes-sidebar-category">Git Jekyll 블로그 환경설정(Add Minimal mistakes Sidebar Category)</h2>
+<hr />
+
+<p><em>글쓰기 앞서서 나와 같은 삽질을 하지않길 바라며 기록으로 남긴다.</em></p>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Minimal mistakes</code> jekyll theme 의 기본 레이아웃은 다음과 같다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/140887629-62a53fc8-a2e1-42c7-93a9-251cca254f5a.png" alt="스크린샷, 2021-11-09 17-19-16" /></p>
+
+    <p>메뉴들이 최상단 부분에 고정되어 있기 때문에, 스크롤에 반응하는 왼쪽 <code class="language-plaintext highlighter-rouge">SideBar</code> 영역에 <code class="language-plaintext highlighter-rouge">Category</code>를 추가하고 싶었다.</p>
+  </li>
+  <li>
+    <p>Minimal mistake에서 제공하는 <code class="language-plaintext highlighter-rouge">Quick-Start Guide</code>에서 <a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu" target="_blank">Custom sidebar navigation menu</a> 를 참고하면 작성법을 알 수 있다.</p>
+  </li>
+</ul>
+
+<hr />
+<h3 id="jekyll-변경점">Jekyll 변경점</h3>
+
+<p>우선 <strong>_data/navigation.yml</strong> 에서</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```js
+docs:   - title: Getting Started
+children:
+  - title: "Quick-Start Guide"
+    url: /docs/quick-start-guide/
+  - title: "Structure"
+    url: /docs/structure/
+  - title: "Installation"
+    url: /docs/installation/
+  - title: "Upgrading"
+    url: /docs/upgrading/
+</code></pre></div></div>
+
+<ul>
+  <li>title: Customization
+children:
+    <ul>
+      <li>title: “Configuration”
+url: /docs/configuration/</li>
+      <li>title: “Navigation”
+url: /docs/navigation/</li>
+      <li>title: “UI Text”
+url: /docs/ui-text/</li>
+      <li>title: “Authors”
+url: /docs/authors/</li>
+      <li>title: “Layouts”
+url: /docs/layouts/
+```</li>
+    </ul>
+  </li>
+</ul>
+:ET

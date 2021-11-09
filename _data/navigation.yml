@@ -19,7 +19,7 @@ docs:
 
   - title: "Dev Tool"
     children:
-      - title: "Git"
-        url: /category/#git
+      - title: "Jekyll"
+        url: /category/#jekyll
   - title: "About"
     url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
