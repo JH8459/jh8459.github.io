@@ -1,0 +1,839 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Algorithm] 집밥이 그리워 (멱집합) | JHLog</title>
+<meta name="description" content="[Algorithm] 집밥이 그리워 (멱집합)">
+
+
+  <meta name="author" content="JH8459">
+  
+  <meta property="article:author" content="JH8459">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="[Algorithm] 집밥이 그리워 (멱집합)">
+<meta property="og:url" content="/algorithm/21.11.10.algorithm5/">
+
+
+  <meta property="og:description" content="[Algorithm] 집밥이 그리워 (멱집합)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-10T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/algorithm/21.11.10.algorithm5/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH8459",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming study log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/">Year</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#algorithm" itemprop="item"><span itemprop="name">Algorithm</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Algorithm] 집밥이 그리워 (멱집합)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH8459" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">JH8459</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><em>불안감 떨쳐내기, 후회없이 하루 보내기</em><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">CodeStates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dev Tool</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#jekyll">Jekyll</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c"><span class="nav__sub-title">About</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Algorithm] 집밥이 그리워 (멱집합)">
+    <meta itemprop="description" content="[Algorithm] 집밥이 그리워 (멱집합)">
+    <meta itemprop="datePublished" content="2021-11-10T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/algorithm/21.11.10.algorithm5/" class="u-url" itemprop="url">[Algorithm] 집밥이 그리워 (멱집합)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#집밥이-그리워">집밥이 그리워</a><ul><li><a href="#문제">문제</a></li><li><a href="#입력">입력</a><ul><li><a href="#인자-1-sidedishes">인자 1: sideDishes</a></li></ul></li><li><a href="#출력">출력</a></li><li><a href="#출력-1">출력</a></li><li><a href="#입출력-예시">입출력 예시</a></li></ul></li><li><a href="#solution">Solution</a><ul><li><a href="#수도코드">수도코드</a></li><li><a href="#문제풀이">문제풀이</a></li></ul></li><li><a href="#느낀-점">느낀 점</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="Algorithm" /></p>
+<h2 id="집밥이-그리워">집밥이 그리워</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>김코딩은 몇 년의 해외 출장 끝에 본가에 내려왔습니다. 오랜만에 보는 김코딩의 얼굴에 반가웠던 부모님은 상다리가 부러질 정도로 음식을 만들었습니다. 감동의 재회도 잠시, 의자에 앉아 식사를 하려던 김코딩은 무엇부터 먹어야 될지 깊은 생각에 빠졌습니다. 정성스럽게 차려 주신 만큼, 최대한 많은 방법으로 다양하게 먹고 싶었기 때문입니다.</p>
+
+<p>밥은 한 가지이며 반찬은 다수일 때, 밥과 함께 먹을 수 있는 반찬의 모든 경우의 수를 배열에 담아 리턴하세요.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1-sidedishes">인자 1: sideDishes</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">String</code> 타입의 영문으로 된 반찬이 나열되어 있는 배열</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Array</code> 타입을 리턴해야 합니다.</li>
+  <li>밥과 함께 먹을 수 있는 반찬의 모든 경우의 수가 담긴 배열</li>
+</ul>
+
+<h3 id="출력-1">출력</h3>
+<hr />
+<ul>
+  <li>반찬은 영문으로 작성이 되어 있습니다.</li>
+  <li>반찬은 중복되지 않습니다.</li>
+  <li>반찬을 먹지 않는 것도 포함됩니다. (출력되는 2차원 배열은 빈 배열을 포함합니다.)</li>
+  <li>반찬은 3개 이상 99개 이하입니다.</li>
+  <li>출력되는 배열은 전부 사전식 순서(lexical order)로 정렬되어야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">missHouseMeal</span><span class="p">([</span><span class="dl">"</span><span class="s2">eggroll</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">kimchi</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">fishSoup</span><span class="dl">"</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+<span class="cm">/*
+[ [], 
+  [ 'eggroll' ], 
+  [ 'eggroll', 'fishSoup' ], 
+  [ 'eggroll', 'fishSoup', 'kimchi' ], 
+  [ 'eggroll', 'kimchi' ], 
+  [ 'fishSoup' ], 
+  [ 'fishSoup', 'kimchi' ], 
+  [ 'kimchi' ]
+] 
+*/</span>
+</code></pre></div></div>
+
+<h2 id="solution">Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<p><a href="https://jh8459.github.io/algorithm/21.09.07.algorithm2/" target="_blank">TOY 11. powerSet </a> 문제의 로직과 똑같다.</p>
+
+<p>DFS 방식으로 재귀를 구현하는 방식이다.. 사실 다시 떠올라서 풀진 못하였고, 이전에 정리한 내용을 보며 다시 풀어보았다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">missHouseMeal</span><span class="p">(</span><span class="nx">sideDishes</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">sideDishes</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="kd">const</span> <span class="nx">recursive</span> <span class="o">=</span> <span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">subset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">idx</span> <span class="o">===</span> <span class="nx">sideDishes</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 마지막 문자까지 검토한 경우</span>
+      <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">subset</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// recursive case</span>
+    <span class="c1">// idx번째 문자가 포함되지 않는 경우</span>
+    <span class="nx">recursive</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">subset</span><span class="p">);</span>
+
+    <span class="c1">// idx번째 문자가 포함되는 경우</span>
+    <span class="nx">recursive</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">subset</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">sideDishes</span><span class="p">[</span><span class="nx">idx</span><span class="p">]));</span>
+  <span class="p">};</span>
+
+  <span class="nx">recursive</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">missHouseMeal</span><span class="p">(</span><span class="nx">sideDishes</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// 결과를 담을 배열을 선언합니다.</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="c1">// sideDishes를 사전식 순서로 정렬합니다.</span>
+  <span class="nx">sideDishes</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+
+  <span class="c1">// 모든 조합을 검사하는 재귀 함수를 작성합니다.</span>
+  <span class="kd">const</span> <span class="nx">sidePowerSet</span> <span class="o">=</span> <span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">sideDish</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="c1">// 재귀 함수이기 때문에 탈출 조건을 만듭니다.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">idx</span> <span class="o">===</span> <span class="nx">sideDishes</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 만약, idx와 sideDishes의 길이가 같다면(마지막까지 검토한 경우) result에 sideDish를 삽입하고 push합니다.</span>
+      <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">sideDish</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// idx번째 요소가 포함되지 않는 경우</span>
+    <span class="nx">sidePowerSet</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">sideDish</span><span class="p">);</span>
+
+    <span class="c1">// idx번째 요소가 포함되는 경우</span>
+    <span class="nx">sidePowerSet</span><span class="p">(</span><span class="nx">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[...</span><span class="nx">sideDish</span><span class="p">,</span> <span class="nx">sideDishes</span><span class="p">[</span><span class="nx">idx</span><span class="p">]]);</span>
+  <span class="p">};</span>
+
+  <span class="c1">// 0 번째 인덱스와 빈 배열을 인자로 받는 재귀 함수를 실행합니다.</span>
+  <span class="nx">sidePowerSet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[]);</span>
+
+  <span class="c1">// 결과를 사전식 순서로 정렬합니다.</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="느낀-점">느낀 점</h2>
+
+<p><strong>Reference Code</strong>와 크게 다르지 않다.</p>
+
+<p>역시 다시 풀어보아도 어려운 문제이다… 일단은 자주 보고 자주 풀어보는게 정답인듯하다. 문제를 보자마자 “어!? 풀어본 문제인데?” 생각은 들었다…<del>물론 스스로 구현은 아직 무리다..</del></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/21.11.10.algorithm4/" class="pagination--pager" title="[Algorithm] 빼빼로 데이 (GCD)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.10.algorithm4/" rel="permalink">[Algorithm] 빼빼로 데이 (GCD)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] 빼빼로 데이 (GCD)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.10.algorithm3/" rel="permalink">[Algorithm] 블랙잭은 지겨워 (조합)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] 블랙잭은 지겨워 (조합)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.10.algorithm2/" rel="permalink">[Algorithm] 새로운 치킨 소스 레시피 (순열)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] 새로운 치킨 소스 레시피 (순열)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.10.algorithm1/" rel="permalink">[Algorithm] 가위바위보 (중복순열)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] 가위바위보 (중복순열)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 JH8459. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/algorithm/21.11.10.algorithm5/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/algorithm/21.11.10.algorithm5"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jh8459.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

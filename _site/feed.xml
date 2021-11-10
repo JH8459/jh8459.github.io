@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-10T23:25:52+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Algorithm] 가위바위보 (중복순열)</title><link href="/algorithm/21.11.10.algorithm1/" rel="alternate" type="text/html" title="[Algorithm] 가위바위보 (중복순열)" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>/algorithm/21.11.10.algorithm1</id><content type="html" xml:base="/algorithm/21.11.10.algorithm1/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;Algorithm&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-10T23:33:33+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Algorithm] 가위바위보 (중복순열)</title><link href="/algorithm/21.11.10.algorithm1/" rel="alternate" type="text/html" title="[Algorithm] 가위바위보 (중복순열)" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>/algorithm/21.11.10.algorithm1</id><content type="html" xml:base="/algorithm/21.11.10.algorithm1/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;Algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;가위바위보-중복순열&quot;&gt;가위바위보 (중복순열)&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -664,7 +664,128 @@
   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JH8459</name></author><category term="Algorithm" /><summary type="html">[Algorithm] 빼빼로 데이 (GCD)</summary></entry><entry><title type="html">[Algorithm] 짐 나르기 (Greedy)</title><link href="/algorithm/21.11.09.algorithm1/" rel="alternate" type="text/html" title="[Algorithm] 짐 나르기 (Greedy)" /><published>2021-11-09T00:00:00+09:00</published><updated>2021-11-09T00:00:00+09:00</updated><id>/algorithm/21.11.09.algorithm1</id><content type="html" xml:base="/algorithm/21.11.09.algorithm1/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;Algorithm&quot; /&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JH8459</name></author><category term="Algorithm" /><summary type="html">[Algorithm] 빼빼로 데이 (GCD)</summary></entry><entry><title type="html">[Algorithm] 집밥이 그리워 (멱집합)</title><link href="/algorithm/21.11.10.algorithm5/" rel="alternate" type="text/html" title="[Algorithm] 집밥이 그리워 (멱집합)" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>/algorithm/21.11.10.algorithm5</id><content type="html" xml:base="/algorithm/21.11.10.algorithm5/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;Algorithm&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;집밥이-그리워&quot;&gt;집밥이 그리워&lt;/h2&gt;
+&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;김코딩은 몇 년의 해외 출장 끝에 본가에 내려왔습니다. 오랜만에 보는 김코딩의 얼굴에 반가웠던 부모님은 상다리가 부러질 정도로 음식을 만들었습니다. 감동의 재회도 잠시, 의자에 앉아 식사를 하려던 김코딩은 무엇부터 먹어야 될지 깊은 생각에 빠졌습니다. 정성스럽게 차려 주신 만큼, 최대한 많은 방법으로 다양하게 먹고 싶었기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;밥은 한 가지이며 반찬은 다수일 때, 밥과 함께 먹을 수 있는 반찬의 모든 경우의 수를 배열에 담아 리턴하세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;인자-1-sidedishes&quot;&gt;인자 1: sideDishes&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt; 타입의 영문으로 된 반찬이 나열되어 있는 배열&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array&lt;/code&gt; 타입을 리턴해야 합니다.&lt;/li&gt;
+  &lt;li&gt;밥과 함께 먹을 수 있는 반찬의 모든 경우의 수가 담긴 배열&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;출력-1&quot;&gt;출력&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;반찬은 영문으로 작성이 되어 있습니다.&lt;/li&gt;
+  &lt;li&gt;반찬은 중복되지 않습니다.&lt;/li&gt;
+  &lt;li&gt;반찬을 먹지 않는 것도 포함됩니다. (출력되는 2차원 배열은 빈 배열을 포함합니다.)&lt;/li&gt;
+  &lt;li&gt;반찬은 3개 이상 99개 이하입니다.&lt;/li&gt;
+  &lt;li&gt;출력되는 배열은 전부 사전식 순서(lexical order)로 정렬되어야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;missHouseMeal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eggroll&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;kimchi&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;fishSoup&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+[ [], 
+  [ 'eggroll' ], 
+  [ 'eggroll', 'fishSoup' ], 
+  [ 'eggroll', 'fishSoup', 'kimchi' ], 
+  [ 'eggroll', 'kimchi' ], 
+  [ 'fishSoup' ], 
+  [ 'fishSoup', 'kimchi' ], 
+  [ 'kimchi' ]
+] 
+*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/algorithm/21.09.07.algorithm2/&quot; target=&quot;_blank&quot;&gt;TOY 11. powerSet &lt;/a&gt; 문제의 로직과 똑같다.&lt;/p&gt;
+
+&lt;p&gt;DFS 방식으로 재귀를 구현하는 방식이다.. 사실 다시 떠올라서 풀진 못하였고, 이전에 정리한 내용을 보며 다시 풀어보았다.&lt;/p&gt;
+
+&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;missHouseMeal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 마지막 문자까지 검토한 경우&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// recursive case&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// idx번째 문자가 포함되지 않는 경우&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// idx번째 문자가 포함되는 경우&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Reference Code&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;missHouseMeal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 결과를 담을 배열을 선언합니다.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// sideDishes를 사전식 순서로 정렬합니다.&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 모든 조합을 검사하는 재귀 함수를 작성합니다.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sidePowerSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sideDish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 재귀 함수이기 때문에 탈출 조건을 만듭니다.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 만약, idx와 sideDishes의 길이가 같다면(마지막까지 검토한 경우) result에 sideDish를 삽입하고 push합니다.&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sideDish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// idx번째 요소가 포함되지 않는 경우&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sidePowerSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sideDish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// idx번째 요소가 포함되는 경우&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sidePowerSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sideDish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sideDishes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 0 번째 인덱스와 빈 배열을 인자로 받는 재귀 함수를 실행합니다.&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;sidePowerSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 결과를 사전식 순서로 정렬합니다.&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;느낀-점&quot;&gt;느낀 점&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Reference Code&lt;/strong&gt;와 크게 다르지 않다.&lt;/p&gt;
+
+&lt;p&gt;역시 다시 풀어보아도 어려운 문제이다… 일단은 자주 보고 자주 풀어보는게 정답인듯하다. 문제를 보자마자 “어!? 풀어본 문제인데?” 생각은 들었다…&lt;del&gt;물론 스스로 구현은 아직 무리다..&lt;/del&gt;&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Algorithm" /><summary type="html">[Algorithm] 집밥이 그리워 (멱집합)</summary></entry><entry><title type="html">[Algorithm] 짐 나르기 (Greedy)</title><link href="/algorithm/21.11.09.algorithm1/" rel="alternate" type="text/html" title="[Algorithm] 짐 나르기 (Greedy)" /><published>2021-11-09T00:00:00+09:00</published><updated>2021-11-09T00:00:00+09:00</updated><id>/algorithm/21.11.09.algorithm1</id><content type="html" xml:base="/algorithm/21.11.09.algorithm1/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;Algorithm&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;짐-나르기-greedy&quot;&gt;짐 나르기 (Greedy)&lt;/h2&gt;
 &lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
 &lt;hr /&gt;
@@ -1237,24 +1358,4 @@
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name></author><category term="Jekyll" /><summary type="html">[Jekyll] Minimal mistakes Sidebar Category</summary></entry><entry><title type="html">[Retrospect] 21.11.06 HA3 기수이동</title><link href="/retrospect/21.11.06/" rel="alternate" type="text/html" title="[Retrospect] 21.11.06 HA3 기수이동" /><published>2021-11-06T00:00:00+09:00</published><updated>2021-11-06T00:00:00+09:00</updated><id>/retrospect/21.11.06</id><content type="html" xml:base="/retrospect/21.11.06/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
-
-&lt;p&gt;잘 다니던 은행권 회사를 그만두고 개발자로 전향하기로 마음 먹은 21년 05월 이후, 7월 19일 부터 시작한 코드스테이츠 33기 생활이 오늘 종료되고 34기로 이동하였다.&lt;br /&gt;
-적지않은 나이에 시작하는거라 나름 열심히 노력하고있다 생각했지만, &lt;del&gt;번아웃..이라말하긴 창피하고&lt;/del&gt; 시작하였을때의 열정중 일정부분이 고갈되었다라 생각이 들곤하였다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;어느 순간부터 매일 두뇌회전을 위해 쓰여야하는 TOY 알고리즘 문제풀이 시간은 부족한 챕터 진행을 위해 쓰이곤 하였고, 정규 학습시간 이후 개인학습시간을 갖고 내것으로 소화시키며 하루하루 배운점을 기록으로 남기기보다는 그저 제출에 급급하고 다음날 뒤쳐질 챕터과정이 걱정되어서 선행학습을 우선시하며 겨우겨우 따라가는 내 모습을 보며, &lt;strong&gt;“스스로 부족하지않은가?”&lt;/strong&gt; 라는 의심이 요즈음엔 확신으로 바뀌었다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;변론을 조금 하자면, HA 이번 과제형 문제는 로직 구현(포스트맨을 통한 JWT 토큰 방식의 회원가입, 로그인, 로그아웃.. 기능구현)은 모두 다 하였지만, 테스트 케이스를 충족할 만큼의 간결한 코드 구현은 하지못하여서 탈락을 하였다. 회고글 작성 후 다시한번 천천히 문제가 무었이었는지 시간에 쫓기지않는 상황에서 다시 복습할 예정이다.&lt;/p&gt;
-
-&lt;p&gt;사실 내 실력에 대한 의심은 오래전부터 가지고 있었기에, 오히려 잘 됐다라는 생각마저도 든다. &lt;br /&gt;
-다만, 학습할 기간이 늘어나서 마음이 조급해진게 아니라 마음이 잘 맞는 스터디 팀원&lt;del&gt;(4명중 2명 탈락, 2명 합격..)&lt;/del&gt; 들과 생이별을 한다는게 마음이 아프다.&lt;/p&gt;
-
-&lt;p&gt;지나간 일을 계속 후회하기보다는 이번 기수이동으로 인하여, 부족했던 나를 돌아 볼 기회가 생겼다고 생각한다. &lt;br /&gt;
-7월 중순부터 달려온 일정에서 스스로 부족한 부분은 무엇인지 뼈저리게 느꼈고, 이번 한번의 시험 낙방으로 내 자신이 바닥까지 떨어졌다 생각하지도 않는다. &lt;br /&gt;
-애초에 반년가량되는 이 짧은시간 동안 현업에서 필요한 모든 실무기술을 습득할 수 없다 생각한다.&lt;/p&gt;
-
-&lt;p&gt;마음 다잡고 다음주 부터 진행 될 34기의 일정을 잘 따라가며, 수료까지 후회없이 노력해야겠다.&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html">[Retrospect] 21.11.06 HA3 기수이동</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>JH8459</name></author><category term="Jekyll" /><summary type="html">[Jekyll] Minimal mistakes Sidebar Category</summary></entry></feed>
