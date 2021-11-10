@@ -1,0 +1,183 @@
+I"�><p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="Algorithm" /></p>
+<h2 id="toy-31-rangeminimum">TOY 31. rangeMinimum</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>정수를 요소로 갖는 배열과 특정 구간을 입력받아, 해당 구간 내에서 최소값을 리턴해야 합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--arr">인자 1 : arr</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">arr.length</code>는 500,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 -100,000 이상 100,000 이하의 정수</li>
+</ul>
+
+<h4 id="인자-2--ranges">인자 2 : ranges</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges.length</code>는 10,000 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges[i]</code>는 특정 구간을 의미</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges[i][0]</code>은 i번째 구간의 시작 인덱스</li>
+  <li><code class="language-plaintext highlighter-rouge">ranges[i][1]</code>은 i번째 구간의 마지막 인덱스</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li>배열(<code class="language-plaintext highlighter-rouge">arr</code>)를 리턴해야 합니다. (입출력 예시 참고)</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 <code class="language-plaintext highlighter-rouge">i</code>번째 구간(<code class="language-plaintext highlighter-rouge">ranges[i]</code>)의 최소값</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">mins</span> <span class="o">=</span> <span class="nx">rangeMinimum</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mins</span><span class="p">);</span> <span class="c1">// --&gt; [2, 1]</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<ul>
+  <li>Advanced1: 주어진 배열에서 특정 구간의 최소값을 구하는 단순한 알고리즘은 단순 순회(<code class="language-plaintext highlighter-rouge">O(N)</code>)입니다. 같은 배열에 대해서 다양한 구간에 대한 최소값을 구할 경우, 단순 순회는 <code class="language-plaintext highlighter-rouge">O(N^2)</code> 입니다(구간의 개수도 N개라 가정할 경우). 적절한 자료구조를 통해 이와 같은 구간 조회에 대한 반복 작업을 효율적(<code class="language-plaintext highlighter-rouge">O(N * logN)</code>)으로 수행할 수 있습니다. 구간 트리(segment tree)에 대해서 학습하시고, Advanced 테스트 케이스를 통과해 보시기 바랍니다.</li>
+  <li>트리를 객체 또는 배열로 구현할 수 있습니다. 객체로 구현하는 것이 보다 직관적이기 때문에 객체로 먼저 도전하시기 바랍니다. 레퍼런스는 모두 주어집니다.</li>
+  <li>구간의 최대값, 합도 동일한 로직으로 구현하면 됩니다.</li>
+</ul>
+
+<h2 id="toy-31-solution">TOY 31. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p>Advanced가 아니라면 한번의 반복문을 사용해서 문제를 해결할 수 있다(<code class="language-plaintext highlighter-rouge">O(n)</code>). 구간 하나를 가져와서 그 구간 사이의 값을 for문을 통해 최솟값을 리턴해준다.</p>
+
+<p>Advanced 코드는 <strong>Reference Code</strong>를 보았다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// naive solution: O(N) (search only)</span>
+<span class="c1">// const rangeMinimum = function (arr, ranges) {</span>
+<span class="c1">//   return ranges.map((range) =&gt; {</span>
+<span class="c1">//     const [start, end] = range;</span>
+<span class="c1">//     let min = Number.MAX_SAFE_INTEGER;</span>
+<span class="c1">//     for (let i = start; i &lt;= end; i++) {</span>
+<span class="c1">//       if (arr[i] &lt; min) min = arr[i];</span>
+<span class="c1">//     }</span>
+<span class="c1">//     return min;</span>
+<span class="c1">//   });</span>
+<span class="c1">// };</span>
+
+<span class="c1">// solution with segment tree: O(logN) (search only)</span>
+<span class="c1">// object implementaion</span>
+<span class="kd">const</span> <span class="nx">rangeMinimum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ranges</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ts: tree start. te: tree end</span>
+  <span class="c1">// arr의 ts부터 te까지를 tree로 만든다.</span>
+  <span class="kd">const</span> <span class="nx">createMinTree</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ts</span><span class="p">,</span> <span class="nx">te</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// base case</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">ts</span> <span class="o">===</span> <span class="nx">te</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">ts</span><span class="p">]</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="c1">// recursive case</span>
+    <span class="c1">// 현재 범위를 절반을 기준으로 왼쪽과 오른쪽으로 나눈다</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">ts</span> <span class="o">+</span> <span class="nx">te</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">createMinTree</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ts</span><span class="p">,</span> <span class="nx">mid</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">createMinTree</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">te</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">value</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">right</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span>
+      <span class="nx">left</span><span class="p">,</span>
+      <span class="nx">right</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">createMinTree</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="c1">// rs: range start, re: reange end</span>
+  <span class="kd">const</span> <span class="nx">findMin</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ts</span><span class="p">,</span> <span class="nx">te</span><span class="p">,</span> <span class="nx">rs</span><span class="p">,</span> <span class="nx">re</span><span class="p">,</span> <span class="nx">tree</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 현재 tree와 구간이 정확히 일치하거나</span>
+    <span class="c1">// 구간이 tree를 포함할 경우</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">rs</span> <span class="o">&lt;=</span> <span class="nx">ts</span> <span class="o">&amp;&amp;</span> <span class="nx">te</span> <span class="o">&lt;=</span> <span class="nx">re</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 현재 tree에 주어진 구간이 겹치지 않는 경우</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">te</span> <span class="o">&lt;</span> <span class="nx">rs</span> <span class="o">||</span> <span class="nx">re</span> <span class="o">&lt;</span> <span class="nx">ts</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 겹치는 부분이 존재하는 경우</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">ts</span> <span class="o">+</span> <span class="nx">te</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span>
+      <span class="nx">findMin</span><span class="p">(</span><span class="nx">ts</span><span class="p">,</span> <span class="nx">mid</span><span class="p">,</span> <span class="nx">rs</span><span class="p">,</span> <span class="nx">re</span><span class="p">,</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span> <span class="c1">//</span>
+      <span class="nx">findMin</span><span class="p">(</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">te</span><span class="p">,</span> <span class="nx">rs</span><span class="p">,</span> <span class="nx">re</span><span class="p">,</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
+    <span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">mins</span> <span class="o">=</span> <span class="nx">ranges</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">range</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">]</span> <span class="o">=</span> <span class="nx">range</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">findMin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">tree</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">mins</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// solution with segment tree: O(logN) (search only)</span>
+<span class="c1">// array implementaion</span>
+<span class="c1">// const rangeMinimum = function (arr, ranges) {</span>
+<span class="c1">//   const createMinTree = (arr, ts, te, tree, idx) =&gt; {</span>
+<span class="c1">//     if (ts === te) {</span>
+<span class="c1">//       tree[idx] = arr[ts];</span>
+<span class="c1">//       return arr[ts];</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     const mid = Math.floor((ts + te) / 2);</span>
+<span class="c1">//     tree[idx] = Math.min(</span>
+<span class="c1">//       createMinTree(arr, ts, mid, tree, idx * 2 + 1), //</span>
+<span class="c1">//       createMinTree(arr, mid + 1, te, tree, idx * 2 + 2)</span>
+<span class="c1">//     );</span>
+
+<span class="c1">//     return tree[idx];</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   // 트리 전체의 높이(루트 노트에서 가장 깊은 리프 노드까지의 거리)를 구하고</span>
+<span class="c1">//   // 전체 배열의 크기를 구한다.</span>
+<span class="c1">//   const height = Math.ceil(Math.log2(arr.length));</span>
+<span class="c1">//   const size = Math.pow(2, height + 1) - 1;</span>
+<span class="c1">//   const tree = Array(size).fill(null);</span>
+<span class="c1">//   createMinTree(arr, 0, arr.length - 1, tree, 0);</span>
+
+<span class="c1">//   const findMin = (ts, te, rs, re, idx) =&gt; {</span>
+<span class="c1">//     if (rs &lt;= ts &amp;&amp; te &lt;= re) {</span>
+<span class="c1">//       return tree[idx];</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     if (te &lt; rs || re &lt; ts) {</span>
+<span class="c1">//       return Number.MAX_SAFE_INTEGER;</span>
+<span class="c1">//     }</span>
+
+<span class="c1">//     const mid = parseInt((ts + te) / 2);</span>
+<span class="c1">//     return Math.min(</span>
+<span class="c1">//       findMin(ts, mid, rs, re, 2 * idx + 1), //</span>
+<span class="c1">//       findMin(mid + 1, te, rs, re, 2 * idx + 2)</span>
+<span class="c1">//     );</span>
+<span class="c1">//   };</span>
+
+<span class="c1">//   const mins = ranges.map((range) =&gt; {</span>
+<span class="c1">//     const [start, end] = range;</span>
+<span class="c1">//     return findMin(0, arr.length - 1, start, end, 0);</span>
+<span class="c1">//   });</span>
+<span class="c1">//   return mins;</span>
+<span class="c1">// };</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p><strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 32. largestRectangularArea</li>
+</ul>
+:ET

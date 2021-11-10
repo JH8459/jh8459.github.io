@@ -1,0 +1,873 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Algorithm] TOY 23. spiralTraversal | JHLog</title>
+<meta name="description" content="[Algorithm] TOY 23. spiralTraversal">
+
+
+  <meta name="author" content="JH8459">
+  
+  <meta property="article:author" content="JH8459">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="[Algorithm] TOY 23. spiralTraversal">
+<meta property="og:url" content="/algorithm/21.10.05.algorithm/">
+
+
+  <meta property="og:description" content="[Algorithm] TOY 23. spiralTraversal">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-05T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/algorithm/21.10.05.algorithm/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH8459",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming study log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/">Year</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#algorithm" itemprop="item"><span itemprop="name">Algorithm</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Algorithm] TOY 23. spiralTraversal</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH8459" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">JH8459</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><em>불안감 떨쳐내기, 후회없이 하루 보내기</em><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">CodeStates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dev Tool</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#jekyll">Jekyll</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c"><span class="nav__sub-title">About</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Algorithm] TOY 23. spiralTraversal">
+    <meta itemprop="description" content="[Algorithm] TOY 23. spiralTraversal">
+    <meta itemprop="datePublished" content="2021-10-05T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/algorithm/21.10.05.algorithm/" class="u-url" itemprop="url">[Algorithm] TOY 23. spiralTraversal
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-05T00:00:00+09:00">October 5, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#toy-23-spiraltraversal">TOY 23. spiralTraversal</a><ul><li><a href="#문제">문제</a></li><li><a href="#입력">입력</a><ul><li><a href="#인자-1--matrix">인자 1 : matrix</a></li></ul></li><li><a href="#출력">출력</a></li><li><a href="#입출력-예시">입출력 예시</a></li></ul></li><li><a href="#toy-23-solution">TOY 23. Solution</a><ul><li><a href="#수도코드">수도코드</a></li><li><a href="#문제풀이">문제풀이</a></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li><li><a href="#내일-할-일">내일 할 일</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="Algorithm" /></p>
+<h2 id="toy-23-spiraltraversal">TOY 23. spiralTraversal</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>2차원 M x N 배열을 나선형(spiral)으로 순회해야 합니다.</p>
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1--matrix">인자 1 : matrix</h4>
+<ul>
+  <li>세로 길이(<code class="language-plaintext highlighter-rouge">matrix.length</code>)가 M, 가로 길이(<code class="language-plaintext highlighter-rouge">matrix[i].length</code>)가 N인 2차원 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">matrix[i]</code>는 <code class="language-plaintext highlighter-rouge">string</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">matrix[i][j].length</code>는 1</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">string</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">matrix</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">F</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">G</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">H</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">I</span><span class="dl">'</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">spiralTraversal</span><span class="p">(</span><span class="nx">matrix</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 'ABCFIHGDE'</span>
+
+<span class="nx">matrix</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">T</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">r</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">i</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">s</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">t</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">o</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">n</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">r</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">n</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">n</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">L</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">spiralTraversal</span><span class="p">(</span><span class="nx">matrix</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">// --&gt; 'Tyrion Lannister'</span>
+</code></pre></div></div>
+<h2 id="toy-23-solution">TOY 23. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+<p>상단, 우측, 하단, 좌측 돌려가며 <code class="language-plaintext highlighter-rouge">matrix</code>를 깎으(?)면서 배열에 담긴 값을 <code class="language-plaintext highlighter-rouge">result</code>에 넣어주면 언젠가는 <code class="language-plaintext highlighter-rouge">matix</code>가 빈 배열로 남게된다.  해당 네가지 과정을 담은 함수들을 작성해준다.</p>
+
+<p>spiralTraversal 메인 함수에서는 <code class="language-plaintext highlighter-rouge">matrix</code>가 모두 깎인(?) 빈 배열의 상태가 될때까지 반복으로 해당 과정들을 수행해준다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 매트릭스 상단 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertTop</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">el</span> <span class="k">of</span> <span class="nx">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]){</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">el</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">matrix</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>  <span class="c1">// 상단(윗변) 삭제</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 매트릭스 우측 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertRight</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">char</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">pop</span><span class="p">();</span>  <span class="c1">// 우측 한글자씩 삭제 후 변수에 담아 리턴한다</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 매트릭스 하단 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertBottom</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">matrix</span><span class="p">[</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">// 하단(아랫변)은 상단과 다르게 역순으로 담긴다.</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">el</span> <span class="k">of</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]){</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">el</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">matrix</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>  <span class="c1">// 하단(아랫변) 삭제</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 매트릭스 좌측 순서대로 result 담는 함수</span>
+<span class="kd">const</span> <span class="nx">insertLeft</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">char</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">shift</span><span class="p">();</span>  <span class="c1">// 좌측 한글자씩 삭제 후 변수에 담아 리턴한다</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">spiralTraversal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertTop</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>  <span class="c1">// 반복문이 끝나는 조건은 상단 혹은 하단 삭제 후 matrix가 모두 비어버리는 경우이다.</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertRight</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertBottom</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">insertLeft</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">spiralTraversal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 각 방향마다 row와 col의 변화를 저장</span>
+  <span class="kd">const</span> <span class="nx">RIGHT</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">DOWN</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">LEFT</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">UP</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="c1">// 각 방향을 위한 lookup table</span>
+  <span class="kd">const</span> <span class="nx">MOVES</span> <span class="o">=</span> <span class="p">[</span><span class="nx">RIGHT</span><span class="p">,</span> <span class="nx">DOWN</span><span class="p">,</span> <span class="nx">LEFT</span><span class="p">,</span> <span class="nx">UP</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">M</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">row</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">M</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">col</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">direction</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">cnt</span> <span class="o">&lt;</span> <span class="nx">M</span> <span class="o">*</span> <span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">move</span> <span class="o">=</span> <span class="nx">MOVES</span><span class="p">[</span><span class="nx">direction</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">rd</span><span class="p">,</span> <span class="nx">cd</span><span class="p">]</span> <span class="o">=</span> <span class="nx">move</span><span class="p">;</span>
+
+    <span class="nx">row</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">+</span> <span class="nx">rd</span><span class="p">;</span>
+    <span class="nx">col</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">+</span> <span class="nx">cd</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="nx">col</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">];</span>
+      <span class="c1">// 한 요소를 두 번 접근하지 않게 하기 위해서, 접근된 요소를 false로 변경한다.</span>
+      <span class="nx">matrix</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="nx">row</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">+</span> <span class="nx">rd</span><span class="p">;</span>
+      <span class="nx">col</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">+</span> <span class="nx">cd</span><span class="p">;</span>
+      <span class="nx">cnt</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// row, col 이 행렬의 범위를 벗어났기 때문에,</span>
+    <span class="c1">// 진행된 방향의 반대로 한 칸 이동한다.</span>
+    <span class="nx">row</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">-</span> <span class="nx">rd</span><span class="p">;</span>
+    <span class="nx">col</span> <span class="o">=</span> <span class="nx">col</span> <span class="o">-</span> <span class="nx">cd</span><span class="p">;</span>
+
+    <span class="c1">// 각 방향이 순환되기 때문에 모듈러 연산을 사용한다.</span>
+    <span class="nx">direction</span> <span class="o">=</span> <span class="p">(</span><span class="nx">direction</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>레퍼런스 코드는 길찾기 알고리즘과 비슷한 메커니즘으로 문제를 해결하였다. 여러가지 함수를 만들지 않고 방향성을 갖고 <code class="language-plaintext highlighter-rouge">[0,0]</code> 인덱스부터 나선형으로 돌며 모든 배열의 인덱스를 순회하는 알고리즘으로 깔끔히 구현하였다.</p>
+
+<p>해당 길찾기(?) 알고리즘은 눈에 익혀두어야 겠다.</p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 24. radixSort</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-10-05T00:00:00+09:00">October 5, 2021</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/21.10.01.algorithm/" class="pagination--pager" title="[Algorithm] TOY 22. rotateMatrix
+">이전</a>
+    
+    
+      <a href="/til/21.10.05.til/" class="pagination--pager" title="[TIL] 21.10.05 / 1. Linux 사용권한 2. Linux 환경변수
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.10.algorithm/" rel="permalink">[Algorithm] 짐 나르기 (Greedy)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] 짐 나르기 (Greedy)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll/21.11.08.Jekyll/" rel="permalink">[Jekyll] Minimal mistakes Sidebar Category
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-08T00:00:00+09:00">November 8, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Jekyll] Minimal mistakes Sidebar Category
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospect/21.11.06/" rel="permalink">[Retrospect] 21.11.06 HA3 기수이동
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-06T00:00:00+09:00">November 6, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect] 21.11.06 HA3 기수이동
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/21.11.04.algorithm/" rel="permalink">[Algorithm] TOY 44. TSP
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-04T00:00:00+09:00">November 4, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Algorithm] TOY 44. TSP (travelling salesman problem)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/jh8459_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 JH8459. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/algorithm/21.10.05.algorithm/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/algorithm/21.10.05.algorithm"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jh8459.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

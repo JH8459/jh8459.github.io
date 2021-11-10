@@ -12,8 +12,8 @@ docs:
     children:
       - title: "TIL"
         url: /category/#til
-      - title: "TOY"
-        url: /category/#toy
+      - title: "Algorithm"
+        url: /category/#algorithm
       - title: "Retrospect"
         url: /category/#retrospect
 
