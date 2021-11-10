@@ -1,0 +1,152 @@
+I"�:<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="Algorithm" /></p>
+<h2 id="보드-게임">보드 게임</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>N * N의 크기를 가진 보드판 위에서 게임을 하려고 합니다. 게임의 룰은 다음과 같습니다.</p>
+
+<ol>
+  <li>좌표 왼쪽 상단(0, 0)에 말을 놓는다.</li>
+  <li>말은 상, 하, 좌, 우로 이동할 수 있고, 플레이어가 조작할 수 있다.</li>
+  <li>조작의 기회는 딱 한 번 주어진다.</li>
+  <li>조작할 때 U, D, L, R은 각각 상, 하, 좌, 우를 의미하며 한 줄에 띄어쓰기 없이 써야 한다.
+    <ul>
+      <li>예시: <code class="language-plaintext highlighter-rouge">UDDLLRRDRR</code>, <code class="language-plaintext highlighter-rouge">RRRRR</code></li>
+    </ul>
+  </li>
+  <li>한 번 움직일 때마다 한 칸씩 움직이게 되며, 그 칸 안의 요소인 숫자를 획득할 수 있다.</li>
+  <li>방문한 곳을 또 방문해도 숫자를 획득할 수 있다.</li>
+  <li>보드 밖을 나간 말은 OUT 처리가 된다.</li>
+  <li>칸 안의 숫자는 0 또는 1이다.
+    <ul>
+      <li>단, 좌표 왼쪽 상단(0, 0)은 항상 0이다.</li>
+    </ul>
+  </li>
+  <li>획득한 숫자를 합산하여 숫자가 제일 큰 사람이 이기게 된다.</li>
+</ol>
+
+<p>보드판이 담긴 board와 조작하려고 하는 문자열 operation이 주어질 때, 말이 해당 칸을 지나가면서 획득한 숫자의 합을 구하는 함수를 작성하세요.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<h4 id="인자-1-board">인자 1: board</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입의 2차원 배열</li>
+  <li>2 &lt;= board.length &lt;= 1,000</li>
+  <li>예: <code class="language-plaintext highlighter-rouge">[ [0, 0, 1], [1, 0, 1], [1, 1, 1] ]</code></li>
+</ul>
+
+<h4 id="인자-2-operation">인자 2: operation</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">string</code> 타입의 대문자 영어가 쓰여진 문자열</li>
+  <li>1 &lt;= operation.length &lt;= board.length * 2</li>
+  <li>U, L, D, R 이외의 문자열은 없습니다.</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Number</code> 타입을 반환해야 합니다.
+    <ul>
+      <li>board와 operation이 입력값의 예시 (<code class="language-plaintext highlighter-rouge">[ [0, 0, 1], [1, 0, 1], [1, 1, 1] ]</code>, <code class="language-plaintext highlighter-rouge">DDR</code>)일 때, (0, 0) -&gt; (1, 0) -&gt; (2, 0) -&gt; (2, 1) 순서로 이동하게 되고, 각 0, 1, 1, 1을 얻어 <code class="language-plaintext highlighter-rouge">3</code>을 반환합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>만약, 말이 보드 밖으로 나갔다면 즉시 <code class="language-plaintext highlighter-rouge">OUT</code> 을 반환합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">board1</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="kd">const</span> <span class="nx">output1</span> <span class="o">=</span> <span class="nx">boardGame</span><span class="p">(</span><span class="nx">board1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">RRDLLD</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output1</span><span class="p">);</span> <span class="c1">// 4</span>
+
+
+<span class="kd">const</span> <span class="nx">board2</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="kd">const</span> <span class="nx">output2</span> <span class="o">=</span> <span class="nx">boardGame</span><span class="p">(</span><span class="nx">board2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">UUUDD</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output2</span><span class="p">);</span> <span class="c1">// 'OUT'</span>
+
+<span class="kd">const</span> <span class="nx">board3</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="kd">const</span> <span class="nx">output3</span> <span class="o">=</span> <span class="nx">boardGame</span><span class="p">(</span><span class="nx">board3</span><span class="p">,</span> <span class="dl">'</span><span class="s1">DDRRRUDUDUD</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output3</span><span class="p">);</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<h2 id="solution">Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<p>정사각형 2차원 배열에서 길찾기 문제이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">x</code>,<code class="language-plaintext highlighter-rouge">y</code> 좌표값으로 operation에 따라 상하좌우로 움직이는 로직을 구현하면 되며, 문제의 조건처럼 보드를 나가는 경우를 설정하여 <code class="language-plaintext highlighter-rouge">OUT</code>을 반환하면 되는 문제이다.</p>
+
+<p>2차원 배열 특성상 <code class="language-plaintext highlighter-rouge">board[y][x]</code>로 인지하고 있어야, 평면도의 xy축과 같은 개념으로 구현이 가능하다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">boardGame</span><span class="p">(</span><span class="nx">board</span><span class="p">,</span> <span class="nx">operation</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 배열의 인덱스 문제로, board[y][x] 로 인지해야한다.</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">move</span> <span class="k">of</span> <span class="nx">operation</span><span class="p">){</span>  <span class="c1">// operation 문자열을 순회</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">move</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">U</span><span class="dl">'</span><span class="p">){</span>  <span class="c1">// UP</span>
+      <span class="nx">y</span><span class="o">-=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">move</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">){</span>  <span class="c1">// DOWN</span>
+      <span class="nx">y</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">move</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">L</span><span class="dl">'</span><span class="p">){</span>  <span class="c1">// LEFT</span>
+      <span class="nx">x</span><span class="o">-=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">move</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">R</span><span class="dl">'</span><span class="p">){</span>  <span class="c1">// RIGHT</span>
+      <span class="nx">x</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="nx">x</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">||</span> <span class="nx">x</span><span class="o">&gt;</span><span class="nx">board</span><span class="p">.</span><span class="nx">length</span> <span class="o">||</span> <span class="nx">y</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">||</span> <span class="nx">y</span><span class="o">&gt;</span><span class="nx">board</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">OUT</span><span class="dl">'</span><span class="p">;</span>
+    
+    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">y</span><span class="p">][</span><span class="nx">x</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">partTimeJob</span><span class="p">(</span><span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wallet</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">k</span> <span class="o">/</span> <span class="nx">wallet</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+      <span class="nx">result</span> <span class="o">+=</span> <span class="nx">sum</span><span class="p">;</span>
+      <span class="nx">k</span> <span class="o">=</span> <span class="nx">k</span> <span class="o">-</span> <span class="p">(</span><span class="nx">wallet</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">sum</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="느낀-점">느낀 점</h2>
+
+<p><strong>Reference Code</strong>와 비슷하게 접근하였다.</p>
+:ET
