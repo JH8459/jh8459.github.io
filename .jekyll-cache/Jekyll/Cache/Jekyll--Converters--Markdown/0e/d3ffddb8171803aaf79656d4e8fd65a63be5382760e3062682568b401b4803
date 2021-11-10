@@ -1,0 +1,128 @@
+I"�(<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="Algorithm" /></p>
+<h2 id="가위바위보-중복순열">가위바위보 (중복순열)</h2>
+<h3 id="문제">문제</h3>
+<hr />
+<p>가위바위보 게임은 2인 이상의 사람이 동시에 ‘가위, 바위, 보’를 외치고 동시에 가위, 바위 또는 보 중에서 한 가지를 의미하는 손 모양을 내밀어 승부를 결정짓는 게임입니다. 세 판의 가위바위보 게임을 할 경우, 한 사람은 세 번의 선택(예. 가위, 가위, 보)을 할 수 있습니다. 세 번의 선택으로 가능한 모든 경우의 수를 구하는 함수를 작성합니다.</p>
+
+<h3 id="입력">입력</h3>
+<hr />
+<ul>
+  <li>없음</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+<ul>
+  <li>2차원 배열(<code class="language-plaintext highlighter-rouge">arr[i]</code>)을 리턴해야 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 전체 경우의 수 중 한 가지 경우(총 세 번의 선택)를 의미하는 배열입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i]</code>는 <code class="language-plaintext highlighter-rouge">'rock'</code>, <code class="language-plaintext highlighter-rouge">'paper'</code>, <code class="language-plaintext highlighter-rouge">'scissors'</code> 중 한 가지 이상을 요소로 갖는 배열입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">arr[i].length</code>는 3</li>
+</ul>
+
+<h3 id="주의사항">주의사항</h3>
+<hr />
+<ul>
+  <li>최종적으로 리턴되는 배열의 순서는 가중치 적용 정렬(Weighted Sort)을 따릅니다.</li>
+  <li>중요도는 <code class="language-plaintext highlighter-rouge">'rock'</code>, <code class="language-plaintext highlighter-rouge">'paper'</code>, <code class="language-plaintext highlighter-rouge">'scissors'</code> 순으로 높습니다.</li>
+  <li>쉽게 생각해 올림픽 순위 결정 방식을 참고하면 됩니다.</li>
+  <li>금메달(<code class="language-plaintext highlighter-rouge">'rock'</code>)이 은메달(<code class="language-plaintext highlighter-rouge">'paper'</code>)보다 우선하고, 은메달(<code class="language-plaintext highlighter-rouge">'paper'</code>)이 동메달(<code class="language-plaintext highlighter-rouge">'scissors'</code>)보다 우선합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">rockPaperScissors</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+<span class="cm">/*
+    [
+      ["rock", "rock", "rock"],
+      ["rock", "rock", "paper"],
+      ["rock", "rock", "scissors"],
+      ["rock", "paper", "rock"],
+      // ...etc ...
+    ]
+  */</span>
+</code></pre></div></div>
+
+<h3 id="advanced">Advanced</h3>
+<hr />
+<ul>
+  <li>가위바위보 게임의 수를 나타내는 양의 정수 rounds가 주어질 경우, 해당 rounds 동안 선택할 수 있는 모든 경우의 수를 리턴하도록 함수를 작성해 보세요.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">rockPaperScissors</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+<span class="cm">/*
+    [
+      ["rock", "rock", "rock", "rock", "rock"],
+      ["rock", "rock", , "rock", "rock", "paper"],
+      ["rock", "rock", , "rock", "rock", "scissors"],
+      ["rock", "rock", "rock", "paper", "rock"],
+      ["rock", "rock", "rock", "paper", "paper"],
+      ["rock", "rock", "rock", "paper", "scissors"],
+      ["rock", "rock", "rock", "scissors", "rock"],
+      // ...etc ...
+    ]
+  */</span>
+</code></pre></div></div>
+
+<h2 id="solution">Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<p>우선 Bare Minimum 문제는 어렵지 않게 해결할 수 있었다.</p>
+
+<p>for문을 3번 중첩하여 경우의 수를 도출해내면 된다.<br />
+각 자리에 3가지(<code class="language-plaintext highlighter-rouge">'rock'</code>, <code class="language-plaintext highlighter-rouge">'paper'</code>, <code class="language-plaintext highlighter-rouge">'scissors'</code>)의 경우의 수가 올 수 있다. 그리고 라운드는 3으로 고정되어 있기에 <code class="language-plaintext highlighter-rouge">3^3</code>의 경우의 수, 즉 27가지의 경우의 수를 배열로 반환하면 된다.</p>
+
+<p>다만, Advanced 경우에는 라운드 수가 고정이 아니므로 재귀 함수(Rounds를 인자로 받는)를 통하여 구현을 해야만 했다.</p>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">ocean</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// bag 이라는 배열에 금액을 만들 수 있는 경우의 수를 기록</span>
+  <span class="c1">// 각 인덱스 no# = 만드려는 금액 을 의미</span>
+  <span class="c1">// ex) target = 5, type = [1, 2, 5] 면</span>
+  <span class="c1">// bag[3] = 2  =&gt; 3을 만드는 경우의 수 = 1만 사용 &amp; 1,2 함께 사용</span>
+  <span class="c1">// bag[4] = 2  =&gt; 4를 만드는 경우의 수 = 1만 사용 &amp; 1,2 함께 사용</span>
+  <span class="c1">// bag[5] = 4  =&gt; 5를 만드는 경우의 수 = 1*5 , 1*3 + 2, 1 + 2*2, 5*1</span>
+  <span class="c1">// 0 을 만들 수 있는 경우는 아무것도 선택하지 않으면 되기 때문에 bag[0] = 1 로 초기값 설정</span>
+  <span class="kd">let</span> <span class="nx">bag</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+  <span class="c1">// 인덱스 no# = 만드려는 금액 이기 때문에</span>
+  <span class="c1">// bag 을 target 금액만큼의 길이를 가진 배열을 만들어 주고,</span>
+  <span class="c1">// 경우의 수를 저장하기 위해 초기값은 모두 0으로 만들어 준다</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">target</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="nx">bag</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="c1">// 돈의 종류가 담겨있는 배열을 순차적으로 탐색   </span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">type</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// target 금액까지 순차적으로 1씩 증가하면서    </span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">target</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span>
+  <span class="c1">// bag의 인덱스가 type[i] 보다 큰 구간만</span>
+  <span class="c1">// (작은 구간은 type[i]로 만들 수 없는 금액이기 때문에 탐색할 필요가 없다)    </span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">type</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">j</span><span class="p">)</span>
+  <span class="c1">// 기존 경우의 수에 type[i]를 뺀 금액을 만들 수 있는 경우의 수를 더해준다       </span>
+        <span class="nx">bag</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">bag</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="nx">type</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+  <span class="p">}</span>
+  <span class="c1">// bag 의 target 인덱스에 target 금액을 훔칠 수 있는 경우의 수가 쌓이므로</span>
+  <span class="c1">// 해당 값을 리턴해 준다</span>
+
+  <span class="k">return</span> <span class="nx">bag</span><span class="p">[</span><span class="nx">target</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="느낀-점">느낀 점</h2>
+
+<p><strong>Reference Code</strong>를 보아도 이해 할 수 없어서, 계속 디버깅을 돌려보며 이해하려 노력해보았다.</p>
+
+<p>디버깅을 돌려가니 눈으로 로직이 보이긴한다.. 결론만 말하자면 <code class="language-plaintext highlighter-rouge">bag</code> 배열의 인덱스에는 <code class="language-plaintext highlighter-rouge">target</code> 금액을 훔칠 수 있는 경우의 수가 쌓이는 구조이다. (Dynamic Programmin)</p>
+
+<p>다시 풀으라해도 솔직히 풀어낼 자신이 없는 문제다.</p>
+:ET
