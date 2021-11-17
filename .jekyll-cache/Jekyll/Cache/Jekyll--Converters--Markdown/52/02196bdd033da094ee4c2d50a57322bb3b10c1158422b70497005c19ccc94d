@@ -1,0 +1,77 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg" alt="tool" /></p>
+
+<h2 id="minimal-mistakes-utterances">Minimal mistakes Utterances</h2>
+
+<h3 id="utterances-vs-disqus">Utterances VS Disqus</h3>
+<hr />
+
+<ul>
+  <li>
+    <p>현재 블로그 (21.11.17 기준)는 <code class="language-plaintext highlighter-rouge">Minimal mistakes</code> jekyll theme 에 댓글 창은 <strong>Disqus</strong>를 사용하고 있었다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/142207738-058ca84c-b025-4150-991c-f08006bdd877.png" alt="스크린샷, 2021-11-17 22-09-56" /></p>
+
+    <p>다만 조금..난잡하다? 라는 생각이 들던 중 <del>어짜피 댓글도 안달리는데…</del> GitHub Issue 기반으로 Comment를 작성하는 <strong>Utterances</strong>를 알게 되어서 변경해 보았다.</p>
+  </li>
+  <li>
+    <p>블로그 성격이 개발 블로그이기 때문에, 기존에 쓰던 <strong>Disqus</strong> 보다는 Github 계정으로 댓글을 작성할 수 있기 때문에 사용성이 조금 더 용이하다 생각이 들었다.</p>
+  </li>
+</ul>
+
+<hr />
+<h3 id="utterances-적용하기">Utterances 적용하기</h3>
+
+<hr />
+
+<h4 id="github-setting">Github setting</h4>
+<hr />
+
+<p>간단하게 사용이 가능하다.</p>
+
+<p>우선 <a href="https://github.com/apps/utterances" target="_blank">utterances</a> Github App 을 install 해준다.<br /></p>
+
+<h4 id="utterances-setting">utterances setting</h4>
+<hr />
+
+<p>Github App을 설치하였다면 <a href="https://utteranc.es/" target="_blank">https://utteranc.es/</a> 사이트에 들어간다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/142213538-26d1d0f8-6414-4630-bfcc-77caa7dfd387.png" alt="스크린샷, 2021-11-17 22-53-18" /></p>
+
+<p>utterances 설정에 앞서 <strong>owner/repo</strong>를 입력하라 나온다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/142213648-2180e200-28a8-42c1-8a26-e9789de63fa7.png" /></center>
+<p><br /></p>
+
+<p>이러한 형식으로 알맞게 입력해준다.</p>
+
+<p>그 뒤, <strong>Blog Post ↔️ Issue Mapping</strong> 옵션 선택창이 나온다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/142213903-32670289-ebc4-4ee3-b412-2c3e4a1523d7.png" alt="스크린샷, 2021-11-17 22-51-57" /></p>
+
+<p>다른 옵션은 모르겠고… default 값인 <strong>Issue title contains page pathname</strong>는 포스트 게시물의 .md 파일의 이름으로 연결된다. <del>게시물의 .md 파일명을 수정하게 되면 댓글또한 날아간다…</del></p>
+
+<p>옵션을 <strong>owner/repo</strong>와 <strong>Blog Post ↔️ Issue Mapping</strong>을 모두 선택하면 다음과 같은 script가 나온다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/142214912-6c8b31e1-d563-4ab4-a5a2-d84bae0769cc.png" alt="스크린샷, 2021-11-17 23-01-14" /></p>
+
+<p>해당 script 중 <code class="language-plaintext highlighter-rouge">issue-term</code>, <code class="language-plaintext highlighter-rouge">theme</code>을 기억해서 config.yml에 넣어주면 완료된다.</p>
+
+<hr />
+
+<p><strong>config.yml</strong> 세팅</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">repository</span>               <span class="p">:</span> <span class="dl">"</span><span class="s2">JH8459/JH8459.github.io</span><span class="dl">"</span> <span class="err">#</span> <span class="nx">GitHub</span> <span class="nx">username</span><span class="o">/</span><span class="nx">repo</span><span class="o">-</span><span class="nx">name</span>  
+
+<span class="err">#</span> <span class="nx">댓글</span> <span class="nx">관련</span> <span class="nx">부분</span>
+<span class="nx">comments</span><span class="p">:</span>
+  <span class="nx">provider</span>               <span class="p">:</span> <span class="dl">"</span><span class="s2">utterances</span><span class="dl">"</span> <span class="err">#</span> <span class="kc">false</span> <span class="p">(</span><span class="k">default</span><span class="p">),</span> <span class="dl">"</span><span class="s2">disqus</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">discourse</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">facebook</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">staticman</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">staticman_v2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utterances</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">custom</span><span class="dl">"</span>
+  <span class="nx">utterances</span><span class="p">:</span>
+    <span class="nx">theme</span>                <span class="p">:</span> <span class="dl">"</span><span class="s2">github-light</span><span class="dl">"</span> <span class="err">#</span> <span class="dl">"</span><span class="s2">github-light</span><span class="dl">"</span> <span class="p">(</span><span class="k">default</span><span class="p">),</span> <span class="dl">"</span><span class="s2">github-dark</span><span class="dl">"</span>
+    <span class="nx">issue_term</span>           <span class="p">:</span> <span class="dl">"</span><span class="s2">pathname</span><span class="dl">"</span> <span class="err">#</span> <span class="dl">"</span><span class="s2">pathname</span><span class="dl">"</span> <span class="p">(</span><span class="k">default</span><span class="p">)</span>
+</code></pre></div></div>
+<hr />
+
+<p>모두 설정이 완료된 후 commit 후 push 해 주면 다음과 같은 결과를 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/142215734-540361c4-e8db-4527-9e77-bec48902dac1.png" alt="스크린샷, 2021-11-17 23-07-41" /></p>
+:ET
