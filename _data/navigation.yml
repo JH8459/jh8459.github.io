@@ -17,9 +17,9 @@ docs:
       - title: "Retrospect"
         url: /category/#retrospect
 
-  - title: "Dev Tool"
+  - title: "ETC"
     children:
-      - title: "Jekyll"
-        url: /category/#jekyll
+      - title: "Blog"
+        url: /category/#blog
   - title: "About"
     url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
