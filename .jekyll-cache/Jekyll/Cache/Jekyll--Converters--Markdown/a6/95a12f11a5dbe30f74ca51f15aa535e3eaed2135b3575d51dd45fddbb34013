@@ -1,0 +1,105 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-ormobject-relational-mapping">1. ORM(Object-Relational Mapping)</h3>
+<hr />
+<ul>
+  <li>
+    <p>ORM은 SQL문을 사용하지 않고 JS문법을 통해서 Object로 DB에 접근할 수 있도록 돕는 역할을 한다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/142144746-f0823d78-7d4d-419d-850d-586554dbe08d.png" alt="스크린샷, 2021-11-17 15-11-59" /></p>
+
+    <p>ORM은 SQL문법 대신 어플리케이션의 개발언어를 그대로 사용할 수 있게 함으로써, 개발 언어의 일관성과 가독성을 높여준다는 장점을 갖고 있다.</p>
+  </li>
+  <li>
+    <p>ORM에는 여러가지 종류 <em>(Django — ORM cookbook, Node.js — Sequalize, Java — Hibernate, JPA 등)</em> 가 있지만, 학습방향과 알맞는 <strong>Node.js — Sequalize</strong> 를 사용 할 예정이다.</p>
+  </li>
+</ul>
+
+<h3 id="2-sequelize">2. Sequelize</h3>
+<hr />
+<ul>
+  <li><strong>Sequelize</strong>란 <code class="language-plaintext highlighter-rouge">Node.JS</code>에서 <code class="language-plaintext highlighter-rouge">mysql</code>을 사용할 때 Query문을 사용하지 않고 더욱 쉽게 다룰 수 있도록 도와주는 라이브러리이다.</li>
+  <li>
+    <p>Sequelize는 자바스크립트 객체와 데이터베이스의 릴레이션을 매핑해주므로 자바스크립트 구문을 알아서 SQL문으로 변경해준다.</p>
+
+    <p>사용방법은 공식문서와 아래의 스프린트(Short.ly MVC)를 통해 학습하였다.</p>
+  </li>
+</ul>
+
+<h3 id="3-shortly-mvc">3. Short.ly MVC</h3>
+<hr />
+<p><strong>MVC(Model–View–Controller)</strong> 모델 디자인중 V(Client)가 빠진 형태의 구조이다. <br />
+이번 스프린트의 목적은 ORM(Node.JS-Sequelize)에 익숙해지는데 목적이 있다.</p>
+
+<hr />
+<h4 id="3-1-사전-준비-sequelize-및-sequelize-cli-설치">3-1. 사전 준비: sequelize 및 sequelize-cli 설치</h4>
+<hr />
+<ul>
+  <li><a href="https://sequelize.org/" target="_blank">Sequelize ORM</a> 공식문서를 보고 sequelize 설치를 하였으며 <code class="language-plaintext highlighter-rouge">package.json</code> 파일의 dependencies 모듈을 확인해보니 <code class="language-plaintext highlighter-rouge">"sequelize": "^6.9.0"</code> 를 확인 할 수 있었다.</li>
+  <li><a href="https://sequelize.org/master/manual/migrations.html" target="_blank"> Sequelize - Migrations</a> 문서를 통해 sequelize-cli 를 설치하였으며 마찬가지로 devDependencies 모듈에서 <code class="language-plaintext highlighter-rouge">"sequelize-cli": "^6.3.0"</code> 를 확인 할 수 있었다.</li>
+</ul>
+
+<h4 id="3-2-orm-설정">3-2. ORM 설정</h4>
+<hr />
+<ul>
+  <li>
+    <p>성공적으로 bootstraping이 끝나면 다음 파일 및 폴더들이 생성된다.</p>
+
+    <blockquote>
+      <p>config/config.json<br />
+models/<br />
+migrations/<br />
+seeders/</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>우선 <code class="language-plaintext highlighter-rouge">config.json</code> 파일을 확인하여서 mysql 환경과 일치하는 환경으로 설정해준다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql username */</span>
+    <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql password */</span>
+    <span class="dl">"</span><span class="s2">database</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">database_development</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* 해당 이름의 데이터베이스는 직접 생성해야 한다 */</span>
+    <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">dialect</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mysql</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql username */</span>
+    <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql password */</span>
+    <span class="dl">"</span><span class="s2">database</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">database_test</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">dialect</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mysql</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql username */</span>
+    <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql password */</span>
+    <span class="dl">"</span><span class="s2">database</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">database_production</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">dialect</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mysql</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>또한 <code class="language-plaintext highlighter-rouge">config.json</code> 파일은 민감한 정보를 담고 있기 때문에 <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일 확인시 포함되어 있는 걸 알 수 있다.</p>
+  </li>
+</ul>
+
+<h4 id="3-3-모델-생성">3-3. 모델 생성</h4>
+<hr />
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">sequelize</span><span class="o">-</span><span class="nx">cli</span> <span class="nx">model</span><span class="p">:</span><span class="nx">generate</span> <span class="o">--</span><span class="nx">name</span> <span class="nx">url</span> <span class="o">--</span><span class="nx">attributes</span> <span class="nx">url</span><span class="p">:</span><span class="nx">string</span><span class="p">,</span><span class="nx">title</span><span class="p">:</span><span class="nx">string</span><span class="p">,</span><span class="nx">visits</span><span class="p">:</span><span class="nx">integer</span>
+</code></pre></div></div>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[데이터베이스 NoSQL]</li>
+</ul>
+:ET

@@ -1,0 +1,312 @@
+I"�k<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-ormobject-relational-mapping">1. ORM(Object-Relational Mapping)</h3>
+<hr />
+<ul>
+  <li>
+    <p>ORM은 SQL문을 사용하지 않고 JS문법을 통해서 Object로 DB에 접근할 수 있도록 돕는 역할을 한다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/142144746-f0823d78-7d4d-419d-850d-586554dbe08d.png" alt="스크린샷, 2021-11-17 15-11-59" /></p>
+
+    <p>ORM은 SQL문법 대신 어플리케이션의 개발언어를 그대로 사용할 수 있게 함으로써, 개발 언어의 일관성과 가독성을 높여준다는 장점을 갖고 있다.</p>
+  </li>
+  <li>
+    <p>ORM에는 여러가지 종류 <em>(Django — ORM cookbook, Node.js — Sequalize, Java — Hibernate, JPA 등)</em> 가 있지만, 학습방향과 알맞는 <strong>Node.js — Sequalize</strong> 를 사용 할 예정이다.</p>
+  </li>
+</ul>
+
+<h3 id="2-sequelize">2. Sequelize</h3>
+<hr />
+<ul>
+  <li><strong>Sequelize</strong>란 <code class="language-plaintext highlighter-rouge">Node.JS</code>에서 <code class="language-plaintext highlighter-rouge">mysql</code>을 사용할 때 Query문을 사용하지 않고 더욱 쉽게 다룰 수 있도록 도와주는 라이브러리이다.</li>
+  <li>
+    <p>Sequelize는 자바스크립트 객체와 데이터베이스의 릴레이션을 매핑해주므로 자바스크립트 구문을 알아서 SQL문으로 변경해준다.</p>
+
+    <p>사용방법은 공식문서와 아래의 스프린트(Short.ly MVC)를 통해 학습하였다.</p>
+  </li>
+</ul>
+
+<h3 id="3-shortly-mvc">3. Short.ly MVC</h3>
+<hr />
+<p><strong>MVC(Model–View–Controller)</strong> 모델 디자인중 V(Client)가 빠진 형태의 구조이다. <br />
+이번 스프린트의 목적은 ORM(Node.JS-Sequelize)에 익숙해지는데 목적이 있다.</p>
+
+<hr />
+<h4 id="3-1-사전-준비-sequelize-및-sequelize-cli-설치">3-1. 사전 준비: sequelize 및 sequelize-cli 설치</h4>
+<hr />
+<ul>
+  <li><a href="https://sequelize.org/" target="_blank">Sequelize ORM</a> 공식문서를 보고 sequelize 설치를 하였으며 <code class="language-plaintext highlighter-rouge">package.json</code> 파일의 dependencies 모듈을 확인해보니 <code class="language-plaintext highlighter-rouge">"sequelize": "^6.9.0"</code> 를 확인 할 수 있었다.</li>
+  <li><a href="https://sequelize.org/master/manual/migrations.html" target="_blank"> Sequelize - Migrations</a> 문서를 통해 sequelize-cli 를 설치하였으며 마찬가지로 devDependencies 모듈에서 <code class="language-plaintext highlighter-rouge">"sequelize-cli": "^6.3.0"</code> 를 확인 할 수 있었다.</li>
+</ul>
+
+<h4 id="3-2-orm-설정">3-2. ORM 설정</h4>
+<hr />
+<ul>
+  <li>
+    <p>성공적으로 bootstraping이 끝나면 다음 파일 및 폴더들이 생성된다.</p>
+
+    <blockquote>
+      <p>config/config.json<br />
+models/<br />
+migrations/<br />
+seeders/</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>우선 <code class="language-plaintext highlighter-rouge">config.json</code> 파일을 확인하여서 mysql 환경과 일치하는 환경으로 설정해준다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql username */</span>
+    <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql password */</span>
+    <span class="dl">"</span><span class="s2">database</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">database_development</span><span class="dl">"</span><span class="p">,</span> <span class="cm">/* 해당 이름의 데이터베이스는 직접 생성해야 한다 */</span>
+    <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">dialect</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mysql</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql username */</span>
+    <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql password */</span>
+    <span class="dl">"</span><span class="s2">database</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">database_test</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">dialect</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mysql</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql username */</span>
+    <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">:</span> <span class="cm">/* mysql password */</span>
+    <span class="dl">"</span><span class="s2">database</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">database_production</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">host</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">127.0.0.1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">dialect</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mysql</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>또한 <code class="language-plaintext highlighter-rouge">config/config.json</code> 파일은 민감한 정보를 담고 있기 때문에 <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일 확인시 포함되어 있는 걸 알 수 있다.</p>
+
+    <p>위 과정이 끝나면 CLI를 통하여 필요한 파일들이 모두 자동으로 만들어졌으며, mysql에 접속 할 수 있게 된다.</p>
+
+    <center><img src="https://user-images.githubusercontent.com/83164003/142166073-5232ec86-458f-4873-9e1b-73d780e5e849.png" /></center>
+  </li>
+</ul>
+
+<h4 id="3-3-모델-생성">3-3. 모델 생성</h4>
+<hr />
+<ul>
+  <li>
+    <p>CLI를 통해 모델을 만들어야 한다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">sequelize</span><span class="o">-</span><span class="nx">cli</span> <span class="nx">model</span><span class="p">:</span><span class="nx">generate</span> <span class="o">--</span><span class="nx">name</span> <span class="nx">url</span> <span class="o">--</span><span class="nx">attributes</span> <span class="nx">url</span><span class="p">:</span><span class="nx">string</span><span class="p">,</span><span class="nx">title</span><span class="p">:</span><span class="nx">string</span><span class="p">,</span><span class="nx">visits</span><span class="p">:</span><span class="nx">integer</span>
+</code></pre></div>    </div>
+
+    <p>모델(테이블의 이름) 이름은 <code class="language-plaintext highlighter-rouge">url</code>로 설정하였지만, 실제 결과물은 <code class="language-plaintext highlighter-rouge">urls</code>로 나왔다.(아마 복수형은 자동 취급되는 듯 보인다.)</p>
+  </li>
+  <li>
+    <p>필드가 가지는 특별한 요구 사항(기본값 등)은 파일을 직접 수정해서 정의해야 한다.</p>
+
+    <p>위에서 만들어진 <code class="language-plaintext highlighter-rouge">models/url.js</code> 파일은 다음과 같다. <code class="language-plaintext highlighter-rouge">visits</code>의 기본값은 <code class="language-plaintext highlighter-rouge">0</code>으로 설정하기 위해서는 첫째로 모델 파일을 직접 수정해야한다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cm">/* 생략 */</span>
+  <span class="nx">url</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+      <span class="na">url</span><span class="p">:</span> <span class="nx">DataTypes</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+      <span class="na">title</span><span class="p">:</span> <span class="nx">DataTypes</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+      <span class="cm">/* visits 의 defaultValue : 0 으로 직접 모델 파일을 수정해줘야 한다. */</span>
+      <span class="na">visits</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span> <span class="p">:</span> <span class="nx">DataTypes</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span> <span class="na">defaultValue</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>두 번째로, <code class="language-plaintext highlighter-rouge">migrations/2021xxxx-create-url.js</code> 파일의 스키마 구조 또한 수정해주어야 한다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cm">/* 생략 */</span>
+  <span class="nx">url</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span>
+  <span class="p">},</span>
+  <span class="nx">title</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span>
+  <span class="p">},</span>
+  <span class="nx">visits</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span> 
+      <span class="nx">defaultValue</span><span class="p">:</span> <span class="mi">0</span> <span class="cm">/* defaultValue 값 추가 */</span>
+  <span class="p">},</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>위 과정을 모두 거친다면, 테이블에 알맞은 필드값이 요구 사항에 맞춰 작성된 걸 볼 수 있다.</p>
+
+    <center><img src="https://user-images.githubusercontent.com/83164003/142166546-8a93f90a-88a3-4308-86fc-7a7a2e824971.png" /></center>
+  </li>
+</ul>
+
+<h4 id="3-4-마이그레이션">3-4. 마이그레이션</h4>
+<hr />
+<ul>
+  <li>
+    <p>모델이나, 스키마 변경이 있을 때 자동으로 적용되지 않기 때문에 마이그레이션을 실행해 줘야 한다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">sequelize</span><span class="o">-</span><span class="nx">cli</span> <span class="nx">db</span><span class="p">:</span><span class="nx">migrate</span>
+</code></pre></div>    </div>
+
+    <p>Sequelize 명령어로 반영이 가능하다.</p>
+  </li>
+  <li>
+    <p>해당과정까지 진행하면 <strong>Part-1</strong>은 모두 통과하게 된다.</p>
+
+    <center><img src="https://user-images.githubusercontent.com/83164003/142166909-5140c2c5-ced3-472e-a778-a7e7b10be89e.png" /></center>
+    <p><br /></p>
+
+    <p>데이터베이스의 준비가 완료되었으니, MVC <del>V는 사실 없다</del>  패턴을 적용하여 Short.ly의 백엔드 부분을 완성하면 스프린트는 완성된다.</p>
+  </li>
+</ul>
+
+<h4 id="3-5-controller-작성">3-5. controller 작성</h4>
+<hr />
+<ul>
+  <li>스프린트에서 제공하는 endpoint는 다음과 같다.
+    <ul>
+      <li>GET /links</li>
+      <li>GET /links/:id (리디렉션)</li>
+      <li>POST /links</li>
+    </ul>
+  </li>
+  <li>
+    <p>그중 우선 리디렉션은 추후에 추가하고, 테스트 요구사항에 맞추어서 <code class="language-plaintext highlighter-rouge">controllers/links/index.js</code> 디렉토리 구조를 만들어서 controller 파일을 만들어 주었다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">utils</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../modules/utils</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="na">url</span> <span class="p">:</span> <span class="nx">urlModels</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../models</span><span class="dl">'</span><span class="p">);</span>  <span class="cm">/* const urlModels = require('../../models').url 과 같은 의미이다. */</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">get</span><span class="p">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// get method</span>
+  <span class="p">},</span>
+  <span class="na">post</span><span class="p">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// post method</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>다음과 같은 <code class="language-plaintext highlighter-rouge">get</code>, <code class="language-plaintext highlighter-rouge">post</code> 두가지 메소드가 존재하는 contoller 파일이 존재한다면 <strong>(2-1) controller 작성</strong> 테스트는 쉽게 통과할 수 있다.</p>
+
+    <center><img src="https://user-images.githubusercontent.com/83164003/142168083-afe86d1b-dcfd-4140-852e-0dcc6803c848.png" /></center>
+  </li>
+</ul>
+
+<h4 id="3-6-router-연결">3-6. router 연결</h4>
+<hr />
+<ul>
+  <li>
+    <p>위에 나열한 endpoint에 맞추어 router 파일을 만들어 주면된다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">routes/index.js</code> 파일은 있었기에 controller 각 endpoint의 메소드에 맞추어 <code class="language-plaintext highlighter-rouge">routes/links.js</code> 분기점을 만들어 주었다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">controllers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../controllers/links</span><span class="dl">'</span><span class="p">);</span>
+  
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">controllers</span><span class="p">.</span><span class="kd">get</span><span class="p">);</span>
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/:id</span><span class="dl">'</span><span class="p">,</span> <span class="nx">controllers</span><span class="p">.</span><span class="nx">redirect</span><span class="p">);</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">controllers</span><span class="p">.</span><span class="nx">post</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>여기부터는 controller 와 router 파일 모두 완성시켜 연결되어야 테스트가 통과가 된다.<br />
+이전 controller 파일 작성 단계에서는 테스트 통과를 위하여 뼈대만 작성해 놓았기 때문에 테스트 통과를 위해서 controller 구현 과정을 마저 작성하도록 하자.</p>
+  </li>
+</ul>
+
+<h4 id="3-7-controller-구현">3-7. controller 구현</h4>
+<hr />
+
+<ul>
+  <li>
+    <p>우선 첫번째 기능인 <strong>GET /links</strong> 는 urls 테이블의 모든 내역을 조회하는 역할이다.</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">urls</span>
+</code></pre></div>    </div>
+
+    <p>위 역할을 대신 할 Sequelize 구문을 작성해주면 된다. 공식 문서를 참조하여 <a href="https://sequelize.org/master/manual/model-querying-finders.html" target="_blank">findAll</a> 메소드를 활용하였다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="na">url</span> <span class="p">:</span> <span class="nx">urlModels</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../models</span><span class="dl">'</span><span class="p">);</span>
+	
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">get</span><span class="p">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">urlModels</span>
+      <span class="p">.</span><span class="nx">findAll</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>다음 기능은 <strong>POST /links</strong>로써, urls 테이블에 값을 넣는 역할이다.</p>
+
+    <p>스프린트에 나온 내용대로 <code class="language-plaintext highlighter-rouge">utils.js</code>에서 url 사이트의 메타 정보 title 을 긁어올 수 있는 코드인 <code class="language-plaintext highlighter-rouge">utils.getUrlTitle</code>를 사용하였으며, 그 외 공식 문서를 참조하여 <a href="https://sequelize.org/master/manual/model-querying-finders.html" target="_blank">findOrCreate</a> 메소드를 활용하였다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">.findOrCreate()</code>는 원하는 값을 조회 후 없다면 생성까지 할 수 있는 함수이기때문에 결과값으로 반환하는 인자가 2개인 점이 특징이다. <del>사실 <code class="language-plaintext highlighter-rouge">.create()</code> 만 사용해도 된다.</del></p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">utils</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../modules/utils</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="cm">/* 생략 */</span>
+
+<span class="nl">post</span><span class="p">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">url</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+  
+    <span class="nx">utils</span><span class="p">.</span><span class="nx">getUrlTitle</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">title</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">urlModels</span>
+        <span class="p">.</span><span class="nx">findOrCreate</span><span class="p">({</span>
+          <span class="na">where</span><span class="p">:</span> <span class="p">{</span> <span class="na">url</span><span class="p">:</span> <span class="nx">url</span> <span class="p">},</span>
+          <span class="na">default</span> <span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="nx">title</span> <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(([</span><span class="nx">data</span><span class="p">,</span> <span class="nx">created</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">created</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">201</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+          <span class="p">}</span>
+          <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">201</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> 
+        <span class="p">})</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>마지막 기능은 <strong>GET /links/:id</strong>로써, redirect 기능 역할이다.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">.finOne()</code> 으로 id가 일치하는 url을 찾아, <a href="https://sequelize.org/master/manual/model-querying-basics.html#simple-update-queries" target="_blank">update</a> 메소드로 visits를 1 증가 시키고 리디렉션 한다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">redirect</span><span class="p">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">urlModels</span>
+      <span class="p">.</span><span class="nx">findOne</span><span class="p">({</span>
+        <span class="na">where</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span> <span class="p">}</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span>
+          <span class="p">{</span> <span class="na">visits</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">visits</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
+        <span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+      <span class="p">})</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<hr />
+<p>DB와 백엔드 기능을 중점으로 다루었다. <br />
+SQL 문법이 어렵지 않았기에 사실 Sequelize 문법이 편하다?… 는 결코 아닌거같다..</p>
+
+<p>당장 많이 써보지 않아 익숙하지 않은 부분이기때문에 느끼는 이질감은 당연히 있지만, 이 백엔드 로직은 충분히 학습해야겠다 라는 생각이 들었다.</p>
+
+<p>개발언어를 혼용해가며 쓴다는 개념보다는 일맥상통하는 한가지의 개발언어로 프로그램을 작성한다는게 가독성에는 유리한 측면은 당연한 얘기이기 때문이다.</p>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[데이터베이스 NoSQL]</li>
+</ul>
+:ET

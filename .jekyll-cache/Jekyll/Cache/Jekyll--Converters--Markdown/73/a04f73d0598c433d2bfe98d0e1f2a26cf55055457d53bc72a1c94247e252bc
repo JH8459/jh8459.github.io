@@ -1,0 +1,37 @@
+I"<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-ormobject-relational-mapping">1. ORM(Object-Relational Mapping)</h3>
+<hr />
+<ul>
+  <li>
+    <p>ORM은 SQL문을 사용하지 않고 JS문법을 통해서 Object로 DB에 접근할 수 있도록 돕는 역할을 한다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/142144746-f0823d78-7d4d-419d-850d-586554dbe08d.png" alt="스크린샷, 2021-11-17 15-11-59" /></p>
+
+    <p>ORM은 SQL문법 대신 어플리케이션의 개발언어를 그대로 사용할 수 있게 함으로써, 개발 언어의 일관성과 가독성을 높여준다는 장점을 갖고 있다.</p>
+  </li>
+  <li>
+    <p>ORM에는 여러가지 종류 <em>(Django — ORM cookbook, Node.js — Sequalize, Java — Hibernate, JPA 등)</em> 가 있지만, 학습방향과 알맞는 <strong>Node.js — Sequalize</strong> 를 사용 할 예정이다.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="2-sequelize">2. Sequelize</h3>
+<hr />
+
+<hr />
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[데이터베이스 NoSQL]</li>
+</ul>
+:ET
