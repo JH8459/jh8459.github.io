@@ -1,7 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-29T21:28:05+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[TIL] 21.11.20 / 1. Cmarket Database AWS 배포(1) (작성중)</title><link href="/til/21.11.20.til/" rel="alternate" type="text/html" title="[TIL] 21.11.20 / 1. Cmarket Database AWS 배포(1) (작성중)" /><published>2021-11-20T00:00:00+09:00</published><updated>2021-11-20T00:00:00+09:00</updated><id>/til/21.11.20.til</id><content type="html" xml:base="/til/21.11.20.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-29T23:48:25+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[TIL] 21.11.26 / 1. Cmarket Database AWS 배포</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. Cmarket Database AWS 배포" /><published>2021-11-20T00:00:00+09:00</published><updated>2021-11-20T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-cmarket-database-aws-배포1&quot;&gt;1. Cmarket Database AWS 배포(1)&lt;/h3&gt;
-&lt;hr /&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[TIL] 21.11.20 / 1. Cmarket Database AWS 배포(1)</summary></entry><entry><title type="html">[Blog] Minimal mistakes Utterances</title><link href="/blog/21.11.17.Blog/" rel="alternate" type="text/html" title="[Blog] Minimal mistakes Utterances" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>/blog/21.11.17.Blog</id><content type="html" xml:base="/blog/21.11.17.Blog/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-cmarket-database-aws-배포-1&quot;&gt;1. Cmarket Database AWS 배포 (1)&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTTPS 웹 애플리케이션을 무료 도메인으로 배포하는 삽질 과정을 포스팅 해보려 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-1-도메인-발급&quot;&gt;1-1. 도메인 발급&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 무료 도메인 사이트인 &lt;a href=&quot;https://www.freenom.com/en/index.html?lang=en&quot; target=&quot;_blank&quot;&gt;Freenom&lt;/a&gt;에서 도메인 발급 후, 해당 도메인을 이용하였다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143876151-e7fed5c2-1b13-4d57-b97f-47440d364cde.png&quot; alt=&quot;스크린샷, 2021-11-29 22-26-24&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;무료 도메인은 예고없이 사라지거나 로그인이 안되는(?)등 종잡을 수 없는 문제가 발생 할 수 있으므로.. 프로젝트나 포트폴리오 용도로는 부적합하다 생각된다.&lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;학습목적 정도로만 사용하도록 하는게 알맞은 사용방향이라 생각한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://cmarket.cf/&quot; target=&quot;_blank&quot;&gt;cmarket.cf&lt;/a&gt; 주소로 도메인을 발급 받았으며 최초 발급 후 도메인에 접속하면 아래와 같은 에러코드를 받을 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143876050-43d949bd-e541-4507-acee-b59782c602f5.png&quot; alt=&quot;스크린샷, 2021-11-29 22-23-51&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;해당 에러코드를 구글링하여 검색해보니 일반적으로는 DNS 구성이 잘못되어있다는 에러코드인걸 알았다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-2-elb-생성&quot;&gt;1-2. ELB 생성&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h5 id=&quot;elb란&quot;&gt;ELB란?&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;우선 EC2를 통해 인스턴스에서 서버를 구현하는 내용은 이전 배포 실습시간에 해보았기 때문에 인스턴스가 왜 필요한지는 명확히 알았다. 그렇다면 ELB(로드 밸런서)는 왜 필요한지 짧게 찾아보았다.
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;로드 밸런싱&lt;/strong&gt;이란?&lt;/p&gt;
+
+      &lt;p&gt;하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러 대의 서버가 분산처리하여 서버의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결해주는 서비스&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;aws-elb-생성&quot;&gt;AWS ELB 생성&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ELB 서비스가 왜 필요한지 개념을 알았으니, AWS EC2 메뉴중 로드밸런서로 들어가 보자.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143878331-14740d1a-92f8-4bdb-8c93-ce3d7e468979.png&quot; alt=&quot;스크린샷, 2021-11-29 22-37-16&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;로드밸런서를 생성하려보니 여러 프로토콜을 선택 할 수 있는 선택창이 나온다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143878869-f35272d9-83fe-4cee-addd-5ab157919d80.png&quot; alt=&quot;스크린샷, 2021-11-29 22-45-13&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;우리는 HTTPS 프로토콜을 이용할 예정이니 1번을 선택하였다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Basic configuration/Load balancer name 을 정한 뒤, Listeners and routing 에서 Add Listener 버튼을 눌러서 HTTPS 리스너를 추가해주자. (포트는 default 값을 주었다.)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;짧게 말해 리스너란, 구성한 프로토콜 및 포트를 사용해서 연결 요청을 확인하는 프로세스이다.&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143881038-4fa1e168-456d-46af-8601-52c50083a0e7.png&quot; alt=&quot;스크린샷, 2021-11-29 22-49-27&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리스너가 추가되면 각 리스너에 타겟 그룹을 설정해줘야 한다.&lt;/p&gt;
+
+    &lt;p&gt;기존에 있는 인스턴스를 연결해주는 듯 하다..&lt;del&gt;(확실치 않다)&lt;/del&gt;&lt;br /&gt;
+success code 만 201번으로 바꿔주고 HTTP/HTTPS 각 포트별로 만들어서 기존 인스턴스와 연결된 타겟 그룹을 만들어 주었다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143884672-a255c90f-c1f2-44a3-98ed-7dd7eff84911.png&quot; alt=&quot;스크린샷, 2021-11-29 23-21-03&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여기까지 우선 무난히 진행되었으나 인증키를 새로 발급을 받던지..기존 인증키를 import 해주어야 로드밸런서가 생성된다는 걸 알았다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143885271-491b92a2-92ae-4959-960d-c5b826c89da1.png&quot; alt=&quot;스크린샷, 2021-11-29 23-25-40&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;기존에 만든 SSL cert 인증서를 사용해볼까 했지만… &lt;del&gt;(찾아보는것도 귀찮고)&lt;/del&gt;  AWS에서도 무료로 인증서 발급을 해주길래 새로 발급해서 사용해보도록 하자.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-3-acm을-통한-인증서-발급&quot;&gt;1-3. ACM을 통한 인증서 발급&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;위에서 만든 도메인을 AWS Route 53 DNS 호스팅 영역에 우선 등록해 주자.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143887626-7d350fb7-c3c9-4dff-b983-18227e860947.png&quot; alt=&quot;스크린샷, 2021-11-29 23-38-54&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그 뒤 다시 인증서 창으로 온 뒤,&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143888871-2a904246-3c26-4499-862e-f759ae38ebc9.png&quot; alt=&quot;스크린샷, 2021-11-29 23-45-53&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Route 53에서 레코드 생성을 클릭 한 뒤 위와 같은 성공 메시지 출력 후 DNS 검증이 완료 될 때까지 기다려 준다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[TIL] 21.11.26 / 1. Cmarket Database AWS 배포(1)</summary></entry><entry><title type="html">[Blog] Minimal mistakes Utterances</title><link href="/blog/21.11.17.Blog/" rel="alternate" type="text/html" title="[Blog] Minimal mistakes Utterances" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>/blog/21.11.17.Blog</id><content type="html" xml:base="/blog/21.11.17.Blog/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;minimal-mistakes-utterances&quot;&gt;Minimal mistakes Utterances&lt;/h2&gt;
 
