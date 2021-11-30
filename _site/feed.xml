@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-29T23:48:25+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[TIL] 21.11.26 / 1. Cmarket Database AWS 배포</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. Cmarket Database AWS 배포" /><published>2021-11-20T00:00:00+09:00</published><updated>2021-11-20T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-30T23:21:16+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[TIL] 21.11.26 / 1. 무료 도메인 HTTPS AWS 배포 (작성중)</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. 무료 도메인 HTTPS AWS 배포 (작성중)" /><published>2021-11-20T00:00:00+09:00</published><updated>2021-11-20T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-&lt;h3 id=&quot;1-cmarket-database-aws-배포-1&quot;&gt;1. Cmarket Database AWS 배포 (1)&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTTPS 웹 애플리케이션을 무료 도메인으로 배포하는 삽질 과정을 포스팅 해보려 한다.&lt;/li&gt;
-&lt;/ul&gt;
 
+&lt;p&gt;기존에 EC2, S3, RDS를 통해 배포한 웹 애플리케이션을 무료 도메인으로 배포하는 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-무료-도메인-https-aws-배포---백엔드&quot;&gt;1. 무료 도메인 HTTPS AWS 배포 - 백엔드&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;h4 id=&quot;1-1-도메인-발급&quot;&gt;1-1. 도메인 발급&lt;/h4&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -41,8 +40,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;aws-elb-생성&quot;&gt;AWS ELB 생성&lt;/h5&gt;
 &lt;hr /&gt;
+
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;ELB 서비스가 왜 필요한지 개념을 알았으니, AWS EC2 메뉴중 로드밸런서로 들어가 보자.&lt;/p&gt;
@@ -72,11 +71,12 @@ success code 만 201번으로 바꿔주고 HTTP/HTTPS 각 포트별로 만들어
     &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143884672-a255c90f-c1f2-44a3-98ed-7dd7eff84911.png&quot; alt=&quot;스크린샷, 2021-11-29 23-21-03&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;여기까지 우선 무난히 진행되었으나 인증키를 새로 발급을 받던지..기존 인증키를 import 해주어야 로드밸런서가 생성된다는 걸 알았다.&lt;/p&gt;
+    &lt;p&gt;여기까지 우선 무난히 진행되었으나 AWS에서 제공하는 인증서를 새로 발급을 받던지..&lt;br /&gt;
+기존 사용하던 인증서가 있다면 해당 인증서를 import 해주어야 로드밸런서가 생성이 완성이 된다.&lt;/p&gt;
 
     &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143885271-491b92a2-92ae-4959-960d-c5b826c89da1.png&quot; alt=&quot;스크린샷, 2021-11-29 23-25-40&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;기존에 만든 SSL cert 인증서를 사용해볼까 했지만… &lt;del&gt;(찾아보는것도 귀찮고)&lt;/del&gt;  AWS에서도 무료로 인증서 발급을 해주길래 새로 발급해서 사용해보도록 하자.&lt;/p&gt;
+    &lt;p&gt;기존에 만든 SSL cert 인증서를 사용해볼까 했지만… &lt;del&gt;(import 방법 찾아보는것도 귀찮고)&lt;/del&gt;  AWS에서도 무료로 인증서 발급을 해주길래 새로 발급해서 사용하기로 하였다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -84,18 +84,135 @@ success code 만 201번으로 바꿔주고 HTTP/HTTPS 각 포트별로 만들어
 &lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;위에서 만든 도메인을 AWS Route 53 DNS 호스팅 영역에 우선 등록해 주자.&lt;/p&gt;
+    &lt;p&gt;AWS에서 발급 가능한 인증서를 만들기 위해 우선 AWS Certificate Manager 메뉴로 진입 후 퍼블릭 인증서 요청을 눌러준뒤, Freenom에서 발급받은 도메인 주소를 넣어준다.&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143887626-7d350fb7-c3c9-4dff-b983-18227e860947.png&quot; alt=&quot;스크린샷, 2021-11-29 23-38-54&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143906315-9e9655d2-8b23-4ef0-8554-82f270b898e2.png&quot; alt=&quot;스크린샷, 2021-11-30 01-31-11&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;그 뒤 다시 인증서 창으로 온 뒤,&lt;/p&gt;
+    &lt;p&gt;조금 기다린 뒤 인증서 ID를 눌러보면 CNAME 값이 생성된 것을 볼 수 있다.&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143888871-2a904246-3c26-4499-862e-f759ae38ebc9.png&quot; alt=&quot;스크린샷, 2021-11-29 23-45-53&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143906637-868b596f-7209-491e-becf-7347fe2e9ffd.png&quot; alt=&quot;스크린샷, 2021-11-30 01-31-46&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;Route 53에서 레코드 생성을 클릭 한 뒤 위와 같은 성공 메시지 출력 후 DNS 검증이 완료 될 때까지 기다려 준다.&lt;/p&gt;
+    &lt;p&gt;그 뒤 Manage Freenom DNS 로 이동해 준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143907059-b113a150-4333-498f-8a9b-37971d0370a8.png&quot; alt=&quot;스크린샷, 2021-11-30 01-36-53&quot; /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Route 53에서 발급받은 도메인이라면 Route 53 DNS 검증이 가능하지만, 무료 도메인을 발급 받은 상황이기때문에 Freenom DNS로 가서 설정을 변경해줘야 한다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;AWS에서 확인한 CNAME 이름과 값을 넣어준 뒤 저장해 준뒤 &lt;del&gt;(찝찝하게 CNAME 이름은 대문자로 저장이 되지만 상관없다.)&lt;/del&gt;, 검증이 끝날 때 까지 기다려주면 아래와 같은 사진을 확인 할 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143908476-0a484866-aafa-4382-8d04-2099ea5ef71f.png&quot; alt=&quot;스크린샷, 2021-11-30 01-45-32&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[TIL] 21.11.26 / 1. Cmarket Database AWS 배포(1)</summary></entry><entry><title type="html">[Blog] Minimal mistakes Utterances</title><link href="/blog/21.11.17.Blog/" rel="alternate" type="text/html" title="[Blog] Minimal mistakes Utterances" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>/blog/21.11.17.Blog</id><content type="html" xml:base="/blog/21.11.17.Blog/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성 중이던 로드밸런서에 인증서를 넣고 생성을 완료한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-4-freenom--route-53-연결&quot;&gt;1-4. Freenom ⬌ Route 53 연결&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h5 id=&quot;route-53란&quot;&gt;Route 53란?&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;우선 Route 53은 무엇이고 왜 필요한지 짧게 찾아보았다.
+    &lt;blockquote&gt;
+      &lt;p&gt;AWS에서 제공하는 DNS(Domain Name Service)이다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;그 외에도 도메인과 관련된 여러가지 서비스를 제공한다. 간략히 DNS 개념만 언급하자면 IP로 도메인을 기억하기는 힘들기때문에 사람이 기억하기 이름 형태로 변환해주는 시스템이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 Freenom DNS 검증은 완료되었다, AWS에서 해당 도메인을 사용하기 위해서 Freenom Nameservers 설정을 변경해 주자.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143911244-7cb509e0-6b6a-4406-a120-eed04b5f6317.png&quot; alt=&quot;스크린샷, 2021-11-30 02-02-27&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;위 사진 영역에 Route 53에서 호스팅 영역을 생성 후 NS 에 해당하는 라우팅 대상을 맵핑해서 넣어주면 된다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143912771-bbaacb32-af5e-439c-9bfe-b2bcc58eabc6.png&quot; alt=&quot;스크린샷, 2021-11-30 02-13-28&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 Freenom에서 발급 받은 무료 도메인(cmarket.cf)은 AWS Certificate Manager을 받기 위한 DNS 검증도 끝났으며, Route 53 호스팅 영역에도 연결이 되었다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-5-route-53--elb-연결&quot;&gt;1-5. Route 53 ⬌ ELB 연결&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Route 53과 ELB는 모두 설정이 완료되었으므로 연결만 해주면 된다.&lt;br /&gt;
+Route 53 메뉴로 가서 레코드 한줄만 써주도록 하자.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144002528-56641315-a1d3-466e-9678-45393a8df740.png&quot; alt=&quot;스크린샷, 2021-11-30 16-10-52&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;라우팅 대상은 별칭으로 둔 뒤, 로드밸런서 별칭의 지역은 서울로 들어가면 미리 만들어둔 로드밸런서가 확인이 된다. 해당 ELB를 선택 후 레코드를 생성해 주자.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144002681-f6704bb9-6591-4720-9e02-7612315550cb.png&quot; alt=&quot;스크린샷, 2021-11-30 16-11-54&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-6-연결-확인&quot;&gt;1-6. 연결 확인&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 cmarket.cf 도메인을 브라우저 검색창에 검색한다면, AWS의 Route 53의 DNS서비스를 통하여 ELB에 접근하게된다.&lt;/p&gt;
+
+    &lt;p&gt;ELB에서는 트래픽을 자동으로 분산 시켜서  EC2 인스턴스로 접근을 허용시킨다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;cmarket.cf 도메인을 검색하면 &lt;del&gt;트래픽 과부화 상태가 아니라면&lt;/del&gt; EC2에 서버가 켜져있다면 endpoint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt; 로 접근이 될것이다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;201&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;따라서 cmarket.cf 도메인 검색시 아래와 같은 결과가 확인된다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144004657-5cd1e88e-68d8-440d-8a2e-8644f1b0a085.png&quot; alt=&quot;스크린샷, 2021-11-30 16-31-04&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;직접 해보니.. 무료 도메인 말고 AWS에서 도메인을 직접 구매해서 사용한다면 DNS 검증이나 Freenom에서 Route 53으로 Nameservers 연결 등등.. 절차가 훨씬 간편할거라 예상된다 (생각보다 비용도 비싸진 않다. &lt;del&gt;.com 같은거만 아니라면…&lt;/del&gt;).&lt;/p&gt;
+
+    &lt;p&gt;추후 있을 프로젝트때는 AWS 도메인을 활용해봐야겠다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-무료-도메인-https-aws-배포---프론트엔드&quot;&gt;2. 무료 도메인 HTTPS AWS 배포 - 프론트엔드&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;2-1-cloudfront-배포-생성-s3--cloudfront-연결&quot;&gt;2-1. CloudFront 배포 생성 (S3 ⬌ CloudFront 연결)&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;배포 및 HTTPS 적용을 하려면 S3를 CloudFront에 연결해 주어야 한다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 CloudFront 생성하기로 진입 후 기존 S3 버킷을 선택해 준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144011543-b2e1a513-685a-47ef-92cc-289afb7ebc2c.png&quot; alt=&quot;스크린샷, 2021-11-30 16-11-54&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기본 캐시동작 / 뷰어 프로토콜 정책은 Redirect HTTP to HTTPS 로 선택해 준다&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144011738-e166d20b-b5b2-4023-ac3e-c8855057750f.png&quot; alt=&quot;스크린샷, 2021-11-30 16-55-32&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그 다음 인증서를 등록해주면 되는데…&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144011861-e3311f89-fe4f-4925-9b09-f11a399571b8.png&quot; alt=&quot;스크린샷, 2021-11-30 16-58-37&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.&lt;/strong&gt;&lt;br /&gt;
+  &lt;strong&gt;인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;del&gt;장난..??&lt;/del&gt;&lt;/p&gt;
+
+    &lt;p&gt;아무튼 덕분에.. 인증서 다시 발급받은 뒤, 해당 인증서로 로드밸런서 다시 만들고.. Route 53 다시 연결해주는 뻘짓을 다시 하게되었다.&lt;br /&gt;
+이 글을 보시는 분들은 꼭 이런 실수 하지 마시길..&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[TIL] 21.11.26 / 1. 무료 도메인 HTTPS AWS 배포</summary></entry><entry><title type="html">[Blog] Minimal mistakes Utterances</title><link href="/blog/21.11.17.Blog/" rel="alternate" type="text/html" title="[Blog] Minimal mistakes Utterances" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>/blog/21.11.17.Blog</id><content type="html" xml:base="/blog/21.11.17.Blog/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;minimal-mistakes-utterances&quot;&gt;Minimal mistakes Utterances&lt;/h2&gt;
 
