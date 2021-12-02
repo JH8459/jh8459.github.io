@@ -1,0 +1,254 @@
+I"�=<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+
+<p>기존에 EC2, S3, RDS를 통해 배포한 웹 애플리케이션을 무료 도메인(Freenom)으로 배포하는 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.</p>
+
+<hr />
+<p><strong>주의!</strong> CloudFront에서 AWS 인증서 검증은 us-east-1(버지니아 북부) 인증서만 검증이 된다.<br /></p>
+
+<p>s3와 CloudFront는 글로벌 지역으로 배포가 되고 ec2와 ELB는 지역 리전으로 나뉘어진다. <br />
+클라이언트는 글로벌 리전에서 작동하므로 리전에 영향을 받진 않을 듯 하고, 서버가 탑재될 ELB 서울리전으로 두고(<a target="_blank">CloudPing.info</a>를 통한 속도 검증 결과 리전마다 속도차이가 명확히 있다.<del>아래 사진 참고</del>) 개발환경을 구성하는게 서버의 응답속도 때문에 이점이 있을 듯 한데…</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/144410348-669abeb7-67a6-413f-95bf-4e4373125150.png" alt="스크린샷, 2021-12-02 19-54-25" /></p>
+
+<p>검증 문제 때문에 해결를 간단히 해결하기 위해서 배포된 https://cmarket.cf 는 us-east-1 리전에서 작동하므로.. 리전을 서울등 다른 리전으로 둬도 될 듯 하지만</p>
+
+<h3 id="1-무료-도메인-https-aws-배포---백엔드">1. 무료 도메인 HTTPS AWS 배포 - 백엔드</h3>
+<hr />
+<h4 id="1-1-도메인-발급">1-1. 도메인 발급</h4>
+<hr />
+<ul>
+  <li>도메인 주소를 이용하여 HTTPS 인증방식을 사용하려면 우선 도메인을 발급받아야 한다.</li>
+  <li>
+    <p>AWS에서도 Route 53을 통한 도메인 구매가 가능하지만.. 비용부담이 발생하기도 하고 실제 상업사이트나 프로젝트/포트폴리오 목적이 아닌 학업 목적이기 때문에 무료 도메인 사이트인 <a href="https://www.freenom.com/en/index.html?lang=en" target="_blank">Freenom</a>에서 도메인 발급 후, 해당 도메인을 이용하였다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143876151-e7fed5c2-1b13-4d57-b97f-47440d364cde.png" alt="스크린샷, 2021-11-29 22-26-24" /></p>
+
+    <p>무료 도메인은 예고없이 사라지거나 로그인이 안되는(?)등 종잡을 수 없는 문제가 발생 할 수 있으므로..이런 부분은 감안하고 학습목적 정도로만 사용하도록 하는게 알맞은 사용방향이라 생각한다.</p>
+  </li>
+  <li>
+    <p><a href="http://cmarket.cf/" target="_blank">cmarket.cf</a> 주소로 도메인을 발급 받았으며 최초 발급 후 도메인에 접속하면 DNS 설정도 안된 빈 도메인이기 때문에 아래와 같은 에러코드를 받을 수 있다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143876050-43d949bd-e541-4507-acee-b59782c602f5.png" alt="스크린샷, 2021-11-29 22-23-51" /></p>
+  </li>
+</ul>
+
+<h4 id="1-2-elb-생성">1-2. ELB 생성</h4>
+<hr />
+<h5 id="elb란">ELB란?</h5>
+<hr />
+<ul>
+  <li>
+    <p>AWS에서 설명하는 ELB는 다음과 같다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144385209-49c0bca7-99bf-4d70-ad9a-d8bf0a76f3e8.png" alt="스크린샷, 2021-12-02 17-26-39" /></p>
+
+    <p>단순한 로드 밸런서* 역할 외에도 인증서 관리등 HTTPS 인증방식 지원까지 겸하고 있는 만능 서비스이다.</p>
+
+    <blockquote>
+      <p><strong>로드 밸런서</strong>란?</p>
+
+      <p>하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러 대의 서버가 분산처리하여 서버의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결해주는 서비스.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <p>ELB 서비스가 왜 필요한지 개념을 알았으니, AWS EC2 메뉴중 로드밸런서로 들어가 보자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143878331-14740d1a-92f8-4bdb-8c93-ce3d7e468979.png" alt="스크린샷, 2021-11-29 22-37-16" /></p>
+  </li>
+  <li>
+    <p>로드밸런서를 생성하려보니 여러 유형을 선택 할 수 있는 선택창이 나온다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144386594-d626749f-2e92-4e78-ade4-6c52c1c7509d.png" alt="스크린샷, 2021-12-02 17-36-07" /></p>
+
+    <p>우리는 HTTPS 인증 방식을 이용할 예정이니 1번을 선택하자.</p>
+  </li>
+  <li>
+    <p>로드 밸런서 이름을 정한 뒤,</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144386771-94d61e1d-5c20-413f-bc13-cd119bdbdd75.png" alt="스크린샷, 2021-12-02 17-37-32" /></p>
+
+    <p>네트워크 맵핑에서는 가용 영역을 모두 체크해주자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144386995-f2e95a20-928a-400d-b4c0-ea5629603a37.png" alt="스크린샷, 2021-12-02 17-38-35" /></p>
+
+    <p>그리고 리스너* 를 추가해 주어야 한다.</p>
+
+    <blockquote>
+      <p><strong>리스너</strong>란?</p>
+
+      <p>짧게 말해 리스너란, 구성한 프로토콜 및 포트를 사용해서 연결 요청을 확인하는 프로세스이다.</p>
+    </blockquote>
+
+    <p>리스너의 구성된 프로토콜/포트로 요청이 왔을때 대상그룹으로 연결(?)해주는 프로세스 같다. <del>(확실하지 않다…)</del></p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144387585-52909c76-7f0e-463f-8792-8d27ea0a532f.png" alt="스크린샷, 2021-12-02 17-42-54" /></p>
+
+    <p>리스너가 추가되면 각 리스너에 타겟 그룹을 설정해줘야 한다.</p>
+  </li>
+  <li>
+    <p>현재 배포하려는 웹 애플리케이션은 클라이언트와 서버서버는 토큰을 로컬스토리지에 담아 <strong>HTTP</strong>프로토콜로 주고받고 있다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144389226-eddc00a7-e610-4849-9db7-4bd16edf329e.png" alt="스크린샷, 2021-12-02 17-51-26" /></p>
+
+    <p>그렇기 때문에 클라이언트 ⮕ 로드밸런서로 HTTPS 요청이 와도 인스턴스(웹서버)에는 HTTP 프로토콜로 전달해 주어야 서버에서 클라이언트의 요청에 알맞는 응답 결과를 반환 할 수 있다.</p>
+  </li>
+  <li>
+    <p>그러므로 HTTP/HTTPS 두 리스너는 모두 HTTP 80포트로 인스턴스 연결이 이뤄지게끔 타겟 대상을 설정 해주자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144390493-66a4eb97-b839-49f0-b3d9-7715ef867dfd.png" alt="스크린샷, 2021-12-02 18-00-00" /></p>
+
+    <p>그리고 상태검사에서는 성공코드를 201번으로 변경하여 대상타겟을 생성해주자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144390985-cc3aec51-cf97-4647-bc2a-5f207e2c4c53.png" alt="스크린샷, 2021-12-02 18-02-42" /></p>
+  </li>
+  <li></li>
+  <li>
+    <p>여기까지 우선 무난히 진행되었으나 AWS에서 제공하는 인증서를 새로 발급을 받던지..<br />
+기존 사용하던 인증서가 있다면 해당 인증서를 import 해주어야 로드밸런서가 생성이 완성이 된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143885271-491b92a2-92ae-4959-960d-c5b826c89da1.png" alt="스크린샷, 2021-11-29 23-25-40" /></p>
+
+    <p>기존에 만든 SSL cert 인증서를 사용해볼까 했지만… <del>(import 방법 찾아보는것도 귀찮고)</del>  AWS에서도 무료로 인증서 발급을 해주길래 새로 발급해서 사용하기로 하였다.</p>
+  </li>
+</ul>
+
+<h4 id="1-3-acm을-통한-인증서-발급">1-3. ACM을 통한 인증서 발급</h4>
+<hr />
+<ul>
+  <li>
+    <p>AWS에서 발급 가능한 인증서를 만들기 위해 우선 AWS Certificate Manager 메뉴로 진입 후 퍼블릭 인증서 요청을 눌러준뒤, Freenom에서 발급받은 도메인 주소를 넣어준다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143906315-9e9655d2-8b23-4ef0-8554-82f270b898e2.png" alt="스크린샷, 2021-11-30 01-31-11" /></p>
+  </li>
+  <li>
+    <p>조금 기다린 뒤 인증서 ID를 눌러보면 CNAME 값이 생성된 것을 볼 수 있다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143906637-868b596f-7209-491e-becf-7347fe2e9ffd.png" alt="스크린샷, 2021-11-30 01-31-46" /></p>
+
+    <p>그 뒤 Manage Freenom DNS 로 이동해 준다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143907059-b113a150-4333-498f-8a9b-37971d0370a8.png" alt="스크린샷, 2021-11-30 01-36-53" /></p>
+
+    <blockquote>
+      <p>Route 53에서 발급받은 도메인이라면 Route 53 DNS 검증이 가능하지만, 무료 도메인을 발급 받은 상황이기때문에 Freenom DNS로 가서 설정을 변경해줘야 한다.</p>
+    </blockquote>
+
+    <p>AWS에서 확인한 CNAME 이름과 값을 넣어준 뒤 저장해 준뒤 <del>(찝찝하게 CNAME 이름은 대문자로 저장이 되지만 상관없다.)</del>, 검증이 끝날 때 까지 기다려주면 아래와 같은 사진을 확인 할 수 있다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143908476-0a484866-aafa-4382-8d04-2099ea5ef71f.png" alt="스크린샷, 2021-11-30 01-45-32" /></p>
+  </li>
+  <li>
+    <p>생성 중이던 로드밸런서에 인증서를 넣고 생성을 완료한다.</p>
+  </li>
+</ul>
+
+<h4 id="1-4-freenom--route-53-연결">1-4. Freenom ⬌ Route 53 연결</h4>
+<hr />
+<h5 id="route-53란">Route 53란?</h5>
+<hr />
+<ul>
+  <li>우선 Route 53은 무엇이고 왜 필요한지 짧게 찾아보았다.
+    <blockquote>
+      <p>AWS에서 제공하는 DNS(Domain Name Service)이다.</p>
+    </blockquote>
+
+    <p>그 외에도 도메인과 관련된 여러가지 서비스를 제공한다. 간략히 DNS 개념만 언급하자면 IP로 도메인을 기억하기는 힘들기때문에 사람이 기억하기 이름 형태로 변환해주는 시스템이다.</p>
+  </li>
+</ul>
+
+<hr />
+<ul>
+  <li>
+    <p>이제 Freenom DNS 검증은 완료되었다, AWS에서 해당 도메인을 사용하기 위해서 Freenom Nameservers 설정을 변경해 주자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143911244-7cb509e0-6b6a-4406-a120-eed04b5f6317.png" alt="스크린샷, 2021-11-30 02-02-27" /></p>
+
+    <p>위 사진 영역에 Route 53에서 호스팅 영역을 생성 후 NS 에 해당하는 라우팅 대상을 맵핑해서 넣어주면 된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/143912771-bbaacb32-af5e-439c-9bfe-b2bcc58eabc6.png" alt="스크린샷, 2021-11-30 02-13-28" /></p>
+  </li>
+  <li>
+    <p>이제 Freenom에서 발급 받은 무료 도메인(cmarket.cf)은 AWS Certificate Manager을 받기 위한 DNS 검증도 끝났으며, Route 53 호스팅 영역에도 연결이 되었다.</p>
+  </li>
+</ul>
+
+<h4 id="1-5-route-53--elb-연결">1-5. Route 53 ⬌ ELB 연결</h4>
+<hr />
+<ul>
+  <li>
+    <p>Route 53과 ELB는 모두 설정이 완료되었으므로 연결만 해주면 된다.<br />
+Route 53 메뉴로 가서 레코드 한줄만 써주도록 하자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144002528-56641315-a1d3-466e-9678-45393a8df740.png" alt="스크린샷, 2021-11-30 16-10-52" /></p>
+
+    <p>라우팅 대상은 별칭으로 둔 뒤, 로드밸런서 별칭의 지역은 서울로 들어가면 미리 만들어둔 로드밸런서가 확인이 된다. 해당 ELB를 선택 후 레코드를 생성해 주자.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144002681-f6704bb9-6591-4720-9e02-7612315550cb.png" alt="스크린샷, 2021-11-30 16-11-54" /></p>
+  </li>
+</ul>
+
+<h4 id="1-6-연결-확인">1-6. 연결 확인</h4>
+<hr />
+<ul>
+  <li>
+    <p>이제 cmarket.cf 도메인을 브라우저 검색창에 검색한다면, AWS의 Route 53의 DNS서비스를 통하여 ELB에 접근하게된다.</p>
+
+    <p>ELB에서는 트래픽을 자동으로 분산 시켜서  EC2 인스턴스로 접근을 허용시킨다.</p>
+  </li>
+  <li>
+    <p>cmarket.cf 도메인을 검색하면 <del>트래픽 과부화 상태가 아니라면</del> EC2에 서버가 켜져있다면 endpoint <code class="language-plaintext highlighter-rouge">/</code> 로 접근이 될것이다.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">201</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div>    </div>
+
+    <p>따라서 cmarket.cf 도메인 검색시 아래와 같은 결과가 확인된다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144004657-5cd1e88e-68d8-440d-8a2e-8644f1b0a085.png" alt="스크린샷, 2021-11-30 16-31-04" /></p>
+  </li>
+  <li>
+    <p>직접 해보니.. 무료 도메인 말고 AWS에서 도메인을 직접 구매해서 사용한다면 DNS 검증이나 Freenom에서 Route 53으로 Nameservers 연결 등등.. 절차가 훨씬 간편할거라 예상된다 (생각보다 비용도 비싸진 않다. <del>.com 같은거만 아니라면…</del>).</p>
+
+    <p>추후 있을 프로젝트때는 AWS 도메인을 활용해봐야겠다.</p>
+  </li>
+</ul>
+
+<h3 id="2-무료-도메인-https-aws-배포---프론트엔드">2. 무료 도메인 HTTPS AWS 배포 - 프론트엔드</h3>
+<hr />
+
+<h4 id="2-1-cloudfront-배포-생성-s3--cloudfront-연결">2-1. CloudFront 배포 생성 (S3 ⬌ CloudFront 연결)</h4>
+<hr />
+<ul>
+  <li>배포 및 HTTPS 적용을 하려면 S3를 CloudFront에 연결해 주어야 한다.</li>
+  <li>
+    <p>우선 CloudFront 생성하기로 진입 후 기존 S3 버킷을 선택해 준다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144011543-b2e1a513-685a-47ef-92cc-289afb7ebc2c.png" alt="스크린샷, 2021-11-30 16-11-54" /></p>
+  </li>
+  <li>
+    <p>기본 캐시동작 / 뷰어 프로토콜 정책은 Redirect HTTP to HTTPS 로 선택해 준다</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144011738-e166d20b-b5b2-4023-ac3e-c8855057750f.png" alt="스크린샷, 2021-11-30 16-55-32" /></p>
+  </li>
+  <li>
+    <p>그 다음 인증서를 등록해주면 되는데…</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/144011861-e3311f89-fe4f-4925-9b09-f11a399571b8.png" alt="스크린샷, 2021-11-30 16-58-37" /></p>
+
+    <p><strong>인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.</strong><br />
+  <strong>인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.</strong></p>
+
+    <p><del>장난..??</del></p>
+
+    <p>아무튼 덕분에.. 인증서 다시 발급받은 뒤, 해당 인증서로 로드밸런서 다시 만들고.. Route 53 다시 연결해주는 뻘짓을 다시 하게되었다.<br />
+이 글을 보시는 분들은 꼭 이런 실수 하지 마시길..</p>
+  </li>
+</ul>
+:ET
