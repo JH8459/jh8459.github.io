@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-02T22:47:54+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증" /><published>2021-11-26T00:00:00+09:00</published><updated>2021-11-26T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-02T23:41:21+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증" /><published>2021-11-26T00:00:00+09:00</published><updated>2021-11-26T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 
 &lt;p&gt;기존에 EC2, S3, RDS를 통해 배포한 &lt;a href=&quot;https://jh8459.github.io/til/21.10.29.til/&quot; target=&quot;_blank&quot;&gt;웹 애플리케이션&lt;/a&gt;(21.10.29 TIL 참조)을 무료 도메인(Freenom)으로 배포하는 Advanced한 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.&lt;/p&gt;
@@ -90,7 +90,7 @@
     &lt;p&gt;리스너가 추가되면 각 리스너에 타겟 그룹을 설정해줘야 한다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;현재 배포하려는 웹 애플리케이션은 클라이언트와 서버서버는 토큰을 로컬스토리지에 담아 &lt;strong&gt;HTTP&lt;/strong&gt;프로토콜로 주고받고 있다.&lt;/p&gt;
+    &lt;p&gt;현재 배포하려는 웹 애플리케이션은 클라이언트와 서버가 토큰을 로컬스토리지에 담아 &lt;strong&gt;HTTP&lt;/strong&gt;프로토콜로 데이터를 주고받고 있다.&lt;/p&gt;
 
     &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144389226-eddc00a7-e610-4849-9db7-4bd16edf329e.png&quot; alt=&quot;스크린샷, 2021-12-02 17-51-26&quot; /&gt;&lt;/p&gt;
 
