@@ -414,7 +414,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[TIL] 21.10.29 / 1. Amazon Web Service 2. 백엔드 배포 3. 프론트엔드 배포 4. 데이터베이스 연결(작성중)",
-        "excerpt":"  Today I Learnd  1. Amazon Web Service         오늘 느낀 점  도커를 왜 쓰는지 이유는 확실히 알았다. 서로 다른 배포환경에서 특정 환경에 종속되지 않고 개발과 배포를 원활히 이뤄질 수 있게 해주는 하나의 생태계이다.          내일 할 일     [배포] Docker  ","categories": ["TIL"],
+        "excerpt":"  Today I Learnd  1. Amazon Web Service         오늘 느낀 점          내일 할 일     [배포] Docker  ","categories": ["TIL"],
         "tags": [],
         "url": "/til/21.10.29.til/",
         "teaser": null
