@@ -414,7 +414,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[TIL] 21.10.29 / 1. Amazon Web Service 2. 백엔드 배포 3. 프론트엔드 배포 4. 데이터베이스 연결(작성중)",
-        "excerpt":"  Today I Learnd  1. Amazon Web Service         오늘 느낀 점          내일 할 일     [배포] Docker  ","categories": ["TIL"],
+        "excerpt":"  Today I Learnd  1. Amazon Web Service         오늘 느낀 점               내일 할 일     [배포] Docker  ","categories": ["TIL"],
         "tags": [],
         "url": "/til/21.10.29.til/",
         "teaser": null
