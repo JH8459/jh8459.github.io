@@ -1,0 +1,40 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-amazon-web-service">1. Amazon Web Service</h3>
+<hr />
+<h4 id="1-1-cloud-computing">1-1. Cloud Computing</h4>
+<hr />
+<ul>
+  <li>
+    <p>클라우드 등장 이전의 방식은 흔히 말하는 전산실 등에 컴퓨터를 배치하고 인터넷을 연결하여 서비스를 제공했다.</p>
+
+    <center><img src="https://user-images.githubusercontent.com/83164003/144698139-d85f1899-2867-4e66-9ddd-e045bd12bfde.jpeg" /></center>
+    <p><br /></p>
+
+    <p>하지만 이러한 경우 서버가 요청에 대한 수용 능력이 한계에 도달한다면 같은 공간에 서버를 추가하거나 서버의 성능을 업그레이드하는 방식을 채택해야한다.</p>
+  </li>
+  <li>
+    <p>이러한 방식의 문제는 몇가지 문제점을 가지고 있다.</p>
+    <ol>
+      <li>ㅇ</li>
+      <li>ㅇ</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li></li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<hr />
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>[배포] Docker</li>
+</ul>
+:ET
