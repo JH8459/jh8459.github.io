@@ -532,4 +532,10 @@ var store = [{
         "tags": [],
         "url": "/til/21.11.26.til/",
         "teaser": null
+      },{
+        "title": "[Retrospect] 21.12.08 Section3 후기",
+        "excerpt":" ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/21.12.08.til/",
+        "teaser": null
       }]
