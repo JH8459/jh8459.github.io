@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-08T23:47:42+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Retrospect] 21.12.08 Section3 후기</title><link href="/til/21.12.08.til/" rel="alternate" type="text/html" title="[Retrospect] 21.12.08 Section3 후기" /><published>2021-12-08T00:00:00+09:00</published><updated>2021-12-08T00:00:00+09:00</updated><id>/til/21.12.08.til</id><content type="html" xml:base="/til/21.12.08.til/"></content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[Retrospect] 21.12.08 Section3 후기</summary></entry><entry><title type="html">[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증" /><published>2021-11-26T00:00:00+09:00</published><updated>2021-11-26T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-09T12:01:48+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Retrospect] 21.12.08 34기 Section3 후기</title><link href="/til/21.12.08.til/" rel="alternate" type="text/html" title="[Retrospect] 21.12.08 34기 Section3 후기" /><published>2021-12-08T00:00:00+09:00</published><updated>2021-12-08T00:00:00+09:00</updated><id>/til/21.12.08.til</id><content type="html" xml:base="/til/21.12.08.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
+
+&lt;p&gt;18시까지 Hiring Assessments 과제형을 마친 뒤 저녁식사 후 HA를 통과했다는 메일을 받았다.&lt;/p&gt;
+
+&lt;p&gt;그동안 Section을 통과할때마다 블로그 후기글을 설문으로 제출하는 링크를 보아도 별 감흥이 없었지만, Section3를 겪으며 백엔드 포지션으로 진로를 정하기도 하였고 모든 HA를 끝낸 해방감(?)에 한번 후기를 남겨보려 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section3-어려웠나요&quot;&gt;Section3 어려웠나요?&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/145323347-861351cd-23b9-4d2c-860c-a9e7234a596e.png&quot; alt=&quot;easyhard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 나는 33기로 코드스테이츠로 지원을 하였고 33기 Section3 HA에서 기수이동의 고배를 마셨다.&lt;/p&gt;
+
+&lt;p&gt;Section1 &amp;amp; Section2가 HA가 쉬웠다..는 아니지만 Section3 HA에서는 &lt;strong&gt;엄격히&lt;/strong&gt; 합격 여부를 선정하는거 같다.&lt;/p&gt;
+
+&lt;p&gt;그리고 팀단위로 2주, 4주 노력을 갈아넣는 프로젝트 진행 직전 최소한의 준비단계를 거친뒤 진행하라는 의미로 생각하면, 이러한 엄격한 선정방식은 당연하다 생각을 한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Section3&lt;/strong&gt;는 백엔드&amp;amp;컴퓨터공학과 애플리케이션을 웹으로 배포과정을 중심적으로 학습하는 섹션이다. 우선 단어만 들어봐도 썩 유쾌하지 않다. &lt;del&gt;(공학…)&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;확실히 눈으로 보이며 즉각적인 피드백이 오는 클라이언트 설계를 학습해오다 백엔드 서버 중심의 설계를 배우다 보니 몇가지 어려운점이 있었다.&lt;/p&gt;
+
+&lt;p&gt;우선 가장 큰 문제점은 &lt;em&gt;“눈으로 직접 보기가 어렵다”&lt;/em&gt; 였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[인증/보안] 기초&lt;/strong&gt; 가 이 부분에서 정점을 찍는다. &lt;del&gt;(진짜 어렵습니다.. 😂)&lt;/del&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTTPS 통신 위해 발급한 인증서는 어디서 보이지?&lt;/li&gt;
+  &lt;li&gt;쿠키는 도대체 어디서 볼 수 있는거지?.. 로컬 저장소가 어디야…, 쿠키에 담긴 토큰은 어떻게 생겨먹었지?..&lt;/li&gt;
+  &lt;li&gt;아니 Headers엔 뭐가 담긴것이고 왜 토큰을 잘라서 가져오지…등등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이는 Postman API 플랫폼이나 Chrome의 네트워크 탭등을 통해 확인하는 방법을 스프린트에서 학습하고 배우지만, 솔직히 앞서 말한 스프린트 내용만으로는 온전히 활용하기가 어려웠다.&lt;/p&gt;
+
+&lt;p&gt;이 부분은 꼭 추가적인 공부를 하셔서 어떠한 방식으로 클라이언트/서버가 요청과 결과를 주고받는지 눈으로 꼭 확인해보길 권유하고 싶다.  👍&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;두번째로 &lt;em&gt;“배포”&lt;/em&gt;…&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/145323400-e3203fa4-b592-4032-9919-1c9b3262306a.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위에서 언급한 과정을 겪은 뒤 실제 도메인영역에 웹서비스를 배포하는 과정을 실습한다. &lt;del&gt;(Advanced AWS HTTPS 배포 어렵습니다..😂)&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;AWS HTTPS 삽질한 배포 과정을 &lt;a href=&quot;https://jh8459.github.io/til/21.11.26.til/&quot; target=&quot;_blank&quot;&gt;게시물&lt;/a&gt;로 남기기도 하였다.&lt;/p&gt;
+
+&lt;p&gt;이 두가지는 그래도 꼭 학습하고 넘어가야 백엔드 포지션으로써 &lt;strong&gt;“첫 발은 내딘다”&lt;/strong&gt; 라고 생각한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;마지막으로 &lt;em&gt;“Hiring Assessments”&lt;/em&gt; HA 이다.&lt;/p&gt;
+
+&lt;p&gt;사실 불합격 고배를 한번 마신적이 있기 때문에, 애증의 대상이다.&lt;/p&gt;
+
+&lt;p&gt;코드스테이츠에서도 해당 시험을 직접적/간접적으로 언급하는걸 꺼려하기에 자세한 내용은 적지 않고 딱 한가지만 적고 넘어가려 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“npm test” 테스트 코드들 누락없이 모두 통과하세요.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;그래서 Section3 어렵냐? 결론은 무엇이냐?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;어렵습니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만 이 어려운 과정을 헤쳐나가려 삽질하며 공부하는 과정이 반드시 있어야만 성장하고 드디어 서비스를 배포 할 수 있는 최소한의 자격을 얻는다고 생각한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section3-이후-앞으로는&quot;&gt;Section3 이후 앞으로는?&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;이제 실전이다.&lt;br /&gt;
+Section 을 거듭하며 마음에 맞는 스터디 팀원들이 생겼고 이 팀원들과 기획방향을 이제 맞춰보려 한다.&lt;/p&gt;
+
+&lt;p&gt;사실 지금껏 배워온 프레임워크라던지 기술 스택들은 지금 이 프로젝트 과정을 위해 모두 배운것 아닌가? 이제 모두 쏟아내어 결과물을 보고싶다. &lt;del&gt;(많은 밤샘이 있을까 걱정중이다..😇)&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;앞으로 6주가 가장 중요하다 생각된다.&lt;/p&gt;
+
+&lt;p&gt;실질적 이 프로젝트들은 수료 후 취업과정에서 나를 가장 잘 보여줄 수 있는 수단이 될 것이라 생각된다. 솔직한 감정으로는 열심히..도 좋지만, 그보다는 잘 해내고 싶다.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;여담으로 이 글을 본다면 나보다는 아래 기수이지 않을까? 생각이 든다.&lt;br /&gt;
+그리고 준비된 사람이라 생각이 든다.&lt;/p&gt;
+
+&lt;p&gt;Section3의 난이도와 HA에 대한 막연한 불안감..,  곧 나에게 다가올 미래이기도 할테니 여러 다양한 사람에게 정보를 구하자 할 노력을 하고 계시다 생각이 든다.&lt;/p&gt;
+
+&lt;p&gt;나 또한 지금 선배기수들의 프로젝트 결과물과 진행과정들을 열심히 찾아 보며 불안감을 달래는 중이다. 😅&lt;/p&gt;
+
+&lt;p&gt;원하는 진로로 취업하는 그날까지 파이팅이다. 👍&lt;/p&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[Retrospect] 34기 Section3 후기</summary></entry><entry><title type="html">[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 21.11.26 / 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증" /><published>2021-11-26T00:00:00+09:00</published><updated>2021-11-26T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
 
 &lt;p&gt;기존에 EC2, S3, RDS를 통해 배포한 &lt;a href=&quot;https://jh8459.github.io/til/21.10.29.til/&quot; target=&quot;_blank&quot;&gt;웹 애플리케이션&lt;/a&gt;(21.10.29 TIL 참조)을 무료 도메인(Freenom)으로 배포하는 Advanced한 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.&lt;/p&gt;
