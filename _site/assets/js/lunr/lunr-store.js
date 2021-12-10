@@ -538,4 +538,10 @@ var store = [{
         "tags": [],
         "url": "/retrospect/21.12.08.retrospect/",
         "teaser": null
+      },{
+        "title": "[TIL] 1. Node.js Multer (작성중)",
+        "excerpt":"  Today I Learnd   1. Node.js Multer      Node.js Express 서버는 기본 기능에는 파일 업로드 기능이 포함되어 있지 않다.   multer는 사용자 파일 업로드 기능을 제공하는 패키지로, 사용자가 전송한 파일을 처리하는 작업을 수행한다.     1-1.                 오늘 느낀 점        ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/21.12.09.til/",
+        "teaser": null
       }]
