@@ -10,12 +10,14 @@ main:
 docs:
   - title: "CodeStates"
     children:
-      - title: "TIL"
-        url: /category/#til
       - title: "Algorithm"
         url: /category/#algorithm
+      - title: "Project"
+        url: /category/#project
       - title: "Retrospect"
         url: /category/#retrospect
+      - title: "TIL"
+        url: /category/#til
 
   - title: "ETC"
     children:
