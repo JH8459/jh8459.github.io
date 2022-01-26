@@ -550,4 +550,10 @@ var store = [{
         "tags": [],
         "url": "/retrospect/21.12.13.retrospect/",
         "teaser": null
+      },{
+        "title": "[Project] Final Project",
+        "excerpt":".  ","categories": ["Project"],
+        "tags": [],
+        "url": "/project/22.01.26.Final-Project/",
+        "teaser": null
       }]
