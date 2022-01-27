@@ -552,7 +552,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Project] Final Project",
-        "excerpt":".  ","categories": ["Project"],
+        "excerpt":".작성중  ","categories": ["Project"],
         "tags": [],
         "url": "/project/22.01.26.Final-Project/",
         "teaser": null
