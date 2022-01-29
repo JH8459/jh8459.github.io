@@ -1,778 +1,595 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-01-29T16:47:02+09:00</updated><id>/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Retrospect] 코드스테이츠 34기 수료</title><link href="/retrospect/22.01.28.Retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 34기 수료" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>/retrospect/22.01.28.Retrospect</id><content type="html" xml:base="/retrospect/22.01.28.Retrospect/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/151650800-00ba9a63-5827-462a-91d3-e453381cc515.jpg&quot; alt=&quot;수료증1024_1&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-29T17:26:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">JHLog</title><author><name>JH8459</name></author><entry><title type="html">[Retrospect] 코드스테이츠 34기 수료</title><link href="http://localhost:4000/retrospect/22.01.28.Retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 34기 수료" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/retrospect/22.01.28.Retrospect</id><content type="html" xml:base="http://localhost:4000/retrospect/22.01.28.Retrospect/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/151650800-00ba9a63-5827-462a-91d3-e453381cc515.jpg" alt="수료증1024_1" /></p>
 
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
+<h2 id="retrospect">Retrospect</h2>
 
-&lt;p&gt;코드스테이츠 수료 직후 드는 감정을 한 문장으로 정의하자면&lt;br /&gt;&lt;/p&gt;
+<p>코드스테이츠 수료 직후 드는 감정을 한 문장으로 정의하자면<br /></p>
 
-&lt;h1 id=&quot;고생했고-이제-시작이다&quot;&gt;&lt;strong&gt;&lt;em&gt;고생했고 이제 시작이다.&lt;/em&gt;&lt;/strong&gt;&lt;/h1&gt;
+<h1 id="고생했고-이제-시작이다"><strong><em>고생했고 이제 시작이다.</em></strong></h1>
 
-&lt;p&gt;&lt;br /&gt;
-프로젝트 기간에는 평균 수면 시간 2~3시간.. 그동안 수료를 보며 달려왔던 관성이 있어서, 프로젝트가 끝난 뒤 어영부영 12시쯤 잠에 들려고 눈을 감으면 온갖 생각들로 잠자리가 편하지 않다.&lt;/p&gt;
+<p><br />
+프로젝트 기간에는 평균 수면 시간 2~3시간.. 그동안 수료를 보며 달려왔던 관성이 있어서, 프로젝트가 끝난 뒤 어영부영 12시쯤 잠에 들려고 눈을 감으면 온갖 생각들로 잠자리가 편하지 않다.</p>
 
-&lt;p&gt;우선 수료하는 오늘 느낀 감정에 대해서 간략히 적어보려한다.&lt;/p&gt;
+<p>우선 수료하는 오늘 느낀 감정에 대해서 간략히 적어보려한다.</p>
 
-&lt;h3 id=&quot;무엇을-배웠나&quot;&gt;무엇을 배웠나?&lt;/h3&gt;
-&lt;hr /&gt;
+<h3 id="무엇을-배웠나">무엇을 배웠나?</h3>
+<hr />
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/151651548-2acaaae3-1ab1-4747-8bc3-98fb61cb819c.jpeg&quot; alt=&quot;web-developer-skills&quot; /&gt;&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/83164003/151651548-2acaaae3-1ab1-4747-8bc3-98fb61cb819c.jpeg" alt="web-developer-skills" /></p>
 
-&lt;p&gt;웹 개발에 전반적인 흐름과 설계 구조에 대하여 공부하였다.&lt;/p&gt;
+<p>웹 개발에 전반적인 흐름과 설계 구조에 대하여 공부하였다.</p>
 
-&lt;p&gt;우선 프로그래밍 언어로는 JavaScript를 집중적으로 배웠으며 네트워크 구조, 자료구조와 알고리즘 등 공학에 관련된 기초 지식을 쌓았다.&lt;/p&gt;
+<p>우선 프로그래밍 언어로는 JavaScript를 집중적으로 배웠으며 네트워크 구조, 자료구조와 알고리즘 등 공학에 관련된 기초 지식을 쌓았다.</p>
 
-&lt;p&gt;기술스택을 말하자면 프론트엔드 기술로는 React를 이용한 Client 개발 기술, Redux를 이용한 상태관리 SASS &amp;amp; Styled Components 등의 CSS 기술 또한 배웠다.&lt;/p&gt;
+<p>기술스택을 말하자면 프론트엔드 기술로는 React를 이용한 Client 개발 기술, Redux를 이용한 상태관리 SASS &amp; Styled Components 등의 CSS 기술 또한 배웠다.</p>
 
-&lt;p&gt;백엔드 기술로는 Node.js와 Express를 이용한 Server 개발을 주축으로 내가 만든 서버와 클라이언트 환경을 AWS 환경을 통하여 배포까지 직접 할 수 있게 되었다. 👍&lt;/p&gt;
+<p>백엔드 기술로는 Node.js와 Express를 이용한 Server 개발을 주축으로 내가 만든 서버와 클라이언트 환경을 AWS 환경을 통하여 배포까지 직접 할 수 있게 되었다. 👍</p>
 
-&lt;h3 id=&quot;앞으로는&quot;&gt;앞으로는?&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;이제 주니어 개발자가 되기 위한 험난한 과정의 시작이다.😅&lt;br /&gt;
-취업에 가장 중요한 시점은 수료후 8~9주 정도라 생각한다.&lt;/p&gt;
+<h3 id="앞으로는">앞으로는?</h3>
+<hr />
+<p>이제 주니어 개발자가 되기 위한 험난한 과정의 시작이다.😅<br />
+취업에 가장 중요한 시점은 수료후 8~9주 정도라 생각한다.</p>
 
-&lt;p&gt;일단 자소서와 이력서를 다듬을 예정이다.&lt;/p&gt;
+<p>일단 자소서와 이력서를 다듬을 예정이다.</p>
 
-&lt;p&gt;매일매일 프로그래머스와 백준 알고리즘 문제 풀이를 통해 코딩 테스트를 대비해 볼 예정이다.&lt;br /&gt;
-백엔드 포지션 기술 면접 또한 대비할 예정이다.&lt;/p&gt;
+<p>매일매일 프로그래머스와 백준 알고리즘 문제 풀이를 통해 코딩 테스트를 대비해 볼 예정이다.<br />
+백엔드 포지션 기술 면접 또한 대비할 예정이다.</p>
 
-&lt;p&gt;코딩 테스트를 되도록 보는 회사를 찾아서 지원해볼 예정이다. &lt;br /&gt;
-비전공 출신인 신입 개발자가 눈에 띄는 포트폴리오를 보여주긴 어렵다 생각되므로 알고리즘 풀이에 시간을 쏟아 볼 예정이다.&lt;/p&gt;
+<p>코딩 테스트를 되도록 보는 회사를 찾아서 지원해볼 예정이다. <br />
+비전공 출신인 신입 개발자가 눈에 띄는 포트폴리오를 보여주긴 어렵다 생각되므로 알고리즘 풀이에 시간을 쏟아 볼 예정이다.</p>
 
-&lt;p&gt;그리고 팀원들과 함께 파이널 프로젝트 리팩토링 기간을 가져보며 취업 준비를 겸해볼 예정이다.&lt;/p&gt;
+<p>그리고 팀원들과 함께 파이널 프로젝트 리팩토링 기간을 가져보며 취업 준비를 겸해볼 예정이다.</p>
 
-&lt;p&gt;사실 아직 무슨 회사에서 일해보고 싶은지 생각해 본 적이 없다. 😅&lt;br /&gt;
-어떤 회사에 지원할지 우선 정하고 난 뒤 구직활동을 시작해 볼 예정이다.&lt;/p&gt;
+<p>사실 아직 무슨 회사에서 일해보고 싶은지 생각해 본 적이 없다. 😅<br />
+어떤 회사에 지원할지 우선 정하고 난 뒤 구직활동을 시작해 볼 예정이다.</p>
 
-&lt;p&gt;원하는 진로로 취업하는 그날까지 파이팅이다. 👍&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html">[Retrospect] 코드스테이츠 34기 수료</summary></entry><entry><title type="html">[Project] Final Project</title><link href="/project/22.01.26.Final-Project/" rel="alternate" type="text/html" title="[Project] Final Project" /><published>2022-01-26T00:00:00+09:00</published><updated>2022-01-26T00:00:00+09:00</updated><id>/project/22.01.26.Final%20Project</id><content type="html" xml:base="/project/22.01.26.Final-Project/">&lt;p&gt;(작성중)&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Project" /><summary type="html">[Project] Final Project</summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Final Project</title><link href="/retrospect/22.01.25.Retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Final Project" /><published>2022-01-25T00:00:00+09:00</published><updated>2022-01-25T00:00:00+09:00</updated><id>/retrospect/22.01.25.Retrospect</id><content type="html" xml:base="/retrospect/22.01.25.Retrospect/">&lt;p&gt;(작성중)&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html">[Retrospect] 코드스테이츠 Final Project</summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Project 시작</title><link href="/retrospect/21.12.13.retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Project 시작" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>/retrospect/21.12.13.retrospect</id><content type="html" xml:base="/retrospect/21.12.13.retrospect/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
+<p>원하는 진로로 취업하는 그날까지 파이팅이다. 👍</p>]]></content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html"><![CDATA[[Retrospect] 코드스테이츠 34기 수료]]></summary></entry><entry><title type="html">[Project] Final Project</title><link href="http://localhost:4000/project/22.01.26.Final-Project/" rel="alternate" type="text/html" title="[Project] Final Project" /><published>2022-01-26T00:00:00+09:00</published><updated>2022-01-26T00:00:00+09:00</updated><id>http://localhost:4000/project/22.01.26.Final%20Project</id><content type="html" xml:base="http://localhost:4000/project/22.01.26.Final-Project/"><![CDATA[<p>(작성중)</p>]]></content><author><name>JH8459</name></author><category term="Project" /><summary type="html"><![CDATA[[Project] Final Project]]></summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Final Project</title><link href="http://localhost:4000/retrospect/22.01.25.Retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Final Project" /><published>2022-01-25T00:00:00+09:00</published><updated>2022-01-25T00:00:00+09:00</updated><id>http://localhost:4000/retrospect/22.01.25.Retrospect</id><content type="html" xml:base="http://localhost:4000/retrospect/22.01.25.Retrospect/"><![CDATA[<p>(작성중)</p>]]></content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html"><![CDATA[[Retrospect] 코드스테이츠 Final Project]]></summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 First Project</title><link href="http://localhost:4000/retrospect/21.12.24.Retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 First Project" /><published>2021-12-24T00:00:00+09:00</published><updated>2021-12-24T00:00:00+09:00</updated><id>http://localhost:4000/retrospect/21.12.24.Retrospect</id><content type="html" xml:base="http://localhost:4000/retrospect/21.12.24.Retrospect/"><![CDATA[<p>(작성중)</p>]]></content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html"><![CDATA[[Retrospect] 코드스테이츠 First Project]]></summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Project 시작</title><link href="http://localhost:4000/retrospect/21.12.13.retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Project 시작" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/retrospect/21.12.13.retrospect</id><content type="html" xml:base="http://localhost:4000/retrospect/21.12.13.retrospect/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png" alt="스크린샷, 2021-11-07 22-08-33" /></p>
 
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
+<h2 id="retrospect">Retrospect</h2>
 
-&lt;p&gt;우선 프로젝트가 아직 완성된게 아니라 회고는 아니고 시작 전 다짐 및 마음가짐을 적어보려 간단히 남긴다.&lt;/p&gt;
+<p>우선 프로젝트가 아직 완성된게 아니라 회고는 아니고 시작 전 다짐 및 마음가짐을 적어보려 간단히 남긴다.</p>
 
-&lt;h3 id=&quot;first-project-팀-선정&quot;&gt;First Project 팀 선정&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;우선 Section3 HA 이전에 선배 기수들에게 프로젝트에 관련한 내용을 많이 들었다.&lt;/p&gt;
+<h3 id="first-project-팀-선정">First Project 팀 선정</h3>
+<hr />
+<p>우선 Section3 HA 이전에 선배 기수들에게 프로젝트에 관련한 내용을 많이 들었다.</p>
 
-&lt;p&gt;&lt;em&gt;미리미리 준비해야 한다. 팀이 절반이다. 기획부터 시간이 오래 걸리므로 미리미리 준비하고 대비해라.&lt;/em&gt;&lt;/p&gt;
+<p><em>미리미리 준비해야 한다. 팀이 절반이다. 기획부터 시간이 오래 걸리므로 미리미리 준비하고 대비해라.</em></p>
 
-&lt;p&gt;우선 틀린 말은 아닌거같다. 저번 주 금요일인 12.10 팀 설문조사가 이뤄지고, 미리 프로젝트 진행전 기획을 진행해 오던 팀원들을 적어서 내었고, 해당 팀원으로 구성된 팀이 오늘 부로 결정이 되었다.&lt;/p&gt;
+<p>우선 틀린 말은 아닌거같다. 저번 주 금요일인 12.10 팀 설문조사가 이뤄지고, 미리 프로젝트 진행전 기획을 진행해 오던 팀원들을 적어서 내었고, 해당 팀원으로 구성된 팀이 오늘 부로 결정이 되었다.</p>
 
-&lt;p&gt;그리고 SR 기획서를 오늘 포함하여 이틀안에 제출을 해야하는데, URClass에서 제공되는 SR 기획서에 기입해야할 양이 생각보다 많다.&lt;br /&gt;
-기획서 및 Wiki 작성을 진심으로 임해야 할 듯 하다.&lt;/p&gt;
+<p>그리고 SR 기획서를 오늘 포함하여 이틀안에 제출을 해야하는데, URClass에서 제공되는 SR 기획서에 기입해야할 양이 생각보다 많다.<br />
+기획서 및 Wiki 작성을 진심으로 임해야 할 듯 하다.</p>
 
-&lt;p&gt;만약 후배기수가 이 글을 읽는다면, 팀을 미리 꾸리고 &lt;del&gt;(물론 마음에 맞는 팀원 구하기가 어렵습니다..)&lt;/del&gt; 기획의 방향정도는 충분한 회의를 통하여 결정 후 팀 선정에 진입하길 권유하고 싶다. 👍&lt;/p&gt;
+<p>만약 후배기수가 이 글을 읽는다면, 팀을 미리 꾸리고 <del>(물론 마음에 맞는 팀원 구하기가 어렵습니다..)</del> 기획의 방향정도는 충분한 회의를 통하여 결정 후 팀 선정에 진입하길 권유하고 싶다. 👍</p>
 
-&lt;h3 id=&quot;앞으로는&quot;&gt;앞으로는?&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/145743411-a9f1a1ab-51e2-46d4-8906-4b53e5dd21d1.jpg&quot; alt=&quot;project&quot; /&gt;&lt;/p&gt;
+<h3 id="앞으로는">앞으로는?</h3>
+<hr />
+<p><img src="https://user-images.githubusercontent.com/83164003/145743411-a9f1a1ab-51e2-46d4-8906-4b53e5dd21d1.jpg" alt="project" /></p>
 
-&lt;p&gt;이제 진짜 프로젝트 결과물을 팀 협업을 통해 만들어 내야 한다.&lt;br /&gt;
-익숙하지 않는 Git Flow로 협업을 이루고, 작업 분담을 해가며 프로젝트를 진행해내야 한다.&lt;/p&gt;
+<p>이제 진짜 프로젝트 결과물을 팀 협업을 통해 만들어 내야 한다.<br />
+익숙하지 않는 Git Flow로 협업을 이루고, 작업 분담을 해가며 프로젝트를 진행해내야 한다.</p>
 
-&lt;p&gt;팀 룰을 정하였고 &lt;del&gt;(최소 6주??간 방콕)&lt;/del&gt;, 웹 페이지를 완성하기 위한 최소한의 TODO 리스트를 작성해두고 1차 프로젝트의 기획의 갈무리는 어느정도 되었다 생각한다.&lt;/p&gt;
+<p>팀 룰을 정하였고 <del>(최소 6주??간 방콕)</del>, 웹 페이지를 완성하기 위한 최소한의 TODO 리스트를 작성해두고 1차 프로젝트의 기획의 갈무리는 어느정도 되었다 생각한다.</p>
 
-&lt;p&gt;다만, 아직 익숙하지 않은 툴들과 프레임워크를 통해서 협업을 진행해야 한다는 사실은 막연한 두려움이 반, 그리고 좋은 결과물을 기대하는 기대감이 나머지 절반으로 두근거리고 있다.&lt;/p&gt;
+<p>다만, 아직 익숙하지 않은 툴들과 프레임워크를 통해서 협업을 진행해야 한다는 사실은 막연한 두려움이 반, 그리고 좋은 결과물을 기대하는 기대감이 나머지 절반으로 두근거리고 있다.</p>
 
-&lt;p&gt;당분간은 두개의 프로젝트에 전념하기 위해서 블로그는 당분간 글 작성이 없을거 같다.&lt;br /&gt;
-두개의 프로젝트가 모두 끝난 후 회고 글을 작성해야겠다.&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html">[Retrospect] 코드스테이츠 First Project 시작</summary></entry><entry><title type="html">[TIL] 1. Node.js Multer (작성중)</title><link href="/til/21.12.09.til/" rel="alternate" type="text/html" title="[TIL] 1. Node.js Multer (작성중)" /><published>2021-12-09T00:00:00+09:00</published><updated>2021-12-09T00:00:00+09:00</updated><id>/til/21.12.09.til</id><content type="html" xml:base="/til/21.12.09.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+<p>당분간은 두개의 프로젝트에 전념하기 위해서 블로그는 당분간 글 작성이 없을거 같다.<br />
+두개의 프로젝트가 모두 끝난 후 회고 글을 작성해야겠다.</p>]]></content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html"><![CDATA[[Retrospect] 코드스테이츠 First Project 시작]]></summary></entry><entry><title type="html">[TIL] 1. Node.js Multer (작성중)</title><link href="http://localhost:4000/til/21.12.09.til/" rel="alternate" type="text/html" title="[TIL] 1. Node.js Multer (작성중)" /><published>2021-12-09T00:00:00+09:00</published><updated>2021-12-09T00:00:00+09:00</updated><id>http://localhost:4000/til/21.12.09.til</id><content type="html" xml:base="http://localhost:4000/til/21.12.09.til/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
 
-&lt;h3 id=&quot;1-nodejs-multer&quot;&gt;1. Node.js Multer&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;Node.js Express 서버는 기본 기능에는 파일 업로드 기능이 포함되어 있지 않다.&lt;/li&gt;
-  &lt;li&gt;multer는 사용자 파일 업로드 기능을 제공하는 패키지로, 사용자가 전송한 파일을 처리하는 작업을 수행한다.
-    &lt;h4 id=&quot;1-1&quot;&gt;1-1.&lt;/h4&gt;
-    &lt;hr /&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<h3 id="1-nodejs-multer">1. Node.js Multer</h3>
+<hr />
+<ul>
+  <li>Node.js Express 서버는 기본 기능에는 파일 업로드 기능이 포함되어 있지 않다.</li>
+  <li>multer는 사용자 파일 업로드 기능을 제공하는 패키지로, 사용자가 전송한 파일을 처리하는 작업을 수행한다.
+    <h4 id="1-1">1-1.</h4>
+    <hr />
+  </li>
+</ul>
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[TIL] 1. Node.js Multer</summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Section3 후기</title><link href="/retrospect/21.12.08.retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Section3 후기" /><published>2021-12-08T00:00:00+09:00</published><updated>2021-12-08T00:00:00+09:00</updated><id>/retrospect/21.12.08.retrospect</id><content type="html" xml:base="/retrospect/21.12.08.retrospect/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
+<p><br />
+<br /></p>]]></content><author><name>JH8459</name></author><category term="TIL" /><summary type="html"><![CDATA[[TIL] 1. Node.js Multer]]></summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Section3 후기</title><link href="http://localhost:4000/retrospect/21.12.08.retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Section3 후기" /><published>2021-12-08T00:00:00+09:00</published><updated>2021-12-08T00:00:00+09:00</updated><id>http://localhost:4000/retrospect/21.12.08.retrospect</id><content type="html" xml:base="http://localhost:4000/retrospect/21.12.08.retrospect/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png" alt="스크린샷, 2021-11-07 22-08-33" /></p>
 
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
+<h2 id="retrospect">Retrospect</h2>
 
-&lt;p&gt;18시까지 Hiring Assessments 과제형을 마친 뒤 저녁식사 후 HA를 통과했다는 메일을 받았다.&lt;/p&gt;
+<p>18시까지 Hiring Assessments 과제형을 마친 뒤 저녁식사 후 HA를 통과했다는 메일을 받았다.</p>
 
-&lt;p&gt;그동안 Section을 통과할때마다 블로그 후기글을 설문으로 제출하는 링크를 보아도 별 감흥이 없었지만, Section3를 겪으며 백엔드 포지션으로 진로를 정하기도 하였고 모든 HA를 끝낸 해방감(?)에 한번 후기를 남겨보려 한다.&lt;/p&gt;
+<p>그동안 Section을 통과할때마다 블로그 후기글을 설문으로 제출하는 링크를 보아도 별 감흥이 없었지만, Section3를 겪으며 백엔드 포지션으로 진로를 정하기도 하였고 모든 HA를 끝낸 해방감(?)에 한번 후기를 남겨보려 한다.</p>
 
-&lt;h3 id=&quot;section3-어려웠나요&quot;&gt;Section3 어려웠나요?&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/145323347-861351cd-23b9-4d2c-860c-a9e7234a596e.png&quot; alt=&quot;easyhard&quot; /&gt;&lt;/p&gt;
+<h3 id="section3-어려웠나요">Section3 어려웠나요?</h3>
+<hr />
+<p><img src="https://user-images.githubusercontent.com/83164003/145323347-861351cd-23b9-4d2c-860c-a9e7234a596e.png" alt="easyhard" /></p>
 
-&lt;p&gt;우선 나는 33기로 코드스테이츠로 지원을 하였고 33기 Section3 HA에서 기수이동의 고배를 마셨다.&lt;/p&gt;
+<p>우선 나는 33기로 코드스테이츠로 지원을 하였고 33기 Section3 HA에서 기수이동의 고배를 마셨다.</p>
 
-&lt;p&gt;Section1 &amp;amp; Section2가 HA가 쉬웠다..는 아니지만 Section3 HA에서는 &lt;strong&gt;엄격히&lt;/strong&gt; 합격 여부를 선정하는거 같다.&lt;/p&gt;
+<p>Section1 &amp; Section2가 HA가 쉬웠다..는 아니지만 Section3 HA에서는 <strong>엄격히</strong> 합격 여부를 선정하는거 같다.</p>
 
-&lt;p&gt;그리고 팀단위로 2주, 4주 노력을 갈아넣는 프로젝트 진행 직전 최소한의 준비단계를 거친뒤 진행하라는 의미로 생각하면, 이러한 엄격한 선정방식은 당연하다 생각을 한다.&lt;/p&gt;
+<p>그리고 팀단위로 2주, 4주 노력을 갈아넣는 프로젝트 진행 직전 최소한의 준비단계를 거친뒤 진행하라는 의미로 생각하면, 이러한 엄격한 선정방식은 당연하다 생각을 한다.</p>
 
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;Section3&lt;/strong&gt;는 백엔드&amp;amp;컴퓨터공학과 애플리케이션을 웹으로 배포과정을 중심적으로 학습하는 섹션이다. 우선 단어만 들어봐도 썩 유쾌하지 않다. &lt;del&gt;(공학…)&lt;/del&gt;&lt;/p&gt;
+<hr />
+<p><strong>Section3</strong>는 백엔드&amp;컴퓨터공학과 애플리케이션을 웹으로 배포과정을 중심적으로 학습하는 섹션이다. 우선 단어만 들어봐도 썩 유쾌하지 않다. <del>(공학…)</del></p>
 
-&lt;p&gt;확실히 눈으로 보이며 즉각적인 피드백이 오는 클라이언트 설계를 학습해오다 백엔드 서버 중심의 설계를 배우다 보니 몇가지 어려운점이 있었다.&lt;/p&gt;
+<p>확실히 눈으로 보이며 즉각적인 피드백이 오는 클라이언트 설계를 학습해오다 백엔드 서버 중심의 설계를 배우다 보니 몇가지 어려운점이 있었다.</p>
 
-&lt;p&gt;우선 가장 큰 문제점은 &lt;em&gt;“눈으로 직접 보기가 어렵다”&lt;/em&gt; 였다.&lt;/p&gt;
+<p>우선 가장 큰 문제점은 <em>“눈으로 직접 보기가 어렵다”</em> 였다.</p>
 
-&lt;p&gt;&lt;strong&gt;[인증/보안] 기초&lt;/strong&gt; 가 이 부분에서 정점을 찍는다. &lt;del&gt;(진짜 어렵습니다.. 😂)&lt;/del&gt;&lt;/p&gt;
+<p><strong>[인증/보안] 기초</strong> 가 이 부분에서 정점을 찍는다. <del>(진짜 어렵습니다.. 😂)</del></p>
 
-&lt;ul&gt;
-  &lt;li&gt;HTTPS 통신 위해 발급한 인증서는 어디서 보이지?&lt;/li&gt;
-  &lt;li&gt;쿠키는 도대체 어디서 볼 수 있는거지?.. 로컬 저장소가 어디야…, 쿠키에 담긴 토큰은 어떻게 생겨먹었지?..&lt;/li&gt;
-  &lt;li&gt;아니 Headers엔 뭐가 담긴것이고 왜 토큰을 잘라서 가져오지…등등&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>HTTPS 통신 위해 발급한 인증서는 어디서 보이지?</li>
+  <li>쿠키는 도대체 어디서 볼 수 있는거지?.. 로컬 저장소가 어디야…, 쿠키에 담긴 토큰은 어떻게 생겨먹었지?..</li>
+  <li>아니 Headers엔 뭐가 담긴것이고 왜 토큰을 잘라서 가져오지…등등</li>
+</ul>
 
-&lt;p&gt;이는 Postman API 플랫폼이나 Chrome의 네트워크 탭등을 통해 확인하는 방법을 스프린트에서 학습하고 배우지만, 솔직히 앞서 말한 스프린트 내용만으로는 온전히 활용하기가 어려웠다.&lt;/p&gt;
+<p>이는 Postman API 플랫폼이나 Chrome의 네트워크 탭등을 통해 확인하는 방법을 스프린트에서 학습하고 배우지만, 솔직히 앞서 말한 스프린트 내용만으로는 온전히 활용하기가 어려웠다.</p>
 
-&lt;p&gt;이 부분은 꼭 추가적인 공부를 하셔서 어떠한 방식으로 클라이언트/서버가 요청과 결과를 주고받는지 눈으로 꼭 확인해보길 권유하고 싶다.  👍&lt;/p&gt;
+<p>이 부분은 꼭 추가적인 공부를 하셔서 어떠한 방식으로 클라이언트/서버가 요청과 결과를 주고받는지 눈으로 꼭 확인해보길 권유하고 싶다.  👍</p>
 
-&lt;hr /&gt;
-&lt;p&gt;두번째로 &lt;em&gt;“배포”&lt;/em&gt;…&lt;/p&gt;
+<hr />
+<p>두번째로 <em>“배포”</em>…</p>
 
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/145323400-e3203fa4-b592-4032-9919-1c9b3262306a.png&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<center><img src="https://user-images.githubusercontent.com/83164003/145323400-e3203fa4-b592-4032-9919-1c9b3262306a.png" /></center>
+<p><br /></p>
 
-&lt;p&gt;위에서 언급한 과정을 겪은 뒤 실제 도메인영역에 웹서비스를 배포하는 과정을 실습한다. &lt;del&gt;(Advanced AWS HTTPS 배포 어렵습니다..😂)&lt;/del&gt;&lt;/p&gt;
+<p>위에서 언급한 과정을 겪은 뒤 실제 도메인영역에 웹서비스를 배포하는 과정을 실습한다. <del>(Advanced AWS HTTPS 배포 어렵습니다..😂)</del></p>
 
-&lt;p&gt;AWS HTTPS 삽질한 배포 과정을 &lt;a href=&quot;https://jh8459.github.io/til/21.11.26.til/&quot; target=&quot;_blank&quot;&gt;게시물&lt;/a&gt;로 남기기도 하였다.&lt;/p&gt;
+<p>AWS HTTPS 삽질한 배포 과정을 <a href="https://jh8459.github.io/til/21.11.26.til/" target="_blank">게시물</a>로 남기기도 하였다.</p>
 
-&lt;p&gt;이 두가지는 그래도 꼭 학습하고 넘어가야 백엔드 포지션으로써 &lt;strong&gt;“첫 발은 내딘다”&lt;/strong&gt; 라고 생각한다.&lt;/p&gt;
+<p>이 두가지는 그래도 꼭 학습하고 넘어가야 백엔드 포지션으로써 <strong>“첫 발은 내딘다”</strong> 라고 생각한다.</p>
 
-&lt;hr /&gt;
-&lt;p&gt;마지막으로 &lt;em&gt;“Hiring Assessments”&lt;/em&gt; HA 이다.&lt;/p&gt;
+<hr />
+<p>마지막으로 <em>“Hiring Assessments”</em> HA 이다.</p>
 
-&lt;p&gt;사실 불합격 고배를 한번 마신적이 있기 때문에, 애증의 대상이다.&lt;/p&gt;
+<p>사실 불합격 고배를 한번 마신적이 있기 때문에, 애증의 대상이다.</p>
 
-&lt;p&gt;코드스테이츠에서도 해당 시험을 직접적/간접적으로 언급하는걸 꺼려하기에 자세한 내용은 적지 않고 딱 한가지만 적고 넘어가려 한다.&lt;/p&gt;
+<p>코드스테이츠에서도 해당 시험을 직접적/간접적으로 언급하는걸 꺼려하기에 자세한 내용은 적지 않고 딱 한가지만 적고 넘어가려 한다.</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;“npm test” 테스트 코드들 누락없이 모두 통과하세요.&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>“npm test” 테스트 코드들 누락없이 모두 통과하세요.</p>
+</blockquote>
 
-&lt;hr /&gt;
-&lt;p&gt;그래서 Section3 어렵냐? 결론은 무엇이냐?&lt;/p&gt;
+<hr />
+<p>그래서 Section3 어렵냐? 결론은 무엇이냐?</p>
 
-&lt;p&gt;&lt;strong&gt;어렵습니다.&lt;/strong&gt;&lt;/p&gt;
+<p><strong>어렵습니다.</strong></p>
 
-&lt;p&gt;하지만 이 어려운 과정을 헤쳐나가려 삽질하며 공부하는 과정이 반드시 있어야만 성장하고 드디어 서비스를 배포 할 수 있는 최소한의 자격을 얻는다고 생각한다.&lt;/p&gt;
+<p>하지만 이 어려운 과정을 헤쳐나가려 삽질하며 공부하는 과정이 반드시 있어야만 성장하고 드디어 서비스를 배포 할 수 있는 최소한의 자격을 얻는다고 생각한다.</p>
 
-&lt;h3 id=&quot;section3-이후-앞으로는&quot;&gt;Section3 이후 앞으로는?&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;이제 실전이다.&lt;br /&gt;
-Section 을 거듭하며 마음에 맞는 스터디 팀원들이 생겼고 이 팀원들과 기획방향을 이제 맞춰보려 한다.&lt;/p&gt;
+<h3 id="section3-이후-앞으로는">Section3 이후 앞으로는?</h3>
+<hr />
+<p>이제 실전이다.<br />
+Section 을 거듭하며 마음에 맞는 스터디 팀원들이 생겼고 이 팀원들과 기획방향을 이제 맞춰보려 한다.</p>
 
-&lt;p&gt;사실 지금껏 배워온 프레임워크라던지 기술 스택들은 지금 이 프로젝트 과정을 위해 모두 배운것 아닌가? 이제 모두 쏟아내어 결과물을 보고싶다. &lt;del&gt;(많은 밤샘이 있을까 걱정중이다..😇)&lt;/del&gt;&lt;/p&gt;
+<p>사실 지금껏 배워온 프레임워크라던지 기술 스택들은 지금 이 프로젝트 과정을 위해 모두 배운것 아닌가? 이제 모두 쏟아내어 결과물을 보고싶다. <del>(많은 밤샘이 있을까 걱정중이다..😇)</del></p>
 
-&lt;p&gt;앞으로 6주가 가장 중요하다 생각된다.&lt;/p&gt;
+<p>앞으로 6주가 가장 중요하다 생각된다.</p>
 
-&lt;p&gt;실질적 이 프로젝트들은 수료 후 취업과정에서 나를 가장 잘 보여줄 수 있는 수단이 될 것이라 생각된다. 솔직한 감정으로는 열심히..도 좋지만, 그보다는 잘 해내고 싶다.&lt;/p&gt;
+<p>실질적 이 프로젝트들은 수료 후 취업과정에서 나를 가장 잘 보여줄 수 있는 수단이 될 것이라 생각된다. 솔직한 감정으로는 열심히..도 좋지만, 그보다는 잘 해내고 싶다.</p>
 
-&lt;hr /&gt;
-&lt;p&gt;여담으로 이 글을 본다면 나보다는 아래 기수이지 않을까? 생각이 든다.&lt;br /&gt;
-그리고 준비된 사람이라 생각이 든다.&lt;/p&gt;
+<hr />
+<p>여담으로 이 글을 본다면 나보다는 아래 기수이지 않을까? 생각이 든다.<br />
+그리고 준비된 사람이라 생각이 든다.</p>
 
-&lt;p&gt;Section3의 난이도와 HA에 대한 막연한 불안감..,  곧 나에게 다가올 미래이기도 할테니 여러 다양한 사람에게 정보를 구하자 할 노력을 하고 계시다 생각이 든다.&lt;/p&gt;
+<p>Section3의 난이도와 HA에 대한 막연한 불안감..,  곧 나에게 다가올 미래이기도 할테니 여러 다양한 사람에게 정보를 구하자 할 노력을 하고 계시다 생각이 든다.</p>
 
-&lt;p&gt;나 또한 지금 선배기수들의 프로젝트 결과물과 진행과정들을 열심히 찾아 보며 불안감을 달래는 중이다. 😅&lt;/p&gt;
+<p>나 또한 지금 선배기수들의 프로젝트 결과물과 진행과정들을 열심히 찾아 보며 불안감을 달래는 중이다. 😅</p>
 
-&lt;p&gt;원하는 진로로 취업하는 그날까지 파이팅이다. 👍&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html">[Retrospect] 34기 Section3 후기</summary></entry><entry><title type="html">[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title><link href="/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증" /><published>2021-11-26T00:00:00+09:00</published><updated>2021-11-26T00:00:00+09:00</updated><id>/til/21.11.26.til</id><content type="html" xml:base="/til/21.11.26.til/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+<p>원하는 진로로 취업하는 그날까지 파이팅이다. 👍</p>]]></content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html"><![CDATA[[Retrospect] 34기 Section3 후기]]></summary></entry><entry><title type="html">[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title><link href="http://localhost:4000/til/21.11.26.til/" rel="alternate" type="text/html" title="[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증" /><published>2021-11-26T00:00:00+09:00</published><updated>2021-11-26T00:00:00+09:00</updated><id>http://localhost:4000/til/21.11.26.til</id><content type="html" xml:base="http://localhost:4000/til/21.11.26.til/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
 
-&lt;p&gt;기존에 EC2, S3, RDS를 통해 배포한 &lt;a href=&quot;https://jh8459.github.io/til/21.10.29.til/&quot; target=&quot;_blank&quot;&gt;웹 애플리케이션&lt;/a&gt;(21.10.29 TIL 참조)을 무료 도메인(Freenom)으로 배포하는 Advanced한 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.&lt;/p&gt;
+<p>기존에 EC2, S3, RDS를 통해 배포한 <a href="https://jh8459.github.io/til/21.10.29.til/" target="_blank">웹 애플리케이션</a>(21.10.29 TIL 참조)을 무료 도메인(Freenom)으로 배포하는 Advanced한 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.</p>
 
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;주의!&lt;/strong&gt; CloudFront에서 AWS 인증서 검증은 us-east-1(버지니아 북부) 인증서만 검증이 된다.&lt;br /&gt;&lt;/p&gt;
+<hr />
+<p><strong>주의!</strong> CloudFront에서 AWS 인증서 검증은 us-east-1(버지니아 북부) 인증서만 검증이 된다.<br /></p>
 
-&lt;p&gt;s3와 CloudFront는 글로벌 지역으로 배포가 되고 ec2와 ELB는 지역 리전으로 나뉘어진다. &lt;br /&gt;
-클라이언트는 글로벌 리전에서 작동하므로 리전에 영향을 받진 않을 듯 하고, 서버가 탑재될 ELB 서울리전으로 두고(&lt;em&gt;&lt;a target=&quot;_blank&quot;&gt;CloudPing.info&lt;/a&gt;를 통한 속도 검증 결과 리전마다 속도차이가 명확히 있다.&lt;/em&gt;) 개발환경을 구성하는게 서버의 응답속도 때문에 이점이 있을 듯 한데 인증서 문제 때문에 골머리가 아팠다…&lt;/p&gt;
+<p>s3와 CloudFront는 글로벌 지역으로 배포가 되고 ec2와 ELB는 지역 리전으로 나뉘어진다. <br />
+클라이언트는 글로벌 리전에서 작동하므로 리전에 영향을 받진 않을 듯 하고, 서버가 탑재될 ELB 서울리전으로 두고(<em><a target="_blank">CloudPing.info</a>를 통한 속도 검증 결과 리전마다 속도차이가 명확히 있다.</em>) 개발환경을 구성하는게 서버의 응답속도 때문에 이점이 있을 듯 한데 인증서 문제 때문에 골머리가 아팠다…</p>
 
-&lt;p&gt;이를 간단히 해결하기 위해서 배포된 &lt;a href=&quot;https://cmarket.cf&quot; target=&quot;_blank&quot;&gt;https://cmarket.cf&lt;/a&gt; 는 us-east-1 리전에서 웹서버가 작동하게 하여(&lt;em&gt;CloudFront(클라이언트)와 ELB(서버) 인증서가 모두 us-east-1 동일한 인증서 1개로 해결가능&lt;/em&gt;)간단히 해결하였다.&lt;/p&gt;
+<p>이를 간단히 해결하기 위해서 배포된 <a href="https://cmarket.cf" target="_blank">https://cmarket.cf</a> 는 us-east-1 리전에서 웹서버가 작동하게 하여(<em>CloudFront(클라이언트)와 ELB(서버) 인증서가 모두 us-east-1 동일한 인증서 1개로 해결가능</em>)간단히 해결하였다.</p>
 
-&lt;h3 id=&quot;1-무료-도메인-https-aws-배포---백엔드&quot;&gt;1. 무료 도메인 HTTPS AWS 배포 - 백엔드&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&quot;1-1-도메인-발급&quot;&gt;1-1. 도메인 발급&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;도메인 주소를 이용하여 HTTPS 인증방식을 사용하려면 우선 도메인을 발급받아야 한다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;AWS에서도 Route 53을 통한 도메인 구매가 가능하지만.. 비용부담이 발생하기도 하고 실제 상업사이트나 프로젝트/포트폴리오 목적이 아닌 학업 목적이기 때문에 무료 도메인 사이트인 &lt;a href=&quot;https://www.freenom.com/en/index.html?lang=en&quot; target=&quot;_blank&quot;&gt;Freenom&lt;/a&gt;에서 도메인 발급 후, 해당 도메인을 이용하였다.&lt;/p&gt;
+<h3 id="1-무료-도메인-https-aws-배포---백엔드">1. 무료 도메인 HTTPS AWS 배포 - 백엔드</h3>
+<hr />
+<h4 id="1-1-도메인-발급">1-1. 도메인 발급</h4>
+<hr />
+<ul>
+  <li>도메인 주소를 이용하여 HTTPS 인증방식을 사용하려면 우선 도메인을 발급받아야 한다.</li>
+  <li>
+    <p>AWS에서도 Route 53을 통한 도메인 구매가 가능하지만.. 비용부담이 발생하기도 하고 실제 상업사이트나 프로젝트/포트폴리오 목적이 아닌 학업 목적이기 때문에 무료 도메인 사이트인 <a href="https://www.freenom.com/en/index.html?lang=en" target="_blank">Freenom</a>에서 도메인 발급 후, 해당 도메인을 이용하였다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143876151-e7fed5c2-1b13-4d57-b97f-47440d364cde.png&quot; alt=&quot;스크린샷, 2021-11-29 22-26-24&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143876151-e7fed5c2-1b13-4d57-b97f-47440d364cde.png" alt="스크린샷, 2021-11-29 22-26-24" /></p>
 
-    &lt;p&gt;무료 도메인은 예고없이 사라지거나 로그인이 안되는(?)등 종잡을 수 없는 문제가 발생 할 수 있으므로..이런 부분은 감안하고 학습목적 정도로만 사용하도록 하는게 알맞은 사용방향이라 생각한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://cmarket.cf/&quot; target=&quot;_blank&quot;&gt;cmarket.cf&lt;/a&gt; 주소로 도메인을 발급 받았으며 최초 발급 후 도메인에 접속하면 DNS 설정도 안된 빈 도메인이기 때문에 아래와 같은 에러코드를 받을 수 있다.&lt;/p&gt;
+    <p>무료 도메인은 예고없이 사라지거나 로그인이 안되는(?)등 종잡을 수 없는 문제가 발생 할 수 있으므로..이런 부분은 감안하고 학습목적 정도로만 사용하도록 하는게 알맞은 사용방향이라 생각한다.</p>
+  </li>
+  <li>
+    <p><a href="http://cmarket.cf/" target="_blank">cmarket.cf</a> 주소로 도메인을 발급 받았으며 최초 발급 후 도메인에 접속하면 DNS 설정도 안된 빈 도메인이기 때문에 아래와 같은 에러코드를 받을 수 있다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143876050-43d949bd-e541-4507-acee-b59782c602f5.png&quot; alt=&quot;스크린샷, 2021-11-29 22-23-51&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143876050-43d949bd-e541-4507-acee-b59782c602f5.png" alt="스크린샷, 2021-11-29 22-23-51" /></p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;1-2-elb-생성&quot;&gt;1-2. ELB 생성&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;h5 id=&quot;elb란&quot;&gt;ELB란?&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;AWS에서 설명하는 ELB는 다음과 같다.&lt;/p&gt;
+<h4 id="1-2-elb-생성">1-2. ELB 생성</h4>
+<hr />
+<h5 id="elb란">ELB란?</h5>
+<hr />
+<ul>
+  <li>
+    <p>AWS에서 설명하는 ELB는 다음과 같다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144385209-49c0bca7-99bf-4d70-ad9a-d8bf0a76f3e8.png&quot; alt=&quot;스크린샷, 2021-12-02 17-26-39&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144385209-49c0bca7-99bf-4d70-ad9a-d8bf0a76f3e8.png" alt="스크린샷, 2021-12-02 17-26-39" /></p>
 
-    &lt;p&gt;단순한 로드 밸런서* 역할 외에도 인증서 관리등 HTTPS 인증방식 지원까지 겸하고 있는 만능 서비스이다.&lt;/p&gt;
+    <p>단순한 로드 밸런서* 역할 외에도 인증서 관리등 HTTPS 인증방식 지원까지 겸하고 있는 만능 서비스이다.</p>
 
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;strong&gt;로드 밸런서&lt;/strong&gt;란?&lt;/p&gt;
+    <blockquote>
+      <p><strong>로드 밸런서</strong>란?</p>
 
-      &lt;p&gt;하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러 대의 서버가 분산처리하여 서버의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결해주는 서비스.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+      <p>하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러 대의 서버가 분산처리하여 서버의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결해주는 서비스.</p>
+    </blockquote>
+  </li>
+</ul>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ELB 서비스가 왜 필요한지 개념을 알았으니, AWS EC2 메뉴중 로드밸런서로 들어가 보자.&lt;/p&gt;
+<ul>
+  <li>
+    <p>ELB 서비스가 왜 필요한지 개념을 알았으니, AWS EC2 메뉴중 로드밸런서로 들어가 보자.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143878331-14740d1a-92f8-4bdb-8c93-ce3d7e468979.png&quot; alt=&quot;스크린샷, 2021-11-29 22-37-16&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;로드밸런서를 생성하려보니 여러 유형을 선택 할 수 있는 선택창이 나온다.&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143878331-14740d1a-92f8-4bdb-8c93-ce3d7e468979.png" alt="스크린샷, 2021-11-29 22-37-16" /></p>
+  </li>
+  <li>
+    <p>로드밸런서를 생성하려보니 여러 유형을 선택 할 수 있는 선택창이 나온다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144386594-d626749f-2e92-4e78-ade4-6c52c1c7509d.png&quot; alt=&quot;스크린샷, 2021-12-02 17-36-07&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144386594-d626749f-2e92-4e78-ade4-6c52c1c7509d.png" alt="스크린샷, 2021-12-02 17-36-07" /></p>
 
-    &lt;p&gt;우리는 HTTPS 인증 방식을 이용할 예정이니 1번을 선택하자.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;로드 밸런서 이름을 정한 뒤,&lt;/p&gt;
+    <p>우리는 HTTPS 인증 방식을 이용할 예정이니 1번을 선택하자.</p>
+  </li>
+  <li>
+    <p>로드 밸런서 이름을 정한 뒤,</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144386771-94d61e1d-5c20-413f-bc13-cd119bdbdd75.png&quot; alt=&quot;스크린샷, 2021-12-02 17-37-32&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144386771-94d61e1d-5c20-413f-bc13-cd119bdbdd75.png" alt="스크린샷, 2021-12-02 17-37-32" /></p>
 
-    &lt;p&gt;네트워크 맵핑에서는 가용 영역을 모두 체크해주자.&lt;/p&gt;
+    <p>네트워크 맵핑에서는 가용 영역을 모두 체크해주자.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144386995-f2e95a20-928a-400d-b4c0-ea5629603a37.png&quot; alt=&quot;스크린샷, 2021-12-02 17-38-35&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144386995-f2e95a20-928a-400d-b4c0-ea5629603a37.png" alt="스크린샷, 2021-12-02 17-38-35" /></p>
 
-    &lt;p&gt;그리고 리스너* 를 추가해 주어야 한다.&lt;/p&gt;
+    <p>그리고 리스너* 를 추가해 주어야 한다.</p>
 
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;strong&gt;리스너&lt;/strong&gt;란?&lt;/p&gt;
+    <blockquote>
+      <p><strong>리스너</strong>란?</p>
 
-      &lt;p&gt;짧게 말해 리스너란, 구성한 프로토콜 및 포트를 사용해서 연결 요청을 확인하는 프로세스이다.&lt;/p&gt;
-    &lt;/blockquote&gt;
+      <p>짧게 말해 리스너란, 구성한 프로토콜 및 포트를 사용해서 연결 요청을 확인하는 프로세스이다.</p>
+    </blockquote>
 
-    &lt;p&gt;리스너의 구성된 프로토콜/포트로 요청이 왔을때 대상그룹으로 연결(?)해주는 프로세스 같다. &lt;del&gt;(확실하지 않다…)&lt;/del&gt;&lt;/p&gt;
+    <p>리스너의 구성된 프로토콜/포트로 요청이 왔을때 대상그룹으로 연결(?)해주는 프로세스 같다. <del>(확실하지 않다…)</del></p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144387585-52909c76-7f0e-463f-8792-8d27ea0a532f.png&quot; alt=&quot;스크린샷, 2021-12-02 17-42-54&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144387585-52909c76-7f0e-463f-8792-8d27ea0a532f.png" alt="스크린샷, 2021-12-02 17-42-54" /></p>
 
-    &lt;p&gt;리스너가 추가되면 각 리스너에 타겟 그룹을 설정해줘야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;현재 배포하려는 웹 애플리케이션은 클라이언트와 서버가 토큰을 로컬스토리지에 담아 &lt;strong&gt;HTTP&lt;/strong&gt;프로토콜로 데이터를 주고받고 있다.&lt;/p&gt;
+    <p>리스너가 추가되면 각 리스너에 타겟 그룹을 설정해줘야 한다.</p>
+  </li>
+  <li>
+    <p>현재 배포하려는 웹 애플리케이션은 클라이언트와 서버가 토큰을 로컬스토리지에 담아 <strong>HTTP</strong>프로토콜로 데이터를 주고받고 있다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144389226-eddc00a7-e610-4849-9db7-4bd16edf329e.png&quot; alt=&quot;스크린샷, 2021-12-02 17-51-26&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144389226-eddc00a7-e610-4849-9db7-4bd16edf329e.png" alt="스크린샷, 2021-12-02 17-51-26" /></p>
 
-    &lt;p&gt;그렇기 때문에 클라이언트 ⮕ 로드밸런서로 HTTPS 요청이 와도 인스턴스(웹서버)에는 HTTP 프로토콜로 전달해 주어야 서버에서 클라이언트의 요청에 알맞는 응답 결과를 반환 할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그러므로 HTTP/HTTPS 두 리스너는 모두 HTTP 80포트로 인스턴스 연결이 이뤄지게끔 타겟 대상을 설정 해주자.&lt;/p&gt;
+    <p>그렇기 때문에 클라이언트 ⮕ 로드밸런서로 HTTPS 요청이 와도 인스턴스(웹서버)에는 HTTP 프로토콜로 전달해 주어야 서버에서 클라이언트의 요청에 알맞는 응답 결과를 반환 할 수 있다.</p>
+  </li>
+  <li>
+    <p>그러므로 HTTP/HTTPS 두 리스너는 모두 HTTP 80포트로 인스턴스 연결이 이뤄지게끔 타겟 대상을 설정 해주자.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144390493-66a4eb97-b839-49f0-b3d9-7715ef867dfd.png&quot; alt=&quot;스크린샷, 2021-12-02 18-00-00&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144390493-66a4eb97-b839-49f0-b3d9-7715ef867dfd.png" alt="스크린샷, 2021-12-02 18-00-00" /></p>
 
-    &lt;p&gt;그리고 상태검사에서는 성공코드를 201번으로 변경하여 대상타겟을 생성해주자.&lt;/p&gt;
+    <p>그리고 상태검사에서는 성공코드를 201번으로 변경하여 대상타겟을 생성해주자.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144390985-cc3aec51-cf97-4647-bc2a-5f207e2c4c53.png&quot; alt=&quot;스크린샷, 2021-12-02 18-02-42&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 로드밸런서가 외부 클라이언트로부터 HTTP/HTTPS 요청이 왔을 때 인스턴스로 이동하는 과정은 모두 완성하였다. 이제 인증서를 등록해 주어야 한다.&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144390985-cc3aec51-cf97-4647-bc2a-5f207e2c4c53.png" alt="스크린샷, 2021-12-02 18-02-42" /></p>
+  </li>
+  <li>
+    <p>이제 로드밸런서가 외부 클라이언트로부터 HTTP/HTTPS 요청이 왔을 때 인스턴스로 이동하는 과정은 모두 완성하였다. 이제 인증서를 등록해 주어야 한다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144411410-47d3a10f-8b12-4c79-bd58-c97656cfec51.png&quot; alt=&quot;스크린샷, 2021-12-02 18-06-03&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144411410-47d3a10f-8b12-4c79-bd58-c97656cfec51.png" alt="스크린샷, 2021-12-02 18-06-03" /></p>
 
-    &lt;p&gt;HTTPS 프로토콜을 이용하려면 신뢰할 수 있는 기관에서 발급받은 인증서로 통해 통신이 이뤄진다. AWS에서는 ACM(&lt;em&gt;AWS에서 제공하는 인증서&lt;/em&gt;)를 권장하고 있으며, 기존 사용하던 인증서가 있다면 해당 인증서를 import 해주어서 로드밸런서에 인증서를 등록해줄수도 있다.&lt;/p&gt;
+    <p>HTTPS 프로토콜을 이용하려면 신뢰할 수 있는 기관에서 발급받은 인증서로 통해 통신이 이뤄진다. AWS에서는 ACM(<em>AWS에서 제공하는 인증서</em>)를 권장하고 있으며, 기존 사용하던 인증서가 있다면 해당 인증서를 import 해주어서 로드밸런서에 인증서를 등록해줄수도 있다.</p>
 
-    &lt;p&gt;AWS에서도 무료로 인증서 발급을 해주기도하고, 권장하는 방법이기 때문에 새로 발급해서 사용하기로 하였다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>AWS에서도 무료로 인증서 발급을 해주기도하고, 권장하는 방법이기 때문에 새로 발급해서 사용하기로 하였다.</p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;1-3-acm을-통한-인증서-발급&quot;&gt;1-3. ACM을 통한 인증서 발급&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;AWS에서 발급 가능한 인증서를 만들기 위해 우선 &lt;strong&gt;새 인증서 요청&lt;/strong&gt; 버튼으로 진입 후 요청을 눌러준다.&lt;/p&gt;
+<h4 id="1-3-acm을-통한-인증서-발급">1-3. ACM을 통한 인증서 발급</h4>
+<hr />
+<ul>
+  <li>
+    <p>AWS에서 발급 가능한 인증서를 만들기 위해 우선 <strong>새 인증서 요청</strong> 버튼으로 진입 후 요청을 눌러준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144416238-157f4c2d-0eaa-4374-b5c6-b2f9356992ff.png&quot; alt=&quot;스크린샷, 2021-12-02 20-46-27&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144416238-157f4c2d-0eaa-4374-b5c6-b2f9356992ff.png" alt="스크린샷, 2021-12-02 20-46-27" /></p>
 
-    &lt;p&gt;퍼블릭 인증서 요청을 선택한 뒤 다음 버튼을 누르면, 도메인 이름과 검증 방식을 설정해 준다.&lt;/p&gt;
+    <p>퍼블릭 인증서 요청을 선택한 뒤 다음 버튼을 누르면, 도메인 이름과 검증 방식을 설정해 준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144416552-6a6e340d-d5a2-4276-b512-c9f6a11330e0.png&quot; alt=&quot;스크린샷, 2021-12-02 20-48-33&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144416552-6a6e340d-d5a2-4276-b512-c9f6a11330e0.png" alt="스크린샷, 2021-12-02 20-48-33" /></p>
 
-    &lt;p&gt;도메인 이름에 다른이름을 추가한 이유는 서버/클라이언트 각각 다른 도메인으로 배포하기 위함이다. (서버는 server.cmarket.cf 로 배포하였다.)&lt;br /&gt;
-Freenom에서 발급 받은 도메인 앞에 와일드카드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;)를 입력하여 도메인이름을 설정하였다.&lt;/p&gt;
+    <p>도메인 이름에 다른이름을 추가한 이유는 서버/클라이언트 각각 다른 도메인으로 배포하기 위함이다. (서버는 server.cmarket.cf 로 배포하였다.)<br />
+Freenom에서 발급 받은 도메인 앞에 와일드카드(<code class="language-plaintext highlighter-rouge">*</code>)를 입력하여 도메인이름을 설정하였다.</p>
 
-    &lt;p&gt;그리고 검증방식은 DNS 방식을 선택해주자. &lt;del&gt;(이게 간편하다고 하더라..)&lt;/del&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;조금 기다린 뒤 인증서 ID를 눌러보면 CNAME 값이 생성된 것을 볼 수 있다.&lt;/p&gt;
+    <p>그리고 검증방식은 DNS 방식을 선택해주자. <del>(이게 간편하다고 하더라..)</del></p>
+  </li>
+  <li>
+    <p>조금 기다린 뒤 인증서 ID를 눌러보면 CNAME 값이 생성된 것을 볼 수 있다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143906637-868b596f-7209-491e-becf-7347fe2e9ffd.png&quot; alt=&quot;스크린샷, 2021-11-30 01-31-46&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143906637-868b596f-7209-491e-becf-7347fe2e9ffd.png" alt="스크린샷, 2021-11-30 01-31-46" /></p>
 
-    &lt;p&gt;그 뒤 Manage Freenom DNS 로 이동해 준다.&lt;/p&gt;
+    <p>그 뒤 Manage Freenom DNS 로 이동해 준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144420586-a718cd8f-3a36-4078-b4ca-49bcf92bc503.png&quot; alt=&quot;스크린샷, 2021-12-02 20-56-02&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144420586-a718cd8f-3a36-4078-b4ca-49bcf92bc503.png" alt="스크린샷, 2021-12-02 20-56-02" /></p>
 
-    &lt;blockquote&gt;
-      &lt;p&gt;AWS Route 53에서 발급받은 도메인이라면 레코드 추가하기로 간편하게 Route 53에서 DNS 검증이 가능하지만, 무료 도메인을 발급 받은 상황이기때문에 Freenom DNS로 가서 설정을 변경해줘야 한다.&lt;/p&gt;
-    &lt;/blockquote&gt;
+    <blockquote>
+      <p>AWS Route 53에서 발급받은 도메인이라면 레코드 추가하기로 간편하게 Route 53에서 DNS 검증이 가능하지만, 무료 도메인을 발급 받은 상황이기때문에 Freenom DNS로 가서 설정을 변경해줘야 한다.</p>
+    </blockquote>
 
-    &lt;p&gt;TYPE을 CNAME 으로 변경해 준 뒤, AWS에서 확인한 CNAME 이름과 값을 넣어주고 저장해준다. 그 후 ACM으로 와서 검증이 끝날 때 까지(&lt;em&gt;5~10분정도 소요되었다.&lt;/em&gt;) 기다려주면 아래와 같은 인증서 발급 완료 안내를 확인 할 수 있다.&lt;/p&gt;
+    <p>TYPE을 CNAME 으로 변경해 준 뒤, AWS에서 확인한 CNAME 이름과 값을 넣어주고 저장해준다. 그 후 ACM으로 와서 검증이 끝날 때 까지(<em>5~10분정도 소요되었다.</em>) 기다려주면 아래와 같은 인증서 발급 완료 안내를 확인 할 수 있다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143908476-0a484866-aafa-4382-8d04-2099ea5ef71f.png&quot; alt=&quot;스크린샷, 2021-11-30 01-45-32&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;생성 중이던 로드밸런서에 발급받은 인증서를 넣고 생성을 완료한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143908476-0a484866-aafa-4382-8d04-2099ea5ef71f.png" alt="스크린샷, 2021-11-30 01-45-32" /></p>
+  </li>
+  <li>
+    <p>생성 중이던 로드밸런서에 발급받은 인증서를 넣고 생성을 완료한다.</p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;1-4-freenom--route-53-연결&quot;&gt;1-4. Freenom ⬌ Route 53 연결&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;h5 id=&quot;route-53란&quot;&gt;Route 53란?&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 Route 53은 AWS에서 제공하는 DNS(Domain Name Service)이다.&lt;/p&gt;
+<h4 id="1-4-freenom--route-53-연결">1-4. Freenom ⬌ Route 53 연결</h4>
+<hr />
+<h5 id="route-53란">Route 53란?</h5>
+<hr />
+<ul>
+  <li>
+    <p>우선 Route 53은 AWS에서 제공하는 DNS(Domain Name Service)이다.</p>
 
-    &lt;p&gt;그 외에도 도메인과 관련된 여러가지 서비스를 제공한다. 간략히 DNS 개념만 언급하자면 IP로 도메인을 기억하기는 힘들기때문에 사람이 기억하기 이름 형태로 변환해주는 시스템이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>그 외에도 도메인과 관련된 여러가지 서비스를 제공한다. 간략히 DNS 개념만 언급하자면 IP로 도메인을 기억하기는 힘들기때문에 사람이 기억하기 이름 형태로 변환해주는 시스템이다.</p>
+  </li>
+</ul>
 
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 Freenom DNS 검증은 완료되었다, AWS에서 해당 도메인을 사용하기 위해서 Freenom Nameservers 설정을 변경해 주자.&lt;/p&gt;
+<hr />
+<ul>
+  <li>
+    <p>이제 Freenom DNS 검증은 완료되었다, AWS에서 해당 도메인을 사용하기 위해서 Freenom Nameservers 설정을 변경해 주자.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143911244-7cb509e0-6b6a-4406-a120-eed04b5f6317.png&quot; alt=&quot;스크린샷, 2021-11-30 02-02-27&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143911244-7cb509e0-6b6a-4406-a120-eed04b5f6317.png" alt="스크린샷, 2021-11-30 02-02-27" /></p>
 
-    &lt;p&gt;위 사진 영역에 Route 53에서 호스팅 영역을 생성 후 NS 에 해당하는 라우팅 대상을 맵핑해서 넣어주면 된다.&lt;/p&gt;
+    <p>위 사진 영역에 Route 53에서 호스팅 영역을 생성 후 NS 에 해당하는 라우팅 대상을 맵핑해서 넣어주면 된다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143912771-bbaacb32-af5e-439c-9bfe-b2bcc58eabc6.png&quot; alt=&quot;스크린샷, 2021-11-30 02-13-28&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 Freenom에서 발급 받은 무료 도메인(cmarket.cf)은 AWS Certificate Manager을 받기 위한 DNS 검증도 끝났으며, Route 53 호스팅 영역에도 연결이 되었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/143912771-bbaacb32-af5e-439c-9bfe-b2bcc58eabc6.png" alt="스크린샷, 2021-11-30 02-13-28" /></p>
+  </li>
+  <li>
+    <p>이제 Freenom에서 발급 받은 무료 도메인(cmarket.cf)은 AWS Certificate Manager을 받기 위한 DNS 검증도 끝났으며, Route 53 호스팅 영역에도 연결이 되었다.</p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;1-5-route-53--elb-연결&quot;&gt;1-5. Route 53 ⬌ ELB 연결&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Route 53도 도메인과 연결되어 있으며 ELB도 인스턴스에 연결되어 있는 상태이다. 이 둘을 연결만 해주면 도메인에서도 인스턴스 접근이 가능하다.&lt;br /&gt;
-Route 53 메뉴로 가서 레코드 한줄만 써주도록 하자.&lt;/p&gt;
+<h4 id="1-5-route-53--elb-연결">1-5. Route 53 ⬌ ELB 연결</h4>
+<hr />
+<ul>
+  <li>
+    <p>Route 53도 도메인과 연결되어 있으며 ELB도 인스턴스에 연결되어 있는 상태이다. 이 둘을 연결만 해주면 도메인에서도 인스턴스 접근이 가능하다.<br />
+Route 53 메뉴로 가서 레코드 한줄만 써주도록 하자.</p>
 
-    &lt;p&gt;서버를 도메인에 등록할텐데, 인증서 발급시 와일드카드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;)로 주었기 때문에 서버의 도메인은 원하는 이름을 주어도 가능하다. 아래 사진과 같이 레코드를 생성해주었다.&lt;/p&gt;
+    <p>서버를 도메인에 등록할텐데, 인증서 발급시 와일드카드(<code class="language-plaintext highlighter-rouge">*</code>)로 주었기 때문에 서버의 도메인은 원하는 이름을 주어도 가능하다. 아래 사진과 같이 레코드를 생성해주었다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144421521-15fd77de-474f-41dc-a80e-caeb95d46b3b.png&quot; alt=&quot;스크린샷, 2021-12-02 21-24-45&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144421521-15fd77de-474f-41dc-a80e-caeb95d46b3b.png" alt="스크린샷, 2021-12-02 21-24-45" /></p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;1-6-연결-확인&quot;&gt;1-6. 연결 확인&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 server.cmarket.cf 도메인을 브라우저 검색창에 검색한다면, AWS의 Route 53의 DNS서비스를 통하여 ELB에 접근하게된다.&lt;/p&gt;
+<h4 id="1-6-연결-확인">1-6. 연결 확인</h4>
+<hr />
+<ul>
+  <li>
+    <p>이제 server.cmarket.cf 도메인을 브라우저 검색창에 검색한다면, AWS의 Route 53의 DNS서비스를 통하여 ELB에 접근하게된다.</p>
 
-    &lt;p&gt;ELB에서는 트래픽을 자동으로 분산 시켜서 HTTPS/HTTP 을 요청을 리스너를 통하여 HTTP/80번 포트로 EC2 인스턴스 접근을 허용시킨다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EC2에 서버가 켜져있다면 endpoint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt; 로 접근이 될것이므로,&lt;/p&gt;
+    <p>ELB에서는 트래픽을 자동으로 분산 시켜서 HTTPS/HTTP 을 요청을 리스너를 통하여 HTTP/80번 포트로 EC2 인스턴스 접근을 허용시킨다.</p>
+  </li>
+  <li>
+    <p>EC2에 서버가 켜져있다면 endpoint <code class="language-plaintext highlighter-rouge">/</code> 로 접근이 될것이므로,</p>
 
-    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;201&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">201</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div>    </div>
 
-    &lt;p&gt;따라서 &lt;a href=&quot;https://server.cmarket.cf/&quot; target=&quot;_blank&quot;&gt;https://server.cmarket.cf&lt;/a&gt; 도메인 검색시 아래와 같은 결과가 확인된다.&lt;/p&gt;
+    <p>따라서 <a href="https://server.cmarket.cf/" target="_blank">https://server.cmarket.cf</a> 도메인 검색시 아래와 같은 결과가 확인된다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144422316-8d6ed790-125f-4959-9243-dfc05ca6d63a.png&quot; alt=&quot;스크린샷, 2021-12-02 21-30-26&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144422316-8d6ed790-125f-4959-9243-dfc05ca6d63a.png" alt="스크린샷, 2021-12-02 21-30-26" /></p>
 
-    &lt;p&gt;해당 도메인에 AWS에서 발급받은 인증서가 유효하게 작동하는 HTTPS 서버 도메인이 완성되었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>해당 도메인에 AWS에서 발급받은 인증서가 유효하게 작동하는 HTTPS 서버 도메인이 완성되었다.</p>
+  </li>
+</ul>
 
-&lt;h3 id=&quot;2-무료-도메인-https-aws-배포---프론트엔드&quot;&gt;2. 무료 도메인 HTTPS AWS 배포 - 프론트엔드&lt;/h3&gt;
-&lt;hr /&gt;
+<h3 id="2-무료-도메인-https-aws-배포---프론트엔드">2. 무료 도메인 HTTPS AWS 배포 - 프론트엔드</h3>
+<hr />
 
-&lt;h4 id=&quot;2-1-s3-버킷-엔드포인트-수정&quot;&gt;2-1. S3 버킷 엔드포인트 수정&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;기존 버킷에 등록된 빌드 파일은 HTTP로 서버와 클라이언트간 통신이 이뤄지고 있었다.&lt;/p&gt;
+<h4 id="2-1-s3-버킷-엔드포인트-수정">2-1. S3 버킷 엔드포인트 수정</h4>
+<hr />
+<ul>
+  <li>
+    <p>기존 버킷에 등록된 빌드 파일은 HTTP로 서버와 클라이언트간 통신이 이뤄지고 있었다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144423691-019196bd-2cbc-44cc-980a-ffbb4bcaf39b.png&quot; alt=&quot;스크린샷, 2021-12-02 17-51-26&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144423691-019196bd-2cbc-44cc-980a-ffbb4bcaf39b.png" alt="스크린샷, 2021-12-02 17-51-26" /></p>
 
-    &lt;p&gt;ACM을 이용한 HTTPS 인증방식이 이뤄질 수 있도록 클라이언트의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; 파일을 수정하여 엔드포인트를 https://server.cmarket.cf 로 변경해 준 뒤 다시 빌드하여 버킷에 다시 업로드 해주었다.&lt;/p&gt;
-    &lt;h4 id=&quot;2-2-cloudfront-배포-생성-s3--cloudfront-연결&quot;&gt;2-2. CloudFront 배포 생성 (S3 ⬌ CloudFront 연결)&lt;/h4&gt;
-    &lt;hr /&gt;
-  &lt;/li&gt;
-  &lt;li&gt;버킷으로는 인증서를 이용한 HTTPS 인증방식이 불가능하기 때문에, S3를 CloudFront에 연결해 주어야 한다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 CloudFront 생성하기로 진입 후 원본 도메인에서 기존 S3 버킷을 선택해 준다.&lt;/p&gt;
+    <p>ACM을 이용한 HTTPS 인증방식이 이뤄질 수 있도록 클라이언트의 <code class="language-plaintext highlighter-rouge">.env</code> 파일을 수정하여 엔드포인트를 https://server.cmarket.cf 로 변경해 준 뒤 다시 빌드하여 버킷에 다시 업로드 해주었다.</p>
+    <h4 id="2-2-cloudfront-배포-생성-s3--cloudfront-연결">2-2. CloudFront 배포 생성 (S3 ⬌ CloudFront 연결)</h4>
+    <hr />
+  </li>
+  <li>버킷으로는 인증서를 이용한 HTTPS 인증방식이 불가능하기 때문에, S3를 CloudFront에 연결해 주어야 한다.</li>
+  <li>
+    <p>우선 CloudFront 생성하기로 진입 후 원본 도메인에서 기존 S3 버킷을 선택해 준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144424581-a9dadcea-be3f-44b8-ae39-066b504c9c07.png&quot; alt=&quot;스크린샷, 2021-12-02 21-44-21&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본 캐시동작에서 뷰어 프로토콜 정책은 Redirect HTTP to HTTPS 로 선택해 준다&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144424581-a9dadcea-be3f-44b8-ae39-066b504c9c07.png" alt="스크린샷, 2021-12-02 21-44-21" /></p>
+  </li>
+  <li>
+    <p>기본 캐시동작에서 뷰어 프로토콜 정책은 Redirect HTTP to HTTPS 로 선택해 준다</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144424748-0520949f-381d-4a7f-85fb-de731eb71af1.png&quot; alt=&quot;스크린샷, 2021-12-02 21-44-42&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그 다음 설정에서 CNAME은 도메인으로 쓸 cmarket.cf를 입력 해 준뒤, 미리 생성해 둔 인증서(us-east-1)를 등록해준다.&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144424748-0520949f-381d-4a7f-85fb-de731eb71af1.png" alt="스크린샷, 2021-12-02 21-44-42" /></p>
+  </li>
+  <li>
+    <p>그 다음 설정에서 CNAME은 도메인으로 쓸 cmarket.cf를 입력 해 준뒤, 미리 생성해 둔 인증서(us-east-1)를 등록해준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144425006-75cb095b-c14f-4952-9612-c23a98770d90.png&quot; alt=&quot;스크린샷, 2021-12-02 21-47-37&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144425006-75cb095b-c14f-4952-9612-c23a98770d90.png" alt="스크린샷, 2021-12-02 21-47-37" /></p>
 
-    &lt;p&gt;&lt;strong&gt;인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;이 문구 때문에 사실 서울 리전을 한번 갈아 엎고 미국 동부 리전에서 다시 시작하였다…&lt;/em&gt;  &lt;del&gt;장난..??&lt;/del&gt;&lt;/p&gt;
+    <p><strong>인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.</strong><br />
+<em>이 문구 때문에 사실 서울 리전을 한번 갈아 엎고 미국 동부 리전에서 다시 시작하였다…</em>  <del>장난..??</del></p>
 
-    &lt;p&gt;그리고 계속하여 설정에서 기본값 루트 객체를 index.html으로 수정해준 뒤 배포 생성을 완료해준다.&lt;/p&gt;
+    <p>그리고 계속하여 설정에서 기본값 루트 객체를 index.html으로 수정해준 뒤 배포 생성을 완료해준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144425488-f118043d-d44a-4f3b-9009-e2209377cf22.png&quot; alt=&quot;스크린샷, 2021-12-02 21-51-06&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그 뒤 배포 상태가 &lt;strong&gt;활성화 됨&lt;/strong&gt;으로 확인되면, 배포 아이디 클릭 후 오류 페이지로 접근 하여 사용자 정의 오류 응답을 작성해 준다.&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144425488-f118043d-d44a-4f3b-9009-e2209377cf22.png" alt="스크린샷, 2021-12-02 21-51-06" /></p>
+  </li>
+  <li>
+    <p>그 뒤 배포 상태가 <strong>활성화 됨</strong>으로 확인되면, 배포 아이디 클릭 후 오류 페이지로 접근 하여 사용자 정의 오류 응답을 작성해 준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144425878-f7959699-d29e-4781-b084-deb136799673.png&quot; alt=&quot;스크린샷, 2021-12-02 21-53-28&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144425878-f7959699-d29e-4781-b084-deb136799673.png" alt="스크린샷, 2021-12-02 21-53-28" /></p>
 
-    &lt;p&gt;에러코드 403번과 404번 모두 오류 응답 200번 코드로 응답 페이지는 /index.html 으로 설정 해준다.&lt;/p&gt;
+    <p>에러코드 403번과 404번 모두 오류 응답 200번 코드로 응답 페이지는 /index.html 으로 설정 해준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144426098-da4a7eb7-7f6b-427a-9eeb-bf419f61a804.png&quot; alt=&quot;스크린샷, 2021-12-02 21-55-05&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144426098-da4a7eb7-7f6b-427a-9eeb-bf419f61a804.png" alt="스크린샷, 2021-12-02 21-55-05" /></p>
 
-    &lt;p&gt;이제 클라이언트도 유효한 인증서를 기반으로 HTTPS 인증방식으로 서버와 통신할 수 있게 배포가 되었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>이제 클라이언트도 유효한 인증서를 기반으로 HTTPS 인증방식으로 서버와 통신할 수 있게 배포가 되었다.</p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;2-3-route-53--cloudfront-연결&quot;&gt;2-3. Route 53 ⬌ CloudFront 연결&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;사실 Cloudfront 배포가 성공하였다면, AWS에서 제공하는 유효한 도메인이 발급이 된다.&lt;/p&gt;
+<h4 id="2-3-route-53--cloudfront-연결">2-3. Route 53 ⬌ CloudFront 연결</h4>
+<hr />
+<ul>
+  <li>
+    <p>사실 Cloudfront 배포가 성공하였다면, AWS에서 제공하는 유효한 도메인이 발급이 된다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144426871-9e5f9d34-31d3-4d11-a8d1-983a157e2a38.png&quot; alt=&quot;스크린샷, 2021-12-02 22-00-11&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144426871-9e5f9d34-31d3-4d11-a8d1-983a157e2a38.png" alt="스크린샷, 2021-12-02 22-00-11" /></p>
 
-    &lt;p&gt;다만..&lt;del&gt;(이쁘지 않다..)&lt;/del&gt; 애써 발급받은 도메인을 놀리기엔 아깝지 않은가? ELB를 도메인과 연결시켰듯이 클라이언트가 담긴 Cloudfront 또한 Route 53에서 별칭 레코드를 생성해주자.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Route 53의 호스팅 영역으로 간뒤, 레코드 생성을 아래와 같이 해준다.&lt;/p&gt;
+    <p>다만..<del>(이쁘지 않다..)</del> 애써 발급받은 도메인을 놀리기엔 아깝지 않은가? ELB를 도메인과 연결시켰듯이 클라이언트가 담긴 Cloudfront 또한 Route 53에서 별칭 레코드를 생성해주자.</p>
+  </li>
+  <li>
+    <p>Route 53의 호스팅 영역으로 간뒤, 레코드 생성을 아래와 같이 해준다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144427560-b399fcf4-9bd4-43bd-b70c-c526445fc57b.png&quot; alt=&quot;스크린샷, 2021-12-02 22-03-59&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144427560-b399fcf4-9bd4-43bd-b70c-c526445fc57b.png" alt="스크린샷, 2021-12-02 22-03-59" /></p>
 
-    &lt;p&gt;cmarket.cf 도메인 주소를 클라이언트가 보여지는 영역으로 쓸 것이므로 이름값은 따로 주지 않았다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>cmarket.cf 도메인 주소를 클라이언트가 보여지는 영역으로 쓸 것이므로 이름값은 따로 주지 않았다.</p>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;2-4-연결-확인&quot;&gt;2-4. 연결 확인&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 클라이언트/서버가 모두 HTTPS 인증방식으로 내가 원하는 도메인으로 발급이 모두 완료되었다.&lt;/p&gt;
+<h4 id="2-4-연결-확인">2-4. 연결 확인</h4>
+<hr />
+<ul>
+  <li>
+    <p>이제 클라이언트/서버가 모두 HTTPS 인증방식으로 내가 원하는 도메인으로 발급이 모두 완료되었다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144428894-aff7f1f8-2401-42aa-8298-8f79ad67dc4f.gif&quot; alt=&quot;cmarket cf&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144428894-aff7f1f8-2401-42aa-8298-8f79ad67dc4f.gif" alt="cmarket cf" /></p>
 
-    &lt;p&gt;리스너를 HTTP/HTTPS 방식 모두 지원하기 때문에 도메인에 배포한 HTTPS 방식의 통신도 지원하며, S3 버킷에서 HTTP 환경으로 클라이언트를 구동시켜도 모두 서버와 원활히 통신이 가능하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>리스너를 HTTP/HTTPS 방식 모두 지원하기 때문에 도메인에 배포한 HTTPS 방식의 통신도 지원하며, S3 버킷에서 HTTP 환경으로 클라이언트를 구동시켜도 모두 서버와 원활히 통신이 가능하다.</p>
+  </li>
+</ul>
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;AWS…너무 어렵다.&lt;br /&gt;
-단순히 인스턴스 올리고 버킷에 객체 업로드 하고 RDS로 DB 생성 후 연동하는건 정말 걸음마 단계였던거 같다.&lt;/li&gt;
-  &lt;li&gt;원래 해당 스프린트는 Advanced 과정으로 코드스테이츠에는 Route 53에서 도메인을 구매 후 진행하라 일러준다. &lt;br /&gt;
- 학습과정에서 적게는 9$ 이상씩 지불하기가 아깝기도 하고.. AWS에서 지원하지 않는 외부 도메인을 사용해서 Route 53에서 등록하는 과정까지 학습과정에서는 모두 좋은 경험이라 생각든다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;마음에 안드는 부분은 CloudFront 배포가 무조건 us-east-1 리전에서만 가능하기때문에 EC2 인스턴스도 억지로 서울 리전을 버리고 us-east-1 리전으로 강제 이주하였다..&lt;/p&gt;
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>AWS…너무 어렵다.<br />
+단순히 인스턴스 올리고 버킷에 객체 업로드 하고 RDS로 DB 생성 후 연동하는건 정말 걸음마 단계였던거 같다.</li>
+  <li>원래 해당 스프린트는 Advanced 과정으로 코드스테이츠에는 Route 53에서 도메인을 구매 후 진행하라 일러준다. <br />
+ 학습과정에서 적게는 9$ 이상씩 지불하기가 아깝기도 하고.. AWS에서 지원하지 않는 외부 도메인을 사용해서 Route 53에서 등록하는 과정까지 학습과정에서는 모두 좋은 경험이라 생각든다.</li>
+  <li>
+    <p>마음에 안드는 부분은 CloudFront 배포가 무조건 us-east-1 리전에서만 가능하기때문에 EC2 인스턴스도 억지로 서울 리전을 버리고 us-east-1 리전으로 강제 이주하였다..</p>
 
-    &lt;p&gt;서두에 말했듯이, 미국지역 리전의 응답속도와 서울 리전의 응답속도는 하늘과 땅차이 였다.&lt;/p&gt;
+    <p>서두에 말했듯이, 미국지역 리전의 응답속도와 서울 리전의 응답속도는 하늘과 땅차이 였다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144410348-669abeb7-67a6-413f-95bf-4e4373125150.png&quot; alt=&quot;스크린샷, 2021-12-02 19-54-25&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/144410348-669abeb7-67a6-413f-95bf-4e4373125150.png" alt="스크린샷, 2021-12-02 19-54-25" /></p>
 
-    &lt;p&gt;위와 같이 엄청난 속도차이가 있다.&lt;del&gt;(역시 인터넷 속도는 한국)&lt;/del&gt; 서울 리전에 서버를 두고 다시 배포해보는 과정을 생각해봐야 겠다. (이렇게 되면 클라이언트/서버 각각 인증서가 리전이 다른데 유효할지 의문이 든다..)&lt;/p&gt;
+    <p>위와 같이 엄청난 속도차이가 있다.<del>(역시 인터넷 속도는 한국)</del> 서울 리전에 서버를 두고 다시 배포해보는 과정을 생각해봐야 겠다. (이렇게 되면 클라이언트/서버 각각 인증서가 리전이 다른데 유효할지 의문이 든다..)</p>
 
-    &lt;p&gt;찜찜하지만.. 우선 초기에 목표로 둔 내가 원하는 도메인에 HTTPS 인증방식으로 배포하는게 성공해서 잠은 푹 잘 수 있을듯 하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>찜찜하지만.. 우선 초기에 목표로 둔 내가 원하는 도메인에 HTTPS 인증방식으로 배포하는게 성공해서 잠은 푹 잘 수 있을듯 하다.</p>
+  </li>
+</ul>
 
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name>JH8459</name></author><category term="TIL" /><summary type="html">[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</summary></entry><entry><title type="html">[Blog] Minimal mistakes Utterances</title><link href="/blog/21.11.17.Blog/" rel="alternate" type="text/html" title="[Blog] Minimal mistakes Utterances" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>/blog/21.11.17.Blog</id><content type="html" xml:base="/blog/21.11.17.Blog/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg&quot; alt=&quot;tool&quot; /&gt;&lt;/p&gt;
+<p><br />
+<br /></p>]]></content><author><name>JH8459</name></author><category term="TIL" /><summary type="html"><![CDATA[[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증]]></summary></entry><entry><title type="html">[Blog] Minimal mistakes Utterances</title><link href="http://localhost:4000/blog/21.11.17.Blog/" rel="alternate" type="text/html" title="[Blog] Minimal mistakes Utterances" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/21.11.17.Blog</id><content type="html" xml:base="http://localhost:4000/blog/21.11.17.Blog/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/140798334-e59d59e0-7a88-4007-bd04-28f832401caf.jpeg" alt="tool" /></p>
 
-&lt;h2 id=&quot;minimal-mistakes-utterances&quot;&gt;Minimal mistakes Utterances&lt;/h2&gt;
+<h2 id="minimal-mistakes-utterances">Minimal mistakes Utterances</h2>
 
-&lt;h3 id=&quot;utterances-vs-disqus&quot;&gt;Utterances VS Disqus&lt;/h3&gt;
-&lt;hr /&gt;
+<h3 id="utterances-vs-disqus">Utterances VS Disqus</h3>
+<hr />
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;현재 블로그 (21.11.17 기준)는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Minimal mistakes&lt;/code&gt; jekyll theme 에 댓글 창은 &lt;strong&gt;Disqus&lt;/strong&gt;를 사용하고 있었다.&lt;/p&gt;
+<ul>
+  <li>
+    <p>현재 블로그 (21.11.17 기준)는 <code class="language-plaintext highlighter-rouge">Minimal mistakes</code> jekyll theme 에 댓글 창은 <strong>Disqus</strong>를 사용하고 있었다.</p>
 
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/142207738-058ca84c-b025-4150-991c-f08006bdd877.png&quot; alt=&quot;스크린샷, 2021-11-17 22-09-56&quot; /&gt;&lt;/p&gt;
+    <p><img src="https://user-images.githubusercontent.com/83164003/142207738-058ca84c-b025-4150-991c-f08006bdd877.png" alt="스크린샷, 2021-11-17 22-09-56" /></p>
 
-    &lt;p&gt;다만 조금..난잡하다? 라는 생각이 들던 중 &lt;del&gt;어짜피 댓글도 안달리는데…&lt;/del&gt; GitHub Issue 기반으로 Comment를 작성하는 &lt;strong&gt;Utterances&lt;/strong&gt;를 알게 되어서 변경해 보았다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;블로그 성격이 개발 블로그이기 때문에, 기존에 쓰던 &lt;strong&gt;Disqus&lt;/strong&gt; 보다는 Github 계정으로 댓글을 작성할 수 있기 때문에 사용성이 조금 더 용이하다 생각이 들었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <p>다만 조금..난잡하다? 라는 생각이 들던 중 <del>어짜피 댓글도 안달리는데…</del> GitHub Issue 기반으로 Comment를 작성하는 <strong>Utterances</strong>를 알게 되어서 변경해 보았다.</p>
+  </li>
+  <li>
+    <p>블로그 성격이 개발 블로그이기 때문에, 기존에 쓰던 <strong>Disqus</strong> 보다는 Github 계정으로 댓글을 작성할 수 있기 때문에 사용성이 조금 더 용이하다 생각이 들었다.</p>
+  </li>
+</ul>
 
-&lt;hr /&gt;
-&lt;h3 id=&quot;utterances-적용하기&quot;&gt;Utterances 적용하기&lt;/h3&gt;
+<hr />
+<h3 id="utterances-적용하기">Utterances 적용하기</h3>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h4 id=&quot;github-setting&quot;&gt;Github setting&lt;/h4&gt;
-&lt;hr /&gt;
+<h4 id="github-setting">Github setting</h4>
+<hr />
 
-&lt;p&gt;간단하게 사용이 가능하다.&lt;/p&gt;
+<p>간단하게 사용이 가능하다.</p>
 
-&lt;p&gt;우선 &lt;a href=&quot;https://github.com/apps/utterances&quot; target=&quot;_blank&quot;&gt;utterances&lt;/a&gt; Github App 을 install 해준다.&lt;br /&gt;&lt;/p&gt;
+<p>우선 <a href="https://github.com/apps/utterances" target="_blank">utterances</a> Github App 을 install 해준다.<br /></p>
 
-&lt;h4 id=&quot;utterances-setting&quot;&gt;utterances setting&lt;/h4&gt;
-&lt;hr /&gt;
+<h4 id="utterances-setting">utterances setting</h4>
+<hr />
 
-&lt;p&gt;Github App을 설치하였다면 &lt;a href=&quot;https://utteranc.es/&quot; target=&quot;_blank&quot;&gt;https://utteranc.es/&lt;/a&gt; 사이트에 들어간다.&lt;/p&gt;
+<p>Github App을 설치하였다면 <a href="https://utteranc.es/" target="_blank">https://utteranc.es/</a> 사이트에 들어간다.</p>
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/142213538-26d1d0f8-6414-4630-bfcc-77caa7dfd387.png&quot; alt=&quot;스크린샷, 2021-11-17 22-53-18&quot; /&gt;&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/83164003/142213538-26d1d0f8-6414-4630-bfcc-77caa7dfd387.png" alt="스크린샷, 2021-11-17 22-53-18" /></p>
 
-&lt;p&gt;utterances 설정에 앞서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;owner/repo&lt;/code&gt;를 입력하라 나온다.&lt;/p&gt;
+<p>utterances 설정에 앞서 <code class="language-plaintext highlighter-rouge">owner/repo</code>를 입력하라 나온다.</p>
 
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/142213648-2180e200-28a8-42c1-8a26-e9789de63fa7.png&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<center><img src="https://user-images.githubusercontent.com/83164003/142213648-2180e200-28a8-42c1-8a26-e9789de63fa7.png" /></center>
+<p><br /></p>
 
-&lt;p&gt;이러한 형식으로 알맞게 입력해준다.&lt;/p&gt;
+<p>이러한 형식으로 알맞게 입력해준다.</p>
 
-&lt;p&gt;그 뒤, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blog Post ↔️ Issue Mapping&lt;/code&gt; 옵션 선택창이 나온다.&lt;/p&gt;
+<p>그 뒤, <code class="language-plaintext highlighter-rouge">Blog Post ↔️ Issue Mapping</code> 옵션 선택창이 나온다.</p>
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/142213903-32670289-ebc4-4ee3-b412-2c3e4a1523d7.png&quot; alt=&quot;스크린샷, 2021-11-17 22-51-57&quot; /&gt;&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/83164003/142213903-32670289-ebc4-4ee3-b412-2c3e4a1523d7.png" alt="스크린샷, 2021-11-17 22-51-57" /></p>
 
-&lt;p&gt;다른 옵션은 모르겠고… default 값인 &lt;strong&gt;Issue title contains page pathname&lt;/strong&gt;는 포스트 게시물의 .md 파일의 이름으로 연결된다. &lt;del&gt;게시물의 .md 파일명을 수정하게 되면 댓글또한 날아간다…&lt;/del&gt;&lt;/p&gt;
+<p>다른 옵션은 모르겠고… default 값인 <strong>Issue title contains page pathname</strong>는 포스트 게시물의 .md 파일의 이름으로 연결된다. <del>게시물의 .md 파일명을 수정하게 되면 댓글또한 날아간다…</del></p>
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;owner/repo&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blog Post ↔️ Issue Mapping&lt;/code&gt;을 모두 선택하면 다음과 같은 script가 나온다.&lt;/p&gt;
+<p><code class="language-plaintext highlighter-rouge">owner/repo</code>와 <code class="language-plaintext highlighter-rouge">Blog Post ↔️ Issue Mapping</code>을 모두 선택하면 다음과 같은 script가 나온다.</p>
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/142214912-6c8b31e1-d563-4ab4-a5a2-d84bae0769cc.png&quot; alt=&quot;스크린샷, 2021-11-17 23-01-14&quot; /&gt;&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/83164003/142214912-6c8b31e1-d563-4ab4-a5a2-d84bae0769cc.png" alt="스크린샷, 2021-11-17 23-01-14" /></p>
 
-&lt;p&gt;해당 script 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;issue-term&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theme&lt;/code&gt;을 기억해서 config.yml에 넣어주면 완료된다.&lt;/p&gt;
+<p>해당 script 중 <code class="language-plaintext highlighter-rouge">issue-term</code>, <code class="language-plaintext highlighter-rouge">theme</code>을 기억해서 config.yml에 넣어주면 완료된다.</p>
 
-&lt;h4 id=&quot;configyml-setting&quot;&gt;config.yml setting&lt;/h4&gt;
-&lt;hr /&gt;
+<h4 id="configyml-setting">config.yml setting</h4>
+<hr />
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;repository&lt;/span&gt;               &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;JH8459/JH8459.github.io&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GitHub&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;  
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">repository</span>               <span class="p">:</span> <span class="dl">"</span><span class="s2">JH8459/JH8459.github.io</span><span class="dl">"</span> <span class="err">#</span> <span class="nx">GitHub</span> <span class="nx">username</span><span class="o">/</span><span class="nx">repo</span><span class="o">-</span><span class="nx">name</span>  
 
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;댓글&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;관련&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;부분&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;provider&lt;/span&gt;               &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;utterances&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;discourse&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;staticman&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;staticman_v2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;utterances&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;custom&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;utterances&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;theme&lt;/span&gt;                &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;github-light&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;github-light&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;github-dark&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;issue_term&lt;/span&gt;           &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pathname&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pathname&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;완료&quot;&gt;완료&lt;/h4&gt;
-&lt;hr /&gt;
+<span class="err">#</span> <span class="nx">댓글</span> <span class="nx">관련</span> <span class="nx">부분</span>
+<span class="nx">comments</span><span class="p">:</span>
+  <span class="nx">provider</span>               <span class="p">:</span> <span class="dl">"</span><span class="s2">utterances</span><span class="dl">"</span> <span class="err">#</span> <span class="kc">false</span> <span class="p">(</span><span class="k">default</span><span class="p">),</span> <span class="dl">"</span><span class="s2">disqus</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">discourse</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">facebook</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">staticman</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">staticman_v2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utterances</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">custom</span><span class="dl">"</span>
+  <span class="nx">utterances</span><span class="p">:</span>
+    <span class="nx">theme</span>                <span class="p">:</span> <span class="dl">"</span><span class="s2">github-light</span><span class="dl">"</span> <span class="err">#</span> <span class="dl">"</span><span class="s2">github-light</span><span class="dl">"</span> <span class="p">(</span><span class="k">default</span><span class="p">),</span> <span class="dl">"</span><span class="s2">github-dark</span><span class="dl">"</span>
+    <span class="nx">issue_term</span>           <span class="p">:</span> <span class="dl">"</span><span class="s2">pathname</span><span class="dl">"</span> <span class="err">#</span> <span class="dl">"</span><span class="s2">pathname</span><span class="dl">"</span> <span class="p">(</span><span class="k">default</span><span class="p">)</span>
+</code></pre></div></div>
+<h4 id="완료">완료</h4>
+<hr />
 
-&lt;p&gt;모두 설정이 완료된 후 commit 후 push 해 주면 다음과 같은 결과를 볼 수 있다.&lt;/p&gt;
+<p>모두 설정이 완료된 후 commit 후 push 해 주면 다음과 같은 결과를 볼 수 있다.</p>
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/142215734-540361c4-e8db-4527-9e77-bec48902dac1.png&quot; alt=&quot;스크린샷, 2021-11-17 23-07-41&quot; /&gt;&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Blog" /><summary type="html">[Blog] Minimal mistakes Utterances</summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Section3 재수강</title><link href="/retrospect/21.11.17.retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Section3 재수강" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>/retrospect/21.11.17.retrospect</id><content type="html" xml:base="/retrospect/21.11.17.retrospect/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
+<p><img src="https://user-images.githubusercontent.com/83164003/142215734-540361c4-e8db-4527-9e77-bec48902dac1.png" alt="스크린샷, 2021-11-17 23-07-41" /></p>]]></content><author><name>JH8459</name></author><category term="Blog" /><summary type="html"><![CDATA[[Blog] Minimal mistakes Utterances]]></summary></entry><entry><title type="html">[Retrospect] 코드스테이츠 Section3 재수강</title><link href="http://localhost:4000/retrospect/21.11.17.retrospect/" rel="alternate" type="text/html" title="[Retrospect] 코드스테이츠 Section3 재수강" /><published>2021-11-17T00:00:00+09:00</published><updated>2021-11-17T00:00:00+09:00</updated><id>http://localhost:4000/retrospect/21.11.17.retrospect</id><content type="html" xml:base="http://localhost:4000/retrospect/21.11.17.retrospect/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png" alt="스크린샷, 2021-11-07 22-08-33" /></p>
 
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
+<h2 id="retrospect">Retrospect</h2>
 
-&lt;p&gt;재수강을 하면서 같은 Section을 다시 진행하면서 간만에 새글을 쓰는 거 같다. &lt;br /&gt;
-새로운 pair와 같은 Section을 다시 진행을 하는데…&lt;del&gt;어렵다!! 여전히 어렵다&lt;/del&gt; 어렵다 느꼈던 부분은 다시봐도 어렵다 느꼈다..&lt;/p&gt;
+<p>재수강을 하면서 같은 Section을 다시 진행하면서 간만에 새글을 쓰는 거 같다. <br />
+새로운 pair와 같은 Section을 다시 진행을 하는데…<del>어렵다!! 여전히 어렵다</del> 어렵다 느꼈던 부분은 다시봐도 어렵다 느꼈다..</p>
 
-&lt;p&gt;물론 조금 나아진 점은 물론 있고, 머릿속에 남아 있는 잔재들로 해결을 해내곤 하지만, 여전히 부족한 부분에서 튀어나오는 구글링 포인트는 바뀌질 않았다.. 아직 &lt;strong&gt;“여전히 부족하구나, 갈길이 멀구나”&lt;/strong&gt; 를 온전히 느끼고 있다.&lt;/p&gt;
+<p>물론 조금 나아진 점은 물론 있고, 머릿속에 남아 있는 잔재들로 해결을 해내곤 하지만, 여전히 부족한 부분에서 튀어나오는 구글링 포인트는 바뀌질 않았다.. 아직 <strong>“여전히 부족하구나, 갈길이 멀구나”</strong> 를 온전히 느끼고 있다.</p>
 
-&lt;p&gt;오늘 했던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sprint - Short.ly MVC&lt;/code&gt; 도 다시 풀어보니 백엔드 로직이 새삼 HA3와 비슷하구나..를 다시 풀며 느꼈다.&lt;/p&gt;
+<p>오늘 했던 <code class="language-plaintext highlighter-rouge">Sprint - Short.ly MVC</code> 도 다시 풀어보니 백엔드 로직이 새삼 HA3와 비슷하구나..를 다시 풀며 느꼈다.</p>
 
-&lt;p&gt;아무튼 부족한점이 너무 많았기에, 이번 기수이동이 오히려 잘 되었다 느끼고 있다.&lt;br /&gt;
-말과 다르게 요즘 블로그 새 글이 뜸한데, 예전에 썼던 TIL들 중 부족한 부분들이 있다면 채워서 수정하고 있기 때문이다.&lt;/p&gt;
+<p>아무튼 부족한점이 너무 많았기에, 이번 기수이동이 오히려 잘 되었다 느끼고 있다.<br />
+말과 다르게 요즘 블로그 새 글이 뜸한데, 예전에 썼던 TIL들 중 부족한 부분들이 있다면 채워서 수정하고 있기 때문이다.</p>
 
-&lt;p&gt;재수강 후 첫째 주는 솔직히 손에 잡히는게 없어서 루틴도 모두 깨졌는데, 이번 주 부터는 다시 돌아가고 있다. &lt;del&gt;TOY는 다시 풀기 너무 싫어요…&lt;/del&gt;&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html">[Retrospect] 코드스테이츠 Section3 재수강</summary></entry><entry><title type="html">[Algorithm] 가위바위보 (중복순열)</title><link href="/algorithm/21.11.10.algorithm1/" rel="alternate" type="text/html" title="[Algorithm] 가위바위보 (중복순열)" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>/algorithm/21.11.10.algorithm1</id><content type="html" xml:base="/algorithm/21.11.10.algorithm1/">&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg&quot; alt=&quot;Algorithm&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;가위바위보-중복순열&quot;&gt;가위바위보 (중복순열)&lt;/h2&gt;
-&lt;h3 id=&quot;문제&quot;&gt;문제&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;가위바위보 게임은 2인 이상의 사람이 동시에 ‘가위, 바위, 보’를 외치고 동시에 가위, 바위 또는 보 중에서 한 가지를 의미하는 손 모양을 내밀어 승부를 결정짓는 게임입니다. 세 판의 가위바위보 게임을 할 경우, 한 사람은 세 번의 선택(예. 가위, 가위, 보)을 할 수 있습니다. 세 번의 선택으로 가능한 모든 경우의 수를 구하는 함수를 작성합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;입력&quot;&gt;입력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;없음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;출력&quot;&gt;출력&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;2차원 배열(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;)을 리턴해야 합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;는 전체 경우의 수 중 한 가지 경우(총 세 번의 선택)를 의미하는 배열입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'rock'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'paper'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'scissors'&lt;/code&gt; 중 한 가지 이상을 요소로 갖는 배열입니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i].length&lt;/code&gt;는 3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;최종적으로 리턴되는 배열의 순서는 가중치 적용 정렬(Weighted Sort)을 따릅니다.&lt;/li&gt;
-  &lt;li&gt;중요도는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'rock'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'paper'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'scissors'&lt;/code&gt; 순으로 높습니다.&lt;/li&gt;
-  &lt;li&gt;쉽게 생각해 올림픽 순위 결정 방식을 참고하면 됩니다.&lt;/li&gt;
-  &lt;li&gt;금메달(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'rock'&lt;/code&gt;)이 은메달(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'paper'&lt;/code&gt;)보다 우선하고, 은메달(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'paper'&lt;/code&gt;)이 동메달(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'scissors'&lt;/code&gt;)보다 우선합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;입출력-예시&quot;&gt;입출력 예시&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rockPaperScissors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*
-    [
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;paper&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;scissors&quot;],
-      [&quot;rock&quot;, &quot;paper&quot;, &quot;rock&quot;],
-      // ...etc ...
-    ]
-  */&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;advanced&quot;&gt;Advanced&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;가위바위보 게임의 수를 나타내는 양의 정수 rounds가 주어질 경우, 해당 rounds 동안 선택할 수 있는 모든 경우의 수를 리턴하도록 함수를 작성해 보세요.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rockPaperScissors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*
-    [
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, , &quot;rock&quot;, &quot;rock&quot;, &quot;paper&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, , &quot;rock&quot;, &quot;rock&quot;, &quot;scissors&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;, &quot;paper&quot;, &quot;rock&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;, &quot;paper&quot;, &quot;paper&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;],
-      [&quot;rock&quot;, &quot;rock&quot;, &quot;rock&quot;, &quot;scissors&quot;, &quot;rock&quot;],
-      // ...etc ...
-    ]
-  */&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
-&lt;h3 id=&quot;수도코드&quot;&gt;수도코드&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;우선 Bare Minimum 문제는 어렵지 않게 해결할 수 있었다.&lt;/p&gt;
-
-&lt;p&gt;for문을 3번 중첩하여 경우의 수를 도출해내면 된다.&lt;br /&gt;
-각 자리에 3가지(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'rock'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'paper'&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'scissors'&lt;/code&gt;)의 경우의 수가 올 수 있다. 그리고 라운드는 3으로 고정되어 있기에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3^3&lt;/code&gt;의 경우의 수, 즉 27가지의 경우의 수를 배열로 반환하면 된다.&lt;/p&gt;
-
-&lt;p&gt;다만, Advanced 경우에는 라운드 수가 고정이 아니므로 몇번 for문을 중첩해야 할 지.. 미리 알 수 없기 때문에, 재귀 함수(Rounds를 인자로 받는)를 통하여 구현을 해야만 했다.&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;문제풀이&quot;&gt;문제풀이&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Bare Minimum&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rockPaperScissors&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;rock&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;paper&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;scissors&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 가중치를 둔 배열 생성&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;  
-  
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 각 자리수 마다 3개의 경우의 수 존재&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rockPaperScissors&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;rock&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;paper&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;scissors&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;  
-  
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;  
-      &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;recursive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Reference Code&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Advanced가 포함된 레퍼런스 코드입니다.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rockPaperScissors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// rounds 매개변수를 임의로 넣습니다.&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// rounds 변수가 있을 경우 그대로 사용하고, 없다면 3(기본)을 사용합니다.&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;rock&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;paper&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;scissors&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 결과를 담을 배열 선언&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outcomes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 재귀를 사용할 함수 선언&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// rounds를 넣을 변수 roundsToGo, 일회용 배열인 playedSoFar 변수를 선언합니다.&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 재귀를 사용하는 이유는, 배열의 모든 요소의 경우의 수를 훑기 위한 적절한 방법이기 때문입니다.&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 간단히 말하자면, 이 함수는 rounds 숫자를 기준으로, 일회용 배열에 rps 요소를 rounds 숫자만큼 넣게 됩니다.&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 이 로직을 잘 이해할 수 있을 때까지 하단의 함수 로직을 연구해야 합니다.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;permutate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;roundsToGo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;playedSoFar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// rounds가 0일 경우 outcones 배열에 삽입하고, 재귀에서 빠져나옵니다.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;roundsToGo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;outcomes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;playedSoFar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// rps 배열을 한 번씩 순회합니다.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// rps의 i번째 요소를 변수에 담아서&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentPlay&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// permutate(본인)에 기존 rounds에서 하나 뺀 숫자와, 일회용 배열 playedSoFar에 currentPlay를 삽입하여 재귀를 실행합니다.&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// rounds에서 하나를 빼는 이유는, 일회용 배열의 크기를 rounds만큼 맞춰주기 위함입니다. [rock, rock, rock]&lt;/span&gt;
-
-      &lt;span class=&quot;c1&quot;&gt;// Q. playedSoFar.push(currentPlay)로 할 수 있을 텐데, 왜 concat을 사용할까요?&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;permutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;roundsToGo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;playedSoFar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentPlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-      &lt;span class=&quot;cm&quot;&gt;/**
-       * 이 재귀의 로직은 이렇습니다. 처음 실행된 반복문은 rps를 전부 순회해야 끝이 납니다.
-       * 그러나 한 번 반복할 때마다 permutate 함수가 실행되고, rounds의 숫자는 짧아지며, playedSoFar에 요소가 계속 쌓일 것입니다.
-       * 결국, roundsToGo가 0이 될 때까지 이 반복문은 rps[i]가 0일 것이며, playedSoFar에는 [rock, rock, rock]이 되어 outcones에 Push하고, 종료하게 됩니다.
-       * return이 되었으니, 한 번의 재귀 호출이 끝났습니다. 마지막 호출 바로 전으로 돌아가,
-       * for문은 i = 1을 가리키게 될 것이고, [rock, rock, paper]을 삽입한 뒤 호출을 하게 됩니다.
-       * roundsToGo가 0이 되어, 해당 배열은 outcomes 배열에 삽입됩니다.
-       * 이런 식으로 모든 호출의 반복문이 끝날 때까지 반복하며 outcomes에 경우의 수 요소들이 담기게 됩니다.
-       */&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 함수를 실행합니다.&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;permutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// outcomes를 반환합니다.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outcomes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;느낀-점&quot;&gt;느낀 점&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Reference Code&lt;/strong&gt;와 재귀부분은 비슷하게 구현된듯하다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.push()&lt;/code&gt; 메소드는 기존 배열에 원소를 추가하며 &lt;strong&gt;배열의 총 길이를 리턴하는 메소드&lt;/strong&gt; 이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.concat()&lt;/code&gt; 메소드는 &lt;strong&gt;기존 배열을 복사한 후 원소를 추가하여 새 배열을 리턴&lt;/strong&gt;하는 차이가 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.push()&lt;/code&gt; 메소드는 위 로직에 쓰일 땐 조심히 쓰여야 한다…&lt;/p&gt;</content><author><name>JH8459</name></author><category term="Algorithm" /><summary type="html">[Algorithm] 가위바위보 (중복순열)</summary></entry></feed>
+<p>재수강 후 첫째 주는 솔직히 손에 잡히는게 없어서 루틴도 모두 깨졌는데, 이번 주 부터는 다시 돌아가고 있다. <del>TOY는 다시 풀기 너무 싫어요…</del></p>]]></content><author><name>JH8459</name></author><category term="Retrospect" /><summary type="html"><![CDATA[[Retrospect] 코드스테이츠 Section3 재수강]]></summary></entry></feed>
