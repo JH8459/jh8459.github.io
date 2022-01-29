@@ -557,6 +557,12 @@ var store = [{
         "url": "/retrospect/21.12.24.Retrospect/",
         "teaser": null
       },{
+        "title": "[Project] First Project",
+        "excerpt":"(작성중)  ","categories": ["Project"],
+        "tags": [],
+        "url": "/project/21.12.25.Project/",
+        "teaser": null
+      },{
         "title": "[Retrospect] 코드스테이츠 Final Project",
         "excerpt":"(작성중)  ","categories": ["Retrospect"],
         "tags": [],
