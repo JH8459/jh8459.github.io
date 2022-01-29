@@ -8,7 +8,7 @@ main:
     url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
 
 docs:
-  - title: "CodeStates"
+  - title: "Study Log"
     children:
       - title: "Algorithm"
         url: /category/#algorithm
