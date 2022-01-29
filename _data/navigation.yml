@@ -4,11 +4,11 @@ main:
     url: /category/
   - title: "Year"
     url: /year/
-  - title: "About"
+  - title: "ME"
     url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
 
 docs:
-  - title: "Study Log"
+  - title: "Study Log 📖"
     children:
       - title: "Algorithm"
         url: /category/#algorithm
@@ -19,9 +19,9 @@ docs:
       - title: "TIL"
         url: /category/#til
 
-  - title: "ETC"
+  - title: "ETC ⚙️"
     children:
       - title: "Blog"
         url: /category/#blog
-  - title: "About"
+  - title: "ME"
     url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
