@@ -23,7 +23,14 @@ layout: null
       {% else %}
         <priority>{{ post.sitemap.priority }}</priority>
       {% endif %}
-
     </url>
   {% endfor %}
+    <url>
+	<loc>{{ site.url }}google98b07df86b4d4e1d.html</loc>
+	<lastmod>2021-11-08T23:10:29+09:00</lastmod>
+    </url>
+    <url>
+	<loc>{{ site.url }}naver5c4e09aaef06d670d2e48558dc6be24e.html</loc>
+	<lastmod>2021-11-08T23:36:24+09:00</lastmod>
+    </url>
 </urlset>
