@@ -21,7 +21,7 @@ title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome 
 subtitle                 : "programming study log" # 타이틀 아래에 나올 작은 글씨 
 name                     : "JH8459" # 맨 하단 이름 찍히는 영역
 description              : # Meta 태그에 들어가는 영역 
-url                      : "https://jh8459.github.io/"
+url                      : "http://jh8459.github.io"
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "JH8459/JH8459.github.io" # GitHub username/repo-name  
 teaser                   : # 홈페이지 기본 티져 이미지

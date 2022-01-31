@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JH8459</title>
+    <description></description>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+	<lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0900</lastBuildDate>
+	
+	<item>
+		<title>[Retrospect] 코드스테이츠 34기 수료</title>
+        
+        
+            <description>[Retrospect] 코드스테이츠 34기 수료</description>
+        
+        <pubDate>Fri, 28 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/22.01.28.Retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/22.01.28.Retrospect/</guid>
+      </item>
+    
+	<item>
+		<title>[Project] Final Project</title>
+        
+        
+            <description>[Project] Final Project</description>
+        
+        <pubDate>Wed, 26 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.01.26.Final-Project/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.01.26.Final-Project/</guid>
+      </item>
+    
+	<item>
+		<title>[Retrospect] 코드스테이츠 Final Project</title>
+        
+        
+            <description>[Retrospect] 코드스테이츠 Final Project</description>
+        
+        <pubDate>Tue, 25 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/22.01.25.Retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/22.01.25.Retrospect/</guid>
+      </item>
+    
+	<item>
+		<title>[Project] First Project</title>
+        
+        
+            <description>[Project] First Project</description>
+        
+        <pubDate>Sat, 25 Dec 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/21.12.25.Project/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/21.12.25.Project/</guid>
+      </item>
+    
+	<item>
+		<title>[Retrospect] 코드스테이츠 First Project</title>
+        
+        
+            <description>[Retrospect] 코드스테이츠 First Project</description>
+        
+        <pubDate>Fri, 24 Dec 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/21.12.24.Retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.24.Retrospect/</guid>
+      </item>
+    
+	<item>
+		<title>[Retrospect] 코드스테이츠 Project 시작</title>
+        
+        
+            <description>[Retrospect] 코드스테이츠 First Project 시작</description>
+        
+        <pubDate>Mon, 13 Dec 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/21.12.13.retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.13.retrospect/</guid>
+      </item>
+    
+	<item>
+		<title>[TIL] 1. Node.js Multer (작성중)</title>
+        
+        
+            <description>[TIL] 1. Node.js Multer</description>
+        
+        <pubDate>Thu, 09 Dec 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/21.12.09.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/21.12.09.til/</guid>
+      </item>
+    
+	<item>
+		<title>[Retrospect] 코드스테이츠 Section3 후기</title>
+        
+        
+            <description>[Retrospect] 34기 Section3 후기</description>
+        
+        <pubDate>Wed, 08 Dec 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/21.12.08.retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.08.retrospect/</guid>
+      </item>
+    
+	<item>
+		<title>[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title>
+        
+        
+            <description>[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</description>
+        
+        <pubDate>Fri, 26 Nov 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/21.11.26.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/21.11.26.til/</guid>
+      </item>
+    
+	<item>
+		<title>[Retrospect] 코드스테이츠 Section3 재수강</title>
+        
+        
+            <description>[Retrospect] 코드스테이츠 Section3 재수강</description>
+        
+        <pubDate>Wed, 17 Nov 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/21.11.17.retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/21.11.17.retrospect/</guid>
+      </item>
+    
+  </channel>
+</rss>
