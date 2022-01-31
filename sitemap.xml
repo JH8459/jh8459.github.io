@@ -26,6 +26,9 @@ layout: null
     </url>
   {% endfor %}
     <url>
+      <loc>{{ site.url }}/page2/</loc>
+    </url>
+    <url>
 	<loc>{{ site.url }}/google98b07df86b4d4e1d.html</loc>
 	<lastmod>2021-11-08T23:10:29+09:00</lastmod>
     </url>
