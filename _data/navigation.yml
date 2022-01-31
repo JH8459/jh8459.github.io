@@ -7,7 +7,7 @@ main:
   - title: "프로젝트"
     url: /project/
   - title: "JH8459"
-    url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
+    url: /about/
 
 docs:
   - title: "Study Log 📖"
@@ -26,4 +26,4 @@ docs:
       - title: "Blog"
         url: /category/#blog
   - title: "JH8459 🤔"
-    url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
+    url: /about/

@@ -266,6 +266,12 @@ category_archive:
 year_archive:
   type: liquid
   path: /year/
+project_archive:
+  type: liquid
+  path: /project/
+about_archive:
+  type: liquid
+  path: /about/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
