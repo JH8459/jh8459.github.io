@@ -114,7 +114,7 @@ analytics:
 author:
   name             : "JH8459"
   avatar           : "https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png"
-  bio              : "*불안감 떨쳐내기, 후회없이 하루 보내기*<br><br>"
+  bio              : "**Hello World !**<br><br>"
   location         : "Seoul, Republic of Korea"
 #   email            : "kk_ong2233@naver.com"
   links:
@@ -132,7 +132,7 @@ author:
       url: "https://github.com/JH8459"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/jh8459_"
+      url: "https://instagram.com/kj.hyeon_"
     # - label: "Facebook"
     #   icon: "fab fa-fw fa-facebook-square"
     #   url: "https://www.facebook.com/JH8459"
@@ -154,7 +154,7 @@ footer:
     #   # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/jh8459_"
+      url: "https://instagram.com/kj.hyeon_"
     # - label: "Facebook"
     #   icon: "fab fa-fw fa-facebook-square"
     #   url: "https://www.facebook.com/JH8459"
