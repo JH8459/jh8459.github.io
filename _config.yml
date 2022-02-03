@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "JHLog" # Meta 태그에 들어가는 영역 , masthead_title등이 없으면 기본값으로 나온다.
 title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 들어갑니다.
 subtitle                 : "programming log" # 타이틀 아래에 나올 작은 글씨 
-name                     : "JH8459" # 맨 하단 이름 찍히는 영역
+name                     : "JH 🤔" # 맨 하단 이름 찍히는 영역
 description              : # Meta 태그에 들어가는 영역 
 url                      : "https://jh8459.github.io"
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
@@ -115,7 +115,7 @@ author:
   name             : "JH8459"
   avatar           : "https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png"
   bio              : "**Hello World !**<br><br>"
-  location         : "Seoul, Republic of Korea"
+#   location         : "Seoul, Republic of Korea"
 #   email            : "kk_ong2233@naver.com"
   links:
     # - label: "Email"
@@ -230,7 +230,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
-timezone: #Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)

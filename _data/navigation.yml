@@ -1,12 +1,12 @@
 # main links
 main:
-  - title: "카테고리"
+  - title: "<b>카테고리</b>"
     url: /category/
-  - title: "포스트"
+  - title: "<b>포스트</b>"
     url: /year/
-  - title: "프로젝트"
+  - title: "<b>프로젝트</b>"
     url: /project/
-  - title: "JH8459"
+  - title: "<b>ABOUT</b>"
     url: /about/
 
 docs:
@@ -25,5 +25,5 @@ docs:
     children:
       - title: "Blog"
         url: /category/#blog
-  - title: "JH8459 🤔"
+  - title: "ABOUT"
     url: /about/
