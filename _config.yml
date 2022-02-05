@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # 태마 색 설정 "air", "aqua", "contras
 locale                   : "ko-KR"
 title                    : "JHLog" # Meta 태그에 들어가는 영역 , masthead_title등이 없으면 기본값으로 나온다.
 title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 들어갑니다.
-subtitle                 : "programming log." # 타이틀 아래에 나올 작은 글씨 
+subtitle                 : "programming log" # 타이틀 아래에 나올 작은 글씨 
 name                     : "JH 🤔" # 맨 하단 이름 찍히는 영역
 description              : # Meta 태그에 들어가는 영역 
 url                      : "https://jh8459.github.io"
