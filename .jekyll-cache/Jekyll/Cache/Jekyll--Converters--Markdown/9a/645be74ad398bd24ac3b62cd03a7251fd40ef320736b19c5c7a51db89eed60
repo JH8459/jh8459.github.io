@@ -1,0 +1,132 @@
+I"e-<p><img src="https://user-images.githubusercontent.com/83164003/152718557-af87a691-a231-4f0f-a603-a478fe17e795.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-문제점">1. 문제점</h3>
+<hr />
+<p>민감한 정보를 다룰 때 가장 중요한 부분은 바로 <strong><em>보안</em></strong> 이다.</p>
+
+<p>Final Project를 진행하며 보안에는 신경을 전혀 쓰지 않고 빠르게 기능적인 측면만 완성시키는데 급급하였다.
+그렇기에 당연히 보안에는 구멍이 너무나도 크게 뚫려있었고, 리팩토링 기간 동안 보안적인 측면에서 조금더 안전하게 민감정보들을 DB로 저장하는 방법을 찾아본 내용을 글로 남겨보았다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/152727053-d5bb15b0-0585-4ad9-8bad-afe23b59bd1d.jpg" /></center>
+<p><br /></p>
+
+<p>우선, 가장 심각한 문제를 꼽자면 클라이언트에서 받은 입력값들 혹은 서버에서 제공하는 인증코드들을 암호화 하지않고 그대로 DB로 저장을 하고 있다. 그렇기에 만약 DB가 해킹당하는 사태시에는 아무런 보호조치를 받지 못한채로 민감정보들이 그대로 유출이 될 수 밖에 없다.<br /></p>
+
+<p>최악의 경우 또한 대비해두어야 한다 생각한다. DB가 해킹되어 탈취 당했을 경우 최소한의 대처가 가능하도록 민감정보 암호화를 해보려 한다.</p>
+
+<h4 id="1-1-문제점-1">1-1. 문제점 1</h4>
+<hr />
+
+<p>우선 실제 코드를 다시 뜯어보고 가장 큰 보안 구멍 세군데를 찾아냈다.</p>
+
+<p>첫번째로는 회원가입시 클라이언트에서 받은 입력값을 암호화 하지않고 그대로 서버에서 DB로 저장을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152724691-bcc27a1d-ad7c-4390-ad0c-2d2889bb2220.png" alt="스크린샷, 2022-02-07 13-29-19" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">req.body</code>로 입력받은 <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">username</code>을 중복검사만 진행 한 뒤 아무런 암호화 작업없이 DB로 바로 집어 넣는다.</p>
+
+<p>솔직히 비밀번호를 입력받은 그대로 서버에서 DB로 저장하는 행위는 범죄 방조 행위와 비슷하다 생각한다.. <del>(분명히 문제가 될 여지가 있다는걸 알면서도 모른척 한 행위니까 😅)</del></p>
+
+<h4 id="1-2-문제점-2">1-2. 문제점 2</h4>
+<hr />
+
+<p>두번째로는 비밀번호 찾기 &amp; 콘친인증시 발송되는 6자리 난수코드 또한 암호화 하지않고 그대로 서버에서 DB로 저장을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152725583-d719287c-ad5e-4670-acc5-1d71928abcc8.png" alt="스크린샷, 2022-02-07 13-41-06" /></p>
+
+<p>물론 DB에 저장된 난수코드 값은 3분 이후 NULL로 초기화 되게끔 셋팅을 해두었기 때문에 위의 비밀번호를 그대로 DB에 저장하는 경우 보다는 위험성은 낮다. 하지만 위험의 여지가 있다는 사실은 변함이 없다.</p>
+
+<h4 id="1-2-문제점-3">1-2. 문제점 3</h4>
+<hr />
+
+<p>마지막 세번째로는 비밀번호 찾기 인증코드 입력 후 새로운 비밀번호 입력시 새로운 비밀번호 또한 암호화 하지않고 그대로 서버에서 DB로 저장을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152726131-a6872096-1f35-452d-b8fd-2e73bf5087a9.png" alt="스크린샷, 2022-02-07 13-43-50" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">req.body</code>로 입력받은 <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">password</code>을 DB로 바로 집어 넣는다. 회원가입 부분과 유사하게 로직을 구성하였다 😅.</p>
+
+<p>실제로 소셜로그인 방식이 아닌 위와 같이 회원가입이 진행된 유저들의 DB는 다음처럼 보인다. <del>(테스트 계정입니다.)</del></p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/152727993-ef2867c5-9ecd-4c6b-8581-b16fdd38382e.png" /></center>
+<p><br /></p>
+
+<p>프로젝트 리팩토링 기간동안 가장 신경 못썼던 보안에 중점을 두고 수정해보려 한다.</p>
+
+<h3 id="2-암호화란">2. 암호화란?</h3>
+<hr />
+<p>암호화에는 단방향 암호화와 양방향 암호화, 크게 두 가지 방법이 있다.</p>
+
+<p>간단하게 설명하자면 단방향 암호화는 암호화가 진행이 되면 복호화(암호화된 문자열을 다시 원래 문자열로 돌려놓는 것)할 수 없고, 양방향 암호화는 복호화해서 원래의 비밀번호를 알 수 있다.</p>
+
+<p>다만, 대부분의 사이트는 비밀번호를 찾을 때 원래의 비밀번호를 알려주는 것이 아닌 재설정하며, 현재 리팩토링중인 Project도 비밀번호를 되찾아 주는 것이 아닌 비밀번호 재설정을 하기 때문에 양방향 암호화는 굳이 필요없으므로 단방향 암호화를 사용했다.</p>
+
+<h4 id="2-1-해시-함수와-salt">2-1. 해시 함수와 Salt</h4>
+<hr />
+<p>단방향 암호화의 가장 간단한 방식은 해시 함수를 사용하는 것이다. <br />
+또한 이미 보안이 뚫린 해시 함수가 존재하며, 이는 <code class="language-plaintext highlighter-rouge">MD5</code>, <code class="language-plaintext highlighter-rouge">SHA-1</code>, <code class="language-plaintext highlighter-rouge">HAS-180</code>로 해당 알고리즘은 사용해선 안된다. (보다 안전한 <code class="language-plaintext highlighter-rouge">SHA-256</code>, <code class="language-plaintext highlighter-rouge">SHA-512</code> 등을 사용하자)
+하지만, 단순하게 해시 함수만 사용해서 암호화를 하면 절대 안 된다.</p>
+
+<blockquote>
+  <p>예를 들면 같은 비밀번호 ‘1234’를 쓰는 유저들의 해싱값들은 항상 같은 해시 결과값을 나타내기 때문에, 만약 해커가 모든 암호에 대해 어떤 결과가 나올지 데이터베이스화 해두었다면 결과만 보고도 원래 암호를 유추해낼 수 있다는 문제가 있다.</p>
+  <blockquote>
+    <p>이러한 데이터베이스를 <strong><em>레인보우 테이블</em></strong> 이라고 한다.</p>
+  </blockquote>
+</blockquote>
+
+<p>그렇기에 <strong>salt</strong>라는 특정 값을 통해서 위에서 나온 결과를 변형해 주거나 해시 함수를 여러번 돌려 주어서 결과값을 변형해 주어야 한다. (혹은 둘다 사용해도 된다.)
+비밀번호에 salt 문자열을 붙여서 그것을 수 만번 반복 해시를 한다면 알고리즘을 해독하는데 길게는 수만년의 시간이 걸리게 될 수도 있다.</p>
+
+<h4 id="2-2-crypto-vs-bcrypt">2-2. Crypto vs Bcrypt</h4>
+<hr />
+
+<p>우선 암호화를 왜 해야하는지? 그리고 어떤 방식으로 암호화가 진행되는지 알아보았으니 Node.js 환경에서 많이 쓰이는 암호화 방식을 찾아보았다.</p>
+
+<p>검색해보니 Node.js에서 기본 패키지로 제공하는 Native 모듈인 Crypto 모듈을 사용하는 방법과 Bcrypt의 Blowfish 알고리즘을 사용한 방법이 주를 이뤘다.</p>
+
+<p>우선 Bcrypt는 Blowfish 알고리즘은 계산 비용이 많이들며 설정한 키값 만큼 반복 해싱 사용 (일반적으로 4,096회 정도지만 하드웨어 퍼포먼스에 따라 유동적이다. <a href="https://stackoverflow.com/questions/6951867/nodejs-bcrypt-vs-native-crypto" target="_blank">출처 : Stack Overflow</a> )이 가능하기 때문에 설정값에 따라서 해싱에 엄청난 비용이 든다고 추측된다.</p>
+
+<p>하드 웨어 가 뒷받침 된다면 Bcrypt는 보안적인 측면에서 보다 안전하다 생각되지만 현재 Project의 서버 환경은 AWS Free-Tier EC2를 사용하고 있기 때문에 서버 부하가 너무 강한 해싱 알고리즘은 피해야 된다고 생각한다.</p>
+
+<p>강한 알고리즘을 선택하지 않는다면 Bcrypt가 아닌 Crypto 모듈로도 충분하기 때문에 Crypto 모듈을 선택하여 암호화를 진행하였다. <del>(Node.js 기본 패키지로 들어간 이유가 다 있다고 생각하자..)</del></p>
+
+<h3 id="3-crypto-암호화-과정">3. Crypto 암호화 과정</h3>
+<hr />
+
+<p>crypto의 기본 내장 메소드를 이용해서 암호화 한다</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">createHash()</code> : 사용할 알고리즘</li>
+  <li><code class="language-plaintext highlighter-rouge">update()</code> : 암호화할 비밀번호</li>
+  <li><code class="language-plaintext highlighter-rouge">digest()</code> : 인코딩 방식</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 생략 */</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">password</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+
+<span class="c1">// 'sha512' 알고리즘으로 req.body로 전달받은 password를 'base64' 문자열 형식으로 해싱한다</span>
+<span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHash</span><span class="p">(</span><span class="dl">'</span><span class="s1">sha512</span><span class="dl">'</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">password</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>위와 같이 사용하면 우선 해시 알고리즘만 사용하여 암호화가 가능하다. 다만, 위에서 언급하였듯이 Salt 첨가 혹은 반복 해싱작업이 없어서 <strong>레인보우 테이블</strong>로 비밀번호 유추가 가능하기 때문에 반쪽짜리 무늬만 해싱과정이다.</p>
+
+<p>따라서 해시 알고리즘에 Salt값을 더해 생성해 주어서 해싱을 해주어야 한다. <br />
+또한, Salt값은 모든 유저마다 달라야만 유의미한 Salt 값이다. 로그인을 할 경우 각각 고유 Salt값이 있어야 해독이 가능하므로 DB에 저장해서 유저마다 고유의 Salt값을 보유 할 수 있도록 Sequelize ORM Migration을 통하여 DB 스키마를 수정해주었다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152745787-010fd874-9862-498b-9143-b7a079e312e6.png" alt="스크린샷, 2022-02-07 16-43-31" /></p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Users</code>테이블에 <code class="language-plaintext highlighter-rouge">userSalt</code> 컬럼을 추가해 주었다.</p>
+
+  <p>OAuth 2.0으로 회원가입시 <code class="language-plaintext highlighter-rouge">password</code>값을 받지 않고 있으므로 <code class="language-plaintext highlighter-rouge">NULL</code>을 허용해야 한다.</p>
+</blockquote>
+
+<p>이제 준비는 끝나었으니 회원가입시 비밀번호 암호화를 진행해보자.</p>
+
+<h4 id="3-1-문제점-1-해결">3-1. 문제점 1 해결</h4>
+<hr />
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+:ET
