@@ -1,0 +1,61 @@
+I"w	<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+
+<h2 id="refactoring">Refactoring</h2>
+
+<p>우선 Final Project만 대상이며 리팩토링 기간은 정해두지 않았다. <br />
+수료 이후 너무 헤이해지지 않도록 09:00 ~ 18:00 일정으로 팀원들과 다시 모여 프로젝트 결과물을 최소 보름~몇달간 재정비할 계획이다.</p>
+
+<p>리팩토링 우선순위를 정해보았으며 다음과 같다.</p>
+
+<h3 id="0️⃣-0순위">0️⃣ 0순위</h3>
+<hr />
+
+<ul>
+  <li><strong>[클라이언트]</strong> useEffect
+    <ul>
+      <li>중복 실행 현상 (콘서트 조회시 조회수가 1회 이상씩 올라가는 현상)</li>
+      <li>비동기 처리 구현 (ex. Loading 중인 표현)</li>
+    </ul>
+  </li>
+  <li><strong>[클라이언트]</strong> TypeScript 문법 체크
+    <ul>
+      <li>어색한 문법및 Type 누락 코드 유지보수 필요</li>
+    </ul>
+  </li>
+  <li><strong>[서버]</strong> 서버 보안
+    <ul>
+      <li>JWT 토큰인증 방식 사용시 해싱과정이 없다(특히 비밀번호 변경시 인증코드와 새로운 패스워드가 클라이언트에서 그대로 담겨서 서버로 전달된다).</li>
+      <li>보안에 중점둔 서버 설계 필요</li>
+    </ul>
+  </li>
+  <li><strong>[배포]</strong> browser 호환성
+    <ul>
+      <li>safari 가 안된다?? 도메인 문제인지 Check 필요</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+우선 큰 틀은 위과 같다. 해당 부분이 가장 취약하고 보완해야 할 사항으로 보인다.<br />
+이중 <strong>[클라이언트]</strong> TypeScript 문법 체크 &amp;&amp; <strong>[서버]</strong> 서버 보안 을 중점으로 Task를 가져갈 예정이다.</p>
+
+<p>보름 이내로 0순위 Task를 끝마치는게 1차 계획이다.</p>
+
+<h3 id="1️⃣-1순위">1️⃣ 1순위</h3>
+<hr />
+
+<ul>
+  <li><strong>[클라이언트]</strong> 모바일에서 랜딩페이지 뭉개지는거 고치기 <strong>- “선영”님</strong></li>
+  <li>[서버] AWS EC2 단독사용 x… Lamda? <strong>- “기쁨”님</strong></li>
+  <li>[클라이언트] 애니메이션 넣고 transition 넣기 <strong>- “선영”님</strong></li>
+</ul>
+
+<h1 id="2순위">2순위</h1>
+
+<ul>
+  <li>안쓰는 모듈 uninstall합시다 ㅎ0ㅎ - <strong>“모두”님</strong></li>
+</ul>
+
+<hr />
+:ET
