@@ -1,0 +1,65 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/152718557-af87a691-a231-4f0f-a603-a478fe17e795.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-문제점">1. 문제점</h3>
+<hr />
+<p>민감한 정보를 다룰 때 가장 중요한 부분은 바로 <strong><em>보안</em></strong> 이다.</p>
+
+<p>Final Project를 진행하며 보안에는 신경을 전혀 쓰지 않고 빠르게 기능적인 측면만 완성시키는데 급급하였다.
+그렇기에 당연히 보안에는 구멍이 너무나도 크게 뚫려있었고, 리팩토링 기간 동안 보안적인 측면에서 조금더 안전하게 민감정보들을 DB로 저장하는 방법을 찾아본 내용을 글로 남겨보았다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/152727053-d5bb15b0-0585-4ad9-8bad-afe23b59bd1d.jpg" /></center>
+<p><br /></p>
+
+<p>우선, 가장 심각한 문제를 꼽자면 클라이언트에서 받은 입력값들 혹은 서버에서 제공하는 인증코드들을 암호화 하지않고 그대로 DB로 저장을 하고 있다. 그렇기에 만약 DB가 해킹당하는 사태시에는 아무런 보호조치를 받지 못한채로 민감정보들이 그대로 유출이 될 수 밖에 없다.<br /></p>
+
+<p>최악의 경우 또한 대비해두어야 한다 생각한다. DB가 해킹되어 탈취 당했을 경우 최소한의 대처가 가능하도록 민감정보 암호화를 해보려 한다.</p>
+
+<h4 id="1-1-문제점-1">1-1. 문제점 1</h4>
+<hr />
+
+<p>우선 실제 코드를 다시 뜯어보고 가장 큰 보안 구멍 세군데를 찾아냈다.</p>
+
+<p>첫번째로는 회원가입시 클라이언트에서 받은 입력값을 암호화 하지않고 그대로 서버에서 DB로 저장을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152724691-bcc27a1d-ad7c-4390-ad0c-2d2889bb2220.png" alt="스크린샷, 2022-02-07 13-29-19" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">req.body</code>로 입력받은 <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">username</code>을 중복검사만 진행 한 뒤 아무런 암호화 작업없이 DB로 바로 집어 넣는다.</p>
+
+<p>솔직히 비밀번호를 입력받은 그대로 서버에서 DB로 저장하는 행위는 범죄 방조 행위와 비슷하다 생각한다.. <del>(분명히 문제가 될 여지가 있다는걸 알면서도 모른척 한 행위니까 😅)</del></p>
+
+<h4 id="1-2-문제점-2">1-2. 문제점 2</h4>
+<hr />
+
+<p>두번째로는 비밀번호 찾기 &amp; 콘친인증시 발송되는 6자리 난수코드 또한 암호화 하지않고 그대로 서버에서 DB로 저장을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152725583-d719287c-ad5e-4670-acc5-1d71928abcc8.png" alt="스크린샷, 2022-02-07 13-41-06" /></p>
+
+<p>물론 DB에 저장된 난수코드 값은 3분 이후 NULL로 초기화 되게끔 셋팅을 해두었기 때문에 위의 비밀번호를 그대로 DB에 저장하는 경우 보다는 위험성은 낮다. 하지만 위험의 여지가 있다는 사실은 변함이 없다.</p>
+
+<h4 id="1-2-문제점-3">1-2. 문제점 3</h4>
+<hr />
+
+<p>마지막 세번째로는 비밀번호 찾기 인증코드 입력 후 새로운 비밀번호 입력시 새로운 비밀번호 또한 암호화 하지않고 그대로 서버에서 DB로 저장을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/152726131-a6872096-1f35-452d-b8fd-2e73bf5087a9.png" alt="스크린샷, 2022-02-07 13-43-50" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">req.body</code>로 입력받은 <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">password</code>을 DB로 바로 집어 넣는다. 회원가입 부분과 유사하게 로직을 구성하였다 😅.</p>
+
+<p>실제로 소셜로그인 방식이 아닌 위와 같이 회원가입이 진행된 유저들의 DB는 다음처럼 보인다. <del>(테스트 계정입니다.)</del></p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/152727993-ef2867c5-9ecd-4c6b-8581-b16fdd38382e.png" /></center>
+<p><br /></p>
+
+<p>프로젝트 리팩토링 기간동안 가장 신경 못썼던 보안에 중점을 두고 수정해보려 한다.</p>
+
+<h3 id="2-crypto-vs-bcrypt">2. Crypto vs Bcrypt</h3>
+<hr />
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>도커를 왜 쓰는지 이유는 확실히 알았다. 서로 다른 배포환경에서 특정 환경에 종속되지 않고 개발과 배포를 원활히 이뤄질 수 있게 해주는 하나의 생태계이다.</p>
+
+<p><br />
+<br /></p>
+:ET
