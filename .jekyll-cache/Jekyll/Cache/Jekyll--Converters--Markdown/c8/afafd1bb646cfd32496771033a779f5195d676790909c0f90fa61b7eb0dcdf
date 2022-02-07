@@ -1,0 +1,310 @@
+I"o<p><img src="https://user-images.githubusercontent.com/83164003/131701318-f0ff36c4-1fcc-4f21-b978-18a9d8ec3386.jpg" alt="Algorithm" /></p>
+<h2 id="toy-43-shadowofpapers">TOY 43. shadowOfPapers</h2>
+<h3 id="문제">문제</h3>
+<hr />
+
+<p>좌표평면 위에 존재하는 수많은 직사각형에 대한 정보가 2차원 배열로 주어집니다. 이 직사각형들은 서로 겹처 있을(overlapping) 수 있습니다. 이 직사각형들이 이루는 면적을 리턴해야 합니다.</p>
+
+<p>문제를 다르게 표현하면 아래와 같습니다.</p>
+
+<blockquote>
+  <p>밑이 투명한 좌표평면 위에 직사각형 모양의 종이을 여러 개 올려놓고 위에서 빛을 비출 때 생기는 그림자의 넓이를 구해야 합니다.</p>
+</blockquote>
+
+<h3 id="입력">입력</h3>
+<hr />
+
+<h4 id="인자-1--papers">인자 1 : papers</h4>
+<ul>
+  <li>배열을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">papers.length</code>는 30 이하</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i]</code>는 <code class="language-plaintext highlighter-rouge">number</code> 타입을 요소로 갖는 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i]</code>는 차례대로 직사각형의 좌측 하단 모서리의 x좌표, y좌표, 너비(width), 높이(height)</li>
+  <li><code class="language-plaintext highlighter-rouge">papers[i][j]</code>는 10,000 이하의 양의 정수</li>
+</ul>
+
+<h3 id="출력">출력</h3>
+<hr />
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">number</code> 타입을 리턴해야 합니다.</li>
+</ul>
+
+<h3 id="입출력-예시">입출력 예시</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">shadowOfPapers</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 16</span>
+
+<span class="cm">/*
+4 | x x x x
+3 | x x x x 
+2 | x x x x 
+1 | x x x x 
+0 |   
+--------------
+    0 1 2 3 4 
+*/</span>
+
+<span class="nx">result</span> <span class="o">=</span> <span class="nx">shadowOfPapers</span><span class="p">([</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// --&gt; 36</span>
+<span class="cm">/*
+7 |   x x x x x
+6 |   x x x x x
+5 |   x x x x x
+4 |     x x x
+3 | x x x x x
+2 | x x x x x
+1 | x x x x
+0 | x x x x
+------------------
+    0 1 2 3 4 5 6 7
+*/</span>
+</code></pre></div></div>
+<h3 id="힌트">힌트</h3>
+<hr />
+
+<ul>
+  <li>인접 행렬로 좌표 평면을 생성하면 10,000 x 10,000의 2차원 행렬, 즉 1억개의 데이터를 생성해야 합니다. 대부분의 코딩 테스트에서 이는 공간 복잡도 요구 조건을 만족하지 못 합니다. 보통 코딩 테스트에서 메모리 사용량을 128MB ~ 512MB로 제한합니다. 64비트 정수(자바스크립트 <code class="language-plaintext highlighter-rouge">number</code> 타입)는 8바이트이므로, 전체 크기가 1천만개인 데이터들의 크기는 약 80MB 입니다. 메모리 사용량이 128MB라면 데이터가 2천만개만 넘어가도 테스트를 통과하지 못 합니다. 따라서 이 문제는 단순히 인접 행렬로 푸는 문제가 아니라는 것을 문제의 크기를 통해 추측할 수 있어야 합니다.</li>
+  <li>코딩 테스트의 입력 크기에 따른 시간 복잡도와 공간 복잡도 요구 사항에 대해서 학습하시기 바랍니다.</li>
+  <li>스위핑(sweeping) 알고리즘에 대해서 학습하시기 바랍니다.</li>
+</ul>
+
+<h2 id="toy-43-solution">TOY 43. Solution</h2>
+<h3 id="수도코드">수도코드</h3>
+<hr />
+
+<ul>
+  <li>최대 컬럼의 길이를 구한다.</li>
+  <li>papers 배열을 탐색 시작.
+    <ul>
+      <li>최대컬럼만큼의 배열을만들고 0을 넣는다. col</li>
+      <li>papers의 길이만큼만 탐색 시작.
+        <ul>
+          <li>구조분해할당으로 x, y, 너비, 높이를 할당한다.</li>
+          <li>row값이 0부터 세로로 넓이를 구할것이므로 rIdx와 x가 같다면 높이만큼 1을 찍어준다. 이후 x의 너비가 남았으면 다음 탐색에도 해당하는 높이를 찍어줘야하기 때문에 x + 1, 너비는 - 1을 해준다.</li>
+          <li>만일 해당 요소의 너비만큼 사용이 됐다면 버려주고, 그렇지 않으면 다시 2-2-3의 값을 papers에 넣어둔다.</li>
+          <li>papers의 길이만큼 탐색이 끝났다면 1의 개수를 sum에 더해주고 다음 row를 탐색해야 하기때문에 rIdx를 + 1 해준다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>최종 값이된 sum을 리턴.</li>
+</ul>
+
+<h3 id="문제풀이">문제풀이</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">shadowOfPapers</span><span class="p">(</span><span class="nx">papers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">maxC</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">papers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">]</span> <span class="o">=</span> <span class="nx">papers</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nx">maxC</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">maxC</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">oy</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">let</span> <span class="nx">rIdx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="nx">papers</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">maxC</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">papers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">]</span> <span class="o">=</span> <span class="nx">papers</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+      
+      <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="o">===</span><span class="nx">rIdx</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span><span class="o">=</span><span class="nx">y</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">y</span><span class="o">+</span><span class="nx">oy</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+          <span class="nx">col</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ox</span><span class="o">===</span><span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="k">else</span> <span class="nx">papers</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">ox</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oy</span><span class="p">]);</span>
+          
+      <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
+        <span class="nx">papers</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">ox</span><span class="p">,</span> <span class="nx">oy</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">let</span> <span class="nx">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">col</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">col</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">===</span><span class="mi">1</span><span class="p">)</span> <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">count</span><span class="p">;</span>
+    <span class="nx">rIdx</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+
+<p><strong>Reference Code</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">merge</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">,</span> <span class="nx">comparator</span> <span class="o">=</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">merged</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">leftIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">rightIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">size</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">leftIdx</span> <span class="o">&gt;=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">merged</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">rightIdx</span><span class="p">]);</span>
+      <span class="nx">rightIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span>
+      <span class="nx">rightIdx</span> <span class="o">&gt;=</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">||</span>
+      <span class="nx">comparator</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">leftIdx</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="nx">comparator</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">rightIdx</span><span class="p">])</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">merged</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">leftIdx</span><span class="p">]);</span>
+      <span class="nx">leftIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">merged</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">rightIdx</span><span class="p">]);</span>
+      <span class="nx">rightIdx</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">merged</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">mergeSort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">comparator</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">aux</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&gt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">start</span><span class="p">]];</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">aux</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">mid</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">aux</span><span class="p">(</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">end</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">,</span> <span class="nx">comparator</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">return</span> <span class="nx">aux</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="cm">/*
+모든 좌표가 아닌 높이가 변하는 부분만 계산한다.
+색종이에 대한 정보가 아래와 같이 주어졌을 때, 전체 면적을 구하는 알고리즘
+const papers = [
+  [0, 0, 4, 4],
+  [2, 1, 2, 6],
+  [1, 5, 5, 3],
+  [2, 2, 3, 3],
+];
+
+각 사각형의 시작과 끝을 범위(range) 표기로 각각 s(start), e(end)로 표시한다.
+e는 사각형이 끝나느 x좌표의 다음 좌표에 표기한다.
+7 |   x x x x x
+6 |   x x x x x
+5 |   s x x x x e
+4 |     x x x
+3 | x x x x x
+2 | x x s x x e
+1 | x x s x e
+0 | s x x x e
+------------------
+    0 1 2 3 4 5 6 7
+
+새로운 변화(시작 또는 끝)가 있을 때마다 면적을 계산하여 더한다.
+
+1) 4를 더한다. (면적은 4)
+7 |   
+6 |   
+5 |   
+4 |   
+3 | x 
+2 | x 
+1 | x 
+0 | s 
+------------------
+    0 1 2 3 4 5 6 7
+
+2) 7을 더한다. (면적은 11)
+7 |   x 
+6 |   x 
+5 |   s 
+4 |     
+3 |   x 
+2 |   x 
+1 |   x 
+0 |   x 
+------------------
+    0 1 2 3 4 5 6 7
+
+3) 16을 더한다. (면적은 27)
+7 |     x x 
+6 |     x x 
+5 |     x x 
+4 |     x x 
+3 |     x x 
+2 |     s x 
+1 |     s x 
+0 |     x x 
+------------------
+    0 1 2 3 4 5 6 7
+
+4) 6을 더한다. (면적은 33)
+7 |         x 
+6 |         x 
+5 |         x 
+4 |         x
+3 |         x
+2 |         x 
+1 |         
+0 |         
+------------------
+    0 1 2 3 4 5 6 7
+
+4) 3을 더한다. (면적은 36)
+7 |            x
+6 |            x
+5 |            x 
+4 |         
+3 |         
+2 |         
+1 |         
+0 |         
+------------------
+    0 1 2 3 4 5 6 7
+*/</span>
+<span class="kd">function</span> <span class="nx">shadowOfPapers</span><span class="p">(</span><span class="nx">papers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 주어진 사각형의 정보를 각 좌표의 시작과 끝을 나타내는 좌표로 변경하여 저장한다.</span>
+  <span class="kd">const</span> <span class="nx">coordinates</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">papers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">p</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">]</span> <span class="o">=</span> <span class="nx">p</span><span class="p">;</span>
+    <span class="c1">// 사각형의 시작점의 x좌표, 하단 y좌표, 상단 y좌표, 사각형의 시작을 알리는 flag</span>
+    <span class="nx">coordinates</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+    <span class="c1">// 사각형의 마지막점의 x좌표, 하단 y좌표, 상단 y좌표, 사각형의 마지막을 알리는 flag</span>
+    <span class="c1">// x좌표는 너비 계산에 누락을 방지하기 위해 범위로 저장한다.</span>
+    <span class="nx">coordinates</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="p">});</span>
+
+  <span class="c1">// x축을 기준으로 정렬한다.</span>
+  <span class="kd">const</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">coordinates</span><span class="p">,</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="c1">// 좌표 평면을 좌측에서 우측으로 순회하면서 매좌표까지 사각형이 차지하는 y좌표를 저장한다.</span>
+  <span class="kd">const</span> <span class="nx">height</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">10000</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span> <span class="nx">y</span> <span class="o">&lt;=</span> <span class="nx">sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span> <span class="nx">y</span><span class="o">++</span><span class="p">)</span> <span class="nx">height</span><span class="p">[</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 겹치는 부분을 제외하고 순수하게 높이만 구한다.</span>
+    <span class="kd">const</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">height</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">x2</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">x1</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="p">(</span><span class="nx">x2</span> <span class="o">-</span> <span class="nx">x1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">h</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">y1</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">y2</span> <span class="o">=</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+    <span class="c1">// 사각형은 서로 겹칠 수 있으므로, 누적값을 저장해야 한다.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">y1</span><span class="p">;</span> <span class="nx">y</span> <span class="o">&lt;=</span> <span class="nx">y2</span><span class="p">;</span> <span class="nx">y</span><span class="o">++</span><span class="p">)</span> <span class="nx">height</span><span class="p">[</span><span class="nx">y</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">sorted</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">3</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>우선은 <strong>Reference Code</strong>를 보고 이해하는 수준에서 마무리하였다.  <del>다시 풀어 볼 예정</del></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>TOY 44. TSP (travelling salesman problem)</li>
+</ul>
+:ET

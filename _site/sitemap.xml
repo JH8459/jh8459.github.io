@@ -2,6 +2,21 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>http://localhost:4000/til/22.02.07.til/</loc>
+      
+        <lastmod>2022-02-07T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+    </url>
+  
+    <url>
       <loc>http://localhost:4000/project/22.02.07.refactoring/</loc>
       
         <lastmod>2022-02-07T00:00:00+09:00</lastmod>
@@ -20,21 +35,6 @@
       <loc>http://localhost:4000/retrospect/22.01.28.Retrospect/</loc>
       
         <lastmod>2022-01-28T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-          <priority>1.0</priority>
-      
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/project/22.02.07.refactoring/</loc>
-      
-        <lastmod>2022-01-26T00:00:00+09:00</lastmod>
       
 
       
@@ -110,21 +110,6 @@
       <loc>http://localhost:4000/retrospect/21.12.13.retrospect/</loc>
       
         <lastmod>2021-12-13T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-          <priority>1.0</priority>
-      
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/til/21.12.09.til/</loc>
-      
-        <lastmod>2021-12-09T00:00:00+09:00</lastmod>
       
 
       
