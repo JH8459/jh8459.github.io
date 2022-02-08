@@ -5,8 +5,19 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Mon, 07 Feb 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>[Project] ALL-CON Refactoring 2일차</title>
+        
+        
+            <description>[Project] ALL-CON Refactoring 2일차</description>
+        
+        <pubDate>Tue, 08 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.08.refactoring/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.08.refactoring/</guid>
+      </item>
+    
 	<item>
 		<title>[TIL] Crypto 모듈로 비밀번호 암호화하기</title>
         
@@ -19,10 +30,10 @@
       </item>
     
 	<item>
-		<title>[Project] Final Project - Refactoring 1일차</title>
+		<title>[Project] ALL-CON Refactoring 1일차</title>
         
         
-            <description>[Project] Final Project - Refactoring 1일차</description>
+            <description>[Project] ALL-CON Refactoring 1일차</description>
         
         <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.07.refactoring/</link>
@@ -41,10 +52,10 @@
       </item>
     
 	<item>
-		<title>[Project] Final Project</title>
+		<title>[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</title>
         
         
-            <description>[Project] Final Project</description>
+            <description>[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</description>
         
         <pubDate>Wed, 26 Jan 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.01.26.Final-Project/</link>
@@ -104,17 +115,6 @@
         <pubDate>Wed, 08 Dec 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/21.12.08.retrospect/</link>
         <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.08.retrospect/</guid>
-      </item>
-    
-	<item>
-		<title>[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</title>
-        
-        
-            <description>[TIL] 1. 무료 도메인 주소를 이용한 AWS HTTPS 인증</description>
-        
-        <pubDate>Fri, 26 Nov 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/21.11.26.til/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/21.11.26.til/</guid>
       </item>
     
   </channel>
