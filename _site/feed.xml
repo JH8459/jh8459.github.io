@@ -8,6 +8,17 @@
 	<lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
+		<title>[TIL] Node.js 요청과 응답 (작성중)</title>
+        
+        
+            <description>[TIL] Node.js 요청과 응답</description>
+        
+        <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.02.09.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.02.09.til/</guid>
+      </item>
+    
+	<item>
 		<title>[Project] ALL-CON Refactoring 3일차</title>
         
         
@@ -104,17 +115,6 @@
         <pubDate>Fri, 24 Dec 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/21.12.24.Retrospect/</link>
         <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.24.Retrospect/</guid>
-      </item>
-    
-	<item>
-		<title>[Retrospect] 코드스테이츠 Project 시작</title>
-        
-        
-            <description>[Retrospect] 코드스테이츠 First Project 시작</description>
-        
-        <pubDate>Mon, 13 Dec 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/21.12.13.retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.13.retrospect/</guid>
       </item>
     
   </channel>
