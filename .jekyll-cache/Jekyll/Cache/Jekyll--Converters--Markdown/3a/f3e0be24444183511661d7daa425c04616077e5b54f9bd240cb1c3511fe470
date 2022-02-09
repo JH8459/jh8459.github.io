@@ -1,0 +1,25 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+<h2 id="refactoring">Refactoring</h2>
+
+<p>민감정보 암호화 Task는 모두 끝냈다.<br />
+다음 가져갈 Task로 로그아웃시 발생하는 에러 핸들링을 해보려한다.</p>
+
+<p>사실 에러가 발생하는 케이스가 흔하지 않아서 프로젝트기간에는 신경을 안썼는데, 대표적으로 다음에러가 발생하는 경우는 다음과 같다.</p>
+
+<ul>
+  <li>
+    <p>웹이나 모바일 환경에서 강제로 쿠키를 삭제 후 Logout시 발생</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/153110448-62615271-8a2c-4055-b3cd-59e80b7c1dbb.png" alt="스크린샷, 2022-02-09 11-28-57" /></p>
+  </li>
+</ul>
+
+<p>우선 위의 크롬환경에서 쿠키를 강제로 삭제하는 경우 <code class="language-plaintext highlighter-rouge">cookie</code>에 담긴 JWT Token값이 날아가기 때문에, 로그인 검증이 이뤄지지 않아 발생하는 에러이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/153110122-099531cf-6e6f-4deb-bce3-96c4f73d9f2a.png" alt="스크린샷, 2022-02-09 11-24-50" /></p>
+
+<p>현재 로그인 방식은 <code class="language-plaintext highlighter-rouge">cookie</code>에 JWT Token을 담아 인증하는 방식으로 로그인검증이 이루어지고 있다.</p>
+
+<p><br />
+<br /></p>
+:ET

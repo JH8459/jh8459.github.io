@@ -1,0 +1,67 @@
+I"D<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+<h2 id="refactoring">Refactoring</h2>
+
+<p>민감정보 암호화 Task는 모두 끝냈다.<br />
+다음 가져갈 Task로 로그아웃시 발생하는 에러 핸들링을 해보려한다.</p>
+
+<h3 id="문제점">문제점</h3>
+<hr />
+
+<p>현재 로그인 방식은 <code class="language-plaintext highlighter-rouge">cookie</code>에 JWT Token을 담아 인증하는 방식으로 로그인검증이 이루어지고 있으며, 로그아웃시에는 로그인 여부를 검증한 뒤, 쿠키를 만료시키는 방식으로 로그아웃 처리를 구현하였다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/153110704-f562c05e-890a-4512-a358-f2cc3e431102.png" alt="스크린샷, 2022-02-09 11-31-35" /></p>
+
+<p>로그아웃시 에러가 발생하는 대표적인 경우는 다음과 같다.</p>
+
+<ul>
+  <li>
+    <p>웹이나 모바일 환경에서 강제로 쿠키를 삭제 후 Logout시 발생</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/153110448-62615271-8a2c-4055-b3cd-59e80b7c1dbb.png" alt="스크린샷, 2022-02-09 11-28-57" /></p>
+  </li>
+</ul>
+
+<p>우선 위의 크롬환경에서 쿠키를 강제로 삭제하는 경우 <code class="language-plaintext highlighter-rouge">cookie</code>에 담긴 JWT Token값이 날아가기 때문에, 로그인 검증이 이뤄지지 않아 발생하는 에러이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/153110122-099531cf-6e6f-4deb-bce3-96c4f73d9f2a.png" alt="스크린샷, 2022-02-09 11-24-50" /></p>
+
+<p>검색 결과 우선 에러의 원인은 <strong>“서버가 클라이언트에 둘 이상의 응답을 보내려고 할 때 발생하는 에러”</strong> 였다.</p>
+
+<h3 id="문제-해결">문제 해결</h3>
+<hr />
+
+<p>우선 해결은 간단히 가능했다.</p>
+
+<p>키포인트는 <strong>“서버가 클라이언트에 둘 이상의 응답을 보내려고 할 때 발생하는 에러”</strong> 에러코드 그 자체가 정답이었다. <del>(기계는 거짓말을 하지않는다…)</del></p>
+
+<p>우선 로그아웃시 <code class="language-plaintext highlighter-rouge">userAuth</code> 미들웨어 함수가 호출된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 로그인 인증검사</span>
+<span class="k">await</span> <span class="nx">userAuth</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span> 
+</code></pre></div></div>
+
+<p>해당 함수로 로그인 여부가 검증이 이뤄지며 미들웨어 함수의 자세한 내용은 아래와 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/153112382-26f6e9dd-73c9-487e-bfa3-76c388d160e9.png" alt="스크린샷, 2022-02-09 11-42-11" /></p>
+
+<p>코드를 살펴보니 원인은 다음과 같았다.</p>
+
+<ul>
+  <li>쿠키를 강제로 파괴하는 경우 <code class="language-plaintext highlighter-rouge">client</code> 상태는 로그인 상태이지만 JWT 토큰값이 없는 상황.</li>
+  <li>JWT 토큰이 없는 상황에서 <code class="language-plaintext highlighter-rouge">userAuth</code> 미들웨어 함수를 거치며 <code class="language-plaintext highlighter-rouge">return</code>값으로 401번 에러코드 <code class="language-plaintext highlighter-rouge">json</code> 응답 결과를 반환함.</li>
+  <li>결국 로그아웃 API 요청이 들어왔을 경우 반환되는 <code class="language-plaintext highlighter-rouge">json</code>응답 결과값이 2개가 되어서 <strong>“서버가 클라이언트에 둘 이상의 응답을 보내려고 할 때 발생하는 에러”</strong>가 발생이 된다.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/153113003-73804868-4fb3-4b21-bff6-e0b5b285c9c3.png" alt="스크린샷, 2022-02-09 11-53-04" /></p>
+
+<p>우선은 로그인 인증검사 부분</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 로그인 인증검사</span>
+<span class="c1">// await userAuth(req, res); </span>
+</code></pre></div></div>
+
+<p>해당 코드를 주석처리하여서 에러 핸들링은 잡은듯하다.</p>
+
+<p><br />
+<br /></p>
+:ET
