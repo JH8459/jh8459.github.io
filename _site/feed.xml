@@ -5,13 +5,24 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>[TIL] Node.js 요청과 응답 (작성중)</title>
+		<title>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태시 리다이렉트</title>
         
         
-            <description>[TIL] Node.js 요청과 응답</description>
+            <description>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태시 리다이렉트</description>
+        
+        <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.10.refactoring/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.10.refactoring/</guid>
+      </item>
+    
+	<item>
+		<title>[TIL] Node.js - code: 'ERR_HTTP_HEADERS_SENT 에러 핸들링</title>
+        
+        
+            <description>[TIL] Node.js - code: 'ERR_HTTP_HEADERS_SENT 에러 핸들링</description>
         
         <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/til/22.02.09.til/</link>
@@ -19,10 +30,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 3일차</title>
+		<title>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</title>
         
         
-            <description>[Project] ALL-CON Refactoring 3일차</description>
+            <description>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</description>
         
         <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.09.refactoring/</link>
@@ -30,10 +41,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 2일차</title>
+		<title>[Project] ALL-CON Refactoring 2일차 - 민감정보 암호화</title>
         
         
-            <description>[Project] ALL-CON Refactoring 2일차</description>
+            <description>[Project] ALL-CON Refactoring 2일차 - 민감정보 암호화</description>
         
         <pubDate>Tue, 08 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.08.refactoring/</link>
@@ -52,10 +63,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 1일차</title>
+		<title>[Project] ALL-CON Refactoring 1일차 - 우선순위 선정</title>
         
         
-            <description>[Project] ALL-CON Refactoring 1일차</description>
+            <description>[Project] ALL-CON Refactoring 1일차 - 우선순위 선정</description>
         
         <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.07.refactoring/</link>
@@ -104,17 +115,6 @@
         <pubDate>Sat, 25 Dec 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/21.12.25.Project/</link>
         <guid isPermaLink="true">http://localhost:4000/project/21.12.25.Project/</guid>
-      </item>
-    
-	<item>
-		<title>[Retrospect] 코드스테이츠 First Project 회고</title>
-        
-        
-            <description>[Retrospect] 코드스테이츠 First Project 회고</description>
-        
-        <pubDate>Fri, 24 Dec 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/21.12.24.Retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.24.Retrospect/</guid>
       </item>
     
   </channel>
