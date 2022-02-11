@@ -1,0 +1,74 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/152718557-af87a691-a231-4f0f-a603-a478fe17e795.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+
+<p>Sequelize ORM을 사용하며 가장 편리한 점을 꼽는다면 마이그레이션을 선택할 것 같다.</p>
+
+<p>운영중인 서비스 중단없이 DB 스키마 모델을 변경한다던가 서비스 기획 및 설계단계에서 놓친 점을 나중에 추가할 때 DB를 갈아엎지 않고 수정할 수 있는 기능을 제공하는 마이그레이션은 써본 사람만 알 것이다.</p>
+
+<p>다만 사용빈도가 많지가 않아서 매번 사용할 때 마다 검색을 통하여 사용하였는데 이참에 블로그에 학습한 내용을 정리해서 내가 보려고 남겨본다.</p>
+
+<h3 id="1-migration">1. Migration</h3>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">Sequelize</code> 공식문서에서는 마이그레이션을 다음과 같이 설명하고 있다.</p>
+
+<blockquote>
+  <p>Just like you use <strong>version control</strong> systems such as <strong>Git</strong> to manage changes in your source code, you can use <strong>migrations</strong> to keep track of changes to the database. With migrations you can transfer your existing database into another state and vice versa: Those state transitions are saved in migration files, which describe how to get to the new state and how to revert the changes in order to get back to the old state.</p>
+</blockquote>
+
+<p>간단히 설명하자면 <strong>마이그레이션</strong>은 Git과 같은 버전 컨트롤 시스템으로써, 이를 데이터베이스에 적용하며 지원해준다.</p>
+
+<p>즉, 마이그레이션은 데이터베이스의 수정및 롤백을 버전 컨트롤 시스템 처럼 이용할 수 있게끔 지원하는 강력한 기능이다.</p>
+
+<h4 id="1-1-migration-생성">1-1. Migration 생성</h4>
+<hr />
+
+<p>마이그레이션은 필요할 때마다 생성할 수 있다. <br />
+스키마에 변경이 필요할 때(컬럼을 추가하거나, 기존 컬럼의 데이터 속성값을 변경할 때)마다 <code class="language-plaintext highlighter-rouge">migration.js</code> 파일을 생성하여 진행하는 것이다.</p>
+
+<p>우선 마이그레이션을 생성하는 명령어는 다음과 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span> <span class="nx">using</span> <span class="nx">npm</span>
+<span class="nx">npx</span> <span class="nx">sequelize</span><span class="o">-</span><span class="nx">cli</span> <span class="nx">migration</span><span class="p">:</span><span class="nx">generate</span> <span class="o">--</span><span class="nx">name</span> <span class="nx">생성할</span> <span class="nx">migration</span> <span class="nx">이름</span>
+<span class="err">#</span> <span class="nx">using</span> <span class="nx">yarn</span>
+<span class="nx">yarn</span> <span class="nx">sequelize</span><span class="o">-</span><span class="nx">cli</span> <span class="nx">migration</span><span class="p">:</span><span class="nx">generate</span> <span class="o">--</span><span class="nx">name</span> <span class="nx">생성할</span> <span class="nx">migration</span> <span class="nx">이름</span>
+</code></pre></div></div>
+
+<p>마이그레이션 파일을 보고 어떤 기능을 하는 코드인지 유추할 수 있을만한 이름만 입력해주면 생성이 된다.</p>
+
+<p>명령어를 입력시 아래와 같은 템플릿 코드가 제공이 된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">up</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */</span>
+  <span class="p">},</span>
+
+  <span class="na">down</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">up</code>은 마이그레이션을 담당하고 있으며, <code class="language-plaintext highlighter-rouge">down</code>은 마이그레이션 <code class="language-plaintext highlighter-rouge">undo</code> 기능(롤백)을 담당하고 있다.</p>
+
+<p>우선</p>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+:ET
