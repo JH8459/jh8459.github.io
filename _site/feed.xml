@@ -5,13 +5,24 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태시 리다이렉트</title>
+		<title>[Project] ALL-CON Refactoring 5일차 - 스키마 수정</title>
         
         
-            <description>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태시 리다이렉트</description>
+            <description>[Project] ALL-CON Refactoring 5일차 - 스키마 수정</description>
+        
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.11.refactoring/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.11.refactoring/</guid>
+      </item>
+    
+	<item>
+		<title>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</title>
+        
+        
+            <description>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</description>
         
         <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.10.refactoring/</link>
@@ -104,17 +115,6 @@
         <pubDate>Tue, 25 Jan 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/22.01.25.Retrospect/</link>
         <guid isPermaLink="true">http://localhost:4000/retrospect/22.01.25.Retrospect/</guid>
-      </item>
-    
-	<item>
-		<title>[Project] First Project</title>
-        
-        
-            <description>[Project] First Project</description>
-        
-        <pubDate>Sat, 25 Dec 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/21.12.25.Project/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/21.12.25.Project/</guid>
       </item>
     
   </channel>
