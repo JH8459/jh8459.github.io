@@ -5,8 +5,19 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>[Project] ALL-CON Refactoring 6일차 - (클라이언트) 우선순위 선정</title>
+        
+        
+            <description>[Project] ALL-CON Refactoring 6일차 - (클라이언트) 우선순위 선정</description>
+        
+        <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.14.refactoring/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.14.refactoring/</guid>
+      </item>
+    
 	<item>
 		<title>[TIL] Sequelize Migration</title>
         
@@ -19,10 +30,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 5일차 - 스키마 수정</title>
+		<title>[Project] ALL-CON Refactoring 5일차 - (서버) 스키마 수정</title>
         
         
-            <description>[Project] ALL-CON Refactoring 5일차 - 스키마 수정</description>
+            <description>[Project] ALL-CON Refactoring 5일차 - (서버) 스키마 수정</description>
         
         <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.11.refactoring/</link>
@@ -30,10 +41,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</title>
+		<title>[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증</title>
         
         
-            <description>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</description>
+            <description>[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증</description>
         
         <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.10.refactoring/</link>
@@ -52,10 +63,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</title>
+		<title>[Project] ALL-CON Refactoring 3일차 - (서버) 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</title>
         
         
-            <description>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</description>
+            <description>[Project] ALL-CON Refactoring 3일차 - (서버) 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</description>
         
         <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.09.refactoring/</link>
@@ -63,10 +74,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 2일차 - 민감정보 암호화</title>
+		<title>[Project] ALL-CON Refactoring 2일차 - (서버) 민감정보 암호화</title>
         
         
-            <description>[Project] ALL-CON Refactoring 2일차 - 민감정보 암호화</description>
+            <description>[Project] ALL-CON Refactoring 2일차 - (서버) 민감정보 암호화</description>
         
         <pubDate>Tue, 08 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.08.refactoring/</link>
@@ -85,10 +96,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 1일차 - 우선순위 선정</title>
+		<title>[Project] ALL-CON Refactoring 1일차 - (서버) 우선순위 선정</title>
         
         
-            <description>[Project] ALL-CON Refactoring 1일차 - 우선순위 선정</description>
+            <description>[Project] ALL-CON Refactoring 1일차 - (서버) 우선순위 선정</description>
         
         <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.07.refactoring/</link>
@@ -104,17 +115,6 @@
         <pubDate>Fri, 28 Jan 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/22.01.28.Retrospect/</link>
         <guid isPermaLink="true">http://localhost:4000/retrospect/22.01.28.Retrospect/</guid>
-      </item>
-    
-	<item>
-		<title>[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</title>
-        
-        
-            <description>[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</description>
-        
-        <pubDate>Wed, 26 Jan 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.01.26.Final-Project/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.01.26.Final-Project/</guid>
       </item>
     
   </channel>
