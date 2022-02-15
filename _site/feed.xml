@@ -8,14 +8,25 @@
 	<lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>[Project] ALL-CON Refactoring 6일차 - (클라이언트) 우선순위 선정</title>
+		<title>[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정</title>
         
         
-            <description>[Project] ALL-CON Refactoring 6일차 - (클라이언트) 우선순위 선정</description>
+            <description>[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정</description>
         
         <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.02.14.refactoring/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.02.14.refactoring/</guid>
+        <link>http://localhost:4000/project/22.02.15.refactoring/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.15.refactoring/</guid>
+      </item>
+    
+	<item>
+		<title>[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)</title>
+        
+        
+            <description>[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)</description>
+        
+        <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.14.Project/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.14.Project/</guid>
       </item>
     
 	<item>
@@ -30,10 +41,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 5일차 - (서버) 스키마 수정</title>
+		<title>[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)</title>
         
         
-            <description>[Project] ALL-CON Refactoring 5일차 - (서버) 스키마 수정</description>
+            <description>[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)</description>
         
         <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.11.refactoring/</link>
@@ -104,17 +115,6 @@
         <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.07.refactoring/</link>
         <guid isPermaLink="true">http://localhost:4000/project/22.02.07.refactoring/</guid>
-      </item>
-    
-	<item>
-		<title>[Retrospect] 코드스테이츠 34기 수료</title>
-        
-        
-            <description>[Retrospect] 코드스테이츠 34기 수료</description>
-        
-        <pubDate>Fri, 28 Jan 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/22.01.28.Retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/22.01.28.Retrospect/</guid>
       </item>
     
   </channel>

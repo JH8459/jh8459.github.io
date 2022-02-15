@@ -1,0 +1,788 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2) | JHLog</title>
+<meta name="description" content="[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)">
+
+
+  <meta name="author" content="JH 🤔">
+  
+  <meta property="article:author" content="JH 🤔">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)">
+<meta property="og:url" content="http://localhost:4000/project/22.02.14.Project/">
+
+
+  <meta property="og:description" content="[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/project/22.02.14.Project/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH 🤔",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/"><b>카테고리</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/"><b>포스트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/"><b>프로젝트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/"><b>ABOUT</b></a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#project" itemprop="item"><span itemprop="name">Project</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH 🤔" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">JH 🤔</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>Hello World !</strong><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Study Log 📖</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#project">Project</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">ETC ⚙️</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#blog">Blog</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/about/"><span class="nav__sub-title">ABOUT</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)">
+    <meta itemprop="description" content="[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)">
+    <meta itemprop="datePublished" content="2022-02-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/project/22.02.14.Project/" class="u-url" itemprop="url">[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-14T00:00:00+09:00">February 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#refactoring">Refactoring</a><ul><li><a href="#1-보완이-필요한-사항">1. 보완이 필요한 사항</a></li><li><a href="#2-문제-해결">2. 문제 해결</a><ul><li><a href="#2-1-sequelize-model-파일-스키마-수정--addcolumn-함수를-통한-마이그레이션">2-1. Sequelize Model 파일 스키마 수정 &amp;&amp; addColumn() 함수를 통한 마이그레이션</a></li><li><a href="#2-2-concertcleaner-함수-및-controller-변경">2-2. concertCleaner() 함수 및 Controller 변경</a></li></ul></li><li><a href="#3-결과">3. 결과</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+<h2 id="refactoring">Refactoring</h2>
+
+<p>ALL-CON에서는 한달간의 콘서트 정보만 <code class="language-plaintext highlighter-rouge">allConcerts</code> 배열에 담아 보여주고 있다.<br />
+한달이 지나게되면 콘서트 정보중 <code class="language-plaintext highlighter-rouge">activation</code>이 <code class="language-plaintext highlighter-rouge">0</code>으로 비활성화되어 서버에서 보여주지 않고 있다. <del>(콘서트 삭제는 관련 댓글 및 게시글들이 모두 삭제되므로 비활성화를 선택)</del></p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154025834-c3427f3f-4758-4c4a-bc77-4c219faa9844.png" alt="스크린샷, 2022-02-15 17-45-59" /></p>
+
+<p>기존에는 콘서트가 비활성화 될 시 관련 게시글은 조회수를 <code class="language-plaintext highlighter-rouge">-999999</code> 음수값으로 강제로 할당하여 조회수로 검색시 맨 뒤로 나열되게끔 수정해주었으나 만약 불순한(?) 목적으로 조회수를 올리거나 시간이 오래지나 조회수가 <code class="language-plaintext highlighter-rouge">0</code> 이상의 양수값으로 전환된다면 올바르지 않은 결과가 초래되므로 <code class="language-plaintext highlighter-rouge">Articles</code> 테이블에도 <code class="language-plaintext highlighter-rouge">activation</code> 컬럼값을 추가해 비활성화 해주기로 했다.</p>
+
+<h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">Articles</code> 테이블의 현재 스키마는 다음과 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154025162-0730e711-8b2f-4946-962b-b5b3ab09d166.png" alt="스크린샷, 2022-02-15 17-44-23" /></p>
+
+<p>해당 <code class="language-plaintext highlighter-rouge">Articles</code> 테이블 컬럼중 <code class="language-plaintext highlighter-rouge">activation</code> 컬럼값을 추가하고,  서버에서 <code class="language-plaintext highlighter-rouge">nodeSchedule</code>을 통하여 1일 1회 티켓 발매 후 한달이 지난 콘서트들은 비활성화를 시키는데 해당 콘서트에 종속된 게시글들 또한 모두 비활성화 진행이 필요하다.</p>
+
+<h3 id="2-문제-해결">2. 문제 해결</h3>
+<hr />
+<h4 id="2-1-sequelize-model-파일-스키마-수정--addcolumn-함수를-통한-마이그레이션">2-1. Sequelize Model 파일 스키마 수정 &amp;&amp; addColumn() 함수를 통한 마이그레이션</h4>
+<hr />
+
+<p>어제 학습한 내용대로 <code class="language-plaintext highlighter-rouge">addColumn()</code> 함수를 통해 마이그레이션으로 <code class="language-plaintext highlighter-rouge">Articles</code> 테이블의 스키마를 수정해주었다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">up</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">queryInterface</span><span class="p">.</span><span class="nx">addColumn</span><span class="p">(</span><span class="dl">"</span><span class="s2">Articles</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">activation</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BOOLEAN</span><span class="p">,</span>
+    <span class="na">allowNull</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">defaultValue</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>초기값은 <code class="language-plaintext highlighter-rouge">true</code>로 설정 (티켓 오픈 후 한달이 지난 콘서트 게시글은 <code class="language-plaintext highlighter-rouge">false</code>로 비활성화 된다.) , 데이터 타입과 옵션을 설정해주었다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154092908-57a17a67-2d42-4d7d-9c59-b38e3439b348.png" alt="스크린샷, 2022-02-16 00-23-06" /></p>
+
+<p>스키마를 수정했기 때문에 기존 게시글들을 수동으로 하나하나 데이터 값을 수정해줘야 하나 싶었는데, <code class="language-plaintext highlighter-rouge">defaultValue</code>값을 <code class="language-plaintext highlighter-rouge">true</code>로 준 탓인지 기존 게시글들도 모두 <code class="language-plaintext highlighter-rouge">activation</code> 컬럼의 값이 <code class="language-plaintext highlighter-rouge">true</code>로 활성화되었다. <del>(휴…)</del></p>
+
+<h4 id="2-2-concertcleaner-함수-및-controller-변경">2-2. concertCleaner() 함수 및 Controller 변경</h4>
+<hr />
+
+<p>매일 오전 09시에 서버에서는 콘서트 정보를 <code class="language-plaintext highlighter-rouge">concertCleaner()</code> 함수를 통해서 티켓 오픈일이 한달 지난 콘서트 DB의 <code class="language-plaintext highlighter-rouge">activation</code>을 <code class="language-plaintext highlighter-rouge">false</code>로 바꾸어 주고 있다.<br />
+여기에 더불어 해당 콘서트에 종속된 게시글 DB들의 <code class="language-plaintext highlighter-rouge">activation</code> 또한 함께 <code class="language-plaintext highlighter-rouge">false</code>로 바꾸어 주었다.</p>
+
+<p>또한, 이제는 Controller 또한 수정하여 게시글을 뱉어주는 요청이 들어온다면, <code class="language-plaintext highlighter-rouge">order</code>값을 내림차순으로 주어서 <code class="language-plaintext highlighter-rouge">activation</code>이 <code class="language-plaintext highlighter-rouge">false</code>인 게시물은 후순위로 밀리게끔 설계하였다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/154095571-20c8416e-30e4-4e4c-b665-6a5962839808.png" /></center>
+
+<h3 id="3-결과">3. 결과</h3>
+<hr />
+
+<p>클라이언트에서 이제 조회수순으로 정렬을 하여도 <code class="language-plaintext highlighter-rouge">order</code>의 우선순위가 <code class="language-plaintext highlighter-rouge">activation</code> 내림차순이기 때문에 비활성화된 콘서트에 종속된 게시물들을 후순위로 밀리게 설계하였다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154096234-6ea10a8a-a7df-4501-9575-71ded1c491d6.png" alt="스크린샷, 2022-02-16 00-40-09" /></p>
+
+<p>콘서트가 비활성화되어 목록에서는 사라졌지만 게시글은 후순위로 밀렸을 뿐이라서 조회/수정/삭제 처리는 가능한 상태이다.<br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154100340-9819feb2-da3c-4216-b2e3-8e67231f199b.png" alt="스크린샷, 2022-02-16 00-59-54" /></p>
+
+<p><del>위 사진과 같이 상단 콘서트 목록은 공백으로 보여지고 있다.</del></p>
+
+<p>빈 콘서트 목록 처리를 어떻게 해야할지 클라이언트를 담당한 팀원분과 조율해서 내일까지 Task를 가져가야 할 듯 하다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#project" class="page__taxonomy-item p-category" rel="tag">Project</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-14T00:00:00+09:00">February 14, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/22.02.11.til/" class="pagination--pager" title="[TIL] Sequelize Migration
+">이전</a>
+    
+    
+      <a href="/project/22.02.15.refactoring/" class="pagination--pager" title="[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/22.02.15.refactoring/" rel="permalink">[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-14T00:00:00+09:00">February 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.02.11.til/" rel="permalink">[TIL] Sequelize Migration
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-11T00:00:00+09:00">February 11, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] Sequelize Migration
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/22.02.11.refactoring/" rel="permalink">[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-11T00:00:00+09:00">February 11, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/22.02.10.refactoring/" rel="permalink">[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-10T00:00:00+09:00">February 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 JH 🤔. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'JH8459/JH8459.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,804 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정 | JHLog</title>
+<meta name="description" content="[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정">
+
+
+  <meta name="author" content="JH 🤔">
+  
+  <meta property="article:author" content="JH 🤔">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정">
+<meta property="og:url" content="http://localhost:4000/project/22.02.15.refactoring/">
+
+
+  <meta property="og:description" content="[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/project/22.02.15.refactoring/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH 🤔",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/"><b>카테고리</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/"><b>포스트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/"><b>프로젝트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/"><b>ABOUT</b></a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#project" itemprop="item"><span itemprop="name">Project</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH 🤔" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">JH 🤔</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>Hello World !</strong><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Study Log 📖</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#project">Project</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">ETC ⚙️</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#blog">Blog</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/about/"><span class="nav__sub-title">ABOUT</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정">
+    <meta itemprop="description" content="[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정">
+    <meta itemprop="datePublished" content="2022-02-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/project/22.02.15.refactoring/" class="u-url" itemprop="url">[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-14T00:00:00+09:00">February 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#refactoring">Refactoring</a><ul><li><a href="#1️⃣-1순위">1️⃣ 1순위</a></li><li><a href="#2️⃣-2순위">2️⃣ 2순위</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+<h2 id="refactoring">Refactoring</h2>
+
+<p>저번 한 주 동안 서버에서 우선적으로 리팩토링이 필요한 부분을 선정했었던 Task들을 모두 끝마쳤다.</p>
+<ul>
+  <li><a href="https://jh8459.github.io/project/22.02.07.refactoring/">[Project] ALL-CON Refactoring 1일차 - (서버) 우선순위 선정</a></li>
+  <li><a href="https://jh8459.github.io/project/22.02.08.refactoring/">[Project] ALL-CON Refactoring 2일차 - (서버) 민감정보 암호화</a></li>
+  <li><a href="https://jh8459.github.io/project/22.02.09.refactoring/">[Project] ALL-CON Refactoring 3일차 - (서버) 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</a></li>
+  <li><a href="https://jh8459.github.io/project/22.02.10.refactoring/">[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증</a></li>
+  <li><a href="https://jh8459.github.io/project/22.02.11.refactoring/">[Project] ALL-CON Refactoring 5일차 - (서버) 스키마 수정</a></li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<p>기존 서버의 코드를 고치는데 2주의 기간을 예상하였는데 생각보다 빠르게 진행되었다.</p>
+
+<p>물론 <code class="language-plaintext highlighter-rouge">sokect.io</code>등 추가하고 싶은 기능들도 많지만 <strong>“기존 코드의 버그부터 수정하자”</strong>가 팀원들 모두 입을 모아 낸 의견이였기에 더 이상의 기능 추가는 욕심이라 생각된다.</p>
+
+<p>리팩토링 기간을 2주 가량 예정하였는데 약속한 기간 중 이번 한 주 1주일가량 기간이 남았다.<br /> 
+그래서 클라이언트에서 내가 작성한 코드들을 유지보수 해보기로 결정하였으며, 그 중 리팩토링이 필요한 부분 우선순위를 정리해 보았다.
+<br /></p>
+
+<h3 id="1️⃣-1순위">1️⃣ 1순위</h3>
+<hr />
+
+<ul>
+  <li><strong>[클라이언트]</strong> TypeScript 문법 체크
+    <ul>
+      <li>어색한 문법및 Type 누락 코드 유지보수 필요</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<p>우선적으로 선택한 Task는 위과 같다. <br />
+사실 <strong>TypeScript</strong> 언어를 처음 사용하기도 했으며, 타입에 관하여 깊게 생각하지 않고 작성한 코드가 많다.</p>
+
+<p>깊게 학습하고 쓴 코드가 아니기때문에 많은 수정및 보완이 필요할 듯 하다.</p>
+
+<p>1~2일 이내로 1순위 Task를 끝마치는게 1차 계획이다.</p>
+
+<h3 id="2️⃣-2순위">2️⃣ 2순위</h3>
+<hr />
+
+<ul>
+  <li><strong>[클라이언트]</strong> useEffect
+    <ul>
+      <li>중복 실행 현상 (콘서트 조회시 조회수가 1회 이상씩 올라가는 현상)</li>
+      <li>비동기 처리 구현 (ex. Loading 중인 표현)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<p>다음으로 시급한 리팩토링 대상은 위와 같다.<br />
+이중 <strong>중복 실행 현상</strong>(콘서트 조회시 조회수가 1회 이상씩 올라가는 현상)을 우선적으로 Task를 가져갈 예정이다.</p>
+
+<p>우선 해당 현상이 일어나는 이유는 컴포넌트 생명주기에 관련된 내용으로 예상된다.<br />
+처음 작성 할 때 부터 인지하고있었으나, 다시 뜯어고치기에는 프로젝트 마감에 쫓겨 손을 대지 못한채 덮어두었었다.</p>
+
+<p>이 내용에 관해서는 깊게 공부해 볼 생각까진 없었으나 내가 작성한 코드만큼은 내가 설명할 수 있어야 된다고 생각한다.</p>
+
+<p>잘못 작성한 코드라는건 인지하고 있었기에 개념정도를 다시 확실히 정리 한 뒤 다시 수정해보고 싶어서 선정하였다.</p>
+
+<p>그리고 마지막으로 가져갈 Task는 비동기 처리시 로딩중인 표현을 구현 해 볼 예정이다.</p>
+
+<p>이 부분은 어려운 내용은 아닐꺼라 생각된다.<br />
+다만, 비동기 처리시 로딩 표현은 전반적인 서비스의 퀄리티가 많이 향상 될 듯하여 선정해보았다.</p>
+
+<hr />
+
+<p>우선 오늘은 기존에 내가 작성한 클라이언트쪽 코드 중 유지보수가 필요한 곳들의 우선순위를 점검하였으며, 코드를 수정하기전, 필요한 부분들을 먼저 학습부터 해볼 예정이다.
+오늘은 <strong>TypeScript</strong> 문법을 찾아본 뒤 스스로 정리하는 시간을 가져보려 한다.</p>
+
+<p>본격적인 코드수정 작업은 내일부터 해야겠다.
+<br />
+<br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#project" class="page__taxonomy-item p-category" rel="tag">Project</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-14T00:00:00+09:00">February 14, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/project/22.02.14.Project/" class="pagination--pager" title="[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/22.02.14.Project/" rel="permalink">[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-14T00:00:00+09:00">February 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.02.11.til/" rel="permalink">[TIL] Sequelize Migration
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-11T00:00:00+09:00">February 11, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] Sequelize Migration
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/22.02.11.refactoring/" rel="permalink">[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-11T00:00:00+09:00">February 11, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project/22.02.10.refactoring/" rel="permalink">[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-10T00:00:00+09:00">February 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 JH 🤔. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'JH8459/JH8459.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
