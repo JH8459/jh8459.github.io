@@ -9,8 +9,11 @@ toc_label: ABOUT
 ![header](https://capsule-render.vercel.app/api?type=waving&color=6F777D&height=200&section=header&text=ABOUT&#160;JH&#160;🤔&fontColor=FFFFFF&fontSize=25)
 
 ---
- Node.js Express 프레임워크 기반 웹 서버 개발과 AWS를 이용한 배포가 가능하며,
-RESTful API 구조와 RDBMS 설계에 관심이 많은  백엔드 개발자 **JH**입니다.
+
+<div align="center">
+ Node.js Express 프레임워크 기반 웹 서버 개발과<br>AWS를 이용한 배포가 가능하며,<br><br>
+	RESTful API 구조와 RDBMS 설계에 관심이 많은<br> 백엔드 개발자 <b>JH</b>입니다.
+</div>
 
 ## 💪 Strong 
 <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>

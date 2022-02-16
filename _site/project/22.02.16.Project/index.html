@@ -405,9 +405,10 @@
         <p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
 
 <h2 id="refactoring">Refactoring</h2>
-<p>DB의 시간이 맞지 않는 문제가 계속 발생하고 있다.</p>
+<p>현재 ALL-CON 프로젝트의 DB 서버는 <strong>AWS RDS</strong>를 사용하고 있다.</p>
 
-<p>DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉-부산</strong>의 <code class="language-plaintext highlighter-rouge">open_date</code>(티켓오픈일) 값은 다음과 같다.</p>
+<p>DB의 서버시간이 맞지 않는 문제가 계속 발생하고 있다.<br />
+DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉-부산</strong>의 <code class="language-plaintext highlighter-rouge">open_date</code>(티켓오픈일) 값은 다음과 같다.</p>
 
 <table>
   <thead>
@@ -469,7 +470,7 @@
 
 <p>RDS time_zone 설정을 바꾸었다고 기존 DB들이 저장된 시간값이 바뀌진 않기에 기존 DB는 수동으로  시간값을 “-9시간” 수정해주어야 할 듯 하다.</p>
 
-<p>또한 기존의 9시간의 간격을 메꾸기 위해 억지로 <code class="language-plaintext highlighter-rouge">open_date</code>값을 수정해주는 로직들이 많아서 관련 코드는 내일 수정을 해 볼 예정이다.</p>
+<p>또한 기존의 9시간의 간격을 메꾸기 위해 억지로 <code class="language-plaintext highlighter-rouge">open_date</code>값을 수정해주는 얽힌 코드들은 내일 마저 수정 할 예정이다.</p>
 
         
       </section>
