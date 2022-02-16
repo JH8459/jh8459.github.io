@@ -1,0 +1,69 @@
+I"F*<p><img src="https://user-images.githubusercontent.com/83164003/152718557-af87a691-a231-4f0f-a603-a478fe17e795.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+
+<p>시퀄라이즈는 SQL문을 JavaScript 환경에서 객체로 작성할 수 있는 ORM(Object Relational Mapping)이다.</p>
+
+<p>여러 문법중 Op라는 연산자를 사용하는 문법에 대해 학습한 내용을 정리해 보았다.</p>
+
+<h3 id="1-op">1. Op</h3>
+<hr />
+
+<p>Op 연산자는 <code class="language-plaintext highlighter-rouge">where</code>객체 안에서 쓰이는 <a href="https://developer.mozilla.org/ko/docs/Glossary/Symbol">Symbol</a> 타입의 연산자이다.</p>
+
+<p>해당 연산자를 사용하여 복잡한 비교 연산을 지원해준다.<br />
+공식문서에서 설명하는 연사자는 다음 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Logical operator</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">and</span><span class="p">]:</span> <span class="p">[{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}],</span>  <span class="c1">// (a = 5) &amp;&amp; (b = 6)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}],</span>  <span class="c1">// (a = 5) || (b = 6)</span>
+
+<span class="c1">// Basics</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">eq</span><span class="p">]:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1">// = 3</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">ne</span><span class="p">]:</span> <span class="mi">20</span><span class="p">,</span>  <span class="c1">// != 20</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">is</span><span class="p">]:</span> <span class="kc">null</span><span class="p">,</span>  <span class="c1">// IS NULL</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">not</span><span class="p">]:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// IS NOT TRUE</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>  <span class="c1">// (someAttribute = 5) OR (someAttribute = 6)</span>
+
+<span class="c1">// Using dialect specific column identifiers (PG in the following example):</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">col</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">user.organization_id</span><span class="dl">'</span><span class="p">,</span>        <span class="c1">// = "user"."organization_id"</span>
+
+<span class="c1">// Number comparisons</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gt</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1">// &gt; 6</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gte</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1">// &gt;= 6</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1">// &lt; 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lte</span><span class="p">]:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1">// &lt;= 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">between</span><span class="p">]:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>  <span class="c1">// BETWEEN 6 AND 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notBetween</span><span class="p">]:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>  <span class="c1">// NOT BETWEEN 11 AND 15</span>
+
+<span class="c1">// Other operators</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">all</span><span class="p">]:</span> <span class="nx">sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="dl">'</span><span class="s1">SELECT 1</span><span class="dl">'</span><span class="p">),</span> <span class="c1">// &gt; ALL (SELECT 1)</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="k">in</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// IN [1, 2]</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notIn</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// NOT IN [1, 2]</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notLike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE 'hat%'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">substring</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat%'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iLike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// ILIKE '%hat' (case insensitive) (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notILike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT ILIKE '%hat'  (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">regexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// REGEXP/~ '^[h|a|t]' (MySQL/PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT REGEXP/!~ '^[h|a|t]' (MySQL/PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// ~* '^[h|a|t]' (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notIRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// !~* '^[h|a|t]' (PG only)</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">any</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1">// ANY ARRAY[2, 3]::INTEGER (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">match</span><span class="p">]:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">fn</span><span class="p">(</span><span class="dl">'</span><span class="s1">to_tsquery</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fat &amp; rat</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// match text search for strings 'fat' and 'rat' (PG only)</span>
+
+<span class="c1">// In Postgres, Op.like/Op.iLike/Op.notLike can be combined to Op.any:</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">any</span><span class="p">]:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">]</span> <span class="p">}</span>  <span class="c1">// LIKE ANY ARRAY['cat', 'hat']</span>
+</code></pre></div></div>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+:ET
