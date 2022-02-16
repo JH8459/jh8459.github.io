@@ -1,0 +1,40 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+
+<h2 id="refactoring">Refactoring</h2>
+<p>DB의 시간이 맞지 않는 문제가 계속 발생하고 있다.</p>
+
+<p>DB 서버에 저장되는 **포르테 디 콰트로 콘서트 <메타포닉> - 부산**의 `open_date` (티켓오픈일)의 값은 다음과 같다.</메타포닉></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>open_date</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022-02-22 23:00:00</td>
+      <td>포르테 디 콰트로 콘서트 <메타포닉> - 부산</메타포닉></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>하지만 인터파크 티켓에서 기재된 티켓오픈일 정보는 아래와 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154224099-785d11be-21dc-4b9f-b240-77bf0ee109f6.png" alt="스크린샷, 2022-02-16 17-21-00" /></p>
+
+<p>억지로 시간을 조정해주어서 우선 도메인에서는 정상적으로 보이지만,</p>
+
+<h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
+<hr />
+
+<h3 id="2-문제-해결">2. 문제 해결</h3>
+<hr />
+
+<h4 id="2-1">2-1.</h4>
+<hr />
+
+<h3 id="3-결과">3. 결과</h3>
+<hr />
+:ET

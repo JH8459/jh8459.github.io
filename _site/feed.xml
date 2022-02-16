@@ -8,10 +8,10 @@
 	<lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>[Project] ALL-CON Refactoring 8일차 - (서버) DB timezone 수정 (작성중)</title>
+		<title>[Project] ALL-CON Refactoring 8일차 - DB timezone 수정 (작성중)</title>
         
         
-            <description>[Project] ALL-CON Refactoring 8일차 - (서버) DB timezone 수정</description>
+            <description>[Project] ALL-CON Refactoring 8일차 - DB timezone 수정</description>
         
         <pubDate>Wed, 16 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.16.Project/</link>
@@ -30,10 +30,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 7일차 - (서버) 티켓 오픈 임박예정 콘서트 정보만 보여주기</title>
+		<title>[Project] ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</title>
         
         
-            <description>[Project] ALL-CON Refactoring 7일차 - (서버) 티켓 오픈 임박예정 콘서트 정보만 보여주기</description>
+            <description>[Project] ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</description>
         
         <pubDate>Tue, 15 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.15.Project/</link>
@@ -41,10 +41,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)</title>
+		<title>[Project] ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)</title>
         
         
-            <description>[Project] ALL-CON Refactoring 6일차 - (서버) Articles 테이블 스키마 수정(2)</description>
+            <description>[Project] ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)</description>
         
         <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.14.Project/</link>
@@ -63,10 +63,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)</title>
+		<title>[Project] ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)</title>
         
         
-            <description>[Project] ALL-CON Refactoring 5일차 - (서버) Articles 테이블 스키마 수정(1)</description>
+            <description>[Project] ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)</description>
         
         <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.11.refactoring/</link>
@@ -74,10 +74,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증</title>
+		<title>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</title>
         
         
-            <description>[Project] ALL-CON Refactoring 4일차 - (서버) 유효하지 않은 로그인 상태 검증</description>
+            <description>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</description>
         
         <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.10.refactoring/</link>
@@ -96,10 +96,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 3일차 - (서버) 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</title>
+		<title>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</title>
         
         
-            <description>[Project] ALL-CON Refactoring 3일차 - (서버) 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</description>
+            <description>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</description>
         
         <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.09.refactoring/</link>
@@ -107,10 +107,10 @@
       </item>
     
 	<item>
-		<title>[Project] ALL-CON Refactoring 2일차 - (서버) 민감정보 암호화</title>
+		<title>[Project] ALL-CON Refactoring 2일차 - 민감정보 암호화</title>
         
         
-            <description>[Project] ALL-CON Refactoring 2일차 - (서버) 민감정보 암호화</description>
+            <description>[Project] ALL-CON Refactoring 2일차 - 민감정보 암호화</description>
         
         <pubDate>Tue, 08 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.08.refactoring/</link>
