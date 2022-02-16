@@ -1,0 +1,23 @@
+I"<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+
+<h2 id="refactoring">Refactoring</h2>
+
+<p>현재의 콘서트 정렬 방식은 <strong>조회수순</strong>, <strong>임박예정순</strong>, <strong>최신순</strong> 3가지이다.<br />
+그 중, 임박예정순 경우 티켓오픈일이 가까운 순으로 정렬을 하고 있는데 모든 콘서트가 아닌, 티켓팅이 가능한 콘서트들로만 추려서 보여주는 방식으로 바꿔보려 한다.</p>
+
+<h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
+<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154183554-665b74d4-52fb-4ad9-a5b4-46c601b2333b.gif" alt="near" /></p>
+
+<p>현재는 티켓 오픈이 임박한 콘서트 외에도 너무 많은 콘서트 정보들이 불필요하게 보여지고 있다.</p>
+
+<h3 id="2-문제-해결">2. 문제 해결</h3>
+<hr />
+
+<h4 id="2-1">2-1.</h4>
+<hr />
+
+<h3 id="3-결과">3. 결과</h3>
+<hr />
+:ET

@@ -5,17 +5,39 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정</title>
+		<title>[Project] ALL-CON Refactoring 8일차 - (서버) DB timezone 수정 (작성중)</title>
         
         
-            <description>[Project] ALL-CON Refactoring 7일차 - (클라이언트) 우선순위 선정</description>
+            <description>[Project] ALL-CON Refactoring 8일차 - (서버) DB timezone 수정</description>
         
-        <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.02.15.refactoring/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.02.15.refactoring/</guid>
+        <pubDate>Wed, 16 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.16.Project/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.16.Project/</guid>
+      </item>
+    
+	<item>
+		<title>[TIL] Sequelize Op (작성중)</title>
+        
+        
+            <description>[TIL] Sequelize Op</description>
+        
+        <pubDate>Tue, 15 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.02.15.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.02.15.til/</guid>
+      </item>
+    
+	<item>
+		<title>[Project] ALL-CON Refactoring 7일차 - (서버) 티켓 오픈 임박예정 콘서트 정보만 보여주기</title>
+        
+        
+            <description>[Project] ALL-CON Refactoring 7일차 - (서버) 티켓 오픈 임박예정 콘서트 정보만 보여주기</description>
+        
+        <pubDate>Tue, 15 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/project/22.02.15.Project/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/22.02.15.Project/</guid>
       </item>
     
 	<item>
@@ -93,28 +115,6 @@
         <pubDate>Tue, 08 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.08.refactoring/</link>
         <guid isPermaLink="true">http://localhost:4000/project/22.02.08.refactoring/</guid>
-      </item>
-    
-	<item>
-		<title>[TIL] Crypto 모듈로 비밀번호 암호화하기</title>
-        
-        
-            <description>[TIL] Crypto 모듈로 비밀번호 암호화하기</description>
-        
-        <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/22.02.07.til/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/22.02.07.til/</guid>
-      </item>
-    
-	<item>
-		<title>[Project] ALL-CON Refactoring 1일차 - (서버) 우선순위 선정</title>
-        
-        
-            <description>[Project] ALL-CON Refactoring 1일차 - (서버) 우선순위 선정</description>
-        
-        <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.02.07.refactoring/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.02.07.refactoring/</guid>
       </item>
     
   </channel>

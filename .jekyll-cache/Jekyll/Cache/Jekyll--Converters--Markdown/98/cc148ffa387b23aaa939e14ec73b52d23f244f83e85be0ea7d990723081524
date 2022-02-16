@@ -1,0 +1,48 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+
+<h2 id="refactoring">Refactoring</h2>
+
+<p>현재의 콘서트 정렬 방식은 <strong>조회수순</strong>, <strong>임박예정순</strong>, <strong>최신순</strong> 3가지이다.<br />
+그 중, 임박예정순 경우 티켓오픈일이 가까운 순으로 정렬을 하고 있는데 모든 콘서트가 아닌, 티켓팅이 가능한 콘서트들로만 추려서 보여주는 방식으로 바꿔보려 한다.</p>
+
+<h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
+<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154183554-665b74d4-52fb-4ad9-a5b4-46c601b2333b.gif" alt="near" /></p>
+
+<p>현재는 티켓 오픈이 임박한 콘서트 외에도 너무 많은 콘서트 정보들이 불필요하게 보여지고 있다는 피드백을 전달 받았다.</p>
+
+<p>현재 기준으로 티켓팅이 가능한 상태의 콘서트 데이터들로만 추려서 보여지게끔 바꾸어보려 한다.</p>
+
+<h3 id="2-문제-해결">2. 문제 해결</h3>
+<hr />
+
+<h4 id="2-1-sequelize-op-연산자를-이용한-데이터-추출">2-1. Sequelize Op 연산자를 이용한 데이터 추출</h4>
+<hr />
+
+<p>우선 콘서트 DB 정보중 <code class="language-plaintext highlighter-rouge">open_date</code>는 아래와 같이 날짜객체로 저장하고 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154183947-f18974a6-c137-4ea6-8498-92644ddccaa9.png" alt="스크린샷, 2022-02-16 11-19-24" /></p>
+
+<p>그렇기에 티켓 오픈일자가 지났는지 여부를 비교하려면 같은 날짜 객체끼리 비교해야 유의미한 비교 결과가 나온다.<br />
+비교를 위해서는 <code class="language-plaintext highlighter-rouge">Sequelize</code>에서 <code class="language-plaintext highlighter-rouge">where</code> 조건문을 통하여 필요한 데이터를 추릴 수 있으며, <code class="language-plaintext highlighter-rouge">Sequelize.Op</code>를 사용하면 보다 더 복잡한 조건문을 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gte</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>               <span class="c1">// &gt;= 6</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Sequelize</code> 공식 문서를 통해 위 연산자를 사용하였으며 날짜간의 대소 비교 또한 적절히 사용이 가능하였다.</p>
+
+<h3 id="3-결과">3. 결과</h3>
+<hr />
+
+<p>수정된 Controller 부분은 다음과 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154184798-af995973-9409-47f5-9e12-53fd327bc023.png" alt="스크린샷, 2022-02-16 11-27-56" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Op.gte</code> 메소드로 티켓 오픈일이 임박한 콘서트 들로만 추려서 데이터 값을 보내주고 있다.<br />
+정렬 또한 1순위는 임박예정순으로 보여지며, 티켓 오픈일시가 같은 콘서트 같은 경우에는 2순위로 조회수 순으로 정렬을 해주고 있다.</p>
+
+<p>티켓 오픈일이 지난 콘서트들은 목록에서 보여지지 않기 때문에 임박이 예정된 콘서트 정보만 볼 수 있게 되었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Sequelize</code> 공식 문서에서 조건 비교를 위한 <code class="language-plaintext highlighter-rouge">Op</code> 연산자에 대해 더 학습 한 뒤 후기로 남겨보도록 해야겠다.</p>
+:ET
