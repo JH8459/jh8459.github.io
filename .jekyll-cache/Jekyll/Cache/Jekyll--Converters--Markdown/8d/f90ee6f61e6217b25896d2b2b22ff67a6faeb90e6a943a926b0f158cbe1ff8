@@ -1,18 +1,0 @@
-I"<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
-
-<h2 id="refactoring">Refactoring</h2>
-
-<p>현재의 콘서트 정렬 방식은 <strong>조회수순</strong>, <strong>임박예정순</strong>, <strong>최신순</strong> 3가지이다.<br /></p>
-
-<h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
-<hr />
-
-<h3 id="2-문제-해결">2. 문제 해결</h3>
-<hr />
-
-<h4 id="2-1">2-1.</h4>
-<hr />
-
-<h3 id="3-결과">3. 결과</h3>
-<hr />
-:ET
