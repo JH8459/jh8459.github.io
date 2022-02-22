@@ -1,0 +1,191 @@
+I":&<p><img src="https://capsule-render.vercel.app/api?type=waving&amp;color=FFCE63&amp;height=230&amp;section=header&amp;text=예매정보부터&#160;콘서트&#160;친구까지&#160;찾아주는&#160;콘서트&#160;종합&#160;정보&#160;플랫폼&amp;fontColor=FFFFFF&amp;fontSize=25" alt="header" /></p>
+
+<p><strong><center><a href="https://all-con.kr/" target="_blank" style="text-decoration:none"><span style="font-size: 1.5em; color: #FFCE63;">&#160;👉 ALL-CON 바로가기&#160;</span></a></center></strong></p>
+
+<p><strong><center><a href="https://github.com/codestates/ALL-CON" target="_blank" style="text-decoration:none"><span style="font-size: 1.5em; color: #FFCE63;">&#160;👉 Github 바로가기&#160;</span></a></center></strong></p>
+
+<p><strong><center><a href="https://codestates.notion.site/4-weAct-ALL-CON-c088f77746f245c59a59de4484308f84" target="_blank" style="text-decoration:none"><span style="font-size: 1.5em; color: #FFCE63;">&#160;👉 Notion 바로가기&#160;</span></a></center></strong></p>
+
+<hr />
+
+<ul>
+  <li><strong><span style="font-size: 1em; color: #FFCE63;">ALL-CON</span></strong>은 각 사이트들의 콘서트 정보를 한 눈에 볼 수 있는 콘서트 종합 정보 플랫폼이에요.</li>
+  <li>각 사이트들의 단독 판매 콘서트까지 한눈에 보고 비교해보세요!🤩</li>
+  <li>콘서트를 가고 싶은데 같이 즐길 친구가 없어 망설이셨나요?😢</li>
+  <li>콘서트의 감동을 함께 나눌 콘친을 찾아 보세요!🤼‍♂️</li>
+</ul>
+
+<center><a href="https://all-con.kr/" target="_blank" style="text-decoration:none"><img src="https://user-images.githubusercontent.com/83164003/152898834-c2e127a6-9431-4841-a6d0-21f532b7b07e.png" /></a></center>
+
+<h2 id="-all-con은-무슨-뜻인가요">🤔 <span style="color: #FFCE63;">ALL-CON</span>은 무슨 뜻인가요?</h2>
+
+<p>“콘서트가 열리는 모든 날에 참석함”을 의미해요.<br />
+<strong><span style="font-size: 1em; color: #FFCE63;">ALL-CON</span></strong>과 함께 올콘 참석에 성공하세요!🏃‍♀️🏃🏃‍♂️</p>
+
+<p><br />
+<br /></p>
+
+<h2 id="-all-con에서는-무엇을-할-수-있나요">🤔 <span style="color: #FFCE63;">ALL-CON</span>에서는 무엇을 할 수 있나요?</h2>
+<p><br /></p>
+<center>
+<details>
+<summary><b>자세히보기</b></summary>
+<br />
+
+<div>
+
+      <p>👉 <i>각 사이트들의 콘서트 정보(단독 콘서트 포함)를 한 눈에 볼 수 있어요.</i><br /><br />
+👉 <i>현재 인기 많은 콘서트, 오픈이 임박한 콘서트, 최근 등록된 콘서트 정보를 한눈에 볼 수 있어요.</i><br /><br />
+👉 <i>문자 알림 또는 메일 알림 기능을 이용해서 내가 원하는 콘서트의 예매 오픈시간을 놓치지 않을 수 있어요.</i><br /><br />
+👉 <i>콘서트 정보를 조회해서 콘서트장의 위치정보를 알 수 있어요.</i><br /><br />
+👉 <i>콘친 인증을 하면 콘서트에 함께 갈 콘친을 찾을 수 있어요.</i><br /><br />
+👉 <i>콘친이 될 유저의 정보를 볼 수 있어요.</i><br /><br />
+👉 <i>콘서트에 대한 기대 댓글을 작성할 수 있어요.</i><br /><br />
+👉 <i>내가 찾는 콘서트를 검색할 수 있어요.</i></p>
+
+    </div>
+</details>
+</center>
+<p><br /></p>
+
+<h2 id="-all-con-서비스-발표-영상">🎥 <span style="color: #FFCE63;">ALL-CON</span> 서비스 발표 영상</h2>
+
+<iframe width="928" height="522" src="https://www.youtube.com/embed/1uK3QLF9TIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><br />
+<br /></p>
+
+<h2 id="-all-con에서는-무엇을-담당하였나요">🤔 <span style="color: #FFCE63;">ALL-CON</span>에서는 무엇을 담당하였나요?</h2>
+<p><br /></p>
+<details>
+<summary><b>🖥 Front-end</b></summary>
+
+<br />
+<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6.svg?&amp;style=for-the-badge&amp;logo=TypeScript&amp;logoColor=white" />
+<img alt="React" src="https://img.shields.io/badge/React-61DAFB.svg?&amp;style=for-the-badge&amp;logo=React&amp;logoColor=white" />
+<img alt="Redux" src="https://img.shields.io/badge/Redux-764ABC.svg?&amp;style=for-the-badge&amp;logo=Redux&amp;logoColor=white" />
+<img alt="Sass" src="https://img.shields.io/badge/Sass-CC6699.svg?&amp;style=for-the-badge&amp;logo=Sass&amp;logoColor=white" />
+<br />
+<br />
+
+<div>
+
+    <details>
+<summary>메인페이지</summary>
+
+<div>
+
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />콘서트 알람 조회 &amp; 요청 기능 구현</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />콘서트 댓글 작성 유효성 검사 &amp; 수정 &amp; 삭제 기능 구현</li>
+        </ul>
+
+        <p><br /></p>
+      </div>
+</details>
+
+    <details>
+<summary>콘서트페이지</summary>
+
+<div>
+
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />콘서트 페이지 레이아웃 구현</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />콘서트 조회수순 &amp; 임박예정순 &amp; 등록일순 조회 기능 구현</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />콘서트 상세 페이지 구현</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />카카오 개발자 도구를 이용한 카카오맵 API 기능 구현</li>
+        </ul>
+
+        <p><br /></p>
+      </div>
+</details>
+
+    <details>
+<summary>모달</summary>
+
+<div>
+
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />로그인 모달 창 구현
+            <ul>
+              <li>일반 로그인 &amp; 구글 &amp; 카카오 소셜 로그인 기능 구현</li>
+            </ul>
+          </li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />회원가입 모달 창 구현
+            <ul>
+              <li>회원가입 유효성 검사 기능 구현</li>
+            </ul>
+          </li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />비밀번호 찾기 모달 창 구현
+            <ul>
+              <li>타이머 &amp; SMS 발송 및 입력값 유효성 검사 기능 구현</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><br /></p>
+      </div>
+</details>
+
+  </div>
+</details>
+
+<hr />
+
+<details>
+<summary><b>⚙️ Back-end</b></summary>
+	
+<br />
+<img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&amp;style=for-the-badge&amp;logo=JavaScript&amp;logoColor=white" />
+<img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933.svg?&amp;style=for-the-badge&amp;logo=Node.js&amp;logoColor=white" />
+<img alt="Express" src="https://img.shields.io/badge/Express-000000.svg?&amp;style=for-the-badge&amp;logo=Express&amp;logoColor=white" />
+<img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1.svg?&amp;style=for-the-badge&amp;logo=MySQL&amp;logoColor=white" />
+<img alt="Sequelize" src="https://img.shields.io/badge/Sequelize-52B0E7.svg?&amp;style=for-the-badge&amp;logo=Sequelize&amp;logoColor=white" />
+<br />
+
+<div>
+
+  </div>
+</details>
+
+<hr />
+
+<details>
+<summary><b>🔧 Deployment</b></summary>
+<br />
+
+<div>
+
+  </div>
+</details>
+<p><br />
+<br /></p>
+
+<h2 id="-개인-기술-발표-영상">🎥 개인 기술 발표 영상</h2>
+
+<iframe width="1028" height="578" src="https://www.youtube.com/embed/4Z4uoshjOQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p><strong>Q. 왜 Cheerio를 사용했나요?</strong></p>
+
+<hr />
+<p><strong>A.</strong> HTML / XML 문서를 매우 쉽게 데이터 파싱 및 추출은 물론이며, 정말 빠른 속도로 가져올 수 있기에 선택하였습니다. 빠른 속도와 더불어 적은 리소스로 서버의 부담을 최대한 줄일 수 있었습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Q. 왜 node-schedule을 사용했나요?</strong></p>
+
+<hr />
+<p><strong>A.</strong> 앞서 말씀드린대로 무분별한 크롤링이 아닌, 1일 1회의 크롤링을 제어하기 위해 작업을 반복적으로 그리고 서버 정기점검 시간을 피할 수 있는 특정시간에 처리해야 할 수 있어야 했습니다.</p>
+
+<p>npm compare 사이트를 통해 대표적인 스케쥴러 라이브러리 3가지를 선정하였으며, 그중 Agenda는 mongo DB가 반드시 필요하므로 제외하였습니다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/155177170-787ed73c-b5f3-4320-abb0-b2d445f31074.png" /></center>
+<p><br />
+node Schedule 라이브러리는 가장 역사가 길며 다운로드수가 많은걸 보아 다양한 유저들이 사용하였다 판단되므로 에러핸들링하기 가장 진입장벽이 낮아보이는 node-schedule 라이브러리를 선택하였습니다.</p>
+
+<p><br />
+<br /></p>
+
+<p><img src="https://capsule-render.vercel.app/api?type=waving&amp;color=FFCE63&amp;height=230&amp;section=footer" alt="Footer" /></p>
+:ET
