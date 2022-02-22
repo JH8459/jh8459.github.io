@@ -19,6 +19,17 @@
       </item>
     
 	<item>
+		<title>[ALL-CON] 리팩토링 회고 (작성중)</title>
+        
+        
+            <description>[ALL-CON] 리팩토링 회고</description>
+        
+        <pubDate>Fri, 18 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/22.02.18.Retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/22.02.18.Retrospect/</guid>
+      </item>
+    
+	<item>
 		<title>ALL-CON Refactoring 8일차 - Timezone 수정</title>
         
         
@@ -104,17 +115,6 @@
         <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/til/22.02.09.til/</link>
         <guid isPermaLink="true">http://localhost:4000/til/22.02.09.til/</guid>
-      </item>
-    
-	<item>
-		<title>ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</title>
-        
-        
-            <description>[Project] ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링</description>
-        
-        <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.02.09.refactoring/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.02.09.refactoring/</guid>
       </item>
     
   </channel>
