@@ -629,7 +629,7 @@ var store = [{
         "url": "/project/22.02.16.Project/",
         "teaser": null
       },{
-        "title": "'2월 스페셜 레처 - 나를 점검하는 이력서 작성법' 강연 후기",
+        "title": "\"2월 스페셜 레처 - 나를 점검하는 이력서 작성법\" 강연 후기",
         "excerpt":"(작성중)  ","categories": ["Retrospect"],
         "tags": [],
         "url": "/retrospect/Retrospect/",
