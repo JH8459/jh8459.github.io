@@ -34,12 +34,14 @@ toc_label: ABOUT
 <img alt="TypeScript" src ="https://img.shields.io/badge/TypeScript-3178C6.svg?&style=for-the-badge&logo=TypeScript&logoColor=white"/>
 <img alt="React" src ="https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=white"/>
 <img alt="Redux" src ="https://img.shields.io/badge/Redux-764ABC.svg?&style=for-the-badge&logo=Redux&logoColor=white"/>
+<img alt="Sass" src ="https://img.shields.io/badge/Sass-CC6699.svg?&style=for-the-badge&logo=Sass&logoColor=white"/>
 <img alt="styled-components" src ="https://img.shields.io/badge/styled-components-DB7093.svg?&style=for-the-badge&logo=styled-components&logoColor=white"/>
 
 - TypeScript
 - React를 이용한 SPA 클라이언트 개발
 - Redux를 이용한 상태 관리
-- styled-components를 이용한 CSS-in-JS 개발
+- Sass를 이용한 CSS 유지보수
+- Styled-Components를 이용한 CSS-in-JS 개발
 - PC, Mobile 반응형 웹 디자인
 
 ## ⚙️ Other
