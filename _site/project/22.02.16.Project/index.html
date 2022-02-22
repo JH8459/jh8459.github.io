@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Project] ALL-CON Refactoring 8일차 - DB timezone 수정 | JHLog</title>
-<meta name="description" content="[Project] ALL-CON Refactoring 8일차 - DB timezone 수정">
+<!-- begin _includes/seo.html --><title>ALL-CON Refactoring 8일차 - Timezone 수정 | JHLog</title>
+<meta name="description" content="[Project] ALL-CON Refactoring 8일차 - Timezone 수정">
 
 
   <meta name="author" content="JH 🤔">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="JHLog">
-<meta property="og:title" content="[Project] ALL-CON Refactoring 8일차 - DB timezone 수정">
+<meta property="og:title" content="ALL-CON Refactoring 8일차 - Timezone 수정">
 <meta property="og:url" content="http://localhost:4000/project/22.02.16.Project/">
 
 
-  <meta property="og:description" content="[Project] ALL-CON Refactoring 8일차 - DB timezone 수정">
+  <meta property="og:description" content="[Project] ALL-CON Refactoring 8일차 - Timezone 수정">
 
 
 
@@ -179,7 +179,7 @@
     
       
       
-        <li class="current">[Project] ALL-CON Refactoring 8일차 - DB timezone 수정</li>
+        <li class="current">ALL-CON Refactoring 8일차 - Timezone 수정</li>
       
     
   </ol>
@@ -359,8 +359,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Project] ALL-CON Refactoring 8일차 - DB timezone 수정">
-    <meta itemprop="description" content="[Project] ALL-CON Refactoring 8일차 - DB timezone 수정">
+    <meta itemprop="headline" content="ALL-CON Refactoring 8일차 - Timezone 수정">
+    <meta itemprop="description" content="[Project] ALL-CON Refactoring 8일차 - Timezone 수정">
     <meta itemprop="datePublished" content="2022-02-16T00:00:00+09:00">
     
 
@@ -368,7 +368,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/project/22.02.16.Project/" class="u-url" itemprop="url">[Project] ALL-CON Refactoring 8일차 - DB timezone 수정
+            <a href="http://localhost:4000/project/22.02.16.Project/" class="u-url" itemprop="url">ALL-CON Refactoring 8일차 - Timezone 수정
 </a>
           </h1>
           
@@ -397,7 +397,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#refactoring">Refactoring</a><ul><li><a href="#1-보완이-필요한-사항">1. 보완이 필요한 사항</a></li><li><a href="#2-문제-해결">2. 문제 해결</a><ul><li><a href="#2-1-aws-rds-mysql-시간-설정">2-1. AWS RDS mysql 시간 설정</a></li></ul></li><li><a href="#3-결과">3. 결과</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#refactoring">Refactoring</a><ul><li><a href="#1-보완이-필요한-사항">1. 보완이 필요한 사항</a><ul><li><a href="#1-1-db-server-시간-안맞음">1-1. DB Server 시간 안맞음</a></li><li><a href="#1-2-sequelize-orm-db-저장시-시간-안맞음">1-2. Sequelize ORM DB 저장시 시간 안맞음</a></li></ul></li><li><a href="#2-문제-해결">2. 문제 해결</a><ul><li><a href="#2-1-aws-rds-mysql-시간-설정">2-1. AWS RDS mysql 시간 설정</a></li><li><a href="#2-2--sequelize-시간-설정">2-2.  Sequelize 시간 설정</a></li></ul></li><li><a href="#3-결과">3. 결과</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -434,7 +434,10 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
 <h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
 <hr />
 
-<p>위에서 언급한 대로 시간 설정이 9시간 맞지 않는다.</p>
+<h4 id="1-1-db-server-시간-안맞음">1-1. DB Server 시간 안맞음</h4>
+<hr />
+
+<p>위에서 언급한 대로 DB의 시간 설정이 9시간 맞지 않는다.</p>
 
 <center><img src="https://user-images.githubusercontent.com/83164003/154257426-7ad705ef-b155-454d-9d1a-97a160f118a7.png" /></center>
 <p><br /></p>
@@ -451,6 +454,14 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
 
 <p>정확히 9시간이 협정 세계시와의 차이점으로 발생하고 있었다.</p>
 
+<h4 id="1-2-sequelize-orm-db-저장시-시간-안맞음">1-2. Sequelize ORM DB 저장시 시간 안맞음</h4>
+<hr />
+
+<p>DB server 외에 Node.js Express 서버 환경에서도 Sequelize ORM을 통하여 DB에 저장할 때 Timezone 설정이 맞지 않는 문제 또한 발생중이다.</p>
+
+<p>서버의 TimeZone이 맞지 않는 문제 같다.<br />
+해당 부분도 수정이 필요하다.</p>
+
 <h3 id="2-문제-해결">2. 문제 해결</h3>
 <hr />
 
@@ -465,12 +476,39 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
 
 <center><img src="https://user-images.githubusercontent.com/83164003/154259305-b575d7e9-e444-4494-8f70-13d2f72039d0.png" /></center>
 
+<h4 id="2-2--sequelize-시간-설정">2-2.  Sequelize 시간 설정</h4>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">.env</code> 파일에 <code class="language-plaintext highlighter-rouge">TZ</code> 환경변수를 추가하였다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TZ=Asia/Seoul
+</code></pre></div></div>
+
+<p><del>사실 <code class="language-plaintext highlighter-rouge">default timezone in node.js</code> 키워드로 검색한 결과 <code class="language-plaintext highlighter-rouge">TZ</code>라는 환경변수를 생성하면 Node.js 서버의 Timezone이 바뀔 줄 알았는데 별 영향이 없는듯하다..</del></p>
+
+<p>그 뒤 <code class="language-plaintext highlighter-rouge">config.js</code> 파일을 수정하여 Timezone을 설정해 주었다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/155133723-64ffd8fd-1f9f-4e66-ad9c-7b66a9ee0d40.png" /></center>
+
 <h3 id="3-결과">3. 결과</h3>
 <hr />
 
-<p>RDS time_zone 설정을 바꾸었다고 기존 DB들이 저장된 시간값이 바뀌진 않기에 기존 DB는 수동으로  시간값을 “-9시간” 수정해주어야 할 듯 하다.</p>
+<p><strong>RDS</strong> time_zone 설정과 <strong>Sequelize</strong> timezone 설정을 바꾸어 주었다.</p>
 
-<p>또한 기존의 9시간의 간격을 메꾸기 위해 억지로 <code class="language-plaintext highlighter-rouge">open_date</code>값을 수정해주는 얽힌 코드들은 내일 마저 수정 할 예정이다.</p>
+<p>다만, 기존 DB들이 저장된 시간값이 바뀌진 않기에 기존 DB는 수동으로  시간값을 수정해주어야 할 듯 하다.</p>
+
+<p>다만 실제로 웹에서 서비스되는 HTTP 환경에서는 시간이 맞지 않는다..<br />
+아래의 Resonse Header를 확인해보면 (현재 시간은 <strong>02월22일 21:54</strong> 이다.)</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/155144617-60a2f5bd-7cec-4f99-b077-336e6450122f.png" alt="스크린샷, 2022-02-22 21-55-23" /></p>
+
+<p>이 때문인지 클라이언트에서는 <strong>Date 객체</strong>의 시간값을 제대로 읽어내지 못하고 있다.</p>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Date" target="_blank">검색</a>한 결과 HTTP에서 서버의 응답 시간은 항상 지역 시간이 아닌 GMT(Greenwich 표준시)로 표현된다는 사실을 알 수 있었다.</p>
+
+<p>결국 Node.js 서버와 RDS에서 시간을 Asia/Seoul값으로 바꾸어 주어서 DB에는 시간값이 잘 저장되지만, HTTP 환경으로 배포된 클라이언트에서는 GMT 시간대로 표현되기에 Date 객체의 시간이 맞지 않았다.</p>
+
+<p>때문에 9시간을 더해주어서 DB에 저장된 시간값을 정상적으로 표현할 수 있도록 코드를 수정해주었다.</p>
 
         
       </section>
@@ -506,11 +544,12 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
       
   <nav class="pagination">
     
-      <a href="/til/22.02.15.til/" class="pagination--pager" title="[TIL] Sequelize Op
+      <a href="/til/22.02.15.til/" class="pagination--pager" title="Sequelize Op
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/retrospect/Retrospect/" class="pagination--pager" title="‘2월 스페셜 레처 - 나를 점검하는 이력서 작성법’ 강연 후기
+">다음</a>
     
   </nav>
 
@@ -535,7 +574,49 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/22.02.15.til/" rel="permalink">[TIL] Sequelize Op
+        <a href="/retrospect/Retrospect/" rel="permalink">‘2월 스페셜 레처 - 나를 점검하는 이력서 작성법’ 강연 후기
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-22T00:00:00+09:00">February 22, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect] “2월 스페셜 레처 - 나를 점검하는 이력서 작성법” 후기
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.02.15.til/" rel="permalink">Sequelize Op
 </a>
       
       
@@ -577,7 +658,7 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/project/22.02.15.Project/" rel="permalink">[Project] ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기
+        <a href="/project/22.02.15.Project/" rel="permalink">ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기
 </a>
       
       
@@ -619,7 +700,7 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/project/22.02.14.Project/" rel="permalink">[Project] ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)
+        <a href="/project/22.02.14.Project/" rel="permalink">ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)
 </a>
       
       
@@ -644,48 +725,6 @@ DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉
 
 
     <p class="archive__item-excerpt" itemprop="description">[Project] ALL-CON Refactoring 6일차 - Articles 테이블 스키마 수정(2)
-</p>
-    
-    
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/22.02.11.til/" rel="permalink">[TIL] Sequelize Migration
-</a>
-      
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-02-11T00:00:00+09:00">February 11, 2022</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-
-    <p class="archive__item-excerpt" itemprop="description">[TIL] Sequelize Migration
 </p>
     
     

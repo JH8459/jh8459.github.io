@@ -1,0 +1,101 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+
+<h2 id="refactoring">Refactoring</h2>
+<p>현재 ALL-CON 프로젝트의 DB 서버는 <strong>AWS RDS</strong>를 사용하고 있다.</p>
+
+<p>DB의 서버시간이 맞지 않는 문제가 계속 발생하고 있다.<br />
+DB 서버에 저장되는 <strong>포르테 디 콰트로 콘서트 메타포닉-부산</strong>의 <code class="language-plaintext highlighter-rouge">open_date</code>(티켓오픈일) 값은 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>open_date</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022-02-22 23:00:00</td>
+      <td>포르테 디 콰트로 콘서트 <메타포닉> - 부산</메타포닉></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>하지만 인터파크 티켓에서 기재된 티켓오픈일 정보는 아래와 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/154224099-785d11be-21dc-4b9f-b240-77bf0ee109f6.png" alt="스크린샷, 2022-02-16 17-21-00" /></p>
+
+<p>안맞는 시간을 클라이언트에서 강제로 조정해주어서 우선 도메인에서는 정상적으로 보이지만, 근본적인 해결책은 아니였기 때문에 DB 시간문제를 해결하기로 결정하였다.</p>
+
+<h3 id="1-보완이-필요한-사항">1. 보완이 필요한 사항</h3>
+<hr />
+
+<h4 id="1-1-db-server-시간-안맞음">1-1. DB Server 시간 안맞음</h4>
+<hr />
+
+<p>위에서 언급한 대로 DB의 시간 설정이 9시간 맞지 않는다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/154257426-7ad705ef-b155-454d-9d1a-97a160f118a7.png" /></center>
+<p><br /></p>
+
+<p>mysql에서 현재 서버의 시간을 가져오는 함수인 <code class="language-plaintext highlighter-rouge">select now()</code> 를 사용시 다음 아래와 같은 서버시간이 출력된다. (현재 시간은 2월 16일 17시 5분경)</p>
+
+<p>우선 서버 시간 자체가 맞지 않았다.<br />
+현재 서버의 <strong>time_zone</strong>을 확인해보니 UTC(협정 세계시)인 점을 확인하였다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/154258039-72e3fb49-c5c9-4508-8b28-e7ab0b3041f0.png" /></center>
+<p><br /></p>
+
+<p>참고로 한국의 표준 시간대는 <strong>UTC+9</strong>이다. <del>(UTC+9의 “+9” 의미가 PLUS 9 였다!)</del></p>
+
+<p>정확히 9시간이 협정 세계시와의 차이점으로 발생하고 있었다.</p>
+
+<h4 id="1-2-sequelize-orm-db-저장시-시간-안맞음">1-2. Sequelize ORM DB 저장시 시간 안맞음</h4>
+<hr />
+
+<p>DB server 외에 Node.js Express 서버 환경에서도 Sequelize ORM을 통하여 DB에 저장할 때 Timezone 설정이 맞지 않는 문제 또한 발생중이다.</p>
+
+<p>서버의 TimeZone이 맞지 않는 문제 같다.<br />
+해당 부분도 수정이 필요하다.</p>
+
+<h3 id="2-문제-해결">2. 문제 해결</h3>
+<hr />
+
+<h4 id="2-1-aws-rds-mysql-시간-설정">2-1. AWS RDS mysql 시간 설정</h4>
+<hr />
+
+<p><a href="https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-change-time-zone/">공식문서</a>를 통해서 해당 내용이 문제점인지 파악하였다.</p>
+
+<p>나는 클라이언트 배포를 담당하였기 때문에 RDS와 EC2는 다른 팀원분께서 담당해주셨다. 피드백을 전달하였고 팀원 분께서 RDS 설정을 수정해주셨다.</p>
+
+<p>RDS 재부팅 후 정상적인  <strong>UTC+9</strong>  time_zone을 확인하였다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/154259305-b575d7e9-e444-4494-8f70-13d2f72039d0.png" /></center>
+
+<h4 id="2-2--sequelize-시간-설정">2-2.  Sequelize 시간 설정</h4>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">.env</code> 파일에 <code class="language-plaintext highlighter-rouge">TZ</code> 환경변수를 추가하였다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TZ=Asia/Seoul
+</code></pre></div></div>
+
+<p><del>사실 <code class="language-plaintext highlighter-rouge">default timezone in node.js</code> 키워드로 검색한 결과 <code class="language-plaintext highlighter-rouge">TZ</code>라는 환경변수를 생성하면 Node.js 서버의 Timezone이 바뀔 줄 알았는데 별 영향이 없는듯하다..</del></p>
+
+<p>그 뒤 <code class="language-plaintext highlighter-rouge">config.js</code> 파일을 수정하여 Timezone을 설정해 주었다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/155133723-64ffd8fd-1f9f-4e66-ad9c-7b66a9ee0d40.png" /></center>
+
+<h3 id="3-결과">3. 결과</h3>
+<hr />
+
+<p>RDS time_zone 설정과 Sequelize timezone 설정을 바꾸어 주었다.</p>
+
+<p>다만, 기존 DB들이 저장된 시간값이 바뀌진 않기에 기존 DB는 수동으로  시간값을 수정해주어야 할 듯 하다.</p>
+
+<p>다만 실제로 웹에서 서비스되는 HTTP 환경에서는 Resonse</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/155144617-60a2f5bd-7cec-4f99-b077-336e6450122f.png" alt="스크린샷, 2022-02-22 21-55-23" /></p>
+
+<p>현재 시간은 <strong>02월22일 21:54</strong> 이다.</p>
+:ET

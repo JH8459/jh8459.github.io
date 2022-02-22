@@ -2,6 +2,21 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>http://localhost:4000/retrospect/Retrospect/</loc>
+      
+        <lastmod>2022-02-22T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>daily</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+    </url>
+  
+    <url>
       <loc>http://localhost:4000/project/22.02.16.Project/</loc>
       
         <lastmod>2022-02-16T00:00:00+09:00</lastmod>
@@ -1067,36 +1082,6 @@
     </url>
   
     <url>
-      <loc>http://localhost:4000/algorithm/21.09.17.algorithm2/</loc>
-      
-        <lastmod>2021-09-17T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-          <priority>1.0</priority>
-      
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/algorithm/21.09.17.algorithm1/</loc>
-      
-        <lastmod>2021-09-17T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-          <priority>1.0</priority>
-      
-    </url>
-  
-    <url>
       <loc>http://localhost:4000/til/21.09.15.til/</loc>
       
         <lastmod>2021-09-15T00:00:00+09:00</lastmod>
@@ -1158,21 +1143,6 @@
   
     <url>
       <loc>http://localhost:4000/til/21.09.10.til/</loc>
-      
-        <lastmod>2021-09-10T00:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>daily</changefreq>
-      
-
-      
-          <priority>1.0</priority>
-      
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/algorithm/21.09.10.algorithm/</loc>
       
         <lastmod>2021-09-10T00:00:00+09:00</lastmod>
       
