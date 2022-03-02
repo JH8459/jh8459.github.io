@@ -5,17 +5,17 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Mon, 28 Feb 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>&quot;2022 코드스테이츠 알럼나이 네트워킹 데이&quot; 후기 (작성중)</title>
+		<title>&quot;2022 코드스테이츠 알럼나이 네트워킹 데이&quot; 후기</title>
         
         
             <description>[Retrospect] &quot;2022 코드스테이츠 알럼나이 네트워킹 데이&quot; 후기</description>
         
-        <pubDate>Mon, 28 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/22.02.28.Retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/22.02.28.Retrospect/</guid>
+        <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/22.03.01.Retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/22.03.01.Retrospect/</guid>
       </item>
     
 	<item>
@@ -27,17 +27,6 @@
         <pubDate>Tue, 22 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/22.02.22.Retrospect/</link>
         <guid isPermaLink="true">http://localhost:4000/retrospect/22.02.22.Retrospect/</guid>
-      </item>
-    
-	<item>
-		<title>[ALL-CON] 리팩토링 회고 (작성중)</title>
-        
-        
-            <description>[ALL-CON] 리팩토링 회고</description>
-        
-        <pubDate>Fri, 18 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/22.02.18.Retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/22.02.18.Retrospect/</guid>
       </item>
     
 	<item>
@@ -115,6 +104,17 @@
         <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.10.refactoring/</link>
         <guid isPermaLink="true">http://localhost:4000/project/22.02.10.refactoring/</guid>
+      </item>
+    
+	<item>
+		<title>Node.js - code: 'ERR_HTTP_HEADERS_SENT 에러 핸들링</title>
+        
+        
+            <description>[TIL] Node.js - code: 'ERR_HTTP_HEADERS_SENT 에러 핸들링</description>
+        
+        <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.02.09.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.02.09.til/</guid>
       </item>
     
   </channel>
