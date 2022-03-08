@@ -1,0 +1,154 @@
+I"bK<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+
+<p>프로젝트들을 진행하며 대용량 서비스를 염두하고 서버를 개발해본 경험이 아직없다.</p>
+
+<p>Node.js 기반의 웹 서버 사용시 트래픽이 많아지는 경우 서버에 걸리는 과부하에 대응 하는 방법들을 학습해 보고 글로 남겨보려 한다.</p>
+
+<p><br />
+<br /></p>
+
+<p>우선 Node.js 환경 뿐 아니라 대개의 서버는 중앙 집중형태로 다수의 클라이언트를 위해 존재한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/157154569-5c971607-3357-424a-a2d4-e4511c353ecf.png" alt="server" /></p>
+
+<p>때문에 클라이언트로부터 수많은 요청을 동시에 받으므로 병목현상이 발생하기 쉬우며 이를 대비해 처리 성능에 항상 주목해야 한다.</p>
+
+<h3 id="1-nodejs의-비동기-처리">1. Node.js의 비동기 처리</h3>
+<hr />
+<p>Node.js는 비동기 IO를 지원하며 싱글 쓰레드 기반으로 동작하는 서버이다.</p>
+
+<p>여기서 비동기 처리란?</p>
+
+<p><br />
+<br /></p>
+<h4 id="1-1-연산자일반">1-1. 연산자(일반)</h4>
+<hr />
+
+<p>공식문서에서 설명하는 연산자는 다음 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Logical operator</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">and</span><span class="p">]:</span> <span class="p">[{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}],</span>  <span class="c1">// (a = 5) &amp;&amp; (b = 6)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}],</span>  <span class="c1">// (a = 5) || (b = 6)</span>
+
+<span class="c1">// Basics</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">eq</span><span class="p">]:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1">// = 3</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">ne</span><span class="p">]:</span> <span class="mi">20</span><span class="p">,</span>  <span class="c1">// != 20</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">is</span><span class="p">]:</span> <span class="kc">null</span><span class="p">,</span>  <span class="c1">// IS NULL</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">not</span><span class="p">]:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// IS NOT TRUE</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>  <span class="c1">// (someAttribute = 5) OR (someAttribute = 6)</span>
+
+<span class="c1">// Using dialect specific column identifiers (PG in the following example):</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">col</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">user.organization_id</span><span class="dl">'</span><span class="p">,</span>        <span class="c1">// = "user"."organization_id"</span>
+
+<span class="c1">// Number comparisons</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gt</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1">// &gt; 6</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gte</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1">// &gt;= 6</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1">// &lt; 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lte</span><span class="p">]:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1">// &lt;= 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">between</span><span class="p">]:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>  <span class="c1">// BETWEEN 6 AND 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notBetween</span><span class="p">]:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>  <span class="c1">// NOT BETWEEN 11 AND 15</span>
+
+<span class="c1">// Other operators</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">all</span><span class="p">]:</span> <span class="nx">sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="dl">'</span><span class="s1">SELECT 1</span><span class="dl">'</span><span class="p">),</span> <span class="c1">// &gt; ALL (SELECT 1)</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="k">in</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// IN [1, 2]</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notIn</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// NOT IN [1, 2]</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notLike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE 'hat%'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">substring</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat%'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iLike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// ILIKE '%hat' (case insensitive) (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notILike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT ILIKE '%hat'  (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">regexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// REGEXP/~ '^[h|a|t]' (MySQL/PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT REGEXP/!~ '^[h|a|t]' (MySQL/PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// ~* '^[h|a|t]' (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notIRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// !~* '^[h|a|t]' (PG only)</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">any</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1">// ANY ARRAY[2, 3]::INTEGER (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">match</span><span class="p">]:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">fn</span><span class="p">(</span><span class="dl">'</span><span class="s1">to_tsquery</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fat &amp; rat</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// match text search for strings 'fat' and 'rat' (PG only)</span>
+
+<span class="c1">// In Postgres, Op.like/Op.iLike/Op.notLike can be combined to Op.any:</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">any</span><span class="p">]:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">]</span> <span class="p">}</span>  <span class="c1">// LIKE ANY ARRAY['cat', 'hat']</span>
+</code></pre></div></div>
+<h4 id="1-2-연산자범위">1-2. 연산자(범위)</h4>
+<hr />
+
+<p>범위 연산자 또한 지원하여 다양한 종류의 범위를 쿼리할 수 있다.<br /> 
+공식문서에서 설명하는 범위 연산자는 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">contains</span><span class="p">]:</span> <span class="mi">2</span><span class="p">,</span>            <span class="c1">// @&gt; '2'::integer  (PG range contains element operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">contains</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>       <span class="c1">// @&gt; [1, 2)        (PG range contains range operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">contained</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>      <span class="c1">// &lt;@ [1, 2)        (PG range is contained by operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">overlap</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>        <span class="c1">// &amp;&amp; [1, 2)        (PG range overlap (have points in common) operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">adjacent</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>       <span class="c1">// -|- [1, 2)       (PG range is adjacent to operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">strictLeft</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>     <span class="c1">// &lt;&lt; [1, 2)        (PG range strictly left of operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">strictRight</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>    <span class="c1">// &gt;&gt; [1, 2)        (PG range strictly right of operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">noExtendRight</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// &amp;&lt; [1, 2)        (PG range does not extend to the right of operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">noExtendLeft</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>   <span class="c1">// &amp;&gt; [1, 2)        (PG range does not extend to the left of operator)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="1-3-연산자-조합">1-3. 연산자 조합</h4>
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">Op</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sequelize</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+  <span class="na">where</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rank</span><span class="p">:</span> <span class="p">{</span>
+      <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">eq</span><span class="p">]:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="c1">// rank &lt; 1000 OR rank IS NULL</span>
+
+    <span class="p">{</span>
+      <span class="na">createdAt</span><span class="p">:</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gt</span><span class="p">]:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">-</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="c1">// createdAt &lt; [timestamp] AND createdAt &gt; [timestamp]</span>
+
+    <span class="p">{</span>
+      <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
+            <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">Boat%</span><span class="dl">'</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">description</span><span class="p">:</span> <span class="p">{</span>
+            <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%boat%</span><span class="dl">'</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="c1">// title LIKE 'Boat%' OR description LIKE '%boat%'</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">where</code> 조건 객체에서 연산자들끼리의 중복 사용또한 가능하다.<br /></p>
+<ul>
+  <li>조건 객체에서 별 다른 연산자로 엮어주지 않고 속성을 나열한다면 AND로 간주된다.</li>
+  <li>연산자안에서 여러 컬럼을 다루는 경우에는 각 컬럼에 대한 조건을 담은 객체의 배열로 작성해야 한다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p><del>항상 느끼지만 시퀄라이즈 공식문서는 너무 불친절..</del></p>
+
+<p>공식문서에서는 자세한 사용 방식을 안내하기보다는 다양한 예시를 제공해 준 뒤, 이에 맞춰 사용자가 찾아서 써라(?)라는 느낌을 많이 받았다.</p>
+
+<p>매번 <code class="language-plaintext highlighter-rouge">ctril + f</code> 로 검색하여 찾아 쓰기 귀찮아서 정리해보았다.</p>
+
+<p><br />
+<br /></p>
+:ET
