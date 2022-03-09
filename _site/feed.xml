@@ -5,8 +5,19 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Mon, 07 Mar 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Wed, 09 Mar 2022 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>Node.js와 웹 브라우저의 차이점</title>
+        
+        
+            <description>[TIL] Node.js와 웹 브라우저의 차이점</description>
+        
+        <pubDate>Wed, 09 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.03.09.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.03.09.til/</guid>
+      </item>
+    
 	<item>
 		<title>Node.js 트래픽이 많아지는 경우 서버 과부화 대응 방법</title>
         
@@ -104,17 +115,6 @@
         <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.11.refactoring/</link>
         <guid isPermaLink="true">http://localhost:4000/project/22.02.11.refactoring/</guid>
-      </item>
-    
-	<item>
-		<title>ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</title>
-        
-        
-            <description>[Project] ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</description>
-        
-        <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.02.10.refactoring/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.02.10.refactoring/</guid>
       </item>
     
   </channel>
