@@ -1,0 +1,31 @@
+I"<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>자주 쓰이는 HTTP 요청 메소드와 요청에 대한 처리 결과값을 나타내는 HTTP 상태 코드를  알아보고 학습한 내용을 글로 남겨보려 한다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-http-메소드">1. HTTP 메소드</h3>
+<hr />
+
+<p>HTTP 메소드는 클라이언트가 서버에게 사용자 요청의 목적/종류를 알리는 수단이다.</p>
+
+<p>최초의 HTTP에서 메소드의 종류는 GET 메소드 하나뿐이었고 그마저도 HTML 문서만 응답해주었지만, 이후 다양한 사용자 요청의 목적과 종류를 알리는 메소드들이 생겨났다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-1-http-메소드-종류">1-1. HTTP 메소드 종류</h4>
+<hr />
+
+<h3 id="2-http-상태코드">2. HTTP 상태코드</h3>
+<hr />
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+:ET

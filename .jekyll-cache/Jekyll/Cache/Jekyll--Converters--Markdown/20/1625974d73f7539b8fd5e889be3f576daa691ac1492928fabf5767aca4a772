@@ -1,0 +1,106 @@
+I"7<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>자주 쓰이는 HTTP 요청 메소드와 요청에 대한 처리 결과값을 나타내는 HTTP 상태 코드를  알아보고 학습한 내용을 글로 남겨보려 한다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-http-메소드">1. HTTP 메소드</h3>
+<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/158408637-b2ae60a9-8074-435b-bbe6-4aa4e409c142.png" alt="logo" /></p>
+
+<p>HTTP 메소드는 클라이언트가 서버에게 사용자 요청의 목적/종류를 알리는 수단이다.</p>
+
+<p>최초의 HTTP에서 메소드의 종류는 GET 메소드 하나뿐이었고 그마저도 HTML 문서만 응답해주었지만, 이후 다양한 사용자 요청의 목적과 종류를 알리는 메소드들이 생겨났다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-1-http-메소드-종류">1-1. HTTP 메소드 종류</h4>
+<hr />
+
+<ul>
+  <li><strong>GET</strong> : 리소스를 조회하는 용도이다.
+    <ul>
+      <li>URL(URI) 형식으로 서버 측 리소스를 요청한다.</li>
+    </ul>
+  </li>
+  <li><strong>HEAD</strong>: GET과 비슷하지만 메시지 부분(본문)을 제외하고, 상태 줄과 헤더만 반환한다.
+    <ul>
+      <li>실제 리소스(문서)를 요청하는 것이 아니라, 리소스 정보를 요청한다.</li>
+    </ul>
+  </li>
+  <li><strong>POST</strong> : 요청 데이터 처리, 주로 데이터 등록에 사용한다.
+    <ul>
+      <li>요청 데이터를 HTTP 바디에 담아 웹서버로 전송한다.</li>
+    </ul>
+  </li>
+  <li><strong>PUT</strong> : POST와 비슷하지만 리소스를 대체 혹은 갱신 위주로 사용한다.
+    <ul>
+      <li>통상적으로 보다 세밀한 POST를 더 많이 사용한다.</li>
+    </ul>
+  </li>
+  <li><strong>PATCH</strong> : 리소스를 일부만 변경하는 용도이다.</li>
+  <li><strong>DELETE</strong> : 리소스 삭제하는 용도이다.</li>
+  <li><strong>OPTIONS</strong>: 대상 리소스에 대한 통신 가능 옵션을 설명하는 용도이다. (주로 CORS에서 사용)</li>
+  <li><strong>CONNECT</strong>: 대상 자원으로 식별되는 서버에 대한 터널을 설정한다. (주로 사용하지 않는다)</li>
+  <li><strong>TRACE</strong>: 대상 리소스에 대한 경로를 따라 메시지 루프백 테스트를 수행한다. (주로 사용하지 않는다)</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-http-상태-코드">2. HTTP 상태 코드</h3>
+<hr />
+
+<center><img src="https://user-images.githubusercontent.com/83164003/158411952-9a9aa7c9-04b3-461a-97a1-a3b663531867.png" /></center>
+
+<p>HTTP 상태코드는 클라이언트가 서버에게 요청을 보냈을때 서버는 응답을 보낸다. 그에 대한 응답의 결과를 크게 5개의 범주의 상태코드와 함께 반환하여 보내준다.</p>
+
+<ul>
+  <li>1xx(Informational response) : 서버가 요청을 받았으며 프로세스를 계속하라는 의미</li>
+  <li>2xx(Success) : 서버가 요청을 성공적으로 받았으며 인식하고 수용했다는 의미</li>
+  <li>3xx(Redirection message) : 요청 완료를 위해 추가 작업 조치가 필요하다는 의미</li>
+  <li>4xx(Client error response) : 요청의 문법이 잘못되었거나 요청을 처리할 수 없다는 의미</li>
+  <li>5xx(Server errors) : 서버의 이유로 인해 유효한 요청에 대한 응답을 실패했다는 의미</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-1-자주-쓰이는-http-상태-코드-종류">2-1. 자주 쓰이는 HTTP 상태 코드 종류</h4>
+<hr />
+
+<p>이중 자주 쓰이는 상태코드를 꼽으라면 2xx 성공 코드와 4xx 클라이언트 에러 코드, 그리고 5xx 서버 에러 코드를 자주 볼 수 있는 상태코드라 꼽을 수 있다.</p>
+
+<p>각 자리수 중에서 대표하는 상태 코드를 꼽아서 정리해보았다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-2-2xxsuccess-코드">2-2. 2xx(Success) 코드</h4>
+<hr />
+
+<ul>
+  <li>200(OK): 서버가 요청을 성공적으로 처리했을 시</li>
+  <li>201(Created):	요청을 성공적으로 처리하였으며 새로운 리소스가 생성되었을때, 일반적으로 POST나 PUT 요청 메소드 이후에 받게 된다.</li>
+  <li>202(Accepted):	서버가 요청을 접수했지만 아직 처리하지는 못했을 때</li>
+  <li>203(Non-Authoritative Information):	요청을 성공적으로 처리했지만 다른 소스에서 수신된 정보를 제공, 검증이 되지 않은 상태</li>
+  <li>204(No Content):	서버가 요청을 성공적으로 처리했지만 콘텐츠가 없을 때</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-2-4xxclient-error-response-코드">2-2. 4xx(Client error response) 코드</h4>
+<hr />
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p><br />
+<br /></p>
+:ET
