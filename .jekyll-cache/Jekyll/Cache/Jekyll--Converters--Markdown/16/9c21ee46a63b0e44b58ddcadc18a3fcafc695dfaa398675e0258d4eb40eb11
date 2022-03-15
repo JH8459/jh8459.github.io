@@ -1,0 +1,29 @@
+I"<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-http-메소드">1. HTTP 메소드</h3>
+<hr />
+
+<p><br />
+<br /></p>
+
+<h3 id="2-http-상태코드">2. HTTP 상태코드</h3>
+<hr />
+
+<p><br />
+<br /></p>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>HTTP의 비상태성, 비연결성 두가지 특성으로 인해 로그인 정보를 유지시키기 위해 고안된 방법들이 굉장히 많구나라는걸 느꼈다.</p>
+
+<p>사실 잘 모르고 JWT를 사용하였다. 적절한 유지 방법을 서버 설계시 항상 염두해 두고 개발에 임해야 할 듯하다.</p>
+
+<p><br />
+<br /></p>
+:ET

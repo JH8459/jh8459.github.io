@@ -658,4 +658,10 @@ var store = [{
         "tags": [],
         "url": "/til/22.03.10.til/",
         "teaser": null
+      },{
+        "title": "자주쓰이는 HTTP 메소드 & HTTP 상태 코드 (작성중)",
+        "excerpt":"  Today I Learnd         1. HTTP 메소드          2. HTTP 상태코드          오늘 느낀 점        ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/22.03.15.til/",
+        "teaser": null
       }]

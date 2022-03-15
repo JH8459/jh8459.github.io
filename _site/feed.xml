@@ -5,8 +5,19 @@
     <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Thu, 10 Mar 2022 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드 (작성중)</title>
+        
+        
+            <description>[TIL] 자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드 (작성중)</description>
+        
+        <pubDate>Tue, 15 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.03.15.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.03.15.til/</guid>
+      </item>
+    
 	<item>
 		<title>JWT (JSON WEB TOKEN)</title>
         
@@ -104,17 +115,6 @@
         <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/project/22.02.14.Project/</link>
         <guid isPermaLink="true">http://localhost:4000/project/22.02.14.Project/</guid>
-      </item>
-    
-	<item>
-		<title>Sequelize Migration</title>
-        
-        
-            <description>[TIL] Sequelize Migration</description>
-        
-        <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/22.02.11.til/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/22.02.11.til/</guid>
       </item>
     
   </channel>
