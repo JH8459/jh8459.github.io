@@ -63,10 +63,21 @@
       </item>
     
 	<item>
+		<title>&quot;&quot; 후기</title>
+        
+        
+            <description></description>
+        
+        <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/retrospect/22.03.31.Retrospect/</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/22.03.31.Retrospect/</guid>
+      </item>
+    
+	<item>
 		<title>&quot;2022 코드스테이츠 알럼나이 네트워킹 데이&quot; 후기</title>
         
         
-            <description>[Retrospect] &quot;2022 코드스테이츠 3월 커뮤니티 데이&quot; 후기</description>
+            <description>[Retrospect] &quot;2022 코드스테이츠 알럼나이 네트워킹 데이&quot; 후기</description>
         
         <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/22.03.01.Retrospect/</link>
@@ -104,17 +115,6 @@
         <pubDate>Tue, 15 Feb 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/til/22.02.15.til/</link>
         <guid isPermaLink="true">http://localhost:4000/til/22.02.15.til/</guid>
-      </item>
-    
-	<item>
-		<title>ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</title>
-        
-        
-            <description>[Project] ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기</description>
-        
-        <pubDate>Tue, 15 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.02.15.Project/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.02.15.Project/</guid>
       </item>
     
   </channel>
