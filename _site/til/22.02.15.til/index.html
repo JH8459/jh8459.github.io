@@ -1,0 +1,866 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Sequelize Op | JHLog</title>
+<meta name="description" content="[TIL] Sequelize Op">
+
+
+  <meta name="author" content="JH 🤔">
+  
+  <meta property="article:author" content="JH 🤔">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="Sequelize Op">
+<meta property="og:url" content="http://localhost:4000/til/22.02.15.til/">
+
+
+  <meta property="og:description" content="[TIL] Sequelize Op">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/22.02.15.til/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH 🤔",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/"><b>카테고리</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/"><b>포스트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/"><b>프로젝트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/"><b>ABOUT</b></a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Sequelize Op</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH 🤔" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">JH 🤔</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>Hello World !</strong><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Study Log 📖</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#project">Project</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">ETC ⚙️</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#blog">Blog</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/about/"><span class="nav__sub-title">ABOUT</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Sequelize Op">
+    <meta itemprop="description" content="[TIL] Sequelize Op">
+    <meta itemprop="datePublished" content="2022-02-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/22.02.15.til/" class="u-url" itemprop="url">Sequelize Op
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-15T00:00:00+09:00">February 15, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-op">1. Op</a><ul><li><a href="#1-1-연산자일반">1-1. 연산자(일반)</a></li><li><a href="#1-2-연산자범위">1-2. 연산자(범위)</a></li><li><a href="#1-3-연산자-조합">1-3. 연산자 조합</a></li></ul></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/152718557-af87a691-a231-4f0f-a603-a478fe17e795.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+
+<p>시퀄라이즈는 SQL문을 JavaScript 환경에서 객체로 작성할 수 있는 ORM(Object Relational Mapping)이다.</p>
+
+<p>여러 문법중 Op라는 연산자를 사용하는 문법에 대해 학습한 내용을 정리해 보았다.</p>
+
+<h3 id="1-op">1. Op</h3>
+<hr />
+
+<p>Op 연산자는 <code class="language-plaintext highlighter-rouge">where</code>객체 안에서 쓰이는 <a href="https://developer.mozilla.org/ko/docs/Glossary/Symbol">Symbol</a> 타입의 연산자이다.</p>
+
+<p>해당 연산자를 사용하여 복잡한 비교 연산을 지원해준다.</p>
+
+<h4 id="1-1-연산자일반">1-1. 연산자(일반)</h4>
+<hr />
+
+<p>공식문서에서 설명하는 연산자는 다음 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Logical operator</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">and</span><span class="p">]:</span> <span class="p">[{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}],</span>  <span class="c1">// (a = 5) &amp;&amp; (b = 6)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span> <span class="p">{</span> <span class="na">b</span><span class="p">:</span> <span class="mi">6</span> <span class="p">}],</span>  <span class="c1">// (a = 5) || (b = 6)</span>
+
+<span class="c1">// Basics</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">eq</span><span class="p">]:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1">// = 3</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">ne</span><span class="p">]:</span> <span class="mi">20</span><span class="p">,</span>  <span class="c1">// != 20</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">is</span><span class="p">]:</span> <span class="kc">null</span><span class="p">,</span>  <span class="c1">// IS NULL</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">not</span><span class="p">]:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// IS NOT TRUE</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>  <span class="c1">// (someAttribute = 5) OR (someAttribute = 6)</span>
+
+<span class="c1">// Using dialect specific column identifiers (PG in the following example):</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">col</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">user.organization_id</span><span class="dl">'</span><span class="p">,</span>        <span class="c1">// = "user"."organization_id"</span>
+
+<span class="c1">// Number comparisons</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gt</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1">// &gt; 6</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gte</span><span class="p">]:</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1">// &gt;= 6</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1">// &lt; 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lte</span><span class="p">]:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1">// &lt;= 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">between</span><span class="p">]:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>  <span class="c1">// BETWEEN 6 AND 10</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notBetween</span><span class="p">]:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>  <span class="c1">// NOT BETWEEN 11 AND 15</span>
+
+<span class="c1">// Other operators</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">all</span><span class="p">]:</span> <span class="nx">sequelize</span><span class="p">.</span><span class="nx">literal</span><span class="p">(</span><span class="dl">'</span><span class="s1">SELECT 1</span><span class="dl">'</span><span class="p">),</span> <span class="c1">// &gt; ALL (SELECT 1)</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="k">in</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// IN [1, 2]</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notIn</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// NOT IN [1, 2]</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notLike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE 'hat%'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">substring</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// LIKE '%hat%'</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iLike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// ILIKE '%hat' (case insensitive) (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notILike</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%hat</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT ILIKE '%hat'  (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">regexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// REGEXP/~ '^[h|a|t]' (MySQL/PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// NOT REGEXP/!~ '^[h|a|t]' (MySQL/PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">iRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// ~* '^[h|a|t]' (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">notIRegexp</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">^[h|a|t]</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// !~* '^[h|a|t]' (PG only)</span>
+
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">any</span><span class="p">]:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1">// ANY ARRAY[2, 3]::INTEGER (PG only)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">match</span><span class="p">]:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">fn</span><span class="p">(</span><span class="dl">'</span><span class="s1">to_tsquery</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fat &amp; rat</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// match text search for strings 'fat' and 'rat' (PG only)</span>
+
+<span class="c1">// In Postgres, Op.like/Op.iLike/Op.notLike can be combined to Op.any:</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">any</span><span class="p">]:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hat</span><span class="dl">'</span><span class="p">]</span> <span class="p">}</span>  <span class="c1">// LIKE ANY ARRAY['cat', 'hat']</span>
+</code></pre></div></div>
+<h4 id="1-2-연산자범위">1-2. 연산자(범위)</h4>
+<hr />
+
+<p>범위 연산자 또한 지원하여 다양한 종류의 범위를 쿼리할 수 있다.<br /> 
+공식문서에서 설명하는 범위 연산자는 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">contains</span><span class="p">]:</span> <span class="mi">2</span><span class="p">,</span>            <span class="c1">// @&gt; '2'::integer  (PG range contains element operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">contains</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>       <span class="c1">// @&gt; [1, 2)        (PG range contains range operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">contained</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>      <span class="c1">// &lt;@ [1, 2)        (PG range is contained by operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">overlap</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>        <span class="c1">// &amp;&amp; [1, 2)        (PG range overlap (have points in common) operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">adjacent</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>       <span class="c1">// -|- [1, 2)       (PG range is adjacent to operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">strictLeft</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>     <span class="c1">// &lt;&lt; [1, 2)        (PG range strictly left of operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">strictRight</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>    <span class="c1">// &gt;&gt; [1, 2)        (PG range strictly right of operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">noExtendRight</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1">// &amp;&lt; [1, 2)        (PG range does not extend to the right of operator)</span>
+<span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">noExtendLeft</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>   <span class="c1">// &amp;&gt; [1, 2)        (PG range does not extend to the left of operator)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="1-3-연산자-조합">1-3. 연산자 조합</h4>
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">Op</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sequelize</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+  <span class="na">where</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rank</span><span class="p">:</span> <span class="p">{</span>
+      <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">eq</span><span class="p">]:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="c1">// rank &lt; 1000 OR rank IS NULL</span>
+
+    <span class="p">{</span>
+      <span class="na">createdAt</span><span class="p">:</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">lt</span><span class="p">]:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+        <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">gt</span><span class="p">]:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">-</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="c1">// createdAt &lt; [timestamp] AND createdAt &gt; [timestamp]</span>
+
+    <span class="p">{</span>
+      <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">or</span><span class="p">]:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">title</span><span class="p">:</span> <span class="p">{</span>
+            <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">Boat%</span><span class="dl">'</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">description</span><span class="p">:</span> <span class="p">{</span>
+            <span class="p">[</span><span class="nx">Op</span><span class="p">.</span><span class="nx">like</span><span class="p">]:</span> <span class="dl">'</span><span class="s1">%boat%</span><span class="dl">'</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="c1">// title LIKE 'Boat%' OR description LIKE '%boat%'</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">where</code> 조건 객체에서 연산자들끼리의 중복 사용또한 가능하다.<br /></p>
+<ul>
+  <li>조건 객체에서 별 다른 연산자로 엮어주지 않고 속성을 나열한다면 AND로 간주된다.</li>
+  <li>연산자안에서 여러 컬럼을 다루는 경우에는 각 컬럼에 대한 조건을 담은 객체의 배열로 작성해야 한다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p><del>항상 느끼지만 시퀄라이즈 공식문서는 너무 불친절..</del></p>
+
+<p>공식문서에서는 자세한 사용 방식을 안내하기보다는 다양한 예시를 제공해 준 뒤, 이에 맞춰 사용자가 찾아서 써라(?)라는 느낌을 많이 받았다.</p>
+
+<p>매번 <code class="language-plaintext highlighter-rouge">ctril + f</code> 로 검색하여 찾아 쓰기 귀찮아서 정리해보았다.</p>
+
+<p><br />
+<br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-15T00:00:00+09:00">February 15, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/project/22.02.15.Project/" class="pagination--pager" title="ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기
+">이전</a>
+    
+    
+      <a href="/project/22.02.16.Project/" class="pagination--pager" title="ALL-CON Refactoring 8일차 - Timezone 수정
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospect/22.03.31.Retrospect/" rel="permalink">“2022 코드스테이츠 3월 커뮤니티 데이” 후기
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-31T00:00:00+09:00">March 31, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect]”2022 코드스테이츠 3월 커뮤니티 데이” 후기
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.15.til/" rel="permalink">자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-15T00:00:00+09:00">March 15, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.10.til/" rel="permalink">JWT (JSON WEB TOKEN)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-10T00:00:00+09:00">March 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">JWT (JSON WEB TOKEN)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.09.til/" rel="permalink">Node.js와 웹 브라우저의 차이점
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-09T00:00:00+09:00">March 9, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] Node.js와 웹 브라우저의 차이점
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 JH 🤔. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'JH8459/JH8459.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

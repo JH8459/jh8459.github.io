@@ -1,0 +1,813 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링 | JHLog</title>
+<meta name="description" content="[TIL] Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링">
+
+
+  <meta name="author" content="JH 🤔">
+  
+  <meta property="article:author" content="JH 🤔">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링">
+<meta property="og:url" content="http://localhost:4000/til/22.02.09.til/">
+
+
+  <meta property="og:description" content="[TIL] Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-09T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/22.02.09.til/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH 🤔",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/"><b>카테고리</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/"><b>포스트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/"><b>프로젝트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/"><b>ABOUT</b></a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Node.js - code: 'ERR_HTTP_HEADERS_SENT 에러 핸들링</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH 🤔" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">JH 🤔</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>Hello World !</strong><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Study Log 📖</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#project">Project</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">ETC ⚙️</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#blog">Blog</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <a href="/about/"><span class="nav__sub-title">ABOUT</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링">
+    <meta itemprop="description" content="[TIL] Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링">
+    <meta itemprop="datePublished" content="2022-02-09T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/22.02.09.til/" class="u-url" itemprop="url">Node.js - code: ‘ERR_HTTP_HEADERS_SENT 에러 핸들링
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-09T00:00:00+09:00">February 9, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-nodejs---code-err_http_headers_sent">1. Node.js - code: ‘ERR_HTTP_HEADERS_SENT</a><ul><li><a href="#1-1-에러발생-원인">1-1. 에러발생 원인</a></li></ul></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/152718557-af87a691-a231-4f0f-a603-a478fe17e795.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-nodejs---code-err_http_headers_sent">1. Node.js - code: ‘ERR_HTTP_HEADERS_SENT</h3>
+<hr />
+
+<p>Project 진행 중 쿠키가 강제로 삭제된 상황에서 로그아웃 API 요청시 <code class="language-plaintext highlighter-rouge">code: 'ERR_HTTP_HEADERS_SENT'</code> 에러를 겪고 서버가 죽어버리는 문제가 발생했었고 리팩토링 과정에서 해결한 과정을 짧게 글로 남겨보려 한다.</p>
+
+<p>우선 해당 에러는 한번의 Request(요청)에 2개 이상의 Response(응답)이 존재하는 경우 발생하는 에러이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+</code></pre></div></div>
+
+<p>생각 보다 정직(?)하게 에러 메시지를 송출해 준다.</p>
+
+<h4 id="1-1-에러발생-원인">1-1. 에러발생 원인</h4>
+<hr />
+
+<p>우선 에러가 무엇을 뜻하는지는 알았다.</p>
+
+<p>그렇다면 왜 발생했는지 코드를 뜯어보았다.</p>
+
+<blockquote>
+  <p><strong>controller/authentication/logout.js</strong></p>
+
+  <p><img src="https://user-images.githubusercontent.com/83164003/153110704-f562c05e-890a-4512-a358-f2cc3e431102.png" alt="스크린샷, 2022-02-09 11-31-35" /></p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 로그인 인증검사</span>
+<span class="k">await</span> <span class="nx">userAuth</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span> 
+</code></pre></div></div>
+
+<p>로그인 여부를 인증하는 코드에서 미들웨어 <code class="language-plaintext highlighter-rouge">userAuth</code> 함수를 호출하고 있으며 이 미들웨어 함수는 다음과 같이 구성되어 있다.</p>
+
+<blockquote>
+  <p><strong>middlewares/authorized/userAuth.js</strong></p>
+
+  <p><img src="https://user-images.githubusercontent.com/83164003/153112382-26f6e9dd-73c9-487e-bfa3-76c388d160e9.png" alt="스크린샷, 2022-02-09 11-42-11" /></p>
+</blockquote>
+
+<p>에러가 발생하는 시점은 로그인 상태 중 쿠키가 강제로 삭제되어(웹 브라우져에서 쿠키 초기화 등등의 이유로 인하여) 쿠키에 <code class="language-plaintext highlighter-rouge">accessToken</code>은 비어있지만 <code class="language-plaintext highlighter-rouge">client</code> 상태는 로그인 상태이기 때문에 로그아웃 요청은 진행이 가능하며, 로그아웃 요청시 2번의 응답결과가 발생되는 경우이다.</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">userAuth</code> 미들웨어의 응답결과</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">401</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">AccessToken Is Empty!</span><span class="dl">'</span> <span class="p">});</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">logout</code> 컨트롤러의 응답결과</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Logout Success!</span><span class="dl">'</span> <span class="p">});</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>위 두 <code class="language-plaintext highlighter-rouge">response</code>가 서버에서 보내고 있기 때문에 발생하였다. 그렇기에 <code class="language-plaintext highlighter-rouge">userAuth</code> 로그인 검증 미들웨어 함수를 수정해 주었다.</p>
+
+<blockquote>
+  <p><strong>middlewares/authorized/userAuth.js</strong></p>
+
+  <p><img src="https://user-images.githubusercontent.com/83164003/153366836-2657fc2c-a046-4d42-9b68-9ee1b155e054.png" alt="스크린샷, 2022-02-10 17-21-56" /></p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">return</code>문 뒤에 <code class="language-plaintext highlighter-rouge">response</code> 응답 결과를 담지 않고 유효하지 않은 <code class="language-plaintext highlighter-rouge">accessToken</code>이 담겨있는 경우에는 <code class="language-plaintext highlighter-rouge">false</code>값을 반환하며 유효한 <code class="language-plaintext highlighter-rouge">accessToken</code>이 담겨있는 경우에는 <code class="language-plaintext highlighter-rouge">userInfo</code> 유저 정보값을 반환해주는 함수로 변경해주었다.</p>
+
+<blockquote>
+  <p><strong>controller/authentication/logout.js</strong></p>
+
+  <p><img src="https://user-images.githubusercontent.com/83164003/153367164-a5686917-ab22-498f-9dce-81e6542afd04.png" alt="스크린샷, 2022-02-10 17-23-13" /></p>
+</blockquote>
+
+<p>그 뒤 <code class="language-plaintext highlighter-rouge">userAuth</code> 검증 값을 <code class="language-plaintext highlighter-rouge">userInfo</code> 변수에 담은 뒤 해당 변수에 담기는 값이 <code class="language-plaintext highlighter-rouge">false</code>일 경우에는 상태코드 200번과 함께 메세지를 반환해주었다.</p>
+
+<p>이로써 우선 응답결과는 하나의 요청에 하나의 응답만 주어서 에러는 해결하였다.</p>
+
+<hr />
+<p>서버 변경점에 맞춰 클라이언트 코드도 수정해보려 한다.</p>
+
+<p>로그인 검증이 필요한 <code class="language-plaintext highlighter-rouge">axios</code> API 요청의 아래에 <code class="language-plaintext highlighter-rouge">response</code> 응답값의 결과가 만약 상태코드 200번 &amp;&amp; 에러메시지가 나오는 경우, 메인페이지로 리다이렉트 &amp; 로그인 모달 팝업 상태로 변경하여 다시 로그인을 유도하는 방면으로 코드를 수정해봐야겠다.</p>
+
+<p>로그아웃 외에 로그인 검증이 필요한 API 요청의 서버 &amp; 클라이언트 코드들 또한 모두 수정해봐야 겠다.
+<br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>기본에 충실하지 못하여서 발생한 에러라서 솔직히 부끄러운 에러라 생각이 든다.</p>
+
+<p>같은 실수를 하지않게끔 글로 남겨본다.</p>
+
+<p><br />
+<br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-09T00:00:00+09:00">February 9, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/project/22.02.09.refactoring/" class="pagination--pager" title="ALL-CON Refactoring 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링
+">이전</a>
+    
+    
+      <a href="/project/22.02.10.refactoring/" class="pagination--pager" title="ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospect/22.03.31.Retrospect/" rel="permalink">“2022 코드스테이츠 3월 커뮤니티 데이” 후기
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-31T00:00:00+09:00">March 31, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect]”2022 코드스테이츠 3월 커뮤니티 데이” 후기
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.15.til/" rel="permalink">자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-15T00:00:00+09:00">March 15, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.10.til/" rel="permalink">JWT (JSON WEB TOKEN)
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-10T00:00:00+09:00">March 10, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">JWT (JSON WEB TOKEN)
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.09.til/" rel="permalink">Node.js와 웹 브라우저의 차이점
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-09T00:00:00+09:00">March 9, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] Node.js와 웹 브라우저의 차이점
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 JH 🤔. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'JH8459/JH8459.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

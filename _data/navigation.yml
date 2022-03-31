@@ -1,25 +1,29 @@
 # main links
 main:
-  - title: "Category"
+  - title: "<b>카테고리</b>"
     url: /category/
-  - title: "Year"
+  - title: "<b>포스트</b>"
     url: /year/
-  - title: "About"
-    url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
+  - title: "<b>프로젝트</b>"
+    url: /project/
+  - title: "<b>ABOUT</b>"
+    url: /about/
 
 docs:
-  - title: "CodeStates"
+  - title: "Study Log 📖"
     children:
-      - title: "TIL"
-        url: /category/#til
       - title: "Algorithm"
         url: /category/#algorithm
+      - title: "Project"
+        url: /category/#project
       - title: "Retrospect"
         url: /category/#retrospect
+      - title: "TIL"
+        url: /category/#til
 
-  - title: "ETC"
+  - title: "ETC ⚙️"
     children:
       - title: "Blog"
         url: /category/#blog
-  - title: "About"
-    url: https://worried-ocicat-1f9.notion.site/JH8459-2cd2b720abb24838b8a965c23ead451c
+  - title: "ABOUT"
+    url: /about/

@@ -18,10 +18,10 @@ minimal_mistakes_skin    : "default" # 태마 색 설정 "air", "aqua", "contras
 locale                   : "ko-KR"
 title                    : "JHLog" # Meta 태그에 들어가는 영역 , masthead_title등이 없으면 기본값으로 나온다.
 title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 들어갑니다.
-subtitle                 : "programming study log" # 타이틀 아래에 나올 작은 글씨 
-name                     : "JH8459" # 맨 하단 이름 찍히는 영역
+subtitle                 : "programming log" # 타이틀 아래에 나올 작은 글씨 
+name                     : "JH 🤔" # 맨 하단 이름 찍히는 영역
 description              : # Meta 태그에 들어가는 영역 
-url                      : # GitBlog 호스트 주소
+url                      : "https://jh8459.github.io"
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "JH8459/JH8459.github.io" # GitHub username/repo-name  
 teaser                   : # 홈페이지 기본 티져 이미지
@@ -112,10 +112,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "JH8459"
+  name             : "JH 🤔"
   avatar           : "https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png"
-  bio              : "*불안감 떨쳐내기, 후회없이 하루 보내기*<br><br>"
-  location         : "Seoul, Republic of Korea"
+  bio              : "**Hello World !**<br><br>"
+#   location         : "Seoul, Republic of Korea"
 #   email            : "kk_ong2233@naver.com"
   links:
     # - label: "Email"
@@ -132,7 +132,7 @@ author:
       url: "https://github.com/JH8459"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/jh8459_"
+      url: "https://instagram.com/kj.hyeon_"
     # - label: "Facebook"
     #   icon: "fab fa-fw fa-facebook-square"
     #   url: "https://www.facebook.com/JH8459"
@@ -154,7 +154,7 @@ footer:
     #   # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/jh8459_"
+      url: "https://instagram.com/kj.hyeon_"
     # - label: "Facebook"
     #   icon: "fab fa-fw fa-facebook-square"
     #   url: "https://www.facebook.com/JH8459"
@@ -228,9 +228,9 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: /page:num/
-timezone: #Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -266,6 +266,12 @@ category_archive:
 year_archive:
   type: liquid
   path: /year/
+project_archive:
+  type: liquid
+  path: /project/
+about_archive:
+  type: liquid
+  path: /about/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
