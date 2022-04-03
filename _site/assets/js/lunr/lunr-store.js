@@ -674,6 +674,6 @@ var store = [{
         "title": "백엔드 개발자 첫 출근 후기",
         "excerpt":"   백엔드 개발자 첫 출근 후기         ###         후기        ","categories": ["Retrospect"],
         "tags": [],
-        "url": "/retrospect/22.04.01.Retrospect/",
+        "url": "/retrospect/22.04.02.Retrospect/",
         "teaser": null
       }]
