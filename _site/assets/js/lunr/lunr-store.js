@@ -672,7 +672,7 @@ var store = [{
         "teaser": null
       },{
         "title": "백엔드 개발자 첫 출근 후기",
-        "excerpt":"(작성중)  ","categories": ["Retrospect"],
+        "excerpt":"   백엔드 개발자 첫 출근 후기         ###         후기        ","categories": ["Retrospect"],
         "tags": [],
         "url": "/retrospect/22.04.01.Retrospect/",
         "teaser": null
