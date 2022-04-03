@@ -25,5 +25,3 @@ docs:
     children:
       - title: "Blog"
         url: /category/#blog
-  - title: "ABOUT"
-    url: /about/
