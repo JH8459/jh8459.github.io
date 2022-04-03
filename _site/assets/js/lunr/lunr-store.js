@@ -670,4 +670,10 @@ var store = [{
         "tags": [],
         "url": "/retrospect/22.03.31.Retrospect/",
         "teaser": null
+      },{
+        "title": "백엔드 개발자 첫 출근 후기",
+        "excerpt":"(작성중)  ","categories": ["Retrospect"],
+        "tags": [],
+        "url": "/retrospect/22.04.01.Retrospect/",
+        "teaser": null
       }]
