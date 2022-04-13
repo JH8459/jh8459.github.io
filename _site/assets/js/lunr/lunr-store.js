@@ -676,4 +676,10 @@ var store = [{
         "tags": [],
         "url": "/retrospect/22.04.01.Retrospect/",
         "teaser": null
+      },{
+        "title": "따라하며 배우는 NestJS #1",
+        "excerpt":"  Today I Learnd  인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 기록해보려고 한다.   Node.js의 프레임워크인 NestJS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해        1. NestJS란?                오늘 느낀 점        ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/22.04.13.til/",
+        "teaser": null
       }]
