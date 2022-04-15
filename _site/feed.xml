@@ -5,9 +5,144 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 Apr 2022 11:48:19 +0900</pubDate>
-    <lastBuildDate>Fri, 15 Apr 2022 11:48:19 +0900</lastBuildDate>
+    <pubDate>Fri, 15 Apr 2022 17:15:31 +0900</pubDate>
+    <lastBuildDate>Fri, 15 Apr 2022 17:15:31 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>따라하며 배우는 Nest JS #3</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;p&gt;인프런의 &lt;a href=&quot;https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4&quot; target=&quot;_blank&quot;&gt;따라하며 배우는 NestJS&lt;/a&gt;를 들으며 배운점을 남기고 기록해보려고 한다.&lt;/p&gt;
+
+&lt;p&gt;Node.js의 프레임워크인 Nest JS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해 포스팅을 남긴다.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-nestjs-모듈&quot;&gt;1. NestJS 모듈&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;모듈은 @Module () 데코레이터(@)로 주석이 달린 클래스이다.&lt;br /&gt;
+@Module () 데코레이터는 Nest가 애플리케이션 구조를 구성하는데 사용하는 메타 데이터를 제공한다.&lt;/p&gt;
+
+&lt;p&gt;각 응용 프로그램에는 하나 이상의 모듈(최소 루트 모듈)이 있으며, 그 중 루트 모듈은 Nest가 사용하는 시작점이다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163526133-269d66b5-2893-4ce3-b791-bb0248f1d930.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;모듈은 밀접하게 관련된 기능 집합으로써 한 요소를 구성하기 위한 효과적인 방법이다. (기능별로 만든다.  ⇒ ex. 유저 모듈, 주문 모듈, 채팅 모듈 등등)&lt;/p&gt;
+
+&lt;p&gt;같은 기능에 해당하는 것들은 하나의 모듈 폴더안에 넣어서 사용한다. (ex. userController, userService, userEntity ⇒ 모두 같은 기능이기 때문에 userModule 안에 넣어 관리한다.)&lt;/p&gt;
+
+&lt;p&gt;모듈은 기본적으로 &lt;strong&gt;싱글 톤&lt;/strong&gt; 패턴 이므로 여러 모듈간에 쉽게 공급자의 동일한 인스턴스를 공유 할 수 있다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163527022-95b7fd3f-4b56-46f8-8363-ba5926a47677.png&quot; /&gt;&lt;/center&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;싱글 톤&lt;/strong&gt; 패턴?&lt;/p&gt;
+
+  &lt;p&gt;객체의 인스턴스가 오직 1개만 생성되는 패턴을 의미한다.&lt;br /&gt;
+인스턴스가 오직 한 개로만 가져가므로 메모리 측면에서 유리하며 다른 클래스 간에 데이터 공유가 쉽다는 장점이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-nestjs-컨트롤러&quot;&gt;2. NestJS 컨트롤러&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;컨트롤러는 클라이언트에서 서버로 들어오는 요청을 처리하고 클라이언트로 응답을 반환한다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163531253-9608853a-8be1-41c8-a515-e9139974e523.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;컨트롤러는 @Controller 데코레이터로 클래스를 데코레이션하여 정의된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/boards&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BoardsController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;데코레이터는 인자를 Controller에 의해서 처리되는 “경로”로 받는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-1-핸들러란&quot;&gt;2-1. 핸들러란?&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;핸들러는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Get&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Post&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Delete&lt;/code&gt; 등 데코레이터로 장식 된 컨트롤러 클래스 내의 단순한 메서드이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/boards&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BoardsController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;getBoards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;This action returns all boards&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;즉, 브라우저에서 들어온 요청은 컨트롤러에서 알맞은 요청 경로(엔드포인트)로 분기해주며 해당 분기로 들어온 요청에 알맞은 할 일(요청 메소드)은 핸들러에서 처리가 되는 구조이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-nestjs-프로바이더란&quot;&gt;3. NestJS 프로바이더란?&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;프로바이더는 NestJS의 기본 개념이다.&lt;br /&gt;
+대부분의 기본 NestJS 클래스는 서비스, 리포지토리, 팩토리, 헬퍼등 프로바이더로 취급될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;프로바이더의 주요 아이디어는 종속성으로 주입할 수 있다는 것이다. 즉, 객체는 서로 다양한 관계를 만들수 있으며 객체의 인스턴스를 “연결”하는 기능은 대부분 Nest 런타임 시스템에 위임될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;예를 들면 컨트롤러는 웹 브라우저에서 요청이 들어오면 무수히 많은 기능을 수행하며 그를 수행하기 위해 많은 것들을 필요로 한다.&lt;br /&gt;
+하지만 필요한 모든 것들을 컨트롤러에서 처리하기엔 너무 방대하다.&lt;/p&gt;
+
+&lt;p&gt;따라서 기능별로 서비스, 리포지토리 등을 통해서 컨트롤러에 해당하는 기능을 넣어(종속성을 주입한다)주는 개념을 통틀어 프로바이더라 일컫는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;4-nestjs-서비스란&quot;&gt;4. NestJS 서비스란?&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;서비스는 소프트웨어 개발내의 공통 개념이며, NestJS나 JavaScript에서만 쓰이는 개념은 아니다.&lt;/p&gt;
+
+&lt;p&gt;서비스는 @Injectable 데코레이터로 감싸져서 모듈에 제공되며, 이 서비스 인스턴스는 애플리케이션 전체에서 사용될 수 있다.&lt;br /&gt;
+서비스는 컨트롤러에서 데이터의 유효성 체크를 하거나 데이터베이스 CRUD가 이뤄지는 부분들을 처리한다.&lt;/p&gt;
+
+&lt;p&gt;NestJS CLI로 생성한 기본 프로젝트를 예로 들면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;Hello World!&apos;&lt;/code&gt; 문자열을 리턴해주는 아래의 부분이 대표적인 서비스라 볼 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Injectable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AppService&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;getHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello World!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/til/22.04.14.til/&quot; target=&quot;_blank&quot;&gt;따라하며 배우는 Nest JS #2&lt;/a&gt;에서는 NestJS 로직 흐름에 대해서 학습했다면 오늘은 전반적인 부분마다 어떠한 기능을 수행하며 각 부분들이 어떻게 상호 연결되어 동작되는지에 대한 디테일한 부분을 우선 알아보았다.&lt;/p&gt;
+
+&lt;p&gt;각종 예제를 통해서 실제로 코드를 짜봐야 사실 조금 더 와닿을 듯 하다.&lt;/p&gt;
+
+&lt;p&gt;주말을 통해서 CRUD 관련해서 실제로 코드로 구현해보는 시간을 가져야 할 듯하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.04.15.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.04.15.til/</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>따라하며 배우는 Nest JS #2</title>
@@ -4261,345 +4396,6 @@ Section 을 거듭하며 마음에 맞는 스터디 팀원들이 생겼고 이 �
         
         
         <category>Retrospect</category>
-        
-      </item>
-    
-      <item>
-        <title>무료 도메인 주소를 이용한 AWS HTTPS 인증</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
-
-&lt;p&gt;기존에 EC2, S3, RDS를 통해 배포한 &lt;a href=&quot;https://jh8459.github.io/til/21.10.29.til/&quot; target=&quot;_blank&quot;&gt;웹 애플리케이션&lt;/a&gt;(21.10.29 TIL 참조)을 무료 도메인(Freenom)으로 배포하는 Advanced한 삽질 과정을 백엔드/프론트엔드 영역을 나누어 포스팅 해보려 한다.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;주의!&lt;/strong&gt; CloudFront에서 AWS 인증서 검증은 us-east-1(버지니아 북부) 인증서만 검증이 된다.&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;s3와 CloudFront는 글로벌 지역으로 배포가 되고 ec2와 ELB는 지역 리전으로 나뉘어진다. &lt;br /&gt;
-클라이언트는 글로벌 리전에서 작동하므로 리전에 영향을 받진 않을 듯 하고, 서버가 탑재될 ELB 서울리전으로 두고(&lt;em&gt;&lt;a target=&quot;_blank&quot;&gt;CloudPing.info&lt;/a&gt;를 통한 속도 검증 결과 리전마다 속도차이가 명확히 있다.&lt;/em&gt;) 개발환경을 구성하는게 서버의 응답속도 때문에 이점이 있을 듯 한데 인증서 문제 때문에 골머리가 아팠다…&lt;/p&gt;
-
-&lt;p&gt;이를 간단히 해결하기 위해서 배포된 &lt;a href=&quot;https://cmarket.cf&quot; target=&quot;_blank&quot;&gt;https://cmarket.cf&lt;/a&gt; 는 us-east-1 리전에서 웹서버가 작동하게 하여(&lt;em&gt;CloudFront(클라이언트)와 ELB(서버) 인증서가 모두 us-east-1 동일한 인증서 1개로 해결가능&lt;/em&gt;)간단히 해결하였다.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-무료-도메인-https-aws-배포---백엔드&quot;&gt;1. 무료 도메인 HTTPS AWS 배포 - 백엔드&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;h4 id=&quot;1-1-도메인-발급&quot;&gt;1-1. 도메인 발급&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;도메인 주소를 이용하여 HTTPS 인증방식을 사용하려면 우선 도메인을 발급받아야 한다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;AWS에서도 Route 53을 통한 도메인 구매가 가능하지만.. 비용부담이 발생하기도 하고 실제 상업사이트나 프로젝트/포트폴리오 목적이 아닌 학업 목적이기 때문에 무료 도메인 사이트인 &lt;a href=&quot;https://www.freenom.com/en/index.html?lang=en&quot; target=&quot;_blank&quot;&gt;Freenom&lt;/a&gt;에서 도메인 발급 후, 해당 도메인을 이용하였다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143876151-e7fed5c2-1b13-4d57-b97f-47440d364cde.png&quot; alt=&quot;스크린샷, 2021-11-29 22-26-24&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;무료 도메인은 예고없이 사라지거나 로그인이 안되는(?)등 종잡을 수 없는 문제가 발생 할 수 있으므로..이런 부분은 감안하고 학습목적 정도로만 사용하도록 하는게 알맞은 사용방향이라 생각한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://cmarket.cf/&quot; target=&quot;_blank&quot;&gt;cmarket.cf&lt;/a&gt; 주소로 도메인을 발급 받았으며 최초 발급 후 도메인에 접속하면 DNS 설정도 안된 빈 도메인이기 때문에 아래와 같은 에러코드를 받을 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143876050-43d949bd-e541-4507-acee-b59782c602f5.png&quot; alt=&quot;스크린샷, 2021-11-29 22-23-51&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-2-elb-생성&quot;&gt;1-2. ELB 생성&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;h5 id=&quot;elb란&quot;&gt;ELB란?&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;AWS에서 설명하는 ELB는 다음과 같다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144385209-49c0bca7-99bf-4d70-ad9a-d8bf0a76f3e8.png&quot; alt=&quot;스크린샷, 2021-12-02 17-26-39&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;단순한 로드 밸런서* 역할 외에도 인증서 관리등 HTTPS 인증방식 지원까지 겸하고 있는 만능 서비스이다.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;strong&gt;로드 밸런서&lt;/strong&gt;란?&lt;/p&gt;
-
-      &lt;p&gt;하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러 대의 서버가 분산처리하여 서버의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결해주는 서비스.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ELB 서비스가 왜 필요한지 개념을 알았으니, AWS EC2 메뉴중 로드밸런서로 들어가 보자.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143878331-14740d1a-92f8-4bdb-8c93-ce3d7e468979.png&quot; alt=&quot;스크린샷, 2021-11-29 22-37-16&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;로드밸런서를 생성하려보니 여러 유형을 선택 할 수 있는 선택창이 나온다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144386594-d626749f-2e92-4e78-ade4-6c52c1c7509d.png&quot; alt=&quot;스크린샷, 2021-12-02 17-36-07&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;우리는 HTTPS 인증 방식을 이용할 예정이니 1번을 선택하자.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;로드 밸런서 이름을 정한 뒤,&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144386771-94d61e1d-5c20-413f-bc13-cd119bdbdd75.png&quot; alt=&quot;스크린샷, 2021-12-02 17-37-32&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;네트워크 맵핑에서는 가용 영역을 모두 체크해주자.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144386995-f2e95a20-928a-400d-b4c0-ea5629603a37.png&quot; alt=&quot;스크린샷, 2021-12-02 17-38-35&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;그리고 리스너* 를 추가해 주어야 한다.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;strong&gt;리스너&lt;/strong&gt;란?&lt;/p&gt;
-
-      &lt;p&gt;짧게 말해 리스너란, 구성한 프로토콜 및 포트를 사용해서 연결 요청을 확인하는 프로세스이다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;리스너의 구성된 프로토콜/포트로 요청이 왔을때 대상그룹으로 연결(?)해주는 프로세스 같다. &lt;del&gt;(확실하지 않다…)&lt;/del&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144387585-52909c76-7f0e-463f-8792-8d27ea0a532f.png&quot; alt=&quot;스크린샷, 2021-12-02 17-42-54&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;리스너가 추가되면 각 리스너에 타겟 그룹을 설정해줘야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;현재 배포하려는 웹 애플리케이션은 클라이언트와 서버가 토큰을 로컬스토리지에 담아 &lt;strong&gt;HTTP&lt;/strong&gt;프로토콜로 데이터를 주고받고 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144389226-eddc00a7-e610-4849-9db7-4bd16edf329e.png&quot; alt=&quot;스크린샷, 2021-12-02 17-51-26&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;그렇기 때문에 클라이언트 ⮕ 로드밸런서로 HTTPS 요청이 와도 인스턴스(웹서버)에는 HTTP 프로토콜로 전달해 주어야 서버에서 클라이언트의 요청에 알맞는 응답 결과를 반환 할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그러므로 HTTP/HTTPS 두 리스너는 모두 HTTP 80포트로 인스턴스 연결이 이뤄지게끔 타겟 대상을 설정 해주자.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144390493-66a4eb97-b839-49f0-b3d9-7715ef867dfd.png&quot; alt=&quot;스크린샷, 2021-12-02 18-00-00&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;그리고 상태검사에서는 성공코드를 201번으로 변경하여 대상타겟을 생성해주자.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144390985-cc3aec51-cf97-4647-bc2a-5f207e2c4c53.png&quot; alt=&quot;스크린샷, 2021-12-02 18-02-42&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 로드밸런서가 외부 클라이언트로부터 HTTP/HTTPS 요청이 왔을 때 인스턴스로 이동하는 과정은 모두 완성하였다. 이제 인증서를 등록해 주어야 한다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144411410-47d3a10f-8b12-4c79-bd58-c97656cfec51.png&quot; alt=&quot;스크린샷, 2021-12-02 18-06-03&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;HTTPS 프로토콜을 이용하려면 신뢰할 수 있는 기관에서 발급받은 인증서로 통해 통신이 이뤄진다. AWS에서는 ACM(&lt;em&gt;AWS에서 제공하는 인증서&lt;/em&gt;)를 권장하고 있으며, 기존 사용하던 인증서가 있다면 해당 인증서를 import 해주어서 로드밸런서에 인증서를 등록해줄수도 있다.&lt;/p&gt;
-
-    &lt;p&gt;AWS에서도 무료로 인증서 발급을 해주기도하고, 권장하는 방법이기 때문에 새로 발급해서 사용하기로 하였다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-3-acm을-통한-인증서-발급&quot;&gt;1-3. ACM을 통한 인증서 발급&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;AWS에서 발급 가능한 인증서를 만들기 위해 우선 &lt;strong&gt;새 인증서 요청&lt;/strong&gt; 버튼으로 진입 후 요청을 눌러준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144416238-157f4c2d-0eaa-4374-b5c6-b2f9356992ff.png&quot; alt=&quot;스크린샷, 2021-12-02 20-46-27&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;퍼블릭 인증서 요청을 선택한 뒤 다음 버튼을 누르면, 도메인 이름과 검증 방식을 설정해 준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144416552-6a6e340d-d5a2-4276-b512-c9f6a11330e0.png&quot; alt=&quot;스크린샷, 2021-12-02 20-48-33&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;도메인 이름에 다른이름을 추가한 이유는 서버/클라이언트 각각 다른 도메인으로 배포하기 위함이다. (서버는 server.cmarket.cf 로 배포하였다.)&lt;br /&gt;
-Freenom에서 발급 받은 도메인 앞에 와일드카드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;)를 입력하여 도메인이름을 설정하였다.&lt;/p&gt;
-
-    &lt;p&gt;그리고 검증방식은 DNS 방식을 선택해주자. &lt;del&gt;(이게 간편하다고 하더라..)&lt;/del&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;조금 기다린 뒤 인증서 ID를 눌러보면 CNAME 값이 생성된 것을 볼 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143906637-868b596f-7209-491e-becf-7347fe2e9ffd.png&quot; alt=&quot;스크린샷, 2021-11-30 01-31-46&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;그 뒤 Manage Freenom DNS 로 이동해 준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144420586-a718cd8f-3a36-4078-b4ca-49bcf92bc503.png&quot; alt=&quot;스크린샷, 2021-12-02 20-56-02&quot; /&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;AWS Route 53에서 발급받은 도메인이라면 레코드 추가하기로 간편하게 Route 53에서 DNS 검증이 가능하지만, 무료 도메인을 발급 받은 상황이기때문에 Freenom DNS로 가서 설정을 변경해줘야 한다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;TYPE을 CNAME 으로 변경해 준 뒤, AWS에서 확인한 CNAME 이름과 값을 넣어주고 저장해준다. 그 후 ACM으로 와서 검증이 끝날 때 까지(&lt;em&gt;5~10분정도 소요되었다.&lt;/em&gt;) 기다려주면 아래와 같은 인증서 발급 완료 안내를 확인 할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143908476-0a484866-aafa-4382-8d04-2099ea5ef71f.png&quot; alt=&quot;스크린샷, 2021-11-30 01-45-32&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;생성 중이던 로드밸런서에 발급받은 인증서를 넣고 생성을 완료한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-4-freenom--route-53-연결&quot;&gt;1-4. Freenom ⬌ Route 53 연결&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;h5 id=&quot;route-53란&quot;&gt;Route 53란?&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 Route 53은 AWS에서 제공하는 DNS(Domain Name Service)이다.&lt;/p&gt;
-
-    &lt;p&gt;그 외에도 도메인과 관련된 여러가지 서비스를 제공한다. 간략히 DNS 개념만 언급하자면 IP로 도메인을 기억하기는 힘들기때문에 사람이 기억하기 이름 형태로 변환해주는 시스템이다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 Freenom DNS 검증은 완료되었다, AWS에서 해당 도메인을 사용하기 위해서 Freenom Nameservers 설정을 변경해 주자.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143911244-7cb509e0-6b6a-4406-a120-eed04b5f6317.png&quot; alt=&quot;스크린샷, 2021-11-30 02-02-27&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;위 사진 영역에 Route 53에서 호스팅 영역을 생성 후 NS 에 해당하는 라우팅 대상을 맵핑해서 넣어주면 된다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/143912771-bbaacb32-af5e-439c-9bfe-b2bcc58eabc6.png&quot; alt=&quot;스크린샷, 2021-11-30 02-13-28&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 Freenom에서 발급 받은 무료 도메인(cmarket.cf)은 AWS Certificate Manager을 받기 위한 DNS 검증도 끝났으며, Route 53 호스팅 영역에도 연결이 되었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-5-route-53--elb-연결&quot;&gt;1-5. Route 53 ⬌ ELB 연결&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Route 53도 도메인과 연결되어 있으며 ELB도 인스턴스에 연결되어 있는 상태이다. 이 둘을 연결만 해주면 도메인에서도 인스턴스 접근이 가능하다.&lt;br /&gt;
-Route 53 메뉴로 가서 레코드 한줄만 써주도록 하자.&lt;/p&gt;
-
-    &lt;p&gt;서버를 도메인에 등록할텐데, 인증서 발급시 와일드카드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;)로 주었기 때문에 서버의 도메인은 원하는 이름을 주어도 가능하다. 아래 사진과 같이 레코드를 생성해주었다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144421521-15fd77de-474f-41dc-a80e-caeb95d46b3b.png&quot; alt=&quot;스크린샷, 2021-12-02 21-24-45&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-6-연결-확인&quot;&gt;1-6. 연결 확인&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 server.cmarket.cf 도메인을 브라우저 검색창에 검색한다면, AWS의 Route 53의 DNS서비스를 통하여 ELB에 접근하게된다.&lt;/p&gt;
-
-    &lt;p&gt;ELB에서는 트래픽을 자동으로 분산 시켜서 HTTPS/HTTP 을 요청을 리스너를 통하여 HTTP/80번 포트로 EC2 인스턴스 접근을 허용시킨다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EC2에 서버가 켜져있다면 endpoint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt; 로 접근이 될것이므로,&lt;/p&gt;
-
-    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;201&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;따라서 &lt;a href=&quot;https://server.cmarket.cf/&quot; target=&quot;_blank&quot;&gt;https://server.cmarket.cf&lt;/a&gt; 도메인 검색시 아래와 같은 결과가 확인된다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144422316-8d6ed790-125f-4959-9243-dfc05ca6d63a.png&quot; alt=&quot;스크린샷, 2021-12-02 21-30-26&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;해당 도메인에 AWS에서 발급받은 인증서가 유효하게 작동하는 HTTPS 서버 도메인이 완성되었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-무료-도메인-https-aws-배포---프론트엔드&quot;&gt;2. 무료 도메인 HTTPS AWS 배포 - 프론트엔드&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;2-1-s3-버킷-엔드포인트-수정&quot;&gt;2-1. S3 버킷 엔드포인트 수정&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;기존 버킷에 등록된 빌드 파일은 HTTP로 서버와 클라이언트간 통신이 이뤄지고 있었다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144423691-019196bd-2cbc-44cc-980a-ffbb4bcaf39b.png&quot; alt=&quot;스크린샷, 2021-12-02 17-51-26&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;ACM을 이용한 HTTPS 인증방식이 이뤄질 수 있도록 클라이언트의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; 파일을 수정하여 엔드포인트를 https://server.cmarket.cf 로 변경해 준 뒤 다시 빌드하여 버킷에 다시 업로드 해주었다.&lt;/p&gt;
-    &lt;h4 id=&quot;2-2-cloudfront-배포-생성-s3--cloudfront-연결&quot;&gt;2-2. CloudFront 배포 생성 (S3 ⬌ CloudFront 연결)&lt;/h4&gt;
-    &lt;hr /&gt;
-  &lt;/li&gt;
-  &lt;li&gt;버킷으로는 인증서를 이용한 HTTPS 인증방식이 불가능하기 때문에, S3를 CloudFront에 연결해 주어야 한다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 CloudFront 생성하기로 진입 후 원본 도메인에서 기존 S3 버킷을 선택해 준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144424581-a9dadcea-be3f-44b8-ae39-066b504c9c07.png&quot; alt=&quot;스크린샷, 2021-12-02 21-44-21&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본 캐시동작에서 뷰어 프로토콜 정책은 Redirect HTTP to HTTPS 로 선택해 준다&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144424748-0520949f-381d-4a7f-85fb-de731eb71af1.png&quot; alt=&quot;스크린샷, 2021-12-02 21-44-42&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그 다음 설정에서 CNAME은 도메인으로 쓸 cmarket.cf를 입력 해 준뒤, 미리 생성해 둔 인증서(us-east-1)를 등록해준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144425006-75cb095b-c14f-4952-9612-c23a98770d90.png&quot; alt=&quot;스크린샷, 2021-12-02 21-47-37&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;인증서는 반드시 미국 동부(버지니아 북부) 리전(us-east-1)에 있어야 합니다.&lt;/strong&gt;&lt;br /&gt;
-&lt;em&gt;이 문구 때문에 사실 서울 리전을 한번 갈아 엎고 미국 동부 리전에서 다시 시작하였다…&lt;/em&gt;  &lt;del&gt;장난..??&lt;/del&gt;&lt;/p&gt;
-
-    &lt;p&gt;그리고 계속하여 설정에서 기본값 루트 객체를 index.html으로 수정해준 뒤 배포 생성을 완료해준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144425488-f118043d-d44a-4f3b-9009-e2209377cf22.png&quot; alt=&quot;스크린샷, 2021-12-02 21-51-06&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그 뒤 배포 상태가 &lt;strong&gt;활성화 됨&lt;/strong&gt;으로 확인되면, 배포 아이디 클릭 후 오류 페이지로 접근 하여 사용자 정의 오류 응답을 작성해 준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144425878-f7959699-d29e-4781-b084-deb136799673.png&quot; alt=&quot;스크린샷, 2021-12-02 21-53-28&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;에러코드 403번과 404번 모두 오류 응답 200번 코드로 응답 페이지는 /index.html 으로 설정 해준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144426098-da4a7eb7-7f6b-427a-9eeb-bf419f61a804.png&quot; alt=&quot;스크린샷, 2021-12-02 21-55-05&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;이제 클라이언트도 유효한 인증서를 기반으로 HTTPS 인증방식으로 서버와 통신할 수 있게 배포가 되었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-3-route-53--cloudfront-연결&quot;&gt;2-3. Route 53 ⬌ CloudFront 연결&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;사실 Cloudfront 배포가 성공하였다면, AWS에서 제공하는 유효한 도메인이 발급이 된다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144426871-9e5f9d34-31d3-4d11-a8d1-983a157e2a38.png&quot; alt=&quot;스크린샷, 2021-12-02 22-00-11&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;다만..&lt;del&gt;(이쁘지 않다..)&lt;/del&gt; 애써 발급받은 도메인을 놀리기엔 아깝지 않은가? ELB를 도메인과 연결시켰듯이 클라이언트가 담긴 Cloudfront 또한 Route 53에서 별칭 레코드를 생성해주자.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Route 53의 호스팅 영역으로 간뒤, 레코드 생성을 아래와 같이 해준다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144427560-b399fcf4-9bd4-43bd-b70c-c526445fc57b.png&quot; alt=&quot;스크린샷, 2021-12-02 22-03-59&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;cmarket.cf 도메인 주소를 클라이언트가 보여지는 영역으로 쓸 것이므로 이름값은 따로 주지 않았다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-4-연결-확인&quot;&gt;2-4. 연결 확인&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이제 클라이언트/서버가 모두 HTTPS 인증방식으로 내가 원하는 도메인으로 발급이 모두 완료되었다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144428894-aff7f1f8-2401-42aa-8298-8f79ad67dc4f.gif&quot; alt=&quot;cmarket cf&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;리스너를 HTTP/HTTPS 방식 모두 지원하기 때문에 도메인에 배포한 HTTPS 방식의 통신도 지원하며, S3 버킷에서 HTTP 환경으로 클라이언트를 구동시켜도 모두 서버와 원활히 통신이 가능하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;AWS…너무 어렵다.&lt;br /&gt;
-단순히 인스턴스 올리고 버킷에 객체 업로드 하고 RDS로 DB 생성 후 연동하는건 정말 걸음마 단계였던거 같다.&lt;/li&gt;
-  &lt;li&gt;원래 해당 스프린트는 Advanced 과정으로 코드스테이츠에는 Route 53에서 도메인을 구매 후 진행하라 일러준다. &lt;br /&gt;
- 학습과정에서 적게는 9$ 이상씩 지불하기가 아깝기도 하고.. AWS에서 지원하지 않는 외부 도메인을 사용해서 Route 53에서 등록하는 과정까지 학습과정에서는 모두 좋은 경험이라 생각든다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;마음에 안드는 부분은 CloudFront 배포가 무조건 us-east-1 리전에서만 가능하기때문에 EC2 인스턴스도 억지로 서울 리전을 버리고 us-east-1 리전으로 강제 이주하였다..&lt;/p&gt;
-
-    &lt;p&gt;서두에 말했듯이, 미국지역 리전의 응답속도와 서울 리전의 응답속도는 하늘과 땅차이 였다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/144410348-669abeb7-67a6-413f-95bf-4e4373125150.png&quot; alt=&quot;스크린샷, 2021-12-02 19-54-25&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;위와 같이 엄청난 속도차이가 있다.&lt;del&gt;(역시 인터넷 속도는 한국)&lt;/del&gt; 서울 리전에 서버를 두고 다시 배포해보는 과정을 생각해봐야 겠다. (이렇게 되면 클라이언트/서버 각각 인증서가 리전이 다른데 유효할지 의문이 든다..)&lt;/p&gt;
-
-    &lt;p&gt;찜찜하지만.. 우선 초기에 목표로 둔 내가 원하는 도메인에 HTTPS 인증방식으로 배포하는게 성공해서 잠은 푹 잘 수 있을듯 하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 26 Nov 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/til/21.11.26.til/</link>
-        <guid isPermaLink="true">http://localhost:4000/til/21.11.26.til/</guid>
-        
-        
-        <category>TIL</category>
         
       </item>
     
