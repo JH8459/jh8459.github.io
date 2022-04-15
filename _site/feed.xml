@@ -5,9 +5,233 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Apr 2022 00:25:10 +0900</pubDate>
-    <lastBuildDate>Thu, 14 Apr 2022 00:25:10 +0900</lastBuildDate>
+    <pubDate>Fri, 15 Apr 2022 11:48:19 +0900</pubDate>
+    <lastBuildDate>Fri, 15 Apr 2022 11:48:19 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>따라하며 배우는 Nest JS #2</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;p&gt;인프런의 &lt;a href=&quot;https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4&quot; target=&quot;_blank&quot;&gt;따라하며 배우는 NestJS&lt;/a&gt;를 들으며 배운점을 남기고 기록해보려고 한다.&lt;/p&gt;
+
+&lt;p&gt;Node.js의 프레임워크인 Nest JS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해 포스팅을 남긴다.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-nestcli로-생성한-프로젝트-기본구조&quot;&gt;1. NestCLI로 생성한 프로젝트 기본구조&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nest new ./&lt;/code&gt; 명령어를 이용하여 폴더 내부에 기본 NestJS 프레임워크 기본 설정을 NestCLI를 통하여 만들었다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163496350-819bacb8-f9c5-4af4-a4a7-19847eb427a3.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;기본으로 구성된 프로젝트 기본구조를 하나씩 알아보면 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-1-eslintrcjs&quot;&gt;1-1. .eslintrc.js&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;개발자들이 특정한 규칙을 가지고 코드를 깔끔하게 짤 수있게 도와주는 라이브러리이다.&lt;/p&gt;
+
+&lt;p&gt;타입스크립트를 쓰는 가이드 라인을 제시하며 문법에 오류가 나면 알려주는 역할 등 &lt;strong&gt;코딩 컨벤션&lt;/strong&gt;에 일조하는 역할을 하는 라이브러리이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;코딩 컨벤션?&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;읽고 관리하기 쉬운 코드를 작성하기 위한 일종의 코딩 스타일 규약이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-2-prettierrc&quot;&gt;1-2. .prettierrc&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;eslint와 마찬가지로 코딩 컨벤션에 일조하는 라이브러리이다.&lt;br /&gt;
+주로 코드의 형식을 맞추는데 사용한다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어 문자열을 표현할 때 작은 따옴표(‘)를 사용할지 큰 따옴표(“)를 사용할지, indent 값을 2줄 혹은 4줄로 사용할지 등 문법 에러를 찾는 것이 아닌 코드 포맷터의 역할을 갖는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-3-nest-clijson&quot;&gt;1-3. nest-cli.json&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;nest 프로젝트를 위해 특정한 설정을 할 수 있는 json 파일이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-4-tsconfigjson&quot;&gt;1-4. tsconfig.json&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;타입스크립트 컴파일을 어떻게 할 지 설정하는 json 설정 파일이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-5-tsconfigbuildjson&quot;&gt;1-5. tsconfig.build.json&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;tsconfig.json 파일의 연장선 상에 있는 파일이며, build를 할 때 필요한 설정들을 담고있다.&lt;/p&gt;
+
+&lt;p&gt;“exclude”에는 빌드할 때 필요 없는 파일들이 명시되어 있다. (ex. node_modules 등)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-6-packagejson&quot;&gt;1-6. package.json&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;version&lt;/code&gt; 영역에서는 프로젝트의 정보를 정의하고 있으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;devDependencies&lt;/code&gt; 영역에서는 패키지 버전 정보를 담고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-7-src-디렉토리&quot;&gt;1-7. src 디렉토리&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;주요한 기능(API 관련)들이 담겨있는 폴더이다.&lt;/p&gt;
+
+&lt;p&gt;공식문서에서는 다음과 같이 설명하고 있다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163498889-ac3edc31-2bb3-46de-984a-840984c80bf1.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;app.controller.ts&lt;/strong&gt;: 기본 컨트롤러&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;app.controller.spec.ts&lt;/strong&gt;: 컨트롤러에 대한 단위 테스트&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;app.module.ts&lt;/strong&gt;: 애플리케이션의 루트 모듈&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;app.service.ts&lt;/strong&gt;: 하나의 방법으로 기본 서비스를 제공&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;main.ts&lt;/strong&gt;: 핵심 방법, NestFactory를 활용해 Nest 애플리케이션 인스턴스를 생성하는 애플리케이션 항목 파일&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-기본-구조에서-살펴보는-nest-로직-흐름&quot;&gt;2. 기본 구조에서 살펴보는 Nest 로직 흐름&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;위와 같이 NestJS CLI로 만든 기본 프로젝트를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm run start&lt;/code&gt;로 로컬환경으로 실행 시킨 뒤 확인해보면 다음과 같은 메시지 출력을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163503262-8e96a8ca-def8-45e8-946e-b44f67344aff.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 메시지가 출력되는 과정을 알아보려 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;를 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NestFactory.create(AppModule);&lt;/code&gt; 구문을 볼 수 있다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img width=&quot;483&quot; alt=&quot;스크린샷 2022-04-15 오전 10 31 03&quot; src=&quot;https://user-images.githubusercontent.com/83164003/163503675-ba87b17f-6859-4b44-9877-b3391d4324c1.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AppModule&lt;/code&gt;로 이동해보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.module.ts&lt;/code&gt; 파일로 이동하게 된다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img width=&quot;470&quot; alt=&quot;스크린샷 2022-04-15 오전 10 35 29&quot; src=&quot;https://user-images.githubusercontent.com/83164003/163503932-62d6da09-e491-4e45-a628-07ee085eb46a.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.module.ts&lt;/code&gt; 파일에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Module&lt;/code&gt; 부분에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.controller.ts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.service.ts&lt;/code&gt; 부분을 모두 모듈로 등록하여야 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AppModule&lt;/code&gt;로써 사용이 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;controllers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와 같은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Module&lt;/code&gt;이 등록이 되어야 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;에서 아래와 같이 사용가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NestFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;service&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;controller&lt;/code&gt;가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;module&lt;/code&gt;로 묶여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;에서 사용된다고 이해하고 다음으로 넘어갔다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-1-요청이-들어올-경우-응답을-반환하기까지의-절차&quot;&gt;2-1. 요청이 들어올 경우 응답을 반환하기까지의 절차&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;의 구조만 잠시 파악을 해보았다.&lt;/p&gt;
+
+&lt;p&gt;하지만 서버는 기본적으로 클라이언트의 요청이 들어올 경우 올바른 응답을 반환해주는 구조로 설계가 된다.&lt;/p&gt;
+
+&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt; 이 어떤 요청을 보냈는지 확인해 네트워크 탭을 통해 확인해 보면 아래와 같다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163505599-800357ee-06a0-4058-9313-e1c53829c33d.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:3000&lt;/code&gt;은 기본 서버 URL이기 때문에 결국 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt; 엔드포인트로 &lt;strong&gt;GET&lt;/strong&gt; 메소드 요청을 보냄을 확인하였다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 서버는 적절한 엔드포인트로 요청 메소드와 함께 요청이 전달받았으니 올바른 응답을 반환해 주어야 한다.&lt;/p&gt;
+
+&lt;p&gt;응답을 반환하는 과정은 아래와 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.controller.ts&lt;/code&gt;를 들여다 보면&lt;/p&gt;
+
+&lt;center&gt;&lt;img width=&quot;529&quot; alt=&quot;스크린샷 2022-04-15 오전 10 58 59&quot; src=&quot;https://user-images.githubusercontent.com/83164003/163506744-2cd96916-eb88-443a-a340-b6b1a5394dec.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 위 파일에서는 엔드포인트 &apos;/&apos;은 생략되어 있다.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;getHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt; 엔드포인트로 들어온 &lt;strong&gt;GET&lt;/strong&gt; 메소드가 요청으로 들어올 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getHello&lt;/code&gt; 함수의 리턴값을 응답값으로 넘겨주는 구조로 작성되어 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;값으로 명시된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;appService&lt;/code&gt; 를 들여다보면 다음과 같다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img width=&quot;588&quot; alt=&quot;스크린샷 2022-04-15 오전 11 16 08&quot; src=&quot;https://user-images.githubusercontent.com/83164003/163508010-5c3ad81b-fb03-41ea-9fef-9fb3c06f2fff.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;결국 이곳에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getHello()&lt;/code&gt; 함수의 리턴값인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;Hello World!&apos;&lt;/code&gt;가 브라우저에 출력이 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-2-절차-요약&quot;&gt;2-2. 절차 요약&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;결국 클라이언트의 요청이 들어오는 경우 라우터가 분기되기전 최초 진입점 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;로 진입하게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;에서는 루트 모듈인 appModule을 호출하며 이 appModule &lt;strong&gt;Controller&lt;/strong&gt;와 &lt;strong&gt;Service&lt;/strong&gt;가 묶여있다.&lt;/p&gt;
+
+&lt;p&gt;그 후 요청 엔드포인트와 요청 메소드와 일치하는 &lt;strong&gt;Controller&lt;/strong&gt;로 분기되며 알맞은 메소드를 통하여 분기된 API 요청은 올바른 응답값을 반환하기 위해 &lt;strong&gt;Service&lt;/strong&gt;에서 필요한 작업들을 수행해준뒤 클라이언트로 응답을 리턴해주게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;p&gt;사실 나는 node.js의 프레임워크로 express.js만 사용해왔기 때문에 구조가 다른부분은 아직 조금 더 학습해 나가며 이해해보려한다.&lt;/p&gt;
+
+&lt;p&gt;하지만 절차적인 구조는 유사함을 많이 느꼈다.&lt;/p&gt;
+
+&lt;p&gt;디테일한 구조적인 차이점은 앞으로 조금 더 학습해가며 이해가 필요한 부분이라 판단된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.04.14.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.04.14.til/</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>따라하며 배우는 Nest JS #1</title>
@@ -4376,33 +4600,6 @@ Route 53 메뉴로 가서 레코드 한줄만 써주도록 하자.&lt;/p&gt;
         
         
         <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>코드스테이츠 Section3 재수강</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
-
-&lt;p&gt;재수강을 하면서 같은 Section을 다시 진행하면서 간만에 새글을 쓰는 거 같다. &lt;br /&gt;
-새로운 pair와 같은 Section을 다시 진행을 하는데…&lt;del&gt;어렵다!! 여전히 어렵다&lt;/del&gt; 어렵다 느꼈던 부분은 다시봐도 어렵다 느꼈다..&lt;/p&gt;
-
-&lt;p&gt;물론 조금 나아진 점은 물론 있고, 머릿속에 남아 있는 잔재들로 해결을 해내곤 하지만, 여전히 부족한 부분에서 튀어나오는 구글링 포인트는 바뀌질 않았다.. 아직 &lt;strong&gt;“여전히 부족하구나, 갈길이 멀구나”&lt;/strong&gt; 를 온전히 느끼고 있다.&lt;/p&gt;
-
-&lt;p&gt;오늘 했던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sprint - Short.ly MVC&lt;/code&gt; 도 다시 풀어보니 백엔드 로직이 새삼 HA3와 비슷하구나..를 다시 풀며 느꼈다.&lt;/p&gt;
-
-&lt;p&gt;아무튼 부족한점이 너무 많았기에, 이번 기수이동이 오히려 잘 되었다 느끼고 있다.&lt;br /&gt;
-말과 다르게 요즘 블로그 새 글이 뜸한데, 예전에 썼던 TIL들 중 부족한 부분들이 있다면 채워서 수정하고 있기 때문이다.&lt;/p&gt;
-
-&lt;p&gt;재수강 후 첫째 주는 솔직히 손에 잡히는게 없어서 루틴도 모두 깨졌는데, 이번 주 부터는 다시 돌아가고 있다. &lt;del&gt;TOY는 다시 풀기 너무 싫어요…&lt;/del&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Nov 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/21.11.17.retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/21.11.17.retrospect/</guid>
-        
-        
-        <category>Retrospect</category>
         
       </item>
     

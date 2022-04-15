@@ -1,0 +1,926 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>따라하며 배우는 Nest JS #2 | JHLog</title>
+<meta name="description" content="[TIL] 따라하며 배우는 Nest JS #2">
+
+
+  <meta name="author" content="JH 🤔">
+  
+  <meta property="article:author" content="JH 🤔">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="따라하며 배우는 Nest JS #2">
+<meta property="og:url" content="http://localhost:4000/til/22.04.14.til/">
+
+
+  <meta property="og:description" content="[TIL] 따라하며 배우는 Nest JS #2">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/22.04.14.til/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH 🤔",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/"><b>카테고리</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/"><b>포스트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/"><b>프로젝트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/"><b>ABOUT</b></a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">따라하며 배우는 Nest JS #2</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH 🤔" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">JH 🤔</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>Hello World !</strong><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Study Log 📖</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#project">Project</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">ETC ⚙️</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#blog">Blog</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="따라하며 배우는 Nest JS #2">
+    <meta itemprop="description" content="[TIL] 따라하며 배우는 Nest JS #2">
+    <meta itemprop="datePublished" content="2022-04-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/22.04.14.til/" class="u-url" itemprop="url">따라하며 배우는 Nest JS #2
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-14T00:00:00+09:00">April 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-nestcli로-생성한-프로젝트-기본구조">1. NestCLI로 생성한 프로젝트 기본구조</a><ul><li><a href="#1-1-eslintrcjs">1-1. .eslintrc.js</a></li><li><a href="#1-2-prettierrc">1-2. .prettierrc</a></li><li><a href="#1-3-nest-clijson">1-3. nest-cli.json</a></li><li><a href="#1-4-tsconfigjson">1-4. tsconfig.json</a></li><li><a href="#1-5-tsconfigbuildjson">1-5. tsconfig.build.json</a></li><li><a href="#1-6-packagejson">1-6. package.json</a></li><li><a href="#1-7-src-디렉토리">1-7. src 디렉토리</a></li></ul></li><li><a href="#2-기본-구조에서-살펴보는-nest-로직-흐름">2. 기본 구조에서 살펴보는 Nest 로직 흐름</a><ul><li><a href="#2-1-요청이-들어올-경우-응답을-반환하기까지의-절차">2-1. 요청이 들어올 경우 응답을 반환하기까지의 절차</a></li><li><a href="#2-2-절차-요약">2-2. 절차 요약</a></li></ul></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>인프런의 <a href="https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4" target="_blank">따라하며 배우는 NestJS</a>를 들으며 배운점을 남기고 기록해보려고 한다.</p>
+
+<p>Node.js의 프레임워크인 Nest JS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해 포스팅을 남긴다.
+<br />
+<br /></p>
+
+<h3 id="1-nestcli로-생성한-프로젝트-기본구조">1. NestCLI로 생성한 프로젝트 기본구조</h3>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">nest new ./</code> 명령어를 이용하여 폴더 내부에 기본 NestJS 프레임워크 기본 설정을 NestCLI를 통하여 만들었다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163496350-819bacb8-f9c5-4af4-a4a7-19847eb427a3.png" /></center>
+<p><br /></p>
+
+<p>기본으로 구성된 프로젝트 기본구조를 하나씩 알아보면 다음과 같다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-1-eslintrcjs">1-1. .eslintrc.js</h4>
+<hr />
+
+<p>개발자들이 특정한 규칙을 가지고 코드를 깔끔하게 짤 수있게 도와주는 라이브러리이다.</p>
+
+<p>타입스크립트를 쓰는 가이드 라인을 제시하며 문법에 오류가 나면 알려주는 역할 등 <strong>코딩 컨벤션</strong>에 일조하는 역할을 하는 라이브러리이다.</p>
+
+<blockquote>
+  <p><strong>코딩 컨벤션?</strong></p>
+
+  <p>읽고 관리하기 쉬운 코드를 작성하기 위한 일종의 코딩 스타일 규약이다.</p>
+</blockquote>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-2-prettierrc">1-2. .prettierrc</h4>
+<hr />
+
+<p>eslint와 마찬가지로 코딩 컨벤션에 일조하는 라이브러리이다.<br />
+주로 코드의 형식을 맞추는데 사용한다.</p>
+
+<p>예를 들어 문자열을 표현할 때 작은 따옴표(‘)를 사용할지 큰 따옴표(“)를 사용할지, indent 값을 2줄 혹은 4줄로 사용할지 등 문법 에러를 찾는 것이 아닌 코드 포맷터의 역할을 갖는다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-3-nest-clijson">1-3. nest-cli.json</h4>
+<hr />
+
+<p>nest 프로젝트를 위해 특정한 설정을 할 수 있는 json 파일이다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-4-tsconfigjson">1-4. tsconfig.json</h4>
+<hr />
+
+<p>타입스크립트 컴파일을 어떻게 할 지 설정하는 json 설정 파일이다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-5-tsconfigbuildjson">1-5. tsconfig.build.json</h4>
+<hr />
+
+<p>tsconfig.json 파일의 연장선 상에 있는 파일이며, build를 할 때 필요한 설정들을 담고있다.</p>
+
+<p>“exclude”에는 빌드할 때 필요 없는 파일들이 명시되어 있다. (ex. node_modules 등)</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-6-packagejson">1-6. package.json</h4>
+<hr />
+
+<p>프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">version</code> 영역에서는 프로젝트의 정보를 정의하고 있으며, <code class="language-plaintext highlighter-rouge">dependencies</code> 또는 <code class="language-plaintext highlighter-rouge">devDependencies</code> 영역에서는 패키지 버전 정보를 담고 있다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-7-src-디렉토리">1-7. src 디렉토리</h4>
+<hr />
+
+<p>주요한 기능(API 관련)들이 담겨있는 폴더이다.</p>
+
+<p>공식문서에서는 다음과 같이 설명하고 있다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163498889-ac3edc31-2bb3-46de-984a-840984c80bf1.png" /></center>
+<p><br /></p>
+
+<ul>
+  <li><strong>app.controller.ts</strong>: 기본 컨트롤러</li>
+  <li><strong>app.controller.spec.ts</strong>: 컨트롤러에 대한 단위 테스트</li>
+  <li><strong>app.module.ts</strong>: 애플리케이션의 루트 모듈</li>
+  <li><strong>app.service.ts</strong>: 하나의 방법으로 기본 서비스를 제공</li>
+  <li><strong>main.ts</strong>: 핵심 방법, NestFactory를 활용해 Nest 애플리케이션 인스턴스를 생성하는 애플리케이션 항목 파일</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-기본-구조에서-살펴보는-nest-로직-흐름">2. 기본 구조에서 살펴보는 Nest 로직 흐름</h3>
+<hr />
+
+<p>위와 같이 NestJS CLI로 만든 기본 프로젝트를 <code class="language-plaintext highlighter-rouge">npm run start</code>로 로컬환경으로 실행 시킨 뒤 확인해보면 다음과 같은 메시지 출력을 확인 할 수 있다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163503262-8e96a8ca-def8-45e8-946e-b44f67344aff.png" /></center>
+<p><br /></p>
+
+<p>해당 메시지가 출력되는 과정을 알아보려 한다.</p>
+
+<p><br />
+<br /></p>
+
+<p>우선 <code class="language-plaintext highlighter-rouge">main.ts</code>를 보면 <code class="language-plaintext highlighter-rouge">NestFactory.create(AppModule);</code> 구문을 볼 수 있다.</p>
+
+<center><img width="483" alt="스크린샷 2022-04-15 오전 10 31 03" src="https://user-images.githubusercontent.com/83164003/163503675-ba87b17f-6859-4b44-9877-b3391d4324c1.png" /></center>
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">AppModule</code>로 이동해보면 <code class="language-plaintext highlighter-rouge">app.module.ts</code> 파일로 이동하게 된다.</p>
+
+<center><img width="470" alt="스크린샷 2022-04-15 오전 10 35 29" src="https://user-images.githubusercontent.com/83164003/163503932-62d6da09-e491-4e45-a628-07ee085eb46a.png" /></center>
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">app.module.ts</code> 파일에 있는 <code class="language-plaintext highlighter-rouge">@Module</code> 부분에 <code class="language-plaintext highlighter-rouge">app.controller.ts</code>, <code class="language-plaintext highlighter-rouge">app.service.ts</code> 부분을 모두 모듈로 등록하여야 <code class="language-plaintext highlighter-rouge">AppModule</code>로써 사용이 가능하다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Module</span><span class="p">({</span>
+	<span class="na">imports</span><span class="p">:</span> <span class="p">[],</span>
+	<span class="na">controllers</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppController</span><span class="p">],</span>
+	<span class="na">providers</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppService</span><span class="p">],</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>위와 같은 <code class="language-plaintext highlighter-rouge">@Module</code>이 등록이 되어야 <code class="language-plaintext highlighter-rouge">main.ts</code>에서 아래와 같이 사용가능하다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>우선 <code class="language-plaintext highlighter-rouge">service</code>와 <code class="language-plaintext highlighter-rouge">controller</code>가 <code class="language-plaintext highlighter-rouge">module</code>로 묶여 <code class="language-plaintext highlighter-rouge">main.ts</code>에서 사용된다고 이해하고 다음으로 넘어갔다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-1-요청이-들어올-경우-응답을-반환하기까지의-절차">2-1. 요청이 들어올 경우 응답을 반환하기까지의 절차</h4>
+<hr />
+
+<p>우선 <code class="language-plaintext highlighter-rouge">main.ts</code>의 구조만 잠시 파악을 해보았다.</p>
+
+<p>하지만 서버는 기본적으로 클라이언트의 요청이 들어올 경우 올바른 응답을 반환해주는 구조로 설계가 된다.</p>
+
+<p>우선 <code class="language-plaintext highlighter-rouge">localhost:3000</code> 이 어떤 요청을 보냈는지 확인해 네트워크 탭을 통해 확인해 보면 아래와 같다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163505599-800357ee-06a0-4058-9313-e1c53829c33d.png" /></center>
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">http://localhost:3000</code>은 기본 서버 URL이기 때문에 결국 <code class="language-plaintext highlighter-rouge">/</code> 엔드포인트로 <strong>GET</strong> 메소드 요청을 보냄을 확인하였다.</p>
+
+<p>그렇다면 서버는 적절한 엔드포인트로 요청 메소드와 함께 요청이 전달받았으니 올바른 응답을 반환해 주어야 한다.</p>
+
+<p>응답을 반환하는 과정은 아래와 같다.</p>
+
+<p><br />
+<br /></p>
+
+<p>우선 <code class="language-plaintext highlighter-rouge">app.controller.ts</code>를 들여다 보면</p>
+
+<center><img width="529" alt="스크린샷 2022-04-15 오전 10 58 59" src="https://user-images.githubusercontent.com/83164003/163506744-2cd96916-eb88-443a-a340-b6b1a5394dec.png" /></center>
+<p><br /></p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// 위 파일에서는 엔드포인트 '/'은 생략되어 있다.</span>
+<span class="nx">getHello</span><span class="p">():</span> <span class="kr">string</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">appService</span><span class="p">.</span><span class="nx">getHello</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">/</code> 엔드포인트로 들어온 <strong>GET</strong> 메소드가 요청으로 들어올 경우 <code class="language-plaintext highlighter-rouge">getHello</code> 함수의 리턴값을 응답값으로 넘겨주는 구조로 작성되어 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">return</code>값으로 명시된 <code class="language-plaintext highlighter-rouge">appService</code> 를 들여다보면 다음과 같다.</p>
+
+<center><img width="588" alt="스크린샷 2022-04-15 오전 11 16 08" src="https://user-images.githubusercontent.com/83164003/163508010-5c3ad81b-fb03-41ea-9fef-9fb3c06f2fff.png" /></center>
+<p><br /></p>
+
+<p>결국 이곳에 있는 <code class="language-plaintext highlighter-rouge">getHello()</code> 함수의 리턴값인 <code class="language-plaintext highlighter-rouge">'Hello World!'</code>가 브라우저에 출력이 된다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-2-절차-요약">2-2. 절차 요약</h4>
+<hr />
+
+<p>결국 클라이언트의 요청이 들어오는 경우 라우터가 분기되기전 최초 진입점 <code class="language-plaintext highlighter-rouge">main.ts</code>로 진입하게 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">main.ts</code>에서는 루트 모듈인 appModule을 호출하며 이 appModule <strong>Controller</strong>와 <strong>Service</strong>가 묶여있다.</p>
+
+<p>그 후 요청 엔드포인트와 요청 메소드와 일치하는 <strong>Controller</strong>로 분기되며 알맞은 메소드를 통하여 분기된 API 요청은 올바른 응답값을 반환하기 위해 <strong>Service</strong>에서 필요한 작업들을 수행해준뒤 클라이언트로 응답을 리턴해주게 된다.</p>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>사실 나는 node.js의 프레임워크로 express.js만 사용해왔기 때문에 구조가 다른부분은 아직 조금 더 학습해 나가며 이해해보려한다.</p>
+
+<p>하지만 절차적인 구조는 유사함을 많이 느꼈다.</p>
+
+<p>디테일한 구조적인 차이점은 앞으로 조금 더 학습해가며 이해가 필요한 부분이라 판단된다.</p>
+
+<p><br />
+<br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-04-14T00:00:00+09:00">April 14, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/22.04.13.til/" class="pagination--pager" title="따라하며 배우는 Nest JS #1
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.04.13.til/" rel="permalink">따라하며 배우는 Nest JS #1
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-13T00:00:00+09:00">April 13, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 따라하며 배우는 Nest JS #1
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospect/22.04.01.Retrospect/" rel="permalink">백엔드 개발자 첫 출근 후기
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-01T00:00:00+09:00">April 1, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect] 백엔드 개발자 첫 출근 후기
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/retrospect/22.03.31.Retrospect/" rel="permalink">“2022 코드스테이츠 3월 커뮤니티 데이” 후기
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-31T00:00:00+09:00">March 31, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[Retrospect]”2022 코드스테이츠 3월 커뮤니티 데이” 후기
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.03.15.til/" rel="permalink">자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-15T00:00:00+09:00">March 15, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 자주쓰이는 HTTP 메소드 &amp; HTTP 상태 코드
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 JH 🤔. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'JH8459/JH8459.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
