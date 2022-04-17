@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 16 Apr 2022 02:42:33 +0900</pubDate>
-    <lastBuildDate>Sat, 16 Apr 2022 02:42:33 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Apr 2022 00:03:36 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2022 00:03:36 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -21,9 +21,9 @@
 해당 코드 내용은 아래에 첨부한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/commit/c6390d62e699cdecc62ad125ab580db33fdfd31e&quot; target=&quot;_blank&quot;&gt;Board Model 정의하기&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/c6390d62e699cdecc62ad125ab580db33fdfd31e/src/boards/board.model.ts&quot; target=&quot;_blank&quot;&gt;Board Model 정의하기&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/commit/3761bb7f6794f7a896142cbf656b8d95f07665b9&quot; target=&quot;_blank&quot;&gt;게시물 생성하기&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/3761bb7f6794f7a896142cbf656b8d95f07665b9/src/boards/boards.controller.ts&quot; target=&quot;_blank&quot;&gt;게시물 생성하기&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;그리고 DTO에 대한 내용을 학습한 내용을 간단히 정리하였다.
