@@ -1,0 +1,889 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>따라하며 배우는 Nest JS #5 | JHLog</title>
+<meta name="description" content="따라하며 배우는 Nest JS #5">
+
+
+  <meta name="author" content="JH 🤔">
+  
+  <meta property="article:author" content="JH 🤔">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:title" content="따라하며 배우는 Nest JS #5">
+<meta property="og:url" content="http://localhost:4000/til/22.04.17.til/">
+
+
+  <meta property="og:description" content="따라하며 배우는 Nest JS #5">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-17T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/22.04.17.til/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JH 🤔",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JHLog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JHLog
+          <span class="site-subtitle">programming log</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/category/"><b>카테고리</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/year/"><b>포스트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/"><b>프로젝트</b></a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/"><b>ABOUT</b></a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/category/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">따라하며 배우는 Nest JS #5</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://user-images.githubusercontent.com/83164003/140744770-3c2e280c-5aff-4e0c-b79c-da27d585767f.png" alt="JH 🤔" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">JH 🤔</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>Hello World !</strong><br /><br /></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Study Log 📖</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#algorithm">Algorithm</a></li>
+          
+            <li><a href="/category/#project">Project</a></li>
+          
+            <li><a href="/category/#retrospect">Retrospect</a></li>
+          
+            <li><a href="/category/#til">TIL</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">ETC ⚙️</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/category/#blog">Blog</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="따라하며 배우는 Nest JS #5">
+    <meta itemprop="description" content="따라하며 배우는 Nest JS #5">
+    <meta itemprop="datePublished" content="2022-04-17T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/til/22.04.17.til/" class="u-url" itemprop="url">따라하며 배우는 Nest JS #5
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-17T00:00:00+09:00">April 17, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#today-i-learnd">Today I Learnd</a><ul><li><a href="#1-pipe란">1. Pipe란?</a></li><li><a href="#2-pipe-사용하는-방법-binding-pipes">2. Pipe 사용하는 방법 (Binding Pipes)</a><ul><li><a href="#2-1-handler-level-pipes">2-1. Handler-level Pipes</a></li><li><a href="#2-2-parameter-level-pipes">2-2. Parameter-level Pipes</a></li><li><a href="#2-3-global-level-pipes">2-3. Global-level Pipes</a></li></ul></li><li><a href="#3-built-in-pipes">3. Built-in Pipes</a></li></ul></li><li><a href="#오늘-느낀-점">오늘 느낀 점</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>인프런의 <a href="https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4" target="_blank">따라하며 배우는 NestJS</a>를 들으며 배운점을 남기고 있다.</p>
+
+<p>일전의 <a href="https://jh8459.github.io/til/22.04.16.til/" target="_blank">#4</a>에서 DTO에 대한 기초 개념을 학습을 진행했으며 그를 토대로 기본적인 CRUD를 위한 실습또한 함께 진행했다.</p>
+
+<p>오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다.<br /> 
+해당 코드 내용은 아래에 첨부한다.</p>
+
+<blockquote>
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/51ab917ca54c16d5b707d9097f76a9f10c86546c/src/boards/dto/create-board.dto.ts" target="_blank">게시물 생성을 위한 DTO</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/3207450280a7ab3e4091e7d5609bab76c488b126/src/boards/boards.service.ts" target="_blank">ID로 특정 게시물 가져오기(getBoardById)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/be2cd71692b2e1fbf4a539fb3b614960f2f594df/src/boards/boards.service.ts" target="_blank">ID로 특정 게시물 지우기(deleteBoard)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/b1dbee3e2fda9210217d5b286d19aae165bc3bc6/src/boards/boards.service.ts" target="_blank">특정 게시물의 상태 업데이트(updateBoardStatus)</a></p>
+</blockquote>
+
+<p>그리고 NestJS Pipes를 학습하였다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-pipe란">1. Pipe란?</h3>
+<hr />
+
+<p>파이프는 @Injectable () 데코레이터로 주석이 달린 클래스이다.<br />
+파이프는 <strong>데이터 변형(Data Transformation)</strong>과 <strong>데이터 유효성 검증(Data Validation)</strong>을 위해서 사용된다.</p>
+
+<blockquote>
+  <p><strong>데이터 변형(Data Transformation)</strong>과 <strong>데이터 유효성 검증(Data Validation)</strong>이란?</p>
+
+  <p><strong>데이터 변형(Data Transformation)</strong>은 입력 데이터를 원하는 형식으로 변환해주는 개념이다. (Ex. 문자열  ⇒ 정수)<br />
+만약 전달인자로 숫자를 받기를 원하는데 문자열 형식으로 온다면 파이프에서 자동으로 숫자형 데이터로 전환해준다. (Ex. string ‘7’ ⇒ integer 7)</p>
+
+  <p><strong>데이터 유효성 검증(Data Validation)</strong>은 입력 데이터를 평가하고 유효한 데이터라면 전달을 하며, 유효하지 않은 데이터일 경우 예외를 발생시킨다.<br />
+만약 이름의 길이가 10자 이하여야하는데 10자 이상의 입력 데이터가 발생한다면 에러를 발생시킨다.</p>
+</blockquote>
+
+<p>파이프는 컨트롤러 경로 처리기에 의해 처리되는 인수에 대해 작동한다.</p>
+
+<p>NestJS는 메서드가 호출되기 직전에 파이프를 삽입하고 파이프는 메서드로 향하는 인수를 수신하고 이에 대해 작동한다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163721717-5b6836c2-9c66-4655-a026-4ae04fd87d94.png" /></center>
+<p><br /></p>
+
+<p>파이프는 라우트 핸들러(Route Handler)가 처리하는 인수에 대해서 작동한다.</p>
+
+<p>그리고 파이프는 메서드 실행 바로 직전에 작동해서 메서드로 향하는 인수에 대해서 변환이 필요한 데이터가 들어온다면 데이터 변형을 진행하며, 유효하지 않은 데이터가 들어온다면 에러를 발생시키기 위해 호출된다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-pipe-사용하는-방법-binding-pipes">2. Pipe 사용하는 방법 (Binding Pipes)</h3>
+<hr />
+
+<p>파이프를 사용하는 방법은 <strong>Handler-level Pipes, Parameter-level Pipes, Global-level Pipes</strong> 세가지로 나눠질 수 있다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-1-handler-level-pipes">2-1. Handler-level Pipes</h4>
+<hr />
+
+<p>핸들러 레벨에서 @UsePipes() 데코레이터를 이용해서 사용할 수 있다.</p>
+
+<p>이 파이프는 특정 핸들러 내부 모든 파라미터에 적용이 된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Post</span><span class="p">()</span>
+<span class="p">@</span><span class="nd">UsePipes</span><span class="p">(</span><span class="nx">pipe</span><span class="p">)</span>
+<span class="nx">createBoard</span><span class="p">(</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">)</span> <span class="nx">title</span><span class="p">,</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">description</span><span class="dl">'</span><span class="p">)</span> <span class="nx">description</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">createBoard</code> 핸들러에만 작동하는 파이프의 예시이다.<br />
+해당 핸들러에 사용될 모든 파라미터(<code class="language-plaintext highlighter-rouge">'title'</code>, <code class="language-plaintext highlighter-rouge">'description'</code>)에 적용된다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-2-parameter-level-pipes">2-2. Parameter-level Pipes</h4>
+<hr />
+
+<p>파라미터 레벨에서 사용할 수 있다.</p>
+
+<p>이 파이프는 “특정” 파라미터에만 적용이 된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Post</span><span class="p">()</span>
+<span class="nx">createBoard</span><span class="p">(</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span> <span class="nx">ParameterPipe</span><span class="p">)</span> <span class="nx">title</span><span class="p">,</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">description</span><span class="dl">'</span><span class="p">)</span> <span class="nx">description</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>특정 파라미터(<code class="language-plaintext highlighter-rouge">'title'</code>) 하나에만 작동하는 파이프의 예시이다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-3-global-level-pipes">2-3. Global-level Pipes</h4>
+<hr />
+
+<p>애플리케이션 레벨의 파이프이다.</p>
+
+<p>이 파이프는 클라이언트에서 들어오는 모든 요청에 적용이 된다.<br />
+때문에 모든 요청의 진입점이자 상단 영역인 <code class="language-plaintext highlighter-rouge">main.ts</code>에 넣어준다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">bootstrap</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+	<span class="nx">app</span><span class="p">.</span><span class="nx">useGlobalPipes</span><span class="p">(</span><span class="nx">GlobalPipes</span><span class="p">);</span>
+	<span class="k">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">bootstrap</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>모든 요청에 작동하는 파이프의 예시이다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="3-built-in-pipes">3. Built-in Pipes</h3>
+<hr />
+
+<p>NestJS에는 기본적으로 사용할 수 있게 만들어 놓은 6가지의 빌트인 파이프가 있다.</p>
+
+<ul>
+  <li>ValidationPipe</li>
+  <li>ParseIntPipe</li>
+  <li>ParsBoolPipe</li>
+  <li>ParseArrayPipe</li>
+  <li>ParseUUIDPipe</li>
+  <li>DefaultValuePipe</li>
+</ul>
+
+<p>이름만 보아도 각각의 파이트가 어떤 역할을 하는지 짐작은 가능하지만, 그중 ParseIntPipe를 보면 다음과 같다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Get</span><span class="p">(</span><span class="dl">'</span><span class="s1">:id</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">findOne</span><span class="p">(@</span><span class="nd">Param</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">,</span> <span class="nx">ParseIntPipe</span><span class="p">)</span> <span class="nx">id</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>파라미터 <code class="language-plaintext highlighter-rouge">'id'</code>는 숫자가 와야하는 핸들러가 있다고 가정을하자, 하지만 여기서 파라미터 값으로 숫자가 아닌 문자열 등 다른 타입의 데이터를 보낸다면.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163722866-3ae45a8a-f9d4-49e9-ac0c-f2629608105a.png" /></center>
+<p><br /></p>
+
+<p>아래와 같은 에러가 발생하게 된다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163722908-94708cde-b0ae-4157-a14f-e79af3fe20ce.png" /></center>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>우선 오늘은 Pipe 대해서 알아만 보았다.</p>
+
+<p>“굉장히 편리한 기능인데..?” 라는 생각이 바로 들었다.<br />
+또한 커스터마이징 파이프 또한 사용이 가능하니 더할 나위 없다 생각이 들었다.</p>
+
+<p>기존에 Express로 서버를 구성할 땐 사용자 입력값에 따라서 만약 입력값이 없거나 유효하지 않은 인풋값을 입력했다면, 상태코드 400번등 에러코드와 메시지를 함께 <code class="language-plaintext highlighter-rouge">json</code>형식으로 반환해서 입력 데이터값을 검증하는 코드를 일일히 구현했었다.</p>
+
+<p>그런데 NestJS에서는 이미 많이 쓰이는 유효성 검사를 위한 파이프는 빌트인 파이프로 제공하며 세밀한 검증이 필요한 경우에는 입맛에 맞춰 쓸 수 있다니 참.. 좋은 프레임워크구나라는 생각이 들었다.</p>
+
+<p>내일은 실제로 유효성 검증 혹은 데이터 변형을 위한 파이프를 사용해보며 직접 코드로 구현해보는 시간을 가져봐야겠다.</p>
+
+<p><br />
+<br /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/category/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-04-17T00:00:00+09:00">April 17, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/22.04.16.til/" class="pagination--pager" title="따라하며 배우는 Nest JS #4
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.04.16.til/" rel="permalink">따라하며 배우는 Nest JS #4
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-16T00:00:00+09:00">April 16, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">따라하며 배우는 Nest JS #4
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.04.15.til/" rel="permalink">따라하며 배우는 Nest JS #3
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-15T00:00:00+09:00">April 15, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">따라하며 배우는 Nest JS #3
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.04.14.til/" rel="permalink">따라하며 배우는 Nest JS #2
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-14T00:00:00+09:00">April 14, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 따라하며 배우는 Nest JS #2
+</p>
+    
+    
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/22.04.13.til/" rel="permalink">따라하며 배우는 Nest JS #1
+</a>
+      
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-13T00:00:00+09:00">April 13, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+
+    <p class="archive__item-excerpt" itemprop="description">[TIL] 따라하며 배우는 Nest JS #1
+</p>
+    
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/JH8459" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/kj.hyeon_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 JH 🤔. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'JH8459/JH8459.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

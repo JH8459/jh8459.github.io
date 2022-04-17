@@ -5,9 +5,196 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Apr 2022 00:03:36 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Apr 2022 00:03:36 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Apr 2022 01:18:55 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2022 01:18:55 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>따라하며 배우는 Nest JS #5</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;p&gt;인프런의 &lt;a href=&quot;https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4&quot; target=&quot;_blank&quot;&gt;따라하며 배우는 NestJS&lt;/a&gt;를 들으며 배운점을 남기고 있다.&lt;/p&gt;
+
+&lt;p&gt;일전의 &lt;a href=&quot;https://jh8459.github.io/til/22.04.16.til/&quot; target=&quot;_blank&quot;&gt;#4&lt;/a&gt;에서 DTO에 대한 기초 개념을 학습을 진행했으며 그를 토대로 기본적인 CRUD를 위한 실습또한 함께 진행했다.&lt;/p&gt;
+
+&lt;p&gt;오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다.&lt;br /&gt; 
+해당 코드 내용은 아래에 첨부한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/51ab917ca54c16d5b707d9097f76a9f10c86546c/src/boards/dto/create-board.dto.ts&quot; target=&quot;_blank&quot;&gt;게시물 생성을 위한 DTO&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/3207450280a7ab3e4091e7d5609bab76c488b126/src/boards/boards.service.ts&quot; target=&quot;_blank&quot;&gt;ID로 특정 게시물 가져오기(getBoardById)&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/be2cd71692b2e1fbf4a539fb3b614960f2f594df/src/boards/boards.service.ts&quot; target=&quot;_blank&quot;&gt;ID로 특정 게시물 지우기(deleteBoard)&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/b1dbee3e2fda9210217d5b286d19aae165bc3bc6/src/boards/boards.service.ts&quot; target=&quot;_blank&quot;&gt;특정 게시물의 상태 업데이트(updateBoardStatus)&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리고 NestJS Pipes를 학습하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-pipe란&quot;&gt;1. Pipe란?&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;파이프는 @Injectable () 데코레이터로 주석이 달린 클래스이다.&lt;br /&gt;
+파이프는 &lt;strong&gt;데이터 변형(Data Transformation)&lt;/strong&gt;과 &lt;strong&gt;데이터 유효성 검증(Data Validation)&lt;/strong&gt;을 위해서 사용된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;데이터 변형(Data Transformation)&lt;/strong&gt;과 &lt;strong&gt;데이터 유효성 검증(Data Validation)&lt;/strong&gt;이란?&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;데이터 변형(Data Transformation)&lt;/strong&gt;은 입력 데이터를 원하는 형식으로 변환해주는 개념이다. (Ex. 문자열  ⇒ 정수)&lt;br /&gt;
+만약 전달인자로 숫자를 받기를 원하는데 문자열 형식으로 온다면 파이프에서 자동으로 숫자형 데이터로 전환해준다. (Ex. string ‘7’ ⇒ integer 7)&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;데이터 유효성 검증(Data Validation)&lt;/strong&gt;은 입력 데이터를 평가하고 유효한 데이터라면 전달을 하며, 유효하지 않은 데이터일 경우 예외를 발생시킨다.&lt;br /&gt;
+만약 이름의 길이가 10자 이하여야하는데 10자 이상의 입력 데이터가 발생한다면 에러를 발생시킨다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;파이프는 컨트롤러 경로 처리기에 의해 처리되는 인수에 대해 작동한다.&lt;/p&gt;
+
+&lt;p&gt;NestJS는 메서드가 호출되기 직전에 파이프를 삽입하고 파이프는 메서드로 향하는 인수를 수신하고 이에 대해 작동한다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163721717-5b6836c2-9c66-4655-a026-4ae04fd87d94.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;파이프는 라우트 핸들러(Route Handler)가 처리하는 인수에 대해서 작동한다.&lt;/p&gt;
+
+&lt;p&gt;그리고 파이프는 메서드 실행 바로 직전에 작동해서 메서드로 향하는 인수에 대해서 변환이 필요한 데이터가 들어온다면 데이터 변형을 진행하며, 유효하지 않은 데이터가 들어온다면 에러를 발생시키기 위해 호출된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-pipe-사용하는-방법-binding-pipes&quot;&gt;2. Pipe 사용하는 방법 (Binding Pipes)&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;파이프를 사용하는 방법은 &lt;strong&gt;Handler-level Pipes, Parameter-level Pipes, Global-level Pipes&lt;/strong&gt; 세가지로 나눠질 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-1-handler-level-pipes&quot;&gt;2-1. Handler-level Pipes&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;핸들러 레벨에서 @UsePipes() 데코레이터를 이용해서 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 파이프는 특정 핸들러 내부 모든 파라미터에 적용이 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;UsePipes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;createBoard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createBoard&lt;/code&gt; 핸들러에만 작동하는 파이프의 예시이다.&lt;br /&gt;
+해당 핸들러에 사용될 모든 파라미터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;title&apos;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;description&apos;&lt;/code&gt;)에 적용된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-2-parameter-level-pipes&quot;&gt;2-2. Parameter-level Pipes&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;파라미터 레벨에서 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이 파이프는 “특정” 파라미터에만 적용이 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;createBoard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ParameterPipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;특정 파라미터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;title&apos;&lt;/code&gt;) 하나에만 작동하는 파이프의 예시이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-3-global-level-pipes&quot;&gt;2-3. Global-level Pipes&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;애플리케이션 레벨의 파이프이다.&lt;/p&gt;
+
+&lt;p&gt;이 파이프는 클라이언트에서 들어오는 모든 요청에 적용이 된다.&lt;br /&gt;
+때문에 모든 요청의 진입점이자 상단 영역인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.ts&lt;/code&gt;에 넣어준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NestFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AppModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;useGlobalPipes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GlobalPipes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;모든 요청에 작동하는 파이프의 예시이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-built-in-pipes&quot;&gt;3. Built-in Pipes&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;NestJS에는 기본적으로 사용할 수 있게 만들어 놓은 6가지의 빌트인 파이프가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ValidationPipe&lt;/li&gt;
+  &lt;li&gt;ParseIntPipe&lt;/li&gt;
+  &lt;li&gt;ParsBoolPipe&lt;/li&gt;
+  &lt;li&gt;ParseArrayPipe&lt;/li&gt;
+  &lt;li&gt;ParseUUIDPipe&lt;/li&gt;
+  &lt;li&gt;DefaultValuePipe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이름만 보아도 각각의 파이트가 어떤 역할을 하는지 짐작은 가능하지만, 그중 ParseIntPipe를 보면 다음과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;:id&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;findOne&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ParseIntPipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;파라미터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;id&apos;&lt;/code&gt;는 숫자가 와야하는 핸들러가 있다고 가정을하자, 하지만 여기서 파라미터 값으로 숫자가 아닌 문자열 등 다른 타입의 데이터를 보낸다면.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163722866-3ae45a8a-f9d4-49e9-ac0c-f2629608105a.png&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래와 같은 에러가 발생하게 된다.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/163722908-94708cde-b0ae-4157-a14f-e79af3fe20ce.png&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+&lt;p&gt;우선 오늘은 Pipe 대해서 알아만 보았다.&lt;/p&gt;
+
+&lt;p&gt;“굉장히 편리한 기능인데..?” 라는 생각이 바로 들었다.&lt;br /&gt;
+또한 커스터마이징 파이프 또한 사용이 가능하니 더할 나위 없다 생각이 들었다.&lt;/p&gt;
+
+&lt;p&gt;기존에 Express로 서버를 구성할 땐 사용자 입력값에 따라서 만약 입력값이 없거나 유효하지 않은 인풋값을 입력했다면, 상태코드 400번등 에러코드와 메시지를 함께 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;json&lt;/code&gt;형식으로 반환해서 입력 데이터값을 검증하는 코드를 일일히 구현했었다.&lt;/p&gt;
+
+&lt;p&gt;그런데 NestJS에서는 이미 많이 쓰이는 유효성 검사를 위한 파이프는 빌트인 파이프로 제공하며 세밀한 검증이 필요한 경우에는 입맛에 맞춰 쓸 수 있다니 참.. 좋은 프레임워크구나라는 생각이 들었다.&lt;/p&gt;
+
+&lt;p&gt;내일은 실제로 유효성 검증 혹은 데이터 변형을 위한 파이프를 사용해보며 직접 코드로 구현해보는 시간을 가져봐야겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.04.17.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.04.17.til/</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>따라하며 배우는 Nest JS #4</title>
@@ -4328,50 +4515,6 @@ node Schedule 라이브러리는 가장 역사가 길며 다운로드수가 많�
         <pubDate>Fri, 24 Dec 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/retrospect/21.12.24.Retrospect/</link>
         <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.24.Retrospect/</guid>
-        
-        
-        <category>Retrospect</category>
-        
-      </item>
-    
-      <item>
-        <title>코드스테이츠 Project 시작</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/140646268-d8056c13-e7ee-4ea5-8e15-e282a26f6a0d.png&quot; alt=&quot;스크린샷, 2021-11-07 22-08-33&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;retrospect&quot;&gt;Retrospect&lt;/h2&gt;
-
-&lt;p&gt;우선 프로젝트가 아직 완성된게 아니라 회고는 아니고 시작 전 다짐 및 마음가짐을 적어보려 간단히 남긴다.&lt;/p&gt;
-
-&lt;h3 id=&quot;first-project-팀-선정&quot;&gt;First Project 팀 선정&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;우선 Section3 HA 이전에 선배 기수들에게 프로젝트에 관련한 내용을 많이 들었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;미리미리 준비해야 한다. 팀이 절반이다. 기획부터 시간이 오래 걸리므로 미리미리 준비하고 대비해라.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;우선 틀린 말은 아닌거같다. 저번 주 금요일인 12.10 팀 설문조사가 이뤄지고, 미리 프로젝트 진행전 기획을 진행해 오던 팀원들을 적어서 내었고, 해당 팀원으로 구성된 팀이 오늘 부로 결정이 되었다.&lt;/p&gt;
-
-&lt;p&gt;그리고 SR 기획서를 오늘 포함하여 이틀안에 제출을 해야하는데, URClass에서 제공되는 SR 기획서에 기입해야할 양이 생각보다 많다.&lt;br /&gt;
-기획서 및 Wiki 작성을 진심으로 임해야 할 듯 하다.&lt;/p&gt;
-
-&lt;p&gt;만약 후배기수가 이 글을 읽는다면, 팀을 미리 꾸리고 &lt;del&gt;(물론 마음에 맞는 팀원 구하기가 어렵습니다..)&lt;/del&gt; 기획의 방향정도는 충분한 회의를 통하여 결정 후 팀 선정에 진입하길 권유하고 싶다. 👍&lt;/p&gt;
-
-&lt;h3 id=&quot;앞으로는&quot;&gt;앞으로는?&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/145743411-a9f1a1ab-51e2-46d4-8906-4b53e5dd21d1.jpg&quot; alt=&quot;project&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 진짜 프로젝트 결과물을 팀 협업을 통해 만들어 내야 한다.&lt;br /&gt;
-익숙하지 않는 Git Flow로 협업을 이루고, 작업 분담을 해가며 프로젝트를 진행해내야 한다.&lt;/p&gt;
-
-&lt;p&gt;팀 룰을 정하였고 &lt;del&gt;(최소 6주??간 방콕)&lt;/del&gt;, 웹 페이지를 완성하기 위한 최소한의 TODO 리스트를 작성해두고 1차 프로젝트의 기획의 갈무리는 어느정도 되었다 생각한다.&lt;/p&gt;
-
-&lt;p&gt;다만, 아직 익숙하지 않은 툴들과 프레임워크를 통해서 협업을 진행해야 한다는 사실은 막연한 두려움이 반, 그리고 좋은 결과물을 기대하는 기대감이 나머지 절반으로 두근거리고 있다.&lt;/p&gt;
-
-&lt;p&gt;당분간은 두개의 프로젝트에 전념하기 위해서 블로그는 당분간 글 작성이 없을거 같다.&lt;br /&gt;
-두개의 프로젝트가 모두 끝난 후 회고 글을 작성해야겠다.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 13 Dec 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/21.12.13.retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.13.retrospect/</guid>
         
         
         <category>Retrospect</category>
