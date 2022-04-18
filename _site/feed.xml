@@ -5,9 +5,108 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Apr 2022 01:18:55 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Apr 2022 01:18:55 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Apr 2022 13:40:20 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2022 13:40:20 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>따라하며 배우는 Nest JS #6</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;p&gt;인프런의 &lt;a href=&quot;https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4&quot; target=&quot;_blank&quot;&gt;따라하며 배우는 NestJS&lt;/a&gt;를 들으며 배운점을 남기고 있다.&lt;/p&gt;
+
+&lt;p&gt;일전의 &lt;a href=&quot;https://jh8459.github.io/til/22.04.17.til/&quot; target=&quot;_blank&quot;&gt;#5&lt;/a&gt;에서 파이프에 대한 기초 개념을 학습을 진행했으며 파이프를 이용한 기본적인 유효성 검사및 데이터 변환을 이용한 CRUD 실습또한 함께 진행했다.&lt;/p&gt;
+
+&lt;p&gt;오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다.&lt;br /&gt; 
+해당 코드 내용은 아래에 첨부한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/3d1602bf88d167e8f5c1cdb5aeb637634a63951b/src/boards/boards.controller.ts&quot; target=&quot;_blank&quot;&gt;파이프를 이용한 유효성 체크(@UsePipes 핸들러-레벨 파이프)&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/cf12fc5823fafa7e7858046e408a2b323642caf4/src/boards/boards.service.ts&quot; target=&quot;_blank&quot;&gt;특정 게시물을 찾을 때 없는 경우 결과 값 처리(NotFoundException)&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/990a5df43720432d8c851ae54bd7d0162c90290d/src/boards/boards.service.ts&quot; target=&quot;_blank&quot;&gt;없는 게시물을 지우려 할 때 결과값 처리(deleteBoard 메서드 수정)&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://github.com/JH8459/NestJS-BoardApp/blob/f3dce06aff45c5d0503a76144a85c8e7853e00f4/src/boards/pipes/board-status-validation.pipe.ts&quot; target=&quot;_blank&quot;&gt;커스텀 파이프를 이용한 유효성 체크(board-status-validation.pipe.ts)&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리고 기존 실습은 메모리, 즉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Boards&lt;/code&gt; 배열에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Board&lt;/code&gt; 값을 넣어 저장하는 형태였다.&lt;/p&gt;
+
+&lt;p&gt;그렇기에 서버를 껐다 키면 메모리가 날아가는 불편함이 있었기 때문에 DB에 넣는 과정을 학습하였다.&lt;/p&gt;
+
+&lt;p&gt;그 과정에서 &lt;strong&gt;TypeORM&lt;/strong&gt;에 대해 학습한 내용을 남겨보려 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-typeorm이란&quot;&gt;1. TypeORM이란?&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;TypeORM은 Node.js에서 실행되고 TypeScript로 작성된 객체 관계형 매퍼 라이브러리이다.&lt;/p&gt;
+
+&lt;p&gt;TypeORM은 MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana 및 WebSQL과 같은 여러 데이터베이스를 지원한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ORM(Object Relational Mapping) 이란?&lt;/p&gt;
+
+  &lt;p&gt;객체와 관계형 데이터베이스의 데이터를 자동으로 변형 및 연결하는 작업이다.&lt;br /&gt;
+ORM을 이용한 개발은 객체와 데이터베이스의 변형에 유연하게 사용할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-1-orm-vs-javascript&quot;&gt;1-1. ORM vs JavaScript&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;TypeORM&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;boards&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;PUBLIC&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;SELECT * FROM boards WHERE title = &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; AND status = &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PUBLIC&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;, (err, result) =&amp;gt; 
+      if(err) throw new Error(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;);
+      boards = result.rows;
+  });
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ORM은 모델을 기반으로 DB 테이블 체계를 자동으로 생성하지만 순수 JS로만 사용하게 된다면 모두 수동으로 처리해주어야한다.&lt;/p&gt;
+
+&lt;p&gt;또한, 데이터베이스에서 개체를 쉽게 삽입, 업데이트 및 삭제(CRUD)를 할 수 있다는 장점이 있으며 테이블 간의 매핑(1:1, 1:N, N:N) 또한 손쉽게 처리할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;p&gt;사실 ORM은 Sequelize만 사용해봤는데 Sequelize는 TypeScript와는 호환성 이슈로 많은 불편함이 있다는 정도만 안다.&lt;/p&gt;
+
+&lt;p&gt;반면 NestJS의 프로그래밍 언어는 타입스크립트를 기본으로 채택하고 있기에 조금더 호환성에서 자유로울 것 같다는 생각이 우선 든다.&lt;/p&gt;
+
+&lt;p&gt;ORM은 사실 문법을 따로 학습을 계속 해야 할 듯하다. Sequelize를 쓸 때도 공식문서&lt;del&gt;(공식문서 진짜..너무 불친절)&lt;/del&gt;를 항상 참조해서 문법을 완성시켰었다.&lt;/p&gt;
+
+&lt;p&gt;우선 Maria DB와 현재 진행중인 실습 프로젝트를 연결 후 다양한 문법을 실습해봐야 알 듯 하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.04.18.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.04.18.til/</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>따라하며 배우는 Nest JS #5</title>
@@ -4378,146 +4477,6 @@ node Schedule 라이브러리는 가장 역사가 길며 다운로드수가 많�
         
         
         <category>Project</category>
-        
-      </item>
-    
-      <item>
-        <title>코드스테이츠 First Project [6699] 회고</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://capsule-render.vercel.app/api?type=soft&amp;amp;color=6F777D&amp;amp;height=100&amp;amp;section=header&quot; alt=&quot;header&quot; /&gt;&lt;/p&gt;
-
-&lt;center&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/156319069-09fc20f8-e777-48ee-ab32-f9c194c68f93.png&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-size: 1em; color: #6F777D;&quot;&gt;&lt;b&gt;[6699]&lt;/b&gt;&lt;/span&gt; 목표와 다짐들을 글로 적고 실천하며
-&lt;br /&gt;
-소통하는 동기부여 커뮤니티 ✍️
-&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;first-project-회고&quot;&gt;First Project 회고&lt;/h2&gt;
-
-&lt;p&gt;12.10 ~ 12.24 2주 기간동안 코드스테이츠 34기 정규과정은 끝마치고 조그만 규모의 첫번째 프로젝트를 완성하였다.&lt;/p&gt;
-
-&lt;p&gt;백엔드 포지션으로 참여하는 동안 기획은 어떻게? 어떤 작업을 하였고 또 그 과정에서 어떤 부분에서 고민을 경험했는지 글로 남겨보려 한다.&lt;/p&gt;
-
-&lt;p&gt;우선 완성된 프로젝트 &lt;del&gt;배포링크(배포 도메인은 현재 내려갔습니다.)&lt;/del&gt;와 Gihub 저장소 링크 그리고 프로젝트 안내 문서의 링크는 아래와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://daily6699.co.kr/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;del&gt;&lt;span style=&quot;font-size: 1em; color: #6F777D;&quot;&gt;&amp;#160;👉 6699 바로가기&amp;#160;&lt;/span&gt;&lt;/del&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://github.com/codestates/6699&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1em; color: #6F777D;&quot;&gt;&amp;#160;👉 Github 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://jh8459.github.io/project/21.12.25.Project/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1em; color: #6F777D;&quot;&gt;&amp;#160;👉 Blog 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;기획&quot;&gt;기획&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;실제 프로젝트 기간은 팀원선정과 기획단계와 개발과정을 모두 합쳐 2주가 주어졌지만, 우리는 HA3 진행 전 마음이 맞는 팀원을 구해 기획을 우선적으로 틈틈히 진행하고있었다.&lt;/p&gt;
-
-&lt;p&gt;왜냐하면, 선배 기수들에게 항상 들었던 말 때문이다.&lt;/p&gt;
-
-&lt;center&gt;&lt;b&gt;&quot;시간이 너무나 부족하다..&quot;&lt;/b&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;
-덕분에 좋은 팀원들과 함께 프로젝트를 진행할 수 있었다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;혹시 코드스테이츠를 수료중이시거나, 부트캠프로 코드스테이츠로 선택하신분들이 이 글을 본다면 프로젝트 4인 구성의 팀원은 미리미리 스터디활동이나 페어 프로그래밍중 마음에 맞는 분이 있다면 연락을 통해 미리 구하시는걸 &lt;strong&gt;강력히&lt;/strong&gt; 추천 드립니다.&lt;/em&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;선정되지-못한-주제들과-이유&quot;&gt;선정되지 못한 주제들과 이유&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;지금 다시 보니 재밌는 주제들이 많이 나왔던거 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;21.11.19&lt;/strong&gt; 주제선정을 위해 아이디어 회의를 기록한 내용중 선정되지 못했던 주제들을 찾아보았다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/156325296-975fab84-f599-4a4d-bd7e-20ed70c9434a.png&quot; alt=&quot;스크린샷, 2022-03-02 17-36-36&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;여러 의견이 나왔고 그중 팀원들이 입을 모아 얘기한건 &lt;strong&gt;“CRUD에 중점을 둔 서비스 개발”&lt;/strong&gt; 이었다.&lt;/p&gt;
-
-&lt;p&gt;CRUD가 가능한 게시판을 만들어보자가 목표였으며, 그 안의 담길 주제는 명언을 보며 되새김질할 수 있는 자기개발 인증 사이트를 만들어보기로 하였다.&lt;/p&gt;
-
-&lt;p&gt;그리하여 현재 &lt;span style=&quot;font-size: 1em; color: #6F777D;&quot;&gt;&lt;b&gt;6699&lt;/b&gt;&lt;/span&gt;의  주제가 선정되었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;프로젝트-레이아웃과-이름-선정&quot;&gt;프로젝트 레이아웃과 이름 선정&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;주제 선정을 마치고 나서 웹사이트 디자인에 대해서 논의를 시작하였다.&lt;/p&gt;
-
-&lt;p&gt;컨셉만 우선 그려보았으며 웹 사이트의 컨셉은 아래와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/156327426-9626b59b-c1a9-45ba-b12c-692ea20fe9a8.png&quot; /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/156327662-0b5ef4c1-b561-4329-928d-a1f0dafc574a.png&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;글/명언에 관련된 주제이기 때문에 메인 컬러로 쓰일 색상은 흰색과 검정색이 선정되었으며, 말따옴표를 텍스트로 형상화면 &lt;strong&gt;6699&lt;/strong&gt;와 유사하다는 점에서 착안하여 서비스할 프로젝트의 이름으로 선정하였다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;개발과정&quot;&gt;개발과정&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;우선 잘 만들고 화려하게 만드는것도 좋지만 첫번째 프로젝트이다 보니, 외부 라이브러리등은 최소화하고 코드스테이츠에서 배운 과정으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript&lt;/code&gt;만 사용하여 Vanilla JS로 개발하였다.&lt;/p&gt;
-
-&lt;p&gt;매일 AM 09:00 ~ PM 18:00 이후 2시간의 자유시간을 갖고 PM 20:00~ … 보통 AM 03:00에 마쳤으나, 마지막 발표를 앞둔 시점에서는 해뜨면 잠깐 2시간? 정도 쪽잠을 잔거같다.&lt;br /&gt;
-정말 주말도 없이 정신없이 모니터만 보고 코드를 짠거 같다.&lt;/p&gt;
-
-&lt;p&gt;코딩을 배운 이래 처음으로 온전히 몰두할 수 있던 경험을 겪어보았으며, 라이브러리 없이 순수하게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript&lt;/code&gt; 언어만 사용하여 서버와 클라이언트 개발 경험을 가져보았다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;아쉬운-점&quot;&gt;아쉬운 점&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;사실 이번 프로젝트는 최초 기획한대로 완성하지 못하였다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;배포 자동화 실패 (수동 배포)&lt;/li&gt;
-  &lt;li&gt;AWS 사용 미숙으로 설정 오류
-    &lt;ul&gt;
-      &lt;li&gt;RDS와 EC2 리전을 북미로 설정 😅&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;최초 기획한 기능 구현 실패
-    &lt;ul&gt;
-      &lt;li&gt;댓글 CRUD 기능 구현 실패 😇&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;우선 기획한 기능을 모두 구현하지 못하였다. &lt;del&gt;(특히 댓글 기능은 아예 손 대지 못하였다.)&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;또한 배포는 성공하였지만 잘못된 리전설정(북미..😅)으로 인해 속도가 굉장히 저하되는 이슈가 있어서 프로젝트 발표는 로컬환경으로 대신 진행하게되었다.&lt;/p&gt;
-
-&lt;p&gt;이 실패의 경험을 기반으로 파이널 프로젝트는 문제없이 완수해야겠다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;개선하고-성장할-점&quot;&gt;개선하고 성장할 점&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;우선 AWS 배포쪽을 공부를 더 해서 4주 프로젝트는 꼭 배포 자동화를 도전하고 싶다.&lt;/p&gt;
-
-&lt;p&gt;또한 이번 프로젝트를 진행하며 소셜 로그인도 기능적으로 구현 해보지 못하였으며 회원가입 등 개인정보를 다룰 때, 보안적인 측면은 고려를 해본적이 없다…😅&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음 프로젝트땐 꼭 위 두가지는 개선해봐야겠다. 또한, 기회가 된다면 6699 프로젝트도 리팩토링 과정을 거쳐 기획한 사이즈만큼은 완성해보고 싶다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://capsule-render.vercel.app/api?type=soft&amp;amp;color=6F777D&amp;amp;height=100&amp;amp;section=footer&quot; alt=&quot;Footer&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 24 Dec 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/21.12.24.Retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/21.12.24.Retrospect/</guid>
-        
-        
-        <category>Retrospect</category>
         
       </item>
     
