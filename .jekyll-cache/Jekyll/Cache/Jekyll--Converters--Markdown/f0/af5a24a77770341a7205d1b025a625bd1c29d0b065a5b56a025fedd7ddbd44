@@ -1,0 +1,235 @@
+I"�a<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>프로젝트중 SMS 발송이 필요한 부분을 가비아의 문자 서비스를 이용하고 있다.</p>
+
+<p>가비아 문자서비스 개발 가이드 공식문서에서는 Node 환경에서 단순 <code class="language-plaintext highlighter-rouge">https</code> 내장 라이브러리를 이용한 https 요청을 보내어 사용하고 있다.</p>
+
+<p>현재 프로젝트는 NodeJS에서 NestJS 프레임워크를 기반으로 하고있다.<br />
+레퍼런스들이 많지 않아서 개발과정에서 겪었던 불편함들이 있었기에 나와 같은 상황을 겪는 이들에게 도움이 되고자 글을 남긴다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-사용자-인증">1. 사용자 인증</h3>
+<hr />
+
+<p>가비아 공식 개발 가이드 문서에는 다음과 같이 안내가 되어있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/167132404-cbc69353-9e16-4eb1-b758-556f2cbd5dcc.png" alt="스크린샷 2022-05-06 오후 9 20 49" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">https</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">qs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">querystring</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">postData</span> <span class="o">=</span> <span class="nx">qs</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="dl">'</span><span class="s1">grant_type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">client_credentials</span><span class="dl">'</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">hostname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sms.gabia.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/oauth/token</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/x-www-form-urlencoded</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Content-Length</span><span class="dl">'</span><span class="p">:</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">byteLength</span><span class="p">(</span><span class="nx">postData</span><span class="p">),</span>
+    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Basic c1hY3JvY2sZDAwNzA2YzJlMTdjZjlkMz1234hlM2U5YjQ=</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">https</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">chunks</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">chunks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">end</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">chunks</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+  <span class="p">});</span>
+
+  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">req</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">postData</span><span class="p">);</span>
+
+<span class="nx">req</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>내장 라이브러리만 이용한 순수(?)한 코드이기 때문에 해당 가이드 문서만 보고 NestJS 기반의 현재 프로젝트에 담아 내기엔 어려움이 있었다.</p>
+
+<p>그 과정을 최대한 자세히 담아보려한다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-1-sms-발송기능-모듈화">1-1. SMS 발송기능 모듈화</h4>
+<hr />
+
+<p>우선 SMS를 보내기 위한 기능만 모듈로 빼서 처리하기 위해 새로운 모듈을 생성하였다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nest g mo
+</code></pre></div></div>
+
+<p>위 명령어로 <code class="language-plaintext highlighter-rouge">sms</code> 이름의 새로운 모듈을 생성해 주었다.</p>
+
+<p>DB 관련된 작업이나 보안/인증관련된 기능은 없이 순수하게 SMS 발송을 위한 가비아 인증 &amp; 발송 기능만 충실히 수행할 것이기 때문에 Service 파일만 프로바이더로 사용하기로 하였다.</p>
+
+<p><strong>sms.module.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Module</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@nestjs/common</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">SmsService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./sms.service</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Module</span><span class="p">({</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span><span class="nx">SmsService</span><span class="p">],</span>
+  <span class="na">exports</span><span class="p">:</span> <span class="p">[</span><span class="nx">SmsService</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SmsModule</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>해당 모듈의 <code class="language-plaintext highlighter-rouge">SmsService</code> (가비아 인증 &amp; 발송 기능) 인스턴스를 공유하기 위해 <code class="language-plaintext highlighter-rouge">exports</code> 배열안에 넣어주었다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-2-smsservice에서-사용자-인증-구현">1-2. SmsService에서 사용자 인증 구현</h4>
+<hr />
+
+<p>우선 가비아 인증을 받으려면 유효한 API URL로 SMS ID와 API Key로 토큰을 발행하는 요청을 보내고 응답을 받아야 한다.</p>
+
+<p>공식문서 가이드 문서에서는 Node 내장 라이브러리인 <code class="language-plaintext highlighter-rouge">https</code>를 이용하여 요청과 응답을 보내는 걸 확인 할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">hostname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sms.gabia.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/oauth/token</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/x-www-form-urlencoded</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Content-Length</span><span class="dl">'</span><span class="p">:</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">byteLength</span><span class="p">(</span><span class="nx">postData</span><span class="p">),</span>
+    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Basic c1hY3JvY2sZDAwNzA2YzJlMTdjZjlkMz1234hlM2U5YjQ=</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">https</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>
+</code></pre></div></div>
+
+<p>내장 라이브러리는 일일히 설정할게 많다보니.. <del>(귀찮다)</del><br />
+보다는 조금 익숙한 <code class="language-plaintext highlighter-rouge">axios</code> 외부 라이브러리를 이용해서 요청을 보내도록 진행해보았다.</p>
+
+<blockquote>
+  <p>http/https 라이브러리도 여러 외부 라이브러리(<code class="language-plaintext highlighter-rouge">got</code>, <code class="language-plaintext highlighter-rouge">request</code>, <code class="language-plaintext highlighter-rouge">fetch</code>, <code class="language-plaintext highlighter-rouge">axios</code>..등등)들이 존재한다.  다음에 기회가 되면 각각의 장단점들을 추려 정리해봐야겠다.</p>
+</blockquote>
+
+<p>공식문서를 최대한 따라가는 방향으로 코드를 작성했다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">dotenv/config</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">queryString</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">query-string</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@nestjs/common</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SmsService</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="nx">getSmsToken</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// 토큰을 발급받기 위한 API URL</span>
+    <span class="kd">const</span> <span class="nx">tokenUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://sms.gabia.com/oauth/token</span><span class="dl">'</span><span class="p">;</span>
+    <span class="c1">// baseApiKey는 base64(SMS_ID:API_KEY), 아이디와 키값은 .env 환경변수에 담아서 사용</span>
+    <span class="kd">const</span> <span class="nx">baseApiKey</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SMS_ID</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SMS_API_KEY</span><span class="p">}</span><span class="s2">`</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">postData</span> <span class="o">=</span> <span class="nx">queryString</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">client_credentials</span><span class="dl">'</span> <span class="p">});</span>
+    <span class="c1">// 응답값을 받아오는 axios 요청</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="nx">tokenUrl</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/x-www-form-urlencoded</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="s2">`Basic </span><span class="p">${</span><span class="nx">baseApiKey</span><span class="p">}</span><span class="s2">`</span> <span class="c1">// 'Basic ' 공백 한칸을 넣어야 한다</span>
+      <span class="p">},</span>
+      <span class="na">data</span><span class="p">:</span> <span class="nx">postData</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="c1">// response중 access_token값만 가져온다</span>
+    <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">token</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>확실히 <code class="language-plaintext highlighter-rouge">axios</code>가 편리하다.<br />
+필요한 값들을 변수에 담아 적절한 옵션에 딱딱 넣어주면 된다.</p>
+
+<p>리턴값으로 <code class="language-plaintext highlighter-rouge">token</code>을 던져 주기 때문에, 해당 토큰값을 이용하여 문자 발송할 때 유효한 사용자인지 인증이 이뤄질 수 있다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-sms-발송-하기">2. SMS 발송 하기</h3>
+<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/167139136-5f4f31b8-b3d1-4b9c-bf12-2a8331295532.png" alt="스크린샷 2022-05-06 오후 10 18 14" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">https</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">qs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">querystring</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+<span class="dl">'</span><span class="s1">method</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+<span class="dl">'</span><span class="s1">hostname</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sms.gabia.com</span><span class="dl">'</span><span class="p">,</span>
+<span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/api/send/sms</span><span class="dl">'</span><span class="p">,</span>
+<span class="dl">'</span><span class="s1">headers</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/x-www-form-urlencoded</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Basic DckviEksLs6ZXlKMGVYQWlPaUpLVhiR2NpT2lKU1V6STFOaUo5LmV5SnBjM01pT2lKb2RIUndjenBjTDF3dmMyMXpMbWRoWW1saExtTnZiVnd2SWl3aVlYVmtJam9pWEM5dllYVjBhRnd2ZEc5clpXNGlMQ0pshWFhnT2pBNG5uVkVuLWtnVEJoRGpPeWc=</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">https</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">chunks</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">chunks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">end</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">chunks</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="p">});</span>
+
+<span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">postData</span> <span class="o">=</span> <span class="nx">qs</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="dl">'</span><span class="s1">phone</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">01000000000</span><span class="dl">'</span><span class="p">,</span>
+<span class="dl">'</span><span class="s1">callback</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">15444370</span><span class="dl">'</span><span class="p">,</span>
+<span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SMS TEST MESSAGE</span><span class="dl">'</span><span class="p">,</span>
+<span class="dl">'</span><span class="s1">refkey</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">RESTAPITEST1547771538</span><span class="dl">'</span>
+<span class="p">});</span>
+
+<span class="nx">req</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">postData</span><span class="p">);</span>
+
+<span class="nx">req</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>이 부분 또한 기본 내장 라이브러리로만 작성되어 있는 다소 불편한 코드이다.</p>
+
+<p>그리고 장문 SMS(90자 이상)과 단문 SMS의 차이점은 API URL만 조금 차이가 있으며 내부 로직은 똑같이 진행된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">axios</code>를 이용해서 수정해보았다.</p>
+
+<p><br />
+<br /></p>
+
+<h4 id="2-1-smsservice에서-sms-발송-구현">2-1. SmsService에서 SMS 발송 구현</h4>
+<hr />
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>사실 ORM은 Sequelize만 사용해봤는데 Sequelize는 TypeScript와는 호환성 이슈로 많은 불편함이 있다는 정도만 안다.</p>
+
+<p>반면 NestJS의 프로그래밍 언어는 타입스크립트를 기본으로 채택하고 있기에 조금더 호환성에서 자유로울 것 같다는 생각이 우선 든다.</p>
+
+<p>ORM은 사실 문법을 따로 학습을 계속 해야 할 듯하다. Sequelize를 쓸 때도 공식문서<del>(공식문서 진짜..너무 불친절)</del>를 항상 참조해서 문법을 완성시켰었다.</p>
+
+<p>우선 Maria DB와 현재 진행중인 실습 프로젝트를 연결 후 다양한 문법을 실습해봐야 알 듯 하다.</p>
+
+<p><br />
+<br /></p>
+:ET
