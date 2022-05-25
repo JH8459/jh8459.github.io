@@ -1,0 +1,38 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.</p>
+
+<p>TypeORM이 Repository Pattern을 기본으로 지향하고 지원하고 있으며 <a href="https://docs.nestjs.com/techniques/database#repository-pattern" target="_blank">NestJS 공식 문서</a>에도 Repository Pattern을 이용한 설계 방식을 안내하고 있다.</p>
+
+<p>나 또한 현재 진행 중인 프로젝트에 공식 문서를 읽고 Repository Pattern를 적용해서 개발일 이어나가고 있다.</p>
+
+<p>문뜩 Repository Pattern가 무엇이고 왜 쓰는거지? 가 궁금해졌고 그 과정을 글로 남겨보려한다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-repository-pattern">1. Repository Pattern</h3>
+<hr />
+
+<p>우선 Repository Pattern은 여러 디자인 패턴 중 하나이다.<br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/170282459-fc4d1f03-ef48-485a-b009-f08abd3b915b.png" alt="overview-1" /><br /><br /></p>
+
+<p>내가 이해한(?)대로 말하자면 실제 데이터가 있는 장소를 추상화하여 <strong>Repository</strong>로 둔 뒤, 해당 장소에서 데이터를 가져오고 가공하는 업무를 전담한다.</p>
+
+<p>그렇기에 클라이언트에서는 내가 원하는 데이터의 출처(Local, Remote)라던지, 원본 데이터 속성등을 알아야할 필요가 없다.</p>
+
+<p>그저 특정 요청을 <strong>Repository</strong>에 보내면 가공된 원하는 데이터 얻을 수 있게끔 디자인 패턴을 설계하는 구조가 <strong>Repository Pattern</strong>이다.</p>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>간단히 공식문서에 적힌 기본 내장 라이브러리 코드를 외장 라이브러리를 이용하여 NestJS 기반의 프레임워크에서 동작할 수 있게끔 코드를 수정하였다.</p>
+
+<p>도움이 될지는 모르겠지만, 나름 코드를 간결히 적어보려 노력한 부분들이 전달되었으면 좋겠다.</p>
+
+<p><br />
+<br /></p>
+:ET

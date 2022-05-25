@@ -5,9 +5,146 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 May 2022 22:37:44 +0900</pubDate>
-    <lastBuildDate>Fri, 06 May 2022 22:37:44 +0900</lastBuildDate>
+    <pubDate>Wed, 25 May 2022 23:44:17 +0900</pubDate>
+    <lastBuildDate>Wed, 25 May 2022 23:44:17 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Repository Pattern</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;p&gt;최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.&lt;/p&gt;
+
+&lt;p&gt;TypeORM이 Repository Pattern을 기본으로 지향하고 지원하고 있으며 &lt;a href=&quot;https://docs.nestjs.com/techniques/database#repository-pattern&quot; target=&quot;_blank&quot;&gt;NestJS 공식 문서&lt;/a&gt;에도 Repository Pattern을 이용한 설계 방식을 안내하고 있다.&lt;/p&gt;
+
+&lt;p&gt;나 또한 현재 진행 중인 프로젝트에 공식 문서를 읽고 Repository Pattern를 적용해서 개발일 이어나가고 있다.&lt;/p&gt;
+
+&lt;p&gt;문뜩 Repository Pattern가 무엇이고 왜 쓰는거지? 가 궁금해졌고 그 과정을 글로 남겨보려한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-repository-pattern&quot;&gt;1. Repository Pattern&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;우선 Repository Pattern은 여러 디자인 패턴 중 하나이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/170282459-fc4d1f03-ef48-485a-b009-f08abd3b915b.png&quot; alt=&quot;overview-1&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;내가 이해한(?)대로 말하자면 실제 데이터가 있는 장소를 추상화하여 &lt;strong&gt;Repository&lt;/strong&gt;로 둔 뒤, 해당 장소에서 데이터를 가져오고 가공하는 업무를 전담한다.&lt;/p&gt;
+
+&lt;p&gt;그렇기에 클라이언트에서는 내가 원하는 데이터의 출처(Local, Remote)라던지, 원본 데이터 속성등을 알아야할 필요가 없다.&lt;/p&gt;
+
+&lt;p&gt;그저 특정 요청을 &lt;strong&gt;Repository&lt;/strong&gt;에 보내면 가공된 원하는 데이터 얻을 수 있게끔 디자인 패턴을 설계하는 구조가 &lt;strong&gt;Repository Pattern&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-실제-프로젝트-적용-예시&quot;&gt;2. 실제 프로젝트 적용 예시&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;우선 NestJS 프레임워크 강의를 들으며 작성한 &lt;strong&gt;Repository Pattern&lt;/strong&gt;이 적용된 샘플 코드를 가져왔다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;boards.service.ts&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Injectable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BoardsService&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;InjectRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BoardRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;boardRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BoardRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/* 전달인자로 CreateBoardDTO를 갖는 보드를 생성하는 createBoard 메서드 선언 */&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;createBoard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createBoardDto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CreateBoardDto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boardRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createBoard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createBoardDto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Repository 패턴 적용&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;boards.repository.ts&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Board Entity를 컨트롤하는 Repository를 선언 */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;EntityRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BoardRepository&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Repository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;cm&quot;&gt;/* createBoard 메서드, DB 관련 동작은 Repository에서 수행한다 */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createBoard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createBoardDto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CreateBoardDto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/* title과 description은 구조분해 할당으로 createBoardDto에서 꺼내어서 사용해준다 */&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createBoardDto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;board&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BoardStatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PUBLIC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// status값은 BoardStatus.PUBLIC으로 초기화한다&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// board를 데이터베이스에 저장&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// DB에 저장한 board를 반환한다&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;간단한 코드지만 &lt;strong&gt;Repository Pattern&lt;/strong&gt;이 적용된 걸 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;데이터를 원본 저장소에서 꺼내온 뒤 가공해서 제공하는 장소&lt;/strong&gt;(boards.repository.ts)와 그 &lt;strong&gt;데이터를 사용하는 장소&lt;/strong&gt;(boards.service.ts)를 분리시킨 디자인 패턴임을 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;TypeORM에서 기본으로 Repository Pattern을 제공하기 때문에 위와 같은 디자인 패턴을 NestJS + TypeORM 프레임워크 생태계에서는 간단하게 구현할 수 있다는 장점이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-repository-pattern의-장점&quot;&gt;3. Repository Pattern의 장점?&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;우선 어떤 개념이고, 어떻게 쓰이는지는 알았으니 장점을 간단하게 찾아보았다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;데이터 로직을 분리시킬 수 있다.&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;⇒ &lt;em&gt;파일 구조부터 분리가 된다.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;중앙 집중처리 방식으로, 언제나 일관된 인터페이스로 데이터를 요청할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;⇒ &lt;em&gt;요청을 하는 쪽은 Repository의 사정이 궁금하지도 필요하지도 않다. 언제나 항상 같은 인터페이스로 요청을하고 결과값을 제공받을 수 있다.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단위 테스트를 통해 검증이 가능합니다.&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;⇒ &lt;em&gt;테스트 경험은 없지만, 데이터를 가공하고 제공하는 Repository에서만 검증을 추가한다면 응답으로 반환될 데이터값들을 단위 테스트를 먼저 적용시켜 검증이 수월할 거 같다라는 생각은 든다.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;새로운 데이터 로직 코드를 쉽게 추가할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;⇒ &lt;em&gt;Repository에서만 코드를 추가하거나 수정하여 데이터 로직을 추가하거나 변경할 수 있으므로 큰 장점이다.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;p&gt;그냥 NestJS 공식 문서에서 쓰라해서 썼고, TypeORM에서 기본으로 지원해주니 쓰던 Repository Pattern을 그나마 조금 이해하고 써 볼 수 있게 되었다.&lt;/p&gt;
+
+&lt;p&gt;앞으로는 데이터를 가공하거나 가져오는 로직을 확실히 Repository 영역에서 수행해주는 쪽으로 조금 더 생각한 뒤 코드로 옮겨가야겠다~ 라는 생각이 들었다.&lt;/p&gt;
+
+&lt;p&gt;규모가 큰 프로젝트일수록 디자인 패턴등 구조 설계부터 중요할거같다라는 생각이 든다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 May 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.05.25.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.05.25.til/</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>NestJS + 가비아 메시징 API 개발 가이드</title>
@@ -4244,230 +4381,6 @@ node Schedule 라이브러리는 가장 역사가 길며 다운로드수가 많�
         
         
         <category>Project</category>
-        
-      </item>
-    
-      <item>
-        <title>코드스테이츠 Final Project [ALL-CON] 회고</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://capsule-render.vercel.app/api?type=soft&amp;amp;color=FFCE63&amp;amp;height=100&amp;amp;section=header&quot; alt=&quot;header&quot; /&gt;&lt;/p&gt;
-
-&lt;center&gt;
-&lt;a href=&quot;https://all-con.kr/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/152898834-c2e127a6-9431-4841-a6d0-21f532b7b07e.png&quot; /&gt;&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;&lt;b&gt;[ALL-CON]&lt;/b&gt;&lt;/span&gt; 콘서트 예매정보부터 친구까지 찾아주는 
-&lt;br /&gt;
-콘서트 종합 정보 플랫폼 🎟️
-&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;final-project-회고&quot;&gt;Final Project 회고&lt;/h2&gt;
-
-&lt;p&gt;코드스테이츠 34기 마지막 과정인 파이널 프로젝트를  백엔드 포지션으로 마무리하며, 기획은 어떻게? 어떤 작업을 하였고 또 그 과정에서 어떤 부분에서 고민을 경험했는지 글로 남겨보려 한다.&lt;/p&gt;
-
-&lt;p&gt;우선 완성된 프로젝트 배포링크와 Gihub 저장소 링크 그리고 프로젝트 안내 문서의 링크는 아래와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://all-con.kr/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;&amp;#160;👉 ALL-CON 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://github.com/codestates/ALL-CON&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;&amp;#160;👉 Github 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.01.26.Final-Project/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;&amp;#160;👉 Blog 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;기획&quot;&gt;기획&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;기획단계는 1주일 정도 걸렸다.&lt;br /&gt; 
-사실 기획은 전문 분야가 아니기 때문에 다들 많이 미숙했지만 팀원들 모두 새벽 늦은시간까지 머리를 맞대어 최선의 결과가 나온거라 생각한다.&lt;/p&gt;
-
-&lt;p&gt;다만 First Project에서 한번 겪었던 만큼, 서비스 주제 선정은 너무 지체되지 않게끔 진행하였고 주제에 알맞는 기술들을 추려서 주제를 선정하였다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;선정되지-못한-주제들과-이유&quot;&gt;선정되지 못한 주제들과 이유&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;지금 다시 보니 재밌는 주제들이 많이 나왔던거 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;21.12.27&lt;/strong&gt; 주제선정을 위해 아이디어 회의를 기록한 내용중 선정되지 못했던 주제들을 찾아보았다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155274828-2699f886-f1e6-4d34-bdf8-bf7c46700814.png&quot; alt=&quot;스크린샷, 2022-02-23 16-08-15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;여러 의견이 나왔지만 회의 결과 &lt;em&gt;“너무 위치기반에 중점을 둔 서비스는 피하자!”&lt;/em&gt;  &lt;del&gt;(어떻게 해도 당근마켓 스러워진다..)&lt;/del&gt; 였다.&lt;/p&gt;
-
-&lt;p&gt;CRUD에 중점을 둔 서비스는 2주차에 해봤기에 SNS나 게시판 서비스 보다는 색 다른 웹페이지를 만들어 보자는 생각으로 위 4개의 주제들은 모두 탈락하였다&lt;/p&gt;
-
-&lt;p&gt;그리하여 현재 &lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;&lt;b&gt;ALL-CON&lt;/b&gt;&lt;/span&gt; 과 &lt;del&gt;(유사한)&lt;/del&gt; 주제가 선정되었다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;원래는 &lt;a href=&quot;https://www.kopis.or.kr/por/main/main.do&quot; target=&quot;_blank&quot;&gt;KOPIS 공연예술 통합전산망&lt;/a&gt;을 이용한 콘서트 정보 안내 사이트였지만..  주제가 다소 바뀌었다. 이유는 뒤에서 설명하겠다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;프로젝트-레이아웃-선정&quot;&gt;프로젝트 레이아웃 선정&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;주제 선정을 마치고 나서 웹사이트 디자인에 대해서 논의를 시작하였고, 여러 레이아웃들이 제시되었었다.&lt;/p&gt;
-
-&lt;p&gt;메인페이지만 추려서 보여주자면 아래와 같다.
-&lt;br /&gt;
-&lt;del&gt;(콘서트 이름이 정해지지 않은 상태라 이름들도 가지각색이다 😅)&lt;/del&gt;&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155278841-3fe06e9f-26d6-42ed-9929-45319db4b31a.png&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155278843-b9e75db6-b1c3-44ce-9458-7567d1784c78.png&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155278846-e33e2d82-a66a-4937-bfde-ebaaf42e2616.png&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;(초기에는 캘린더 라이브러리를 사용해서 콘서트 일정을 달력에서 보여줄 생각도 하였으나 시간 문제로 사용을 하지 못하였다. 😭)&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;이중 첫번째 레이아웃이 회의 결과 채택이 되었으며, 프론트엔드 두 분이 주도적으로 UI/UX와 메인 컬러로 쓰일 색상을 선정하여 이를 토대로 &lt;a href=&quot;https://www.figma.com/&quot; target=&quot;_blank&quot;&gt;FIGMA&lt;/a&gt;에서 프로토타입을 제작하였다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;서비스-핵심-기술-선정&quot;&gt;서비스 핵심 기술 선정&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;이부분이 사실 프로젝스 설계 “Miss” 였다.&lt;/p&gt;
-
-&lt;p&gt;사실 프론트엔드에서는 First Project에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TypeError&lt;/code&gt;를 많이 겪었기에 이번에는 &lt;img alt=&quot;TypeScript&quot; src=&quot;https://img.shields.io/badge/TypeScript-3178C6.svg?&amp;amp;style=for-the-badge&amp;amp;logo=TypeScript&amp;amp;logoColor=white&quot; /&gt;를 사용해보고 싶다라는 의견으로 모아졌기 때문에 개발언어만 바꾸어서 서비스 개발에 임하면 되었기에 핵심기술 선정이 어렵진 않았다.&lt;/p&gt;
-
-&lt;p&gt;문제는 백엔드 서버 설계에서 발생하였다.&lt;br /&gt;
-콘서트 정보는 &lt;a href=&quot;https://www.kopis.or.kr/por/main/main.do&quot; target=&quot;_blank&quot;&gt;KOPIS 공연예술 통합전산망&lt;/a&gt;에서 가져오면 되겠지? 싶었는데 여기서 1차 문제가 발생한다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;span style=&quot;font-size: 1.5em; color: gray;&quot;&gt;&lt;b&gt;&quot;콘서트 정보만 없다...&quot;&lt;/b&gt;&lt;/span&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-아뿔사, “공연 / 연극 / 뮤지컬” … 심지어 “아동”도 있지만 콘서트 정보는 그 어디에서도 찾을 수 없었다..&lt;/p&gt;
-
-&lt;p&gt;주제 선정을 다시해야하나 생각을 했지만, 기술적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node.js&lt;/code&gt; 라이브러리를 이용하여 &lt;strong&gt;웹 크롤링&lt;/strong&gt;을 할 수 있다는 걸 알게되었고 “인터파크 티켓”, “YES24” 두 대형 티켓팅 사이트에서 콘서트 정보를 가져오기로 결정하였다.&lt;/p&gt;
-
-&lt;p&gt;다만, 두 사이트에서 제공하는 자료가 정형화 되지않은 자료이기 때문에 NoSQL인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MongoDB&lt;/code&gt;를 사용해야하나 고민하였지만, 전처리만 잘해서 DB에 저장한다면 RDBMS로도 충분히 구현이 가능할 듯하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MySQL&lt;/code&gt;으로 진행하였다.&lt;/p&gt;
-
-&lt;p&gt;또한, 해당 사이트에서 가져올 정보들은 매일 특정한 시간에 매일 수행되어야 하므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node Schedule&lt;/code&gt;을 통해서 EC2에서 자동화 처리를 구현하였다.&lt;/p&gt;
-
-&lt;p&gt;지금 생각해보니 외부 API가 지원되지 않았기에 오히려 폭넓은 라이브러리를 사용할 수 있던 경험이된것 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;개발과정&quot;&gt;개발과정&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;매일 AM 09:00 ~ PM 18:00 이후 2시간의 자유시간을 갖고 PM 20:00~ … 마감시간은 정하지 않았는데 보통 새벽 3시정도까지 정말 밥만 먹고 화장실가는 시간 외에는 4주간 온전히 몰두하였다.&lt;/p&gt;
-
-&lt;p&gt;덕분에 프로젝트가 끝난 뒤 비타민 D 부족으로 병원신세 지는 팀원분도 발생하였다.. 힘든 과정을 함께 헤쳐나간 팀원들이 자랑스럽다.&lt;/p&gt;
-
-&lt;p&gt;코드의 컨텍스트를 작성한 방법은 사실 개인의 습관마다 다를 수 있고, 사용하는 문법이 조금씩 다를 수 있으니 이 부분은 생략하도록 하고 개발과정에서 팀 단위로 협업을 해낸 과정을 간략하게 글로 남겨보려 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;집단-지성의-힘&quot;&gt;집단 지성의 힘&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;“정말 이건 참 잘했다! 👍”&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;만약 프로젝트 기간 동안 우리 팀이 가장 잘한 점을 꼽으라면, 똘똘 뭉쳐 문제점을 해결하는 팀원들의 태도를 꼽겠다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;span style=&quot;font-size: 1.5em; color: gray;&quot;&gt;&lt;b&gt;&quot;다들 바쁘지 않을까?&quot;&lt;br /&gt;&quot;이런것도 모른다고 생각하지 않을까?&quot;&lt;/b&gt;&lt;/span&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-이런 생각을 전혀 하지 못할 만큼 환경이 잘 구성되었던거 같다.&lt;/p&gt;
-
-&lt;p&gt;서로 질문하고 학습한 내용을 매일매일 공유하고, 또한 자신의 코드를 화면공유를 통해서 &lt;strong&gt;&lt;em&gt;“왜 이런식으로 작성하였고, 어떤 부분에서 막혀 어려움을 겪고 있는지”&lt;/em&gt;&lt;/strong&gt; 허물없이 많은 대화를 통해 문제를 해결하였다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;대충은-없다&quot;&gt;대충은 없다&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;팀원들 모두 욕심이 많아서 그런지 사소한 포인트라도 쉽게 넘어가지 않았다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;span style=&quot;font-size: 1.5em; color: gray;&quot;&gt;&lt;b&gt;&quot;이정도면 됐잖아?&quot;&lt;/b&gt;&lt;/span&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-작은 기능이라도 구현을 완성하면 서비스 시연을 팀원들끼리 진행을 하였다. &lt;br /&gt;
-바로바로 즉각적인 피드백을 주고받아 개선할 내용들을 바로바로 개선하였고 그 결과, 한결 더 간결한 코드와 높은 완성도를 가진 웹 서비스가 탄생한것 같다.&lt;/p&gt;
-
-&lt;p&gt;물론 아직 부족한게 많고, 프로젝트가 다 끝난 뒤 보니 아쉬운점이 모든 페이지에서 계속 보이는건 어쩔수 없다.&lt;/p&gt;
-
-&lt;p&gt;다만, 위와같은 과정마저 없었다면 지금보다 더 후회스러운 결과가 나오지 않았을까?&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;아쉬운-점&quot;&gt;아쉬운 점&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;사실 너무 많다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;크롤링 대상 사이트 추가&lt;/li&gt;
-  &lt;li&gt;예매 대행까지 가능한 결제 플랫폼 도입&lt;/li&gt;
-  &lt;li&gt;애니메이션 라이브러리로 모두 교체&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;soket.io&lt;/code&gt; 기능 추가&lt;/li&gt;
-  &lt;li&gt;응답속도 개선을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Redis&lt;/code&gt; 도입&lt;/li&gt;
-  &lt;li&gt;위치기반 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kakao Map API&lt;/code&gt; 도입, 근처 콘서트 검색&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;서비스를 본격적으로 키워 광고도 달아보자 등등.. 너무나도 하고싶은게 많고 현재 배포한 웹사이트는 너무 부족한점이 많다.&lt;/p&gt;
-
-&lt;p&gt;4주라는 시간이 서비스를 제작하는데 얼마나 부족한 시간인지 깨닳았다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;개선하고-성장할-점&quot;&gt;개선하고 성장할 점&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;팀원들과 합의하여 설 연휴를 보낸 뒤 ALL-CON 프로젝트 리팩토링 기간을 1~2주가량 진행해 볼 예정이다.&lt;/p&gt;
-
-&lt;p&gt;기간을 짧게 가져가는 이유는 너무 길게 프로젝트 리팩토링을 위해 가져가기보다는, 다들 주니어 개발자로써 현업에서 커리어를 쌓아가는게 더 중요하다 생각되기 때문에 너무 길지 않게 진행하기로 결정하였다.&lt;/p&gt;
-
-&lt;p&gt;너무 아쉬웠던 추가로 구현해보고 싶은 기능들이 있다면 구현해보고, 개발기간 동안 아쉬웠던 코드들 혹은 개선을 미뤄뒀던 코드 내용들을 간추려서 리팩토링해 볼 예정이다. &lt;br /&gt;
-&lt;del&gt;(기간이 길지 않기 때문에 많은 욕심은 부리지 않으려 한다.)&lt;/del&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;final-project-리팩토링&quot;&gt;Final Project 리팩토링&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;(수정 22.02.18)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;자세히보기&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://jh8459.github.io/project/22.02.07.refactoring/&quot; target=&quot;_blank&quot;&gt;🛠️ 1일차 - 서버 리팩토링 우선순위 선정&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.08.refactoring/&quot; target=&quot;_blank&quot;&gt;🛠️ 2일차 - 민감정보 암호화&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.09.refactoring/&quot; target=&quot;_blank&quot;&gt;🛠️ 3일차 - 하나의 요청에 두개 이상의 응답시 발생하는 에러 핸들링&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.10.refactoring/&quot; target=&quot;_blank&quot;&gt;🛠️ 4일차 - 유효하지 않은 로그인 상태 검증&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.11.refactoring/&quot; target=&quot;_blank&quot;&gt;🛠️ 5일차 - Articles 테이블 스키마 수정(1)&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.14.Project/&quot; target=&quot;_blank&quot;&gt;🛠️ 6일차 - Articles 테이블 스키마 수정(2)&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.15.Project/&quot; target=&quot;_blank&quot;&gt;🛠️ 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://jh8459.github.io/project/22.02.16.Project/&quot; target=&quot;_blank&quot;&gt;🛠️ 8일차 - Timezone 수정&lt;/a&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://capsule-render.vercel.app/api?type=soft&amp;amp;color=FFCE63&amp;amp;height=100&amp;amp;section=footer&quot; alt=&quot;Footer&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 25 Jan 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/22.01.25.Retrospect/</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/22.01.25.Retrospect/</guid>
-        
-        
-        <category>Retrospect</category>
         
       </item>
     
