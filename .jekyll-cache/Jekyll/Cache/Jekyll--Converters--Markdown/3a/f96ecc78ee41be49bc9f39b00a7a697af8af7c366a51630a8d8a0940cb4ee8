@@ -1,0 +1,61 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 DTO 사용을 안내하고 있다.</p>
+
+<p>공식문서를 토대로 DTO를 왜 사용하는지 찾아보는 그 과정에서 Interface와의 차이점을 간단히 알아보았다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-dto-data-transfer-object">1. DTO (Data Transfer Object)</h3>
+<hr />
+
+<p>우선 <code class="language-plaintext highlighter-rouge">DTO</code>란 <strong>계층</strong>*간 데이터 교환을 위해 사용하는 객체이다.</p>
+
+<blockquote>
+  <p>계층이란?</p>
+
+  <p>패턴마다 다르게 표현된다.
+Repository 패턴에서는 Controller, Service, Repository를 각각 계층이라 칭하며, MVC 패턴에서는 Model, View, Controller의 계층이 존재한다.</p>
+</blockquote>
+
+<p>계층간 데이터를 주고 받을 때 어떤 모양의 데이터 객체로 주고 받을지를 DTO에서 결정하게 되므로 프로젝트를 설계할때 최우선으로 고려되야 할 요소이다.</p>
+
+<p>쉽게 말하자면 정보를 교환하는데 있어 타입을 체크하기 위한 구조라 설명할 수 있다.</p>
+
+<p>또한, 타입을 체크하기 위한 방법으로 <code class="language-plaintext highlighter-rouge">DTO</code>외에 <code class="language-plaintext highlighter-rouge">Interface</code>가 존재하며 이는 아래에서 다시 설명하겠다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-interface">2. Interface</h3>
+<hr />
+
+<p>간단하게 설명하자면 인터페이스는 TypeScript에서 변수, 함수, 클래스의 타입 체크를 위해 사용되며 보기에는 클래스와 유사하지만 인스턴스 생성이 불가능하고 모든 메소드는 추상 메소드로 이루어져 있다.</p>
+
+<p>또한 <strong>“ES6에서 지원하지 않고 TypeScript에서만 지원한다.”</strong></p>
+
+<p>데이터 타입을 체크하기 위한 기능적인 면모로써는 <code class="language-plaintext highlighter-rouge">DTO</code>와 동일하지만 위에서 강조한것 처럼 ES6에서는 지원하지 않는다는 차이점이 있다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="3-why-dto">3. Why DTO?</h3>
+<hr />
+
+<p>위 질문의 해답은 NestJS <a href="https://docs.nestjs.com/controllers#request-object" target="_blank">공식문서</a>(Request payloads 부분)에서는 왜 DTO로 안내하는지 설명이 자세히 안내되어 있다.</p>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>그냥 NestJS 공식 문서에서 쓰라해서 썼고, TypeORM에서 기본으로 지원해주니 쓰던 Repository Pattern을 그나마 조금 이해하고 써 볼 수 있게 되었다.</p>
+
+<p>앞으로는 데이터를 가공하거나 가져오는 로직을 확실히 Repository 영역에서 수행해주는 쪽으로 조금 더 생각한 뒤 코드로 옮겨가야겠다~ 라는 생각이 들었다.</p>
+
+<p>규모가 큰 프로젝트일수록 디자인 패턴등 구조 설계부터 중요할거같다라는 생각이 든다.</p>
+
+<p><br />
+<br /></p>
+:ET

@@ -5,9 +5,89 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 May 2022 00:20:07 +0900</pubDate>
-    <lastBuildDate>Thu, 26 May 2022 00:20:07 +0900</lastBuildDate>
+    <pubDate>Fri, 24 Jun 2022 22:59:59 +0900</pubDate>
+    <lastBuildDate>Fri, 24 Jun 2022 22:59:59 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>NestJS DTO vs Interface</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg&quot; alt=&quot;TIL&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;today-i-learnd&quot;&gt;Today I Learnd&lt;/h2&gt;
+&lt;p&gt;TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt; 사용을 안내하고 있다.&lt;/p&gt;
+
+&lt;p&gt;공식문서를 토대로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;를 왜 사용하는지 찾아보는 그 과정에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Interface&lt;/code&gt;와의 차이점을 간단히 알아보았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-dto-data-transfer-object&quot;&gt;1. DTO (Data Transfer Object)&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;란 &lt;strong&gt;계층&lt;/strong&gt;*간 데이터 교환을 위해 사용하는 객체이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;계층이란?&lt;/p&gt;
+
+  &lt;p&gt;패턴마다 다르게 표현된다.&lt;br /&gt;
+Repository 패턴에서는 Controller, Service, Repository를 각각 계층이라 칭하며, MVC 패턴에서는 Model, View, Controller의 계층이 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;계층간 데이터를 주고 받을 때 어떤 모양의 데이터 객체로 주고 받을지를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;에서 결정하게 되므로 프로젝트를 설계할때 최우선으로 고려되야 할 요소이다.&lt;/p&gt;
+
+&lt;p&gt;쉽게 말하자면 정보를 교환하는데 있어 타입을 체크하기 위한 구조라 설명할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;또한, 타입을 체크하기 위한 방법으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;외에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Interface&lt;/code&gt;가 존재하며 이는 아래에서 다시 설명하겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-interface&quot;&gt;2. Interface&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;간단하게 설명하자면 인터페이스는 TypeScript에서 변수, 함수, 클래스의 타입 체크를 위해 사용되며 보기에는 클래스와 유사하지만 인스턴스 생성이 불가능하고 모든 메소드는 추상 메소드로 이루어져 있다.&lt;/p&gt;
+
+&lt;p&gt;또한 &lt;strong&gt;“ES6에서 지원하지 않고 TypeScript에서만 지원한다.”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터 타입을 체크하기 위한 기능적인 면모로써는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;와 동일하지만 위에서 강조한것 처럼 ES6에서는 지원하지 않는다는 차이점이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-why-dto&quot;&gt;3. Why DTO?&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;위 질문의 해답은 NestJS &lt;a href=&quot;https://docs.nestjs.com/controllers#request-object&quot; target=&quot;_blank&quot;&gt;공식문서&lt;/a&gt;(Request payloads 부분)에서는 왜 DTO로 안내하는지 설명이 자세히 안내되어 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/175549009-f7cb3010-f861-4750-a5e9-15978b486734.png&quot; alt=&quot;스크린샷 2022-06-24 오후 10 11 12&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 내용을 위 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Interface&lt;/code&gt;를 설명했던 내용과 덧붙혀 간략히 줄이자면 TypeScript의 클래스는 JavaScript ES6 표준을 따르므로 TypeScript로 작성되었지만 컴파일 된 JavaScript에서는 인터페이스는 컴파일 도중 제거되므로(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Interface&lt;/code&gt;는 ES6 표준이 아니므로) NestJS에서 런타임에 인터페이스를 참조할 수 없게된다.&lt;/p&gt;
+
+&lt;p&gt;따라서 NestJS에서는 런타임 이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Input&lt;/code&gt;값에 대한 유효성 검증이라던지 그 외의 데이터 타입을 지속적으로 추적해야하는 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;는 Class로 작성되기에 ES6 표준이므로 참조가 가능 하지만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Interface&lt;/code&gt;는 ES6 표준 문법이 아니므로 제거되기에 참조할 수 없게된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오늘-느낀-점&quot;&gt;오늘 느낀 점&lt;/h2&gt;
+
+&lt;p&gt;그냥 학습한 대로 습관적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTO&lt;/code&gt;를 사용하다  불현듯 떠오른 궁금증인 &lt;strong&gt;“클래스 문법으로 생성되지만 인스턴스를 생성하는 것도 아니고.. 단순 타입 검증만을 위해 사용되는게 아닌가? 그럼 인터페이스랑 다른게 무엇이지?”&lt;/strong&gt; 라는 의문점에서 찾아보니 이와같은 결론에 도달하게 되었다.&lt;/p&gt;
+
+&lt;p&gt;NestJS 공식 문서는 대단하다.&lt;/p&gt;
+
+&lt;p&gt;모든 궁금증에 대한 내용이 이미 모두 기재되어 있었다. &lt;del&gt;(내가 찾아보질 않았을 뿐…)&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;지금은 프로젝트 한창이라 너무 바쁘고, 어느정도 안정되면 공식문서 정주행을 한번 해야겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 24 Jun 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/til/22.06.24.til/</link>
+        <guid isPermaLink="true">http://localhost:4000/til/22.06.24.til/</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>Repository Pattern</title>
@@ -3787,600 +3867,6 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
         
         
         <category>Retrospect</category>
-        
-      </item>
-    
-      <item>
-        <title>[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;amp;color=FFCE63&amp;amp;height=230&amp;amp;section=header&amp;amp;text=예매정보부터&amp;#160;콘서트&amp;#160;친구까지&amp;#160;찾아주는&amp;#160;콘서트&amp;#160;종합&amp;#160;정보&amp;#160;플랫폼&amp;amp;fontColor=FFFFFF&amp;amp;fontSize=25&quot; alt=&quot;header&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://all-con.kr/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1.5em; color: #FFCE63;&quot;&gt;&amp;#160;👉 ALL-CON 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://github.com/codestates/ALL-CON&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1.5em; color: #FFCE63;&quot;&gt;&amp;#160;👉 Github 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;center&gt;&lt;a href=&quot;https://jh8459.github.io/retrospect/22.01.25.Retrospect/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;span style=&quot;font-size: 1.5em; color: #FFCE63;&quot;&gt;&amp;#160;👉 Project 회고 바로가기&amp;#160;&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;&lt;/strong&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;ALL-CON&lt;/span&gt;&lt;/strong&gt;은 각 사이트들의 콘서트 정보를 한 눈에 볼 수 있는 콘서트 종합 정보 플랫폼이에요.&lt;/li&gt;
-  &lt;li&gt;각 사이트들의 단독 판매 콘서트까지 한눈에 보고 비교해보세요!🤩&lt;/li&gt;
-  &lt;li&gt;콘서트를 가고 싶은데 같이 즐길 친구가 없어 망설이셨나요?😢&lt;/li&gt;
-  &lt;li&gt;콘서트의 감동을 함께 나눌 콘친을 찾아 보세요!🤼‍♂️&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;center&gt;&lt;a href=&quot;https://all-con.kr/&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none&quot;&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/152898834-c2e127a6-9431-4841-a6d0-21f532b7b07e.png&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
-
-&lt;h2 id=&quot;-all-con은-무슨-뜻인가요&quot;&gt;🤔 &lt;span style=&quot;color: #FFCE63;&quot;&gt;ALL-CON&lt;/span&gt;은 무슨 뜻인가요?&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;
-&quot;콘서트가 열리는 모든 날에 참석함&quot;을 의미해요.&lt;br /&gt;
-&lt;span style=&quot;font-size: 1em; color: #FFCE63;&quot;&gt;&lt;b&gt;ALL-CON&lt;/b&gt;&lt;/span&gt;과 함께 올콘 참석에 성공하세요!🏃‍♀️🏃🏃‍♂️
-&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;-all-con에서는-무엇을-할-수-있나요&quot;&gt;🤔 &lt;span style=&quot;color: #FFCE63;&quot;&gt;ALL-CON&lt;/span&gt;에서는 무엇을 할 수 있나요?&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;자세히보기&lt;/b&gt;&lt;/summary&gt;
-&lt;br /&gt;
-
-&lt;div&gt;
-
-      &lt;p&gt;👉 &lt;i&gt;각 사이트들의 콘서트 정보(단독 콘서트 포함)를 한 눈에 볼 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;현재 인기 많은 콘서트, 오픈이 임박한 콘서트, 최근 등록된 콘서트 정보를 한눈에 볼 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;문자 알림 또는 메일 알림 기능을 이용해서 내가 원하는 콘서트의 예매 오픈시간을 놓치지 않을 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;콘서트 정보를 조회해서 콘서트장의 위치정보를 알 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;콘친 인증을 하면 콘서트에 함께 갈 콘친을 찾을 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;콘친이 될 유저의 정보를 볼 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;콘서트에 대한 기대 댓글을 작성할 수 있어요.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;
-👉 &lt;i&gt;내가 찾는 콘서트를 검색할 수 있어요.&lt;/i&gt;&lt;/p&gt;
-
-    &lt;/div&gt;
-&lt;/details&gt;
-&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;-all-con-서비스-기능별-시연&quot;&gt;🎬 &lt;span style=&quot;color: #FFCE63;&quot;&gt;ALL-CON&lt;/span&gt; 서비스 기능별 시연&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;랜딩페이지&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155190860-936d4cea-6353-4112-a019-a5719c0287a7.gif&quot; alt=&quot;landing&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155190929-e159a127-954e-4563-923e-e41e87b630d6.gif&quot; alt=&quot;landing(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;로그인&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155191686-3d65e796-818c-4e0a-9689-852d5a656ff0.gif&quot; alt=&quot;login_success&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155191733-f4ca367f-febe-4206-bb3a-007b462915fc.gif&quot; alt=&quot;login_success(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;소셜 로그인&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155191377-13ee6999-efd9-44d3-bb1c-1547ad15715c.gif&quot; alt=&quot;social_login_success&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155191468-47342868-8aae-441c-92c9-e81cd30660a7.gif&quot; alt=&quot;social_login_success(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;회원가입&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155191995-aef5a4f8-ff29-4aca-b81e-0a223fe022a2.gif&quot; alt=&quot;signup_success&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192009-ee05c867-d0d6-4d07-906c-e82f1386234c.gif&quot; alt=&quot;signup_success(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;비밀번호 초기화&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192260-c338a65a-7afd-43fc-a068-cc63e31e4d80.gif&quot; alt=&quot;password&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192271-401fd40b-ef3c-4f55-88b8-b0b7193bcf73.gif&quot; alt=&quot;password(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;메인페이지(포스터슬라이드)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192542-8d3f0380-0580-4aa9-8264-9a037d8fdd37.gif&quot; alt=&quot;main_jumbotron&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192550-ff966fc6-acd5-490f-a11b-12704ff9f609.gif&quot; alt=&quot;main_jumbotron(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;메인페이지(콘서트정보)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192847-87ae60ee-f0f9-423e-aeab-7566231ff42b.gif&quot; alt=&quot;main_concert&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192853-7c24f881-e7d4-463e-8c6a-aae56e61fd39.gif&quot; alt=&quot;main_concert(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;메인페이지(댓글)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192977-bbc16630-d1dd-406c-8eca-18ed0d1bd3d1.gif&quot; alt=&quot;main_comment&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155192982-8919e2e1-7427-498f-91ab-2bb9d4970f8c.gif&quot; alt=&quot;main_comment(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;콘서트페이지&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155193172-5fface74-bd06-4927-8cf0-f8bf026ff43b.gif&quot; alt=&quot;concert&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155193181-c598df6d-fff6-4f83-9e20-d0312eb74b71.gif&quot; alt=&quot;concert(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;콘친찾기페이지(게시글 작성)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155193469-09e8c9b2-7fff-449c-91e2-304875ab0e86.gif&quot; alt=&quot;conchin_write&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155193474-7cd03737-8ba6-4e79-90d4-bdd62c13b069.gif&quot; alt=&quot;conchin_write(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;콘친찾기페이지(게시글 레이아웃 변화)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155193637-7ac5244e-3ee2-4592-89b0-24563fbd86ff.gif&quot; alt=&quot;conchin_article&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155193650-0b44ccdb-5563-42b4-8dfc-6192294444a2.gif&quot; alt=&quot;conchin_article(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;콘친찾기페이지(게시글 보기)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194105-0cdef6e4-de3e-4965-925d-3fe1d4b285ef.gif&quot; alt=&quot;conchin_detail&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194112-b7b5167a-3832-400a-a288-f5d27446b779.gif&quot; alt=&quot;conchin_detail(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;마이페이지&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194624-05a3294a-e4eb-4956-9745-e730d0a1a8d2.gif&quot; alt=&quot;mypage&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194630-fe46453c-a93a-4766-ad07-04697f67824a.gif&quot; alt=&quot;mypage(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;마이페이지(프로필 수정 페이지)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155195072-6a9a01e2-8a7a-42e6-8a53-cdfaa388dedc.gif&quot; alt=&quot;mypage_profile&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155195079-b836a92b-2d61-4aee-9b65-2f1e1f06aceb.gif&quot; alt=&quot;mypage_profile(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;마이페이지(콘친인증 페이지)&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194879-8670d122-d9a5-48f4-858e-66102a114eab.gif&quot; alt=&quot;mypage_conchin&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194885-e1c53370-1300-43f6-ba99-b5d8f425a658.gif&quot; alt=&quot;mypage_conchin(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;헤더&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194369-0cf13f00-90d8-4958-bc7a-23020f984c3b.gif&quot; alt=&quot;header&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155194377-0a64478d-7e09-4740-ae8e-53c98c4bece2.gif&quot; alt=&quot;header(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;로그아웃&lt;/summary&gt;
-
-&lt;div&gt;
-    &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;데스크탑&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155195527-0c107e9c-bf3b-4888-8cca-fbbe4ae8eb75.gif&quot; alt=&quot;logout&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;모바일&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155195532-c57c6c53-7b0c-4cf3-b0b7-09399ca2512e.gif&quot; alt=&quot;logout(mobile)&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;-all-con-서비스-발표-영상&quot;&gt;🎥 &lt;span style=&quot;color: #FFCE63;&quot;&gt;ALL-CON&lt;/span&gt; 서비스 발표 영상&lt;/h2&gt;
-
-&lt;iframe width=&quot;928&quot; height=&quot;522&quot; src=&quot;https://www.youtube.com/embed/1uK3QLF9TIo&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;-all-con에서는-무엇을-담당하였나요&quot;&gt;🤔 &lt;span style=&quot;color: #FFCE63;&quot;&gt;ALL-CON&lt;/span&gt;에서는 무엇을 담당하였나요?&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;🖥 Front-end&lt;/b&gt;&lt;/summary&gt;
-
-&lt;br /&gt;
-&lt;img alt=&quot;TypeScript&quot; src=&quot;https://img.shields.io/badge/TypeScript-3178C6.svg?&amp;amp;style=for-the-badge&amp;amp;logo=TypeScript&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;React&quot; src=&quot;https://img.shields.io/badge/React-61DAFB.svg?&amp;amp;style=for-the-badge&amp;amp;logo=React&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;Redux&quot; src=&quot;https://img.shields.io/badge/Redux-764ABC.svg?&amp;amp;style=for-the-badge&amp;amp;logo=Redux&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;Sass&quot; src=&quot;https://img.shields.io/badge/Sass-CC6699.svg?&amp;amp;style=for-the-badge&amp;amp;logo=Sass&amp;amp;logoColor=white&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-
-&lt;div&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;메인페이지&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;콘서트 알람 조회 &amp;amp; 요청 기능 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;콘서트 댓글 작성 유효성 검사 &amp;amp; 수정 &amp;amp; 삭제 기능 구현&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;콘서트페이지&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;콘서트 페이지 레이아웃 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;콘서트 조회수순 &amp;amp; 임박예정순 &amp;amp; 등록일순 조회 기능 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;콘서트 상세 페이지 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;카카오 개발자 도구를 이용한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카카오맵 API&lt;/code&gt; 기능 구현&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;모달&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;로그인 모달 창 구현
-            &lt;ul&gt;
-              &lt;li&gt;일반 로그인 &amp;amp; 구글 &amp;amp; 카카오 소셜 로그인 기능 구현&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;회원가입 모달 창 구현
-            &lt;ul&gt;
-              &lt;li&gt;회원가입 유효성 검사 기능 구현&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;비밀번호 찾기 모달 창 구현
-            &lt;ul&gt;
-              &lt;li&gt;타이머 &amp;amp; SMS 발송 및 입력값 유효성 검사 기능 구현&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;⚙️ Back-end&lt;/b&gt;&lt;/summary&gt;
-	
-&lt;br /&gt;
-&lt;img alt=&quot;JavaScript&quot; src=&quot;https://img.shields.io/badge/JavaScript-F7DF1E.svg?&amp;amp;style=for-the-badge&amp;amp;logo=JavaScript&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;Node.js&quot; src=&quot;https://img.shields.io/badge/Node.js-339933.svg?&amp;amp;style=for-the-badge&amp;amp;logo=Node.js&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;Express&quot; src=&quot;https://img.shields.io/badge/Express-000000.svg?&amp;amp;style=for-the-badge&amp;amp;logo=Express&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;MySQL&quot; src=&quot;https://img.shields.io/badge/MySQL-4479A1.svg?&amp;amp;style=for-the-badge&amp;amp;logo=MySQL&amp;amp;logoColor=white&quot; /&gt;
-&lt;img alt=&quot;Sequelize&quot; src=&quot;https://img.shields.io/badge/Sequelize-52B0E7.svg?&amp;amp;style=for-the-badge&amp;amp;logo=Sequelize&amp;amp;logoColor=white&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-
-&lt;div&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;구조 작성&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;라우터 &amp;amp; 컨트롤러 뼈대 구조 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Sequelizer 설정
-            &lt;ul&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;migrations&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;models&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;seeders&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;associations&lt;/code&gt; 설정&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;민감정보 암호화&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crypto&lt;/code&gt;를 이용한 암호화
-            &lt;ul&gt;
-              &lt;li&gt;해쉬 알고리즘과 솔트를 이용한 민감정보 암호화&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;로그인 컨트롤러&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JWT&lt;/code&gt; 인증방식 로그인 기능 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;닉네임 중복없는 OAuth 소셜 로그인 기능 구현
-            &lt;ul&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구글 API&lt;/code&gt; &amp;amp; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카카오 API&lt;/code&gt; 를 이용한 두가지 로그인 방식 지원&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;문자 인증 컨트롤러&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Twillio&lt;/code&gt;를 이용한 6자리 난수 코드 SMS 전송&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;웹 크롤링&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cheerio&lt;/code&gt;를 이용한 웹 크롤러 구현&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node Schedule&lt;/code&gt;을 이용한 크롤링 자동화 구현&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-  &lt;/div&gt;
-&lt;/details&gt;
-
-&lt;hr /&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;b&gt;🔧 Deployment&lt;/b&gt;&lt;/summary&gt;
-	
-&lt;br /&gt;
-&lt;img alt=&quot;Amazon AWS&quot; src=&quot;https://img.shields.io/badge/Amazon AWS-232F3E.svg?&amp;amp;style=for-the-badge&amp;amp;logo=Amazon AWS&amp;amp;logoColor=white&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-
-&lt;div&gt;
-
-    &lt;details&gt;
-&lt;summary&gt;&amp;#160;&amp;#160;클라이언트 배포 자동화&lt;/summary&gt;
-
-&lt;div&gt;
-
-        &lt;ul class=&quot;task-list&quot;&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;S3&lt;/code&gt;를 이용한 클라이언트 배포&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CloudFront&lt;/code&gt;를 이용한 클라이언트 HTTPS 배포&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CodePipeLine&lt;/code&gt;을 이용한 배포 자동화&lt;/li&gt;
-          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Route 53&lt;/code&gt;을 이용한 도메인 연결&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/details&gt;
-
-  &lt;/div&gt;
-&lt;/details&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;-개인-기술-발표-영상&quot;&gt;🎥 개인 기술 발표 영상&lt;/h2&gt;
-
-&lt;iframe width=&quot;1028&quot; height=&quot;578&quot; src=&quot;https://www.youtube.com/embed/4Z4uoshjOQ4&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Q. 왜 Cheerio를 사용했나요?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; HTML / XML 문서를 매우 쉽게 데이터 파싱 및 추출은 물론이며, 정말 빠른 속도로 가져올 수 있기에 선택하였습니다. 빠른 속도와 더불어 적은 리소스로 서버의 부담을 최대한 줄일 수 있었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Q. 왜 node-schedule을 사용했나요?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; 앞서 말씀드린대로 무분별한 크롤링이 아닌, 1일 1회의 크롤링을 제어하기 위해 작업을 반복적으로 그리고 서버 정기점검 시간을 피할 수 있는 특정시간에 처리해야 할 수 있어야 했습니다.&lt;/p&gt;
-
-&lt;p&gt;npm compare 사이트를 통해 대표적인 스케쥴러 라이브러리 3가지를 선정하였으며, 그중 Agenda는 mongo DB가 반드시 필요하므로 제외하였습니다.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/155177170-787ed73c-b5f3-4320-abb0-b2d445f31074.png&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;
-node Schedule 라이브러리는 가장 역사가 길며 다운로드수가 많은걸 보아 다양한 유저들이 사용하였다 판단되므로 에러핸들링하기 가장 진입장벽이 낮아보이는 node-schedule 라이브러리를 선택하였습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;amp;color=FFCE63&amp;amp;height=230&amp;amp;section=footer&quot; alt=&quot;Footer&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 26 Jan 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/22.01.26.Final-Project/</link>
-        <guid isPermaLink="true">http://localhost:4000/project/22.01.26.Final-Project/</guid>
-        
-        
-        <category>Project</category>
         
       </item>
     

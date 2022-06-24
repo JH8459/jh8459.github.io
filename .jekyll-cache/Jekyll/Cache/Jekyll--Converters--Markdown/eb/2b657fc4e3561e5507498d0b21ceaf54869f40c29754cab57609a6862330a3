@@ -1,0 +1,70 @@
+I"<<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 DTO 사용을 안내하고 있다.</p>
+
+<p>공식문서를 토대로 DTO를 왜 사용하는지 찾아보는 그 과정에서 Interface와의 차이점을 간단히 알아보았다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-dto-data-transfer-object">1. DTO (Data Transfer Object)</h3>
+<hr />
+
+<p>우선 <code class="language-plaintext highlighter-rouge">DTO</code>란 <strong>계층</strong>*간 데이터 교환을 위해 사용하는 객체이다.</p>
+
+<blockquote>
+  <p>계층이란?</p>
+
+  <p>패턴마다 다르게 표현된다.
+Repository 패턴에서는 Controller, Service, Repository를 각각 계층이라 칭하며, MVC 패턴에서는 Model, View, Controller의 계층이 존재한다.</p>
+</blockquote>
+
+<p>계층간 데이터를 주고 받을 때 어떤 모양의 데이터 객체로 주고 받을지를 DTO에서 결정하게 되므로 프로젝트를 설계할때 최우선으로 고려되야 할 요소이다.</p>
+
+<p>쉽게 말하자면 정보를 교환하는데 있어 타입을 체크하기 위한 구조라 설명할 수 있다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="2-repository-pattern의-장점">2. Repository Pattern의 장점?</h3>
+<hr />
+
+<p>우선 어떤 개념이고, 어떻게 쓰이는지는 알았으니 장점을 간단하게 찾아보았다.</p>
+
+<ul>
+  <li>
+    <p><strong>데이터 로직을 분리시킬 수 있다.</strong></p>
+
+    <p>⇒ <em>파일 구조부터 분리가 된다.</em></p>
+  </li>
+  <li>
+    <p><strong>중앙 집중처리 방식으로, 언제나 일관된 인터페이스로 데이터를 요청할 수 있다.</strong></p>
+
+    <p>⇒ <em>요청을 하는 쪽은 Repository의 사정이 궁금하지도 필요하지도 않다. 언제나 항상 같은 인터페이스로 요청을하고 결과값을 제공받을 수 있다.</em></p>
+  </li>
+  <li>
+    <p><strong>단위 테스트를 통해 검증이 가능합니다.</strong></p>
+
+    <p>⇒ <em>테스트 경험은 없지만, 데이터를 가공하고 제공하는 Repository에서만 검증을 추가한다면 응답으로 반환될 데이터값들을 단위 테스트를 먼저 적용시켜 검증이 수월할 거 같다라는 생각은 든다.</em></p>
+  </li>
+  <li>
+    <p><strong>새로운 데이터 로직 코드를 쉽게 추가할 수 있습니다.</strong></p>
+
+    <p>⇒ <em>Repository에서만 코드를 추가하거나 수정하여 데이터 로직을 추가하거나 변경할 수 있으므로 큰 장점이다.</em></p>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>그냥 NestJS 공식 문서에서 쓰라해서 썼고, TypeORM에서 기본으로 지원해주니 쓰던 Repository Pattern을 그나마 조금 이해하고 써 볼 수 있게 되었다.</p>
+
+<p>앞으로는 데이터를 가공하거나 가져오는 로직을 확실히 Repository 영역에서 수행해주는 쪽으로 조금 더 생각한 뒤 코드로 옮겨가야겠다~ 라는 생각이 들었다.</p>
+
+<p>규모가 큰 프로젝트일수록 디자인 패턴등 구조 설계부터 중요할거같다라는 생각이 든다.</p>
+
+<p><br />
+<br /></p>
+:ET
