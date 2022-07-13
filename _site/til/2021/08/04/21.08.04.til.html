@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL"></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-원시-자료형과-참조-자료형">1. 원시 자료형과 참조 자료형.</h3>
+
+<hr>
+<h4 id="1-1-원시-자료형">1-1. 원시 자료형.</h4>
+<ul>
+  <li>자바스크립트에서 원시 타입의 데이터(primitive data types; 원시 자료형)는 객체가 아니면서 method를 가지지 않는 6 가지의 타입
+    <blockquote>
+      <p>string, number,bigint, boolean, undefined, symbol, (null)</p>
+      <blockquote>
+        <p>null은 원시 타입과 거의 같게 사용된다고 볼 수 있다. 작동 방식 또한 다른 원시 타입과 같으나, 다만 엄밀하게 따지자면 원시 타입이라고 볼 수 없는 자료형이다.</p>
+      </blockquote>
+    </blockquote>
+  </li>
+  <li>
+    <p>원시 자료형은 모두 “하나”의 정보, 즉, 데이터를 담고 있다.  원시 자료형은 값 자체에 대한 변경이 불가능(immutable)하지만, 변수에 다른 데이터를 할당할 수는 있다.</p>
+
+    <div class="language-javascript highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">hello world!</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">Hi!</span><span class="dl">"</span>
+<span class="c1">// "hello world!" 와 "Hi!"는 모두 변경할 수 없는 고정된 값입니다.</span>
+
+<span class="kd">let</span> <span class="nx">word</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello world!</span><span class="dl">"</span> 
+<span class="nx">word</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hi!</span><span class="dl">"</span> 
+<span class="c1">// 하지만, word라는 변수에 재할당을 하여 변수에 담긴 내용을 변경은 가능합니다.</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr>
+<h4 id="1-2-참조-자료형">1-2. 참조 자료형.</h4>
+<ul>
+  <li>
+    <p>자바스크립트에서 원시 자료형이 아닌 모든 것은 참조 자료형이다. 이런 자료형을 자바스크립트에서는 참조 자료형(reference data type; 참조 타입)이라고도 부른다. 대표적인 참조 자료형으로는 배열([])과 객체({}), 함수(function(){})가 있다.</p>
+  </li>
+  <li>참조 자료형에는 하나의 데이터가 아닌 여러 데이터가 담기게 된다. 그래서 참조 자료형의 데이터 “값” 자체는 지금까지 배웠던 원시 자료형처럼 1:1로 할당되는 것이 아닌 특별한 데이터 보관함(heap)에 저장됩며, 변수에는 데이터 “값이 위치한곳(메모리 상 주소)”을 가리키는 주소가  저장되게 된다.
+    <ul>
+      <li>
+        <p>heap은 별도로 관리되며 사이즈 또한 참조 자료형 값에 따라 동적으로 변할수 있다. (고정값은 비효율적인 설계)</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center"> </th>
+              <th style="text-align: center">데이터 값</th>
+              <th style="text-align: center">주소</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center">저장위치</td>
+              <td style="text-align: center">heap(동적으로 저장됨)</td>
+              <td style="text-align: center">변수에 할당됨(heap을 가르키는 address)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>참조 자료형은 변수에는 주소가 담겨져있기떄문에, 각 변수간에 값을 복사할 경우에 주소가 복사되게 되므로 원본값이 바뀌는 경우가 발생할 수 있다.</p>
+
+    <div class="language-javascript highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>  <span class="c1">// b에 a의 값을 복사한게 아닌, a의 주소가 b에 할당됨.</span>
+	
+	
+  <span class="nx">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">50</span><span class="p">;</span>
+  <span class="nx">a</span><span class="p">;</span> <span class="c1">// (2) [50,20] 의 값이 나오게된다.</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr>
+<h3 id="2-스코프">2. 스코프</h3>
+<ul>
+  <li>
+    <p>예제로 우선 스코프에 대해 알아보자.</p>
+
+    <div class="language-javascript highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">greetSomeone</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Josh</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">greeting</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">firstName</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greetSomeone</span><span class="p">());</span> <span class="c1">// 'Hello Josh'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">);</span> <span class="c1">// Reference Error</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">greeting</code> 변수는 바깥 스코프에 정의되어 있으므로, 함수 안쪽에서 사용할 수 있다. 반면에, <code class="language-plaintext highlighter-rouge">firstName</code> 변수는 함수의 안쪽 스코프에 정의되어 있으므로 함수의 바깥쪽에서는 접근이 불가능하다. 따라서 ReferenceError가 출력된다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>이처럼 변수에 접근할 수 있는 범위가 존재한다. 중괄호(블록) 안쪽에 변수가 선언되었는가, 바깥쪽에 변수가 선언되었는가가 중요한 조건이다. 이 범위를 우리는 스코프라고 부른다.</p>
+  </li>
+</ul>
+
+<hr>
+<h4 id="2-1-스코프-주요-규칙">2-1. 스코프 주요 규칙</h4>
+<ul>
+  <li>
+    <p>첫번째 규칙은, “바깥쪽 스코프에서 선언한 변수는 안쪽 스코프에서 사용 가능한 반면에, 안쪽에서 선언한 변수는 바깥쪽 스코프에서는 사용할 수 없다”라는 점이다.  위의 예제를 통하여 확인해보았다.</p>
+  </li>
+  <li>
+    <p>두번째 규칙은, “스코프는 중첩이 가능하다”는 것이다, 스코프는 마치 중첩된 울타리와 같다.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/128110182-2717f421-cf78-4141-b68a-7532c32efbfe.png" alt="스코프 범위"></p>
+
+    <ul>
+      <li>특별히 가장 바깥쪽의 스코프는 전역 스코프(Global Scope)라고 부른다. 그 외의 스코프들은 지역(local) 스코프로 부르며, 전역이 아닌 다른 스코프는 전부 지역 스코프(local scope)이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>세번째 규칙은, “지역 변수는 전역 변수보다 더 높은 우선순위를 가진다” 이다.</p>
+  </li>
+</ul>
+
+<hr>
+<h4 id="2-2-스코프의-종류">2-2. 스코프의 종류</h4>
+<ul>
+  <li>
+    <p>블록 스코프(block scope) : 중괄호를 기준으로 범위가 구분된다.</p>
+  </li>
+  <li>
+    <p>함수 스코프(function scope) : function 키워드가 등장하는 함수 선언식 및 함수 표현식은 함수 스코프를 만든다.</p>
+    <ul>
+      <li>화살표 함수는 블록 스코프로 취급된다. 함수 스코프 ( X)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+<h4 id="2-3-let-const-var-변수-선언에서-주의할-점">2-3. let, const, var 변수 선언에서 주의할 점</h4>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">var</code> 키워드로 정의한 변수는 블록 스코프를 무시하고, 함수 스코프만 따른다.
+    <ul>
+      <li>그러나, 모든 블록 스코프를 무시하는 건 아니며, <strong>화살표 함수의 블록 스코프</strong>는 무시하지 않는다.</li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">var</code> 키워드로 선언된 전역 변수 및 전역 함수는 <code class="language-plaintext highlighter-rouge">window</code> 객체에 속하게 된다.</p>
+
+        <div class="language-javascript highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">myName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">KJH</span><span class="dl">'</span><span class="p">;</span>
+	  
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">myName</span><span class="p">);</span>  <span class="c1">// KJH</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>보통 코드를 작성할 때 블록은 들여쓰기가 적용되고, 그 구분이 시각적으로 분명해서 많은 사람들은 블록 스코프를 기준으로 코드를 작성하고, 생각하기 마련이다. 그러나 <code class="language-plaintext highlighter-rouge">var</code>는 이 규칙을 무시하므로, 사용이 권장되지 않는다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">let</th>
+      <th style="text-align: center">const</th>
+      <th style="text-align: center">var</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>유효 스코프 범위</strong></td>
+      <td style="text-align: center">블록 스코프 및 함수 스코프</td>
+      <td style="text-align: center">블록 스코프 및 함수 스코프</td>
+      <td style="text-align: center">함수 스코프</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>값 재할당</strong></td>
+      <td style="text-align: center">가능</td>
+      <td style="text-align: center">불가능</td>
+      <td style="text-align: center">가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>재선언</strong></td>
+      <td style="text-align: center">불가능</td>
+      <td style="text-align: center">불가능</td>
+      <td style="text-align: center">가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<ul>
+  <li>전역 변수는 가장 바깥 스코프에 정의한 변수이다. 따라서, 어디서든 접근이 가능하므로 편리하지만, 다른 함수 혹은 로직에 의해 의도되지 않은 변경이 발생할 수 있다. 이를 <strong>부수 효과(side effect)</strong> 라 부르며 이를 최소화 하는것이 좋은 프로그래밍 설계 방법이다.
+    <ul>
+      <li>
+        <p>실수를 방지하기 위해 <code class="language-plaintext highlighter-rouge">strict mode</code>를 적용하여 사용할 수 있다 . 브라우저가 보다 엄격하게 작동하도록 만들어주도록 도와준다</p>
+
+        <div class="language-javascript highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>  <span class="c1">// js 파일 상단에 선언, 문법적으로 실수할 수 있는 부분들을 에러로 판단해준다.</span>
+	  
+  <span class="kd">function</span> <span class="nx">showAge</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">age</span> <span class="o">=</span> <span class="mi">90</span><span class="p">;</span>  <span class="c1">// 키워드 없이 변수가 선언되었기 때문에 엄격한 판단에 의해 Error가 발생된다.</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">showAge</span><span class="p">();</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>유효 범위를 나타내는 스코프는 스코프들간의 유효 범위가 연결리스트 형식으로 관리되는데, 이 스코프간의 상하관계를 <strong>스코프 체인</strong> 이라 일컫는다.</li>
+</ul>
+
+<h3 id="3-클로저">3. 클로저</h3>
+<ul>
+  <li>MDN에서의 클로저 정의에 따르면, 다음과 같다.</li>
+</ul>
+
+<blockquote>
+  <p>“함수와 함수가 선언된 어휘적(lexical) 환경의 조합을 말한다. 이 환경은 클로저가 생성된 시점의 유효 범위 내에 있는 모든 지역 변수로 구성된다.”</p>
+</blockquote>
+
+<ul>
+  <li><em>“함수를 리턴하는 함수중, 내부 함수의 리턴값이 외부 함수의 변수에 영향을 미친다면 이를 클로저 함수라 일컫는다.”</em></li>
+</ul>
+
+<h4 id="3-1-클로저-함수의-특징">3-1. 클로저 함수의 특징</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// const adder = x =&gt; y =&gt; x + y;</span>
+	
+<span class="c1">// 위의 코드와 동일하게 작동하는 코드.</span>
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 익명의 클로저 함수(내부 함수의 리턴값이 외부 함수의 변수에 영향을 미친다)</span>
+	  <span class="nx">result</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+	  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">adder</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="mi">7</span><span class="p">);</span>  <span class="c1">// 12</span>
+<span class="k">typeof</span> <span class="nx">adder</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1">// 'function', 리턴값이 함수의 형태이다.	</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/83164003/128131425-8039b80b-9657-4b16-ba14-601942e3cea6.png" alt="클로저"></p>
+
+<ul>
+  <li>
+    <p>위 사진과 같이 클로저 함수는 <em>“내부 함수는 외부 함수에 선언된 변수에 접근 가능하다”</em> 라는 특징을 갖는다</p>
+  </li>
+  <li>
+    <p>일반적인 함수는, 함수 실행이 끝나고 나면 함수 내부의 변수를 사용할 수 없다. 이와 다르게, 클로저는 외부 함수의 실행이 끝나더라도, 외부 함수 내 변수가 메모리 상에 저장되기에 데이터를 보존할 수 있다. (어휘적 환경을 메모리에 저장하기 때문에 가능하다)</p>
+
+    <div class="language-javascript highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">funtion</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">result</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">add5</span> <span class="o">=</span> <span class="nx">adder</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>  
+<span class="nx">add5</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>  <span class="c1">// 12</span>
+<span class="nx">add5</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>  <span class="c1">// 15</span>
+	
+  <span class="kd">const</span> <span class="nx">add7</span> <span class="o">=</span> <span class="nx">adder</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="c1">// 여러개의 add를 만드는 것이 가능하다. 재활용이 가능한 adder 함수</span>
+  <span class="nx">add7</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>  <span class="sr">/ 15 </span><span class="err"> 
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>클로저 함수 내부의 선언된 변수들은 외부에서 접근할 수 없으므로 정보의 접근이 제한이 된다. 이를 <strong>캡슐화</strong>라 한다. 해당 캡슐화를 통해서 불필요한 전역 변수 사용을 줄일수 있게되며, 스코프를 이용해서 값을 보다 안전하게 다룰 수 있는 강점이 생긴다.</p>
+  </li>
+  <li>
+    <p>위와 같이 재활용 또한 가능하게 된다. (<code class="language-plaintext highlighter-rouge">add5</code>, <code class="language-plaintext highlighter-rouge">add7</code> 등 <code class="language-plaintext highlighter-rouge">adder()</code> 함수를 재활용하여 여러개의 <code class="language-plaintext highlighter-rouge">add 변수</code>를 만드는것이 가능하다.) 이와 같이 함수 재사용성을 극대화하여, 함수 하나를 완전히 독립적인 부품 형태로 분리하는 것을 <strong>모듈화</strong>라고 한다.</p>
+  </li>
+</ul>
+
+<h4 id="3-2-클로저-함수의-활용-예시">3-2. 클로저 함수의 활용 예시</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// const tagMaker = tag =&gt; content =&gt; `&lt;${tag}&gt;%{content}&lt;/${tag}&gt;`</span>
+
+<span class="c1">// 위의 코드와 동일하게 작동되는 코드.</span>
+<span class="kd">const</span> <span class="nx">tagMaker</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">){</span>  <span class="c1">// 내부 함수값의 리턴값이 외부 함수의 tag를 활용하는 익명의 클로저 함수</span>
+		<span class="k">return</span> <span class="s2">`&lt;</span><span class="p">${</span><span class="nx">tag</span><span class="p">}</span><span class="s2">&gt;%{content}&lt;/</span><span class="p">${</span><span class="nx">tag</span><span class="p">}</span><span class="s2">&gt;`</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">divMaker</span> <span class="o">=</span> <span class="nx">tagMaker</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">divMaker</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// tagMaker('div')('hello') 와 같은 구조이다. </span>
+<span class="c1">// 'div'는 위 함수 `tag 매개변수`의 전달인자가 되며, `hello'는 위 함수 `content 매개변수`의 전달인자가 된다.</span>
+
+<span class="kd">const</span> <span class="nx">anchorMaker</span> <span class="o">=</span> <span class="nx">tagMaker</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 모듈화 되어 재사용에 용이하다.</span>
+<span class="nx">anchorMaker</span><span class="p">(</span><span class="dl">'</span><span class="s1">world</span><span class="dl">'</span><span class="p">);</span> 
+
+<span class="c1">// &lt;div&gt;hello&lt;/div&gt;</span>
+<span class="c1">// &lt;a&gt;world&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>클로저 함수는 <em>내부 함수의 리턴값이 외부 함수의 지역변수를 참조하여 값을 바꾸거나 활용 하는 함수이다.</em>  이렇게 사용시 전달인자로 전달된 <code class="language-plaintext highlighter-rouge">tag</code>값이나 <code class="language-plaintext highlighter-rouge">content</code>의 값이 새로운 할당이나 선언없이 전달인자로만 전달되어도 함수의 기능을 모두 활용하며 재사용에 용이한 구조로 코드를 구성할 수 있다.</li>
+</ul>
+
+<p><br>
+<br></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<ul>
+  <li>
+    <p>스코프까지는 그럭저럭 쉽게 개념에 대해 학습하고 이해가되었으나 클로저 함수는 난관이다. 
+ 우선 어떻게 활용되는지 감이 안잡힌다. 모듈화를 함으로써 얻어지는 편리함등은 머릿속으로는 이해가 가는데,  이걸 기존의 코드에 활용하여 클로저 함수를 정의하며 해당 코드를 재활용하는 영역까진 오늘 모두 이뤄긴 당연히 힘들거라 생각된다.
+ 와이어프레임을 짠 뒤, 중복되는 분야를 모듈화를 통하여 최대한 걷어낼 수 있게끔 처음부터 설계가 진행되야 깔끔한 코딩이 이뤄진다 예상된다.</p>
+  </li>
+  <li>
+    <p>클로저 함수 복습하니 9~10시… 후..  기존 블로그 포스트  이사 완료하니 자정이다^^…. <del>ㅃ2 velog</del> <br>
+그나저나 어제 git repository 정리를 마치니, github 초기화면도 뭔가 바꿔보고 싶다는 생각이 든다… 우선 이런 잡다한거는 나중에 주말에 몰아서 한번 진행해보도록 해야겠다.</p>
+  </li>
+</ul>
+
+<p><br>
+<br></p>
+
+<h2 id="내일-할-일">내일 할 일</h2>
+<ul>
+  <li>
+    <p>내일 커리큘럼은 이번주 학습한 내용을 pair와 함께 다양한 실습 코딩 test를 pass해야한다. 좋은 기회라 생각되므로 오늘중 다시한번 이번주 학습 내용을 다잡아야겠다.</p>
+  </li>
+  <li>
+    <p>DOM에 대한 유튜브 강의는 적은듯하다.. 생활코딩님 게시글도 8년전 흠… 드림코딩님은 우선 DOM키워드 글은 없는듯 하고.. 개념에 대한 글들을 우선 정독해보는정도로 마무리하고 React 클론 코딩등은 게시글들이 많으니 그쪽을 먼저 학습하도록 해야겠다.</p>
+  </li>
+</ul>
+</body></html>

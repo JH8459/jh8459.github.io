@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>따라하며 배우는 Nest JS #5 | JHLog</title>
+<meta name="generator" content="Jekyll v4.2.2">
+<meta property="og:title" content="따라하며 배우는 Nest JS #5">
+<meta name="author" content="JH8459">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Today I Learnd 인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 있다.">
+<meta property="og:description" content="Today I Learnd 인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 있다.">
+<link rel="canonical" href="http://localhost:4000/til/2022/04/17/22.04.17.til.html">
+<meta property="og:url" content="http://localhost:4000/til/2022/04/17/22.04.17.til.html">
+<meta property="og:site_name" content="JHLog">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-04-17T00:00:00+09:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="따라하며 배우는 Nest JS #5">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH8459"},"dateModified":"2022-04-17T00:00:00+09:00","datePublished":"2022-04-17T00:00:00+09:00","description":"Today I Learnd 인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 있다.","headline":"따라하며 배우는 Nest JS #5","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/04/17/22.04.17.til.html"},"url":"http://localhost:4000/til/2022/04/17/22.04.17.til.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="JHLog">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/">
+  <img class="site-favicon" title="JHLog" src="" onerror="this.style.display='none'">
+  JHLog
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/archives.html">ARCHIVES</a><a class="page-link" href="/categories.html">CATEGORIES</a><a class="page-link" href="/">HOME</a><a class="page-link" href="/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">따라하며 배우는 Nest JS #5</h1>
+  <h2 class="post-subtitle">인프런 [따라하며 배우는 NestJS] 강의 스터디 로그</h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-04-17T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022, Apr 17
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL"></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>인프런의 <a href="https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4" target="_blank">따라하며 배우는 NestJS</a>를 들으며 배운점을 남기고 있다.</p>
+
+<p>일전의 <a href="https://jh8459.github.io/til/22.04.16.til/" target="_blank">#4</a>에서 DTO에 대한 기초 개념을 학습을 진행했으며 그를 토대로 기본적인 CRUD를 위한 실습또한 함께 진행했다.</p>
+
+<p>오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다.<br> 
+해당 코드 내용은 아래에 첨부한다.</p>
+
+<blockquote>
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/51ab917ca54c16d5b707d9097f76a9f10c86546c/src/boards/dto/create-board.dto.ts" target="_blank">게시물 생성을 위한 DTO</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/3207450280a7ab3e4091e7d5609bab76c488b126/src/boards/boards.service.ts" target="_blank">ID로 특정 게시물 가져오기(getBoardById)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/be2cd71692b2e1fbf4a539fb3b614960f2f594df/src/boards/boards.service.ts" target="_blank">ID로 특정 게시물 지우기(deleteBoard)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/b1dbee3e2fda9210217d5b286d19aae165bc3bc6/src/boards/boards.service.ts" target="_blank">특정 게시물의 상태 업데이트(updateBoardStatus)</a></p>
+</blockquote>
+
+<p>그리고 NestJS Pipes를 학습하였다.</p>
+
+<p><br>
+<br></p>
+
+<h3 id="1-pipe란">1. Pipe란?</h3>
+<hr>
+
+<p>파이프는 @Injectable () 데코레이터로 주석이 달린 클래스이다.<br>
+파이프는 <strong>데이터 변형(Data Transformation)</strong>과 <strong>데이터 유효성 검증(Data Validation)</strong>을 위해서 사용된다.</p>
+
+<blockquote>
+  <p><strong>데이터 변형(Data Transformation)</strong>과 <strong>데이터 유효성 검증(Data Validation)</strong>이란?</p>
+
+  <p><strong>데이터 변형(Data Transformation)</strong>은 입력 데이터를 원하는 형식으로 변환해주는 개념이다. (Ex. 문자열  ⇒ 정수)<br>
+만약 전달인자로 숫자를 받기를 원하는데 문자열 형식으로 온다면 파이프에서 자동으로 숫자형 데이터로 전환해준다. (Ex. string ‘7’ ⇒ integer 7)</p>
+
+  <p><strong>데이터 유효성 검증(Data Validation)</strong>은 입력 데이터를 평가하고 유효한 데이터라면 전달을 하며, 유효하지 않은 데이터일 경우 예외를 발생시킨다.<br>
+만약 이름의 길이가 10자 이하여야하는데 10자 이상의 입력 데이터가 발생한다면 에러를 발생시킨다.</p>
+</blockquote>
+
+<p>파이프는 컨트롤러 경로 처리기에 의해 처리되는 인수에 대해 작동한다.</p>
+
+<p>NestJS는 메서드가 호출되기 직전에 파이프를 삽입하고 파이프는 메서드로 향하는 인수를 수신하고 이에 대해 작동한다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163721717-5b6836c2-9c66-4655-a026-4ae04fd87d94.png"></center>
+<p><br></p>
+
+<p>파이프는 라우트 핸들러(Route Handler)가 처리하는 인수에 대해서 작동한다.</p>
+
+<p>그리고 파이프는 메서드 실행 바로 직전에 작동해서 메서드로 향하는 인수에 대해서 변환이 필요한 데이터가 들어온다면 데이터 변형을 진행하며, 유효하지 않은 데이터가 들어온다면 에러를 발생시키기 위해 호출된다.</p>
+
+<p><br>
+<br></p>
+
+<h3 id="2-pipe-사용하는-방법-binding-pipes">2. Pipe 사용하는 방법 (Binding Pipes)</h3>
+<hr>
+
+<p>파이프를 사용하는 방법은 <strong>Handler-level Pipes, Parameter-level Pipes, Global-level Pipes</strong> 세가지로 나눠질 수 있다.</p>
+
+<p><br>
+<br></p>
+
+<h4 id="2-1-handler-level-pipes">2-1. Handler-level Pipes</h4>
+<hr>
+
+<p>핸들러 레벨에서 @UsePipes() 데코레이터를 이용해서 사용할 수 있다.</p>
+
+<p>이 파이프는 특정 핸들러 내부 모든 파라미터에 적용이 된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Post</span><span class="p">()</span>
+<span class="p">@</span><span class="nd">UsePipes</span><span class="p">(</span><span class="nx">pipe</span><span class="p">)</span>
+<span class="nx">createBoard</span><span class="p">(</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">)</span> <span class="nx">title</span><span class="p">,</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">description</span><span class="dl">'</span><span class="p">)</span> <span class="nx">description</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">createBoard</code> 핸들러에만 작동하는 파이프의 예시이다.<br>
+해당 핸들러에 사용될 모든 파라미터(<code class="language-plaintext highlighter-rouge">'title'</code>, <code class="language-plaintext highlighter-rouge">'description'</code>)에 적용된다.</p>
+
+<p><br>
+<br></p>
+
+<h4 id="2-2-parameter-level-pipes">2-2. Parameter-level Pipes</h4>
+<hr>
+
+<p>파라미터 레벨에서 사용할 수 있다.</p>
+
+<p>이 파이프는 “특정” 파라미터에만 적용이 된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Post</span><span class="p">()</span>
+<span class="nx">createBoard</span><span class="p">(</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span> <span class="nx">ParameterPipe</span><span class="p">)</span> <span class="nx">title</span><span class="p">,</span>
+	<span class="p">@</span><span class="nd">Body</span><span class="p">(</span><span class="dl">'</span><span class="s1">description</span><span class="dl">'</span><span class="p">)</span> <span class="nx">description</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>특정 파라미터(<code class="language-plaintext highlighter-rouge">'title'</code>) 하나에만 작동하는 파이프의 예시이다.</p>
+
+<p><br>
+<br></p>
+
+<h4 id="2-3-global-level-pipes">2-3. Global-level Pipes</h4>
+<hr>
+
+<p>애플리케이션 레벨의 파이프이다.</p>
+
+<p>이 파이프는 클라이언트에서 들어오는 모든 요청에 적용이 된다.<br>
+때문에 모든 요청의 진입점이자 상단 영역인 <code class="language-plaintext highlighter-rouge">main.ts</code>에 넣어준다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">bootstrap</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+	<span class="nx">app</span><span class="p">.</span><span class="nx">useGlobalPipes</span><span class="p">(</span><span class="nx">GlobalPipes</span><span class="p">);</span>
+	<span class="k">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">bootstrap</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>모든 요청에 작동하는 파이프의 예시이다.</p>
+
+<p><br>
+<br></p>
+
+<h3 id="3-built-in-pipes">3. Built-in Pipes</h3>
+<hr>
+
+<p>NestJS에는 기본적으로 사용할 수 있게 만들어 놓은 6가지의 빌트인 파이프가 있다.</p>
+
+<ul>
+  <li>ValidationPipe</li>
+  <li>ParseIntPipe</li>
+  <li>ParsBoolPipe</li>
+  <li>ParseArrayPipe</li>
+  <li>ParseUUIDPipe</li>
+  <li>DefaultValuePipe</li>
+</ul>
+
+<p>이름만 보아도 각각의 파이트가 어떤 역할을 하는지 짐작은 가능하지만, 그중 ParseIntPipe를 보면 다음과 같다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Get</span><span class="p">(</span><span class="dl">'</span><span class="s1">:id</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">findOne</span><span class="p">(@</span><span class="nd">Param</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">,</span> <span class="nx">ParseIntPipe</span><span class="p">)</span> <span class="nx">id</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>파라미터 <code class="language-plaintext highlighter-rouge">'id'</code>는 숫자가 와야하는 핸들러가 있다고 가정을하자, 하지만 여기서 파라미터 값으로 숫자가 아닌 문자열 등 다른 타입의 데이터를 보낸다면.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163722866-3ae45a8a-f9d4-49e9-ac0c-f2629608105a.png"></center>
+<p><br></p>
+
+<p>아래와 같은 에러가 발생하게 된다.</p>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/163722908-94708cde-b0ae-4157-a14f-e79af3fe20ce.png"></center>
+
+<p><br>
+<br></p>
+
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+<p>우선 오늘은 Pipe 대해서 알아만 보았다.</p>
+
+<p>“굉장히 편리한 기능인데..?” 라는 생각이 바로 들었다.<br>
+또한 커스터마이징 파이프 또한 사용이 가능하니 더할 나위 없다 생각이 들었다.</p>
+
+<p>기존에 Express로 서버를 구성할 땐 사용자 입력값에 따라서 만약 입력값이 없거나 유효하지 않은 인풋값을 입력했다면, 상태코드 400번등 에러코드와 메시지를 함께 <code class="language-plaintext highlighter-rouge">json</code>형식으로 반환해서 입력 데이터값을 검증하는 코드를 일일히 구현했었다.</p>
+
+<p>그런데 NestJS에서는 이미 많이 쓰이는 유효성 검사를 위한 파이프는 빌트인 파이프로 제공하며 세밀한 검증이 필요한 경우에는 입맛에 맞춰 쓸 수 있다니 참.. 좋은 프레임워크구나라는 생각이 들었다.</p>
+
+<p>내일은 실제로 유효성 검증 혹은 데이터 변형을 위한 파이프를 사용해보며 직접 코드로 구현해보는 시간을 가져봐야겠다.</p>
+
+<p><br>
+<br></p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/til/2022/04/16/22.04.16.til.html" title="따라하며 배우는 Nest JS #4">따라하며 배우는 Nest JS #4</a><a class="next" href="/til/2022/04/18/22.04.18.til.html" title="따라하며 배우는 Nest JS #6">따라하며 배우는 Nest JS #6</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/til/2021/08/23/21.08.23.til.html" title="따라하며 배우는 Nest JS #6">1. 클래스를 이용한 모듈화 2. Prototype</a></li>
+<li><a class="post-link" href="/algorithm/2021/11/10/21.11.10.algorithm4.html" title="따라하며 배우는 Nest JS #6">빼빼로 데이 (GCD)</a></li>
+<li><a class="post-link" href="/project/2022/02/11/22.02.11.refactoring.html" title="따라하며 배우는 Nest JS #6">ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)</a></li>
+<li><a class="post-link" href="/algorithm/2021/09/13/21.09.13.algorithm.html" title="따라하며 배우는 Nest JS #6">TOY 15. primePassword</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title"><b>목차</b></div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<p><img src="https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg" alt="Project" /></p>
+<h2 id="refactoring">Refactoring</h2>
+
+<p>어제 발생한 <code class="language-plaintext highlighter-rouge">code: 'ERR_HTTP_HEADERS_SENT</code> 에러는 <code class="language-plaintext highlighter-rouge">userAuth</code>  미들웨어 함수를 수정하여 핸들링하였다. 오늘은 전반적으로 유효하지 않은 로그인 상태를 검증하여 메인페이지로 이동 후 로그인을 유도하는 방향으로 프로젝트를 리팩토링해볼 예정이다.</p>
+
+<h3 id="1-문제점">1. 문제점</h3>
+<hr />
+
+<p>현재 ALL-CON 프로젝트는 로그인중 웹 브라우저 쿠키가 삭제되거나 쿠키의 유효기간이 지난 이후에도 로그인을 계속 하고 있다면, 로그인이 필요한 API 요청을 시도시 <code class="language-plaintext highlighter-rouge">Server Error</code>만 반환하고 자동으로 로그아웃 처리가 된다던지, 페이지가 이동한다던지의 상태변화는 이뤄지지 않는다.</p>
+
+<p>이렇게 서비스가 유지가 된다면 이용자가 직접 유효하지 않은 로그인 상태를 감지하기는 어려우니 당연히 ALL-CON 서버 측의 문제가 있다고 생각이 들것이다.</p>
+
+<p>만약 유효하지 않는 로그인 정보로 로그인 검증이 필요한 API 요청 사용시에는 메인페이지로 강제로 이동 시키며, 로그인을 유도하는 방면으로 프로젝트를 리팩토링 해 볼 예정이다.</p>
+
+<h3 id="2-문제-해결">2. 문제 해결</h3>
+<hr />
+
+<h4 id="2-1-loginredirect-모듈-생성">2-1. LoginRedirect 모듈 생성</h4>
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Store import */</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RootState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../index</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">logout</span><span class="p">,</span> <span class="nx">getUserInfo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../store/AuthSlice</span><span class="dl">'</span><span class="p">;</span>
+<span class="cm">/* 생략 */</span>
+<span class="cm">/* Library import */</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useDispatch</span><span class="p">,</span> <span class="nx">useSelector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useNavigate</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">LoginRedirect</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* dispatch &amp; navigate &amp; useLocation 선언 */</span>
+  <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">useDispatch</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="nx">useNavigate</span><span class="p">();</span>
+
+  <span class="cm">/* useSelector */</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">isLoginCheck</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useSelector</span><span class="p">((</span><span class="nx">state</span><span class="p">:</span> <span class="nx">RootState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">auth</span><span class="p">);</span>
+  
+  <span class="cm">/* handler 함수 (기능별 정렬) */</span>
+  <span class="c1">// 메인페이지 리다이렉트 핸들러</span>
+  <span class="kd">const</span> <span class="nx">goHomeHandler</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/* 메인페이지 상태 초기화 */</span>
+    <span class="c1">// 생략</span>
+    <span class="cm">/* 켜져있는 모달창 모두 종료 */</span>
+    <span class="c1">// 생략</span>
+    <span class="cm">/* 홈으로 이동 */</span>
+    <span class="nx">navigate</span><span class="p">(</span><span class="dl">'</span><span class="s1">/main</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="c1">// 로그인 상태 변경 핸들러</span>
+  <span class="kd">const</span> <span class="nx">loginStateHandler</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/* 로그아웃 상태로 변경 &amp; 유저정보 상태 초기화 */</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logout</span><span class="p">());</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">getUserInfo</span><span class="p">({}));</span>
+    <span class="cm">/* 로그인 모달창 팝업 */</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">showLoginModal</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+  <span class="p">};</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">isLoginCheck</span><span class="p">){</span>
+      <span class="nx">goHomeHandler</span><span class="p">();</span> <span class="c1">// 메인페이지로 이동</span>
+      <span class="nx">loginStateHandler</span><span class="p">();</span>  <span class="c1">// 로그인 상태 변경 &amp; 로그인 모달창 팝업</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">isLoginCheck</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">LoginRedirect</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>우선 <code class="language-plaintext highlighter-rouge">LoginRedirect</code> 모듈을 만들었다.</p>
+
+<p>해당 모듈의 주된 기능은 두가지 함수로 만들어주었다.</p>
+<ul>
+  <li>메인페이지 상태 초기화 &amp; 켜져있는 모든 모달창 종료이후 메인페이지로 이동하는 <code class="language-plaintext highlighter-rouge">goHomeHandler()</code> 함수</li>
+  <li>로그인 상태 초기화, 로그인한 유저정보 초기화 이후 로그인 모달창 띄워 재 로그인 유도하는 <code class="language-plaintext highlighter-rouge">loginStateHandler()</code> 함수</li>
+</ul>
+
+<center><img src="https://user-images.githubusercontent.com/83164003/153373384-2d37e9d0-f59b-4c11-ad77-6981f3356d4e.png" /></center>
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">index.tsx</code>에 해당 컴포넌트를 불러와서 <code class="language-plaintext highlighter-rouge">isLoginCheck</code> 상태가 변동될때 마다 위 두 함수가 작동하게끔 만들어 주었다.</p>
+
+<h4 id="2-2-로그인-검증이-필요한-api-요청-아래-분기-처리">2-2. 로그인 검증이 필요한 API 요청 아래 분기 처리</h4>
+<hr />
+
+<p><img src="https://user-images.githubusercontent.com/83164003/153373104-0149fc03-a438-4dde-9b37-0737a2f40f46.png" alt="스크린샷, 2022-02-10 17-57-11" /></p>
+
+<p>로그인 검증이 필요한 API 요청 아래에 응답 결과값이 <strong>상태코드 200번 &amp;&amp; 에러메시지</strong>를 반환하면 유효하지 않는 로그인 상태이므로 위와 같이 분기처리를 한뒤,  <code class="language-plaintext highlighter-rouge">isLoginCheck</code> 상태값을 바꿔주어 재렌더링 해주었다.</p>
+
+<h3 id="3-결과">3. 결과</h3>
+<hr />
+
+<ul>
+  <li>
+    <p>로그인 중 웹 브라우저 쿠키가 삭제되거나 쿠키 만료로 유효하지 않은 로그인 상태에서 마이페이지 진입하면 메인페이지로 이동 후 로그인 창 팝업</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/153384029-7cff7cd8-a60a-43c9-9013-14c77c74e344.gif" alt="gif" /></p>
+  </li>
+  <li>
+    <p>로그인 중 웹 브라우저 쿠키가 삭제되거나 쿠키 만료로 유효하지 않은 로그인 상태에서 로그인 검증이 필요한 기능 수행시 (댓글 작성) 메인 페이지로 이동 후 로그인 창 팝업</p>
+
+    <p><img src="https://user-images.githubusercontent.com/83164003/153384922-c0f2be81-9822-4e84-a643-68571d70451a.gif" alt="gif2" /></p>
+  </li>
+</ul>
+
+<hr />
+
+<p>우선 메인페이지에서 보여지는 영역은 모두 처리하였다.</p>
+
+<p>다른 영역, 예를 들어 콘친찾기 글쓰기 중 쿠키가 만료되거나 사라지는 경우 등을 대처하기 위해서 내일은 사이트 전반적인 로그인 검증이 필요한 API 요청시 메인페이지로 강제 이동 &amp; 로그인 재시도를 할 수 있게 끔 수정해볼 예정이다.</p>

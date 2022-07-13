@@ -1,0 +1,88 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/157039191-32141e02-51fe-4d34-abeb-02bb8f897dde.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<p>인프런의 <a href="https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4" target="_blank">따라하며 배우는 NestJS</a>를 들으며 배운점을 남기고 있다.</p>
+
+<p>일전의 <a href="https://jh8459.github.io/til/22.04.17.til/" target="_blank">#5</a>에서 파이프에 대한 기초 개념을 학습을 진행했으며 파이프를 이용한 기본적인 유효성 검사및 데이터 변환을 이용한 CRUD 실습또한 함께 진행했다.</p>
+
+<p>오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다.<br /> 
+해당 코드 내용은 아래에 첨부한다.</p>
+
+<blockquote>
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/3d1602bf88d167e8f5c1cdb5aeb637634a63951b/src/boards/boards.controller.ts" target="_blank">파이프를 이용한 유효성 체크(@UsePipes 핸들러-레벨 파이프)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/cf12fc5823fafa7e7858046e408a2b323642caf4/src/boards/boards.service.ts" target="_blank">특정 게시물을 찾을 때 없는 경우 결과 값 처리(NotFoundException)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/990a5df43720432d8c851ae54bd7d0162c90290d/src/boards/boards.service.ts" target="_blank">없는 게시물을 지우려 할 때 결과값 처리(deleteBoard 메서드 수정)</a></p>
+
+  <p><a href="https://github.com/JH8459/NestJS-BoardApp/blob/f3dce06aff45c5d0503a76144a85c8e7853e00f4/src/boards/pipes/board-status-validation.pipe.ts" target="_blank">커스텀 파이프를 이용한 유효성 체크(board-status-validation.pipe.ts)</a></p>
+</blockquote>
+
+<p>그리고 기존 실습은 메모리, 즉 <code class="language-plaintext highlighter-rouge">Boards</code> 배열에 <code class="language-plaintext highlighter-rouge">Board</code> 값을 넣어 저장하는 형태였다.</p>
+
+<p>그렇기에 서버를 껐다 키면 메모리가 날아가는 불편함이 있었기 때문에 DB에 넣는 과정을 학습하였다.</p>
+
+<p>그 과정에서 <strong>TypeORM</strong>에 대해 학습한 내용을 남겨보려 한다.</p>
+
+<p><br />
+<br /></p>
+
+<h3 id="1-typeorm이란">1. TypeORM이란?</h3>
+<hr />
+
+<p>TypeORM은 Node.js에서 실행되고 TypeScript로 작성된 객체 관계형 매퍼 라이브러리이다.</p>
+
+<p>TypeORM은 MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana 및 WebSQL과 같은 여러 데이터베이스를 지원한다.</p>
+
+<blockquote>
+  <p>ORM(Object Relational Mapping) 이란?</p>
+
+  <p>객체와 관계형 데이터베이스의 데이터를 자동으로 변형 및 연결하는 작업이다.<br />
+ORM을 이용한 개발은 객체와 데이터베이스의 변형에 유연하게 사용할 수 있다.</p>
+</blockquote>
+
+<p><br />
+<br /></p>
+
+<h4 id="1-1-orm-vs-javascript">1-1. ORM vs JavaScript</h4>
+<hr />
+
+<ul>
+  <li>
+    <p><strong>TypeORM</strong></p>
+
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">boards</span> <span class="o">=</span> <span class="nx">Board</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">.</span>
+      <span class="na">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PUBLIC</span><span class="dl">'</span>
+  <span class="p">});</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>JavaScript</strong></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">SELECT * FROM boards WHERE title = </span><span class="dl">'</span><span class="nx">Hello</span><span class="dl">'</span><span class="s1"> AND status = </span><span class="dl">'</span><span class="nx">PUBLIC</span><span class="dl">'</span><span class="s1">, (err, result) =&gt; 
+      if(err) throw new Error(</span><span class="dl">'</span><span class="nb">Error</span><span class="dl">'</span><span class="s1">);
+      boards = result.rows;
+  });
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>ORM은 모델을 기반으로 DB 테이블 체계를 자동으로 생성하지만 순수 JS로만 사용하게 된다면 모두 수동으로 처리해주어야한다.</p>
+
+<p>또한, 데이터베이스에서 개체를 쉽게 삽입, 업데이트 및 삭제(CRUD)를 할 수 있다는 장점이 있으며 테이블 간의 매핑(1:1, 1:N, N:N) 또한 손쉽게 처리할 수 있다.</p>
+
+<p><br />
+<br /></p>
+<h2 id="오늘-느낀-점">오늘 느낀 점</h2>
+
+<p>사실 ORM은 Sequelize만 사용해봤는데 Sequelize는 TypeScript와는 호환성 이슈로 많은 불편함이 있다는 정도만 안다.</p>
+
+<p>반면 NestJS의 프로그래밍 언어는 타입스크립트를 기본으로 채택하고 있기에 조금더 호환성에서 자유로울 것 같다는 생각이 우선 든다.</p>
+
+<p>ORM은 사실 문법을 따로 학습을 계속 해야 할 듯하다. Sequelize를 쓸 때도 공식문서<del>(공식문서 진짜..너무 불친절)</del>를 항상 참조해서 문법을 완성시켰었다.</p>
+
+<p>우선 Maria DB와 현재 진행중인 실습 프로젝트를 연결 후 다양한 문법을 실습해봐야 알 듯 하다.</p>
+
+<p><br />
+<br /></p>
+:ET
