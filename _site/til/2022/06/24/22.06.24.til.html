@@ -245,6 +245,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
+
+
+
+
+
+
+
+
+
+
 <header class="site-header " role="banner">
 
   <div class="wrapper">
@@ -429,7 +439,7 @@ function googleTranslateElementInit() {
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;var scrollStatus = "";
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
 
       if (y <= 0) {
         scrollStatus = "top";
@@ -452,6 +462,16 @@ function googleTranslateElementInit() {
   }
   document.addEventListener('DOMContentLoaded', initHeader);
 </script>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -781,53 +801,6 @@ function googleTranslateElementInit() {
 
 
 
-<header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">NestJS DTO vs Interface</h1>
-  <h2 class="post-subtitle">NestJS에서 타입 사용하기</h2>
-
-  <p class="post-meta">
-    <time class="dt-published" datetime="2022-06-24T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022, Jun 24
-    </time>
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
-  </p>
-<div class="post-tags">
-<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
-</div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
@@ -911,10 +884,10 @@ Repository 패턴에서는 Controller, Service, Repository를 각각 계층이�
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        <li><a class="post-link" href="/project/2021/12/25/21.12.25.project.html" title="Docker?">[6699] 목표와 다짐들을 글로 적고 실천하며 소통하는 동기부여 커뮤니티 ✍️</a></li>
-<li><a class="post-link" href="/til/2021/11/26/21.11.26.til.html" title="Docker?">무료 도메인 주소를 이용한 AWS HTTPS 인증</a></li>
-<li><a class="post-link" href="/til/2022/07/01/22.07.01.til.html" title="Docker?">Docker?</a></li>
-<li><a class="post-link" href="/project/2022/01/26/22.01.26.project.html" title="Docker?">[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</a></li>
+        <li><a class="post-link" href="/til/2021/09/15/21.09.15.til.html" title="Docker?">1. CDD 2. CSS in JS 방법론 3. React Custom Component</a></li>
+<li><a class="post-link" href="/project/2022/02/08/22.02.08.project.html" title="Docker?">ALL-CON Refactoring 2일차 - 민감정보 암호화</a></li>
+<li><a class="post-link" href="/til/2022/04/13/22.04.13.til.html" title="Docker?">따라하며 배우는 Nest JS #1</a></li>
+<li><a class="post-link" href="/til/2022/02/09/22.02.09.til.html" title="Docker?">Node.js - code: 'ERR_HTTP_HEADERS_SENT 에러 핸들링</a></li>
 </ul>
     </div>
 <div class="post-comments">
