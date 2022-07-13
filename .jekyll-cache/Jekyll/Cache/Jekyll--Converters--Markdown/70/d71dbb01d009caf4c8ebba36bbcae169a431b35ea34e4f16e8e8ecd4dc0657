@@ -1,0 +1,8 @@
+I"A<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-react-props--state">1. React Props &amp; State</h3>
+<h4 id="1-1-props-vs-state">1-1. Props vs State</h4>
+<ul>
+  <li>간단하게 언급하고 가자면, <code class="language-plaintext highlighter-rouge">props</code>는 외부로 부터 전달받은 값이며, <code class="language-plaintext highlighter-rouge">state</code>는 컴포넌트 내부에서 변화하는 값이다.</li>
+</ul>
+:ET

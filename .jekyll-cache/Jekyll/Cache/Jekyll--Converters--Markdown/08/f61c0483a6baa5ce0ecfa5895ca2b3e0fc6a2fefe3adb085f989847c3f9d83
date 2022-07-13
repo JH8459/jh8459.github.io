@@ -1,0 +1,12 @@
+I"6<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-객체-코플릿">1. 객체 코플릿</h3>
+<ul>
+  <li>객체는 배열과 다르게 순서성을 가지지 않으며, 묶음으로 된 데이터에 이름을 붙혀, 의미를 부여할 수 있다. 배열또한 각 값이 하나의 변수로 묶인 데이터이지만, 각 index가 어떤 정보를 갖고 있는지 알아야지 해당 값에 접근이 용이하다.
+    <ul>
+      <li>객체는 키쌍값(key-value pair)으로 이루어져 있다.
+<img src="https://user-images.githubusercontent.com/83164003/127880037-885d3350-4f00-4c36-8f49-2acfd0da353b.png" alt="스크린샷, 2021-08-02 23-44-58" /></li>
+    </ul>
+  </li>
+</ul>
+:ET

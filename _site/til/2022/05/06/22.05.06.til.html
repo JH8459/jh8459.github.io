@@ -10,7 +10,7 @@
 <title>NestJS + 가비아 메시징 API 개발 가이드 | JHLog</title>
 <meta name="generator" content="Jekyll v4.2.2">
 <meta property="og:title" content="NestJS + 가비아 메시징 API 개발 가이드">
-<meta name="author" content="JH8459">
+<meta name="author" content="JH 🤔">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Today I Learnd 프로젝트중 SMS 발송이 필요한 부분을 가비아의 문자 서비스를 이용하고 있다.">
 <meta property="og:description" content="Today I Learnd 프로젝트중 SMS 발송이 필요한 부분을 가비아의 문자 서비스를 이용하고 있다.">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="NestJS + 가비아 메시징 API 개발 가이드">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH8459"},"dateModified":"2022-05-06T00:00:00+09:00","datePublished":"2022-05-06T00:00:00+09:00","description":"Today I Learnd 프로젝트중 SMS 발송이 필요한 부분을 가비아의 문자 서비스를 이용하고 있다.","headline":"NestJS + 가비아 메시징 API 개발 가이드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/05/06/22.05.06.til.html"},"url":"http://localhost:4000/til/2022/05/06/22.05.06.til.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH 🤔"},"dateModified":"2022-05-06T00:00:00+09:00","datePublished":"2022-05-06T00:00:00+09:00","description":"Today I Learnd 프로젝트중 SMS 발송이 필요한 부분을 가비아의 문자 서비스를 이용하고 있다.","headline":"NestJS + 가비아 메시징 API 개발 가이드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/05/06/22.05.06.til.html"},"url":"http://localhost:4000/til/2022/05/06/22.05.06.til.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -1135,13 +1135,47 @@ function googleTranslateElementInit() {
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        <li><a class="post-link" href="/til/2022/03/10/22.03.10.til.html" title="Repository Pattern">JWT (JSON WEB TOKEN)</a></li>
-<li><a class="post-link" href="/project/2022/02/10/22.02.10.refactoring.html" title="Repository Pattern">ALL-CON Refactoring 4일차 - 유효하지 않은 로그인 상태 검증</a></li>
-<li><a class="post-link" href="/algorithm/2021/10/22/21.10.22.algorithm.html" title="Repository Pattern">TOY 35. uglyNumbers</a></li>
-<li><a class="post-link" href="/algorithm/2021/09/15/21.09.15.algorithm.html" title="Repository Pattern">TOY 17. balancedBrackets</a></li>
+        <li><a class="post-link" href="/til/2021/07/30/21.07.30.til.html" title="Repository Pattern">1. 배열 2. 객체</a></li>
+<li><a class="post-link" href="/til/2021/09/07/21.09.07.til.html" title="Repository Pattern">1. React 데이터 흐름 2. Effect Hook</a></li>
+<li><a class="post-link" href="/retrospect/2021/12/24/21.12.24.retrospect.html" title="Repository Pattern">코드스테이츠 First Project [6699] 회고</a></li>
+<li><a class="post-link" href="/til/2021/10/22/21.10.22.til.html" title="Repository Pattern">OAuth</a></li>
 </ul>
     </div>
-<div class="post-comments"></div></section>
+<div class="post-comments">
+<script async crossorigin="anonymous" issue-term="title" label="utterances comment" onload="initUtterancesTheme()" repo="JH8459/JH8459.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script><script>
+  const setUtterancesTheme = (dataTheme) => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const utterancesTheme = dataTheme === 'dark' ? 'github-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: utterancesTheme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // init theme
+  const initUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (!iframe) return
+    iframe.onload = () => {
+      setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+      }
+    }
+  });
+  observer.observe(document.documentElement, {attributes: true, childList: false, subtree: false});
+</script>
+</div></section>
 </div>
 
 
@@ -1278,7 +1312,7 @@ function googleTranslateElementInit() {
 
   <div class="wrapper">
     <div class="site-footer-inner">
-<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH 🤔</div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>

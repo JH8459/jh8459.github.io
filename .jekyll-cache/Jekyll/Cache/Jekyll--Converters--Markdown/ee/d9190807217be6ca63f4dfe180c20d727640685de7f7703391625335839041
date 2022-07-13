@@ -1,0 +1,7 @@
+I"W<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-corscross-origin-resource-sharing">1. CORS(Cross-Origin Resource Sharing)</h3>
+<ul>
+  <li><strong>교차 출처 리소스 공유</strong>라 불리는 CORS는 브라우저에서 다른 출처의 리소스를 공유하는 방법이다. 출처에 대해서 설명하기 전, URL의 구조에 대해서 짚고 넘어가야한다. 앞서 URL에 대하여 학습한적이 있다. 다시 들여다 보면,</li>
+</ul>
+:ET

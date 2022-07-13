@@ -10,7 +10,7 @@
 <title>Home | JHLog</title>
 <meta name="generator" content="Jekyll v4.2.2">
 <meta property="og:title" content="Home">
-<meta name="author" content="JH8459">
+<meta name="author" content="JH 🤔">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Home">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"JH8459"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Home","name":"JHLog","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"JH 🤔"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Home","name":"JHLog","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -1287,6 +1287,515 @@ Today I Learnd
 <a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
 </div>
     </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2022/04/17/22.04.17.til.html">
+          따라하며 배우는 Nest JS #5
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> 2022, Apr 17</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2022/04/17/22.04.17.til.html">
+        <p>
+        
+Today I Learnd
+인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 있다.
+
+일전의 #4에서 DTO에 대한 기초 개념을 학습을 진행했으며 그를 토대로 기본적인 CRUD를 위한 실습또한 함께 진행했다.
+
+오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다. 
+해당 코드 내용은 아래에 첨부한다.
+
+
+  게시물 생성을 위한 DTO
+
+  ID로 특정 게시물 가져오기(getBoardById)
+
+  ID로 특정 게시물 지우기(deleteBoard)
+
+  특정 게시물의 상태 업데이트(updateBoardStatus)
+
+
+그리고 NestJS Pipes를 학습하였다.
+
+
+
+
+1. Pipe란?
+
+
+파이프는 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2022/04/16/22.04.16.til.html">
+          따라하며 배우는 Nest JS #4
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> 2022, Apr 16</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2022/04/16/22.04.16.til.html">
+        <p>
+        
+Today I Learnd
+인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 있다.
+
+일전의 #1 #2 #3에서 기초 개념을 학습을 진행했으며 그를 토대로 기본적인 CRUD를 위한 실습또한 함께 진행중이다.
+
+오늘은 기존 실습한 내용을 주석을 달아가며 복습하였다. 
+해당 코드 내용은 아래에 첨부한다.
+
+
+  Board Model 정의하기
+
+  게시물 생성하기
+
+
+그리고 DTO에 대한 내용을 학습한 내용을 간단히 정리하였다.
+
+
+
+1. DTO(Data Transfer Object)란?
+
+
+계층간 데이터 교환을 위한 객체이다.
+DB에서 데이터를 얻어 Service나 Controller 등으로 보낼 때 사... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2022/04/15/22.04.15.til.html">
+          따라하며 배우는 Nest JS #3
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> 2022, Apr 15</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2022/04/15/22.04.15.til.html">
+        <p>
+        
+Today I Learnd
+인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 기록해보려고 한다.
+
+Node.js의 프레임워크인 Nest JS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해 포스팅을 남긴다.
+
+
+
+1. NestJS 모듈
+
+
+모듈은 @Module () 데코레이터(@)로 주석이 달린 클래스이다.
+@Module () 데코레이터는 Nest가 애플리케이션 구조를 구성하는데 사용하는 메타 데이터를 제공한다.
+
+각 응용 프로그램에는 하나 이상의 모듈(최소 루트 모듈)이 있으며, 그 중 루트 모듈은 Nest가 사용하는 시작... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2022/04/14/22.04.14.til.html">
+          따라하며 배우는 Nest JS #2
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> 2022, Apr 14</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2022/04/14/22.04.14.til.html">
+        <p>
+        
+Today I Learnd
+인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 기록해보려고 한다.
+
+Node.js의 프레임워크인 Nest JS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해 포스팅을 남긴다.
+
+
+
+1. NestCLI로 생성한 프로젝트 기본구조
+
+
+nest new ./ 명령어를 이용하여 폴더 내부에 기본 NestJS 프레임워크 기본 설정을 NestCLI를 통하여 만들었다.
+
+
+
+
+기본으로 구성된 프로젝트 기본구조를 하나씩 알아보면 다음과 같다.
+
+
+
+
+1-1. .eslintrc.js
+
+
+개발자들이 특정한 규칙을... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2022/04/13/22.04.13.til.html">
+          따라하며 배우는 Nest JS #1
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> 2022, Apr 13</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2022/04/13/22.04.13.til.html">
+        <p>
+        
+Today I Learnd
+인프런의 따라하며 배우는 NestJS를 들으며 배운점을 남기고 기록해보려고 한다.
+
+Node.js의 프레임워크인 Nest JS를 학습하며 이해한점을 기록하며 더 나아가 궁금한 부분에 대해서는 찾아보며 스스로 학습한 점에 대해서도 기록으로 남겨보기 위해 포스팅을 남긴다.
+
+
+
+1. Nest JS란?
+
+
+
+
+
+Nest(Nest JS)는 효율적이고 확장 가능한 Node.js 서버 측 애플리케이션을 구축하기 위한 프레임 워크이다.
+
+프로그레시브 JavaScript를 사용하고 TypeScript로 빌드되고 완벽하게 지원하며 (개발자가 순수 JavaScript로 코딩 할 수 있음) OOP(Obje... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#NestJS">#NestJS</a><a class="post-tag" href="/tags.html#NodeJS">#NodeJS</a><a class="post-tag" href="/tags.html#BackEnd">#BackEnd</a>
+</div>
+    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1299,7 +1808,7 @@ Today I Learnd
     
     </span>
 
-    <span class="indicator"> 1/25</span>
+    <span class="indicator"> 1/9</span>
 
     <span class="next">
     
@@ -1339,16 +1848,10 @@ Today I Learnd
   <ul>
     <li>
       <a href="/index.html">
-        All<span>123</span>
+        All<span>82</span>
       </a>
     </li>
 
-    
-      <li>
-        <a href="/categories.html#h-Algorithm">
-          Algorithm <span>41</span>
-        </a>
-      </li>
     
       <li>
         <a href="/categories.html#h-Blog">
@@ -1386,7 +1889,7 @@ Today I Learnd
 
   <div class="wrapper">
     <div class="site-footer-inner">
-<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH 🤔</div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>

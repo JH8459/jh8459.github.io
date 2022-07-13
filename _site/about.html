@@ -10,7 +10,7 @@
 <title>About | JHLog</title>
 <meta name="generator" content="Jekyll v4.2.2">
 <meta property="og:title" content="About">
-<meta name="author" content="JH8459">
+<meta name="author" content="JH 🤔">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="About">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JH8459"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"About","url":"http://localhost:4000/about.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JH 🤔"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"About","url":"http://localhost:4000/about.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -837,7 +837,41 @@ Node.js NestJS / Express 프레임워크 기반 웹 서버 개발과<br>AWS를 �
     </div>
 
 </article>
-<div class="post-comments"></div></section>
+<div class="post-comments">
+<script async crossorigin="anonymous" issue-term="title" label="utterances comment" onload="initUtterancesTheme()" repo="JH8459/JH8459.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script><script>
+  const setUtterancesTheme = (dataTheme) => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const utterancesTheme = dataTheme === 'dark' ? 'github-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: utterancesTheme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // init theme
+  const initUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (!iframe) return
+    iframe.onload = () => {
+      setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+      }
+    }
+  });
+  observer.observe(document.documentElement, {attributes: true, childList: false, subtree: false});
+</script>
+</div></section>
 </div>
 
 
@@ -974,7 +1008,7 @@ Node.js NestJS / Express 프레임워크 기반 웹 서버 개발과<br>AWS를 �
 
   <div class="wrapper">
     <div class="site-footer-inner">
-<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH 🤔</div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>

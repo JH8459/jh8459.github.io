@@ -10,7 +10,7 @@
 <title>Repository Pattern | JHLog</title>
 <meta name="generator" content="Jekyll v4.2.2">
 <meta property="og:title" content="Repository Pattern">
-<meta name="author" content="JH8459">
+<meta name="author" content="JH 🤔">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Today I Learnd 최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.">
 <meta property="og:description" content="Today I Learnd 최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Repository Pattern">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH8459"},"dateModified":"2022-05-25T00:00:00+09:00","datePublished":"2022-05-25T00:00:00+09:00","description":"Today I Learnd 최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.","headline":"Repository Pattern","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/05/25/22.05.25.til.html"},"url":"http://localhost:4000/til/2022/05/25/22.05.25.til.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH 🤔"},"dateModified":"2022-05-25T00:00:00+09:00","datePublished":"2022-05-25T00:00:00+09:00","description":"Today I Learnd 최근 NestJS + TypeORM 프레임워크로 서버를 구성하며 공부하고있다.","headline":"Repository Pattern","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/05/25/22.05.25.til.html"},"url":"http://localhost:4000/til/2022/05/25/22.05.25.til.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -968,13 +968,47 @@ function googleTranslateElementInit() {
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        <li><a class="post-link" href="/til/2022/04/17/22.04.17.til.html" title="NestJS DTO vs Interface">따라하며 배우는 Nest JS #5</a></li>
-<li><a class="post-link" href="/til/2021/08/13/21.08.13.til.html" title="NestJS DTO vs Interface">React Props &amp; State</a></li>
-<li><a class="post-link" href="/til/2022/02/15/22.02.15.til.html" title="NestJS DTO vs Interface">Sequelize Op</a></li>
-<li><a class="post-link" href="/til/2021/11/26/21.11.26.til.html" title="NestJS DTO vs Interface">무료 도메인 주소를 이용한 AWS HTTPS 인증</a></li>
+        <li><a class="post-link" href="/til/2022/02/15/22.02.15.til.html" title="NestJS DTO vs Interface">Sequelize Op</a></li>
+<li><a class="post-link" href="/til/2022/03/07/22.03.07.til.html" title="NestJS DTO vs Interface">Node.js 트래픽이 많아지는 경우 서버 과부화 대응 방법</a></li>
+<li><a class="post-link" href="/til/2021/09/28/21.09.28.til.html" title="NestJS DTO vs Interface">1. React 상태관리 2. 클라이언트 빌드&amp;배포</a></li>
+<li><a class="post-link" href="/til/2021/10/13/21.10.13.til.html" title="NestJS DTO vs Interface">1. DataBase &amp; SQL 2. Schema design 3. DataBase 설계 4. Node.js에서...</a></li>
 </ul>
     </div>
-<div class="post-comments"></div></section>
+<div class="post-comments">
+<script async crossorigin="anonymous" issue-term="title" label="utterances comment" onload="initUtterancesTheme()" repo="JH8459/JH8459.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script><script>
+  const setUtterancesTheme = (dataTheme) => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const utterancesTheme = dataTheme === 'dark' ? 'github-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: utterancesTheme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // init theme
+  const initUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (!iframe) return
+    iframe.onload = () => {
+      setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+      }
+    }
+  });
+  observer.observe(document.documentElement, {attributes: true, childList: false, subtree: false});
+</script>
+</div></section>
 </div>
 
 
@@ -1111,7 +1145,7 @@ function googleTranslateElementInit() {
 
   <div class="wrapper">
     <div class="site-footer-inner">
-<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH 🤔</div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>

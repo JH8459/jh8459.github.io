@@ -10,7 +10,7 @@
 <title>Sequelize Op | JHLog</title>
 <meta name="generator" content="Jekyll v4.2.2">
 <meta property="og:title" content="Sequelize Op">
-<meta name="author" content="JH8459">
+<meta name="author" content="JH 🤔">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Today I Learnd">
 <meta property="og:description" content="Today I Learnd">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Sequelize Op">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH8459"},"dateModified":"2022-02-15T00:00:00+09:00","datePublished":"2022-02-15T00:00:00+09:00","description":"Today I Learnd","headline":"Sequelize Op","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/02/15/22.02.15.til.html"},"url":"http://localhost:4000/til/2022/02/15/22.02.15.til.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH 🤔"},"dateModified":"2022-02-15T00:00:00+09:00","datePublished":"2022-02-15T00:00:00+09:00","description":"Today I Learnd","headline":"Sequelize Op","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/02/15/22.02.15.til.html"},"url":"http://localhost:4000/til/2022/02/15/22.02.15.til.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -981,18 +981,52 @@ function googleTranslateElementInit() {
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/project/2022/02/15/22.02.15.Project.html" title="ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기">ALL-CON Refactoring 7일차 - 티켓 오픈...</a><a class="next" href="/project/2022/02/16/22.02.16.Project.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">ALL-CON Refactoring 8일차 - Timezone 수정...</a>
+<a class="previous" href="/project/2022/02/15/22.02.15.project.html" title="ALL-CON Refactoring 7일차 - 티켓 오픈 임박예정 콘서트 정보만 보여주기">ALL-CON Refactoring 7일차 - 티켓 오픈...</a><a class="next" href="/project/2022/02/16/22.02.16.project.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">ALL-CON Refactoring 8일차 - Timezone 수정...</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        <li><a class="post-link" href="/til/2021/07/20/21.07.20.til.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">1. 변수 2. 타입 3. 함수 4. 조건문</a></li>
-<li><a class="post-link" href="/algorithm/2021/10/13/21.10.13.algorithm.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">TOY 28. robotPath2</a></li>
-<li><a class="post-link" href="/til/2021/10/18/21.10.18.til.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">1. ORM 2. Sequelize 3. Short.ly MVC</a></li>
-<li><a class="post-link" href="/algorithm/2021/10/26/21.10.26.algorithm.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">TOY 37. coinChange</a></li>
+        <li><a class="post-link" href="/til/2022/05/25/22.05.25.til.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">Repository Pattern</a></li>
+<li><a class="post-link" href="/project/2022/02/11/22.02.11.project.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">ALL-CON Refactoring 5일차 - Articles 테이블 스키마 수정(1)</a></li>
+<li><a class="post-link" href="/til/2021/11/26/21.11.26.til.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">무료 도메인 주소를 이용한 AWS HTTPS 인증</a></li>
+<li><a class="post-link" href="/project/2022/02/16/22.02.16.project.html" title="ALL-CON Refactoring 8일차 - Timezone 수정">ALL-CON Refactoring 8일차 - Timezone 수정</a></li>
 </ul>
     </div>
-<div class="post-comments"></div></section>
+<div class="post-comments">
+<script async crossorigin="anonymous" issue-term="title" label="utterances comment" onload="initUtterancesTheme()" repo="JH8459/JH8459.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script><script>
+  const setUtterancesTheme = (dataTheme) => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const utterancesTheme = dataTheme === 'dark' ? 'github-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: utterancesTheme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // init theme
+  const initUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (!iframe) return
+    iframe.onload = () => {
+      setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+      }
+    }
+  });
+  observer.observe(document.documentElement, {attributes: true, childList: false, subtree: false});
+</script>
+</div></section>
 </div>
 
 
@@ -1129,7 +1163,7 @@ function googleTranslateElementInit() {
 
   <div class="wrapper">
     <div class="site-footer-inner">
-<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH 🤔</div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>

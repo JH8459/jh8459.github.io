@@ -1,0 +1,7 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-dom">1. DOM</h3>
+<ul>
+  <li><strong>DOM( Document Object Model)</strong> 은 HTML 요소를 Object(JavaScript Object)처럼 조작(Manipulation)할 수 있는 Model이다. 즉, 자바스크립트를 사용할 수 있으면, DOM으로 HTML을 조작할 수 있다.</li>
+</ul>
+:ET

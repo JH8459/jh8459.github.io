@@ -1,0 +1,17 @@
+I"R<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-css">1. CSS</h3>
+<ul>
+  <li>
+    <p>CSS 문법
+<img src="https://user-images.githubusercontent.com/83164003/127822567-a436423c-8884-48ff-8ccf-16009f5f2071.png" alt="css문법" /></p>
+  </li>
+  <li>
+    <p><strong>선택자(selector)</strong> 에는 태그이름이나 id 또는 클래스 등이 올수있다. 선택자로 특정 요소를 선택할수 있으며, 선택 후 중괄호 안의 선언 블럭에서 이 선택자에 적용 할 내용들을 작성한다.</p>
+    <ul>
+      <li><strong>id</strong>는 한 문서에 단 하나의 id 값을 가질수 있으며 <code class="language-plaintext highlighter-rouge">#</code> 기호를 이용하여 선택한다.</li>
+      <li><strong>class</strong>는 동일한 기능을 하는 css를 여러 요소에 적용하기 위해 선택되며 <code class="language-plaintext highlighter-rouge">.</code> 기호를 이용하여 선택한다.</li>
+    </ul>
+  </li>
+</ul>
+:ET

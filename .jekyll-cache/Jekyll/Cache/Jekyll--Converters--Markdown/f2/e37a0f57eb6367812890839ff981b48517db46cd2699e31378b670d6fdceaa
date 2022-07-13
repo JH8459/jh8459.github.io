@@ -1,0 +1,8 @@
+I"<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-database--sql">1. DataBase &amp; SQL</h3>
+<hr />
+
+<h4 id="1-1-database">1-1. DataBase</h4>
+<p>데이터베이스는 <strong>IN-MEMORY</strong>, <strong>FILE I/O</strong> 방식의 한계와 관리하는 데이터의 양이 방대해짐에따라 효율적이고 데이터의 무결성을 지키기 위해 고안된 데이터에 특화된 서버이다.</p>
+:ET

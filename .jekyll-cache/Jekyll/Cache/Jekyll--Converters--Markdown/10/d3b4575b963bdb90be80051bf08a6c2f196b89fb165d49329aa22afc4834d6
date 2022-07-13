@@ -1,0 +1,9 @@
+I"Z<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-react-데이터-흐름">1. React 데이터 흐름</h3>
+<p><img src="https://user-images.githubusercontent.com/83164003/132542812-b2131f36-bbaa-436a-a174-d3e4a3e15945.png" alt="react" /></p>
+<h4 id="1-1-상향식bottom-up-개발">1-1. 상향식(bottom-up) 개발</h4>
+<ul>
+  <li>React의 개발 방식의 가장 큰 특징은 페이지 단위가 아닌, 컴포넌트 단위로 시작한다는 점이다.</li>
+</ul>
+:ET

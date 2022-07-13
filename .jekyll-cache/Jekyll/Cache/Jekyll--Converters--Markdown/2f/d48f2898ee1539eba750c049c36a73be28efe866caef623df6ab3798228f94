@@ -1,0 +1,7 @@
+I"8<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-비동기-처리-asynchronous-processing">1. 비동기 처리 (Asynchronous processing)</h3>
+<ul>
+  <li>자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 행위를 말한다. 요청에 대한 결과가 동시에 일어나지 않는 특성을 가지고있다.</li>
+</ul>
+:ET

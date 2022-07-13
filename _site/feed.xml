@@ -5,8 +5,8 @@
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jul 2022 23:20:55 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jul 2022 23:20:55 +0900</lastBuildDate>
+    <pubDate>Thu, 14 Jul 2022 00:25:39 +0900</pubDate>
+    <lastBuildDate>Thu, 14 Jul 2022 00:25:39 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -1521,8 +1521,10 @@ DB에서 데이터를 얻어 Service나 Controller 등으로 보낼 때 사용�
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/2022/04/01/22.04.01.Retrospect.html</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/04/01/22.04.01.Retrospect.html</guid>
+        <link>http://localhost:4000/retrospect/2022/04/01/22.04.01.retrospect.html</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/04/01/22.04.01.retrospect.html</guid>
+        
+        <category>직장인</category>
         
         
         <category>Retrospect</category>
@@ -1644,8 +1646,12 @@ SEB 수강생이 나뿐!? 이였다 AIB, PMB 포지션분들은 각각 두분씩
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Mar 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/2022/03/31/22.03.31.Retrospect.html</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/03/31/22.03.31.Retrospect.html</guid>
+        <link>http://localhost:4000/retrospect/2022/03/31/22.03.31.retrospect.html</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/03/31/22.03.31.retrospect.html</guid>
+        
+        <category>Community</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Retrospect</category>
@@ -2354,8 +2360,12 @@ DB에 있는 데이터에 접근할 때 발생하는 디스크 I/O 작업은 CPU
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/2022/03/01/22.03.01.Retrospect.html</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/03/01/22.03.01.Retrospect.html</guid>
+        <link>http://localhost:4000/retrospect/2022/03/01/22.03.01.retrospect.html</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/03/01/22.03.01.retrospect.html</guid>
+        
+        <category>Community</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Retrospect</category>
@@ -2491,8 +2501,12 @@ DB에 있는 데이터에 접근할 때 발생하는 디스크 I/O 작업은 CPU
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 22 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/retrospect/2022/02/22/22.02.22.Retrospect.html</link>
-        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/02/22/22.02.22.Retrospect.html</guid>
+        <link>http://localhost:4000/retrospect/2022/02/22/22.02.22.retrospect.html</link>
+        <guid isPermaLink="true">http://localhost:4000/retrospect/2022/02/22/22.02.22.retrospect.html</guid>
+        
+        <category>Community</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Retrospect</category>
@@ -2501,7 +2515,11 @@ DB에 있는 데이터에 접근할 때 발생하는 디스크 I/O 작업은 CPU
     
       <item>
         <title>ALL-CON Refactoring 8일차 - Timezone 수정</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg&quot; alt=&quot;Project&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;title: 코드스테이츠 Section3 HA 기수이동&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/152715311-82cc5a61-ca9c-4c46-a955-77970d4449bb.jpg&quot; alt=&quot;Project&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;refactoring&quot;&gt;Refactoring&lt;/h2&gt;
 &lt;p&gt;현재 ALL-CON 프로젝트의 DB 서버는 &lt;strong&gt;AWS RDS&lt;/strong&gt;를 사용하고 있다.&lt;/p&gt;
@@ -2610,8 +2628,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;p&gt;때문에 9시간을 더해주어서 DB에 저장된 시간값을 정상적으로 표현할 수 있도록 코드를 수정해주었다.&lt;/p&gt;
 </description>
         <pubDate>Wed, 16 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/16/22.02.16.Project.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/16/22.02.16.Project.html</guid>
+        <link>http://localhost:4000/project/2022/02/16/22.02.16.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/16/22.02.16.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -2833,8 +2859,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 이번 기회를 빌어 학습 한 내용을 정리한 뒤 블로그에 남겨보도록 해야겠다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/15/22.02.15.Project.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/15/22.02.15.Project.html</guid>
+        <link>http://localhost:4000/project/2022/02/15/22.02.15.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/15/22.02.15.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -2910,8 +2944,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;p&gt;빈 콘서트 목록 처리를 어떻게 해야할지 클라이언트를 담당한 팀원분과 조율해서 내일까지 Task를 가져가야 할 듯 하다.&lt;/p&gt;
 </description>
         <pubDate>Mon, 14 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/14/22.02.14.Project.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/14/22.02.14.Project.html</guid>
+        <link>http://localhost:4000/project/2022/02/14/22.02.14.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/14/22.02.14.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -3288,8 +3330,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/83164003/153531161-6c35922d-cdce-458d-ae93-04daa29ab5b9.gif&quot; alt=&quot;test&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/11/22.02.11.refactoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/11/22.02.11.refactoring.html</guid>
+        <link>http://localhost:4000/project/2022/02/11/22.02.11.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/11/22.02.11.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -3410,8 +3460,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;p&gt;다른 영역, 예를 들어 콘친찾기 글쓰기 중 쿠키가 만료되거나 사라지는 경우 등을 대처하기 위해서 내일은 사이트 전반적인 로그인 검증이 필요한 API 요청시 메인페이지로 강제 이동 &amp;amp; 로그인 재시도를 할 수 있게 끔 수정해볼 예정이다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/10/22.02.10.refactoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/10/22.02.10.refactoring.html</guid>
+        <link>http://localhost:4000/project/2022/02/10/22.02.10.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/10/22.02.10.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -3613,8 +3671,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;p&gt;우선 해당 내용에 대해서 조금더 학습해보고 로그인 검증 이후 유효하지 않은 로그인 정보를 보유중이라면 메인페이지로 이동하고 로그인을 다시 유도하는 방향으로 전반적인 코드를 다시 작성해보아야겠다.&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/09/22.02.09.refactoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/09/22.02.09.refactoring.html</guid>
+        <link>http://localhost:4000/project/2022/02/09/22.02.09.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/09/22.02.09.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -3701,8 +3767,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/08/22.02.08.refactoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/08/22.02.08.refactoring.html</guid>
+        <link>http://localhost:4000/project/2022/02/08/22.02.08.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/08/22.02.08.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>
@@ -3990,8 +4064,16 @@ DB 서버에 저장되는 &lt;strong&gt;포르테 디 콰트로 콘서트 메타
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Feb 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/project/2022/02/07/22.02.07.refactoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/project/2022/02/07/22.02.07.refactoring.html</guid>
+        <link>http://localhost:4000/project/2022/02/07/22.02.07.project.html</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2022/02/07/22.02.07.project.html</guid>
+        
+        <category>Project</category>
+        
+        <category>BackEnd</category>
+        
+        <category>DataBase</category>
+        
+        <category>CodeStates</category>
         
         
         <category>Project</category>

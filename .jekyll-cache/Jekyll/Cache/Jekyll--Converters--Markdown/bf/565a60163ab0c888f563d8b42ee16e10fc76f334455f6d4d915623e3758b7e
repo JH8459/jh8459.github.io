@@ -1,0 +1,7 @@
+I"G<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-react-spa-single-page-application">1. React SPA (Single Page Application)</h3>
+<ul>
+  <li>과거의 브라우저는 웹사이트 페이지 전체를 로딩하였기 때문에 발생하는 리소스 손실이 컸다 . 하지만 SPA는 페이지 전환 전후에 중복되는 부분은 새로 불러오지 않으며 필요한 부분만 갱신하여 웹페이지를 새로 로딩한다.</li>
+</ul>
+:ET

@@ -10,7 +10,7 @@
 <title>NestJS DTO vs Interface | JHLog</title>
 <meta name="generator" content="Jekyll v4.2.2">
 <meta property="og:title" content="NestJS DTO vs Interface">
-<meta name="author" content="JH8459">
+<meta name="author" content="JH 🤔">
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Today I Learnd TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 DTO 사용을 안내하고 있다.">
 <meta property="og:description" content="Today I Learnd TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 DTO 사용을 안내하고 있다.">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="NestJS DTO vs Interface">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH8459"},"dateModified":"2022-06-24T00:00:00+09:00","datePublished":"2022-06-24T00:00:00+09:00","description":"Today I Learnd TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 DTO 사용을 안내하고 있다.","headline":"NestJS DTO vs Interface","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/06/24/22.06.24.til.html"},"url":"http://localhost:4000/til/2022/06/24/22.06.24.til.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JH 🤔"},"dateModified":"2022-06-24T00:00:00+09:00","datePublished":"2022-06-24T00:00:00+09:00","description":"Today I Learnd TypeScript를 기본 언어로 채택하여 구성된 NestJS 프레임워크는 공식문서에서는 Type Check를 위해 DTO 사용을 안내하고 있다.","headline":"NestJS DTO vs Interface","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2022/06/24/22.06.24.til.html"},"url":"http://localhost:4000/til/2022/06/24/22.06.24.til.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -911,13 +911,47 @@ Repository 패턴에서는 Controller, Service, Repository를 각각 계층이�
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        <li><a class="post-link" href="/til/2021/10/21/21.10.21.til.html" title="Docker?">Token</a></li>
-<li><a class="post-link" href="/retrospect/2022/03/31/22.03.31.Retrospect.html" title="Docker?">"2022 코드스테이츠 3월 커뮤니티 데이" 후기</a></li>
-<li><a class="post-link" href="/til/2021/09/28/21.09.28.til.html" title="Docker?">1. React 상태관리 2. 클라이언트 빌드&amp;배포</a></li>
-<li><a class="post-link" href="/til/2021/10/05/21.10.05.til.html" title="Docker?">1. Linux 사용권한 2. Linux 환경변수</a></li>
+        <li><a class="post-link" href="/project/2021/12/25/21.12.25.project.html" title="Docker?">[6699] 목표와 다짐들을 글로 적고 실천하며 소통하는 동기부여 커뮤니티 ✍️</a></li>
+<li><a class="post-link" href="/til/2021/11/26/21.11.26.til.html" title="Docker?">무료 도메인 주소를 이용한 AWS HTTPS 인증</a></li>
+<li><a class="post-link" href="/til/2022/07/01/22.07.01.til.html" title="Docker?">Docker?</a></li>
+<li><a class="post-link" href="/project/2022/01/26/22.01.26.project.html" title="Docker?">[ALL-CON] 콘서트 예매정보부터 콘서트 친구까지 찾아주는 콘서트 종합 정보 플랫폼 🎟</a></li>
 </ul>
     </div>
-<div class="post-comments"></div></section>
+<div class="post-comments">
+<script async crossorigin="anonymous" issue-term="title" label="utterances comment" onload="initUtterancesTheme()" repo="JH8459/JH8459.github.io" src="https://utteranc.es/client.js" theme="github-light">
+</script><script>
+  const setUtterancesTheme = (dataTheme) => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const utterancesTheme = dataTheme === 'dark' ? 'github-dark' : 'github-light'
+      const message = {
+        type: 'set-theme',
+        theme: utterancesTheme
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // init theme
+  const initUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (!iframe) return
+    iframe.onload = () => {
+      setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme(document.documentElement.getAttribute('data-theme'))
+      }
+    }
+  });
+  observer.observe(document.documentElement, {attributes: true, childList: false, subtree: false});
+</script>
+</div></section>
 </div>
 
 
@@ -1054,7 +1088,7 @@ Repository 패턴에서는 Controller, Service, Repository를 각각 계층이�
 
   <div class="wrapper">
     <div class="site-footer-inner">
-<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH8459</div>
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2022 JH 🤔</div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>

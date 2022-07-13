@@ -1,0 +1,8 @@
+I"?<ul>
+  <li><strong>No class name bugs</strong> : <img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" />
+    <h2 id="today-i-learnd">Today I Learnd</h2>
+    <h3 id="1-component-driven-development-cdd">1. Component Driven Development (CDD)</h3>
+  </li>
+  <li>부품 단위로 UI 컴포넌트를 만들어 나가는 개발이다.  페이지 단위로 UI 개발이 이루어지는 것과는 반대로 UI 컴포넌트들부터 만들고 이를 기반으로 페이지를 구성하는걸 말한다.</li>
+</ul>
+:ET

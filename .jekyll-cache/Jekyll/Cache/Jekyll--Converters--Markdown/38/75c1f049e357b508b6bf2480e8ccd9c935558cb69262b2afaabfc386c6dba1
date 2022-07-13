@@ -1,0 +1,16 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-반복문-코플릿">1. 반복문 코플릿</h3>
+<ul>
+  <li>
+    <p>오늘 학습한 내용 중 가장 인상 깊었던 코드 풀이를 다시 한번 복습해보겠다. 수를 입력받아 홀수인지 여부를 리턴해야 한다. 반복문(while)문을 사용해야 합니다. 나눗셈(/), 나머지(%) 연산자 사용은 금지됩니다. 0은 짝수로 간주합니다.</p>
+
+    <p>```javascript
+   /<em>—입출력 예시—</em>/
+let output = isOdd(17);
+console.log(output); // –&gt; true
+output = isOdd(-8);
+console.log(output); // –&gt; false</p>
+  </li>
+</ul>
+:ET

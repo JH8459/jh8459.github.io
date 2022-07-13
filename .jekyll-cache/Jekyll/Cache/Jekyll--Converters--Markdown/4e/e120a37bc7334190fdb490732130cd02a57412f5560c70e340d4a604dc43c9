@@ -1,0 +1,8 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-ormobject-relational-mapping">1. ORM(Object-Relational Mapping)</h3>
+<hr />
+<ul>
+  <li>ORM은 SQL문을 사용하지 않고 JS문법을 통해서 Object로 DB에 접근할 수 있도록 돕는 역할을 한다.</li>
+</ul>
+:ET

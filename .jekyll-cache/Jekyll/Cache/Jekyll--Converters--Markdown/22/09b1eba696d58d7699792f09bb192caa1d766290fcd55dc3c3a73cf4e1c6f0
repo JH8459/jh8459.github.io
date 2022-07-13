@@ -1,0 +1,9 @@
+I"�<p><img src="https://user-images.githubusercontent.com/83164003/127775612-7464075f-89e7-478e-82ee-dc1c2710a125.jpeg" alt="TIL" /></p>
+<h2 id="today-i-learnd">Today I Learnd</h2>
+<h3 id="1-linux-사용권한">1. Linux 사용권한</h3>
+<hr />
+<h4 id="1-1-터미널-파일-및-폴더-생성-명령어">1-1. 터미널 파일 및 폴더 생성 명령어</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mkdir</code>명령어로 <code class="language-plaintext highlighter-rouge">linux</code>이름의 폴더를 생성하고 <code class="language-plaintext highlighter-rouge">nano</code> (리눅스 기반 오픈소스 편집 프로그램)를 통해 <code class="language-plaintext highlighter-rouge">helloworld.js</code> 파일을 생성 한 후 명령어 <code class="language-plaintext highlighter-rouge">ls -l</code> 을 프롬프트에 입력하고 Enter(엔터 키)를 누르면 다음과 같은 출력 결과를 얻을 수 있다.</li>
+</ul>
+:ET
